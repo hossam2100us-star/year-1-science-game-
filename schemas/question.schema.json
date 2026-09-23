@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scienceadventure.local/schemas/question.schema.json",
+  "title": "Science Adventure playable question proposal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "schemaVersion", "contentVersion", "type", "source", "prompt", "options", "answer", "hint", "explanation", "safetyIds"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "schemaVersion": {"const": "1.0.0"},
+    "contentVersion": {"type": "integer", "minimum": 1},
+    "type": {"enum": ["tap-choice", "true-false", "drag-to-basket", "match-lines", "order-sequence", "label-diagram", "predict-then-reveal"]},
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["questionId", "pages", "answerKeyPages", "sourceSha256"],
+      "properties": {
+        "questionId": {"type": "string", "minLength": 1},
+        "pages": {"$ref": "#/$defs/pages"},
+        "answerKeyPages": {"$ref": "#/$defs/pages"},
+        "sourceSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "prompt": {"$ref": "#/$defs/spokenText"},
+    "hint": {"$ref": "#/$defs/citedText"},
+    "explanation": {"$ref": "#/$defs/citedText"},
+    "options": {
+      "type": "array", "minItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "text"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "text": {"$ref": "#/$defs/spokenText"},
+          "artId": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "answer": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["kind", "optionId"], "properties": {"kind": {"const": "single"}, "optionId": {"type": "string", "minLength": 1}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "optionIds"], "properties": {"kind": {"const": "set"}, "optionIds": {"$ref": "#/$defs/ids"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "allowedOptionIds", "requiredCount"], "properties": {"kind": {"const": "any-n"}, "allowedOptionIds": {"$ref": "#/$defs/ids"}, "requiredCount": {"type": "integer", "minimum": 1}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "optionIds"], "properties": {"kind": {"const": "sequence"}, "optionIds": {"$ref": "#/$defs/ids"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "assignments"], "properties": {"kind": {"const": "mapping"}, "assignments": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}}}}
+      ]
+    },
+    "safetyIds": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "pages": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 1, "maximum": 39}},
+    "ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "spokenText": {"type": "object", "additionalProperties": false, "required": ["en"], "properties": {"en": {"type": "string", "minLength": 1}}},
+    "citedText": {"type": "object", "additionalProperties": false, "required": ["en", "pages"], "properties": {"en": {"type": "string", "minLength": 1}, "pages": {"$ref": "#/$defs/pages"}}}
+  }
+}

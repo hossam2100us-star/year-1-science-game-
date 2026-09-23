@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "unit_08",
+  "kind": "unit",
+  "title": "Planet Earth",
+  "island": "earth_space",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    22,
+    23
+  ],
+  "introductionText": "Earth and Space\nPlanet Earth\nThe Big Idea: Most of the Earth is covered in water. The land is made of rock and soil. Soil is not just dirt — it is a mixture of tiny stones,\nsand, dead leaves and little living creatures.\nSay It Like This — the water family, small to big\nPond Small and still. You can walk all the way around it. Frogs live there.\nStream A small ribbon of moving water.\nRiver Big moving water, travelling to the sea. Crocodiles live in rivers — like the Nile.\nLake Big and still, with land all around it.\nOcean The biggest water of all, and it is salty. Whales live there.\nTry It at Home\nActivity 1 — What is really inside soil?\nPut a spoonful of soil from the garden or a plant pot onto a white plate. Look at it closely with a magnifying glass (the zoom on a phone\ncamera works too). Ask him to name everything he can see: little stones, sand, bits of dead leaf, maybe a tiny insect or a worm. Soil is a\nmixture, not one single thing. Wash hands afterwards.\nActivity 2 — Be a geologist\nA geologist is a scientist who studies rocks. Collect five stones outside and sort them: big and small, rough and smooth, light and dark,\nheavy and light. Ask him to invent his own way of grouping them — then explain his rule to you.\nActivity 3 — Talk about litter\nAsk him: \"What happens if a bird tries to eat a plastic bag? What if a turtle swallows a bottle?\" Six‑year‑olds care deeply about this. Then\npick up three pieces of litter together on your next walk.\npond stream river lake ocean\nfrogs small, moving the Nile big and still the biggest, and salty\nThe water family, from the smallest to the biggest.\nMore examples to talk about\nRock is everywhere once you look: the stone wall, the marble floor, the bricks of the house, the sand at the beach (sand is just tiny broken\nrock), the pyramids, coal, and a diamond in a ring. Ask: \"How many things made of rock can you see from the window?\"\nSalty or not? Sea water is salty, river water is not. Let him taste a tiny pinch of salt in water so he knows what the sea tastes like — and why\nwe cannot drink it.\nSoil is alive with helpers: worms make tunnels so air and water reach the roots. Without soil there would be no vegetables and no bread.\nKey Words\nocean lake river stream pond rock soil geologist litter\n",
+  "sourceQuestions": [
+    {
+      "id": "u08.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Complete this sentence: Most of the Earth is covered in .",
+      "answerKeyText": "water",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u08.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Write the correct word next to each description. Use: ocean, river, lake, pond, stream\na) The biggest, saltiest water of all\nb) Small, still water where frogs live\nc) Big moving water where crocodiles live\nd) Big still water with land all around it",
+      "answerKeyText": "a) ocean b) pond c) river d) lake",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u08.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Where does each animal live? Write ocean, river or pond:\na) whale b) crocodile c) frog",
+      "answerKeyText": "a) ocean b) river c) pond",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u08.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Tick (✓) the things that are made from rock:\ndiamond plastic bottle coal T‑shirt chair stone wall",
+      "answerKeyText": "Made from rock: diamond, coal, stone wall. Not from rock: plastic bottle, T‑shirt, chair.",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u08.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Name three things you might find in a spoonful of soil.",
+      "answerKeyText": "Any three of: small stones, sand, bits of dead leaf or plant, worms, tiny insects, water, air.",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u08.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Complete: A geologist is a scientist who finds out about .",
+      "answerKeyText": "rocks (and the ground the Earth is made of)",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u08.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Write the water family in order, from the smallest to the biggest.",
+      "answerKeyText": "pond → stream → river → lake → ocean",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u08.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Look out of your window. Name two things you can see that are made from rock.",
+      "answerKeyText": "Child's own answers, for example: a stone wall, bricks, a marble floor, a pavement, sand, a mountain.",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u08.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "Most of the Earth is covered in ( sand ) ( water ) ( grass )",
+      "answerKeyText": "water",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u08.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Salty water is found in the ( river ) ( ocean ) ( pond )",
+      "answerKeyText": "ocean",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u08.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Soil is ( only sand ) ( a mixture of many things )",
+      "answerKeyText": "a mixture of many things",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u08.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Coal comes from ( rock ) ( plastic ) ( fabric )",
+      "answerKeyText": "rock",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u08.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "A geologist studies ( stars ) ( rocks ) ( animals )",
+      "answerKeyText": "rocks",
+      "sourcePages": [
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        36,
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

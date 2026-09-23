@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "unit_07",
+  "kind": "unit",
+  "title": "Electricity and Magnets",
+  "island": "physics",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    19,
+    20
+  ],
+  "introductionText": "Physics\nElectricity and Magnets\nStart with this, every single time\n\"Electricity is very useful, but it is dangerous. We never put our fingers, or anything else, into a socket. Only grown‑ups plug things in. We\nnever touch electrical things with wet hands.\"\nThe Big Idea — part 1: Some things need electricity to work. Some get it from the wall socket, and some get it from a battery.\nThe Big Idea — part 2: A magnet pulls (attracts) objects made of iron and steel only. It does not attract every metal, and it never attracts\nplastic, wood, paper or fabric.\nSay It Like This\nRead aloud\n\"A long time ago there was no electricity. To see at night, people lit a lantern with fire. To clean the floor, they used a broom. To write a\nletter, they used a pen. Now we press one switch and the lamp comes on. That is electricity doing the work for us.\"\nBefore electricity Today, with electricity\nlantern with a flame lamp\nbroom vacuum cleaner\nwashing dishes by hand dishwasher\ntypewriter computer\nhand whisk electric mixer\nTry It at Home\nThe magnet hunt — and the big surprise\nTake a fridge magnet around the house. Test a key, a spoon, a coin, an iron nail, a plastic button, a leaf, a piece of aluminium foil, a gold or\nsilver ring. He predicts each one first.\nHere is the surprise: aluminium foil is metal, and gold is metal — but the magnet completely ignores them. So \"it is metal\" is not the right\nanswer. The right answer is: a magnet only pulls iron and steel. Let him discover this himself; do not tell him first.\n+ −\na battery never touch a socket iron and steel only\ntorch, toy car, clock\nThree things to remember from this unit: batteries, socket safety, and what magnets really pull.\nMore examples to talk about\nPlug, battery, or neither? Sort these three ways: the fridge (plug), a wall clock (battery), a bicycle (neither), a mobile phone (battery, then\nplug to charge), a book (neither), the air conditioner (plug), a torch (battery), a chair (neither).\nWhere do we already use magnets? The fridge door seal, fridge magnets, a magnetic screwdriver, the catch on a cupboard door, the\nclosure on a handbag, headphones, some toys.\nA magnet through things: put a paper clip on a sheet of paper and move a magnet underneath. The clip moves! A magnet can pull through\npaper, cloth and even a thin plastic box.\niron / steel\nKey Words\nelectricity appliance battery switch magnet attract iron steel magnetic\n",
+  "sourceQuestions": [
+    {
+      "id": "u07.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Tick (✓) the things that need electricity to work:\ntelevision book vacuum cleaner lantern lamp chair dishwasher",
+      "answerKeyText": "Need electricity: television, vacuum cleaner, lamp, dishwasher. Do not: book, lantern (it uses a flame), chair.",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u07.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "What did people use before there was electricity?\na) instead of a lamp\nb) instead of a vacuum cleaner",
+      "answerKeyText": "a) a lantern or a candle b) a broom",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u07.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Yes or no?\na) A magnet attracts all metals. YES / NO\nb) A magnet does not attract all metals. YES / NO\nc) A magnet attracts only metals made from iron or steel. YES / NO",
+      "answerKeyText": "a) NO b) YES c) YES",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u07.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Circle the objects a magnet will pull:\nsteel key plastic button iron nail sock steel coat hanger leaf aluminium foil",
+      "answerKeyText": "The magnet pulls: steel key, iron nail, steel coat hanger. It does not pull the plastic button, the sock, the leaf or the aluminium foil.",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u07.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Some things work without a wall socket because they have a inside.",
+      "answerKeyText": "a battery",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u07.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Write the most important safety rule about electricity.",
+      "answerKeyText": "Never put fingers or objects into a socket; only a grown‑up plugs things in; never touch electrical things with wet hands.",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u07.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Sort these: fridge, wall clock, bicycle, torch, book, air conditioner\nUses a plug Uses a battery Uses neither",
+      "answerKeyText": "Plug: fridge, air conditioner. Battery: wall clock, torch. Neither: bicycle, book.",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u07.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Name two places in your home where a magnet is being used.",
+      "answerKeyText": "Any two: fridge magnets, the seal on the fridge door, a cupboard door catch, a handbag clasp, a magnetic screwdriver, headphones.",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u07.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "A magnet will pull ( a plastic button ) ( a steel key ) ( a leaf )",
+      "answerKeyText": "a steel key",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u07.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Before electricity, people lit a ( lamp ) ( lantern ) ( television )",
+      "answerKeyText": "lantern",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u07.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "A torch works using a ( battery ) ( wall socket )",
+      "answerKeyText": "battery",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u07.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "A magnet attracts ( all metals ) ( only iron and steel )",
+      "answerKeyText": "only iron and steel",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u07.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Putting your finger into a socket is ( safe ) ( never safe )",
+      "answerKeyText": "never safe",
+      "sourcePages": [
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

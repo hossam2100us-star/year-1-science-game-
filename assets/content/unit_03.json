@@ -1,0 +1,228 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "unit_03",
+  "kind": "unit",
+  "title": "Ourselves",
+  "island": "biology",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    8,
+    9,
+    10
+  ],
+  "introductionText": "Biology\nOurselves\nThe Big Idea: We can name the parts of our body, and we have five senses — sight, hearing, smell, taste and touch — that tell us about the\nworld. We can also measure and compare ourselves with other people.\nSay It Like This\nRead aloud\n\"You have five ways of finding out about the world. You see with your eyes. You hear with your ears. You smell with your nose. You taste\nwith your tongue. And you touch with your skin. Five senses. Let's count them on your fingers!\"\nThe words to practise\nBody parts head, neck, chin, shoulder, arm, elbow, wrist, hand, fingers, leg, knee, ankle, foot\nAround the eye eyebrow, eyelash, eyelid\nThe five senses sight (eyes), hearing (ears), smell (nose), taste (tongue), touch (skin)\nTastes sweet, salty, sour — found by the taste buds on the tongue\nA science job an optometrist — the eye doctor who checks that eyes see clearly and gives people glasses\nTry It at Home\nActivity 1 — Taste needs smell\nCover his eyes and ask him to hold his own nose closed. Give him a small piece of apple, then a small piece of potato or pear. He will barely\ntell them apart! Now let him release his nose — suddenly the taste appears. Smell and taste work together.\nActivity 2 — Who has the biggest hand?\nThis is his first real measuring. Two ways:\n• Fill a bowl with dried beans. Each person takes one handful and counts them. The biggest hand holds the most.\n• Or trace each person's hand on squared paper and count the squares inside.\nThen put the results in a simple table. He is learning to measure, record and compare — the skill behind all science.\nhead\near\nneck\nshoulder\narm\nelbow\nhand wrist\nknee leg\nfoot\nPoint to each part on Seif's own body as you read the word aloud. Then add three more labels together: chin, fingers and ankle.\neyebrow — keeps sweat out\neyelash — keeps dust out\neyelid — the door that blinks\nEvery part around the eye has a job — they all protect it.\nMore examples to talk about\nWhich sense is telling you? Play this at the table — you name something and he names the sense (or senses):\n• The bread is burning → smell • The lemon is sour → taste\n• The traffic outside → hearing • The tea is too hot → touch\n• The traffic light turned green → sight\n• A slice of watermelon → sight, smell, touch and taste all together!\nThen ask the hard one: \"If you close your eyes, can you still find your cup? Which senses help you now?\"\nKey Words\nsenses sight hearing smell taste touch taste buds optometrist measure\n",
+  "sourceQuestions": [
+    {
+      "id": "u03.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Match each sense to the body part you use. Draw a line:\nsmell — ears\ntouch — eyes\nsight — tongue\nhearing — skin\ntaste — nose",
+      "answerKeyText": "smell – nose | touch – skin | sight – eyes | hearing – ears | taste – tongue",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u03.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Complete the sentences. Use: five, taste buds, nose, sweet\na) There are senses.\nb) There are on the tongue.\nc) If you hold your when you eat an apple, you cannot taste it very well.\nd) Taste buds help you taste , sour and salty foods.",
+      "answerKeyText": "a) five b) taste buds c) nose d) sweet",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u03.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Name the three parts around your eye:",
+      "answerKeyText": "eyebrow, eyelash, eyelid",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u03.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Three children each took one handful of marbles. David got 6, Zara got 9, Jack got 5.\na) Who has the biggest hand?\nb) Who has the smallest hand?",
+      "answerKeyText": "a) Zara (9 marbles) b) Jack (5 marbles)",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u03.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "An optometrist looks after your: teeth / hair / eyes",
+      "answerKeyText": "eyes",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u03.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Write one sentence about something you can do with each sense. Example: I can smell flowers with my nose.",
+      "answerKeyText": "Child's own sentences, for example: I can see birds with my eyes. I can hear music with my ears. I can touch the soft cat with my skin. I can\ntaste sweet honey with my tongue.",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u03.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Which two senses work together when you eat an apple?",
+      "answerKeyText": "Taste and smell. If you hold your nose you can hardly taste the apple at all.",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u03.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Measure and compare. Write the shoe size of two people in your family.\nName Shoe size\nWho wears the bigger shoe?",
+      "answerKeyText": "Child's own measurements. Accept any answer where he has compared the two numbers correctly.",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u03.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "You hear with your ( eyes ) ( ears ) ( nose )",
+      "answerKeyText": "ears",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u03.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Your taste buds are on your ( tongue ) ( skin ) ( ear )",
+      "answerKeyText": "tongue",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u03.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "How many senses do we have? ( three ) ( five ) ( ten )",
+      "answerKeyText": "five",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u03.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Your eyelashes keep out ( dust ) ( sound ) ( food )",
+      "answerKeyText": "dust",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u03.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Between your wrist and your shoulder is your ( knee ) ( elbow ) ( ankle )",
+      "answerKeyText": "elbow",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

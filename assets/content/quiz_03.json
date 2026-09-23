@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "quiz_03",
+  "kind": "quiz",
+  "title": "Physics Quiz",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    21
+  ],
+  "sourceQuestions": [
+    {
+      "id": "quiz03.01",
+      "number": 1,
+      "sourceText": "Opening a drawer is a: push / pull",
+      "answerKeyText": "pull",
+      "sourcePages": [
+        21
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz03.02",
+      "number": 2,
+      "sourceText": "Ringing a doorbell is a: push / pull",
+      "answerKeyText": "push",
+      "sourcePages": [
+        21
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz03.03",
+      "number": 3,
+      "sourceText": "Circle the things that float:\nstone cork coin closed plastic bottle metal spoon",
+      "answerKeyText": "cork and closed plastic bottle",
+      "sourcePages": [
+        21
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz03.04",
+      "number": 4,
+      "sourceText": "What do we call anything that makes a sound?",
+      "answerKeyText": "a source of sound",
+      "sourcePages": [
+        21
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz03.05",
+      "number": 5,
+      "sourceText": "What happens to a sound as you walk further away from it?",
+      "answerKeyText": "It gets fainter and quieter, until you cannot hear it at all",
+      "sourcePages": [
+        21
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz03.06",
+      "number": 6,
+      "sourceText": "To make a sound with a trumpet you must it.",
+      "answerKeyText": "blow",
+      "sourcePages": [
+        21
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz03.07",
+      "number": 7,
+      "sourceText": "Which part of your body do you hear with?",
+      "answerKeyText": "my ears",
+      "sourcePages": [
+        21
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz03.08",
+      "number": 8,
+      "sourceText": "A magnet attracts objects made from and .",
+      "answerKeyText": "iron and steel",
+      "sourcePages": [
+        21
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz03.09",
+      "number": 9,
+      "sourceText": "True or false? A magnet attracts every kind of metal. TRUE / FALSE",
+      "answerKeyText": "FALSE — it ignores aluminium, gold and many other metals",
+      "sourcePages": [
+        21
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz03.10",
+      "number": 10,
+      "sourceText": "Write one thing in your home that works using a battery.",
+      "answerKeyText": "Any one: torch, wall clock, remote control, toy car, mobile phone",
+      "sourcePages": [
+        21
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "playableQuestions": [],
+  "status": "source_draft",
+  "scoreBands": [
+    {
+      "min": 8,
+      "max": 10
+    },
+    {
+      "min": 5,
+      "max": 7
+    },
+    {
+      "min": 0,
+      "max": 4
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "unit_06",
+  "kind": "unit",
+  "title": "Sound",
+  "island": "physics",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    17,
+    18
+  ],
+  "introductionText": "Physics\nSound\nThe Big Idea: Every sound comes from something — we call that thing a source of sound. We hear sounds with our ears. And a sound gets\nfainter and fainter the further you go away from it.\nSay It Like This\nRead aloud\n\"Close your eyes and listen. What can you hear? A car outside? A bird? The fan? Every one of those sounds came from something. That\nsomething is called a source of sound. The lion roars, the clock ticks, the bell rings — and your ears catch all of it.\"\nDifferent instruments, different actions\nYou hit it triangle, cymbals\nYou shake it maracas, tambourine\nYou blow it trumpet, whistle\nYou pluck it sitar, oud, guitar\nYou beat it drum\ntriangle maracas trumpet sitar drum\nHIT SHAKE BLOW PLUCK BEAT\nFive instruments, five different actions. Which ones can you make from a box and a rubber band?\nTry It at Home\nActivity 1 — Sound boxes\nTake three small empty boxes or plastic containers. Put rice in the first, a stone or a coin in the second, cotton wool or a feather in the\nthird. Close them and shake each one. Ask: \"Which is loud? Which is quiet? Why do you think?\" Hard, heavy things make loud sounds.\nSoft, light things make almost none.\nActivity 2 — How far can you hear it?\nStand in one place and bang a pot with a wooden spoon. He walks away one step at a time, counting his steps, until he cannot hear it any\nmore. Write the number down. Now bang the pot harder and repeat. He can walk further this time.\nTwo lessons in one game: a louder sound travels further, and every sound gets fainter with distance.\ndrum 20 steps away\nloud quieter fainter and fainter\nThe further the sound travels, the fainter it gets — until the ear cannot catch it.\nMore examples to talk about\nName the source: the doorbell, the call to prayer, a car horn, the kettle whistling, a baby crying, the fan, rain on the window, your own\nvoice (your throat is a source of sound!).\nLoud or quiet? A whisper, a shout, a pin dropping, a door slamming, a cat's paws, thunder. Sort them from quietest to loudest on a line\ndrawn on paper.\nFeel the sound: put his hand gently on his throat and ask him to hum. He can feel the buzzing. Do the same on a drum skin while it is\nbeaten. Sound and shaking go together.\nKey Words\nsound source of sound loud quiet fainter ears hit shake blow pluck\n",
+  "sourceQuestions": [
+    {
+      "id": "u06.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Which part of your body do you use to hear?",
+      "answerKeyText": "My ears.",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u06.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Write the action you use to make a sound with each instrument. Use: hit, shake, blow, pluck, beat\na) triangle b) maracas\nc) trumpet d) sitar e) drum",
+      "answerKeyText": "a) hit b) shake c) blow d) pluck e) beat",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u06.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Two boxes are shaken. One has a stone inside, one has a feather inside. Which one makes the louder sound? stone / feather",
+      "answerKeyText": "The stone — it is hard and heavy, so it makes a much louder sound than a feather.",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u06.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Complete the sentence: As you walk away from a drum, the sound gets and .",
+      "answerKeyText": "quieter and fainter (accept: softer, harder to hear)",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u06.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Four children walked away from a drum until they could not hear it. Annay stopped at 20 steps, Zara at 14, Maris at 23, David at 8.\na) Who could hear the drum from the furthest away?\nb) How many steps did Maris take?",
+      "answerKeyText": "a) Maris (23 steps) b) 23 steps",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u06.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "How could you make a louder sound with two tapping sticks?",
+      "answerKeyText": "Tap them together harder. (A bigger push makes a louder sound.)",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u06.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Put these in order from the quietest to the loudest:thunder, a whisper, a door slamming, a cat walking",
+      "answerKeyText": "A cat walking → a whisper → a door slamming → thunder.",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u06.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Put your hand on your throat and hum. What can you feel?",
+      "answerKeyText": "A buzzing or shaking under his hand. Sound is made by something shaking very fast.",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u06.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "You make a sound on a drum by ( blowing ) ( beating ) ( plucking )",
+      "answerKeyText": "beating",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u06.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "As you walk away, a sound becomes ( louder ) ( fainter )",
+      "answerKeyText": "fainter",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u06.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Which makes the louder sound inside a shaken box? ( a feather ) ( a stone )",
+      "answerKeyText": "a stone",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u06.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Anything that makes a sound is called a ( source of sound ) ( sink of sound )",
+      "answerKeyText": "source of sound",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u06.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "You blow a ( trumpet ) ( sitar ) ( triangle )",
+      "answerKeyText": "trumpet",
+      "sourcePages": [
+        17,
+        18
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

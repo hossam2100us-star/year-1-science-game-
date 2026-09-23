@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "unit_02",
+  "kind": "unit",
+  "title": "Plants",
+  "island": "biology",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    6,
+    7
+  ],
+  "introductionText": "Biology\nPlants\nThe Big Idea: A plant has four main parts and each part has a job. A seed needs water to start growing, and a plant needs water and light\nto stay healthy.\nSay It Like This — give every part a job\nRoots — \"the plant's straws\". They drink water from the soil and hold the plant down so the wind cannot blow it\naway.\nStem — \"the plant's neck\". It holds the plant up and carries the water all the way to the leaves.\nLeaf — \"the plant's kitchen\". Leaves catch the sunlight and use it to make the plant's food.\nFlower — \"where the babies are made\". The flower makes the seeds that grow into new plants.\nWatch Out For\n\"The plant eats the soil\"\nChildren think the plant sucks up food from the ground like soup. Correct it simply: \"The roots drink the water. The leaves make the food\nfrom sunlight.\" That is why a plant in a dark cupboard goes pale and floppy even when you water it.\nTry It at Home\nActivity 1 — The bean in a glass (8 days)\nPush wet cotton wool into a clear glass. Slide two or three dry beans down the side of the glass so they are pressed against it and he can\nwatch them. Keep the cotton damp. Every morning he looks and draws what he sees.\nDay 1: nothing. Day 4: a small white root pushes downwards. Day 7: a shoot pushes upwards. Day 8: the first tiny green leaves open.\nActivity 2 — The light test (9 days)\nPlant two young beans the same way in two pots. Put one on a sunny windowsill and one inside a dark cupboard. Water both exactly the\nsame. After nine days, bring them together and compare. The plant in the light is green, short and strong. The plant in the dark is pale\nyellow, long, thin and floppy. He will never forget that plants need light.\nDay 1 Day 4 Day 7 Day 8\nnothing yet a root goes down a shoot goes up first green leaves\nWhat he should see in the glass. Let him draw his own version each morning.\nMore examples to talk about\nWe eat different parts of plants! This one always surprises children:\n• We eat the root of a carrot and a radish.\n• We eat the stem of celery and sugar cane.\n• We eat the leaves of lettuce, mint and parsley.\n• We eat the flower of cauliflower and broccoli.\n• We eat the seeds of beans, rice, lentils and peas.\nOpen the fridge together and sort the vegetables into these five groups.\nKey Words\nroots stem leaf flower petal seed grow healthy\n",
+  "sourceQuestions": [
+    {
+      "id": "u02.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Write the name of the plant part that does each job:\na) It drinks water from the soil.\nb) It holds the plant up.\nc) It catches the sunlight.\nd) It makes the seeds.",
+      "answerKeyText": "a) roots b) stem c) leaf (leaves) d) flower",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u02.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Which part of the plant comes out of the seed first? the root / the leaf",
+      "answerKeyText": "The root comes first — the seed needs a drink before it can grow upwards.",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u02.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "What two things does a plant need to stay healthy?",
+      "answerKeyText": "Water and light. (Warmth and air are also correct if he says them.)",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u02.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "A plant was kept in a dark cupboard for nine days. Circle the words that describe it:\ngreen pale yellow thick stem thin floppy stem healthy not healthy",
+      "answerKeyText": "pale yellow, thin floppy stem, not healthy",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u02.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "True or false?\na) Seeds need water to start growing. TRUE / FALSE\nb) A plant is not a living thing. TRUE / FALSE\nc) Leaves make the food for the plant. TRUE / FALSE",
+      "answerKeyText": "a) TRUE b) FALSE — a plant is a living thing c) TRUE",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u02.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Go on a plant hunt outside. Draw one plant you find and label its roots, stem, leaf and flower.",
+      "answerKeyText": "Child's own drawing, with roots, stem, leaf and flower labelled.",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u02.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "What would happen to a plant if we stopped watering it for two weeks?",
+      "answerKeyText": "It would dry out: the leaves would droop and go brown, and in the end the plant would die.",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u02.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Name a vegetable where we eat the root, and one where we eat the leaves.",
+      "answerKeyText": "Root: carrot, radish, beetroot. Leaves: lettuce, mint, parsley, spinach.",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u02.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "The part that holds the plant up is the ( root ) ( stem ) ( flower )",
+      "answerKeyText": "stem",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u02.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Leaves make the plant's food using ( sunlight ) ( soil ) ( wind )",
+      "answerKeyText": "sunlight",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u02.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Seeds are made inside the ( leaf ) ( flower ) ( root )",
+      "answerKeyText": "flower",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u02.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "When we eat a carrot we are eating the ( root ) ( stem ) ( flower )",
+      "answerKeyText": "root",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u02.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "A plant kept with no light will look ( green and strong ) ( pale and floppy )",
+      "answerKeyText": "pale and floppy",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

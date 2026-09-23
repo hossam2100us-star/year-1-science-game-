@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "quiz_02",
+  "kind": "quiz",
+  "title": "Chemistry Quiz",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    14
+  ],
+  "sourceQuestions": [
+    {
+      "id": "quiz02.01",
+      "number": 1,
+      "sourceText": "A wooden chair: the object is and the material is .",
+      "answerKeyText": "object = chair; material = wood",
+      "sourcePages": [
+        14
+      ],
+      "answerKeyPages": [
+        37,
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz02.02",
+      "number": 2,
+      "sourceText": "Name four different materials.",
+      "answerKeyText": "Any four: wood, metal, plastic, glass, fabric, paper, clay, rubber",
+      "sourcePages": [
+        14
+      ],
+      "answerKeyPages": [
+        37,
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz02.03",
+      "number": 3,
+      "sourceText": "Which material can you see through? wood glass metal",
+      "answerKeyText": "glass",
+      "sourcePages": [
+        14
+      ],
+      "answerKeyPages": [
+        37,
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz02.04",
+      "number": 4,
+      "sourceText": "Which of these is waterproof? paper plastic cotton cloth",
+      "answerKeyText": "plastic",
+      "sourcePages": [
+        14
+      ],
+      "answerKeyPages": [
+        37,
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz02.05",
+      "number": 5,
+      "sourceText": "Most metals are: soft and fluffy / hard and shiny",
+      "answerKeyText": "hard and shiny",
+      "sourcePages": [
+        14
+      ],
+      "answerKeyPages": [
+        37,
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz02.06",
+      "number": 6,
+      "sourceText": "Write the four words we use for changing the shape of a material.",
+      "answerKeyText": "twist, stretch, squash, bend",
+      "sourcePages": [
+        14
+      ],
+      "answerKeyPages": [
+        37,
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz02.07",
+      "number": 7,
+      "sourceText": "Which one can you stretch? a rubber band / a brick",
+      "answerKeyText": "a rubber band",
+      "sourcePages": [
+        14
+      ],
+      "answerKeyPages": [
+        37,
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz02.08",
+      "number": 8,
+      "sourceText": "A potter works with which material?",
+      "answerKeyText": "clay",
+      "sourcePages": [
+        14
+      ],
+      "answerKeyPages": [
+        37,
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz02.09",
+      "number": 9,
+      "sourceText": "True or false? All glass is red. TRUE / FALSE",
+      "answerKeyText": "FALSE — glass can be any colour, and much of it is clear",
+      "sourcePages": [
+        14
+      ],
+      "answerKeyPages": [
+        37,
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz02.10",
+      "number": 10,
+      "sourceText": "Name two objects in your kitchen made from metal.",
+      "answerKeyText": "Any two: spoon, fork, knife, pan, kettle, tap, tray",
+      "sourcePages": [
+        14
+      ],
+      "answerKeyPages": [
+        37,
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "playableQuestions": [],
+  "status": "source_draft",
+  "scoreBands": [
+    {
+      "min": 8,
+      "max": 10
+    },
+    {
+      "min": 5,
+      "max": 7
+    },
+    {
+      "min": 0,
+      "max": 4
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "0.1.0",
+  "sourceFile": "curriculum/Science_Made_Simple.pdf",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "pageCount": 39,
+  "units": [
+    {
+      "id": "unit_01",
+      "pages": [
+        4,
+        5
+      ],
+      "mainQuestions": 8,
+      "choiceQuestions": 5,
+      "answerKeyPages": [
+        35
+      ]
+    },
+    {
+      "id": "unit_02",
+      "pages": [
+        6,
+        7
+      ],
+      "mainQuestions": 8,
+      "choiceQuestions": 5,
+      "answerKeyPages": [
+        35
+      ]
+    },
+    {
+      "id": "unit_03",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "mainQuestions": 8,
+      "choiceQuestions": 5,
+      "answerKeyPages": [
+        35
+      ]
+    },
+    {
+      "id": "unit_04",
+      "pages": [
+        12,
+        13
+      ],
+      "mainQuestions": 8,
+      "choiceQuestions": 5,
+      "answerKeyPages": [
+        35,
+        36
+      ]
+    },
+    {
+      "id": "unit_05",
+      "pages": [
+        15,
+        16
+      ],
+      "mainQuestions": 8,
+      "choiceQuestions": 5,
+      "answerKeyPages": [
+        36
+      ]
+    },
+    {
+      "id": "unit_06",
+      "pages": [
+        17,
+        18
+      ],
+      "mainQuestions": 8,
+      "choiceQuestions": 5,
+      "answerKeyPages": [
+        36
+      ]
+    },
+    {
+      "id": "unit_07",
+      "pages": [
+        19,
+        20
+      ],
+      "mainQuestions": 8,
+      "choiceQuestions": 5,
+      "answerKeyPages": [
+        36
+      ]
+    },
+    {
+      "id": "unit_08",
+      "pages": [
+        22,
+        23
+      ],
+      "mainQuestions": 8,
+      "choiceQuestions": 5,
+      "answerKeyPages": [
+        36,
+        37
+      ]
+    },
+    {
+      "id": "unit_09",
+      "pages": [
+        24,
+        25
+      ],
+      "mainQuestions": 8,
+      "choiceQuestions": 5,
+      "answerKeyPages": [
+        37
+      ]
+    }
+  ],
+  "quizCount": 4,
+  "quizQuestionCount": 40,
+  "unitQuestionCount": 117,
+  "chartQuestionCount": 10,
+  "selfCheckCount": 20,
+  "status": "source_draft"
+}

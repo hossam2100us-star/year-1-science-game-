@@ -1,0 +1,56 @@
+{
+  "id": "u01.choice.01",
+  "schemaVersion": "1.0.0",
+  "contentVersion": 1,
+  "type": "tap-choice",
+  "source": {
+    "questionId": "u01.choice.01",
+    "pages": [
+      5
+    ],
+    "answerKeyPages": [
+      35
+    ],
+    "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+  },
+  "prompt": {
+    "en": "Find the living thing."
+  },
+  "options": [
+    {
+      "id": "car",
+      "text": {
+        "en": "a car"
+      }
+    },
+    {
+      "id": "tree",
+      "text": {
+        "en": "a tree"
+      }
+    },
+    {
+      "id": "chair",
+      "text": {
+        "en": "a chair"
+      }
+    }
+  ],
+  "answer": {
+    "kind": "single",
+    "optionId": "tree"
+  },
+  "hint": {
+    "en": "Moving is not enough.",
+    "pages": [
+      4
+    ]
+  },
+  "explanation": {
+    "en": "And a tree is alive too — it drinks water, it grows taller, and it makes seeds that become baby trees.",
+    "pages": [
+      4
+    ]
+  },
+  "safetyIds": []
+}

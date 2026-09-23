@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "quiz_04",
+  "kind": "quiz",
+  "title": "Earth and Space Quiz",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    26
+  ],
+  "sourceQuestions": [
+    {
+      "id": "quiz04.01",
+      "number": 1,
+      "sourceText": "Most of the Earth is covered in .",
+      "answerKeyText": "water",
+      "sourcePages": [
+        26
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz04.02",
+      "number": 2,
+      "sourceText": "Which is the biggest and the saltiest? pond lake ocean",
+      "answerKeyText": "ocean",
+      "sourcePages": [
+        26
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz04.03",
+      "number": 3,
+      "sourceText": "Name two things you might find inside a spoonful of soil.",
+      "answerKeyText": "Any two: small stones, sand, dead leaves, worms, tiny insects, water, air",
+      "sourcePages": [
+        26
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz04.04",
+      "number": 4,
+      "sourceText": "A scientist who studies rocks is called a .",
+      "answerKeyText": "geologist",
+      "sourcePages": [
+        26
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz04.05",
+      "number": 5,
+      "sourceText": "The Earth is shaped like: a plate / a ball / a box",
+      "answerKeyText": "a ball",
+      "sourcePages": [
+        26
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz04.06",
+      "number": 6,
+      "sourceText": "The Sun is a .",
+      "answerKeyText": "star",
+      "sourcePages": [
+        26
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz04.07",
+      "number": 7,
+      "sourceText": "The Sun gives us and .",
+      "answerKeyText": "heat and light",
+      "sourcePages": [
+        26
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz04.08",
+      "number": 8,
+      "sourceText": "True or false? Our heat and light come from the Moon. TRUE / FALSE",
+      "answerKeyText": "FALSE — they come from the Sun",
+      "sourcePages": [
+        26
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz04.09",
+      "number": 9,
+      "sourceText": "Who was the first person to walk on the Moon, and in which year?",
+      "answerKeyText": "Neil Armstrong, in 1969",
+      "sourcePages": [
+        26
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz04.10",
+      "number": 10,
+      "sourceText": "Why does an astronaut need an oxygen pack on his back?",
+      "answerKeyText": "There is no air on the Moon, so he must carry his own air to breathe",
+      "sourcePages": [
+        26
+      ],
+      "answerKeyPages": [
+        38
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "playableQuestions": [],
+  "status": "source_draft",
+  "scoreBands": [
+    {
+      "min": 8,
+      "max": 10
+    },
+    {
+      "min": 5,
+      "max": 7
+    },
+    {
+      "min": 0,
+      "max": 4
+    }
+  ]
+}

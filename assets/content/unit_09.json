@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "unit_09",
+  "kind": "unit",
+  "title": "Earth in Space",
+  "island": "earth_space",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    24,
+    25
+  ],
+  "introductionText": "Earth and Space\nEarth in Space\nThe Big Idea: We live on a planet called Earth. It is round like a ball, not flat, and from space it looks mostly blue because of all its water.\nThe Sun is a star, and it gives us heat and light.\nSafety\n\"We never, ever look straight at the Sun, not even for a moment. It can hurt your eyes badly.\"\nSay It Like This\nRead aloud\n\"Look up at night. All those tiny dots are stars. Now here is something amazing: the Sun is a star too! It only looks big and bright because it\nis much, much closer to us than all the others. And the Sun is what keeps us warm and gives us daylight — not the Moon. The Moon has no\nlight of its own.\"\nheat + light\nThe Earth (a planet)\nThe Sun (a star)\nThe Moon story\nThe first person to walk on the Moon was Neil Armstrong, in 1969. He needed a special suit with a visor to protect his eyes from the Sun, an\noxygen pack on his back to breathe (there is no air on the Moon), thick gloves and heavy boots. A person who studies the stars is an\nastronomer, and looking at stars for fun is called astronomy.\nTry It at Home\nStar spotting\nGo outside after dark, away from bright lights if you can. Look for the brightest stars. Join a few of them with your finger to make a shape\n— that is exactly what people have done for thousands of years, and it is how star pictures like Libra and Cygnus got their names. Let him\ninvent a shape of his own and give it a name.\nvisor — protects his eyes\noxygen pack — so he can breathe\ngloves — protect his hands\nboots — protect his feet\nThere is no air on the Moon, so an astronaut must carry his own.\nMore examples to talk about\nDay and night at home: take a ball and a torch in a dark room. Shine the torch on one side — that side is having day, the other side is\nhaving night. Turn the ball slowly. He has just seen why the Sun rises and sets.\nWhat the Sun does for us every day: it warms the air, it dries the washing, it makes plants grow, it gives us daylight, and it warms the sea.\nAsk: \"What would happen if the Sun went out?\"\nStar or planet? A star makes its own light (the Sun). A planet does not — it is lit up, like the Earth. The Moon has no light of its own either;\nthe Sun shines on it.\nKey Words\nEarth planet Sun star Moon heat light astronaut astronomy\n",
+  "sourceQuestions": [
+    {
+      "id": "u09.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Tick (✓) the correct sentences and cross (✗) the wrong ones:\na) The Earth is flat.\nb) The Earth is a planet.\nc) The Earth is mostly covered in water.\nd) Humans can live on planet Earth.\ne) The Earth gets its heat and light from the Moon.",
+      "answerKeyText": "a) ✗ b) ✓ c) ✓ d) ✓ e) ✗ — heat and light come from the Sun, not the Moon.",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u09.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "The Sun is a: planet / star / moon",
+      "answerKeyText": "a star",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u09.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Tick (✓) the things the Sun gives us:\nlight heat sound air water",
+      "answerKeyText": "light and heat only. Not sound, air or water.",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u09.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Who was the first person to walk on the Moon, and in which year?",
+      "answerKeyText": "Neil Armstrong, in 1969.",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u09.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Name two parts of an astronaut's space suit and say what each one is for.",
+      "answerKeyText": "Any two: visor — protects his eyes; oxygen pack — lets him breathe, because there is no air on the Moon; gloves — protect his hands; boots\n— protect his feet.",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u09.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Write the safety rule about looking at the Sun.",
+      "answerKeyText": "Never look straight at the Sun — it can badly hurt your eyes.",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u09.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Draw the Earth as it looks from space. Colour the water blue and the land green.",
+      "answerKeyText": "Child's own drawing: a round Earth with much more blue than green.",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u09.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Write two things the Sun does for us every single day.",
+      "answerKeyText": "Any two: it warms us, it gives us daylight, it dries the washing, it makes plants grow, it warms the sea.",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u09.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "The Earth is a ( star ) ( planet ) ( moon )",
+      "answerKeyText": "planet",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u09.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "The Sun is a ( star ) ( planet ) ( moon )",
+      "answerKeyText": "star",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u09.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "From space the Earth looks mostly ( red ) ( blue ) ( black )",
+      "answerKeyText": "blue",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u09.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "There is no ( air ) ( rock ) ( dust ) on the Moon",
+      "answerKeyText": "air",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u09.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "A person who studies the stars is an ( astronomer ) ( optometrist ) ( geologist )",
+      "answerKeyText": "astronomer",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

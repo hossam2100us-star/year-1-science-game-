@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "unit_04",
+  "kind": "unit",
+  "title": "Material Properties",
+  "island": "materials",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    12,
+    13
+  ],
+  "introductionText": "Chemistry\nMaterial Properties\nThe Big Idea: An object is the thing itself. A material is what the thing is made from. Every material has its own properties — how it feels,\nwhether it is hard or soft, shiny or dull, and whether it keeps water out.\nSay It Like This\nRead aloud\n\"Hold this spoon. The spoon is the object — that's its name. But what is it made of? Metal! Metal is the material. Now look — here is a\nwooden spoon and here is a plastic spoon. Same object, three different materials!\"\nMaterial What it is usually like Found in the house\nMetal hard, shiny, cold to touch, strong spoon, pan, key, nail\nWood hard, can be rough or smooth, floats chair, door, pencil\nPlastic light, bendy, waterproof, many colours bottle, bucket, toy\nGlass hard, smooth, see‑through, breaks easily window, cup, mirror\nFabric soft, bendy, lets water through clothes, towel, curtain\nPaper light, thin, tears easily, soaks up water book, tissue, box\nClay soft and sticky when wet, hard when dry pot, brick, plate\nA potter is a person who uses science to change the shape of clay and make it hard.\nTry It at Home\nActivity 1 — The waterproof test\nTake four cups. Stretch a different material over the top of each one and hold it with a rubber band: kitchen tissue, a piece of plastic bag, a\npiece of cotton cloth, aluminium foil. Let him predict first — write down his guesses. Then spoon a little water onto each. The plastic and\nthe foil keep the water out. The tissue and the cloth let it through. Now compare: which predictions were right?\nActivity 2 — Twist, stretch, squash, bend\nLine up a piece of dough, a rubber band, a sponge, a metal spoon, a paper straw and a stone. Try each of the four actions on each item.\nWhich materials change shape? Which refuse?\nwood metal plastic glass fabric paper\nhard, floats shiny, cold light, waterproof see-through soft, bendy thin, tears\nSix materials to find in one room. How many can he point at in two minutes?\nMore examples to talk about — why that material?\nThis is the real science: we choose a material because of its properties.\n• Windows are glass — because we need to see through them.\n• Pans are metal — because metal does not burn on the fire.\n• An umbrella is plastic or coated fabric — because it must be waterproof.\n• A pillow is soft fabric — because a metal pillow would hurt!\nThe funny game: ask him what would happen with a paper umbrella, a glass football, a chocolate teapot, or fabric shoes in the rain.\nLaughing at wrong materials teaches the idea faster than any list.\nSafety\nGlass objects are for looking at and talking about, not for testing. Use a plastic cup when you want to talk about \"see‑through\".\nKey Words\nobject material property texture waterproof transparent twist stretch squash bend\n",
+  "sourceQuestions": [
+    {
+      "id": "u04.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Complete the sentences. Use: materials, objects\na) Everything around you is made from one or more .\nb) All are made from one or more materials.",
+      "answerKeyText": "a) materials b) objects",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u04.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Write the material each object is made from:\na) a window b) a T‑shirt\nc) a nail d) a newspaper",
+      "answerKeyText": "a) glass b) fabric (cotton) c) metal d) paper",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u04.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Tick (✓) the words that describe most metals:\nfurry hard fluffy shiny cold to touch",
+      "answerKeyText": "hard, shiny, cold to touch",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u04.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "True or false?\na) Glass can break. TRUE / FALSE\nb) Glass is soft. TRUE / FALSE\nc) Glass can be transparent (see‑through). TRUE / FALSE\nd) All glass is red. TRUE / FALSE",
+      "answerKeyText": "a) TRUE b) FALSE c) TRUE d) FALSE",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u04.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Which of these are waterproof? Circle them:\nplastic cotton cloth paper tissue paper aluminium foil",
+      "answerKeyText": "Waterproof: plastic and aluminium foil. Not waterproof: cotton cloth, paper, tissue paper.",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u04.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Write one object you can squash, and one object you cannot squash.",
+      "answerKeyText": "Can squash: sponge, dough, bread, a plastic bottle, cotton wool. Cannot squash: a brick, a stone, a metal spoon, a wooden block.",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u04.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Why are windows made from glass and not from wood?",
+      "answerKeyText": "Because glass is transparent — we need to see through a window, and you cannot see through wood.",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u04.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "A pencil is made from more than one material. Name two of them.",
+      "answerKeyText": "Wood (the body), graphite or lead (the writing part), metal (the ring) and rubber (the eraser). Any two are correct.",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u04.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "A window is made from ( glass ) ( fabric ) ( clay )",
+      "answerKeyText": "glass",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u04.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Which one is waterproof? ( paper ) ( plastic ) ( cotton cloth )",
+      "answerKeyText": "plastic",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u04.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Most metal feels ( warm and fluffy ) ( cold and hard )",
+      "answerKeyText": "cold and hard",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u04.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Which one can you stretch? ( a stone ) ( a rubber band ) ( a brick )",
+      "answerKeyText": "a rubber band",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u04.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "A potter works with ( clay ) ( glass ) ( metal )",
+      "answerKeyText": "clay",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "answerKeyPages": [
+        35,
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

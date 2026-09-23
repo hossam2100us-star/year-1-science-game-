@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "unit_05",
+  "kind": "unit",
+  "title": "Forces",
+  "island": "physics",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    15,
+    16
+  ],
+  "introductionText": "Physics\nForces — Pushes and Pulls\nThe Big Idea: Nothing moves by itself. Everything that moves has been pushed or pulled. A push sends something away from you. A pull\nbrings it towards you.\nSay It Like This\nRead aloud, standing at a door\n\"When you push, you send the thing away from you. When you pull, you bring it towards you. Now — this door. Is it a push or a pull? What\nabout the drawer? What about the doorbell? What about a swing — ah, a swing is both!\"\nPUSH — away from me PULL — towards me\nAlso in this unit — the movement words\nroll (a ball) • fly (a bird) • swim (a fish) • run (a child) • hop (a kangaroo) • slither (a snake) • crawl (a baby)\nroll fly swim hop slither crawl\na ball a bird a fish a kangaroo a snake a baby\nAct each one out together across the room — he will remember the words far better.\nTry It at Home\nActivity 1 — Float or sink\nFill a bowl or the sink. Line up: an apple, a stone, a closed plastic bottle, a metal spoon, a coin, a cork, a plastic pot, a small ball. He predicts\nevery single one first and you write the guesses in two columns. Then drop them in one at a time and check.\nA lovely question to leave hanging: \"A small metal nail sinks — so how does a huge metal ship float?\" You do not have to answer it.\nWondering is the point.\nActivity 2 — Make a sailboat\nFold a small boat from aluminium foil. Push a straw through a paper square to make a sail and stand it in the boat. Float it in the bowl and\nblow. Then ask: \"Did I push it or pull it?\" (A push — with air.)\nthese FLOAT on top\napple bottle cork\nstone coin spoon\nthese SINK to the bottom\nDraw this tank on paper and let him place each object himself before you test it.\nMore examples to talk about\nPushes and pulls hiding all around the house: pressing a light switch (push), opening the fridge (pull), closing a zip (pull), kicking a ball\n(push), brushing teeth (push and pull), stirring tea (push), a donkey cart in the street (pull), a swing (both).\nA bigger push does more: roll a ball gently, then hard. Same ball, different push, different distance. Ask: \"What did I change?\"\nFloat and sink surprises to try: an orange floats with its peel on but sinks when you peel it. A grape sinks in plain water. A ball of foil sinks,\nbut the same foil shaped into a boat floats.\nKey Words\nforce push pull float sink predict\n",
+  "sourceQuestions": [
+    {
+      "id": "u05.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Complete the sentences. Use: push, pull\na) When you , you move the object away from you.\nb) When you , you move the object towards you.",
+      "answerKeyText": "a) push b) pull",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u05.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Push, pull, or both? Write your answer next to each one:\na) a doorbell b) a drawer\nc) a swing d) a shopping trolley",
+      "answerKeyText": "a) push b) pull c) both push and pull d) both push and pull",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u05.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Write F for float or S for sink:\na) balloon b) stone c) metal nail d) cork\ne) plastic pot f) glass marble",
+      "answerKeyText": "a) F b) S c) S d) F e) F f) S",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u05.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Match the animal to the way it moves:\nsnake bird fish kangaroo baby\nfly hop slither crawl swim",
+      "answerKeyText": "snake – slither | bird – fly | fish – swim | kangaroo – hop | baby – crawl",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u05.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "You blow on a paper sailboat and it moves. Is that a push or a pull? PUSH / PULL",
+      "answerKeyText": "PUSH — the moving air pushes the sail.",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u05.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Name one thing in your house you have to pull to open, and one thing you have to push to make it work.",
+      "answerKeyText": "Pull: a drawer, a door handle, a zip, a curtain. Push: a doorbell, a light switch, a button, a trolley.",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u05.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Write two pushes and two pulls you have done today.",
+      "answerKeyText": "Child's own answers. Pushes: pressing a switch, kicking a ball, closing a door, pushing a trolley. Pulls: opening a drawer, pulling a zip, pulling\non socks, opening the fridge.",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u05.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "An orange floats when its peel is on. What do you think happens when you take the peel off?\nI predict:\nNow test it. What really happened?",
+      "answerKeyText": "It sinks. The peel is full of tiny air pockets that hold the orange up; take the peel off and there is nothing to keep it floating.",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u05.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "When you push something, it moves ( towards you ) ( away from you )",
+      "answerKeyText": "away from you",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u05.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Which one sinks? ( a cork ) ( a metal coin ) ( a closed plastic bottle )",
+      "answerKeyText": "a metal coin",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u05.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "A snake moves by ( hopping ) ( slithering ) ( flying )",
+      "answerKeyText": "slithering",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u05.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "To send a ball further you need a ( bigger push ) ( smaller push )",
+      "answerKeyText": "a bigger push",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u05.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Ringing a doorbell is a ( push ) ( pull )",
+      "answerKeyText": "push",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "answerKeyPages": [
+        36
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

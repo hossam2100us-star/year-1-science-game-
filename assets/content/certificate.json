@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "certificate",
+  "kind": "reference",
+  "status": "source_draft",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    39
+  ],
+  "sourceText": "✓\nLittle Scientist\nThis certificate is proudly given to\nfor finishing all nine units, asking excellent questions,\nand never being afraid of a wrong guess.\nDate Teacher's signature"
+}

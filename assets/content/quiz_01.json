@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "quiz_01",
+  "kind": "quiz",
+  "title": "Biology Quiz",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    11
+  ],
+  "sourceQuestions": [
+    {
+      "id": "quiz01.01",
+      "number": 1,
+      "sourceText": "Circle the living things:\ntable cat tree spoon baby rock",
+      "answerKeyText": "cat, tree, baby",
+      "sourcePages": [
+        11
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz01.02",
+      "number": 2,
+      "sourceText": "Write two things that all living things do.",
+      "answerKeyText": "Any two: grow, eat, drink, breathe, move by themselves, feel things, make babies",
+      "sourcePages": [
+        11
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz01.03",
+      "number": 3,
+      "sourceText": "Which part of a plant drinks water from the soil?",
+      "answerKeyText": "the roots",
+      "sourcePages": [
+        11
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz01.04",
+      "number": 4,
+      "sourceText": "What two things does a plant need to stay healthy? and",
+      "answerKeyText": "water and light",
+      "sourcePages": [
+        11
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz01.05",
+      "number": 5,
+      "sourceText": "A plant kept in a dark cupboard had leaves that were in colour.",
+      "answerKeyText": "pale yellow",
+      "sourcePages": [
+        11
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz01.06",
+      "number": 6,
+      "sourceText": "Name the five senses.",
+      "answerKeyText": "sight, hearing, smell, taste, touch",
+      "sourcePages": [
+        11
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz01.07",
+      "number": 7,
+      "sourceText": "Which body part do you use to taste?",
+      "answerKeyText": "the tongue",
+      "sourcePages": [
+        11
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz01.08",
+      "number": 8,
+      "sourceText": "True or false? A car is alive because it moves. TRUE / FALSE",
+      "answerKeyText": "FALSE — moving is not enough; a car does not grow, eat or make babies",
+      "sourcePages": [
+        11
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz01.09",
+      "number": 9,
+      "sourceText": "Name the parts of your arm, from the shoulder down to the fingers.",
+      "answerKeyText": "shoulder, arm, elbow, wrist, hand, fingers",
+      "sourcePages": [
+        11
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "quiz01.10",
+      "number": 10,
+      "sourceText": "What does an optometrist do?",
+      "answerKeyText": "Checks that eyes see clearly and gives people glasses",
+      "sourcePages": [
+        11
+      ],
+      "answerKeyPages": [
+        37
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "playableQuestions": [],
+  "status": "source_draft",
+  "scoreBands": [
+    {
+      "min": 8,
+      "max": 10
+    },
+    {
+      "min": 5,
+      "max": 7
+    },
+    {
+      "min": 0,
+      "max": 4
+    }
+  ]
+}

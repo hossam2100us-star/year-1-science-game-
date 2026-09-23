@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 1,
+  "id": "unit_01",
+  "kind": "unit",
+  "title": "Alive or Not Alive?",
+  "island": "biology",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    4,
+    5
+  ],
+  "introductionText": "Biology\nAlive or Not Alive?\nThe Big Idea: Living things grow, need food and water, breathe, move by themselves, feel the world around them, and make new living\nthings like themselves. Non‑living things never do any of this.\nSay It Like This\nRead aloud\n\"A car moves, doesn't it? But does a car ever get hungry? Does a car ever grow bigger? Does a baby car ever come out of a big car? No! So a\ncar is not alive. Now think about you. You eat. You drink. You breathe. You grow taller every year. You are alive! And a tree is alive too — it\ndrinks water, it grows taller, and it makes seeds that become baby trees.\"\nWatch Out For\nTwo mistakes almost every child makes\n1. \"It moves, so it is alive.\" Keep pointing at the car, the clock, the ceiling fan, the river. They all move, and none of them is alive. Moving is\nnot enough.\n2. \"Plants are not alive because they don't walk.\" Show him the bean you are growing in Unit 2. It got taller. It drank the water. It is alive.\nTry It at Home\nThe house hunt — 10 minutes\nWalk slowly through the house together. Point at things one by one: a chair, the cat, a plant, a mug, grandmother, the television, a fly on\nthe window. For each one ask the same three questions: \"Does it grow? Does it need food? Can it make babies?\" If the answer is yes to all\nthree, it is alive. Make two lists on one sheet of paper: Alive and Not Alive.\nALIVE NOT ALIVE\nthey grow, feed, breathe and make babies a car moves, but it never grows or eats\nMoving is not enough. Ask the three questions: does it grow, feed and make babies?\nMore examples to talk about\nAlive: the cat on the stairs, a mosquito, the mint growing on the balcony, a fish in a bowl, the bread mould in the kitchen, grandmother, a\ndate palm.\nNot alive: a wooden spoon, a cloud, the fridge, a doll, a stone, a car, water in a glass.\nThe tricky ones — ask him to think hard: a cloud moves but is not alive. A wooden chair was once part of a living tree, but the chair itself is\nnot alive. An egg is alive — there is a baby chick growing inside.\nKey Words\nalive not alive living thing grow breathe food\n",
+  "sourceQuestions": [
+    {
+      "id": "u01.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Draw a circle around the things that are alive:\ngiraffe car tree chair human mug plant lizard",
+      "answerKeyText": "Alive: giraffe, tree, human, plant, lizard. Not alive: car, chair, mug.",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u01.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Complete the sentences about a pet bird. Use these words: moves, eats, breathes, grown\na) The bird around his cage.\nb) The bird when he is hungry.\nc) The bird through two holes in his beak.\nd) The bird was a baby. Now he has bigger.",
+      "answerKeyText": "a) moves b) eats c) breathes d) grown",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u01.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Is a kettle alive? Circle one: YES / NO\nSay why:",
+      "answerKeyText": "No. A kettle does not grow, does not need food, and cannot make new kettles. It only moves when a person moves it.",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u01.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Write two things a dandelion plant does that show it is alive.",
+      "answerKeyText": "Any two of: it grows; it needs water and food; it makes new dandelion plants (seeds); it makes its own food from sunlight.",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u01.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "True or false? \"Everything that moves is alive.\" TRUE / FALSE",
+      "answerKeyText": "FALSE. A car, a clock and a river all move and none of them is alive.",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u01.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Draw one living thing and one non‑living thing that you can see in your room right now. Write their names underneath.",
+      "answerKeyText": "Child's own drawing. Living: a person, a pet, a plant, an insect. Non‑living: a chair, a toy, a book, a lamp.",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u01.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Write two things a cat does that show it is alive.",
+      "answerKeyText": "Any two: it grows; it eats and drinks; it breathes; it moves by itself; it feels things; it can have kittens.",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u01.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Sort these into the right list: cloud, worm, bread, mint plant, doll, fly\nAlive Not alive",
+      "answerKeyText": "Alive: worm, mint plant, fly. Not alive: cloud, bread, doll. (Bread was made from wheat that was alive, but the bread itself is not.)",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u01.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "Which one of these is alive? ( a car ) ( a tree ) ( a chair )",
+      "answerKeyText": "a tree",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u01.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "All living things need food and ( water ) ( toys ) ( paper )",
+      "answerKeyText": "water",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u01.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Which is not a sign of being alive? ( growing ) ( eating ) ( being made in a factory )",
+      "answerKeyText": "being made in a factory",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u01.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "A baby bird will one day ( stay the same size ) ( grow bigger ) ( get smaller )",
+      "answerKeyText": "grow bigger",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "u01.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Plants are ( alive ) ( not alive )",
+      "answerKeyText": "alive",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "answerKeyPages": [
+        35
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}
