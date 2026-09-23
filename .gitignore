@@ -21,3 +21,4 @@ curriculum/*.pdf
 /Science_Made_Simple.pdf
 *.log
 __pycache__/
+output/apk/

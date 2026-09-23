@@ -6,3 +6,5 @@
 - Flutter: BSD 3-Clause; https://github.com/flutter/flutter/blob/master/LICENSE.
 - Phase 0 uses system fonts only. Fredoka, Nunito, and Cairo will be bundled with their license files in Phase 1 before completing the design system.
 - No sound, music, stock illustrations, Lottie files, or third-party character artwork has been added in Phase 0. Every later asset must have an individual file/source/license entry here.
+
+- Android launcher icon: original vector flask drawn in android/app/src/main/res/drawable/ic_launcher.xml; no third-party artwork.
