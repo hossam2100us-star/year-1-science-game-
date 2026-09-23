@@ -1,8 +1,12 @@
 # Science Adventure
 
-لعبة علوم أوفلاين للأطفال على موبايل وتابلت أندرويد. حاليًا في المرحلة 0: تجهيز المشروع وتجربة التشغيل. **APK المرحلة 0 جاهز للتجربة: [تحميل ملف التثبيت](output/apk/ScienceAdventure-phase0-debug.apk)، حوالي 150 ميجابايت. مستني تجربتك على التابلت قبل المرحلة 1.**
+لعبة علوم أوفلاين للأطفال على موبايل وتابلت أندرويد. **المرحلة ١ جاهزة للتجربة: [تحميل APK](output/apk/ScienceAdventure-phase1-debug.apk)، حوالي 183 ميجابايت.** دي نسخة تأسيس، وألعاب المنهج هتبدأ في المرحلة ٢ بعد موافقة ولي الأمر.
 
-الطفل هيكتب اسمه أول مرة، والتشجيع هيكون موجه ليه. التعلم هيبقى جوه مشاهد وألعاب، مش نقل أسئلة الكتاب على الشاشة. لكل وحدة تقرير للأهل يوضح الإكمال، القرارات الصحيحة من أول مرة، واستخدام التلميحات والحاجات اللي محتاجة تدريب.
+أول مرة: اسم الطفل، ولد أو بنت، ثم ثعلب أو أرنب أو قطة، أو صورة يختارها ولي الأمر من الجهاز. زيزو للولد وزيزي للبنت. الألوان بتتغير تلقائيًا، وممكن تغييرها من ركن الأهل. الصورة والبيانات بتفضل على الجهاز بس.
+
+اتنفذ كمان: خريطة الجزر، حفظ الإعدادات، القراءة الإنجليزية المحلية ومساعدة تثبيت الصوت، بوابة الأهل، الإعدادات عربي RTL وإنجليزي، وتذكير الراحة. تقارير الوحدات جاهزة لاستقبال نتائج اللعب في المراحل الجاية؛ حاليًا بتقول بوضوح إن لسه مفيش نتيجة.
+
+[خطوات تجربة المرحلة ١](docs/PHASE_1_TRY.md) • [نتائج الفحص وحدود التجربة](docs/PHASE_1_REPORT.md)
 
 ## الملفات المهمة
 
@@ -21,7 +25,7 @@ APK هو ملف تثبيت التطبيق على أندرويد. تجربة ال
 1. وصّل التابلت بالكمبيوتر بكابل USB.
 2. اختار «نقل الملفات / File transfer» من إشعار USB على التابلت.
 3. افتح مجلد Downloads الخاص بالتابلت من الكمبيوتر.
-4. انسخ ملف ScienceAdventure-phase0-debug.apk للمجلد ده الموجود في رابط التحميل فوق.
+4. انسخ ملف ScienceAdventure-phase1-debug.apk للمجلد ده الموجود في رابط التحميل فوق.
 5. افتح تطبيق «الملفات / Files» على التابلت.
 6. افتح Downloads.
 7. اضغط ملف APK.
@@ -32,7 +36,7 @@ APK هو ملف تثبيت التطبيق على أندرويد. تجربة ال
 12. اضغط «فتح / Open».
 13. بعد التثبيت، اقفل «السماح من هذا المصدر» من نفس صفحة الإعدادات.
 
-أسماء القوائم ممكن تختلف شوية حسب الشركة. نسخة المرحلة 0 تجريبية بتوقيع التطوير، مش نسخة الإصدار النهائي. هنجهز المفتاح الدائم وشرح نسخه احتياطيًا في المرحلة 7. فقدان مفتاح الإصدار الدائم يمنع تحديث نفس التطبيق بالتوقيع نفسه؛ المفتاح وكلمات السر ما يدخلّوش Git.
+أسماء القوائم ممكن تختلف شوية حسب الشركة. نسخة المرحلة ١ تجريبية بتوقيع التطوير، مش نسخة الإصدار النهائي. هنجهز المفتاح الدائم وشرح نسخه احتياطيًا في المرحلة 7. فقدان مفتاح الإصدار الدائم يمنع تحديث نفس التطبيق بالتوقيع نفسه؛ المفتاح وكلمات السر ما يدخلّوش Git.
 
 ## أدوات الكمبيوتر — للضرورة فقط
 
@@ -118,10 +122,14 @@ flutter run --no-hot
 
 ## English project notes
 
-Phase 0 only. The verified debug APK is in output/apk/ScienceAdventure-phase0-debug.apk (150,364,210 bytes; minSdk 24; ARM32, ARM64, x86_64). The current Flutter screen is a responsive device smoke check, not a completed game. Physical-device testing is still pending. Child-name onboarding, narration, custom bundled fonts, Riverpod, Hive, Flame, and Lottie belong to later approved phases. No third-party Flutter dependencies have been added yet.
+Phase 1 foundation is implemented. The debug APK is output/apk/ScienceAdventure-phase1-debug.apk (182,531,874 bytes; minSdk 24; ARM32, ARM64, x86_64). It uses the same debug certificate as Phase 0, so it can update the earlier preview. Physical-device testing remains pending.
 
-The supplied PDF is the only educational authority. Source drafts live in assets/content, with the PDF SHA-256 and Answer Key references. These drafts are not bundled by pubspec.yaml and are not presented as gameplay. Later scene interactions will assess learning through play, following the parent's revised instructions.
+Implemented: first-name onboarding, boy/girl selection, three original cartoon avatars or an optional local photo, matching Zizo/Zizi guide, gender-based default palette with parent override, responsive islands, local Fredoka/Nunito/Cairo fonts, Riverpod, Hive, offline English flutter_tts, parent gate, Arabic RTL/English parent settings, foreground usage tracking, and gentle breaks. Android TTS does not reliably identify voice gender; parents can audition and choose installed voices. All visible curriculum levels are explicitly marked as future activities. No test scores are fabricated. Flame mini-games begin in Phase 2.
 
-All production dependencies will use exact versions and the lockfile will be committed. Keep tools, signing material, passwords, build outputs, debug symbols and the original PDF out of Git. Do not enable internet permission to make hot reload work. Release signing, R8 and Dart obfuscation are required before the final release gate. The preview uses a debug certificate; moving to the final signing key may require uninstalling the preview. Preserve signing continuity before children accumulate real progress.
+The browser preview is an additional UI preview with separate browser-local data and narration disabled. Use the APK to test native photo selection, persisted Android data and offline speech.
+
+The supplied PDF is the only educational authority. Source drafts live in assets/content, with the PDF SHA-256 and Answer Key references. Source question drafts are not bundled or presented as gameplay. Only catalog.json supplies runtime navigation and the page-2 parent guide. Later scene interactions will assess learning through play, following the parent's revised instructions.
+
+All direct production dependencies use exact versions and the lockfile is committed. Keep tools, signing material, passwords, build outputs, debug symbols and the original PDF out of Git. Do not enable internet permission to make hot reload work. Release signing, R8 and Dart obfuscation are required before the final release gate. The preview uses a debug certificate; moving to the final signing key may require uninstalling the preview. Preserve signing continuity before children accumulate real progress.
 
 Official setup references: https://docs.flutter.dev/install/archive and https://docs.flutter.dev/platform-integration/android/setup .

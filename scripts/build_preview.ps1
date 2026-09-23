@@ -30,9 +30,9 @@ foreach ($line in $permissions) {
 }
 $output = Join-Path $projectRoot 'output/apk'
 New-Item -ItemType Directory -Force -Path $output | Out-Null
-$destination = Join-Path $output 'ScienceAdventure-phase0-debug.apk'
+$destination = Join-Path $output 'ScienceAdventure-phase1-debug.apk'
 Copy-Item -LiteralPath $apk -Destination $destination -Force
 $hash = (Get-FileHash -LiteralPath $destination -Algorithm SHA256).Hash.ToLowerInvariant()
-[IO.File]::WriteAllText((Join-Path $output 'ScienceAdventure-phase0-debug.apk.sha256'), "$hash  ScienceAdventure-phase0-debug.apk")
+[IO.File]::WriteAllText((Join-Path $output 'ScienceAdventure-phase1-debug.apk.sha256'), "$hash  ScienceAdventure-phase1-debug.apk")
 $permissions | Set-Content -LiteralPath (Join-Path $output 'permissions.txt') -Encoding utf8
 Write-Output "Preview APK: $destination"
