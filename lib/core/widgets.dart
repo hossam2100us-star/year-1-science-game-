@@ -1,0 +1,158 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'providers.dart';
+
+void showSaveError(BuildContext context) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    const SnackBar(
+      content: Text(
+        'الحفظ ماكملش. فضّي مساحة على الجهاز وجرب تاني. / Could not save. Please try again.',
+      ),
+    ),
+  );
+}
+
+class StoryPanel extends ConsumerStatefulWidget {
+  const StoryPanel({
+    super.key,
+    required this.text,
+    this.children = const [],
+    this.autoSpeak = true,
+  });
+  final String text;
+  final List<Widget> children;
+  final bool autoSpeak;
+  @override
+  ConsumerState<StoryPanel> createState() => _StoryPanelState();
+}
+
+class _StoryPanelState extends ConsumerState<StoryPanel> {
+  void _speak() => ref.read(narrationProvider).speak(widget.text);
+  @override
+  void initState() {
+    super.initState();
+    if (widget.autoSpeak)
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _speak();
+      });
+  }
+
+  @override
+  void didUpdateWidget(covariant StoryPanel old) {
+    super.didUpdateWidget(old);
+    if (old.text != widget.text && widget.autoSpeak)
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _speak();
+      });
+  }
+
+  @override
+  Widget build(BuildContext context) => Container(
+    padding: const EdgeInsets.all(24),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(28),
+      border: Border.all(
+        color: Theme.of(context).colorScheme.primary.withValues(alpha: .18),
+        width: 2,
+      ),
+    ),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(
+          widget.text,
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+        IconButton(
+          onPressed: _speak,
+          tooltip: 'Listen again',
+          icon: const Icon(Icons.volume_up_rounded, size: 30),
+        ),
+        ...widget.children,
+      ],
+    ),
+  );
+}
+
+class AdventurePage extends StatelessWidget {
+  const AdventurePage({
+    super.key,
+    required this.child,
+    this.maxWidth = 1120,
+    this.padding = 24,
+    this.controller,
+  });
+  final Widget child;
+  final double maxWidth, padding;
+  final ScrollController? controller;
+  @override
+  Widget build(BuildContext context) => SafeArea(
+    child: LayoutBuilder(
+      builder: (context, box) => SingleChildScrollView(
+        controller: controller,
+        padding: EdgeInsets.all(padding),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: maxWidth),
+            child: child,
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+class ChoiceTile extends StatelessWidget {
+  const ChoiceTile({
+    super.key,
+    required this.label,
+    required this.selected,
+    required this.onTap,
+    required this.child,
+  });
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+  final Widget child;
+  @override
+  Widget build(BuildContext context) => Semantics(
+    selected: selected,
+    button: true,
+    label: label,
+    child: Material(
+      color: selected
+          ? Theme.of(context).colorScheme.primaryContainer
+          : Colors.white,
+      borderRadius: BorderRadius.circular(24),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(24),
+        child: Container(
+          width: 160,
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(24),
+            border: Border.all(
+              color: selected
+                  ? Theme.of(context).colorScheme.primary
+                  : const Color(0xFFCCD8DA),
+              width: selected ? 3 : 1,
+            ),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              child,
+              const SizedBox(height: 8),
+              Text(label, textAlign: TextAlign.center),
+              if (selected) const Icon(Icons.check_circle_rounded, size: 26),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+}

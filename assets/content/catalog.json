@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "sourcePages": [
+    2,
+    4,
+    6,
+    8,
+    11,
+    12,
+    14,
+    15,
+    17,
+    19,
+    21,
+    22,
+    24,
+    26
+  ],
+  "islands": [
+    {
+      "title": "Biology Island",
+      "ar": "جزيرة الكائنات الحية",
+      "color": "FF3E9B5A",
+      "levels": [
+        {
+          "id": "unit_01",
+          "title": "Alive or Not Alive?",
+          "ar": "حي ولا غير حي؟"
+        },
+        {
+          "id": "unit_02",
+          "title": "Plants",
+          "ar": "النباتات"
+        },
+        {
+          "id": "unit_03",
+          "title": "Ourselves",
+          "ar": "جسمنا وحواسنا"
+        },
+        {
+          "id": "quiz_01",
+          "title": "Big Challenge: Biology",
+          "ar": "تحدي الكائنات الحية",
+          "quiz": true
+        }
+      ]
+    },
+    {
+      "title": "Materials Island",
+      "ar": "جزيرة المواد",
+      "color": "FFE88A2E",
+      "levels": [
+        {
+          "id": "unit_04",
+          "title": "Material Properties",
+          "ar": "خصائص المواد"
+        },
+        {
+          "id": "quiz_02",
+          "title": "Big Challenge: Materials",
+          "ar": "تحدي المواد",
+          "quiz": true
+        }
+      ]
+    },
+    {
+      "title": "Physics Island",
+      "ar": "جزيرة الفيزياء",
+      "color": "FF4A9FE0",
+      "levels": [
+        {
+          "id": "unit_05",
+          "title": "Forces",
+          "ar": "القوى"
+        },
+        {
+          "id": "unit_06",
+          "title": "Sound",
+          "ar": "الصوت"
+        },
+        {
+          "id": "unit_07",
+          "title": "Electricity and Magnets",
+          "ar": "الكهرباء والمغناطيس"
+        },
+        {
+          "id": "quiz_03",
+          "title": "Big Challenge: Physics",
+          "ar": "تحدي الفيزياء",
+          "quiz": true
+        }
+      ]
+    },
+    {
+      "title": "Earth & Space Island",
+      "ar": "جزيرة الأرض والفضاء",
+      "color": "FF5B4BA8",
+      "levels": [
+        {
+          "id": "unit_08",
+          "title": "Planet Earth",
+          "ar": "كوكب الأرض"
+        },
+        {
+          "id": "unit_09",
+          "title": "Earth in Space",
+          "ar": "الأرض في الفضاء"
+        },
+        {
+          "id": "quiz_04",
+          "title": "Big Challenge: Earth & Space",
+          "ar": "تحدي الأرض والفضاء",
+          "quiz": true
+        }
+      ]
+    }
+  ],
+  "parentRules": [
+    {
+      "ar": "١. خلي وقت اللعب قصير: من ١٠ لـ١٥ دقيقة في المرة.",
+      "en": "1. Keep sessions short: ten to fifteen minutes at a time.",
+      "sourcePage": 2
+    },
+    {
+      "ar": "٢. خلّي الطفل يجرب ويلمس الأول، وبعد كده يجاوب.",
+      "en": "2. Let the child explore with their hands before answering.",
+      "sourcePage": 2
+    },
+    {
+      "ar": "٣. قبل التجربة اسأله: متوقع إيه اللي يحصل؟ التوقع المختلف بداية للتعلم.",
+      "en": "3. Ask for a prediction before an experiment. A different prediction is a starting point for learning.",
+      "sourcePage": 2
+    },
+    {
+      "ar": "٤. اديله فرصة يكتشف الإجابة بنفسه، وساعده بتلميح.",
+      "en": "4. Give the child time to discover the answer, with a hint when needed.",
+      "sourcePage": 2
+    },
+    {
+      "ar": "٥. امدح المحاولة والملاحظة: إنت بصيت كويس! بدل ما تمدح الذكاء.",
+      "en": "5. Praise effort and careful observation, rather than cleverness.",
+      "sourcePage": 2
+    },
+    {
+      "ar": "الأمان: لازم شخص كبير يكون مع الطفل في أي نشاط منزلي. بلاش زجاج أو فيش كهربا أو نار أو حاجات صغيرة ممكن تتبلع وهو لوحده. تجارب المية في طبق أو الحوض، بعيد عن الكهربا.",
+      "en": "Safety: an adult stays with the child during every home activity. Never leave a child alone with glass, sockets, flames or small swallowable objects. Water activities belong in a bowl or sink away from electrical items.",
+      "sourcePage": 2
+    }
+  ]
+}
