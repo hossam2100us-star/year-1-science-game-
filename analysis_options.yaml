@@ -5,6 +5,7 @@ analyzer:
   exclude:
     - build/**
     - android/**
+    - tmp/**
 linter:
   rules:
     - avoid_print

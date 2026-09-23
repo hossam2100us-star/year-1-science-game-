@@ -1,5 +1,19 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'content/catalog.dart';
+import 'core/design.dart';
+import 'core/models.dart';
+import 'core/providers.dart';
+import 'core/storage.dart';
+import 'core/widgets.dart';
+import 'features/onboarding/profile_editor.dart';
+import 'features/world/world_map.dart';
+import 'parent/parent_gate.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -7,129 +21,180 @@ Future<void> main() async {
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,
   ]);
-  runApp(const ScienceAdventureApp());
+  await _launch();
 }
 
-class ScienceAdventureApp extends StatelessWidget {
-  const ScienceAdventureApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Science Adventure',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        scaffoldBackgroundColor: const Color(0xFFFFF8EC),
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF2170B5)),
+Future<void> _launch() async {
+  try {
+    final store = await HiveProgressStore.open();
+    store.read(); // Validate the saved data before entering the child UI.
+    final catalog = await Catalog.load();
+    runApp(
+      ProviderScope(
+        overrides: [
+          storeProvider.overrideWithValue(store),
+          catalogProvider.overrideWithValue(catalog),
+        ],
+        child: const ScienceAdventureApp(),
       ),
-      home: const SetupWelcomeScreen(),
     );
-  }
-}
-
-/// A Phase 0 device check, not the onboarding or a curriculum activity.
-class SetupWelcomeScreen extends StatefulWidget {
-  const SetupWelcomeScreen({super.key});
-
-  @override
-  State<SetupWelcomeScreen> createState() => _SetupWelcomeScreenState();
-}
-
-class _SetupWelcomeScreenState extends State<SetupWelcomeScreen> {
-  bool _tapped = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(24),
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 760),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Text(
-                    'Science Adventure',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 36,
-                      fontWeight: FontWeight.w800,
-                      color: Color(0xFF174F7F),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(24),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(28),
-                      border: Border.all(
-                        color: const Color(0xFF2170B5),
-                        width: 2,
-                      ),
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          _tapped
-                              ? Icons.star_rounded
-                              : Icons.waving_hand_rounded,
-                          size: 64,
-                          color: const Color(0xFF174F7F),
-                        ),
-                        const SizedBox(height: 12),
-                        Text(
-                          _tapped
-                              ? 'Your screen is ready!'
-                              : 'Hello, scientist!',
-                          textAlign: TextAlign.center,
-                          semanticsLabel: _tapped
-                              ? 'Your screen is ready!'
-                              : 'Hello, scientist!',
-                          style: const TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.w700,
-                            color: Color(0xFF174F7F),
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        FilledButton.icon(
-                          onPressed: () => setState(() => _tapped = !_tapped),
-                          style: FilledButton.styleFrom(
-                            minimumSize: const Size(220, 64),
-                            backgroundColor: const Color(0xFF174F7F),
-                            foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 24,
-                              vertical: 16,
-                            ),
-                          ),
-                          icon: const Icon(Icons.touch_app_rounded, size: 28),
-                          label: Text(
-                            _tapped ? 'Try again' : 'Try a tap',
-                            style: const TextStyle(fontSize: 24),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  const Text(
-                    'Offline • Phone & tablet • Setup preview',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 22, color: Color(0xFF174F7F)),
-                  ),
-                ],
-              ),
+  } catch (_) {
+    runApp(
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: adventureTheme(null),
+        home: const Scaffold(
+          body: AdventurePage(
+            maxWidth: 650,
+            child: Column(
+              children: [
+                Text(
+                  'مش قادرين نفتح البيانات دلوقتي. اقفل اللعبة وافتحها تاني، واتأكد إن فيه مساحة فاضية. بياناتك ماتمسحتش.',
+                  textDirection: TextDirection.rtl,
+                  style: TextStyle(fontFamily: 'Cairo', fontSize: 24),
+                ),
+                SizedBox(height: 24),
+                FilledButton(
+                  onPressed: _launch,
+                  child: Text('جرّب تاني • Retry'),
+                ),
+              ],
             ),
           ),
         ),
       ),
     );
   }
+}
+
+class ScienceAdventureApp extends ConsumerWidget {
+  const ScienceAdventureApp({super.key});
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final data = ref.watch(appProvider);
+    ref
+        .read(narrationProvider)
+        .configure(data.settings, data.profile?.gender ?? ChildGender.boy);
+    return MaterialApp(
+      title: 'Science Adventure',
+      debugShowCheckedModeBanner: false,
+      theme: adventureTheme(data.profile),
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      supportedLocales: const [Locale('en'), Locale('ar')],
+      home: const AdventureHome(),
+    );
+  }
+}
+
+class AdventureHome extends ConsumerStatefulWidget {
+  const AdventureHome({super.key});
+  @override
+  ConsumerState<AdventureHome> createState() => _AdventureHomeState();
+}
+
+class _AdventureHomeState extends ConsumerState<AdventureHome>
+    with WidgetsBindingObserver {
+  Timer? _timer;
+  DateTime? _last;
+  int _sessionSeconds = 0;
+  bool _parent = false, _resumed = true, _breakOpen = false, _exitOpen = false;
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    ref.read(narrationProvider).initialize();
+    _timer = Timer.periodic(const Duration(seconds: 10), (_) => _tick());
+  }
+
+  void _parentChanged(bool value) {
+    _tick();
+    _parent = value;
+    _last = null;
+  }
+
+  Future<void> _tick() async {
+    final now = DateTime.now();
+    final active =
+        _resumed &&
+        !_parent &&
+        !_breakOpen &&
+        ref.read(appProvider).profile != null;
+    if (!active) {
+      _last = null;
+      return;
+    }
+    final last = _last;
+    _last = now;
+    if (last != null) {
+      _sessionSeconds += now.difference(last).inSeconds;
+      try {
+        await ref.read(appProvider.notifier).usage(last, now);
+      } catch (_) {
+        if (mounted) showSaveError(context);
+      }
+    }
+    if (mounted &&
+        _sessionSeconds >= ref.read(appProvider).settings.breakMinutes * 60 &&
+        !_breakOpen) {
+      _breakOpen = true;
+      _sessionSeconds = 0;
+      _last = null;
+      await showDialog<void>(
+        context: context,
+        builder: (dialog) => AlertDialog(
+          scrollable: true,
+          content: const StoryPanel(
+            text: 'Great work! Time to rest your eyes. Come back later!',
+          ),
+          actions: [
+            OutlinedButton(
+              onPressed: () => Navigator.of(dialog).pop(),
+              child: const Text('Keep exploring'),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.of(dialog).pop(),
+              child: const Text('Okay, a little rest'),
+            ),
+          ],
+        ),
+      );
+      _breakOpen = false;
+    }
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state != AppLifecycleState.resumed) {
+      _tick();
+      ref.read(narrationProvider).stop();
+    }
+    _resumed = state == AppLifecycleState.resumed;
+    _last = null;
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  Future<void> _exit() async {
+    if (_exitOpen) return;
+    _exitOpen = true;
+    await ref.read(narrationProvider).stop();
+    if (mounted && await parentGate(context)) await SystemNavigator.pop();
+    _exitOpen = false;
+  }
+
+  @override
+  Widget build(BuildContext context) => PopScope(
+    canPop: false,
+    onPopInvokedWithResult: (didPop, result) {
+      if (!didPop) _exit();
+    },
+    child: ref.watch(appProvider).profile == null
+        ? const ProfileEditor()
+        : WorldMap(onParentChanged: _parentChanged),
+  );
 }

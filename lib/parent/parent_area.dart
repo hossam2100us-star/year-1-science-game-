@@ -1,0 +1,443 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../core/models.dart';
+import '../core/providers.dart';
+import '../core/widgets.dart';
+import 'voice_settings.dart';
+import '../features/onboarding/profile_editor.dart';
+import 'parent_gate.dart';
+
+class ParentArea extends ConsumerStatefulWidget {
+  const ParentArea({super.key});
+  @override
+  ConsumerState<ParentArea> createState() => _ParentAreaState();
+}
+
+class _ParentAreaState extends ConsumerState<ParentArea> {
+  int _tab = 0;
+  @override
+  Widget build(BuildContext context) {
+    final data = ref.watch(appProvider);
+    final settings = data.settings;
+    final ar = settings.arabic;
+    String t(String arabic, String english) => ar ? arabic : english;
+    Future<void> save(AppSettings value) async {
+      try {
+        await ref.read(appProvider.notifier).settings(value);
+      } catch (_) {
+        if (context.mounted) showSaveError(context);
+      }
+    }
+
+    final parentTheme = Theme.of(context).copyWith(
+      textTheme: Theme.of(context).textTheme
+          .apply(fontFamily: ar ? 'Cairo' : 'Nunito'),
+    );
+    return Theme(
+      data: parentTheme,
+      child: Directionality(
+        textDirection: ar ? TextDirection.rtl : TextDirection.ltr,
+        child: Scaffold(
+          body: AdventurePage(
+            maxWidth: 950,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Wrap(
+                  spacing: 16,
+                  runSpacing: 12,
+                  alignment: WrapAlignment.spaceBetween,
+                  children: [
+                    OutlinedButton.icon(
+                      onPressed: () => Navigator.of(context).pop(),
+                      icon: const Icon(Icons.arrow_back_rounded),
+                      label: Text(t('ارجع للطفل', 'Back to child')),
+                    ),
+                    OutlinedButton(
+                      onPressed: () => save(settings.copyWith(arabic: !ar)),
+                      child: Text(ar ? 'English' : 'العربية'),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 24),
+                Text(
+                  t('ركن الأهل', 'Grown-ups'),
+                  style: parentTheme.textTheme.headlineLarge,
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  t(
+                    'دي نسخة تأسيس وتجربة. ألعاب المنهج هتتضاف في المراحل الجاية، ومفيش درجات وهمية.',
+                    'Foundation preview. Curriculum games arrive in later phases. No sample scores are shown.',
+                  ),
+                ),
+                const SizedBox(height: 22),
+                Wrap(
+                  spacing: 12,
+                  runSpacing: 12,
+                  children: [
+                    for (var i = 0; i < 3; i++)
+                      OutlinedButton.icon(
+                        onPressed: () => setState(() => _tab = i),
+                        icon: Icon(
+                          _tab == i
+                              ? Icons.check_circle_rounded
+                              : Icons.circle_outlined,
+                        ),
+                        label: Text(
+                          [
+                            t('النتائج', 'Results'),
+                            t('الإعدادات', 'Settings'),
+                            t('دليل الاستخدام', 'Guide'),
+                          ][i],
+                        ),
+                      ),
+                  ],
+                ),
+                const SizedBox(height: 22),
+
+                if (_tab == 1)
+                  _Section(
+                    title: t(
+                      'بيانات الطفل وشكل اللعبة',
+                      'Child and appearance',
+                    ),
+                    children: [
+                      Text(
+                        t(
+                          'الاسم: ${data.profile!.name.isEmpty ? 'مش مكتوب' : data.profile!.name}',
+                          'Name: ${data.profile!.name.isEmpty ? 'Not entered' : data.profile!.name}',
+                        ),
+                      ),
+                      Text(
+                        t(
+                          'الشخصية المرافقة: ${data.profile!.guideName}',
+                          'Scientist guide: ${data.profile!.guideName}',
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      FilledButton.icon(
+                        onPressed: () => Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                            builder: (_) => const ProfileEditor(editing: true),
+                          ),
+                        ),
+                        icon: const Icon(Icons.edit_rounded),
+                        label: Text(
+                          t(
+                            'غيّر الاسم أو الجنس أو الصورة',
+                            'Edit name, gender or picture',
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Text(t('ألوان اللعبة', 'Adventure colours')),
+                      const SizedBox(height: 8),
+                      Wrap(
+                        spacing: 10,
+                        runSpacing: 10,
+                        children: [
+                          for (final palette in PaletteChoice.values)
+                            OutlinedButton.icon(
+                              onPressed: () async {
+                                final p = data.profile!;
+                                try {
+                                  await ref
+                                      .read(appProvider.notifier)
+                                      .saveProfile(
+                                        ChildProfile(
+                                          name: p.name,
+                                          gender: p.gender,
+                                          avatar: p.avatar,
+                                          photo: p.photo,
+                                          palette: palette,
+                                        ),
+                                      );
+                                } catch (_) {
+                                  if (context.mounted) showSaveError(context);
+                                }
+                              },
+                              icon: Icon(
+                                data.profile!.palette == palette
+                                    ? Icons.check_circle_rounded
+                                    : Icons.circle_outlined,
+                              ),
+                              label: Text(switch (palette) {
+                                PaletteChoice.automatic => t(
+                                  'حسب اختيار الطفل',
+                                  'Automatic',
+                                ),
+                                PaletteChoice.ocean => t('أزرق', 'Ocean'),
+                                PaletteChoice.berry => t('بنفسجي', 'Berry'),
+                                PaletteChoice.forest => t('أخضر', 'Forest'),
+                              }),
+                            ),
+                        ],
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        t(
+                          'تغيير البيانات مش بيمسح التقدم. الاسم الأول والصورة والاختيارات بتفضل على الجهاز بس.',
+                          'Editing this profile keeps progress. The first name, photo and preferences stay on this device.',
+                        ),
+                      ),
+                    ],
+                  ),
+                if (_tab == 0)
+                  _Section(
+                    title: t('تقييم كل وحدة', 'Unit assessment'),
+                    children: [
+                      Text(
+                        t(
+                          'النجوم للمجهود والإكمال. تقييم الفهم بيتحسب من أول قرار قبل التلميح؛ التوقع واللعب الحر مش درجات.',
+                          'Stars reward effort and completion. Understanding uses first decisions before hints. Predictions and free play are not graded.',
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      for (final level in ref.read(catalogProvider).levels)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 12),
+                          child: Container(
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFFFF8EC),
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Text(
+                                  ar ? level.arabic : level.title,
+                                  style: parentTheme.textTheme.titleLarge,
+                                ),
+                                if (data.latest(level.id) == null)
+                                  Text(
+                                    t(
+                                      'لسه مفيش نتيجة — النشاط لسه مش متاح',
+                                      'Not yet — activity not available',
+                                    ),
+                                  ),
+                                if (data.latest(level.id) != null) ...[
+                                  Text(
+                                    t(
+                                      'آخر محاولة: ${data.latest(level.id)!.firstTry} من ${data.latest(level.id)!.objectives.length} من أول مرة',
+                                      'Latest: ${data.latest(level.id)!.firstTry} of ${data.latest(level.id)!.objectives.length} on the first try',
+                                    ),
+                                  ),
+                                  Text(
+                                    t(
+                                      'بعد تلميح: ${data.latest(level.id)!.afterHint} • بعد شرح: ${data.latest(level.id)!.explained}',
+                                      'After hint: ${data.latest(level.id)!.afterHint} • Explanation shown: ${data.latest(level.id)!.explained}',
+                                    ),
+                                  ),
+                                  Text(
+                                    t(
+                                      'نجوم المجهود: ${data.latest(level.id)!.effortStars} من ٣',
+                                      'Effort stars: ${data.latest(level.id)!.effortStars} of 3',
+                                    ),
+                                  ),
+                                ],
+                              ],
+                            ),
+                          ),
+                        ),
+                      Text(
+                        t(
+                          'اقتراحات التدريب المنزلي هتظهر هنا بعد اللعب، من أنشطة الكتاب.',
+                          'Home practice suggestions from the book will appear after playing.',
+                        ),
+                      ),
+                    ],
+                  ),
+                if (_tab == 0)
+                  _Section(
+                    title: t('وقت الاستخدام', 'Time on the child screens'),
+                    children: [
+                      if (data.dailySeconds.isEmpty)
+                        Text(t('لسه مفيش وقت مسجل', 'No time recorded yet')),
+                      for (final entry
+                          in data.dailySeconds.entries.toList().reversed.take(
+                            7,
+                          ))
+                        Text(
+                          '${entry.key} • ${(entry.value / 60).floor()} ${t('دقيقة', 'min')}',
+                        ),
+                      Text(
+                        t(
+                          'الوقت ده وقت فتح شاشات الطفل، مش دليل على التعلم. وقت ركن الأهل والخلفية مش بيتحسب.',
+                          'Time on child screens is not a learning score. Parent-area and background time are excluded.',
+                        ),
+                      ),
+                    ],
+                  ),
+                if (_tab == 1)
+                  _Section(
+                    title: t('الراحة والصوت', 'Breaks and audio'),
+                    children: [
+                      Text(
+                        t(
+                          'تذكير راحة كل ${settings.breakMinutes} دقيقة',
+                          'A gentle break every ${settings.breakMinutes} minutes',
+                        ),
+                      ),
+                      Slider(
+                        value: settings.breakMinutes.toDouble(),
+                        min: 5,
+                        max: 30,
+                        divisions: 25,
+                        label: '${settings.breakMinutes}',
+                        onChanged: (v) =>
+                            save(settings.copyWith(breakMinutes: v.round())),
+                      ),
+                      SwitchListTile(
+                        contentPadding: EdgeInsets.zero,
+                        title: Text(t('قراءة الكلام', 'Narration')),
+                        value: settings.narration,
+                        onChanged: (v) => save(settings.copyWith(narration: v)),
+                      ),
+                      Text(t('مستوى صوت القراءة', 'Narration volume')),
+                      Slider(
+                        value: settings.volume,
+                        min: 0,
+                        max: 1,
+                        divisions: 10,
+                        onChanged: (v) => save(settings.copyWith(volume: v)),
+                      ),
+                      SwitchListTile(
+                        contentPadding: EdgeInsets.zero,
+                        title: Text(
+                          t(
+                            'المؤثرات — هتتوفر مع الألعاب',
+                            'Sound effects — with the games',
+                          ),
+                        ),
+                        value: settings.sound,
+                        onChanged: (v) => save(settings.copyWith(sound: v)),
+                      ),
+                      SwitchListTile(
+                        contentPadding: EdgeInsets.zero,
+                        title: Text(
+                          t('الموسيقى — هتتوفر لاحقًا', 'Music — coming later'),
+                        ),
+                        value: settings.music,
+                        onChanged: (v) => save(settings.copyWith(music: v)),
+                      ),
+                      VoiceSettings(arabic: ar),
+                    ],
+                  ),
+                if (_tab == 2)
+                  _Section(
+                    title: t('نستخدم اللعبة إزاي؟', 'How to use the adventure'),
+                    children: [
+                      for (final rule in ref.read(catalogProvider).parentRules)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 14),
+                          child: Text(rule[ar ? 'ar' : 'en'] as String),
+                        ),
+                      Text(
+                        t(
+                          'مبني على قواعد الكتاب، صفحة ٢.',
+                          'Based on the book, page 2.',
+                        ),
+                      ),
+                    ],
+                  ),
+                if (_tab == 1)
+                  _Section(
+                    title: t('مسح التقدم', 'Reset progress'),
+                    children: [
+                      Text(
+                        t(
+                          'ده بيمسح النتائج والوقت والنجوم بس، وبيسيب اسم الطفل وصورته والإعدادات.',
+                          'This clears results, time and stars, keeping the profile, photo and settings.',
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      OutlinedButton(
+                        onPressed: () async {
+                          if (!await parentGate(context) || !context.mounted)
+                            return;
+                          final confirmed = await showDialog<bool>(
+                            context: context,
+                            builder: (dialog) => AlertDialog(
+                              title: Text(
+                                t(
+                                  'متأكد من مسح التقدم؟',
+                                  'Clear all progress?',
+                                ),
+                              ),
+                              content: Text(
+                                t(
+                                  'المسح نهائي ومفيش رجوع.',
+                                  'This cannot be undone.',
+                                ),
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.of(dialog).pop(false),
+                                  child: Text(t('إلغاء', 'Cancel')),
+                                ),
+                                FilledButton(
+                                  onPressed: () =>
+                                      Navigator.of(dialog).pop(true),
+                                  child: Text(
+                                    t('امسح التقدم', 'Clear progress'),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                          if (confirmed == true) {
+                            try {
+                              await ref
+                                  .read(appProvider.notifier)
+                                  .resetProgress();
+                            } catch (_) {
+                              if (context.mounted) showSaveError(context);
+                            }
+                          }
+                        },
+                        child: Text(
+                          t(
+                            'مسح التقدم بعد التأكيد',
+                            'Reset with confirmation',
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _Section extends StatelessWidget {
+  const _Section({required this.title, required this.children});
+  final String title;
+  final List<Widget> children;
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.only(bottom: 22),
+    child: Material(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(26),
+      child: Padding(
+        padding: const EdgeInsets.all(22),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(title, style: Theme.of(context).textTheme.headlineMedium),
+            const SizedBox(height: 16),
+            ...children,
+          ],
+        ),
+      ),
+    ),
+  );
+}
