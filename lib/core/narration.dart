@@ -2,6 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 import 'models.dart';
+import 'preview_voice_stub.dart'
+    if (dart.library.js_interop) 'preview_voice_web.dart'
+    as preview;
 
 enum VoiceStatus { loading, ready, unavailable, browserPreview }
 
@@ -24,10 +27,19 @@ class NarrationService extends ChangeNotifier {
 
   Future<void> initialize() => _initialization ??= _initialize();
   Future<void> _initialize() async {
-    // Browser engines cannot guarantee offline speech. APK narration is the target.
     if (kIsWeb) {
-      status = VoiceStatus.browserPreview;
-      notifyListeners();
+      try {
+        final raw = await preview.localVoices();
+        voices = raw
+            .map((v) => EnglishVoice(v['name']!, v['locale']!))
+            .toList();
+        status = voices.isEmpty
+            ? VoiceStatus.browserPreview
+            : VoiceStatus.ready;
+      } catch (_) {
+        status = VoiceStatus.browserPreview;
+      }
+      if (!_disposed) notifyListeners();
       return;
     }
     try {
@@ -81,12 +93,17 @@ class NarrationService extends ChangeNotifier {
         status != VoiceStatus.ready)
       return;
     try {
-      await _tts.stop();
+      if (!kIsWeb) await _tts.stop();
       final chosen = _gender == ChildGender.girl
           ? _settings.girlVoice
           : _settings.boyVoice;
       final voice =
           voices.where((v) => v.id == chosen).firstOrNull ?? voices.first;
+      if (kIsWeb) {
+        if (token == _generation && !_disposed)
+          preview.speakLocal(text, voice.name, voice.locale, _settings.volume);
+        return;
+      }
       await _tts.setVoice({'name': voice.name, 'locale': voice.locale});
       await _tts.setVolume(_settings.volume);
       await _tts.setPitch(1.0);
@@ -100,7 +117,10 @@ class NarrationService extends ChangeNotifier {
   Future<void> stop() async {
     _generation++;
     try {
-      await _tts.stop();
+      if (kIsWeb)
+        preview.stopLocal();
+      else
+        await _tts.stop();
     } catch (_) {}
   }
 

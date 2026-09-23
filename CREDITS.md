@@ -22,3 +22,8 @@ Curriculum: the parent's supplied `Science_Made_Simple.pdf`, used as a local ref
 A user-selected profile photo is supplied by the parent through the system picker, is never a repository asset, and is never uploaded. Only a resized PNG is retained in private local storage; image metadata is discarded. No camera is used.
 
 No music or sound-effect files are included yet. English narration uses installed offline system voices via flutter_tts.
+
+
+## Garden illustration (2026-09-23)
+
+assets/images/garden-v2.png: original image generated for this project using the built-in image generation tool, with a targeted refinement. No third-party artwork or book illustrations were used. Not represented as a CC0 asset. Prompts and provenance: docs/GARDEN_ART_PROMPT.md. The game renders source regions of the same asset for matching object portraits. Existing sound/third-party licenses are unchanged.

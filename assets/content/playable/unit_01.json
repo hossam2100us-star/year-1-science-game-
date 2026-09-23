@@ -1,0 +1,2410 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "unit_01",
+  "title": "Alive or Not Alive?",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    4,
+    5
+  ],
+  "quiz": false,
+  "steps": [
+    {
+      "id": "unit_01.step.001",
+      "kind": "explore",
+      "title": "The house garden",
+      "prompt": "Look around! Tap at least three different things to hear their names.",
+      "options": [
+        {
+          "id": "tree",
+          "label": "Tree",
+          "art": "tree"
+        },
+        {
+          "id": "cat",
+          "label": "Cat",
+          "art": "cat"
+        },
+        {
+          "id": "car",
+          "label": "Car",
+          "art": "car"
+        },
+        {
+          "id": "chair",
+          "label": "Chair",
+          "art": "chair"
+        },
+        {
+          "id": "plant",
+          "label": "Plant",
+          "art": "plant"
+        },
+        {
+          "id": "mug",
+          "label": "Mug",
+          "art": "mug"
+        },
+        {
+          "id": "cloud",
+          "label": "Cloud",
+          "art": "cloud"
+        },
+        {
+          "id": "bird",
+          "label": "Bird",
+          "art": "bird"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "",
+      "explanation": "",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "minTouches": 3
+    },
+    {
+      "id": "unit_01.step.002",
+      "kind": "story",
+      "title": "The Big Idea",
+      "prompt": "A car moves, doesn't it? But does a car ever get hungry? Does a car ever grow bigger? Does a baby car ever come out of a big car? No!",
+      "options": [
+        {
+          "id": "car",
+          "label": "Car",
+          "art": "car"
+        },
+        {
+          "id": "tree",
+          "label": "Tree",
+          "art": "tree"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "",
+      "explanation": "",
+      "scene": "garden",
+      "section": "Big Idea",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.003",
+      "kind": "story",
+      "title": "The Big Idea",
+      "prompt": "So a car is not alive. Now think about you. You eat. You drink. You breathe. You grow taller every year. You are alive!",
+      "options": [
+        {
+          "id": "car",
+          "label": "Car",
+          "art": "car"
+        },
+        {
+          "id": "tree",
+          "label": "Tree",
+          "art": "tree"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "",
+      "explanation": "",
+      "scene": "garden",
+      "section": "Big Idea",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.004",
+      "kind": "story",
+      "title": "The Big Idea",
+      "prompt": "And a tree is alive too — it drinks water, it grows taller, and it makes seeds that become baby trees.",
+      "options": [
+        {
+          "id": "car",
+          "label": "Car",
+          "art": "car"
+        },
+        {
+          "id": "tree",
+          "label": "Tree",
+          "art": "tree"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "",
+      "explanation": "",
+      "scene": "garden",
+      "section": "Big Idea",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.005",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the giraffe to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "giraffe",
+          "label": "giraffe",
+          "art": "giraffe"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "giraffe": "alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.006",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the car to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "car",
+          "label": "car",
+          "art": "car"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "car": "not_alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.007",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the tree to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "tree",
+          "label": "tree",
+          "art": "tree"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "tree": "alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.008",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the chair to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "chair",
+          "label": "chair",
+          "art": "chair"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "chair": "not_alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.009",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the human to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "human",
+          "label": "human",
+          "art": "human"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "human": "alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.010",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the mug to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "mug",
+          "label": "mug",
+          "art": "mug"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "mug": "not_alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.011",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the plant to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "plant",
+          "label": "plant",
+          "art": "plant"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "plant": "alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.012",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the lizard to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "lizard",
+          "label": "lizard",
+          "art": "lizard"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "lizard": "alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.013",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the cat to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "cat",
+          "label": "cat",
+          "art": "cat"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "cat": "alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.014",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the worm to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "worm",
+          "label": "worm",
+          "art": "worm"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "worm": "alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.015",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the doll to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "doll",
+          "label": "doll",
+          "art": "doll"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "doll": "not_alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.016",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the fly to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "fly",
+          "label": "fly",
+          "art": "fly"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "fly": "alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.017",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the cloud to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "cloud",
+          "label": "cloud",
+          "art": "cloud"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "cloud": "not_alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "A cloud moves but is not alive.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.018",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the wooden chair to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "wooden_chair",
+          "label": "wooden chair",
+          "art": "wooden_chair"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "wooden_chair": "not_alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "A wooden chair was once part of a living tree, but the chair itself is not alive.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.019",
+      "kind": "drag-to-basket",
+      "title": "Alive Sorter",
+      "prompt": "Move the egg with a growing chick to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "egg_with_a_growing_chick",
+          "label": "egg with a growing chick",
+          "art": "egg_with_a_growing_chick"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "egg_with_a_growing_chick": "alive"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "This egg has a baby chick growing inside.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.020",
+      "kind": "tap-choice",
+      "title": "The Three Questions",
+      "prompt": "Look at the cat. Does it grow?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "art": "yes"
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "art": "no"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "yes"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Cat"
+    },
+    {
+      "id": "unit_01.step.021",
+      "kind": "tap-choice",
+      "title": "The Three Questions",
+      "prompt": "Look at the cat. Does it need food?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "art": "yes"
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "art": "no"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "yes"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Cat"
+    },
+    {
+      "id": "unit_01.step.022",
+      "kind": "tap-choice",
+      "title": "The Three Questions",
+      "prompt": "Look at the cat. Can it make babies?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "art": "yes"
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "art": "no"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "yes"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Cat"
+    },
+    {
+      "id": "unit_01.step.023",
+      "kind": "tap-choice",
+      "title": "The Three Questions",
+      "prompt": "Look at the plant. Does it grow?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "art": "yes"
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "art": "no"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "yes"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Plant"
+    },
+    {
+      "id": "unit_01.step.024",
+      "kind": "tap-choice",
+      "title": "The Three Questions",
+      "prompt": "Look at the plant. Does it need food?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "art": "yes"
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "art": "no"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "yes"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Plant"
+    },
+    {
+      "id": "unit_01.step.025",
+      "kind": "tap-choice",
+      "title": "The Three Questions",
+      "prompt": "Look at the plant. Can it make babies?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "art": "yes"
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "art": "no"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "yes"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Plant"
+    },
+    {
+      "id": "unit_01.step.026",
+      "kind": "tap-choice",
+      "title": "The Three Questions",
+      "prompt": "Look at the kettle. Does it grow?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "art": "yes"
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "art": "no"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "no"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "A kettle does not grow, does not need food, and cannot make new kettles.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Kettle"
+    },
+    {
+      "id": "unit_01.step.027",
+      "kind": "tap-choice",
+      "title": "The Three Questions",
+      "prompt": "Look at the kettle. Does it need food?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "art": "yes"
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "art": "no"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "no"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "A kettle does not grow, does not need food, and cannot make new kettles.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Kettle"
+    },
+    {
+      "id": "unit_01.step.028",
+      "kind": "tap-choice",
+      "title": "The Three Questions",
+      "prompt": "Look at the kettle. Can it make babies?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "art": "yes"
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "art": "no"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "no"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "A kettle does not grow, does not need food, and cannot make new kettles.",
+      "scene": "garden",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Kettle"
+    },
+    {
+      "id": "unit_01.step.029",
+      "kind": "tap-choice",
+      "title": "Garden rescue",
+      "prompt": "Find all the living things in this place.",
+      "options": [
+        {
+          "id": "giraffe",
+          "label": "Giraffe",
+          "art": "giraffe"
+        },
+        {
+          "id": "car",
+          "label": "Car",
+          "art": "car"
+        },
+        {
+          "id": "tree",
+          "label": "Tree",
+          "art": "tree"
+        },
+        {
+          "id": "chair",
+          "label": "Chair",
+          "art": "chair"
+        },
+        {
+          "id": "human",
+          "label": "Human",
+          "art": "human"
+        },
+        {
+          "id": "mug",
+          "label": "Mug",
+          "art": "mug"
+        },
+        {
+          "id": "plant",
+          "label": "Plant",
+          "art": "plant"
+        },
+        {
+          "id": "lizard",
+          "label": "Lizard",
+          "art": "lizard"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "giraffe",
+          "tree",
+          "human",
+          "plant",
+          "lizard"
+        ]
+      },
+      "assessed": true,
+      "objective": "u01.main.01",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.01",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Alive: giraffe, tree, human, plant, lizard. Not alive: car, chair, mug.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.030",
+      "kind": "match-lines",
+      "title": "Care for the bird",
+      "prompt": "Match each moment with what the bird does.",
+      "options": [
+        {
+          "id": "around_the_cage",
+          "label": "Around the cage",
+          "art": "around_the_cage"
+        },
+        {
+          "id": "when_hungry",
+          "label": "When hungry",
+          "art": "when_hungry"
+        },
+        {
+          "id": "air_through_its_beak",
+          "label": "Air through its beak",
+          "art": "air_through_its_beak"
+        },
+        {
+          "id": "baby_becomes_bigger",
+          "label": "Baby becomes bigger",
+          "art": "baby_becomes_bigger"
+        }
+      ],
+      "targets": [
+        {
+          "id": "grown",
+          "label": "Grown",
+          "art": "grown"
+        },
+        {
+          "id": "breathes",
+          "label": "Breathes",
+          "art": "breathes"
+        },
+        {
+          "id": "eats",
+          "label": "Eats",
+          "art": "eats"
+        },
+        {
+          "id": "moves",
+          "label": "Moves",
+          "art": "moves"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "around_the_cage": "moves",
+          "when_hungry": "eats",
+          "air_through_its_beak": "breathes",
+          "baby_becomes_bigger": "grown"
+        }
+      },
+      "assessed": true,
+      "objective": "u01.main.02",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.02",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "a) moves b) eats c) breathes d) grown",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.031",
+      "kind": "tap-choice",
+      "title": "Kitchen detective",
+      "prompt": "Look at the kettle. Choose its basket.",
+      "options": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "not_alive"
+      },
+      "assessed": true,
+      "objective": "u01.main.03",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.03",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "No. A kettle does not grow, does not need food, and cannot make new kettles. It only moves when a person moves it.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Kettle"
+    },
+    {
+      "id": "unit_01.step.032",
+      "kind": "tap-choice",
+      "title": "Dandelion detective",
+      "prompt": "Find two signs of life for the dandelion.",
+      "options": [
+        {
+          "id": "grows",
+          "label": "Grows",
+          "art": "grows"
+        },
+        {
+          "id": "makes_seeds",
+          "label": "Makes seeds",
+          "art": "makes_seeds"
+        },
+        {
+          "id": "made_in_a_factory",
+          "label": "Made in a factory",
+          "art": "made_in_a_factory"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "grows",
+          "makes_seeds"
+        ]
+      },
+      "assessed": true,
+      "objective": "u01.main.04",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.04",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Any two of: it grows; it needs water and food; it makes new dandelion plants (seeds); it makes its own food from sunlight.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Plant"
+    },
+    {
+      "id": "unit_01.step.033",
+      "kind": "tap-choice",
+      "title": "Moving things",
+      "prompt": "The car is moving. Is moving enough to mean something is alive?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "art": "yes"
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "art": "no"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "no"
+      },
+      "assessed": true,
+      "objective": "u01.main.05",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.05",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "FALSE. A car, a clock and a river all move and none of them is alive.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Car"
+    },
+    {
+      "id": "unit_01.step.034",
+      "kind": "free-pair",
+      "title": "My room collection",
+      "prompt": "Choose one living thing and one non-living thing for your own little scene.",
+      "options": [
+        {
+          "id": "person",
+          "label": "Person",
+          "art": "person"
+        },
+        {
+          "id": "plant",
+          "label": "Plant",
+          "art": "plant"
+        },
+        {
+          "id": "cat",
+          "label": "Cat",
+          "art": "cat"
+        },
+        {
+          "id": "chair",
+          "label": "Chair",
+          "art": "chair"
+        },
+        {
+          "id": "toy",
+          "label": "Toy",
+          "art": "toy"
+        },
+        {
+          "id": "book",
+          "label": "Book",
+          "art": "book"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "u01.main.06",
+      "hint": "",
+      "explanation": "You made your own collection!",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.06",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Child's own drawing. Living: a person, a pet, a plant, an insect. Non‑living: a chair, a toy, a book, a lamp.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "allowedGroups": [
+        [
+          "person",
+          "plant",
+          "cat"
+        ],
+        [
+          "chair",
+          "toy",
+          "book"
+        ]
+      ]
+    },
+    {
+      "id": "unit_01.step.035",
+      "kind": "tap-choice",
+      "title": "Watch the cat",
+      "prompt": "Find two things the cat does that show it is alive.",
+      "options": [
+        {
+          "id": "eats_and_drinks",
+          "label": "Eats and drinks",
+          "art": "eats_and_drinks"
+        },
+        {
+          "id": "breathes",
+          "label": "Breathes",
+          "art": "breathes"
+        },
+        {
+          "id": "made_in_a_factory",
+          "label": "Made in a factory",
+          "art": "made_in_a_factory"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "eats_and_drinks",
+          "breathes"
+        ]
+      },
+      "assessed": true,
+      "objective": "u01.main.07",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.07",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Any two: it grows; it eats and drinks; it breathes; it moves by itself; it feels things; it can have kittens.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Cat"
+    },
+    {
+      "id": "unit_01.step.036",
+      "kind": "drag-to-basket",
+      "title": "Garden and kitchen",
+      "prompt": "Move the cloud to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "cloud",
+          "label": "Cloud",
+          "art": "cloud"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "cloud": "not_alive"
+        }
+      },
+      "assessed": true,
+      "objective": "u01.main.08",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.08",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Alive: worm, mint plant, fly. Not alive: cloud, bread, doll. (Bread was made from wheat that was alive, but the bread itself is not.)",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.037",
+      "kind": "drag-to-basket",
+      "title": "Garden and kitchen",
+      "prompt": "Move the worm to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "worm",
+          "label": "Worm",
+          "art": "worm"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "worm": "alive"
+        }
+      },
+      "assessed": true,
+      "objective": "u01.main.08",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.08",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Alive: worm, mint plant, fly. Not alive: cloud, bread, doll. (Bread was made from wheat that was alive, but the bread itself is not.)",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.038",
+      "kind": "drag-to-basket",
+      "title": "Garden and kitchen",
+      "prompt": "Move the bread to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "bread",
+          "label": "Bread",
+          "art": "bread"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "bread": "not_alive"
+        }
+      },
+      "assessed": true,
+      "objective": "u01.main.08",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.08",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Alive: worm, mint plant, fly. Not alive: cloud, bread, doll. (Bread was made from wheat that was alive, but the bread itself is not.)",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.039",
+      "kind": "drag-to-basket",
+      "title": "Garden and kitchen",
+      "prompt": "Move the mint plant to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "mint_plant",
+          "label": "Mint plant",
+          "art": "mint_plant"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "mint_plant": "alive"
+        }
+      },
+      "assessed": true,
+      "objective": "u01.main.08",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.08",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Alive: worm, mint plant, fly. Not alive: cloud, bread, doll. (Bread was made from wheat that was alive, but the bread itself is not.)",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.040",
+      "kind": "drag-to-basket",
+      "title": "Garden and kitchen",
+      "prompt": "Move the doll to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "doll",
+          "label": "Doll",
+          "art": "doll"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "doll": "not_alive"
+        }
+      },
+      "assessed": true,
+      "objective": "u01.main.08",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.08",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Alive: worm, mint plant, fly. Not alive: cloud, bread, doll. (Bread was made from wheat that was alive, but the bread itself is not.)",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.041",
+      "kind": "drag-to-basket",
+      "title": "Garden and kitchen",
+      "prompt": "Move the fly to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "fly",
+          "label": "Fly",
+          "art": "fly"
+        }
+      ],
+      "targets": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "fly": "alive"
+        }
+      },
+      "assessed": true,
+      "objective": "u01.main.08",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.main.08",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Alive: worm, mint plant, fly. Not alive: cloud, bread, doll. (Bread was made from wheat that was alive, but the bread itself is not.)",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.042",
+      "kind": "tap-choice",
+      "title": "Garden search",
+      "prompt": "Tap the living thing.",
+      "options": [
+        {
+          "id": "car",
+          "label": "Car",
+          "art": "car"
+        },
+        {
+          "id": "tree",
+          "label": "Tree",
+          "art": "tree"
+        },
+        {
+          "id": "chair",
+          "label": "Chair",
+          "art": "chair"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "tree"
+      },
+      "assessed": true,
+      "objective": "u01.choice.01",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.choice.01",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "a tree",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.043",
+      "kind": "tap-choice",
+      "title": "Care basket",
+      "prompt": "Bring what living things need with food.",
+      "options": [
+        {
+          "id": "water",
+          "label": "Water",
+          "art": "water"
+        },
+        {
+          "id": "toys",
+          "label": "Toys",
+          "art": "toys"
+        },
+        {
+          "id": "paper",
+          "label": "Paper",
+          "art": "paper"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "water"
+      },
+      "assessed": true,
+      "objective": "u01.choice.02",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.choice.02",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "water",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.044",
+      "kind": "tap-choice",
+      "title": "Factory visitor",
+      "prompt": "Which picture is not a sign of being alive?",
+      "options": [
+        {
+          "id": "growing",
+          "label": "Growing",
+          "art": "growing"
+        },
+        {
+          "id": "eating",
+          "label": "Eating",
+          "art": "eating"
+        },
+        {
+          "id": "made_in_a_factory",
+          "label": "Made in a factory",
+          "art": "made_in_a_factory"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "made_in_a_factory"
+      },
+      "assessed": true,
+      "objective": "u01.choice.03",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.choice.03",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "being made in a factory",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_01.step.045",
+      "kind": "tap-choice",
+      "title": "Baby bird",
+      "prompt": "Choose what happens to a baby bird over time.",
+      "options": [
+        {
+          "id": "stays_the_same_size",
+          "label": "Stays the same size",
+          "art": "stays_the_same_size"
+        },
+        {
+          "id": "grows_bigger",
+          "label": "Grows bigger",
+          "art": "grows_bigger"
+        },
+        {
+          "id": "gets_smaller",
+          "label": "Gets smaller",
+          "art": "gets_smaller"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "grows_bigger"
+      },
+      "assessed": true,
+      "objective": "u01.choice.04",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.choice.04",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "grow bigger",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Bird"
+    },
+    {
+      "id": "unit_01.step.046",
+      "kind": "tap-choice",
+      "title": "Balcony plant",
+      "prompt": "Choose a basket for the plant.",
+      "options": [
+        {
+          "id": "alive",
+          "label": "Alive",
+          "art": "alive"
+        },
+        {
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "not_alive"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "alive"
+      },
+      "assessed": true,
+      "objective": "u01.choice.05",
+      "hint": "Does it grow? Does it need food? Can it make babies?",
+      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "scene": "garden",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          4,
+          5
+        ],
+        "questionId": "u01.choice.05",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "alive",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Plant"
+    }
+  ],
+  "stickers": [
+    {
+      "id": "alive",
+      "word": "alive",
+      "meaning": "Something that grows, feeds, breathes and can make babies.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "not_alive",
+      "word": "not alive",
+      "meaning": "Something that never grows or feeds, like a chair or a stone.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "living_thing",
+      "word": "living thing",
+      "meaning": "Another way of saying something that is alive, like a person, an animal or a plant.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "grow",
+      "word": "grow",
+      "meaning": "To get bigger over time.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "breathe",
+      "word": "breathe",
+      "meaning": "To take air in and let air out.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "food",
+      "word": "food",
+      "meaning": "The roots drink the water. The leaves make the food from sunlight.",
+      "meaningSource": "unit_excerpt",
+      "pages": [
+        6
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "The house hunt — 10 minutes\nWalk slowly through the house together. Point at things one by one: a chair, the cat, a plant, a mug, grandmother, the television, a fly on\nthe window. For each one ask the same three questions: \"Does it grow? Does it need food? Can it make babies?\" If the answer is yes to all\nthree, it is alive. Make two lists on one sheet of paper: Alive and Not Alive.",
+      "safety": "An adult stays with the child for every activity. No glass, no sockets, no flames, and nothing small enough to swallow is left with a child\nalone. Water activities are done in a bowl or the sink, never near electrical items.",
+      "pages": [
+        4,
+        5
+      ],
+      "safetyPages": [
+        2
+      ]
+    }
+  ],
+  "garden": {
+    "version": 1,
+    "sourcePages": [
+      4,
+      5
+    ],
+    "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+    "ui": {
+      "title": "Garden explorers",
+      "hunt": "Find another thing.",
+      "huntAr": "المس حاجة في الجنينة",
+      "question": "Is the {name} alive?",
+      "questionAr": "حية ولا مش حية؟",
+      "alive": "Alive",
+      "aliveAr": "حية",
+      "notAlive": "Not alive",
+      "notAliveAr": "مش حية",
+      "retry": "Hmm, let's look again!",
+      "praise": "You looked carefully!",
+      "next": "Find another",
+      "nextAr": "دور على حاجة تانية",
+      "finished": "You explored the whole garden!",
+      "finishedAr": "اكتشفت كل اللي في الجنينة!",
+      "replay": "Play again",
+      "replayAr": "العب تاني",
+      "back": "My island",
+      "backAr": "ارجع للجزيرة",
+      "count": "Found",
+      "drag": "Tap a basket, or drag the picture into it.",
+      "dragAr": "اختار سلة، أو اسحب الصورة ليها",
+      "voiceUnavailable": "الصوت المحلي مش متاح في المتصفح ده؛ حركة الإيد بتوضح المطلوب.",
+      "tutorial": "Tap the cat.",
+      "tutorialAr": "ابدأ بلمس القطة",
+      "saved": "Your discoveries are saved.",
+      "saveError": "مش قادر أحفظ دلوقتي. جرّب تاني.",
+      "sourceLabel": "Alive or Not Alive?",
+      "goodName": "Great exploring, {name}!"
+    },
+    "items": [
+      {
+        "id": "cat",
+        "name": "Cat",
+        "nameAr": "القطة",
+        "alive": true,
+        "hint": "Does a cat eat and grow?",
+        "explanation": "The cat is alive. It eats, breathes and grows.",
+        "objective": "u01.main.07",
+        "sourcePages": [
+          4,
+          5
+        ],
+        "answerKeyPages": [
+          35
+        ]
+      },
+      {
+        "id": "tree",
+        "name": "Tree",
+        "nameAr": "الشجرة",
+        "alive": true,
+        "hint": "Does a tree drink water and grow taller?",
+        "explanation": "The tree is alive. It drinks water, grows taller and makes seeds.",
+        "objective": "u01.main.01",
+        "sourcePages": [
+          4,
+          5
+        ],
+        "answerKeyPages": [
+          35
+        ]
+      },
+      {
+        "id": "car",
+        "name": "Car",
+        "nameAr": "العربية",
+        "alive": false,
+        "hint": "A car moves. But does it grow or need food?",
+        "explanation": "A car moves, but it does not grow, eat or make babies. It is not alive.",
+        "objective": "u01.main.05",
+        "sourcePages": [
+          4,
+          5
+        ],
+        "answerKeyPages": [
+          35
+        ]
+      },
+      {
+        "id": "plant",
+        "name": "Plant",
+        "nameAr": "النبات",
+        "alive": true,
+        "hint": "Think about the plant getting taller and drinking water.",
+        "explanation": "The plant is alive. It grows and drinks water.",
+        "objective": "u01.choice.05",
+        "sourcePages": [
+          4,
+          5
+        ],
+        "answerKeyPages": [
+          35
+        ]
+      },
+      {
+        "id": "chair",
+        "name": "Wooden chair",
+        "nameAr": "الكرسي الخشب",
+        "alive": false,
+        "hint": "Is the chair itself growing?",
+        "explanation": "A wooden chair was once part of a living tree, but the chair itself is not alive.",
+        "objective": "u01.main.01",
+        "sourcePages": [
+          4,
+          5
+        ],
+        "answerKeyPages": [
+          35
+        ]
+      },
+      {
+        "id": "bird",
+        "name": "Bird",
+        "nameAr": "العصفور",
+        "alive": true,
+        "hint": "Does the bird eat, breathe and grow?",
+        "explanation": "The bird is alive. It eats, breathes and grows.",
+        "objective": "u01.main.02",
+        "sourcePages": [
+          4,
+          5
+        ],
+        "answerKeyPages": [
+          35
+        ]
+      },
+      {
+        "id": "cloud",
+        "name": "Cloud",
+        "nameAr": "السحابة",
+        "alive": false,
+        "hint": "The cloud moves. Is moving enough?",
+        "explanation": "A cloud moves but is not alive.",
+        "objective": "u01.main.08",
+        "sourcePages": [
+          4,
+          5
+        ],
+        "answerKeyPages": [
+          35
+        ]
+      }
+    ]
+  }
+}

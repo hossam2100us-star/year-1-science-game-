@@ -1,0 +1,2847 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "unit_03",
+  "title": "Ourselves",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    8,
+    9,
+    10
+  ],
+  "quiz": false,
+  "steps": [
+    {
+      "id": "unit_03.step.001",
+      "kind": "explore",
+      "title": "Meet the explorer",
+      "prompt": "Touch the explorer's body parts and listen.",
+      "options": [
+        {
+          "id": "head",
+          "label": "Head",
+          "art": "head"
+        },
+        {
+          "id": "hand",
+          "label": "Hand",
+          "art": "hand"
+        },
+        {
+          "id": "foot",
+          "label": "Foot",
+          "art": "foot"
+        },
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        },
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "",
+      "explanation": "",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "minTouches": 3
+    },
+    {
+      "id": "unit_03.step.002",
+      "kind": "story",
+      "title": "The Big Idea",
+      "prompt": "You have five ways of finding out about the world. You see with your eyes. You hear with your ears. You smell with your nose. You taste with your tongue.",
+      "options": [
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        },
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        },
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        },
+        {
+          "id": "tongue",
+          "label": "Tongue",
+          "art": "tongue"
+        },
+        {
+          "id": "skin",
+          "label": "Skin",
+          "art": "skin"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "",
+      "explanation": "",
+      "scene": "body",
+      "section": "Big Idea",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.003",
+      "kind": "story",
+      "title": "The Big Idea",
+      "prompt": "And you touch with your skin. Five senses. Let's count them on your fingers!",
+      "options": [
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        },
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        },
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        },
+        {
+          "id": "tongue",
+          "label": "Tongue",
+          "art": "tongue"
+        },
+        {
+          "id": "skin",
+          "label": "Skin",
+          "art": "skin"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "",
+      "explanation": "",
+      "scene": "body",
+      "section": "Big Idea",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.004",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the head label in the right place.",
+      "options": [
+        {
+          "id": "head",
+          "label": "Head",
+          "art": "head"
+        }
+      ],
+      "targets": [
+        {
+          "id": "head",
+          "label": "Head",
+          "art": "head"
+        },
+        {
+          "id": "neck",
+          "label": "Neck",
+          "art": "neck"
+        },
+        {
+          "id": "chin",
+          "label": "Chin",
+          "art": "chin"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "head": "head"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the head.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.005",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the neck label in the right place.",
+      "options": [
+        {
+          "id": "neck",
+          "label": "Neck",
+          "art": "neck"
+        }
+      ],
+      "targets": [
+        {
+          "id": "head",
+          "label": "Head",
+          "art": "head"
+        },
+        {
+          "id": "neck",
+          "label": "Neck",
+          "art": "neck"
+        },
+        {
+          "id": "chin",
+          "label": "Chin",
+          "art": "chin"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "neck": "neck"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the neck.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.006",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the chin label in the right place.",
+      "options": [
+        {
+          "id": "chin",
+          "label": "Chin",
+          "art": "chin"
+        }
+      ],
+      "targets": [
+        {
+          "id": "head",
+          "label": "Head",
+          "art": "head"
+        },
+        {
+          "id": "neck",
+          "label": "Neck",
+          "art": "neck"
+        },
+        {
+          "id": "chin",
+          "label": "Chin",
+          "art": "chin"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "chin": "chin"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the chin.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.007",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the shoulder label in the right place.",
+      "options": [
+        {
+          "id": "shoulder",
+          "label": "Shoulder",
+          "art": "shoulder"
+        }
+      ],
+      "targets": [
+        {
+          "id": "shoulder",
+          "label": "Shoulder",
+          "art": "shoulder"
+        },
+        {
+          "id": "arm",
+          "label": "Arm",
+          "art": "arm"
+        },
+        {
+          "id": "elbow",
+          "label": "Elbow",
+          "art": "elbow"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "shoulder": "shoulder"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the shoulder.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.008",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the arm label in the right place.",
+      "options": [
+        {
+          "id": "arm",
+          "label": "Arm",
+          "art": "arm"
+        }
+      ],
+      "targets": [
+        {
+          "id": "shoulder",
+          "label": "Shoulder",
+          "art": "shoulder"
+        },
+        {
+          "id": "arm",
+          "label": "Arm",
+          "art": "arm"
+        },
+        {
+          "id": "elbow",
+          "label": "Elbow",
+          "art": "elbow"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "arm": "arm"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the arm.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.009",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the elbow label in the right place.",
+      "options": [
+        {
+          "id": "elbow",
+          "label": "Elbow",
+          "art": "elbow"
+        }
+      ],
+      "targets": [
+        {
+          "id": "shoulder",
+          "label": "Shoulder",
+          "art": "shoulder"
+        },
+        {
+          "id": "arm",
+          "label": "Arm",
+          "art": "arm"
+        },
+        {
+          "id": "elbow",
+          "label": "Elbow",
+          "art": "elbow"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "elbow": "elbow"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the elbow.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.010",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the wrist label in the right place.",
+      "options": [
+        {
+          "id": "wrist",
+          "label": "Wrist",
+          "art": "wrist"
+        }
+      ],
+      "targets": [
+        {
+          "id": "wrist",
+          "label": "Wrist",
+          "art": "wrist"
+        },
+        {
+          "id": "hand",
+          "label": "Hand",
+          "art": "hand"
+        },
+        {
+          "id": "fingers",
+          "label": "Fingers",
+          "art": "fingers"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "wrist": "wrist"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the wrist.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.011",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the hand label in the right place.",
+      "options": [
+        {
+          "id": "hand",
+          "label": "Hand",
+          "art": "hand"
+        }
+      ],
+      "targets": [
+        {
+          "id": "wrist",
+          "label": "Wrist",
+          "art": "wrist"
+        },
+        {
+          "id": "hand",
+          "label": "Hand",
+          "art": "hand"
+        },
+        {
+          "id": "fingers",
+          "label": "Fingers",
+          "art": "fingers"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "hand": "hand"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the hand.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.012",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the fingers label in the right place.",
+      "options": [
+        {
+          "id": "fingers",
+          "label": "Fingers",
+          "art": "fingers"
+        }
+      ],
+      "targets": [
+        {
+          "id": "wrist",
+          "label": "Wrist",
+          "art": "wrist"
+        },
+        {
+          "id": "hand",
+          "label": "Hand",
+          "art": "hand"
+        },
+        {
+          "id": "fingers",
+          "label": "Fingers",
+          "art": "fingers"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "fingers": "fingers"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the fingers.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.013",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the leg label in the right place.",
+      "options": [
+        {
+          "id": "leg",
+          "label": "Leg",
+          "art": "leg"
+        }
+      ],
+      "targets": [
+        {
+          "id": "leg",
+          "label": "Leg",
+          "art": "leg"
+        },
+        {
+          "id": "knee",
+          "label": "Knee",
+          "art": "knee"
+        },
+        {
+          "id": "ankle",
+          "label": "Ankle",
+          "art": "ankle"
+        },
+        {
+          "id": "foot",
+          "label": "Foot",
+          "art": "foot"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "leg": "leg"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the leg.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.014",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the knee label in the right place.",
+      "options": [
+        {
+          "id": "knee",
+          "label": "Knee",
+          "art": "knee"
+        }
+      ],
+      "targets": [
+        {
+          "id": "leg",
+          "label": "Leg",
+          "art": "leg"
+        },
+        {
+          "id": "knee",
+          "label": "Knee",
+          "art": "knee"
+        },
+        {
+          "id": "ankle",
+          "label": "Ankle",
+          "art": "ankle"
+        },
+        {
+          "id": "foot",
+          "label": "Foot",
+          "art": "foot"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "knee": "knee"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the knee.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.015",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the ankle label in the right place.",
+      "options": [
+        {
+          "id": "ankle",
+          "label": "Ankle",
+          "art": "ankle"
+        }
+      ],
+      "targets": [
+        {
+          "id": "leg",
+          "label": "Leg",
+          "art": "leg"
+        },
+        {
+          "id": "knee",
+          "label": "Knee",
+          "art": "knee"
+        },
+        {
+          "id": "ankle",
+          "label": "Ankle",
+          "art": "ankle"
+        },
+        {
+          "id": "foot",
+          "label": "Foot",
+          "art": "foot"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "ankle": "ankle"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the ankle.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.016",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the foot label in the right place.",
+      "options": [
+        {
+          "id": "foot",
+          "label": "Foot",
+          "art": "foot"
+        }
+      ],
+      "targets": [
+        {
+          "id": "leg",
+          "label": "Leg",
+          "art": "leg"
+        },
+        {
+          "id": "knee",
+          "label": "Knee",
+          "art": "knee"
+        },
+        {
+          "id": "ankle",
+          "label": "Ankle",
+          "art": "ankle"
+        },
+        {
+          "id": "foot",
+          "label": "Foot",
+          "art": "foot"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "foot": "foot"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "This is the foot.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "body"
+    },
+    {
+      "id": "unit_03.step.017",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the eyebrow label in the right place.",
+      "options": [
+        {
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "art": "eyebrow"
+        }
+      ],
+      "targets": [
+        {
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "art": "eyebrow"
+        },
+        {
+          "id": "eyelash",
+          "label": "Eyelash",
+          "art": "eyelash"
+        },
+        {
+          "id": "eyelid",
+          "label": "Eyelid",
+          "art": "eyelid"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "eyebrow": "eyebrow"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "The eyebrow keeps sweat out.",
+      "scene": "eye",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "eye"
+    },
+    {
+      "id": "unit_03.step.018",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the eyelash label in the right place.",
+      "options": [
+        {
+          "id": "eyelash",
+          "label": "Eyelash",
+          "art": "eyelash"
+        }
+      ],
+      "targets": [
+        {
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "art": "eyebrow"
+        },
+        {
+          "id": "eyelash",
+          "label": "Eyelash",
+          "art": "eyelash"
+        },
+        {
+          "id": "eyelid",
+          "label": "Eyelid",
+          "art": "eyelid"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "eyelash": "eyelash"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "The eyelash keeps dust out.",
+      "scene": "eye",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "eye"
+    },
+    {
+      "id": "unit_03.step.019",
+      "kind": "label-diagram",
+      "title": "Label Me",
+      "prompt": "Put the eyelid label in the right place.",
+      "options": [
+        {
+          "id": "eyelid",
+          "label": "Eyelid",
+          "art": "eyelid"
+        }
+      ],
+      "targets": [
+        {
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "art": "eyebrow"
+        },
+        {
+          "id": "eyelash",
+          "label": "Eyelash",
+          "art": "eyelash"
+        },
+        {
+          "id": "eyelid",
+          "label": "Eyelid",
+          "art": "eyelid"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "eyelid": "eyelid"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at where the line points.",
+      "explanation": "The eyelid is the door that blinks.",
+      "scene": "eye",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "diagram": "eye"
+    },
+    {
+      "id": "unit_03.step.020",
+      "kind": "drag-to-basket",
+      "title": "Five Senses Match",
+      "prompt": "Move the sight to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "sight",
+          "label": "Sight",
+          "art": "sight"
+        }
+      ],
+      "targets": [
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        },
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        },
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        },
+        {
+          "id": "tongue",
+          "label": "Tongue",
+          "art": "tongue"
+        },
+        {
+          "id": "skin",
+          "label": "Skin",
+          "art": "skin"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "sight": "eyes"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Which part helps you find out?",
+      "explanation": "Sight: eyes.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.021",
+      "kind": "drag-to-basket",
+      "title": "Five Senses Match",
+      "prompt": "Move the hearing to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "hearing",
+          "label": "Hearing",
+          "art": "hearing"
+        }
+      ],
+      "targets": [
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        },
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        },
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        },
+        {
+          "id": "tongue",
+          "label": "Tongue",
+          "art": "tongue"
+        },
+        {
+          "id": "skin",
+          "label": "Skin",
+          "art": "skin"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "hearing": "ears"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Which part helps you find out?",
+      "explanation": "Hearing: ears.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.022",
+      "kind": "drag-to-basket",
+      "title": "Five Senses Match",
+      "prompt": "Move the smell to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "smell",
+          "label": "Smell",
+          "art": "smell"
+        }
+      ],
+      "targets": [
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        },
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        },
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        },
+        {
+          "id": "tongue",
+          "label": "Tongue",
+          "art": "tongue"
+        },
+        {
+          "id": "skin",
+          "label": "Skin",
+          "art": "skin"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "smell": "nose"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Which part helps you find out?",
+      "explanation": "Smell: nose.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.023",
+      "kind": "drag-to-basket",
+      "title": "Five Senses Match",
+      "prompt": "Move the taste to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "taste",
+          "label": "Taste",
+          "art": "taste"
+        }
+      ],
+      "targets": [
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        },
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        },
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        },
+        {
+          "id": "tongue",
+          "label": "Tongue",
+          "art": "tongue"
+        },
+        {
+          "id": "skin",
+          "label": "Skin",
+          "art": "skin"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "taste": "tongue"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Which part helps you find out?",
+      "explanation": "Taste: tongue.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.024",
+      "kind": "drag-to-basket",
+      "title": "Five Senses Match",
+      "prompt": "Move the touch to its place. You can drag, or tap it and tap a place.",
+      "options": [
+        {
+          "id": "touch",
+          "label": "Touch",
+          "art": "touch"
+        }
+      ],
+      "targets": [
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        },
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        },
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        },
+        {
+          "id": "tongue",
+          "label": "Tongue",
+          "art": "tongue"
+        },
+        {
+          "id": "skin",
+          "label": "Skin",
+          "art": "skin"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "touch": "skin"
+        }
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Which part helps you find out?",
+      "explanation": "Touch: skin.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.025",
+      "kind": "tap-choice",
+      "title": "Which sense is telling you?",
+      "prompt": "The bread is burning.",
+      "options": [
+        {
+          "id": "sight",
+          "label": "Sight",
+          "art": "sight"
+        },
+        {
+          "id": "hearing",
+          "label": "Hearing",
+          "art": "hearing"
+        },
+        {
+          "id": "smell",
+          "label": "Smell",
+          "art": "smell"
+        },
+        {
+          "id": "taste",
+          "label": "Taste",
+          "art": "taste"
+        },
+        {
+          "id": "touch",
+          "label": "Touch",
+          "art": "touch"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "smell"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Think about how you found that out.",
+      "explanation": "The sense is smell.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Bread"
+    },
+    {
+      "id": "unit_03.step.026",
+      "kind": "tap-choice",
+      "title": "Which sense is telling you?",
+      "prompt": "The lemon is sour.",
+      "options": [
+        {
+          "id": "sight",
+          "label": "Sight",
+          "art": "sight"
+        },
+        {
+          "id": "hearing",
+          "label": "Hearing",
+          "art": "hearing"
+        },
+        {
+          "id": "smell",
+          "label": "Smell",
+          "art": "smell"
+        },
+        {
+          "id": "taste",
+          "label": "Taste",
+          "art": "taste"
+        },
+        {
+          "id": "touch",
+          "label": "Touch",
+          "art": "touch"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "taste"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Think about how you found that out.",
+      "explanation": "The sense is taste.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Lemon"
+    },
+    {
+      "id": "unit_03.step.027",
+      "kind": "tap-choice",
+      "title": "Which sense is telling you?",
+      "prompt": "The traffic outside.",
+      "options": [
+        {
+          "id": "sight",
+          "label": "Sight",
+          "art": "sight"
+        },
+        {
+          "id": "hearing",
+          "label": "Hearing",
+          "art": "hearing"
+        },
+        {
+          "id": "smell",
+          "label": "Smell",
+          "art": "smell"
+        },
+        {
+          "id": "taste",
+          "label": "Taste",
+          "art": "taste"
+        },
+        {
+          "id": "touch",
+          "label": "Touch",
+          "art": "touch"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "hearing"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Think about how you found that out.",
+      "explanation": "The sense is hearing.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Car"
+    },
+    {
+      "id": "unit_03.step.028",
+      "kind": "tap-choice",
+      "title": "Which sense is telling you?",
+      "prompt": "The tea is too hot.",
+      "options": [
+        {
+          "id": "sight",
+          "label": "Sight",
+          "art": "sight"
+        },
+        {
+          "id": "hearing",
+          "label": "Hearing",
+          "art": "hearing"
+        },
+        {
+          "id": "smell",
+          "label": "Smell",
+          "art": "smell"
+        },
+        {
+          "id": "taste",
+          "label": "Taste",
+          "art": "taste"
+        },
+        {
+          "id": "touch",
+          "label": "Touch",
+          "art": "touch"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "touch"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Think about how you found that out.",
+      "explanation": "The sense is touch.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Mug"
+    },
+    {
+      "id": "unit_03.step.029",
+      "kind": "tap-choice",
+      "title": "Which sense is telling you?",
+      "prompt": "The traffic light turned green.",
+      "options": [
+        {
+          "id": "sight",
+          "label": "Sight",
+          "art": "sight"
+        },
+        {
+          "id": "hearing",
+          "label": "Hearing",
+          "art": "hearing"
+        },
+        {
+          "id": "smell",
+          "label": "Smell",
+          "art": "smell"
+        },
+        {
+          "id": "taste",
+          "label": "Taste",
+          "art": "taste"
+        },
+        {
+          "id": "touch",
+          "label": "Touch",
+          "art": "touch"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "sight"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Think about how you found that out.",
+      "explanation": "The sense is sight.",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Traffic light"
+    },
+    {
+      "id": "unit_03.step.030",
+      "kind": "tap-choice",
+      "title": "Watermelon discovery",
+      "prompt": "Find the four senses for a slice of watermelon.",
+      "options": [
+        {
+          "id": "sight",
+          "label": "Sight",
+          "art": "sight"
+        },
+        {
+          "id": "hearing",
+          "label": "Hearing",
+          "art": "hearing"
+        },
+        {
+          "id": "smell",
+          "label": "Smell",
+          "art": "smell"
+        },
+        {
+          "id": "taste",
+          "label": "Taste",
+          "art": "taste"
+        },
+        {
+          "id": "touch",
+          "label": "Touch",
+          "art": "touch"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "sight",
+          "smell",
+          "touch",
+          "taste"
+        ]
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "The book names four senses together.",
+      "explanation": "Sight, smell, touch and taste all together!",
+      "scene": "body",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Watermelon"
+    },
+    {
+      "id": "unit_03.step.031",
+      "kind": "tap-choice",
+      "title": "Biggest Hand",
+      "prompt": "Whose handful has the most marbles?",
+      "options": [
+        {
+          "id": "david",
+          "label": "David",
+          "art": "david"
+        },
+        {
+          "id": "zara",
+          "label": "Zara",
+          "art": "zara"
+        },
+        {
+          "id": "jack",
+          "label": "Jack",
+          "art": "jack"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "zara"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at the number of marbles.",
+      "explanation": "Zara has 9, the most. Jack has 5, the fewest. David has 6.",
+      "scene": "table",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "table": [
+        {
+          "name": "David",
+          "value": 6
+        },
+        {
+          "name": "Zara",
+          "value": 9
+        },
+        {
+          "name": "Jack",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "unit_03.step.032",
+      "kind": "tap-choice",
+      "title": "Biggest Hand",
+      "prompt": "Whose handful has the fewest marbles?",
+      "options": [
+        {
+          "id": "david",
+          "label": "David",
+          "art": "david"
+        },
+        {
+          "id": "zara",
+          "label": "Zara",
+          "art": "zara"
+        },
+        {
+          "id": "jack",
+          "label": "Jack",
+          "art": "jack"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "jack"
+      },
+      "assessed": false,
+      "objective": "",
+      "hint": "Look at the number of marbles.",
+      "explanation": "Zara has 9, the most. Jack has 5, the fewest. David has 6.",
+      "scene": "table",
+      "section": "Explore",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "table": [
+        {
+          "name": "David",
+          "value": 6
+        },
+        {
+          "name": "Zara",
+          "value": 9
+        },
+        {
+          "name": "Jack",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "unit_03.step.033",
+      "kind": "match-lines",
+      "title": "Explorer's senses",
+      "prompt": "Connect every sense to its body part.",
+      "options": [
+        {
+          "id": "sight",
+          "label": "Sight",
+          "art": "sight"
+        },
+        {
+          "id": "hearing",
+          "label": "Hearing",
+          "art": "hearing"
+        },
+        {
+          "id": "smell",
+          "label": "Smell",
+          "art": "smell"
+        },
+        {
+          "id": "taste",
+          "label": "Taste",
+          "art": "taste"
+        },
+        {
+          "id": "touch",
+          "label": "Touch",
+          "art": "touch"
+        }
+      ],
+      "targets": [
+        {
+          "id": "skin",
+          "label": "Skin",
+          "art": "skin"
+        },
+        {
+          "id": "tongue",
+          "label": "Tongue",
+          "art": "tongue"
+        },
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        },
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        },
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "sight": "eyes",
+          "hearing": "ears",
+          "smell": "nose",
+          "taste": "tongue",
+          "touch": "skin"
+        }
+      },
+      "assessed": true,
+      "objective": "u03.main.01",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "Sight: eyes. Hearing: ears. Smell: nose. Taste: tongue. Touch: skin.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.main.01",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "smell – nose | touch – skin | sight – eyes | hearing – ears | taste – tongue",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.034",
+      "kind": "tap-choice",
+      "title": "Sense detective",
+      "prompt": "Choose how many senses we have.",
+      "options": [
+        {
+          "id": "three",
+          "label": "Three",
+          "art": "three"
+        },
+        {
+          "id": "five",
+          "label": "Five",
+          "art": "five"
+        },
+        {
+          "id": "ten",
+          "label": "Ten",
+          "art": "ten"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "five"
+      },
+      "assessed": true,
+      "objective": "u03.main.02",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "There are five senses. Taste buds are on the tongue. Smell and taste work together. We taste sweet, sour and salty foods.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.main.02",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "a) five b) taste buds c) nose d) sweet",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.035",
+      "kind": "tap-choice",
+      "title": "Sense detective",
+      "prompt": "Find what is on the tongue.",
+      "options": [
+        {
+          "id": "taste_buds",
+          "label": "Taste buds",
+          "art": "taste_buds"
+        },
+        {
+          "id": "eyelashes",
+          "label": "Eyelashes",
+          "art": "eyelashes"
+        },
+        {
+          "id": "fingers",
+          "label": "Fingers",
+          "art": "fingers"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "taste_buds"
+      },
+      "assessed": true,
+      "objective": "u03.main.02",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "There are five senses. Taste buds are on the tongue. Smell and taste work together. We taste sweet, sour and salty foods.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.main.02",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "a) five b) taste buds c) nose d) sweet",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.036",
+      "kind": "tap-choice",
+      "title": "Sense detective",
+      "prompt": "Find the part you hold to make the apple harder to taste.",
+      "options": [
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        },
+        {
+          "id": "hand",
+          "label": "Hand",
+          "art": "hand"
+        },
+        {
+          "id": "ear",
+          "label": "Ear",
+          "art": "ear"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "nose"
+      },
+      "assessed": true,
+      "objective": "u03.main.02",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "There are five senses. Taste buds are on the tongue. Smell and taste work together. We taste sweet, sour and salty foods.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.main.02",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "a) five b) taste buds c) nose d) sweet",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.037",
+      "kind": "tap-choice",
+      "title": "Sense detective",
+      "prompt": "Choose the taste that goes with sour and salty.",
+      "options": [
+        {
+          "id": "sweet",
+          "label": "Sweet",
+          "art": "sweet"
+        },
+        {
+          "id": "loud",
+          "label": "Loud",
+          "art": "loud"
+        },
+        {
+          "id": "bright",
+          "label": "Bright",
+          "art": "bright"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "sweet"
+      },
+      "assessed": true,
+      "objective": "u03.main.02",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "There are five senses. Taste buds are on the tongue. Smell and taste work together. We taste sweet, sour and salty foods.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.main.02",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "a) five b) taste buds c) nose d) sweet",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.038",
+      "kind": "tap-choice",
+      "title": "Eye protectors",
+      "prompt": "Find all three parts around the eye.",
+      "options": [
+        {
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "art": "eyebrow"
+        },
+        {
+          "id": "eyelash",
+          "label": "Eyelash",
+          "art": "eyelash"
+        },
+        {
+          "id": "eyelid",
+          "label": "Eyelid",
+          "art": "eyelid"
+        },
+        {
+          "id": "wrist",
+          "label": "Wrist",
+          "art": "wrist"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "eyebrow",
+          "eyelash",
+          "eyelid"
+        ]
+      },
+      "assessed": true,
+      "objective": "u03.main.03",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "The three parts are eyebrow, eyelash and eyelid.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.main.03",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "eyebrow, eyelash, eyelid",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.039",
+      "kind": "tap-choice",
+      "title": "Marble challenge",
+      "prompt": "Find the biggest handful.",
+      "options": [
+        {
+          "id": "david",
+          "label": "David",
+          "art": "david"
+        },
+        {
+          "id": "zara",
+          "label": "Zara",
+          "art": "zara"
+        },
+        {
+          "id": "jack",
+          "label": "Jack",
+          "art": "jack"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "zara"
+      },
+      "assessed": true,
+      "objective": "u03.main.04",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "Zara has the biggest handful: 9. Jack has the smallest: 5.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.main.04",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "a) Zara (9 marbles) b) Jack (5 marbles)",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "table": [
+        {
+          "name": "David",
+          "value": 6
+        },
+        {
+          "name": "Zara",
+          "value": 9
+        },
+        {
+          "name": "Jack",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "unit_03.step.040",
+      "kind": "tap-choice",
+      "title": "Marble challenge",
+      "prompt": "Find the smallest handful.",
+      "options": [
+        {
+          "id": "david",
+          "label": "David",
+          "art": "david"
+        },
+        {
+          "id": "zara",
+          "label": "Zara",
+          "art": "zara"
+        },
+        {
+          "id": "jack",
+          "label": "Jack",
+          "art": "jack"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "jack"
+      },
+      "assessed": true,
+      "objective": "u03.main.04",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "Zara has the biggest handful: 9. Jack has the smallest: 5.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.main.04",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "a) Zara (9 marbles) b) Jack (5 marbles)",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "table": [
+        {
+          "name": "David",
+          "value": 6
+        },
+        {
+          "name": "Zara",
+          "value": 9
+        },
+        {
+          "name": "Jack",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "unit_03.step.041",
+      "kind": "tap-choice",
+      "title": "Visit the optometrist",
+      "prompt": "Help the optometrist find the body part to look after.",
+      "options": [
+        {
+          "id": "teeth",
+          "label": "Teeth",
+          "art": "teeth"
+        },
+        {
+          "id": "hair",
+          "label": "Hair",
+          "art": "hair"
+        },
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "eyes"
+      },
+      "assessed": true,
+      "objective": "u03.main.05",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "An optometrist looks after your eyes.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.main.05",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "eyes",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.042",
+      "kind": "match-lines",
+      "title": "My sense stories",
+      "prompt": "Match each scene to a sense.",
+      "options": [
+        {
+          "id": "see_birds",
+          "label": "See birds",
+          "art": "see_birds"
+        },
+        {
+          "id": "hear_music",
+          "label": "Hear music",
+          "art": "hear_music"
+        },
+        {
+          "id": "soft_cat",
+          "label": "Soft cat",
+          "art": "soft_cat"
+        },
+        {
+          "id": "sweet_honey",
+          "label": "Sweet honey",
+          "art": "sweet_honey"
+        },
+        {
+          "id": "smell_flowers",
+          "label": "Smell flowers",
+          "art": "smell_flowers"
+        }
+      ],
+      "targets": [
+        {
+          "id": "smell",
+          "label": "Smell",
+          "art": "smell"
+        },
+        {
+          "id": "taste",
+          "label": "Taste",
+          "art": "taste"
+        },
+        {
+          "id": "touch",
+          "label": "Touch",
+          "art": "touch"
+        },
+        {
+          "id": "hearing",
+          "label": "Hearing",
+          "art": "hearing"
+        },
+        {
+          "id": "sight",
+          "label": "Sight",
+          "art": "sight"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "see_birds": "sight",
+          "hear_music": "hearing",
+          "soft_cat": "touch",
+          "sweet_honey": "taste",
+          "smell_flowers": "smell"
+        }
+      },
+      "assessed": true,
+      "objective": "u03.main.06",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "We see with eyes, hear with ears, touch with skin, taste with the tongue and smell with the nose.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.main.06",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Child's own sentences, for example: I can see birds with my eyes. I can hear music with my ears. I can touch the soft cat with my skin. I can\ntaste sweet honey with my tongue.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.043",
+      "kind": "tap-choice",
+      "title": "Apple discovery",
+      "prompt": "Choose the two senses that work together when eating an apple.",
+      "options": [
+        {
+          "id": "sight",
+          "label": "Sight",
+          "art": "sight"
+        },
+        {
+          "id": "hearing",
+          "label": "Hearing",
+          "art": "hearing"
+        },
+        {
+          "id": "smell",
+          "label": "Smell",
+          "art": "smell"
+        },
+        {
+          "id": "taste",
+          "label": "Taste",
+          "art": "taste"
+        },
+        {
+          "id": "touch",
+          "label": "Touch",
+          "art": "touch"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "taste",
+          "smell"
+        ]
+      },
+      "assessed": true,
+      "objective": "u03.main.07",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "Taste and smell work together. If you hold your nose you can hardly taste the apple at all.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.main.07",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Taste and smell. If you hold your nose you can hardly taste the apple at all.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Apple"
+    },
+    {
+      "id": "unit_03.step.044",
+      "kind": "free-measure",
+      "title": "Our shoe sizes",
+      "prompt": "Choose two shoe-size numbers, then compare them.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "u03.main.08",
+      "hint": "",
+      "explanation": "Compare the two numbers. The bigger number is the bigger shoe size.",
+      "scene": "table",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.main.08",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Child's own measurements. Accept any answer where he has compared the two numbers correctly.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.045",
+      "kind": "tap-choice",
+      "title": "Explorer mission",
+      "prompt": "Find the part that helps you hear.",
+      "options": [
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        },
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        },
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "ears"
+      },
+      "assessed": true,
+      "objective": "u03.choice.01",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "You hear with your ears.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.choice.01",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "ears",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.046",
+      "kind": "tap-choice",
+      "title": "Explorer mission",
+      "prompt": "Put taste buds on the right body part.",
+      "options": [
+        {
+          "id": "tongue",
+          "label": "Tongue",
+          "art": "tongue"
+        },
+        {
+          "id": "skin",
+          "label": "Skin",
+          "art": "skin"
+        },
+        {
+          "id": "ear",
+          "label": "Ear",
+          "art": "ear"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "tongue"
+      },
+      "assessed": true,
+      "objective": "u03.choice.02",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "Taste buds are on your tongue.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.choice.02",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "tongue",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.047",
+      "kind": "tap-choice",
+      "title": "Explorer mission",
+      "prompt": "Count the senses.",
+      "options": [
+        {
+          "id": "three",
+          "label": "Three",
+          "art": "three"
+        },
+        {
+          "id": "five",
+          "label": "Five",
+          "art": "five"
+        },
+        {
+          "id": "ten",
+          "label": "Ten",
+          "art": "ten"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "five"
+      },
+      "assessed": true,
+      "objective": "u03.choice.03",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "We have five senses.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.choice.03",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "five",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.048",
+      "kind": "tap-choice",
+      "title": "Explorer mission",
+      "prompt": "What do eyelashes help keep out?",
+      "options": [
+        {
+          "id": "dust",
+          "label": "Dust",
+          "art": "dust"
+        },
+        {
+          "id": "sound",
+          "label": "Sound",
+          "art": "sound"
+        },
+        {
+          "id": "food",
+          "label": "Food",
+          "art": "food"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "dust"
+      },
+      "assessed": true,
+      "objective": "u03.choice.04",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "Eyelashes keep dust out.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.choice.04",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "dust",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "unit_03.step.049",
+      "kind": "tap-choice",
+      "title": "Explorer mission",
+      "prompt": "Find the part between your wrist and shoulder.",
+      "options": [
+        {
+          "id": "knee",
+          "label": "Knee",
+          "art": "knee"
+        },
+        {
+          "id": "elbow",
+          "label": "Elbow",
+          "art": "elbow"
+        },
+        {
+          "id": "ankle",
+          "label": "Ankle",
+          "art": "ankle"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "elbow"
+      },
+      "assessed": true,
+      "objective": "u03.choice.05",
+      "hint": "Think about the five senses and the explorer's body.",
+      "explanation": "The elbow is between your wrist and shoulder.",
+      "scene": "body",
+      "section": "Challenge",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "u03.choice.05",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "elbow",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "senses",
+      "word": "senses",
+      "meaning": "The five ways we find out about the world: sight, hearing, smell, taste and touch.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "sight",
+      "word": "sight",
+      "meaning": "You see with your eyes.",
+      "meaningSource": "unit_excerpt",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "id": "hearing",
+      "word": "hearing",
+      "meaning": "You hear with your ears.",
+      "meaningSource": "unit_excerpt",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "id": "smell",
+      "word": "smell",
+      "meaning": "You smell with your nose.",
+      "meaningSource": "unit_excerpt",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "id": "taste",
+      "word": "taste",
+      "meaning": "buds The tiny bumps on your tongue that tell you if food is sweet, salty or sour.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "touch",
+      "word": "touch",
+      "meaning": "And you touch with your skin.",
+      "meaningSource": "unit_excerpt",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "id": "taste_buds",
+      "word": "taste buds",
+      "meaning": "The tiny bumps on your tongue that tell you if food is sweet, salty or sour.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "optometrist",
+      "word": "optometrist",
+      "meaning": "The eye doctor who checks that your eyes see clearly and gives you glasses.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "measure",
+      "word": "measure",
+      "meaning": "To find out how big, how tall or how many.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Activity 1 — Taste needs smell\nCover his eyes and ask him to hold his own nose closed. Give him a small piece of apple, then a small piece of potato or pear. He will barely\ntell them apart! Now let him release his nose — suddenly the taste appears. Smell and taste work together.\nActivity 2 — Who has the biggest hand?\nThis is his first real measuring. Two ways:\n• Fill a bowl with dried beans. Each person takes one handful and counts them. The biggest hand holds the most.\n• Or trace each person's hand on squared paper and count the squares inside.\nThen put the results in a simple table. He is learning to measure, record and compare — the skill behind all science.",
+      "safety": "An adult stays with the child for every activity. No glass, no sockets, no flames, and nothing small enough to swallow is left with a child\nalone. Water activities are done in a bowl or the sink, never near electrical items.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ]
+    }
+  ]
+}

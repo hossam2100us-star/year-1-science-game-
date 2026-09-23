@@ -7,6 +7,7 @@ import '../core/widgets.dart';
 import 'voice_settings.dart';
 import '../features/onboarding/profile_editor.dart';
 import 'parent_gate.dart';
+import 'unit_report.dart';
 
 class ParentArea extends ConsumerStatefulWidget {
   const ParentArea({super.key});
@@ -68,8 +69,8 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                 const SizedBox(height: 12),
                 Text(
                   t(
-                    'دي نسخة تأسيس وتجربة. ألعاب المنهج هتتضاف في المراحل الجاية، ومفيش درجات وهمية.',
-                    'Foundation preview. Curriculum games arrive in later phases. No sample scores are shown.',
+                    'تابع تقدم الطفل من قراراته أثناء اللعب. التوقعات واللعب الحر مش درجات.',
+                    'Follow learning through play decisions. Predictions and free play are not graded.',
                   ),
                 ),
                 const SizedBox(height: 22),
@@ -196,58 +197,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                       ),
                       const SizedBox(height: 12),
                       for (final level in ref.read(catalogProvider).levels)
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 12),
-                          child: Container(
-                            padding: const EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFFFF8EC),
-                              borderRadius: BorderRadius.circular(18),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  ar ? level.arabic : level.title,
-                                  style: parentTheme.textTheme.titleLarge,
-                                ),
-                                if (data.latest(level.id) == null)
-                                  Text(
-                                    t(
-                                      'لسه مفيش نتيجة — النشاط لسه مش متاح',
-                                      'Not yet — activity not available',
-                                    ),
-                                  ),
-                                if (data.latest(level.id) != null) ...[
-                                  Text(
-                                    t(
-                                      'آخر محاولة: ${data.latest(level.id)!.firstTry} من ${data.latest(level.id)!.objectives.length} من أول مرة',
-                                      'Latest: ${data.latest(level.id)!.firstTry} of ${data.latest(level.id)!.objectives.length} on the first try',
-                                    ),
-                                  ),
-                                  Text(
-                                    t(
-                                      'بعد تلميح: ${data.latest(level.id)!.afterHint} • بعد شرح: ${data.latest(level.id)!.explained}',
-                                      'After hint: ${data.latest(level.id)!.afterHint} • Explanation shown: ${data.latest(level.id)!.explained}',
-                                    ),
-                                  ),
-                                  Text(
-                                    t(
-                                      'نجوم المجهود: ${data.latest(level.id)!.effortStars} من ٣',
-                                      'Effort stars: ${data.latest(level.id)!.effortStars} of 3',
-                                    ),
-                                  ),
-                                ],
-                              ],
-                            ),
-                          ),
-                        ),
-                      Text(
-                        t(
-                          'اقتراحات التدريب المنزلي هتظهر هنا بعد اللعب، من أنشطة الكتاب.',
-                          'Home practice suggestions from the book will appear after playing.',
-                        ),
-                      ),
+                        UnitReport(level: level, arabic: ar),
                     ],
                   ),
                 if (_tab == 0)

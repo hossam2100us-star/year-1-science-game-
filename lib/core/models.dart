@@ -106,12 +106,16 @@ class UnitAttempt {
     required this.objectives,
     required this.completed,
     required this.effortStars,
+    this.attemptId = '',
+    this.contentVersion = 1,
   });
   final String unitId;
   final DateTime completedAt;
   final Map<String, DecisionOutcome> objectives;
   final bool completed;
   final int effortStars;
+  final String attemptId;
+  final int contentVersion;
   int get firstTry =>
       objectives.values.where((o) => o == DecisionOutcome.firstTry).length;
   int get afterHint =>
@@ -126,6 +130,8 @@ class UnitAttempt {
     'objectives': objectives.map((k, v) => MapEntry(k, v.name)),
     'completed': completed,
     'effortStars': effortStars,
+    'attemptId': attemptId,
+    'contentVersion': contentVersion,
   };
   factory UnitAttempt.fromJson(Map<String, dynamic> j) => UnitAttempt(
     unitId: j['unitId'] as String,
@@ -136,6 +142,8 @@ class UnitAttempt {
     ),
     completed: j['completed'] as bool,
     effortStars: (j['effortStars'] as int).clamp(0, 3),
+    attemptId: j['attemptId'] as String? ?? '',
+    contentVersion: j['contentVersion'] as int? ?? 1,
   );
 }
 
@@ -155,24 +163,28 @@ class AppData {
     this.attempts = const [],
     this.dailySeconds = const {},
     this.pendingPhoto = false,
+    this.journeys = const {},
   });
   final ChildProfile? profile;
   final AppSettings settings;
   final List<UnitAttempt> attempts;
   final Map<String, int> dailySeconds;
   final bool pendingPhoto;
+  final Map<String, Map<String, dynamic>> journeys;
   AppData copyWith({
     ChildProfile? profile,
     AppSettings? settings,
     List<UnitAttempt>? attempts,
     Map<String, int>? dailySeconds,
     bool? pendingPhoto,
+    Map<String, Map<String, dynamic>>? journeys,
   }) => AppData(
     profile: profile ?? this.profile,
     settings: settings ?? this.settings,
     attempts: attempts ?? this.attempts,
     dailySeconds: dailySeconds ?? this.dailySeconds,
     pendingPhoto: pendingPhoto ?? this.pendingPhoto,
+    journeys: journeys ?? this.journeys,
   );
   AppData resetProgress() => AppData(profile: profile, settings: settings);
   bool isComplete(String id) =>
@@ -199,6 +211,7 @@ class AppData {
     'attempts': attempts.map((a) => a.toJson()).toList(),
     'dailySeconds': dailySeconds,
     'pendingPhoto': pendingPhoto,
+    'journeys': journeys,
   };
   factory AppData.fromJson(Map<String, dynamic> j) {
     if (j['schemaVersion'] != 1)
@@ -213,6 +226,9 @@ class AppData {
           .toList(),
       dailySeconds: Map<String, int>.from(j['dailySeconds']),
       pendingPhoto: j['pendingPhoto'] as bool? ?? false,
+      journeys: (j['journeys'] as Map? ?? {}).map(
+        (k, v) => MapEntry(k as String, Map<String, dynamic>.from(v)),
+      ),
     );
   }
 }

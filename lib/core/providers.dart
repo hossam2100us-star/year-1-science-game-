@@ -4,6 +4,11 @@ import 'models.dart';
 import 'storage.dart';
 import 'narration.dart';
 import '../content/catalog.dart';
+import '../content/lesson.dart';
+
+final lessonLibraryProvider = FutureProvider<LessonLibrary>(
+  (ref) => LessonLibrary.load(),
+);
 
 final storeProvider = Provider<ProgressStore>(
   (ref) => throw StateError('Store must be initialized'),
@@ -44,5 +49,18 @@ class AppController extends Notifier<AppData> {
   Future<void> usage(DateTime start, DateTime end) => _commit(
     (s) => s.copyWith(dailySeconds: addUsage(s.dailySeconds, start, end)),
   );
+  Future<void> saveJourney(String id, Map<String, dynamic> journey) =>
+      _commit((s) => s.copyWith(journeys: {...s.journeys, id: journey}));
+  Future<void> completeJourney(UnitAttempt attempt) => _commit((s) {
+    final journeys = Map<String, Map<String, dynamic>>.from(s.journeys)
+      ..remove(attempt.unitId);
+    final exists = s.attempts.any(
+      (a) => a.attemptId.isNotEmpty && a.attemptId == attempt.attemptId,
+    );
+    return s.copyWith(
+      journeys: journeys,
+      attempts: exists ? s.attempts : [...s.attempts, attempt],
+    );
+  });
   Future<void> resetProgress() => _commit((s) => s.resetProgress());
 }

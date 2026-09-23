@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -13,6 +15,7 @@ import 'core/storage.dart';
 import 'core/widgets.dart';
 import 'features/onboarding/profile_editor.dart';
 import 'features/world/world_map.dart';
+import 'features/biology/lesson_player.dart';
 import 'parent/parent_gate.dart';
 
 Future<void> main() async {
@@ -82,6 +85,10 @@ class ScienceAdventureApp extends ConsumerWidget {
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       supportedLocales: const [Locale('en'), Locale('ar')],
       home: const AdventureHome(),
+      initialRoute: kIsWeb && Uri.base.queryParameters['preview'] == 'garden-v2'
+          ? '/garden-preview'
+          : '/',
+      routes: {'/garden-preview': (_) => const LessonRoute(id: 'unit_01')},
     );
   }
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lottie/lottie.dart';
+
+import '../../content/lesson.dart';
+import '../biology/lesson_player.dart';
+import '../biology/sticker_album.dart';
 
 import '../../core/mascot.dart';
 import 'island_art.dart';
@@ -93,7 +96,7 @@ class WorldMap extends ConsumerWidget {
             ),
             const SizedBox(height: 8),
             const Text(
-              'Your adventures are being built. Today, meet your guide and explore the map.',
+              'A new garden is waiting! Open Biology Island, then Alive or Not Alive, to explore.',
             ),
             const SizedBox(height: 22),
             LayoutBuilder(
@@ -134,7 +137,11 @@ class WorldMap extends ConsumerWidget {
               runSpacing: 12,
               children: [
                 OutlinedButton.icon(
-                  onPressed: () => _comingSoon(context, 'Sticker Album'),
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (_) => const StickerAlbum(),
+                    ),
+                  ),
                   icon: const Icon(Icons.auto_awesome_rounded),
                   label: const Text('Sticker Album'),
                 ),
@@ -234,11 +241,7 @@ class _IslandCard extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(height: 8),
-              Text(
-                unlocked
-                    ? 'Start here • Map preview'
-                    : 'Later on our journey • Preview',
-              ),
+              Text(unlocked ? 'Start your adventure' : 'Later on our journey'),
               const SizedBox(height: 14),
               Wrap(
                 spacing: 8,
@@ -279,7 +282,7 @@ class IslandScreen extends ConsumerWidget {
     final data = ref.watch(appProvider);
     return Scaffold(
       body: AdventurePage(
-        maxWidth: 900,
+        maxWidth: 950,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -294,51 +297,39 @@ class IslandScreen extends ConsumerWidget {
             const SizedBox(height: 20),
             StoryPanel(
               text:
-                  'Welcome to ${island.title}. ${island.levels.map((l) => l.title).join('. ')}. These games are coming soon.',
+                  'Welcome to ${island.title}. ${island.levels.map((l) => l.title).join('. ')}. Follow the path, one adventure at a time.',
             ),
             const SizedBox(height: 20),
             for (var i = 0; i < island.levels.length; i++)
               Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: OutlinedButton(
-                  onPressed: () => showDialog<void>(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      scrollable: true,
-                      content: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          if (!MediaQuery.disableAnimationsOf(context))
-                            Lottie.asset(
-                              'assets/animations/celebrate.json',
-                              width: 100,
-                              height: 80,
-                              repeat: false,
-                            ),
-                          ScientistOwl(
-                            gender: data.profile!.gender,
-                            mood: OwlMood.thinking,
-                            size: 110,
-                          ),
-                          StoryPanel(
-                            text:
-                                '${island.levels[i].title}. This adventure is being built. You can play it in a future update.',
-                          ),
-                        ],
+                  onPressed: () {
+                    final level = island.levels[i];
+                    if (!LessonLibrary.availableIds.contains(level.id)) {
+                      _comingSoon(context, level.title);
+                      return;
+                    }
+                    if (!catalog.levelUnlocked(index, i, data)) {
+                      ref
+                          .read(narrationProvider)
+                          .speak(
+                            'Finish the adventure before this one first. You can do it!',
+                          );
+                      return;
+                    }
+                    ref.read(narrationProvider).stop();
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => LessonRoute(id: level.id),
                       ),
-                      actions: [
-                        FilledButton(
-                          onPressed: () => Navigator.of(context).pop(),
-                          child: const Text('Keep looking'),
-                        ),
-                      ],
-                    ),
-                  ),
+                    );
+                  },
                   child: Row(
                     children: [
                       Icon(
-                        island.levels[i].quiz
-                            ? Icons.star_outline_rounded
+                        data.isComplete(island.levels[i].id)
+                            ? Icons.star_rounded
                             : catalog.levelUnlocked(index, i, data)
                             ? Icons.explore_rounded
                             : Icons.lock_outline_rounded,
@@ -346,7 +337,15 @@ class IslandScreen extends ConsumerWidget {
                       const SizedBox(width: 16),
                       Expanded(
                         child: Text(
-                          '${i + 1}. ${island.levels[i].title}\nComing soon',
+                          '${i + 1}. ${island.levels[i].title}\n${!LessonLibrary.availableIds.contains(island.levels[i].id)
+                              ? 'Coming soon'
+                              : data.isComplete(island.levels[i].id)
+                              ? 'Play again • 3 effort stars'
+                              : data.journeys.containsKey(island.levels[i].id)
+                              ? 'Continue exploring'
+                              : catalog.levelUnlocked(index, i, data)
+                              ? 'Let us explore'
+                              : 'Not yet'}',
                         ),
                       ),
                       IconButton(

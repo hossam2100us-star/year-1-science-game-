@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "quiz_01",
+  "title": "Biology Quiz",
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    11
+  ],
+  "quiz": true,
+  "steps": [
+    {
+      "id": "quiz_01.step.001",
+      "kind": "tap-choice",
+      "title": "Garden team",
+      "prompt": "Find every living thing in this place.",
+      "options": [
+        {
+          "id": "table",
+          "label": "Table",
+          "art": "table"
+        },
+        {
+          "id": "cat",
+          "label": "Cat",
+          "art": "cat"
+        },
+        {
+          "id": "tree",
+          "label": "Tree",
+          "art": "tree"
+        },
+        {
+          "id": "spoon",
+          "label": "Spoon",
+          "art": "spoon"
+        },
+        {
+          "id": "baby",
+          "label": "Baby",
+          "art": "baby"
+        },
+        {
+          "id": "rock",
+          "label": "Rock",
+          "art": "rock"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "cat",
+          "tree",
+          "baby"
+        ]
+      },
+      "assessed": true,
+      "objective": "quiz01.01",
+      "hint": "Think back to the Biology Island games.",
+      "explanation": "The cat, tree and baby are living things.",
+      "scene": "garden",
+      "section": "Big Challenge",
+      "source": {
+        "pages": [
+          11
+        ],
+        "questionId": "quiz01.01",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "cat, tree, baby",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "quiz_01.step.002",
+      "kind": "tap-choice",
+      "title": "Signs of life",
+      "prompt": "Find two things all living things do.",
+      "options": [
+        {
+          "id": "grow",
+          "label": "Grow",
+          "art": "grow"
+        },
+        {
+          "id": "breathe",
+          "label": "Breathe",
+          "art": "breathe"
+        },
+        {
+          "id": "made_in_a_factory",
+          "label": "Made in a factory",
+          "art": "made_in_a_factory"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "grow",
+          "breathe"
+        ]
+      },
+      "assessed": true,
+      "objective": "quiz01.02",
+      "hint": "Think back to the Biology Island games.",
+      "explanation": "Living things grow and breathe.",
+      "scene": "garden",
+      "section": "Big Challenge",
+      "source": {
+        "pages": [
+          11
+        ],
+        "questionId": "quiz01.02",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "Any two: grow, eat, drink, breathe, move by themselves, feel things, make babies",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "quiz_01.step.003",
+      "kind": "tap-choice",
+      "title": "Water delivery",
+      "prompt": "Give the water to the plant part that drinks from the soil.",
+      "options": [
+        {
+          "id": "roots",
+          "label": "Roots",
+          "art": "roots"
+        },
+        {
+          "id": "stem",
+          "label": "Stem",
+          "art": "stem"
+        },
+        {
+          "id": "leaf",
+          "label": "Leaf",
+          "art": "leaf"
+        },
+        {
+          "id": "flower",
+          "label": "Flower",
+          "art": "flower"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "roots"
+      },
+      "assessed": true,
+      "objective": "quiz01.03",
+      "hint": "Think back to the Biology Island games.",
+      "explanation": "The roots drink water from the soil.",
+      "scene": "plant",
+      "section": "Big Challenge",
+      "source": {
+        "pages": [
+          11
+        ],
+        "questionId": "quiz01.03",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "the roots",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "quiz_01.step.004",
+      "kind": "tap-choice",
+      "title": "Healthy greenhouse",
+      "prompt": "Bring the two things the plant needs.",
+      "options": [
+        {
+          "id": "water",
+          "label": "Water",
+          "art": "water"
+        },
+        {
+          "id": "light",
+          "label": "Light",
+          "art": "light"
+        },
+        {
+          "id": "toys",
+          "label": "Toys",
+          "art": "toys"
+        },
+        {
+          "id": "paper",
+          "label": "Paper",
+          "art": "paper"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "water",
+          "light"
+        ]
+      },
+      "assessed": true,
+      "objective": "quiz01.04",
+      "hint": "Think back to the Biology Island games.",
+      "explanation": "A plant needs water and light to stay healthy.",
+      "scene": "plant",
+      "section": "Big Challenge",
+      "source": {
+        "pages": [
+          11
+        ],
+        "questionId": "quiz01.04",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "water and light",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "quiz_01.step.005",
+      "kind": "tap-choice",
+      "title": "Dark cupboard",
+      "prompt": "Choose the colour of the leaves after the dark cupboard.",
+      "options": [
+        {
+          "id": "green",
+          "label": "Green",
+          "art": "green"
+        },
+        {
+          "id": "pale_yellow",
+          "label": "Pale yellow",
+          "art": "pale_yellow"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "pale_yellow"
+      },
+      "assessed": true,
+      "objective": "quiz01.05",
+      "hint": "Think back to the Biology Island games.",
+      "explanation": "The leaves are pale yellow.",
+      "scene": "plant",
+      "section": "Big Challenge",
+      "source": {
+        "pages": [
+          11
+        ],
+        "questionId": "quiz01.05",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "pale yellow",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "quiz_01.step.006",
+      "kind": "tap-choice",
+      "title": "Sense collection",
+      "prompt": "Collect the five senses.",
+      "options": [
+        {
+          "id": "sight",
+          "label": "Sight",
+          "art": "sight"
+        },
+        {
+          "id": "hearing",
+          "label": "Hearing",
+          "art": "hearing"
+        },
+        {
+          "id": "smell",
+          "label": "Smell",
+          "art": "smell"
+        },
+        {
+          "id": "taste",
+          "label": "Taste",
+          "art": "taste"
+        },
+        {
+          "id": "touch",
+          "label": "Touch",
+          "art": "touch"
+        },
+        {
+          "id": "growing",
+          "label": "Growing",
+          "art": "growing"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "sight",
+          "hearing",
+          "smell",
+          "taste",
+          "touch"
+        ]
+      },
+      "assessed": true,
+      "objective": "quiz01.06",
+      "hint": "Think back to the Biology Island games.",
+      "explanation": "The five senses are sight, hearing, smell, taste and touch.",
+      "scene": "body",
+      "section": "Big Challenge",
+      "source": {
+        "pages": [
+          11
+        ],
+        "questionId": "quiz01.06",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "sight, hearing, smell, taste, touch",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "quiz_01.step.007",
+      "kind": "tap-choice",
+      "title": "Tasting helper",
+      "prompt": "Find the part we use to taste.",
+      "options": [
+        {
+          "id": "tongue",
+          "label": "Tongue",
+          "art": "tongue"
+        },
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        },
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "tongue"
+      },
+      "assessed": true,
+      "objective": "quiz01.07",
+      "hint": "Think back to the Biology Island games.",
+      "explanation": "We taste with the tongue.",
+      "scene": "body",
+      "section": "Big Challenge",
+      "source": {
+        "pages": [
+          11
+        ],
+        "questionId": "quiz01.07",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "the tongue",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "quiz_01.step.008",
+      "kind": "true-false",
+      "title": "Moving car",
+      "prompt": "A car is alive because it moves.",
+      "options": [
+        {
+          "id": "true",
+          "label": "True",
+          "art": "true"
+        },
+        {
+          "id": "false",
+          "label": "False",
+          "art": "false"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "false"
+      },
+      "assessed": true,
+      "objective": "quiz01.08",
+      "hint": "Think back to the Biology Island games.",
+      "explanation": "Moving is not enough; a car does not grow, eat or make babies.",
+      "scene": "garden",
+      "section": "Big Challenge",
+      "source": {
+        "pages": [
+          11
+        ],
+        "questionId": "quiz01.08",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "FALSE — moving is not enough; a car does not grow, eat or make babies",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "focus": "Car"
+    },
+    {
+      "id": "quiz_01.step.009",
+      "kind": "order-sequence",
+      "title": "Arm trail",
+      "prompt": "Build a path from the shoulder down to the fingers.",
+      "options": [
+        {
+          "id": "hand",
+          "label": "Hand",
+          "art": "hand"
+        },
+        {
+          "id": "elbow",
+          "label": "Elbow",
+          "art": "elbow"
+        },
+        {
+          "id": "shoulder",
+          "label": "Shoulder",
+          "art": "shoulder"
+        },
+        {
+          "id": "fingers",
+          "label": "Fingers",
+          "art": "fingers"
+        },
+        {
+          "id": "arm",
+          "label": "Arm",
+          "art": "arm"
+        },
+        {
+          "id": "wrist",
+          "label": "Wrist",
+          "art": "wrist"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "shoulder",
+          "arm",
+          "elbow",
+          "wrist",
+          "hand",
+          "fingers"
+        ]
+      },
+      "assessed": true,
+      "objective": "quiz01.09",
+      "hint": "Think back to the Biology Island games.",
+      "explanation": "Shoulder, arm, elbow, wrist, hand, fingers.",
+      "scene": "body",
+      "section": "Big Challenge",
+      "source": {
+        "pages": [
+          11
+        ],
+        "questionId": "quiz01.09",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "shoulder, arm, elbow, wrist, hand, fingers",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    },
+    {
+      "id": "quiz_01.step.010",
+      "kind": "tap-choice",
+      "title": "Eye doctor",
+      "prompt": "Choose the optometrist's job.",
+      "options": [
+        {
+          "id": "checks_eyes_and_gives_glasses",
+          "label": "Checks eyes and gives glasses",
+          "art": "checks_eyes_and_gives_glasses"
+        },
+        {
+          "id": "looks_after_teeth",
+          "label": "Looks after teeth",
+          "art": "looks_after_teeth"
+        },
+        {
+          "id": "cuts_hair",
+          "label": "Cuts hair",
+          "art": "cuts_hair"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "checks_eyes_and_gives_glasses"
+      },
+      "assessed": true,
+      "objective": "quiz01.10",
+      "hint": "Think back to the Biology Island games.",
+      "explanation": "An optometrist checks that eyes see clearly and gives people glasses.",
+      "scene": "body",
+      "section": "Big Challenge",
+      "source": {
+        "pages": [
+          11
+        ],
+        "questionId": "quiz01.10",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "Checks that eyes see clearly and gives people glasses",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      }
+    }
+  ],
+  "stickers": [],
+  "homeActivities": [],
+  "bands": [
+    {
+      "min": 8,
+      "max": 10
+    },
+    {
+      "min": 5,
+      "max": 7
+    },
+    {
+      "min": 0,
+      "max": 4
+    }
+  ]
+}

@@ -16,6 +16,8 @@ Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/fonts') -Destination $pre
 Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/animations') -Destination $previewAssets -Recurse -Force
 New-Item -ItemType Directory -Force -Path (Join-Path $previewAssets 'content') | Out-Null
 Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/content/catalog.json') -Destination (Join-Path $previewAssets 'content/catalog.json') -Force
+Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/content/playable') -Destination (Join-Path $previewAssets 'content') -Recurse -Force
+Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/images') -Destination $previewAssets -Recurse -Force
 Push-Location -LiteralPath $previewRoot
 try {
     & flutter pub get --enforce-lockfile
@@ -23,4 +25,4 @@ try {
     & flutter build web --no-web-resources-cdn --no-wasm-dry-run
     if ($LASTEXITCODE -ne 0) { throw 'Browser preview build failed.' }
 } finally { Pop-Location }
-Write-Output "Serve $previewRoot/build/web on 127.0.0.1 only. Browser narration is disabled; test speech on Android."
+Write-Output "Serve $previewRoot/build/web on 127.0.0.1 only. Browser narration uses installed local English voices only."

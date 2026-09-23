@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "contentVersion",
+    "id",
+    "steps",
+    "sourceSha256",
+    "stickers"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "contentVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "id": {
+      "type": "string"
+    },
+    "sourceSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "prompt",
+          "options",
+          "targets",
+          "answer",
+          "assessed",
+          "objective",
+          "hint",
+          "explanation",
+          "source"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "explore",
+              "story",
+              "tap-choice",
+              "true-false",
+              "drag-to-basket",
+              "match-lines",
+              "order-sequence",
+              "label-diagram",
+              "predict-then-reveal",
+              "free-pair",
+              "free-plant",
+              "free-measure"
+            ]
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "art"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "art": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "art"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "art": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "assessed": {
+            "type": "boolean"
+          },
+          "objective": {
+            "type": "string"
+          },
+          "hint": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "answer": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "type",
+                  "value"
+                ],
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "single",
+                      "set",
+                      "sequence",
+                      "mapping"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "source": {
+            "type": "object",
+            "required": [
+              "pages",
+              "questionId",
+              "answerKeyPages",
+              "sourceSha256"
+            ],
+            "properties": {
+              "pages": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 39
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -13,6 +13,7 @@ import 'package:science_adventure/parent/parent_area.dart';
 import 'package:science_adventure/parent/parent_gate.dart';
 
 late Catalog testCatalog;
+Future<Catalog> loadTestCatalog() => Catalog.load();
 
 class SilentNarration extends NarrationService {
   @override
