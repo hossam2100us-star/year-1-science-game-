@@ -264,6 +264,11 @@ for b in [b1,b2,b3]:
  if b["id"]=="unit_03":home=home.split("\nhead\near")[0]
  safety=read("parent_guide")["sourceText"].split("Safety, every time\n")[1]
  b["homeActivities"]=[{"text":home,"safety":safety,"pages":b["sourcePages"],"safetyPages":[2]}]
+for step in b2["steps"]:
+ if step.get("experiment")=="bean":
+  step["playUi"]={"predictAr":"تفتكر إيه هيطلع الأول؟ اختار وبعدين اسقي.",
+   "predicted":"You predicted","water":"Water and watch","watch":"Watch it grow...",
+   "continue":"Keep exploring","saveError":"الحفظ ماكملش. جرّب تاني."}
 from garden_content import add_garden
 add_garden(b1)
 for b in [b1,b2,b3,quiz]:

@@ -18,6 +18,7 @@ class UnitReport extends ConsumerWidget {
     final garden = level.id == 'unit_01'
         ? data.journeys['unit_01.garden']
         : null;
+    final bean = level.id == 'unit_02' ? data.journeys['unit_02.bean'] : null;
     final gardenResults = Map<String, String>.from(garden?['results'] ?? {});
     final latest = data.latest(level.id),
         best = data.best(level.id),
@@ -68,6 +69,13 @@ class UnitReport extends ConsumerWidget {
               ),
             ),
           ],
+          if (bean != null)
+            Text(
+              t(
+                'تجربة الفاصوليا: المرحلة ${(bean['frame'] as int? ?? 0) + 1} من ٤. التوقع مش بيتحسب بدرجة.',
+                'Bean experiment: stage ${(bean['frame'] as int? ?? 0) + 1} of 4. Predictions are not graded.',
+              ),
+            ),
           if (journey != null && lesson != null)
             Text(
               t(

@@ -1,3 +1,4 @@
+import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -16,6 +17,10 @@ void main() {
   late LessonLibrary library;
   setUpAll(() async {
     library = await LessonLibrary.load();
+    await Future.wait([
+      Flame.images.load('bean-stages-v1.png'),
+      Flame.images.load('greenhouse-v1.png'),
+    ]);
     helpers.testCatalog = await helpers.loadTestCatalog();
   });
   test('Every graded task accepts its answer and completes only once', () {
@@ -197,8 +202,11 @@ void main() {
     await helpers.tapVisible(tester, find.text('Leaf'));
     expect(store.data.journeys[lesson.id]!['current']['frame'], 0);
     await helpers.tapVisible(tester, find.text('Water and watch'));
-    expect(store.data.journeys[lesson.id]!['current']['prediction'], 'leaf');
-    expect(store.data.journeys[lesson.id]!['current']['frame'], 1);
+    expect(
+      store.data.journeys[lesson.id]!['current']['bean']['prediction'],
+      'leaf',
+    );
+    expect(store.data.journeys[lesson.id]!['current']['bean']['frame'], 1);
     expect(store.data.attempts, isEmpty);
     expect(tester.takeException(), isNull);
     await tester.pumpWidget(const SizedBox());

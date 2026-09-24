@@ -16,6 +16,7 @@ import 'core/widgets.dart';
 import 'features/onboarding/profile_editor.dart';
 import 'features/world/world_map.dart';
 import 'features/biology/lesson_player.dart';
+import 'features/plants/bean_experiment.dart';
 import 'parent/parent_gate.dart';
 
 Future<void> main() async {
@@ -87,8 +88,13 @@ class ScienceAdventureApp extends ConsumerWidget {
       home: const AdventureHome(),
       initialRoute: kIsWeb && Uri.base.queryParameters['preview'] == 'garden-v2'
           ? '/garden-preview'
+          : kIsWeb && Uri.base.queryParameters['preview'] == 'bean-v1'
+          ? '/bean-preview'
           : '/',
-      routes: {'/garden-preview': (_) => const LessonRoute(id: 'unit_01')},
+      routes: {
+        '/garden-preview': (_) => const LessonRoute(id: 'unit_01'),
+        '/bean-preview': (_) => const BeanPreview(),
+      },
     );
   }
 }

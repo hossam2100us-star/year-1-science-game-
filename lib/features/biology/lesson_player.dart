@@ -13,6 +13,7 @@ import '../../core/widgets.dart';
 import '../../games/discovery_game.dart';
 import '../../games/question_engine.dart';
 import 'session.dart';
+import '../plants/bean_experiment.dart';
 import '../garden/garden_adventure.dart';
 import '../garden/garden_model.dart';
 
@@ -61,6 +62,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   int _frame = 0, _shoeA = 9, _shoeB = 12;
   bool _busy = false, _complete = false, _freeDone = false, _saveFailed = false;
   String _feedback = '';
+  Map<String, dynamic> _bean = {};
   Future<void> _writes = Future.value();
   LessonStep get step => _session.step;
   @override
@@ -80,6 +82,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   void _prepare() {
     final current = _session.current;
+    _bean = Map<String, dynamic>.from(current['bean'] ?? {});
     _selected = Set<String>.from(current['selected'] ?? []);
     _placements = Map<String, String>.from(current['placements'] ?? {});
     _touched = Set<String>.from(current['touched'] ?? []);
@@ -132,6 +135,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   }
 
   Map<String, dynamic> _snapshot() => {
+    'bean': Map<String, dynamic>.from(_bean),
     'selected': _selected.toList(),
     'placements': Map<String, String>.from(_placements),
     'touched': _touched.toList(),
@@ -355,6 +359,24 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   Widget build(BuildContext context) {
     final profile = ref.watch(appProvider).profile;
     if (_complete) return _completion(context);
+    if (step.json['experiment'] == 'bean')
+      return BeanExperiment(
+        key: ValueKey(step.id),
+        step: step,
+        initial: _bean,
+        onSave: (value) async {
+          _bean = Map<String, dynamic>.from(value);
+          await _persist();
+        },
+        onFinished: () async {
+          _prediction = _bean['prediction'];
+          _frame = 4;
+          _freeDone = true;
+          _feedback = step.explanation;
+          await _next();
+        },
+      );
+
     _game.reducedMotion = MediaQuery.disableAnimationsOf(context);
     return PopScope(
       canPop: false,

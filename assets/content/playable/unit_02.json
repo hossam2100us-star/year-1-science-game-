@@ -474,7 +474,15 @@
         }
       ],
       "action": "Water and watch",
-      "experiment": "bean"
+      "experiment": "bean",
+      "playUi": {
+        "predictAr": "تفتكر إيه هيطلع الأول؟ اختار وبعدين اسقي.",
+        "predicted": "You predicted",
+        "water": "Water and watch",
+        "watch": "Watch it grow...",
+        "continue": "Keep exploring",
+        "saveError": "الحفظ ماكملش. جرّب تاني."
+      }
     },
     {
       "id": "unit_02.step.011",
