@@ -18,6 +18,13 @@ New-Item -ItemType Directory -Force -Path (Join-Path $previewAssets 'content') |
 Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/content/catalog.json') -Destination (Join-Path $previewAssets 'content/catalog.json') -Force
 Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/content/playable') -Destination (Join-Path $previewAssets 'content') -Recurse -Force
 Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/images') -Destination $previewAssets -Recurse -Force
+# Local reviews must load the current build, without a PWA service-worker cache.
+$bootstrap = @'
+{{flutter_js}}
+{{flutter_build_config}}
+_flutter.loader.load();
+'@
+[IO.File]::WriteAllText((Join-Path $previewRoot 'web/flutter_bootstrap.js'), $bootstrap)
 Push-Location -LiteralPath $previewRoot
 try {
     & flutter pub get --enforce-lockfile

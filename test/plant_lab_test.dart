@@ -1,6 +1,9 @@
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:science_adventure/core/providers.dart';
+import 'package:science_adventure/features/plants/plant_lab_preview.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:science_adventure/content/lesson.dart';
 import 'package:science_adventure/core/models.dart';
@@ -34,6 +37,49 @@ void main() {
   PlantLabGame game(WidgetTester t) => t
       .widget<GameWidget<PlantLabGame>>(find.byType(GameWidget<PlantLabGame>))
       .game!;
+  testWidgets(
+    'Review starts at the new plant without modifying a saved later journey',
+    (t) async {
+      t.view.physicalSize = const Size(1280, 800);
+      t.view.devicePixelRatio = 1;
+      addTearDown(t.view.resetPhysicalSize);
+      addTearDown(t.view.resetDevicePixelRatio);
+      final original = at(10, current: {'prediction': 'pale_and_floppy'});
+      final before = original.data.toJson();
+      await helpers.mount(
+        t,
+        ProviderScope(
+          overrides: [
+            lessonLibraryProvider.overrideWith(
+              (ref) async => LessonLibrary({'unit_02': lesson}),
+            ),
+          ],
+          child: const PlantLabPreview(),
+        ),
+        original,
+      );
+      await t.pump();
+      await t.pump(const Duration(milliseconds: 100));
+      expect(find.byKey(const ValueKey('plant-review-banner')), findsOneWidget);
+      expect(find.text(lesson.steps.first.title), findsOneWidget);
+      await helpers.tapVisible(
+        t,
+        find.byKey(const ValueKey('plant-name-stem')),
+      );
+      final review = ProviderScope.containerOf(
+        t.element(find.byType(PlantLabStage)),
+      ).read(appProvider);
+      expect(review.journeys['unit_02']!['index'], 0);
+      expect(
+        review.journeys['unit_02']!['current']['touched'],
+        contains('stem'),
+      );
+      expect(original.data.toJson(), before);
+      expect(t.takeException(), isNull);
+      await t.pumpWidget(const SizedBox());
+      await t.pump();
+    },
+  );
   test(
     'Story focus, picture choices and source text describe the same plant part',
     () {
