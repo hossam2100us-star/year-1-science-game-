@@ -55,18 +55,25 @@
         "answerKeyText": "",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "minTouches": 4
+      "minTouches": 4,
+      "playScene": "plant-lab",
+      "partDescriptions": {
+        "roots": "Roots — \"the plant's straws\". They drink water from the soil and hold the plant down so the wind cannot blow it away.",
+        "stem": "Stem — \"the plant's neck\". It holds the plant up and carries the water all the way to the leaves.",
+        "leaf": "Leaf — \"the plant's kitchen\". Leaves catch the sunlight and use it to make the plant's food.",
+        "flower": "Flower — \"where the babies are made\". The flower makes the seeds that grow into new plants."
+      }
     },
     {
       "id": "unit_02.step.002",
       "kind": "story",
-      "title": "The Big Idea",
+      "title": "Roots",
       "prompt": "Roots — \"the plant's straws\". They drink water from the soil and hold the plant down so the wind cannot blow it away.",
       "options": [
         {
-          "id": "plant",
-          "label": "Plant",
-          "art": "plant"
+          "id": "roots",
+          "label": "Roots",
+          "art": "roots"
         }
       ],
       "targets": [],
@@ -86,18 +93,21 @@
         "answerKeyPages": [],
         "answerKeyText": "",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-lab",
+      "focus": "roots",
+      "playInstruction": "Touch the roots. Watch what happens."
     },
     {
       "id": "unit_02.step.003",
       "kind": "story",
-      "title": "The Big Idea",
+      "title": "Stem",
       "prompt": "Stem — \"the plant's neck\". It holds the plant up and carries the water all the way to the leaves.",
       "options": [
         {
-          "id": "plant",
-          "label": "Plant",
-          "art": "plant"
+          "id": "stem",
+          "label": "Stem",
+          "art": "stem"
         }
       ],
       "targets": [],
@@ -117,18 +127,21 @@
         "answerKeyPages": [],
         "answerKeyText": "",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-lab",
+      "focus": "stem",
+      "playInstruction": "Touch the stem. Watch what happens."
     },
     {
       "id": "unit_02.step.004",
       "kind": "story",
-      "title": "The Big Idea",
+      "title": "Leaf",
       "prompt": "Leaf — \"the plant's kitchen\". Leaves catch the sunlight and use it to make the plant's food.",
       "options": [
         {
-          "id": "plant",
-          "label": "Plant",
-          "art": "plant"
+          "id": "leaf",
+          "label": "Leaf",
+          "art": "leaf"
         }
       ],
       "targets": [],
@@ -148,18 +161,21 @@
         "answerKeyPages": [],
         "answerKeyText": "",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-lab",
+      "focus": "leaf",
+      "playInstruction": "Touch the leaf. Watch what happens."
     },
     {
       "id": "unit_02.step.005",
       "kind": "story",
-      "title": "The Big Idea",
+      "title": "Flower",
       "prompt": "Flower — \"where the babies are made\". The flower makes the seeds that grow into new plants.",
       "options": [
         {
-          "id": "plant",
-          "label": "Plant",
-          "art": "plant"
+          "id": "flower",
+          "label": "Flower",
+          "art": "flower"
         }
       ],
       "targets": [],
@@ -179,7 +195,10 @@
         "answerKeyPages": [],
         "answerKeyText": "",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-lab",
+      "focus": "flower",
+      "playInstruction": "Touch the flower. Watch what happens."
     },
     {
       "id": "unit_02.step.006",
@@ -237,7 +256,9 @@
         "answerKeyText": "",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "diagram": "plant"
+      "diagram": "plant",
+      "playScene": "plant-lab",
+      "playInstruction": "Drag the picture onto the plant, or touch its place."
     },
     {
       "id": "unit_02.step.007",
@@ -295,7 +316,9 @@
         "answerKeyText": "",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "diagram": "plant"
+      "diagram": "plant",
+      "playScene": "plant-lab",
+      "playInstruction": "Drag the picture onto the plant, or touch its place."
     },
     {
       "id": "unit_02.step.008",
@@ -353,7 +376,9 @@
         "answerKeyText": "",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "diagram": "plant"
+      "diagram": "plant",
+      "playScene": "plant-lab",
+      "playInstruction": "Drag the picture onto the plant, or touch its place."
     },
     {
       "id": "unit_02.step.009",
@@ -411,7 +436,9 @@
         "answerKeyText": "",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "diagram": "plant"
+      "diagram": "plant",
+      "playScene": "plant-lab",
+      "playInstruction": "Drag the picture onto the plant, or touch its place."
     },
     {
       "id": "unit_02.step.010",
@@ -1754,7 +1781,14 @@
         "answerKeyText": "Child's own drawing, with roots, stem, leaf and flower labelled.",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "minTouches": 4
+      "minTouches": 4,
+      "playScene": "plant-lab",
+      "partDescriptions": {
+        "roots": "Roots — \"the plant's straws\". They drink water from the soil and hold the plant down so the wind cannot blow it away.",
+        "stem": "Stem — \"the plant's neck\". It holds the plant up and carries the water all the way to the leaves.",
+        "leaf": "Leaf — \"the plant's kitchen\". Leaves catch the sunlight and use it to make the plant's food.",
+        "flower": "Flower — \"where the babies are made\". The flower makes the seeds that grow into new plants."
+      }
     },
     {
       "id": "unit_02.step.033",
@@ -1939,7 +1973,8 @@
         ],
         "answerKeyText": "stem",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-lab"
     },
     {
       "id": "unit_02.step.037",
@@ -2031,7 +2066,8 @@
         ],
         "answerKeyText": "flower",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-lab"
     },
     {
       "id": "unit_02.step.039",
@@ -2077,7 +2113,8 @@
         ],
         "answerKeyText": "root",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-lab"
     },
     {
       "id": "unit_02.step.040",

@@ -90,9 +90,12 @@ class ScienceAdventureApp extends ConsumerWidget {
           ? '/garden-preview'
           : kIsWeb && Uri.base.queryParameters['preview'] == 'bean-v1'
           ? '/bean-preview'
+          : kIsWeb && Uri.base.queryParameters['preview'] == 'plants-v2'
+          ? '/plants-preview'
           : '/',
       routes: {
         '/garden-preview': (_) => const LessonRoute(id: 'unit_01'),
+        '/plants-preview': (_) => const LessonRoute(id: 'unit_02'),
         '/bean-preview': (_) => const BeanPreview(),
       },
     );

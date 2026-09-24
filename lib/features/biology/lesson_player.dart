@@ -14,6 +14,7 @@ import '../../games/discovery_game.dart';
 import '../../games/question_engine.dart';
 import 'session.dart';
 import '../plants/bean_experiment.dart';
+import '../plants/plant_lab_stage.dart';
 import '../garden/garden_adventure.dart';
 import '../garden/garden_model.dart';
 
@@ -115,7 +116,15 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     });
   }
 
+  bool get _plantLab => step.json['playScene'] == 'plant-lab';
+  String get _displayPrompt =>
+      _plantLab && step.json['partDescriptions'] != null && _selected.isNotEmpty
+      ? step.json['partDescriptions'][_selected.last] ?? step.prompt
+      : step.prompt;
+
   String get _instruction {
+    if (_plantLab)
+      return '$_displayPrompt ${step.json['playInstruction'] ?? ''}';
     final names = step.options.map((v) => v.label).join('. ');
     final places = step.kind == 'label-diagram'
         ? List.generate(step.targets.length, (i) => 'Place ${i + 1}').join('. ')
@@ -176,8 +185,15 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   void _item(String id) {
     if (_busy || _engine.done || _freeDone || _frame > 0) return;
-    _say(step.label(id));
+    _say(
+      _plantLab && step.kind == 'story'
+          ? step.prompt
+          : _plantLab && step.json['partDescriptions'] != null
+          ? step.json['partDescriptions'][id] ?? step.label(id)
+          : step.label(id),
+    );
     if (['explore', 'story', 'free-plant'].contains(step.kind)) {
+      _touched.remove(id);
       _touched.add(id);
       _selected = {..._touched};
       _game.celebration = .7;
@@ -201,7 +217,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     if (_busy || _engine.done || _freeDone) return;
     _placements[item] = target;
     _say(
-      step.kind == 'label-diagram'
+      step.kind == 'label-diagram' && !_plantLab
           ? 'Place ${step.targets.indexWhere((t) => t.id == target) + 1}'
           : step.label(target),
     );
@@ -235,6 +251,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   }
 
   bool get _canContinue {
+    if (_plantLab && step.kind == 'story') return _touched.contains(step.focus);
+    if (_plantLab && (step.kind == 'explore' || step.kind == 'free-plant')) {
+      return step.options.every((item) => _touched.contains(item.id));
+    }
     if (_engine.done || _freeDone || step.kind == 'story') return true;
     if (step.kind == 'explore' || step.kind == 'free-plant')
       return _touched.length >= (step.json['minTouches'] ?? 3);
@@ -398,7 +418,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                     ),
                     Expanded(
                       child: Text(
-                        '${step.title} • ${step.section}',
+                        step.title == step.section || _plantLab
+                            ? step.title
+                            : '${step.title} • ${step.section}',
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                     ),
@@ -435,7 +457,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                               ),
                               Expanded(
                                 child: Text(
-                                  step.prompt,
+                                  _displayPrompt,
                                   style: const TextStyle(
                                     fontSize: 24,
                                     fontWeight: FontWeight.w700,
@@ -486,24 +508,62 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                   ),
                               ],
                             ),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(24),
-                            child: SizedBox(
-                              height: (MediaQuery.sizeOf(context).height * .55)
-                                  .clamp(
-                                    step.kind == 'label-diagram'
-                                        ? 300.0
-                                        : 240.0,
-                                    380.0,
-                                  ),
-                              child: GameWidget<DiscoveryGame>(
-                                key: ValueKey(step.id),
-                                game: _game,
+                          if (_plantLab) ...[
+                            if (step.json['playInstruction'] != null)
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 10),
+                                child: Text(
+                                  step.json['playInstruction'],
+                                  style: const TextStyle(fontSize: 22),
+                                ),
+                              ),
+                            PlantLabStage(
+                              key: ValueKey(step.id),
+                              step: step,
+                              selected: _selected,
+                              touched: _touched,
+                              placements: _placements,
+                              done: _engine.done,
+                              assembled: {
+                                for (final previous in widget.lesson.steps.take(
+                                  _session.index,
+                                ))
+                                  if (previous.json['playScene'] ==
+                                          'plant-lab' &&
+                                      previous.kind == 'label-diagram' &&
+                                      _session.responses[previous
+                                              .id]?['completed'] ==
+                                          true)
+                                    ...Map<String, String>.from(
+                                      previous.answer!['value'],
+                                    ).values,
+                              },
+                              onItem: _item,
+                              onPlace: _place,
+                            ),
+                          ] else
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(24),
+                              child: SizedBox(
+                                height:
+                                    (MediaQuery.sizeOf(context).height * .55)
+                                        .clamp(
+                                          step.kind == 'label-diagram'
+                                              ? 300.0
+                                              : 240.0,
+                                          380.0,
+                                        ),
+                                child: GameWidget<DiscoveryGame>(
+                                  key: ValueKey(step.id),
+                                  game: _game,
+                                ),
                               ),
                             ),
-                          ),
                           const SizedBox(height: 10),
-                          if (!_engine.done && !_freeDone && _frame == 0)
+                          if (!_plantLab &&
+                              !_engine.done &&
+                              !_freeDone &&
+                              _frame == 0)
                             Wrap(
                               spacing: 8,
                               runSpacing: 8,
@@ -527,7 +587,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                   ),
                               ],
                             ),
-                          if (step.isMapping && !_engine.done) ...[
+                          if (!_plantLab &&
+                              step.isMapping &&
+                              !_engine.done) ...[
                             const SizedBox(height: 10),
                             Wrap(
                               spacing: 8,

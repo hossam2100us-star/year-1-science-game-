@@ -32,3 +32,6 @@ assets/images/garden-v2.png: original image generated for this project using the
 
 assets/images/islands-v2.png, assets/images/bean-stages-v1.png, and assets/images/greenhouse-v1.png: original images generated for this project with the built-in image generation tool. No third-party artwork or textbook images were used; these are not described as CC0 stock. Exact prompts and source review are in docs/ISLANDS_AND_BEAN_ART.md. All files are bundled for offline use.
 
+
+- `assets/images/plant-lab-v1.png`: original artwork generated with OpenAI imagegen for this project; no third-party illustration copied. Prompt and use: `docs/PLANT_LAB_ART.md`.
+
