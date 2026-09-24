@@ -35,3 +35,6 @@ assets/images/islands-v2.png, assets/images/bean-stages-v1.png, and assets/image
 
 - `assets/images/plant-lab-v1.png`: original artwork generated with OpenAI imagegen for this project; no third-party illustration copied. Prompt and use: `docs/PLANT_LAB_ART.md`.
 
+
+- `assets/images/light-room-v1.png` and `assets/images/light-plants-v1.png`: original artwork generated with OpenAI imagegen for the light experiment. No third-party illustration copied. Prompts and source notes: `docs/LIGHT_TEST_ART.md`.
+

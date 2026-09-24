@@ -14,6 +14,8 @@ import '../../games/discovery_game.dart';
 import '../../games/question_engine.dart';
 import 'session.dart';
 import '../plants/bean_experiment.dart';
+import '../plants/light_experiment.dart';
+import '../plants/light_model.dart';
 import '../plants/plant_lab_stage.dart';
 import '../garden/garden_adventure.dart';
 import '../garden/garden_model.dart';
@@ -64,6 +66,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   bool _busy = false, _complete = false, _freeDone = false, _saveFailed = false;
   String _feedback = '';
   Map<String, dynamic> _bean = {};
+  Map<String, dynamic> _light = {};
   Future<void> _writes = Future.value();
   LessonStep get step => _session.step;
   @override
@@ -84,6 +87,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   void _prepare() {
     final current = _session.current;
     _bean = Map<String, dynamic>.from(current['bean'] ?? {});
+    _light = Map<String, dynamic>.from(
+      current['light'] ?? LightProgress.fromLegacy(current).toJson(),
+    );
     _selected = Set<String>.from(current['selected'] ?? []);
     _placements = Map<String, String>.from(current['placements'] ?? {});
     _touched = Set<String>.from(current['touched'] ?? []);
@@ -145,6 +151,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   Map<String, dynamic> _snapshot() => {
     'bean': Map<String, dynamic>.from(_bean),
+    'light': Map<String, dynamic>.from(_light),
     'selected': _selected.toList(),
     'placements': Map<String, String>.from(_placements),
     'touched': _touched.toList(),
@@ -379,6 +386,32 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   Widget build(BuildContext context) {
     final profile = ref.watch(appProvider).profile;
     if (_complete) return _completion(context);
+    if (step.json['experiment'] == 'light') {
+      return LightExperiment(
+        key: ValueKey(step.id),
+        step: step,
+        initial: _light,
+        position: '${_session.index + 1}/${widget.lesson.steps.length}',
+        onSave: (value) async {
+          final previous = _light;
+          _light = Map<String, dynamic>.from(value);
+          try {
+            await _persist();
+          } catch (_) {
+            _light = previous;
+            rethrow;
+          }
+        },
+        onFinished: () async {
+          _prediction = _light['prediction'];
+          _frame = step.frames.length;
+          _freeDone = true;
+          _feedback = step.explanation;
+          await _next();
+        },
+        onLeave: _leave,
+      );
+    }
     if (step.json['experiment'] == 'bean')
       return BeanExperiment(
         key: ValueKey(step.id),

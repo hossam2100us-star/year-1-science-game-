@@ -566,7 +566,20 @@
         }
       ],
       "action": "Water both and watch",
-      "experiment": "light"
+      "experiment": "light",
+      "playUi": {
+        "predicted": "You predicted:",
+        "waterInstruction": "Choose your prediction, then tap each plant to give it the same water.",
+        "waterWindow": "Water the window plant",
+        "waterCupboard": "Water the cupboard plant",
+        "oneWatered": "One plant watered. Give the other plant the same water.",
+        "bothWatered": "Both plants have the same water. Close the cupboard and let time pass.",
+        "compare": "Close the cupboard and watch",
+        "waiting": "Time passes. Let us look on Day 9.",
+        "kindComparison": "You made a prediction and looked carefully!",
+        "continue": "Keep exploring",
+        "saveError": "الحفظ ماكملش. جرّب الزرار تاني؛ آخر خطوة محفوظة لسه موجودة."
+      }
     },
     {
       "id": "unit_02.step.012",
