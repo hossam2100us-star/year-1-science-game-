@@ -37,11 +37,13 @@ class Catalog {
   final List<Map<String, dynamic>> parentRules;
   Iterable<LevelInfo> get levels => islands.expand((i) => i.levels);
   bool islandUnlocked(int index, AppData data) =>
-      index == 0 || data.isComplete(islands[index - 1].levels.last.id);
+      index == 0 || data.isAdventureComplete(islands[index - 1].levels.last.id);
   bool levelUnlocked(int islandIndex, int levelIndex, AppData data) =>
       islandUnlocked(islandIndex, data) &&
       (levelIndex == 0 ||
-          data.isComplete(islands[islandIndex].levels[levelIndex - 1].id));
+          data.isAdventureComplete(
+            islands[islandIndex].levels[levelIndex - 1].id,
+          ));
   static Future<Catalog> load() async => Catalog.fromJson(
     jsonDecode(await rootBundle.loadString('assets/content/catalog.json'))
         as Map<String, dynamic>,

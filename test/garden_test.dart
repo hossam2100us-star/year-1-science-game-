@@ -139,7 +139,16 @@ void main() {
         hasLength(7),
       );
       expect(store.data.attempts, isEmpty);
+      expect(helpers.testCatalog.levelUnlocked(0, 1, store.data), isTrue);
       await helpers.tapVisible(tester, find.text('Play again'));
+      expect(
+        helpers.testCatalog.levelUnlocked(
+          0,
+          1,
+          AppData.fromJson(store.data.toJson()),
+        ),
+        isTrue,
+      );
       expect(
         store.data.journeys[GardenRound.storageKey]!['history'],
         hasLength(1),

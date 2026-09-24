@@ -88,142 +88,66 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                 builder: (context, box) {
                   final largeText =
                       MediaQuery.textScalerOf(context).scale(1) >= 1.5;
-                  if (largeText || box.maxWidth < 620) {
-                    return Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: Wrap(
-                        spacing: 16,
-                        runSpacing: 16,
-                        children: [
-                          for (var i = 0; i < 4; i++)
-                            SizedBox(
-                              width: box.maxWidth > 850
-                                  ? (box.maxWidth - 48) / 2
-                                  : box.maxWidth - 32,
-                              child: Material(
-                                color: const Color(0xFFFFFAEE),
-                                borderRadius: BorderRadius.circular(24),
-                                clipBehavior: Clip.antiAlias,
-                                child: InkWell(
-                                  key: ValueKey('island-$i'),
-                                  onTap: () => openIsland(i),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        height: 210,
-                                        child: IslandIllustration(index: i),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(16),
-                                        child: _IslandLabel(
-                                          island: catalog.islands[i],
-                                          number: i + 1,
-                                          unlocked: catalog.islandUnlocked(
-                                            i,
-                                            data,
-                                          ),
-                                          completed: catalog.islands[i].levels
-                                              .where(
-                                                (l) => data.isComplete(l.id),
-                                              )
-                                              .length,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                        ],
-                      ),
-                    );
-                  }
-                  final compact = MediaQuery.sizeOf(context).height < 500;
-                  final mapWidth = compact
-                      ? ((MediaQuery.sizeOf(context).height - 84) / .55).clamp(
-                          450.0,
-                          box.maxWidth,
-                        )
-                      : box.maxWidth;
-                  final height = mapWidth * .55;
-                  return Center(
-                    child: SizedBox(
-                      width: mapWidth,
-                      height: height,
-                      child: Stack(
-                        children: [
-                          Positioned.fill(
-                            child: Image.asset(
-                              worldArtAsset,
-                              fit: BoxFit.fill,
-                              excludeFromSemantics: true,
-                            ),
-                          ),
-                          const Positioned.fill(
-                            child: IgnorePointer(
-                              child: CustomPaint(painter: SeaRoutePainter()),
-                            ),
-                          ),
-                          for (var i = 0; i < 4; i++)
-                            Positioned(
-                              left: mapWidth * (i.isEven ? .025 : .525),
-                              top: height * (i < 2 ? .005 : .47),
-                              width: mapWidth * .45,
-                              height: height * .44,
-                              child: Semantics(
-                                button: true,
-                                label: catalog.islands[i].title,
-                                child: Material(
-                                  color: Colors.transparent,
-                                  child: InkWell(
-                                    key: ValueKey('island-$i'),
-                                    onTap: () => openIsland(i),
-                                    borderRadius: BorderRadius.circular(45),
-                                    child: Align(
-                                      alignment: Alignment.bottomCenter,
-                                      child: Container(
-                                        constraints: BoxConstraints(
-                                          maxWidth: mapWidth * .42,
-                                        ),
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 14,
-                                          vertical: 8,
-                                        ),
-                                        decoration: BoxDecoration(
-                                          color: const Color(0xFFFFFAEE)
-                                              .withValues(alpha: .96),
-                                          borderRadius: BorderRadius.circular(
-                                            20,
-                                          ),
-                                          border: Border.all(
-                                            color: Color(
-                                              catalog.islands[i].color,
-                                            ).withValues(alpha: .65),
-                                            width: 2,
-                                          ),
-                                        ),
-                                        child: _IslandLabel(
-                                          compact: compact,
-                                          island: catalog.islands[i],
-                                          number: i + 1,
-                                          unlocked: catalog.islandUnlocked(
-                                            i,
-                                            data,
-                                          ),
-                                          completed: catalog.islands[i].levels
-                                              .where(
-                                                (l) => data.isComplete(l.id),
-                                              )
-                                              .length,
-                                        ),
+                  final columns = box.maxWidth >= (largeText ? 1000 : 620)
+                      ? 2
+                      : 1;
+                  final cardWidth =
+                      (box.maxWidth - 32 - (columns - 1) * 16) / columns;
+                  return Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Wrap(
+                      spacing: 16,
+                      runSpacing: 16,
+                      children: [
+                        for (var i = 0; i < catalog.islands.length; i++)
+                          SizedBox(
+                            width: cardWidth,
+                            child: Material(
+                              color: const Color(0xFFFFFAEE),
+                              borderRadius: BorderRadius.circular(24),
+                              clipBehavior: Clip.antiAlias,
+                              child: InkWell(
+                                key: ValueKey('island-$i'),
+                                onTap: () => openIsland(i),
+                                child: Column(
+                                  children: [
+                                    AspectRatio(
+                                      // Match the painting region so the whole
+                                      // island remains visible above its label.
+                                      aspectRatio:
+                                          2 *
+                                          islandRegions[i].width /
+                                          islandRegions[i].height,
+                                      child: IslandIllustration(
+                                        key: ValueKey('island-art-$i'),
+                                        index: i,
                                       ),
                                     ),
-                                  ),
+                                    Padding(
+                                      key: ValueKey('island-caption-$i'),
+                                      padding: const EdgeInsets.all(14),
+                                      child: _IslandLabel(
+                                        island: catalog.islands[i],
+                                        number: i + 1,
+                                        unlocked: catalog.islandUnlocked(
+                                          i,
+                                          data,
+                                        ),
+                                        completed: catalog.islands[i].levels
+                                            .where(
+                                              (l) => data.isAdventureComplete(
+                                                l.id,
+                                              ),
+                                            )
+                                            .length,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
-                        ],
-                      ),
+                          ),
+                      ],
                     ),
                   );
                 },
@@ -273,18 +197,17 @@ class _IslandLabel extends StatelessWidget {
     required this.number,
     required this.unlocked,
     required this.completed,
-    this.compact = false,
   });
   final IslandInfo island;
   final int number, completed;
-  final bool unlocked, compact;
+  final bool unlocked;
   @override
   Widget build(BuildContext context) => Row(
     mainAxisSize: MainAxisSize.min,
     children: [
       Container(
-        width: compact ? 30 : 42,
-        height: compact ? 30 : 42,
+        width: 42,
+        height: 42,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Color(island.color),
@@ -308,22 +231,21 @@ class _IslandLabel extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              compact ? island.title.replaceFirst(' Island', '') : island.title,
+              island.title,
               style: const TextStyle(
                 fontFamily: 'Fredoka',
                 fontSize: 25,
                 color: Color(0xFF234B4C),
               ),
             ),
-            if (!compact)
-              Text(
-                unlocked
-                    ? (completed > 0
-                          ? '$completed / ${island.levels.length} adventures'
-                          : 'Tap to explore')
-                    : 'Not yet • Look around',
-                style: const TextStyle(fontSize: 22, color: Color(0xFF3D6063)),
-              ),
+            Text(
+              unlocked
+                  ? (completed > 0
+                        ? '$completed / ${island.levels.length} adventures'
+                        : 'Tap to explore')
+                  : 'Not yet',
+              style: const TextStyle(fontSize: 22, color: Color(0xFF3D6063)),
+            ),
           ],
         ),
       ),
@@ -450,7 +372,9 @@ class IslandScreen extends ConsumerWidget {
                                 island.levels[i].id,
                               ),
                               unlocked: catalog.levelUnlocked(index, i, data),
-                              complete: data.isComplete(island.levels[i].id),
+                              complete: data.isAdventureComplete(
+                                island.levels[i].id,
+                              ),
                               onTap: () {
                                 final level = island.levels[i];
                                 if (!LessonLibrary.availableIds.contains(

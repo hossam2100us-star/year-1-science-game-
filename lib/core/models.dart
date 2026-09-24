@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'adventure_progress.dart';
+
 enum ChildGender { boy, girl }
 
 enum PaletteChoice { automatic, ocean, berry, forest }
@@ -189,6 +191,11 @@ class AppData {
   AppData resetProgress() => AppData(profile: profile, settings: settings);
   bool isComplete(String id) =>
       attempts.any((a) => a.unitId == id && a.completed);
+
+  /// Gameplay progression is separate from the parent's assessment scores.
+  bool isAdventureComplete(String id) =>
+      isComplete(id) ||
+      (id == 'unit_01' && gardenAdventureComplete(journeys['unit_01.garden']));
   UnitAttempt? latest(String id) {
     final all = attempts.where((a) => a.unitId == id && a.completed).toList()
       ..sort((a, b) => b.completedAt.compareTo(a.completedAt));

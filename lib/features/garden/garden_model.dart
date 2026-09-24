@@ -1,4 +1,5 @@
 import '../../core/models.dart';
+import '../../core/adventure_progress.dart';
 
 class GardenItem {
   GardenItem(Map<String, dynamic> j)
@@ -32,6 +33,7 @@ class GardenRound {
     this.selected,
     this.mistakes = 0,
     this.feedback = false,
+    this.completedOnce = false,
     Map<String, String>? results,
     List<Map<String, dynamic>>? history,
   }) : roundId = roundId ?? DateTime.now().microsecondsSinceEpoch.toString(),
@@ -43,6 +45,7 @@ class GardenRound {
   String? selected;
   int mistakes;
   bool feedback;
+  final bool completedOnce;
   final Map<String, String> results;
   final List<Map<String, dynamic>> history;
   bool finished(GardenContent c) =>
@@ -81,6 +84,7 @@ class GardenRound {
 
   Map<String, dynamic> toJson() => {
     'version': version,
+    'completedOnce': completedOnce || gardenResultsComplete(results),
     'roundId': roundId,
     'selected': selected,
     'mistakes': mistakes,
@@ -100,6 +104,7 @@ class GardenRound {
     final selected = j['selected'] as String?;
     return GardenRound(
       version: content.version,
+      completedOnce: gardenAdventureComplete(j),
       roundId: j['roundId'],
       selected: content.items.any((i) => i.id == selected) ? selected : null,
       mistakes: (j['mistakes'] as int? ?? 0).clamp(0, 2),
@@ -110,6 +115,7 @@ class GardenRound {
   }
   GardenRound replay() => GardenRound(
     version: version,
+    completedOnce: gardenAdventureComplete(toJson()),
     history: [
       ...history,
       {
