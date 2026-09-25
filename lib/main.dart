@@ -87,7 +87,12 @@ class ScienceAdventureApp extends ConsumerWidget {
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       supportedLocales: const [Locale('en'), Locale('ar')],
       home: const AdventureHome(),
-      initialRoute: kIsWeb && Uri.base.queryParameters['preview'] == 'garden-v2'
+      initialRoute:
+          kIsWeb &&
+              const [
+                'garden-v2',
+                'alive-three',
+              ].contains(Uri.base.queryParameters['preview'])
           ? '/garden-preview'
           : kIsWeb && Uri.base.queryParameters['preview'] == 'bean-v1'
           ? '/bean-preview'

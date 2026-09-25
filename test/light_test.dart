@@ -90,7 +90,7 @@ void main() {
           scale: spec.$2,
         );
         await t.pump(const Duration(milliseconds: 100));
-        expect(find.text('11/40'), findsOneWidget);
+        expect(find.text('11/21'), findsOneWidget);
         expect(game(t).progress.revealed, isFalse);
         await helpers.tapVisible(
           t,
@@ -128,7 +128,7 @@ void main() {
         expect(store.data.attempts, isEmpty);
         await helpers.tapVisible(t, find.byKey(const ValueKey('light-finish')));
         expect(store.data.journeys['unit_02']!['index'], 11);
-        expect(find.text('12/40'), findsOneWidget);
+        expect(find.text('12/21'), findsOneWidget);
         expect(store.data.attempts, isEmpty);
         expect(t.takeException(), isNull);
         await t.pumpWidget(const SizedBox());
@@ -179,7 +179,7 @@ void main() {
         LightExperiment(
           step: step,
           initial: initial,
-          position: '11/40',
+          position: '11/21',
           onSave: (j) async {
             if (fail && j['revealed'] == true) throw StateError('disk full');
           },
@@ -226,7 +226,7 @@ void main() {
       await t.pump();
       await t.pump(const Duration(milliseconds: 100));
       expect(find.byType(LightExperiment), findsOneWidget);
-      expect(find.text('11/40'), findsOneWidget);
+      expect(find.text('11/21'), findsOneWidget);
       await helpers.tapVisible(
         t,
         find.byKey(const ValueKey('light-guess-pale_and_floppy')),

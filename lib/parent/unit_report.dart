@@ -5,6 +5,8 @@ import '../content/catalog.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
 import '../features/biology/lesson_player.dart';
+import '../features/garden/alive_adventures.dart';
+import '../features/garden/garden_model.dart';
 
 class UnitReport extends ConsumerWidget {
   const UnitReport({super.key, required this.level, required this.arabic});
@@ -15,11 +17,7 @@ class UnitReport extends ConsumerWidget {
     String t(String ar, String en) => arabic ? ar : en;
     final data = ref.watch(appProvider);
     final lesson = ref.watch(lessonLibraryProvider).value?.lessons[level.id];
-    final garden = level.id == 'unit_01'
-        ? data.journeys['unit_01.garden']
-        : null;
     final bean = level.id == 'unit_02' ? data.journeys['unit_02.bean'] : null;
-    final gardenResults = Map<String, String>.from(garden?['results'] ?? {});
     final latest = data.latest(level.id),
         best = data.best(level.id),
         journey = data.journeys[level.id];
@@ -49,23 +47,13 @@ class UnitReport extends ConsumerWidget {
             arabic ? level.arabic : level.title,
             style: Theme.of(context).textTheme.titleLarge,
           ),
-          if (garden != null) ...[
+          if (level.id == 'unit_01' && lesson != null) ...[
+            for (final scene in aliveScenes(lesson))
+              _sceneReport(scene, data.journeys[scene.storageKey]),
             Text(
               t(
-                'تدريب الجنينة: ${gardenResults.length} من ٧ اكتشافات',
-                'Garden practice: ${gardenResults.length} of 7 discoveries',
-              ),
-            ),
-            Text(
-              t(
-                'من أول مرة: ${gardenResults.values.where((v) => v == 'firstTry').length} • بعد تلميح: ${gardenResults.values.where((v) => v == 'afterHint').length} • بعد شرح: ${gardenResults.values.where((v) => v == 'explained').length}',
-                'First try: ${gardenResults.values.where((v) => v == 'firstTry').length} • After a hint: ${gardenResults.values.where((v) => v == 'afterHint').length} • Explanation: ${gardenResults.values.where((v) => v == 'explained').length}',
-              ),
-            ),
-            Text(
-              t(
-                'ده تدريب اللعبة الجديدة؛ تقييم الوحدة الكاملة منفصل.',
-                'This is the new garden practice; the full unit assessment is separate.',
+                'نتائج تدريب المشاهد منفصلة عن تقييم الوحدة الكاملة.',
+                'Scene practice is separate from the full unit assessment.',
               ),
             ),
           ],
@@ -178,6 +166,42 @@ class UnitReport extends ConsumerWidget {
               ),
             ],
           ],
+        ],
+      ),
+    );
+  }
+
+  Widget _sceneReport(GardenContent scene, Map<String, dynamic>? saved) {
+    String t(String ar, String en) => arabic ? ar : en;
+    final results = Map<String, String>.from(saved?['results'] ?? {});
+    int count(String value) => results.values.where((v) => v == value).length;
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            t(scene.text('titleAr'), scene.text('title')),
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Text(
+            t(
+              'اكتشافات: ${results.length} من ${scene.items.length}',
+              'Discoveries: ${results.length} of ${scene.items.length}',
+            ),
+          ),
+          Text(
+            t(
+              'من أول مرة: ${count('firstTry')} • بعد تلميح: ${count('afterHint')} • احتاج شرح: ${count('explained')}',
+              'First try: ${count('firstTry')} • After a hint: ${count('afterHint')} • Explanation needed: ${count('explained')}',
+            ),
+          ),
+          for (final item in scene.items.where(
+            (i) => results[i.id] == 'explained',
+          ))
+            Text(
+              t('محتاج تدريب: ${item.nameAr}', 'Practice next: ${item.name}'),
+            ),
         ],
       ),
     );

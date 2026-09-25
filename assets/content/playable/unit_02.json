@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": 1,
+  "contentVersion": 2,
   "id": "unit_02",
   "title": "Plants",
   "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
@@ -582,755 +582,71 @@
       }
     },
     {
-      "id": "unit_02.step.012",
+      "id": "unit_02.fridge.v2",
       "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the carrot to its place. You can drag, or tap it and tap a place.",
+      "title": "My fridge collection",
+      "prompt": "Fill the five baskets. Drag each food to the part we eat.",
       "options": [
         {
           "id": "carrot",
           "label": "Carrot",
           "art": "carrot"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
         },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "seed",
-          "label": "Seed",
-          "art": "seed"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "carrot": "root"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the root of carrot.",
-      "scene": "kitchen",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.013",
-      "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the radish to its place. You can drag, or tap it and tap a place.",
-      "options": [
         {
           "id": "radish",
           "label": "Radish",
           "art": "radish"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
         },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "seed",
-          "label": "Seed",
-          "art": "seed"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "radish": "root"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the root of radish.",
-      "scene": "kitchen",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.014",
-      "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the celery to its place. You can drag, or tap it and tap a place.",
-      "options": [
         {
           "id": "celery",
           "label": "Celery",
           "art": "celery"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
         },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "seed",
-          "label": "Seed",
-          "art": "seed"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "celery": "stem"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the stem of celery.",
-      "scene": "kitchen",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.015",
-      "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the sugar cane to its place. You can drag, or tap it and tap a place.",
-      "options": [
         {
           "id": "sugar_cane",
           "label": "Sugar cane",
           "art": "sugar_cane"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
         },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "seed",
-          "label": "Seed",
-          "art": "seed"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "sugar_cane": "stem"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the stem of sugar cane.",
-      "scene": "kitchen",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.016",
-      "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the lettuce to its place. You can drag, or tap it and tap a place.",
-      "options": [
         {
           "id": "lettuce",
           "label": "Lettuce",
           "art": "lettuce"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
         },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "seed",
-          "label": "Seed",
-          "art": "seed"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "lettuce": "leaf"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the leaf of lettuce.",
-      "scene": "kitchen",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.017",
-      "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the mint to its place. You can drag, or tap it and tap a place.",
-      "options": [
         {
           "id": "mint",
           "label": "Mint",
           "art": "mint"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
         },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "seed",
-          "label": "Seed",
-          "art": "seed"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "mint": "leaf"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the leaf of mint.",
-      "scene": "kitchen",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.018",
-      "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the parsley to its place. You can drag, or tap it and tap a place.",
-      "options": [
         {
           "id": "parsley",
           "label": "Parsley",
           "art": "parsley"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
         },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "seed",
-          "label": "Seed",
-          "art": "seed"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "parsley": "leaf"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the leaf of parsley.",
-      "scene": "kitchen",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.019",
-      "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the cauliflower to its place. You can drag, or tap it and tap a place.",
-      "options": [
         {
           "id": "cauliflower",
           "label": "Cauliflower",
           "art": "cauliflower"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
         },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "seed",
-          "label": "Seed",
-          "art": "seed"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "cauliflower": "flower"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the flower of cauliflower.",
-      "scene": "kitchen",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.020",
-      "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the broccoli to its place. You can drag, or tap it and tap a place.",
-      "options": [
         {
           "id": "broccoli",
           "label": "Broccoli",
           "art": "broccoli"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
         },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "seed",
-          "label": "Seed",
-          "art": "seed"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "broccoli": "flower"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the flower of broccoli.",
-      "scene": "kitchen",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.021",
-      "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the beans to its place. You can drag, or tap it and tap a place.",
-      "options": [
         {
           "id": "beans",
           "label": "Beans",
           "art": "beans"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
         },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "seed",
-          "label": "Seed",
-          "art": "seed"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "beans": "seed"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the seed of beans.",
-      "scene": "kitchen",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.022",
-      "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the rice to its place. You can drag, or tap it and tap a place.",
-      "options": [
         {
           "id": "rice",
           "label": "Rice",
           "art": "rice"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
         },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "seed",
-          "label": "Seed",
-          "art": "seed"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "rice": "seed"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the seed of rice.",
-      "scene": "kitchen",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.023",
-      "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the lentils to its place. You can drag, or tap it and tap a place.",
-      "options": [
         {
           "id": "lentils",
           "label": "Lentils",
           "art": "lentils"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
         },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "seed",
-          "label": "Seed",
-          "art": "seed"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "lentils": "seed"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the seed of lentils.",
-      "scene": "kitchen",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.024",
-      "kind": "drag-to-basket",
-      "title": "Fridge Sort",
-      "prompt": "Move the peas to its place. You can drag, or tap it and tap a place.",
-      "options": [
         {
           "id": "peas",
           "label": "Peas",
@@ -1367,13 +683,25 @@
       "answer": {
         "type": "mapping",
         "value": {
+          "carrot": "root",
+          "radish": "root",
+          "celery": "stem",
+          "sugar_cane": "stem",
+          "lettuce": "leaf",
+          "mint": "leaf",
+          "parsley": "leaf",
+          "cauliflower": "flower",
+          "broccoli": "flower",
+          "beans": "seed",
+          "rice": "seed",
+          "lentils": "seed",
           "peas": "seed"
         }
       },
-      "assessed": false,
-      "objective": "",
+      "assessed": true,
+      "objective": "u02.main.08",
       "hint": "Think about the plant part we eat.",
-      "explanation": "We eat the seed of peas.",
+      "explanation": "Roots: carrot and radish. Stems: celery and sugar cane. Leaves: lettuce, mint and parsley. Flowers: cauliflower and broccoli. Seeds: beans, rice, lentils and peas.",
       "scene": "kitchen",
       "section": "Explore",
       "source": {
@@ -1381,11 +709,43 @@
           6,
           7
         ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
+        "questionId": "u02.main.08",
+        "answerKeyPages": [
+          35
+        ],
+        "answerKeyText": "Root: carrot, radish, beetroot. Leaves: lettuce, mint, parsley, spinach.",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "legacyMergedFrom": [
+        "unit_02.step.012",
+        "unit_02.step.013",
+        "unit_02.step.014",
+        "unit_02.step.015",
+        "unit_02.step.016",
+        "unit_02.step.017",
+        "unit_02.step.018",
+        "unit_02.step.019",
+        "unit_02.step.020",
+        "unit_02.step.021",
+        "unit_02.step.022",
+        "unit_02.step.023",
+        "unit_02.step.024"
+      ],
+      "relatedSources": [
+        {
+          "pages": [
+            6,
+            7
+          ],
+          "questionId": "u02.choice.04",
+          "answerKeyPages": [
+            35
+          ],
+          "answerKeyText": "root",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        }
+      ],
+      "playScene": "plant-mission"
     },
     {
       "id": "unit_02.step.025",
@@ -1462,34 +822,76 @@
         ],
         "answerKeyText": "a) roots b) stem c) leaf (leaves) d) flower",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.026",
-      "kind": "tap-choice",
-      "title": "Bean detective",
-      "prompt": "Choose the part that came out first.",
-      "options": [
+      },
+      "relatedSources": [
         {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
+          "pages": [
+            6,
+            7
+          ],
+          "questionId": "u02.choice.01",
+          "answerKeyPages": [
+            35
+          ],
+          "answerKeyText": "stem",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
         },
         {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
+          "pages": [
+            6,
+            7
+          ],
+          "questionId": "u02.choice.03",
+          "answerKeyPages": [
+            35
+          ],
+          "answerKeyText": "flower",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        }
+      ],
+      "playScene": "plant-mission"
+    },
+    {
+      "id": "unit_02.bean-trail.v2",
+      "kind": "order-sequence",
+      "title": "My growing bean story",
+      "prompt": "Put the four pictures in growing order.",
+      "options": [
+        {
+          "id": "day8",
+          "label": "First green leaves",
+          "art": "bean_8"
+        },
+        {
+          "id": "day1",
+          "label": "Nothing yet",
+          "art": "bean_1"
+        },
+        {
+          "id": "day7",
+          "label": "Shoot grows upwards",
+          "art": "bean_7"
+        },
+        {
+          "id": "day4",
+          "label": "Root grows downwards",
+          "art": "bean_4"
         }
       ],
       "targets": [],
       "answer": {
-        "type": "single",
-        "value": "root"
+        "type": "sequence",
+        "value": [
+          "day1",
+          "day4",
+          "day7",
+          "day8"
+        ]
       },
       "assessed": true,
       "objective": "u02.main.02",
-      "hint": "Think about the plant parts and the greenhouse experiments.",
-      "explanation": "The root comes first — the seed needs a drink before it can grow upwards.",
+      "hint": "Think back to the bean in the glass. Look for the root before the shoot.",
+      "explanation": "Day 1: nothing yet. Day 4: a root goes down. Day 7: a shoot goes up. Day 8: the first green leaves open.",
       "scene": "plant",
       "section": "Challenge",
       "source": {
@@ -1503,7 +905,8 @@
         ],
         "answerKeyText": "The root comes first — the seed needs a drink before it can grow upwards.",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-mission"
     },
     {
       "id": "unit_02.step.027",
@@ -1557,7 +960,8 @@
         ],
         "answerKeyText": "Water and light. (Warmth and air are also correct if he says them.)",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-mission"
     },
     {
       "id": "unit_02.step.028",
@@ -1622,34 +1026,49 @@
         ],
         "answerKeyText": "pale yellow, thin floppy stem, not healthy",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "relatedSources": [
+        {
+          "pages": [
+            6,
+            7
+          ],
+          "questionId": "u02.choice.05",
+          "answerKeyPages": [
+            35
+          ],
+          "answerKeyText": "pale and floppy",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        }
+      ],
+      "playScene": "plant-mission"
     },
     {
-      "id": "unit_02.step.029",
-      "kind": "true-false",
-      "title": "Plant signals",
-      "prompt": "Seeds need water to start growing.",
+      "id": "unit_02.seed-care.v2",
+      "kind": "tap-choice",
+      "title": "Wake up the seed",
+      "prompt": "Choose what the seed needs to start growing.",
       "options": [
         {
-          "id": "true",
-          "label": "True",
-          "art": "true"
+          "id": "water",
+          "label": "Water",
+          "art": "water"
         },
         {
-          "id": "false",
-          "label": "False",
-          "art": "false"
+          "id": "toys",
+          "label": "Toys",
+          "art": "toys"
         }
       ],
       "targets": [],
       "answer": {
         "type": "single",
-        "value": "true"
+        "value": "water"
       },
       "assessed": true,
       "objective": "u02.main.05",
-      "hint": "Think about the plant parts and the greenhouse experiments.",
-      "explanation": "Seeds need water. A plant is a living thing. Leaves make the plant's food.",
+      "hint": "Remember the wet cotton in the glass.",
+      "explanation": "A seed needs water to start growing.",
       "scene": "plant",
       "section": "Challenge",
       "source": {
@@ -1663,34 +1082,35 @@
         ],
         "answerKeyText": "a) TRUE b) FALSE — a plant is a living thing c) TRUE",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-mission"
     },
     {
       "id": "unit_02.step.030",
-      "kind": "true-false",
-      "title": "Plant signals",
-      "prompt": "A plant is not a living thing.",
+      "kind": "tap-choice",
+      "title": "Plant detective",
+      "prompt": "The plant grew taller. Choose its basket.",
       "options": [
         {
-          "id": "true",
-          "label": "True",
-          "art": "true"
+          "id": "alive",
+          "label": "Alive",
+          "art": "plant"
         },
         {
-          "id": "false",
-          "label": "False",
-          "art": "false"
+          "id": "not_alive",
+          "label": "Not alive",
+          "art": "plant"
         }
       ],
       "targets": [],
       "answer": {
         "type": "single",
-        "value": "false"
+        "value": "alive"
       },
       "assessed": true,
       "objective": "u02.main.05",
-      "hint": "Think about the plant parts and the greenhouse experiments.",
-      "explanation": "Seeds need water. A plant is a living thing. Leaves make the plant's food.",
+      "hint": "Something can be alive even if it does not walk.",
+      "explanation": "A plant is a living thing. It grows and needs water.",
       "scene": "plant",
       "section": "Challenge",
       "source": {
@@ -1704,34 +1124,40 @@
         ],
         "answerKeyText": "a) TRUE b) FALSE — a plant is a living thing c) TRUE",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-mission"
     },
     {
-      "id": "unit_02.step.031",
-      "kind": "true-false",
-      "title": "Plant signals",
-      "prompt": "Leaves make food for the plant.",
+      "id": "unit_02.step.037",
+      "kind": "tap-choice",
+      "title": "Greenhouse mission",
+      "prompt": "Bring what leaves use to make food.",
       "options": [
         {
-          "id": "true",
-          "label": "True",
-          "art": "true"
+          "id": "sunlight",
+          "label": "Sunlight",
+          "art": "sunlight"
         },
         {
-          "id": "false",
-          "label": "False",
-          "art": "false"
+          "id": "soil",
+          "label": "Soil",
+          "art": "soil"
+        },
+        {
+          "id": "wind",
+          "label": "Wind",
+          "art": "wind"
         }
       ],
       "targets": [],
       "answer": {
         "type": "single",
-        "value": "true"
+        "value": "sunlight"
       },
       "assessed": true,
-      "objective": "u02.main.05",
+      "objective": "u02.choice.02",
       "hint": "Think about the plant parts and the greenhouse experiments.",
-      "explanation": "Seeds need water. A plant is a living thing. Leaves make the plant's food.",
+      "explanation": "Leaves make the plant's food using sunlight.",
       "scene": "plant",
       "section": "Challenge",
       "source": {
@@ -1739,13 +1165,28 @@
           6,
           7
         ],
-        "questionId": "u02.main.05",
+        "questionId": "u02.choice.02",
         "answerKeyPages": [
           35
         ],
-        "answerKeyText": "a) TRUE b) FALSE — a plant is a living thing c) TRUE",
+        "answerKeyText": "sunlight",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "relatedSources": [
+        {
+          "pages": [
+            6,
+            7
+          ],
+          "questionId": "u02.main.05",
+          "answerKeyPages": [
+            35
+          ],
+          "answerKeyText": "a) TRUE b) FALSE — a plant is a living thing c) TRUE",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        }
+      ],
+      "playScene": "plant-mission"
     },
     {
       "id": "unit_02.step.032",
@@ -1842,333 +1283,8 @@
         ],
         "answerKeyText": "It would dry out: the leaves would droop and go brown, and in the end the plant would die.",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.034",
-      "kind": "drag-to-basket",
-      "title": "Our vegetable basket",
-      "prompt": "Move the carrot to its place. You can drag, or tap it and tap a place.",
-      "options": [
-        {
-          "id": "carrot",
-          "label": "Carrot",
-          "art": "carrot"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "carrot": "root"
-        }
       },
-      "assessed": true,
-      "objective": "u02.main.08",
-      "hint": "Think about the plant parts and the greenhouse experiments.",
-      "explanation": "We eat the root of a carrot and the leaves of lettuce.",
-      "scene": "plant",
-      "section": "Challenge",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": "u02.main.08",
-        "answerKeyPages": [
-          35
-        ],
-        "answerKeyText": "Root: carrot, radish, beetroot. Leaves: lettuce, mint, parsley, spinach.",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.035",
-      "kind": "drag-to-basket",
-      "title": "Our vegetable basket",
-      "prompt": "Move the lettuce to its place. You can drag, or tap it and tap a place.",
-      "options": [
-        {
-          "id": "lettuce",
-          "label": "Lettuce",
-          "art": "lettuce"
-        }
-      ],
-      "targets": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "lettuce": "leaf"
-        }
-      },
-      "assessed": true,
-      "objective": "u02.main.08",
-      "hint": "Think about the plant parts and the greenhouse experiments.",
-      "explanation": "We eat the root of a carrot and the leaves of lettuce.",
-      "scene": "plant",
-      "section": "Challenge",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": "u02.main.08",
-        "answerKeyPages": [
-          35
-        ],
-        "answerKeyText": "Root: carrot, radish, beetroot. Leaves: lettuce, mint, parsley, spinach.",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.036",
-      "kind": "tap-choice",
-      "title": "Greenhouse mission",
-      "prompt": "Find the part that holds the plant up.",
-      "options": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
-        },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        }
-      ],
-      "targets": [],
-      "answer": {
-        "type": "single",
-        "value": "stem"
-      },
-      "assessed": true,
-      "objective": "u02.choice.01",
-      "hint": "Think about the plant parts and the greenhouse experiments.",
-      "explanation": "It holds the plant up and carries the water all the way to the leaves.",
-      "scene": "plant",
-      "section": "Challenge",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": "u02.choice.01",
-        "answerKeyPages": [
-          35
-        ],
-        "answerKeyText": "stem",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      },
-      "playScene": "plant-lab"
-    },
-    {
-      "id": "unit_02.step.037",
-      "kind": "tap-choice",
-      "title": "Greenhouse mission",
-      "prompt": "Bring what leaves use to make food.",
-      "options": [
-        {
-          "id": "sunlight",
-          "label": "Sunlight",
-          "art": "sunlight"
-        },
-        {
-          "id": "soil",
-          "label": "Soil",
-          "art": "soil"
-        },
-        {
-          "id": "wind",
-          "label": "Wind",
-          "art": "wind"
-        }
-      ],
-      "targets": [],
-      "answer": {
-        "type": "single",
-        "value": "sunlight"
-      },
-      "assessed": true,
-      "objective": "u02.choice.02",
-      "hint": "Think about the plant parts and the greenhouse experiments.",
-      "explanation": "Leaves make the plant's food using sunlight.",
-      "scene": "plant",
-      "section": "Challenge",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": "u02.choice.02",
-        "answerKeyPages": [
-          35
-        ],
-        "answerKeyText": "sunlight",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
-    },
-    {
-      "id": "unit_02.step.038",
-      "kind": "tap-choice",
-      "title": "Greenhouse mission",
-      "prompt": "Find where the seeds are made.",
-      "options": [
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        },
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
-        }
-      ],
-      "targets": [],
-      "answer": {
-        "type": "single",
-        "value": "flower"
-      },
-      "assessed": true,
-      "objective": "u02.choice.03",
-      "hint": "Think about the plant parts and the greenhouse experiments.",
-      "explanation": "The flower makes the seeds that grow into new plants.",
-      "scene": "plant",
-      "section": "Challenge",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": "u02.choice.03",
-        "answerKeyPages": [
-          35
-        ],
-        "answerKeyText": "flower",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      },
-      "playScene": "plant-lab"
-    },
-    {
-      "id": "unit_02.step.039",
-      "kind": "tap-choice",
-      "title": "Greenhouse mission",
-      "prompt": "Choose the plant part we eat in a carrot.",
-      "options": [
-        {
-          "id": "root",
-          "label": "Root",
-          "art": "root"
-        },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        }
-      ],
-      "targets": [],
-      "answer": {
-        "type": "single",
-        "value": "root"
-      },
-      "assessed": true,
-      "objective": "u02.choice.04",
-      "hint": "Think about the plant parts and the greenhouse experiments.",
-      "explanation": "We eat the root of a carrot.",
-      "scene": "plant",
-      "section": "Challenge",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": "u02.choice.04",
-        "answerKeyPages": [
-          35
-        ],
-        "answerKeyText": "root",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      },
-      "playScene": "plant-lab"
-    },
-    {
-      "id": "unit_02.step.040",
-      "kind": "tap-choice",
-      "title": "Greenhouse mission",
-      "prompt": "Choose the plant from the dark cupboard.",
-      "options": [
-        {
-          "id": "green_and_strong",
-          "label": "Green and strong",
-          "art": "green_and_strong"
-        },
-        {
-          "id": "pale_and_floppy",
-          "label": "Pale and floppy",
-          "art": "pale_and_floppy"
-        }
-      ],
-      "targets": [],
-      "answer": {
-        "type": "single",
-        "value": "pale_and_floppy"
-      },
-      "assessed": true,
-      "objective": "u02.choice.05",
-      "hint": "Think about the plant parts and the greenhouse experiments.",
-      "explanation": "A plant kept with no light looks pale and floppy.",
-      "scene": "plant",
-      "section": "Challenge",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": "u02.choice.05",
-        "answerKeyPages": [
-          35
-        ],
-        "answerKeyText": "pale and floppy",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      "playScene": "plant-mission"
     }
   ],
   "stickers": [
@@ -2265,5 +1381,71 @@
         2
       ]
     }
-  ]
+  ],
+  "legacyStepIds": [
+    "unit_02.step.001",
+    "unit_02.step.002",
+    "unit_02.step.003",
+    "unit_02.step.004",
+    "unit_02.step.005",
+    "unit_02.step.006",
+    "unit_02.step.007",
+    "unit_02.step.008",
+    "unit_02.step.009",
+    "unit_02.step.010",
+    "unit_02.step.011",
+    "unit_02.step.012",
+    "unit_02.step.013",
+    "unit_02.step.014",
+    "unit_02.step.015",
+    "unit_02.step.016",
+    "unit_02.step.017",
+    "unit_02.step.018",
+    "unit_02.step.019",
+    "unit_02.step.020",
+    "unit_02.step.021",
+    "unit_02.step.022",
+    "unit_02.step.023",
+    "unit_02.step.024",
+    "unit_02.step.025",
+    "unit_02.step.026",
+    "unit_02.step.027",
+    "unit_02.step.028",
+    "unit_02.step.029",
+    "unit_02.step.030",
+    "unit_02.step.031",
+    "unit_02.step.032",
+    "unit_02.step.033",
+    "unit_02.step.034",
+    "unit_02.step.035",
+    "unit_02.step.036",
+    "unit_02.step.037",
+    "unit_02.step.038",
+    "unit_02.step.039",
+    "unit_02.step.040"
+  ],
+  "legacyReplacements": {
+    "unit_02.step.012": "unit_02.fridge.v2",
+    "unit_02.step.013": "unit_02.fridge.v2",
+    "unit_02.step.014": "unit_02.fridge.v2",
+    "unit_02.step.015": "unit_02.fridge.v2",
+    "unit_02.step.016": "unit_02.fridge.v2",
+    "unit_02.step.017": "unit_02.fridge.v2",
+    "unit_02.step.018": "unit_02.fridge.v2",
+    "unit_02.step.019": "unit_02.fridge.v2",
+    "unit_02.step.020": "unit_02.fridge.v2",
+    "unit_02.step.021": "unit_02.fridge.v2",
+    "unit_02.step.022": "unit_02.fridge.v2",
+    "unit_02.step.023": "unit_02.fridge.v2",
+    "unit_02.step.024": "unit_02.fridge.v2",
+    "unit_02.step.026": "unit_02.bean-trail.v2",
+    "unit_02.step.029": "unit_02.seed-care.v2",
+    "unit_02.step.031": "unit_02.step.037",
+    "unit_02.step.034": "unit_02.fridge.v2",
+    "unit_02.step.035": "unit_02.fridge.v2",
+    "unit_02.step.036": "unit_02.step.025",
+    "unit_02.step.038": "unit_02.step.025",
+    "unit_02.step.039": "unit_02.fridge.v2",
+    "unit_02.step.040": "unit_02.step.028"
+  }
 }

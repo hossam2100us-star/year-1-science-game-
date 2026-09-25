@@ -17,8 +17,8 @@ import '../plants/bean_experiment.dart';
 import '../plants/light_experiment.dart';
 import '../plants/light_model.dart';
 import '../plants/plant_lab_stage.dart';
-import '../garden/garden_adventure.dart';
-import '../garden/garden_model.dart';
+import '../plants/plant_mission_stage.dart';
+import '../garden/alive_adventures.dart';
 
 class LessonRoute extends ConsumerWidget {
   const LessonRoute({super.key, required this.id});
@@ -28,9 +28,7 @@ class LessonRoute extends ConsumerWidget {
       .watch(lessonLibraryProvider)
       .when(
         data: (library) => id == 'unit_01'
-            ? GardenAdventure(
-                content: GardenContent(library.lessons[id]!.json['garden']),
-              )
+            ? AliveAdventures(lesson: library.lessons[id]!)
             : LessonPlayer(lesson: library.lessons[id]!),
         loading: () =>
             const Scaffold(body: Center(child: CircularProgressIndicator())),
@@ -74,7 +72,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     final saved = ref.read(appProvider).journeys[widget.lesson.id];
-    _session = saved != null && saved['version'] == widget.lesson.version
+    _session = saved != null && LessonSession.canRestore(widget.lesson, saved)
         ? LessonSession.restore(widget.lesson, saved)
         : LessonSession.fresh(widget.lesson);
     if (_session.finished) {
@@ -122,6 +120,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     });
   }
 
+  bool get _plantMission => step.json['playScene'] == 'plant-mission';
   bool get _plantLab => step.json['playScene'] == 'plant-lab';
   String get _displayPrompt =>
       _plantLab && step.json['partDescriptions'] != null && _selected.isNotEmpty
@@ -308,6 +307,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       await _persist();
       _session.responses[step.id] = {..._snapshot(), 'completed': true};
       _session.index++;
+      while (!_session.finished &&
+          _session.responses[_session.step.id]?['completed'] == true) {
+        _session.index++;
+      }
       _session.current = {};
       if (_session.finished) {
         await ref.read(appProvider.notifier).completeJourney(_session.result());
@@ -483,7 +486,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                 size: 70,
                                 gender: profile?.gender ?? ChildGender.boy,
                                 mood: _engine.done
-                                    ? OwlMood.cheering
+                                    ? (_engine.outcome ==
+                                              DecisionOutcome.explained
+                                          ? OwlMood.thinking
+                                          : OwlMood.cheering)
                                     : _engine.mistakes > 0
                                     ? OwlMood.thinking
                                     : OwlMood.idle,
@@ -574,7 +580,16 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                               onItem: _item,
                               onPlace: _place,
                             ),
-                          ] else
+                          ] else if (_plantMission)
+                            PlantMissionStage(
+                              step: step,
+                              selected: _selected,
+                              placements: _placements,
+                              done: _engine.done,
+                              onItem: _item,
+                              onPlace: _place,
+                            )
+                          else
                             ClipRRect(
                               borderRadius: BorderRadius.circular(24),
                               child: SizedBox(
@@ -594,6 +609,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                             ),
                           const SizedBox(height: 10),
                           if (!_plantLab &&
+                              !_plantMission &&
                               !_engine.done &&
                               !_freeDone &&
                               _frame == 0)
@@ -621,6 +637,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                               ],
                             ),
                           if (!_plantLab &&
+                              !_plantMission &&
                               step.isMapping &&
                               !_engine.done) ...[
                             const SizedBox(height: 10),
@@ -704,7 +721,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                               padding: const EdgeInsets.all(12),
                               child: FilledButton(
                                 onPressed:
-                                    _selected.isEmpty && _placements.isEmpty
+                                    (step.isMapping
+                                        ? _placements.length !=
+                                              step.options.length
+                                        : _selected.isEmpty)
                                     ? null
                                     : _check,
                                 child: const Text('Check my discovery'),
@@ -715,7 +735,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                               margin: const EdgeInsets.symmetric(vertical: 10),
                               padding: const EdgeInsets.all(16),
                               decoration: BoxDecoration(
-                                color: _engine.done || _freeDone
+                                color:
+                                    (_engine.done &&
+                                            _engine.outcome !=
+                                                DecisionOutcome.explained) ||
+                                        _freeDone
                                     ? const Color(0xFFD9F2DF)
                                     : const Color(0xFFFFE9C7),
                                 borderRadius: BorderRadius.circular(20),

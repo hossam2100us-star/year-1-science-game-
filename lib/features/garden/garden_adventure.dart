@@ -28,12 +28,18 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   GardenItem? get selected =>
       round.selected == null ? null : content.item(round.selected!);
   String t(String key) => content.text(key);
+  bool get explained =>
+      selected != null &&
+      round.results[selected!.id] == DecisionOutcome.explained.name;
+  String get feedbackTitle => explained ? t('explained') : t('praise');
   String get prompt => selected != null
       ? round.feedback
-            ? selected!.explanation
+            ? '$feedbackTitle ${selected!.explanation}'
             : round.mistakes > 0
             ? '${t('retry')} ${selected!.hint}'
-            : t('question').replaceAll('{name}', selected!.name.toLowerCase())
+            : (selected!.question ??
+                  t('question')
+                      .replaceAll('{name}', selected!.name.toLowerCase()))
       : round.finished(content)
       ? t('finished')
       : round.results.isEmpty
@@ -43,11 +49,18 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    final saved = ref.read(appProvider).journeys[GardenRound.storageKey];
+    final saved = ref.read(appProvider).journeys[content.storageKey];
     round = saved == null
-        ? GardenRound(version: content.version)
+        ? GardenRound(
+            version: content.version,
+            requiredIds: content.items.map((i) => i.id).toSet(),
+          )
         : GardenRound.restore(saved, content);
     scene = GardenScene(
+      asset: content.asset,
+      bounds: content.bounds ?? gardenBounds,
+      guide: content.items.first.id,
+      difficulty: content.difficulty,
       onReady: () {
         if (!mounted) return;
         setState(() => ready = true);
@@ -61,6 +74,10 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
 
   void sync() {
     scene.found = round.results.keys.toSet();
+    scene.explained = round.results.entries
+        .where((e) => e.value == DecisionOutcome.explained.name)
+        .map((e) => e.key)
+        .toSet();
     scene.tutorial = round.selected == null;
   }
 
@@ -75,7 +92,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   Future<void> persist() {
     final snapshot = round.toJson(), writer = ref.read(appProvider.notifier);
     final task = writes.then(
-      (_) => writer.saveJourney(GardenRound.storageKey, snapshot),
+      (_) => writer.saveJourney(content.storageKey, snapshot),
     );
     writes = task
         .then((_) {
@@ -107,9 +124,10 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   void answer(bool alive) {
     if (selected == null || busy || round.feedback) return;
     final outcome = round.answer(selected!, alive);
-    if (outcome != null) scene.celebration = 1.2;
+    if (outcome != null && outcome != DecisionOutcome.explained)
+      scene.celebration = 1.2;
     changed();
-    _speak(round.feedback ? '${t('praise')} ${selected!.explanation}' : prompt);
+    _speak(prompt);
   }
 
   Future<void> next() async {
@@ -197,10 +215,21 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
         body: SafeArea(
           child: LayoutBuilder(
             builder: (context, box) {
-              final hitboxes = gardenRects(box.biggest, touch: true);
+              final footerHeight = small ? 0.0 : 160.0;
+              final sceneSize = Size(
+                box.maxWidth - (small ? 232 : 0),
+                box.maxHeight - footerHeight,
+              );
+              final hitboxes = gardenRects(
+                sceneSize,
+                touch: true,
+                bounds: scene.bounds,
+              );
               return Stack(
                 children: [
                   Positioned.fill(
+                    bottom: footerHeight,
+                    right: small ? 232 : 0,
                     child: GameWidget<GardenScene>(
                       game: scene,
                       loadingBuilder: (_) =>
@@ -231,115 +260,161 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
                           ),
                         ),
                       ),
-                  Positioned(
-                    top: small ? 4 : 14,
-                    left: 12,
-                    right: 12,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        _pill(
-                          child: IconButton(
-                            onPressed: busy ? null : leave,
-                            tooltip: t('back'),
-                            icon: const Icon(Icons.arrow_back_rounded),
-                            color: gardenInk,
-                          ),
-                        ),
-                        const Spacer(),
-                        _pill(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 10,
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
+                  if (small && selected == null && !round.finished(content))
+                    Positioned(
+                      right: 8,
+                      top: 8,
+                      bottom: 8,
+                      width: 216,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                const Icon(
-                                  Icons.star_rounded,
-                                  color: Color(0xFFAE771A),
-                                  size: 28,
+                                IconButton(
+                                  onPressed: busy ? null : leave,
+                                  tooltip: t('back'),
+                                  icon: const Icon(Icons.arrow_back_rounded),
                                 ),
-                                const SizedBox(width: 7),
-                                Text(
-                                  '${round.results.length} / ${content.items.length}',
-                                  style: const TextStyle(
-                                    fontFamily: 'Fredoka',
-                                    fontSize: 25,
-                                    color: gardenInk,
-                                  ),
+                                IconButton(
+                                  onPressed: () => _speak(prompt),
+                                  tooltip: 'Listen again',
+                                  icon: const Icon(Icons.volume_up_rounded),
                                 ),
                               ],
                             ),
-                          ),
+                            Text(
+                              '${round.results.length} / ${content.items.length}',
+                              style: const TextStyle(
+                                fontFamily: 'Fredoka',
+                                fontSize: 25,
+                              ),
+                            ),
+                            ScientistOwl(gender: profile.gender, size: 60),
+                            Text(
+                              prompt,
+                              style: const TextStyle(fontSize: 22),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                  if (selected == null && !round.finished(content))
+                  if (!small)
+                    Positioned(
+                      top: 14,
+                      left: 12,
+                      right: 12,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _pill(
+                            child: IconButton(
+                              onPressed: busy ? null : leave,
+                              tooltip: t('back'),
+                              icon: const Icon(Icons.arrow_back_rounded),
+                              color: gardenInk,
+                            ),
+                          ),
+                          const Spacer(),
+                          _pill(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 16,
+                                vertical: 10,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  const Icon(
+                                    Icons.star_rounded,
+                                    color: Color(0xFFAE771A),
+                                    size: 28,
+                                  ),
+                                  const SizedBox(width: 7),
+                                  Text(
+                                    '${round.results.length} / ${content.items.length}',
+                                    style: const TextStyle(
+                                      fontFamily: 'Fredoka',
+                                      fontSize: 25,
+                                      color: gardenInk,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  if (!small && selected == null && !round.finished(content))
                     Positioned(
                       bottom: small ? 5 : 16,
+                      height: footerHeight - (small ? 10 : 32),
                       left: small ? 12 : 32,
                       right: small ? 12 : 32,
-                      child: _pill(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: small ? 8 : 16,
-                            vertical: small ? 4 : 10,
-                          ),
-                          child: Row(
-                            children: [
-                              ScientistOwl(
-                                gender: profile.gender,
-                                size: small ? 54 : 86,
-                                mood: OwlMood.happy,
-                              ),
-                              const SizedBox(width: 10),
-                              Expanded(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      round.results.isEmpty
-                                          ? t('tutorial')
-                                          : t('hunt'),
-                                      style: TextStyle(
-                                        fontFamily: 'Fredoka',
-                                        fontSize: small ? 22 : 28,
-                                        color: gardenInk,
-                                      ),
-                                    ),
-                                    if (!small ||
-                                        MediaQuery.textScalerOf(context)
-                                                .scale(1) <
-                                            1.5)
+                      child: SingleChildScrollView(
+                        child: _pill(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: small ? 8 : 16,
+                              vertical: small ? 4 : 10,
+                            ),
+                            child: Row(
+                              children: [
+                                ScientistOwl(
+                                  gender: profile.gender,
+                                  size: small ? 54 : 86,
+                                  mood: OwlMood.happy,
+                                ),
+                                const SizedBox(width: 10),
+                                Expanded(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
                                       Text(
                                         round.results.isEmpty
-                                            ? t('tutorialAr')
-                                            : t('huntAr'),
-                                        textDirection: TextDirection.rtl,
+                                            ? t('tutorial')
+                                            : t('hunt'),
                                         style: TextStyle(
-                                          fontFamily: 'Cairo',
-                                          fontSize: small ? 15 : 18,
+                                          fontFamily: 'Fredoka',
+                                          fontSize: small ? 22 : 28,
                                           color: gardenInk,
                                         ),
                                       ),
-                                  ],
+                                      if (!small ||
+                                          MediaQuery.textScalerOf(context)
+                                                  .scale(1) <
+                                              1.5)
+                                        Text(
+                                          round.results.isEmpty
+                                              ? t('tutorialAr')
+                                              : t('huntAr'),
+                                          textDirection: TextDirection.rtl,
+                                          style: TextStyle(
+                                            fontFamily: 'Cairo',
+                                            fontSize: small ? 15 : 18,
+                                            color: gardenInk,
+                                          ),
+                                        ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              IconButton(
-                                onPressed: () => _speak(prompt),
-                                tooltip: 'Listen again',
-                                icon: Icon(
-                                  voiceUnavailable
-                                      ? Icons.volume_off_rounded
-                                      : Icons.volume_up_rounded,
+                                IconButton(
+                                  onPressed: () => _speak(prompt),
+                                  tooltip: 'Listen again',
+                                  icon: Icon(
+                                    voiceUnavailable
+                                        ? Icons.volume_off_rounded
+                                        : Icons.volume_up_rounded,
+                                  ),
+                                  color: gardenInk,
                                 ),
-                                color: gardenInk,
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -424,19 +499,26 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
             color: Colors.transparent,
             elevation: 6,
             borderRadius: BorderRadius.circular(22),
-            child: GardenPortrait(id: item.id, image: scene.artwork, size: 110),
+            child: GardenPortrait(
+              id: item.id,
+              image: scene.artwork,
+              bounds: scene.bounds,
+              size: 110,
+            ),
           ),
           childWhenDragging: Opacity(
             opacity: .3,
             child: GardenPortrait(
               id: item.id,
               image: scene.artwork,
+              bounds: scene.bounds,
               size: small ? 125 : 215,
             ),
           ),
           child: GardenPortrait(
             id: item.id,
             image: scene.artwork,
+            bounds: scene.bounds,
             size: small ? 125 : 215,
           ),
         ),
@@ -469,9 +551,10 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
             Expanded(
               child: Text(
                 done
-                    ? t('praise')
-                    : t('question')
-                          .replaceAll('{name}', item.name.toLowerCase()),
+                    ? feedbackTitle
+                    : (item.question ??
+                          t('question')
+                              .replaceAll('{name}', item.name.toLowerCase())),
                 style: TextStyle(
                   fontFamily: 'Fredoka',
                   fontSize: small ? 25 : 32,
@@ -527,7 +610,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
                 width: 70,
                 height: 64,
                 child: CustomPaint(
-                  painter: BasketPicture(item.alive, highlight: true),
+                  painter: BasketPicture(item.alive, highlight: !explained),
                 ),
               ),
               const SizedBox(width: 10),
@@ -566,7 +649,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
                   gender: profile.gender,
                   size: 68,
                   mood: done
-                      ? OwlMood.cheering
+                      ? (explained ? OwlMood.thinking : OwlMood.cheering)
                       : round.mistakes > 0
                       ? OwlMood.thinking
                       : OwlMood.happy,
@@ -701,6 +784,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
               child: GardenPortrait(
                 id: i.id,
                 image: scene.artwork,
+                bounds: scene.bounds,
                 size: small ? 56 : 78,
               ),
             ),

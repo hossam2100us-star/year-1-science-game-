@@ -20,6 +20,12 @@ for file in sorted((ROOT/'assets/content/playable').glob('*.json')):
   if qid:
    covered.add(qid);assert qid in originals,(file,qid)
    assert step['source']['answerKeyText']==originals[qid]['answerKeyText']
+  for related in step.get('relatedSources', []):
+   rid=related['questionId']
+   assert rid in originals,(file,rid)
+   assert related['answerKeyText']==originals[rid]['answerKeyText']
+   assert related['sourceSha256']==source['sourceSha256']
+   covered.add(rid)
   if step['assessed']:
    assert qid and step['objective']==qid
    assert step['hint'].strip() and step['explanation'].strip()

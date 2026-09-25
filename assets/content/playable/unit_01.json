@@ -2279,7 +2279,7 @@
       "finishedAr": "اكتشفت كل اللي في الجنينة!",
       "replay": "Play again",
       "replayAr": "العب تاني",
-      "back": "My island",
+      "back": "My adventures",
       "backAr": "ارجع للجزيرة",
       "count": "Found",
       "drag": "Tap a basket, or drag the picture into it.",
@@ -2290,7 +2290,13 @@
       "saved": "Your discoveries are saved.",
       "saveError": "مش قادر أحفظ دلوقتي. جرّب تاني.",
       "sourceLabel": "Alive or Not Alive?",
-      "goodName": "Great exploring, {name}!"
+      "goodName": "Great exploring, {name}!",
+      "explained": "Let's learn this together.",
+      "difficulty": "1 - First discoveries",
+      "difficultyAr": "١ - أول اكتشافاتي",
+      "menu": "Choose an adventure",
+      "menuAr": "اختار مغامرة",
+      "titleAr": "الجنينة"
     },
     "items": [
       {
@@ -2405,6 +2411,444 @@
           35
         ]
       }
-    ]
-  }
+    ],
+    "id": "garden",
+    "asset": "garden-v2.png",
+    "difficulty": 1
+  },
+  "aliveScenes": [
+    {
+      "version": 1,
+      "sourcePages": [
+        4,
+        5
+      ],
+      "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+      "ui": {
+        "title": "Home detectives",
+        "hunt": "Find another thing.",
+        "huntAr": "دور على حاجة تانية",
+        "question": "Is the {name} alive?",
+        "questionAr": "حية ولا مش حية؟",
+        "alive": "Alive",
+        "aliveAr": "حية",
+        "notAlive": "Not alive",
+        "notAliveAr": "مش حية",
+        "retry": "Hmm, let's look again!",
+        "praise": "You looked carefully!",
+        "next": "Find another",
+        "nextAr": "دور على حاجة تانية",
+        "finished": "You explored this whole scene!",
+        "finishedAr": "اكتشفت كل الحاجات في المشهد!",
+        "replay": "Play again",
+        "replayAr": "العب تاني",
+        "back": "My adventures",
+        "backAr": "ارجع للجزيرة",
+        "count": "Found",
+        "drag": "Tap a basket, or drag the picture into it.",
+        "dragAr": "اختار سلة، أو اسحب الصورة ليها",
+        "voiceUnavailable": "الصوت المحلي مش متاح في المتصفح ده؛ حركة الإيد بتوضح المطلوب.",
+        "tutorial": "Tap grandmother.",
+        "tutorialAr": "ابدأ بلمس الجدة",
+        "saved": "Your discoveries are saved.",
+        "saveError": "مش قادر أحفظ دلوقتي. جرّب تاني.",
+        "sourceLabel": "Alive or Not Alive?",
+        "goodName": "Great exploring, {name}!",
+        "explained": "Let's learn this together.",
+        "difficulty": "2 - Look closely",
+        "difficultyAr": "٢ - بص كويس",
+        "menu": "Choose an adventure",
+        "menuAr": "اختار مغامرة",
+        "titleAr": "محققين في البيت"
+      },
+      "items": [
+        {
+          "id": "grandmother",
+          "name": "Grandmother",
+          "nameAr": "الجدة",
+          "alive": true,
+          "hint": "Think about a person growing and needing food.",
+          "explanation": "Grandmother is alive. People grow, need food and water, and breathe.",
+          "objective": "u01.main.01",
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [
+            35
+          ],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "sourceQuestions"
+        },
+        {
+          "id": "fish",
+          "name": "Fish",
+          "nameAr": "السمكة",
+          "alive": true,
+          "hint": "Does a fish need food and grow?",
+          "explanation": "The fish is alive. It grows and needs food.",
+          "objective": null,
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "introductionText"
+        },
+        {
+          "id": "fly",
+          "name": "Fly",
+          "nameAr": "الذبابة",
+          "alive": true,
+          "hint": "Think about growing, needing food and making new living things.",
+          "explanation": "The fly is alive. It grows, needs food and can make new living things.",
+          "objective": "u01.main.08",
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [
+            35
+          ],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "sourceQuestions"
+        },
+        {
+          "id": "mug",
+          "name": "Mug",
+          "nameAr": "الكوباية",
+          "alive": false,
+          "hint": "Does a mug grow or need food?",
+          "explanation": "The mug is not alive. It does not grow or need food.",
+          "objective": "u01.main.01",
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [
+            35
+          ],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "sourceQuestions"
+        },
+        {
+          "id": "doll",
+          "name": "Doll",
+          "nameAr": "العروسة اللعبة",
+          "alive": false,
+          "hint": "It looks like a person. But does it grow or need food?",
+          "explanation": "The doll is not alive. Looking like a person does not make it alive.",
+          "objective": "u01.main.08",
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [
+            35
+          ],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "sourceQuestions"
+        },
+        {
+          "id": "kettle",
+          "name": "Kettle",
+          "nameAr": "الغلاية",
+          "alive": false,
+          "hint": "Does a kettle grow or make new kettles?",
+          "explanation": "A kettle is not alive. It does not grow, does not need food, and cannot make new kettles.",
+          "objective": "u01.main.03",
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [
+            35
+          ],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "sourceQuestions"
+        },
+        {
+          "id": "clock",
+          "name": "Clock",
+          "nameAr": "الساعة",
+          "alive": false,
+          "hint": "The hands move. Is moving enough?",
+          "explanation": "The clock is not alive. Its hands move, but moving is not enough.",
+          "objective": "u01.main.05",
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [
+            35
+          ],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "sourceQuestions"
+        }
+      ],
+      "id": "home",
+      "asset": "home-hunt-v1.png",
+      "difficulty": 2,
+      "bounds": {
+        "grandmother": [
+          0.045,
+          0.135,
+          0.222,
+          0.646
+        ],
+        "fish": [
+          0.285,
+          0.27,
+          0.11,
+          0.17
+        ],
+        "fly": [
+          0.438,
+          0.065,
+          0.055,
+          0.11
+        ],
+        "mug": [
+          0.32,
+          0.571,
+          0.099,
+          0.17
+        ],
+        "doll": [
+          0.55,
+          0.551,
+          0.165,
+          0.293
+        ],
+        "kettle": [
+          0.798,
+          0.213,
+          0.099,
+          0.175
+        ],
+        "clock": [
+          0.741,
+          0.003,
+          0.102,
+          0.207
+        ]
+      }
+    },
+    {
+      "version": 1,
+      "sourcePages": [
+        4,
+        5
+      ],
+      "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+      "ui": {
+        "title": "River explorers",
+        "hunt": "Find another thing.",
+        "huntAr": "دور على حاجة تانية",
+        "question": "Is the {name} alive?",
+        "questionAr": "حية ولا مش حية؟",
+        "alive": "Alive",
+        "aliveAr": "حية",
+        "notAlive": "Not alive",
+        "notAliveAr": "مش حية",
+        "retry": "Hmm, let's look again!",
+        "praise": "You looked carefully!",
+        "next": "Find another",
+        "nextAr": "دور على حاجة تانية",
+        "finished": "You explored this whole scene!",
+        "finishedAr": "اكتشفت كل الحاجات في المشهد!",
+        "replay": "Play again",
+        "replayAr": "العب تاني",
+        "back": "My adventures",
+        "backAr": "ارجع للجزيرة",
+        "count": "Found",
+        "drag": "Tap a basket, or drag the picture into it.",
+        "dragAr": "اختار سلة، أو اسحب الصورة ليها",
+        "voiceUnavailable": "الصوت المحلي مش متاح في المتصفح ده؛ حركة الإيد بتوضح المطلوب.",
+        "tutorial": "Find something to investigate.",
+        "tutorialAr": "دور على حاجة وافحصها",
+        "saved": "Your discoveries are saved.",
+        "saveError": "مش قادر أحفظ دلوقتي. جرّب تاني.",
+        "sourceLabel": "Alive or Not Alive?",
+        "goodName": "Great exploring, {name}!",
+        "explained": "Let's learn this together.",
+        "difficulty": "3 - Think it through",
+        "difficultyAr": "٣ - فكر في الدليل",
+        "menu": "Choose an adventure",
+        "menuAr": "اختار مغامرة",
+        "titleAr": "مستكشفين النهر"
+      },
+      "items": [
+        {
+          "id": "lizard",
+          "name": "Lizard",
+          "nameAr": "السحلية",
+          "alive": true,
+          "hint": "Think about growing and needing food.",
+          "explanation": "The lizard is alive. It grows, needs food and breathes.",
+          "objective": "u01.main.01",
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [
+            35
+          ],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "sourceQuestions"
+        },
+        {
+          "id": "worm",
+          "name": "Worm",
+          "nameAr": "الدودة",
+          "alive": true,
+          "hint": "Think about growing, needing food and making new living things.",
+          "explanation": "The worm is alive. It grows and needs food.",
+          "objective": "u01.main.08",
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [
+            35
+          ],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "sourceQuestions"
+        },
+        {
+          "id": "dandelion",
+          "name": "Dandelion",
+          "nameAr": "الهندباء",
+          "alive": true,
+          "hint": "It does not walk. But does it grow and make seeds?",
+          "explanation": "The dandelion is alive. It grows, needs water and makes seeds.",
+          "objective": "u01.main.04",
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [
+            35
+          ],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "sourceQuestions"
+        },
+        {
+          "id": "stone",
+          "name": "Stone",
+          "nameAr": "الحجر",
+          "alive": false,
+          "hint": "Does a stone need food or make babies?",
+          "explanation": "The stone is not alive. It does not need food or make babies.",
+          "objective": null,
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "introductionText"
+        },
+        {
+          "id": "river",
+          "name": "River",
+          "nameAr": "النهر",
+          "alive": false,
+          "hint": "The water moves. Does moving mean it is alive?",
+          "explanation": "The river moves, but it is not alive. Moving is not enough.",
+          "objective": "u01.main.05",
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [
+            35
+          ],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "sourceQuestions"
+        },
+        {
+          "id": "spoon",
+          "name": "Wooden spoon",
+          "nameAr": "المعلقة الخشب",
+          "alive": false,
+          "hint": "Think about the spoon itself. Is it growing?",
+          "explanation": "The wooden spoon is not alive.",
+          "objective": null,
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "introductionText"
+        },
+        {
+          "id": "egg",
+          "name": "Egg with a growing chick",
+          "nameAr": "بيضة فيها كتكوت بينمو",
+          "alive": true,
+          "hint": "Think about the chick growing inside this egg.",
+          "explanation": "This egg is alive: there is a chick growing inside it.",
+          "objective": null,
+          "sourcePages": [
+            4,
+            5
+          ],
+          "answerKeyPages": [],
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+          "sourceSection": "introductionText",
+          "question": "There is a chick growing inside this egg. Is this egg alive?"
+        }
+      ],
+      "id": "river",
+      "asset": "river-hunt-v1.png",
+      "difficulty": 3,
+      "bounds": {
+        "lizard": [
+          0.035,
+          0.25,
+          0.266,
+          0.192
+        ],
+        "worm": [
+          0.354,
+          0.732,
+          0.104,
+          0.12
+        ],
+        "dandelion": [
+          0.016,
+          0.461,
+          0.265,
+          0.433
+        ],
+        "stone": [
+          0.528,
+          0.584,
+          0.131,
+          0.134
+        ],
+        "river": [
+          0.344,
+          0.315,
+          0.376,
+          0.246
+        ],
+        "spoon": [
+          0.675,
+          0.655,
+          0.325,
+          0.224
+        ],
+        "egg": [
+          0.831,
+          0.392,
+          0.096,
+          0.132
+        ]
+      }
+    }
+  ]
 }

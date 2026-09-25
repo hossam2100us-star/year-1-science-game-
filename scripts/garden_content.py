@@ -23,3 +23,6 @@ def add_garden(book):
  "sourceLabel":"Alive or Not Alive?","goodName":"Great exploring, {name}!"},
  "items":[{"id":i,"name":n,"nameAr":a,"alive":v,"hint":h,"explanation":e,"objective":q,
  "sourcePages":[4,5],"answerKeyPages":[35]} for i,n,a,v,h,e,q in items]}
+
+ from alive_scene_content import add_alive_scenes
+ add_alive_scenes(book)

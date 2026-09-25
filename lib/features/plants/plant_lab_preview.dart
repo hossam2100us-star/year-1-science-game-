@@ -64,7 +64,7 @@ class _PlantLabPreviewState extends ConsumerState<PlantLabPreview> {
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               child: Text(
                 widget.initialStep == 10
-                    ? 'معاينة تجربة الضوء • ١١/٤٠ • تقدمك الأساسي محفوظ'
+                    ? 'معاينة تجربة الضوء • ١١/٢١ • تقدمك الأساسي محفوظ'
                     : 'معاينة النبتة الجديدة • تقدمك الأساسي محفوظ',
                 textDirection: TextDirection.rtl,
                 textAlign: TextAlign.center,

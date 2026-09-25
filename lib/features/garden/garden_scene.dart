@@ -26,9 +26,13 @@ Rect gardenCanvas(Size s) {
   );
 }
 
-Map<String, Rect> gardenRects(Size s, {bool touch = false}) {
+Map<String, Rect> gardenRects(
+  Size s, {
+  bool touch = false,
+  Map<String, Rect> bounds = gardenBounds,
+}) {
   final canvas = gardenCanvas(s);
-  return gardenBounds.map((id, r) {
+  return bounds.map((id, r) {
     var rect = Rect.fromLTWH(
       canvas.left + r.left * canvas.width,
       canvas.top + r.top * canvas.height,
@@ -46,7 +50,17 @@ Map<String, Rect> gardenRects(Size s, {bool touch = false}) {
 }
 
 class GardenScene extends FlameGame {
-  GardenScene({required this.onReady});
+  GardenScene({
+    required this.onReady,
+    this.asset = 'garden-v2.png',
+    this.bounds = gardenBounds,
+    this.guide = 'cat',
+    this.difficulty = 1,
+  });
+  final String asset, guide;
+  final int difficulty;
+  final Map<String, Rect> bounds;
+  Set<String> explained = {};
   final VoidCallback onReady;
   ui.Image? artwork;
   Set<String> found = {};
@@ -54,7 +68,7 @@ class GardenScene extends FlameGame {
   double time = 0, celebration = 0;
   @override
   Future<void> onLoad() async {
-    artwork = await images.load('garden-v2.png');
+    artwork = await images.load(asset);
     onReady();
   }
 
@@ -83,20 +97,26 @@ class GardenScene extends FlameGame {
       area,
       p..filterQuality = FilterQuality.medium,
     );
-    final rects = gardenRects(s);
+    final rects = gardenRects(s, bounds: bounds);
     for (final id in found) {
       final at = rects[id]!.topRight + const Offset(-8, 12);
       c.drawCircle(at, 18, p..color = const Color(0xFFFFF8E7));
       _icon(
         c,
-        Icons.star_rounded,
+        explained.contains(id) ? Icons.menu_book_rounded : Icons.star_rounded,
         at - const Offset(14, 14),
         28,
         const Color(0xFFAA781B),
       );
     }
-    if (tutorial && found.isEmpty) {
-      final cat = rects['cat']!;
+    if (tutorial &&
+        difficulty < 3 &&
+        (difficulty == 1 || found.isEmpty) &&
+        found.length < bounds.length) {
+      final target = !found.contains(guide)
+          ? guide
+          : bounds.keys.firstWhere((id) => !found.contains(id));
+      final cat = rects[target]!;
       final at =
           cat.center +
           Offset(cat.width * .23, cat.height * .10 + math.sin(time * 3) * 6);
@@ -158,25 +178,31 @@ class GardenPortrait extends StatelessWidget {
     required this.id,
     required this.image,
     this.size = 120,
+    this.bounds = gardenBounds,
   });
   final String id;
   final ui.Image? image;
   final double size;
+  final Map<String, Rect> bounds;
   @override
   Widget build(BuildContext context) => ClipRRect(
     borderRadius: BorderRadius.circular(22),
-    child: CustomPaint(size: Size.square(size), painter: _Portrait(id, image)),
+    child: CustomPaint(
+      size: Size.square(size),
+      painter: _Portrait(id, image, bounds),
+    ),
   );
 }
 
 class _Portrait extends CustomPainter {
-  _Portrait(this.id, this.image);
+  _Portrait(this.id, this.image, this.bounds);
+  final Map<String, Rect> bounds;
   final String id;
   final ui.Image? image;
   @override
   void paint(Canvas c, Size s) {
     if (image == null) return;
-    final b = gardenBounds[id]!;
+    final b = bounds[id]!;
     final src = Rect.fromLTWH(
       b.left * image!.width,
       b.top * image!.height,
