@@ -13,6 +13,11 @@ import '../../core/widgets.dart';
 import '../../games/discovery_game.dart';
 import '../../games/question_engine.dart';
 import 'session.dart';
+import 'ourselves_stage.dart';
+import 'shoe_measure.dart';
+import '../science/science_stage.dart';
+import '../science/science_lab.dart';
+import '../science/science_audio.dart';
 import '../plants/bean_experiment.dart';
 import '../plants/light_experiment.dart';
 import '../plants/light_model.dart';
@@ -64,7 +69,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   bool _busy = false, _complete = false, _freeDone = false, _saveFailed = false;
   String _feedback = '';
   Map<String, dynamic> _bean = {};
+  Map<String, dynamic> _lab = {};
   Map<String, dynamic> _light = {};
+  Map<String, String> _objectiveEvidence = {};
   Future<void> _writes = Future.value();
   LessonStep get step => _session.step;
   @override
@@ -84,6 +91,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   void _prepare() {
     final current = _session.current;
+    _lab = Map<String, dynamic>.from(current['lab'] ?? {});
+    _objectiveEvidence = Map<String, String>.from(
+      current['objectiveEvidence'] ?? {},
+    );
     _bean = Map<String, dynamic>.from(current['bean'] ?? {});
     _light = Map<String, dynamic>.from(
       current['light'] ?? LightProgress.fromLegacy(current).toJson(),
@@ -121,6 +132,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   }
 
   bool get _plantMission => step.json['playScene'] == 'plant-mission';
+  bool get _science => step.json['playScene'] == 'science';
+  bool get _ourselves => step.json['playScene'] == 'ourselves';
   bool get _plantLab => step.json['playScene'] == 'plant-lab';
   String get _displayPrompt =>
       _plantLab && step.json['partDescriptions'] != null && _selected.isNotEmpty
@@ -128,6 +141,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       : step.prompt;
 
   String get _instruction {
+    if (_ourselves || _science)
+      return '${step.json['safety'] ?? ''} ${step.prompt}';
     if (_plantLab)
       return '$_displayPrompt ${step.json['playInstruction'] ?? ''}';
     final names = step.options.map((v) => v.label).join('. ');
@@ -149,7 +164,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   }
 
   Map<String, dynamic> _snapshot() => {
+    if (_objectiveEvidence.isNotEmpty)
+      'objectiveEvidence': Map<String, String>.from(_objectiveEvidence),
     'bean': Map<String, dynamic>.from(_bean),
+    'lab': Map<String, dynamic>.from(_lab),
     'light': Map<String, dynamic>.from(_light),
     'selected': _selected.toList(),
     'placements': Map<String, String>.from(_placements),
@@ -189,14 +207,27 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     _persist().catchError((Object _) {});
   }
 
+  void _playSound(String name, [double loudness = 1]) {
+    final settings = ref.read(appProvider).settings;
+    if (settings.sound)
+      ScienceAudio.play(
+        name,
+        settings.volume * .35 * loudness,
+      ).catchError((Object _) {});
+  }
+
   void _item(String id) {
+    if (_science && step.json['band'] == true) {
+      final art = step.options.where((p) => p.id == id).firstOrNull?.art;
+      if (art != null) _playSound(art);
+    }
     if (_busy || _engine.done || _freeDone || _frame > 0) return;
     _say(
       _plantLab && step.kind == 'story'
           ? step.prompt
           : _plantLab && step.json['partDescriptions'] != null
           ? step.json['partDescriptions'][id] ?? step.label(id)
-          : step.label(id),
+          : step.json['senseDescriptions']?[id] ?? step.label(id),
     );
     if (['explore', 'story', 'free-plant'].contains(step.kind)) {
       _touched.remove(id);
@@ -222,8 +253,14 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   void _place(String item, String target) {
     if (_busy || _engine.done || _freeDone) return;
     _placements[item] = target;
+    if (_ourselves && step.kind == 'label-diagram') {
+      final next = step.options
+          .where((o) => !_placements.containsKey(o.id))
+          .firstOrNull;
+      _selected = next == null ? {} : {next.id};
+    }
     _say(
-      step.kind == 'label-diagram' && !_plantLab
+      step.kind == 'label-diagram' && !_plantLab && !_ourselves
           ? 'Place ${step.targets.indexWhere((t) => t.id == target) + 1}'
           : step.label(target),
     );
@@ -238,7 +275,24 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       : _selected.firstOrNull;
   void _check() {
     if (_busy || _engine.done) return;
+    final previousMistakes = _engine.mistakes;
     final success = _engine.submit(_selection);
+    final groups = step.json['objectiveItems'];
+    if (groups is Map && step.isMapping) {
+      final answers = step.answer!['value'] as Map;
+      for (final entry in groups.entries) {
+        if (_objectiveEvidence.containsKey(entry.key)) continue;
+        final correct = (entry.value as List).every(
+          (id) => _placements[id] == answers[id],
+        );
+        if (correct)
+          _objectiveEvidence[entry.key] = previousMistakes == 0
+              ? 'firstTry'
+              : 'afterHint';
+        else if (_engine.done)
+          _objectiveEvidence[entry.key] = 'explained';
+      }
+    }
     _feedback = _engine.feedback;
     if (_engine.done) {
       final value = step.answer!['value'];
@@ -257,6 +311,12 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   }
 
   bool get _canContinue {
+    if (_science && step.json['lab'] != null) return _freeDone;
+    if (_science && step.kind == 'explore')
+      return step.options.every((o) => _touched.contains(o.id));
+    if (_ourselves && (step.kind == 'explore' || step.kind == 'story')) {
+      return step.options.every((o) => _touched.contains(o.id));
+    }
     if (_plantLab && step.kind == 'story') return _touched.contains(step.focus);
     if (_plantLab && (step.kind == 'explore' || step.kind == 'free-plant')) {
       return step.options.every((item) => _touched.contains(item.id));
@@ -311,7 +371,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
           _session.responses[_session.step.id]?['completed'] == true) {
         _session.index++;
       }
-      _session.current = {};
+      _session.current = _session.finished
+          ? {}
+          : Map<String, dynamic>.from(
+              _session.responses[_session.step.id]?['resumeState'] ?? {},
+            );
       if (_session.finished) {
         await ref.read(appProvider.notifier).completeJourney(_session.result());
         if (mounted) {
@@ -379,6 +443,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   @override
   void dispose() {
+    ScienceAudio.stop().catchError((Object _) {});
     WidgetsBinding.instance.removeObserver(this);
     if (!_complete) _game.pauseEngine();
     _scroll.dispose();
@@ -511,7 +576,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                             ],
                           ),
                           const SizedBox(height: 8),
-                          if (step.table.isNotEmpty)
+                          if (step.table.isNotEmpty && !_ourselves && !_science)
                             Wrap(
                               spacing: 20,
                               runSpacing: 12,
@@ -547,7 +612,64 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                   ),
                               ],
                             ),
-                          if (_plantLab) ...[
+                          if (_science && step.json['safety'] != null)
+                            Container(
+                              padding: const EdgeInsets.all(16),
+                              margin: const EdgeInsets.only(bottom: 12),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFFCE8E6),
+                                borderRadius: BorderRadius.circular(18),
+                              ),
+                              child: Text(
+                                step.json['safety'],
+                                style: const TextStyle(
+                                  fontSize: 22,
+                                  color: Color(0xFFC0392B),
+                                ),
+                              ),
+                            ),
+                          if (_science)
+                            step.json['lab'] != null
+                                ? ScienceLab(
+                                    key: ValueKey(step.id),
+                                    step: step,
+                                    data: _lab,
+                                    onSpeak: _say,
+                                    onSound: _playSound,
+                                    onChange: (data, complete) async {
+                                      final previous = _lab;
+                                      final wasDone = _freeDone;
+                                      _lab = Map<String, dynamic>.from(data);
+                                      _freeDone = complete || wasDone;
+                                      try {
+                                        await _persist();
+                                        if (mounted) setState(() {});
+                                      } catch (_) {
+                                        _lab = previous;
+                                        _freeDone = wasDone;
+                                        rethrow;
+                                      }
+                                    },
+                                  )
+                                : ScienceStage(
+                                    step: step,
+                                    selected: _selected,
+                                    placements: _placements,
+                                    done: _engine.done,
+                                    onItem: _item,
+                                    onPlace: _place,
+                                  )
+                          else if (_ourselves)
+                            OurselvesStage(
+                              step: step,
+                              selected: _selected,
+                              placements: _placements,
+                              done: _engine.done || _freeDone,
+                              girl: profile?.gender == ChildGender.girl,
+                              onItem: _item,
+                              onPlace: _place,
+                            )
+                          else if (_plantLab) ...[
                             if (step.json['playInstruction'] != null)
                               Padding(
                                 padding: const EdgeInsets.only(bottom: 10),
@@ -608,7 +730,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                               ),
                             ),
                           const SizedBox(height: 10),
-                          if (!_plantLab &&
+                          if (!_science &&
+                              !_ourselves &&
+                              !_plantLab &&
                               !_plantMission &&
                               !_engine.done &&
                               !_freeDone &&
@@ -636,7 +760,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                   ),
                               ],
                             ),
-                          if (!_plantLab &&
+                          if (!_science &&
+                              !_ourselves &&
+                              !_plantLab &&
                               !_plantMission &&
                               step.isMapping &&
                               !_engine.done) ...[
@@ -785,48 +911,73 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     );
   }
 
-  Widget _measure() => Column(
-    children: [
-      for (var person = 0; person < 2; person++)
-        Wrap(
-          crossAxisAlignment: WrapCrossAlignment.center,
+  Widget _measure() => _ourselves
+      ? ShoeMeasure(
+          values: [_shoeA, _shoeB],
+          ui: Map<String, dynamic>.from(step.json['playUi']),
+          onChange: (person, value) {
+            if (person == 0) {
+              _shoeA = value;
+            } else {
+              _shoeB = value;
+            }
+            _changed();
+            _say('${step.json['playUi']['shoe']} ${person + 1}: $value');
+          },
+          onCompare: () {
+            _freeDone = true;
+            final ui = step.json['playUi'];
+            _feedback = _shoeA == _shoeB
+                ? ui['equal']
+                : (ui['result'] as String)
+                      .replaceAll('{big}', '${mathMax(_shoeA, _shoeB)}')
+                      .replaceAll('{small}', '${mathMin(_shoeA, _shoeB)}');
+            _changed();
+            _say(_feedback);
+          },
+        )
+      : Column(
           children: [
-            Text('Shoe ${person + 1}: ${person == 0 ? _shoeA : _shoeB}'),
-            IconButton(
-              tooltip: 'Smaller number',
-              onPressed: () => setState(() {
-                if (person == 0)
-                  _shoeA = (_shoeA - 1).clamp(1, 60);
-                else
-                  _shoeB = (_shoeB - 1).clamp(1, 60);
-              }),
-              icon: const Icon(Icons.remove_circle_outline),
-            ),
-            IconButton(
-              tooltip: 'Bigger number',
-              onPressed: () => setState(() {
-                if (person == 0)
-                  _shoeA = (_shoeA + 1).clamp(1, 60);
-                else
-                  _shoeB = (_shoeB + 1).clamp(1, 60);
-              }),
-              icon: const Icon(Icons.add_circle_outline),
+            for (var person = 0; person < 2; person++)
+              Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  Text('Shoe ${person + 1}: ${person == 0 ? _shoeA : _shoeB}'),
+                  IconButton(
+                    tooltip: 'Smaller number',
+                    onPressed: () => setState(() {
+                      if (person == 0)
+                        _shoeA = (_shoeA - 1).clamp(1, 60);
+                      else
+                        _shoeB = (_shoeB - 1).clamp(1, 60);
+                    }),
+                    icon: const Icon(Icons.remove_circle_outline),
+                  ),
+                  IconButton(
+                    tooltip: 'Bigger number',
+                    onPressed: () => setState(() {
+                      if (person == 0)
+                        _shoeA = (_shoeA + 1).clamp(1, 60);
+                      else
+                        _shoeB = (_shoeB + 1).clamp(1, 60);
+                    }),
+                    icon: const Icon(Icons.add_circle_outline),
+                  ),
+                ],
+              ),
+            FilledButton(
+              onPressed: () {
+                _freeDone = true;
+                _feedback = _shoeA == _shoeB
+                    ? 'The two numbers are equal.'
+                    : '${mathMax(_shoeA, _shoeB)} is bigger than ${mathMin(_shoeA, _shoeB)}.';
+                _changed();
+                _say(_feedback);
+              },
+              child: const Text('Compare my numbers'),
             ),
           ],
-        ),
-      FilledButton(
-        onPressed: () {
-          _freeDone = true;
-          _feedback = _shoeA == _shoeB
-              ? 'The two numbers are equal.'
-              : '${mathMax(_shoeA, _shoeB)} is bigger than ${mathMin(_shoeA, _shoeB)}.';
-          _changed();
-          _say(_feedback);
-        },
-        child: const Text('Compare my numbers'),
-      ),
-    ],
-  );
+        );
   void _freePair() {
     final groups = step.json['allowedGroups'] as List;
     final valid =

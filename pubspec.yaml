@@ -28,6 +28,7 @@ flutter:
     - assets/content/playable/
     - assets/animations/celebrate.json
     - assets/images/
+    - assets/audio/
   fonts:
     - family: Fredoka
       fonts:

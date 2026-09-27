@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../content/lesson.dart';
 import 'plant_lab_game.dart';
+import 'plant_workshop.dart';
 
 /// Illustrated choices keep each label attached to its own picture.
 class PlantMissionStage extends StatelessWidget {
@@ -107,14 +108,27 @@ class PlantMissionStage extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                for (final item in step.options.where(
-                                  (o) => placements[o.id] == target.id,
-                                ))
-                                  Text(
-                                    item.label,
-                                    textAlign: TextAlign.center,
-                                    style: const TextStyle(fontSize: 22),
+                                ConstrainedBox(
+                                  constraints: const BoxConstraints(
+                                    maxHeight: 76,
                                   ),
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      children: [
+                                        for (final item in step.options.where(
+                                          (o) => placements[o.id] == target.id,
+                                        ))
+                                          Text(
+                                            item.label,
+                                            textAlign: TextAlign.center,
+                                            style: const TextStyle(
+                                              fontSize: 22,
+                                            ),
+                                          ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -199,6 +213,13 @@ class PlantMissionPicture extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    if (const ['toys', 'paper', 'wind', 'dry_and_drooping'].contains(id)) {
+      return SizedBox(
+        height: height,
+        width: double.infinity,
+        child: CustomPaint(painter: WorkshopArt(id)),
+      );
+    }
     String asset = 'plant-foods-v1.png';
     Rect crop = const Rect.fromLTWH(0, 0, 1, 1);
     final food = foods.indexOf(switch (id) {

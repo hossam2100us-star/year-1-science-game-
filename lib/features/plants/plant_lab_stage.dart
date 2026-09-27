@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../content/lesson.dart';
 import 'plant_lab_game.dart';
+import 'plant_workshop.dart';
 
 /// The painting, touch targets and drag destinations share normalized geometry.
 class PlantLabStage extends StatefulWidget {
@@ -85,6 +86,13 @@ class _PlantLabStageState extends State<PlantLabStage> {
 
   @override
   Widget build(BuildContext context) {
+    if (freeBuild) {
+      return PlantWorkshop(
+        step: widget.step,
+        placed: {...widget.touched},
+        onPlace: widget.onItem,
+      );
+    }
     game.reducedMotion = MediaQuery.disableAnimationsOf(context);
     final step = widget.step;
     final shownParts = puzzle
@@ -203,6 +211,15 @@ class _PlantLabStageState extends State<PlantLabStage> {
             ),
           ),
         ),
+        if (step.kind == 'explore' && active != null)
+          Padding(
+            padding: const EdgeInsets.only(top: 12),
+            child: _PartTile(
+              id: active!,
+              enlarged: true,
+              label: step.options.firstWhere((o) => o.id == active).label,
+            ),
+          ),
         if (step.kind == 'explore' || freeBuild)
           Padding(
             padding: const EdgeInsets.only(top: 12),
@@ -231,8 +248,9 @@ class _PlantLabStageState extends State<PlantLabStage> {
 }
 
 class _PartTile extends StatelessWidget {
-  const _PartTile({required this.id, required this.label});
+  const _PartTile({required this.id, required this.label, this.enlarged = false});
   final String id, label;
+  final bool enlarged;
   @override
   Widget build(BuildContext context) => Container(
     constraints: const BoxConstraints(minWidth: 130),
@@ -246,8 +264,8 @@ class _PartTile extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
-          width: 110,
-          height: 80,
+          width: enlarged ? 240 : 110,
+          height: enlarged ? 160 : 80,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: LayoutBuilder(

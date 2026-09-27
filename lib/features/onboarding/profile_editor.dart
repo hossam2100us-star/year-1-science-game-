@@ -101,10 +101,13 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
       final photo = await _photos.pick();
       await ref.read(appProvider.notifier).photoPending(false);
       if (mounted && photo != null) setState(() => _photo = photo);
-    } catch (_) {
+    } catch (error) {
       if (mounted)
         setState(
-          () => _message = 'That picture could not open. Try another picture.\nالصورة دي ما اتفتحتش. جرّب صورة تانية.',
+          () => _message =
+              error is FormatException && error.message == 'Image too large'
+              ? 'Picture too large. Choose a smaller picture (under 20 MB).\nالصورة كبيرة جدًا. اختار صورة أصغر من 20 ميجابايت.'
+              : 'Could not open this picture. Try a JPG or PNG picture.\nالصورة ما اتفتحتش. جرّب صورة بصيغة JPG أو PNG.',
         );
     } finally {
       if (mounted) setState(() => _busy = false);

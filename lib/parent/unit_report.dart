@@ -28,7 +28,11 @@ class UnitReport extends ConsumerWidget {
             .toSet() ??
         <String>{};
     String titleFor(String id) =>
-        lesson?.steps.where((s) => s.objective == id).firstOrNull?.title ?? id;
+        lesson?.steps
+            .where((s) => s.assessedObjectives.contains(id))
+            .firstOrNull
+            ?.title ??
+        id;
     String date(DateTime d) => '${d.day}/${d.month}/${d.year}';
     final all =
         data.attempts.where((a) => a.unitId == level.id && a.completed).toList()

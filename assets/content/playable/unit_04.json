@@ -1,0 +1,1066 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "unit_04",
+  "title": "Material Properties",
+  "quiz": false,
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    12,
+    13
+  ],
+  "steps": [
+    {
+      "id": "unit_04.step.001",
+      "kind": "explore",
+      "title": "Maker’s workshop",
+      "prompt": "Touch each material and listen to its properties.",
+      "options": [
+        {
+          "id": "metal",
+          "label": "Metal",
+          "art": "spoon"
+        },
+        {
+          "id": "plastic",
+          "label": "Plastic",
+          "art": "bottle"
+        },
+        {
+          "id": "fabric",
+          "label": "Fabric",
+          "art": "shirt"
+        },
+        {
+          "id": "clay",
+          "label": "Clay",
+          "art": "pot"
+        },
+        {
+          "id": "wood",
+          "label": "Wood",
+          "art": "chair"
+        },
+        {
+          "id": "glass",
+          "label": "Glass",
+          "art": "window"
+        },
+        {
+          "id": "paper",
+          "label": "Paper",
+          "art": "paper"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Touch each material and listen to its properties.",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_04",
+      "minTouches": 7,
+      "senseDescriptions": {
+        "metal": "Metal is usually hard, shiny and cold to touch.",
+        "wood": "Wood is hard and can be rough or smooth.",
+        "plastic": "Plastic is light and waterproof.",
+        "glass": "Glass is hard, smooth and see-through.",
+        "fabric": "Fabric is soft and bendy.",
+        "paper": "Paper is light, thin and soaks up water.",
+        "clay": "Clay is soft when wet and hard when dry."
+      },
+      "safety": "Glass objects are for looking at and talking about, not for testing. Use a plastic cup when you want to talk about \"see-through\"."
+    },
+    {
+      "id": "unit_04.step.002",
+      "kind": "match-lines",
+      "title": "Object or material?",
+      "prompt": "Give each idea its name.",
+      "options": [
+        {
+          "id": "things_a_spoon_and_a_chair",
+          "label": "Things: a spoon and a chair",
+          "art": "chair"
+        },
+        {
+          "id": "what_things_are_made_from_metal_and_wood",
+          "label": "What things are made from: metal and wood",
+          "art": "spoon"
+        }
+      ],
+      "targets": [
+        {
+          "id": "materials",
+          "label": "Materials",
+          "art": "materials"
+        },
+        {
+          "id": "objects",
+          "label": "Objects",
+          "art": "objects"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "things_a_spoon_and_a_chair": "objects",
+          "what_things_are_made_from_metal_and_wood": "materials"
+        }
+      },
+      "assessed": true,
+      "objective": "u04.main.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) materials b) objects",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": "u04.main.01",
+        "answerKeyPages": [
+          35,
+          36
+        ],
+        "answerKeyText": "a) materials b) objects",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_04"
+    },
+    {
+      "id": "unit_04.step.003",
+      "kind": "match-lines",
+      "title": "Stock the workshop",
+      "prompt": "Move each object to its material.",
+      "options": [
+        {
+          "id": "window",
+          "label": "Window",
+          "art": "window"
+        },
+        {
+          "id": "nail",
+          "label": "Nail",
+          "art": "nail"
+        },
+        {
+          "id": "t_shirt",
+          "label": "T-shirt",
+          "art": "shirt"
+        },
+        {
+          "id": "newspaper",
+          "label": "Newspaper",
+          "art": "paper"
+        }
+      ],
+      "targets": [
+        {
+          "id": "paper",
+          "label": "Paper",
+          "art": "paper"
+        },
+        {
+          "id": "metal",
+          "label": "Metal",
+          "art": "metal"
+        },
+        {
+          "id": "fabric",
+          "label": "Fabric",
+          "art": "fabric"
+        },
+        {
+          "id": "glass",
+          "label": "Glass",
+          "art": "glass"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "window": "glass",
+          "t_shirt": "fabric",
+          "nail": "metal",
+          "newspaper": "paper"
+        }
+      },
+      "assessed": true,
+      "objective": "u04.main.02",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) glass b) fabric (cotton) c) metal d) paper",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": "u04.main.02",
+        "answerKeyPages": [
+          35,
+          36
+        ],
+        "answerKeyText": "a) glass b) fabric (cotton) c) metal d) paper",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_04"
+    },
+    {
+      "id": "unit_04.step.004",
+      "kind": "tap-choice",
+      "title": "Metal detective",
+      "prompt": "Choose all the properties of most metals.",
+      "options": [
+        {
+          "id": "furry",
+          "label": "Furry",
+          "art": "furry"
+        },
+        {
+          "id": "fluffy",
+          "label": "Fluffy",
+          "art": "fluffy"
+        },
+        {
+          "id": "cold_to_touch",
+          "label": "Cold to touch",
+          "art": "cold_to_touch"
+        },
+        {
+          "id": "hard",
+          "label": "Hard",
+          "art": "hard"
+        },
+        {
+          "id": "shiny",
+          "label": "Shiny",
+          "art": "shiny"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "hard",
+          "shiny",
+          "cold_to_touch"
+        ]
+      },
+      "assessed": true,
+      "objective": "u04.main.03",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "hard, shiny, cold to touch",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": "u04.main.03",
+        "answerKeyPages": [
+          35,
+          36
+        ],
+        "answerKeyText": "hard, shiny, cold to touch",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_04",
+      "focus": "spoon"
+    },
+    {
+      "id": "unit_04.step.005",
+      "kind": "match-lines",
+      "title": "Glass inspector",
+      "prompt": "Sort these discoveries about glass.",
+      "options": [
+        {
+          "id": "glass_can_break",
+          "label": "Glass can break",
+          "art": "glass_can_break"
+        },
+        {
+          "id": "glass_can_be_see_through",
+          "label": "Glass can be see-through",
+          "art": "glass_can_be_see_through"
+        },
+        {
+          "id": "glass_is_soft",
+          "label": "Glass is soft",
+          "art": "glass_is_soft"
+        },
+        {
+          "id": "all_glass_is_red",
+          "label": "All glass is red",
+          "art": "all_glass_is_red"
+        }
+      ],
+      "targets": [
+        {
+          "id": "false",
+          "label": "False",
+          "art": "false"
+        },
+        {
+          "id": "true",
+          "label": "True",
+          "art": "true"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "glass_can_break": "true",
+          "glass_is_soft": "false",
+          "glass_can_be_see_through": "true",
+          "all_glass_is_red": "false"
+        }
+      },
+      "assessed": true,
+      "objective": "u04.main.04",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) TRUE b) FALSE c) TRUE d) FALSE",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": "u04.main.04",
+        "answerKeyPages": [
+          35,
+          36
+        ],
+        "answerKeyText": "a) TRUE b) FALSE c) TRUE d) FALSE",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_04",
+      "focus": "window"
+    },
+    {
+      "id": "unit_04.step.006",
+      "kind": "free-plant",
+      "title": "Rain laboratory",
+      "prompt": "Predict for each cover, then pour the water.",
+      "options": [
+        {
+          "id": "plastic",
+          "label": "Plastic",
+          "art": "bottle"
+        },
+        {
+          "id": "tissue",
+          "label": "Tissue",
+          "art": "tissue"
+        },
+        {
+          "id": "cotton_cloth",
+          "label": "Cotton cloth",
+          "art": "shirt"
+        },
+        {
+          "id": "foil",
+          "label": "Foil",
+          "art": "foil"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Plastic and foil keep water out. Cloth and tissue let water through.",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_04",
+      "lab": "waterproof",
+      "results": {
+        "plastic": "dry",
+        "cotton_cloth": "wet",
+        "tissue": "wet",
+        "foil": "dry"
+      },
+      "labUi": {
+        "choices": {
+          "dry": "Keeps water out",
+          "wet": "Lets water through"
+        },
+        "action": "Pour water",
+        "result": "Look inside the cup"
+      }
+    },
+    {
+      "id": "unit_04.step.007",
+      "kind": "tap-choice",
+      "title": "Pack for the rain",
+      "prompt": "Choose every waterproof material.",
+      "options": [
+        {
+          "id": "plastic",
+          "label": "Plastic",
+          "art": "bottle"
+        },
+        {
+          "id": "paper",
+          "label": "Paper",
+          "art": "paper"
+        },
+        {
+          "id": "aluminium_foil",
+          "label": "Aluminium foil",
+          "art": "foil"
+        },
+        {
+          "id": "cotton_cloth",
+          "label": "Cotton cloth",
+          "art": "shirt"
+        },
+        {
+          "id": "tissue_paper",
+          "label": "Tissue paper",
+          "art": "tissue"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "plastic",
+          "aluminium_foil"
+        ]
+      },
+      "assessed": true,
+      "objective": "u04.main.05",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Waterproof: plastic and aluminium foil. Not waterproof: cotton cloth, paper, tissue paper.",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": "u04.main.05",
+        "answerKeyPages": [
+          35,
+          36
+        ],
+        "answerKeyText": "Waterproof: plastic and aluminium foil. Not waterproof: cotton cloth, paper, tissue paper.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_04"
+    },
+    {
+      "id": "unit_04.step.008",
+      "kind": "free-plant",
+      "title": "Shape studio",
+      "prompt": "Choose an object, then try a shape-changing action.",
+      "options": [
+        {
+          "id": "dough",
+          "label": "Dough",
+          "art": "dough"
+        },
+        {
+          "id": "sponge",
+          "label": "Sponge",
+          "art": "sponge"
+        },
+        {
+          "id": "paper_straw",
+          "label": "Paper straw",
+          "art": "paper_straw"
+        },
+        {
+          "id": "rubber_band",
+          "label": "Rubber band",
+          "art": "rubber_band"
+        },
+        {
+          "id": "metal_spoon",
+          "label": "Metal spoon",
+          "art": "spoon"
+        },
+        {
+          "id": "stone",
+          "label": "Stone",
+          "art": "stone"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Some materials change shape. A rubber band stretches; a sponge or dough can be squashed; a stone or metal spoon cannot be squashed.",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_04",
+      "lab": "shape",
+      "labUi": {
+        "actions": [
+          "Twist",
+          "Stretch",
+          "Squash",
+          "Bend"
+        ]
+      }
+    },
+    {
+      "id": "unit_04.step.009",
+      "kind": "match-lines",
+      "title": "Squash station",
+      "prompt": "Sort these objects by what happens when you squash them.",
+      "options": [
+        {
+          "id": "sponge",
+          "label": "Sponge",
+          "art": "sponge"
+        },
+        {
+          "id": "stone",
+          "label": "Stone",
+          "art": "stone"
+        },
+        {
+          "id": "dough",
+          "label": "Dough",
+          "art": "dough"
+        },
+        {
+          "id": "metal_spoon",
+          "label": "Metal spoon",
+          "art": "spoon"
+        }
+      ],
+      "targets": [
+        {
+          "id": "cannot_squash",
+          "label": "Cannot squash",
+          "art": "cannot_squash"
+        },
+        {
+          "id": "can_squash",
+          "label": "Can squash",
+          "art": "can_squash"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "sponge": "can_squash",
+          "dough": "can_squash",
+          "stone": "cannot_squash",
+          "metal_spoon": "cannot_squash"
+        }
+      },
+      "assessed": true,
+      "objective": "u04.main.06",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Can squash: sponge, dough, bread, a plastic bottle, cotton wool. Cannot squash: a brick, a stone, a metal spoon, a wooden block.",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": "u04.main.06",
+        "answerKeyPages": [
+          35,
+          36
+        ],
+        "answerKeyText": "Can squash: sponge, dough, bread, a plastic bottle, cotton wool. Cannot squash: a brick, a stone, a metal spoon, a wooden block.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_04"
+    },
+    {
+      "id": "unit_04.step.010",
+      "kind": "tap-choice",
+      "title": "A window that works",
+      "prompt": "Why choose glass for a window?",
+      "options": [
+        {
+          "id": "we_can_see_through_it",
+          "label": "We can see through it",
+          "art": "we_can_see_through_it"
+        },
+        {
+          "id": "it_soaks_up_water",
+          "label": "It soaks up water",
+          "art": "it_soaks_up_water"
+        },
+        {
+          "id": "it_is_soft_like_a_pillow",
+          "label": "It is soft like a pillow",
+          "art": "it_is_soft_like_a_pillow"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "we_can_see_through_it"
+      },
+      "assessed": true,
+      "objective": "u04.main.07",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Because glass is transparent — we need to see through a window, and you cannot see through wood.",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": "u04.main.07",
+        "answerKeyPages": [
+          35,
+          36
+        ],
+        "answerKeyText": "Because glass is transparent — we need to see through a window, and you cannot see through wood.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_04",
+      "focus": "window"
+    },
+    {
+      "id": "unit_04.step.011",
+      "kind": "tap-choice",
+      "title": "Inside a pencil",
+      "prompt": "Find the two materials in this wooden writing pencil.",
+      "options": [
+        {
+          "id": "wood",
+          "label": "Wood",
+          "art": "chair"
+        },
+        {
+          "id": "fabric",
+          "label": "Fabric",
+          "art": "shirt"
+        },
+        {
+          "id": "graphite",
+          "label": "Graphite",
+          "art": "graphite"
+        },
+        {
+          "id": "glass",
+          "label": "Glass",
+          "art": "window"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "wood",
+          "graphite"
+        ]
+      },
+      "assessed": true,
+      "objective": "u04.main.08",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Wood (the body), graphite or lead (the writing part), metal (the ring) and rubber (the eraser). Any two are correct.",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": "u04.main.08",
+        "answerKeyPages": [
+          35,
+          36
+        ],
+        "answerKeyText": "Wood (the body), graphite or lead (the writing part), metal (the ring) and rubber (the eraser). Any two are correct.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_04",
+      "focus": "pencil"
+    },
+    {
+      "id": "unit_04.step.012",
+      "kind": "free-plant",
+      "title": "Silly umbrella",
+      "prompt": "Try paper and plastic in the rain. Which one would you choose?",
+      "options": [
+        {
+          "id": "paper",
+          "label": "Paper",
+          "art": "paper"
+        },
+        {
+          "id": "plastic",
+          "label": "Plastic",
+          "art": "bottle"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Paper soaks up water. Plastic is waterproof.",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_04",
+      "lab": "waterproof",
+      "results": {
+        "paper": "wet",
+        "plastic": "dry"
+      },
+      "labUi": {
+        "choices": {
+          "dry": "Keeps water out",
+          "wet": "Lets water through"
+        },
+        "action": "Start the rain",
+        "result": "Under the umbrella"
+      },
+      "focus": "umbrella"
+    },
+    {
+      "id": "unit_04.step.013",
+      "kind": "match-lines",
+      "title": "Discovery badges",
+      "prompt": "Match each discovery to its answer.",
+      "options": [
+        {
+          "id": "a_see_through_window",
+          "label": "A see-through window",
+          "art": "window"
+        },
+        {
+          "id": "most_metal_feels",
+          "label": "Most metal feels",
+          "art": "spoon"
+        },
+        {
+          "id": "a_potter_shapes_this",
+          "label": "A potter shapes this",
+          "art": "pot"
+        },
+        {
+          "id": "keeps_rain_out",
+          "label": "Keeps rain out",
+          "art": "umbrella"
+        },
+        {
+          "id": "an_object_you_can_stretch",
+          "label": "An object you can stretch",
+          "art": "rubber_band"
+        }
+      ],
+      "targets": [
+        {
+          "id": "clay",
+          "label": "Clay",
+          "art": "clay"
+        },
+        {
+          "id": "rubber_band",
+          "label": "Rubber band",
+          "art": "rubber_band"
+        },
+        {
+          "id": "cold_and_hard",
+          "label": "Cold and hard",
+          "art": "cold_and_hard"
+        },
+        {
+          "id": "plastic",
+          "label": "Plastic",
+          "art": "plastic"
+        },
+        {
+          "id": "glass",
+          "label": "Glass",
+          "art": "glass"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "a_see_through_window": "glass",
+          "keeps_rain_out": "plastic",
+          "most_metal_feels": "cold_and_hard",
+          "an_object_you_can_stretch": "rubber_band",
+          "a_potter_shapes_this": "clay"
+        }
+      },
+      "assessed": true,
+      "objective": "u04.choice.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "glass. plastic. cold and hard. a rubber band. clay.",
+      "source": {
+        "pages": [
+          12,
+          13
+        ],
+        "questionId": "u04.choice.01",
+        "answerKeyPages": [
+          35,
+          36
+        ],
+        "answerKeyText": "glass",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_04",
+      "extraObjectives": [
+        "u04.choice.02",
+        "u04.choice.03",
+        "u04.choice.04",
+        "u04.choice.05"
+      ],
+      "relatedSources": [
+        {
+          "pages": [
+            12,
+            13
+          ],
+          "questionId": "u04.choice.02",
+          "answerKeyPages": [
+            35,
+            36
+          ],
+          "answerKeyText": "plastic",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            12,
+            13
+          ],
+          "questionId": "u04.choice.03",
+          "answerKeyPages": [
+            35,
+            36
+          ],
+          "answerKeyText": "cold and hard",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            12,
+            13
+          ],
+          "questionId": "u04.choice.04",
+          "answerKeyPages": [
+            35,
+            36
+          ],
+          "answerKeyText": "a rubber band",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            12,
+            13
+          ],
+          "questionId": "u04.choice.05",
+          "answerKeyPages": [
+            35,
+            36
+          ],
+          "answerKeyText": "clay",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        }
+      ],
+      "objectiveItems": {
+        "u04.choice.01": [
+          "a_see_through_window"
+        ],
+        "u04.choice.02": [
+          "keeps_rain_out"
+        ],
+        "u04.choice.03": [
+          "most_metal_feels"
+        ],
+        "u04.choice.04": [
+          "an_object_you_can_stretch"
+        ],
+        "u04.choice.05": [
+          "a_potter_shapes_this"
+        ]
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "object",
+      "word": "object",
+      "meaning": "A thing, like a spoon or a cup.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "material",
+      "word": "material",
+      "meaning": "What the thing is made from, like wood, metal or plastic.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "property",
+      "word": "property",
+      "meaning": "What a material is like — hard, soft, shiny, bendy.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "texture",
+      "word": "texture",
+      "meaning": "How something feels when you touch it: rough, smooth, bumpy or soft.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "waterproof",
+      "word": "waterproof",
+      "meaning": "It does not let water through.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "transparent",
+      "word": "transparent",
+      "meaning": "You can see straight through it, like glass.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "twist",
+      "word": "twist",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "stretch",
+      "word": "stretch",
+      "meaning": "To pull something so it becomes longer.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "squash",
+      "word": "squash",
+      "meaning": "To press something so it becomes flatter.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "bend",
+      "word": "bend",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Activity 1 — The waterproof test\nTake four cups. Stretch a different material over the top of each one and hold it with a rubber band: kitchen tissue, a piece of plastic bag, a\npiece of cotton cloth, aluminium foil. Let him predict first — write down his guesses. Then spoon a little water onto each. The plastic and\nthe foil keep the water out. The tissue and the cloth let it through. Now compare: which predictions were right?\nActivity 2 — Twist, stretch, squash, bend\nLine up a piece of dough, a rubber band, a sponge, a metal spoon, a paper straw and a stone. Try each of the four actions on each item.\nWhich materials change shape? Which refuse?\nwood metal plastic glass fabric paper\nhard, floats shiny, cold light, waterproof see-through soft, bendy thin, tears\nSix materials to find in one room. How many can he point at in two minutes?\n",
+      "safety": "An adult stays with the child for every activity. No glass, no sockets, no flames, and nothing small enough to swallow is left with a child\nalone. Water activities are done in a bowl or the sink, never near electrical items.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ]
+    }
+  ]
+}

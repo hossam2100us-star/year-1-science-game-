@@ -74,6 +74,17 @@ Map<String, DecisionOutcome> objectiveResults(
   final results = <String, DecisionOutcome>{};
   for (final step in lesson.steps.where((s) => s.assessed)) {
     final response = responses[step.id];
+    if (response is Map && response['objectiveEvidence'] is Map) {
+      for (final entry in (response['objectiveEvidence'] as Map).entries) {
+        if (!step.assessedObjectives.contains(entry.key)) continue;
+        final value = DecisionOutcome.values.byName(entry.value);
+        if (results[entry.key] == null ||
+            value.index > results[entry.key]!.index) {
+          results[entry.key] = value;
+        }
+      }
+      continue;
+    }
     if (response is! Map || response['outcome'] == null) continue;
     final value = DecisionOutcome.values.byName(response['outcome']);
     final previous = results[step.objective];

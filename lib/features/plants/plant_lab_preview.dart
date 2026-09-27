@@ -9,8 +9,13 @@ import '../biology/session.dart';
 
 /// A web review starts at the revised scene without replacing the child's journey.
 class PlantLabPreview extends ConsumerStatefulWidget {
-  const PlantLabPreview({super.key, this.initialStep = 0});
+  const PlantLabPreview({
+    super.key,
+    this.initialStep = 0,
+    this.lessonId = 'unit_02',
+  });
   final int initialStep;
+  final String lessonId;
   @override
   ConsumerState<PlantLabPreview> createState() => _PlantLabPreviewState();
 }
@@ -32,7 +37,7 @@ class _PlantLabPreviewState extends ConsumerState<PlantLabPreview> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.initialStep > 0 && !seeded) {
+    if (!seeded) {
       final library = ref.watch(lessonLibraryProvider);
       final loaded = library.asData?.value;
       if (loaded == null) {
@@ -47,10 +52,12 @@ class _PlantLabPreviewState extends ConsumerState<PlantLabPreview> {
           ),
         );
       }
-      final lesson = loaded.lessons['unit_02']!;
+      final lesson = loaded.lessons[widget.lessonId]!;
       final session = LessonSession.fresh(lesson)
         ..index = widget.initialStep.clamp(0, lesson.steps.length - 1);
-      store.data = store.data.copyWith(journeys: {'unit_02': session.toJson()});
+      store.data = store.data.copyWith(
+        journeys: {widget.lessonId: session.toJson()},
+      );
       seeded = true;
     }
     return Scaffold(
@@ -63,9 +70,11 @@ class _PlantLabPreviewState extends ConsumerState<PlantLabPreview> {
               color: const Color(0xFFD9F2DF),
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               child: Text(
-                widget.initialStep == 10
+                widget.lessonId != 'unit_02'
+                    ? 'معاينة العلوم • تقدمك الأساسي محفوظ'
+                    : widget.initialStep == 10
                     ? 'معاينة تجربة الضوء • ١١/٢١ • تقدمك الأساسي محفوظ'
-                    : 'معاينة النبتة الجديدة • تقدمك الأساسي محفوظ',
+                    : 'معاينة النباتات • تقدمك الأساسي محفوظ',
                 textDirection: TextDirection.rtl,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
@@ -81,7 +90,7 @@ class _PlantLabPreviewState extends ConsumerState<PlantLabPreview> {
                   storeProvider.overrideWithValue(store),
                   appProvider.overrideWith(AppController.new),
                 ],
-                child: const LessonRoute(id: 'unit_02'),
+                child: LessonRoute(id: widget.lessonId),
               ),
             ),
           ],

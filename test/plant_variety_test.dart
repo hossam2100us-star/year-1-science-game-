@@ -26,8 +26,8 @@ void main() {
     }
   });
   test('Plants has one food collection and no repeated carrot, lettuce or part questions', () {
-    expect(lesson.version, 2);
-    expect(lesson.steps, hasLength(21));
+    expect(lesson.version, 4);
+    expect(lesson.steps, hasLength(14));
     expect(
       lesson.steps.where((s) => s.prompt.contains('Move the carrot')),
       isEmpty,
@@ -41,11 +41,12 @@ void main() {
       hasLength(13),
     );
     expect(lesson.steps.where((s) => s.kind == 'order-sequence'), hasLength(1));
-    expect(lesson.steps.map((s) => s.prompt).toSet(), hasLength(21));
+    expect(lesson.steps.map((s) => s.prompt).toSet(), hasLength(14));
   });
   test('Legacy light test retains saved prediction and same step', () {
     final responses = {
-      for (final s in lesson.steps.take(10)) s.id: {'completed': true},
+      for (final id in List<String>.from(lesson.json['legacyStepIds']).take(10))
+        id: {'completed': true},
     };
     final old = {
       'version': 1,
@@ -62,7 +63,7 @@ void main() {
     };
     expect(LessonSession.canRestore(lesson, old), isTrue);
     final resumed = LessonSession.restore(lesson, old);
-    expect(resumed.index, 10);
+    expect(resumed.index, 3);
     expect(resumed.current, old['current']);
     expect(resumed.attemptId, 'legacy');
   });
@@ -104,7 +105,7 @@ void main() {
         t.view.devicePixelRatio = 1;
         addTearDown(t.view.resetPhysicalSize);
         addTearDown(t.view.resetDevicePixelRatio);
-        final session = LessonSession.fresh(lesson)..index = 11;
+        final session = LessonSession.fresh(lesson)..index = 4;
         final store = MemoryProgressStore(
           AppData(
             profile: const ChildProfile(name: 'Nour'),
@@ -117,7 +118,7 @@ void main() {
           store,
           scale: size.width == 800 ? 1.5 : 1,
         );
-        final step = lesson.steps[11];
+        final step = lesson.steps[4];
         expect(
           t
               .widget<FilledButton>(
@@ -148,7 +149,7 @@ void main() {
           'firstTry',
         );
         await helpers.tapVisible(t, find.byKey(const ValueKey('lessonNext')));
-        expect(store.data.journeys[lesson.id]!['index'], 12);
+        expect(store.data.journeys[lesson.id]!['index'], 5);
         expect(t.takeException(), isNull);
         await t.pumpWidget(const SizedBox());
       },

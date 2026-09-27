@@ -71,7 +71,9 @@
         ],
         "answerKeyText": "cat, tree, baby",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "ourselves",
+      "activityView": "park"
     },
     {
       "id": "quiz_01.step.002",
@@ -119,7 +121,9 @@
         ],
         "answerKeyText": "Any two: grow, eat, drink, breathe, move by themselves, feel things, make babies",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "ourselves",
+      "activityView": "discovery"
     },
     {
       "id": "quiz_01.step.003",
@@ -169,7 +173,8 @@
         ],
         "answerKeyText": "the roots",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-mission"
     },
     {
       "id": "quiz_01.step.004",
@@ -222,7 +227,8 @@
         ],
         "answerKeyText": "water and light",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-mission"
     },
     {
       "id": "quiz_01.step.005",
@@ -262,7 +268,8 @@
         ],
         "answerKeyText": "pale yellow",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "plant-mission"
     },
     {
       "id": "quiz_01.step.006",
@@ -328,7 +335,9 @@
         ],
         "answerKeyText": "sight, hearing, smell, taste, touch",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "ourselves",
+      "activityView": "discovery"
     },
     {
       "id": "quiz_01.step.007",
@@ -373,7 +382,9 @@
         ],
         "answerKeyText": "the tongue",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "ourselves",
+      "activityView": "discovery"
     },
     {
       "id": "quiz_01.step.008",
@@ -414,13 +425,15 @@
         "answerKeyText": "FALSE — moving is not enough; a car does not grow, eat or make babies",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "focus": "Car"
+      "focus": "Car",
+      "playScene": "ourselves",
+      "activityView": "discovery"
     },
     {
       "id": "quiz_01.step.009",
       "kind": "order-sequence",
       "title": "Arm trail",
-      "prompt": "Build a path from the shoulder down to the fingers.",
+      "prompt": "Build the path: touch the explorer from shoulder down to fingers.",
       "options": [
         {
           "id": "hand",
@@ -481,7 +494,9 @@
         ],
         "answerKeyText": "shoulder, arm, elbow, wrist, hand, fingers",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "ourselves",
+      "activityView": "body"
     },
     {
       "id": "quiz_01.step.010",
@@ -526,7 +541,9 @@
         ],
         "answerKeyText": "Checks that eyes see clearly and gives people glasses",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      }
+      },
+      "playScene": "ourselves",
+      "activityView": "discovery"
     }
   ],
   "stickers": [],

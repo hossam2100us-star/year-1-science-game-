@@ -1,0 +1,489 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "quiz_03",
+  "title": "Physics Quiz",
+  "quiz": true,
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    21
+  ],
+  "steps": [
+    {
+      "id": "quiz_03.step.001",
+      "kind": "tap-choice",
+      "title": "Open the drawer",
+      "prompt": "Which force opens the drawer?",
+      "options": [
+        {
+          "id": "push",
+          "label": "Push",
+          "art": "push"
+        },
+        {
+          "id": "pull",
+          "label": "Pull",
+          "art": "pull"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "pull"
+      },
+      "assessed": true,
+      "objective": "quiz03.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "pull",
+      "source": {
+        "pages": [
+          21
+        ],
+        "questionId": "quiz03.01",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "pull",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_03",
+      "focus": "drawer"
+    },
+    {
+      "id": "quiz_03.step.002",
+      "kind": "tap-choice",
+      "title": "Ring the bell",
+      "prompt": "Which force rings a doorbell?",
+      "options": [
+        {
+          "id": "pull",
+          "label": "Pull",
+          "art": "pull"
+        },
+        {
+          "id": "push",
+          "label": "Push",
+          "art": "push"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "push"
+      },
+      "assessed": true,
+      "objective": "quiz03.02",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "push",
+      "source": {
+        "pages": [
+          21
+        ],
+        "questionId": "quiz03.02",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "push",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_03",
+      "focus": "doorbell"
+    },
+    {
+      "id": "quiz_03.step.003",
+      "kind": "tap-choice",
+      "title": "Floating cargo",
+      "prompt": "Choose everything that floats.",
+      "options": [
+        {
+          "id": "stone",
+          "label": "Stone",
+          "art": "stone"
+        },
+        {
+          "id": "coin",
+          "label": "Coin",
+          "art": "coin"
+        },
+        {
+          "id": "metal_spoon",
+          "label": "Metal spoon",
+          "art": "spoon"
+        },
+        {
+          "id": "cork",
+          "label": "Cork",
+          "art": "cork"
+        },
+        {
+          "id": "closed_plastic_bottle",
+          "label": "Closed plastic bottle",
+          "art": "bottle"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "cork",
+          "closed_plastic_bottle"
+        ]
+      },
+      "assessed": true,
+      "objective": "quiz03.03",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "cork and closed plastic bottle",
+      "source": {
+        "pages": [
+          21
+        ],
+        "questionId": "quiz03.03",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "cork and closed plastic bottle",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_03",
+      "board": "tank"
+    },
+    {
+      "id": "quiz_03.step.004",
+      "kind": "tap-choice",
+      "title": "Sound maker",
+      "prompt": "What do we call something that makes sound?",
+      "options": [
+        {
+          "id": "source_of_sound",
+          "label": "Source of sound",
+          "art": "source_of_sound"
+        },
+        {
+          "id": "sink_of_sound",
+          "label": "Sink of sound",
+          "art": "sink_of_sound"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "source_of_sound"
+      },
+      "assessed": true,
+      "objective": "quiz03.04",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a source of sound",
+      "source": {
+        "pages": [
+          21
+        ],
+        "questionId": "quiz03.04",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "a source of sound",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_03",
+      "focus": "drum"
+    },
+    {
+      "id": "quiz_03.step.005",
+      "kind": "tap-choice",
+      "title": "Sound walk",
+      "prompt": "Farther from the drum, the sound becomes...",
+      "options": [
+        {
+          "id": "louder",
+          "label": "Louder",
+          "art": "louder"
+        },
+        {
+          "id": "fainter_and_quieter",
+          "label": "Fainter and quieter",
+          "art": "fainter_and_quieter"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "fainter_and_quieter"
+      },
+      "assessed": true,
+      "objective": "quiz03.05",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "It gets fainter and quieter, until you cannot hear it at all",
+      "source": {
+        "pages": [
+          21
+        ],
+        "questionId": "quiz03.05",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "It gets fainter and quieter, until you cannot hear it at all",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_03",
+      "focus": "drum"
+    },
+    {
+      "id": "quiz_03.step.006",
+      "kind": "tap-choice",
+      "title": "Play the trumpet",
+      "prompt": "Choose the action.",
+      "options": [
+        {
+          "id": "pluck",
+          "label": "Pluck",
+          "art": "pluck"
+        },
+        {
+          "id": "shake",
+          "label": "Shake",
+          "art": "shake"
+        },
+        {
+          "id": "blow",
+          "label": "Blow",
+          "art": "blow"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "blow"
+      },
+      "assessed": true,
+      "objective": "quiz03.06",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "blow",
+      "source": {
+        "pages": [
+          21
+        ],
+        "questionId": "quiz03.06",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "blow",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_03",
+      "focus": "trumpet"
+    },
+    {
+      "id": "quiz_03.step.007",
+      "kind": "tap-choice",
+      "title": "Hear it",
+      "prompt": "Which part hears?",
+      "options": [
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        },
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        },
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "ears"
+      },
+      "assessed": true,
+      "objective": "quiz03.07",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "my ears",
+      "source": {
+        "pages": [
+          21
+        ],
+        "questionId": "quiz03.07",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "my ears",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_03"
+    },
+    {
+      "id": "quiz_03.step.008",
+      "kind": "tap-choice",
+      "title": "Magnetic metals",
+      "prompt": "Choose the two metals a magnet attracts.",
+      "options": [
+        {
+          "id": "iron",
+          "label": "Iron",
+          "art": "iron"
+        },
+        {
+          "id": "aluminium",
+          "label": "Aluminium",
+          "art": "aluminium"
+        },
+        {
+          "id": "steel",
+          "label": "Steel",
+          "art": "steel"
+        },
+        {
+          "id": "gold",
+          "label": "Gold",
+          "art": "gold"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "iron",
+          "steel"
+        ]
+      },
+      "assessed": true,
+      "objective": "quiz03.08",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "iron and steel",
+      "source": {
+        "pages": [
+          21
+        ],
+        "questionId": "quiz03.08",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "iron and steel",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_03",
+      "focus": "magnet"
+    },
+    {
+      "id": "quiz_03.step.009",
+      "kind": "tap-choice",
+      "title": "Magnet claim",
+      "prompt": "A magnet attracts every metal. True or false?",
+      "options": [
+        {
+          "id": "true",
+          "label": "True",
+          "art": "true"
+        },
+        {
+          "id": "false",
+          "label": "False",
+          "art": "false"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "false"
+      },
+      "assessed": true,
+      "objective": "quiz03.09",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "FALSE — it ignores aluminium, gold and many other metals",
+      "source": {
+        "pages": [
+          21
+        ],
+        "questionId": "quiz03.09",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "FALSE — it ignores aluminium, gold and many other metals",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_03",
+      "focus": "foil"
+    },
+    {
+      "id": "quiz_03.step.010",
+      "kind": "tap-choice",
+      "title": "Battery helper",
+      "prompt": "Choose a helper powered by a battery.",
+      "options": [
+        {
+          "id": "torch",
+          "label": "Torch",
+          "art": "torch"
+        },
+        {
+          "id": "broom",
+          "label": "Broom",
+          "art": "broom"
+        },
+        {
+          "id": "wooden_chair",
+          "label": "Wooden chair",
+          "art": "chair"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "torch"
+      },
+      "assessed": true,
+      "objective": "quiz03.10",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Any one: torch, wall clock, remote control, toy car, mobile phone",
+      "source": {
+        "pages": [
+          21
+        ],
+        "questionId": "quiz03.10",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "Any one: torch, wall clock, remote control, toy car, mobile phone",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_03"
+    }
+  ],
+  "stickers": [],
+  "homeActivities": []
+}

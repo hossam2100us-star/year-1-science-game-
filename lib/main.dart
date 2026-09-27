@@ -1,3 +1,6 @@
+import 'content/lesson.dart';
+import 'features/science/science_review_menu.dart';
+
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -102,11 +105,30 @@ class ScienceAdventureApp extends ConsumerWidget {
           ? '/plants-review'
           : kIsWeb && Uri.base.queryParameters['preview'] == 'light-v1'
           ? '/light-review'
+          : kIsWeb && Uri.base.queryParameters['preview'] == 'science-v1'
+          ? '/science-review'
+          : kIsWeb && Uri.base.queryParameters['preview'] == 'biology-v1'
+          ? '/biology-review'
           : '/',
       routes: {
+        '/science-review': (_) => const ScienceReviewMenu(),
+        '/biology-review': (_) => PlantLabPreview(
+          lessonId:
+              LessonLibrary.availableIds.contains(
+                Uri.base.queryParameters['lesson'],
+              )
+              ? Uri.base.queryParameters['lesson']!
+              : 'unit_03',
+          initialStep:
+              (int.tryParse(Uri.base.queryParameters['step'] ?? '') ?? 1) - 1,
+        ),
         '/garden-preview': (_) => const LessonRoute(id: 'unit_01'),
-        '/light-review': (_) => const PlantLabPreview(initialStep: 10),
-        '/plants-review': (_) => const PlantLabPreview(),
+        '/light-review': (_) => const PlantLabPreview(initialStep: 3),
+        '/plants-review': (_) => PlantLabPreview(
+          initialStep:
+              ((int.tryParse(Uri.base.queryParameters['step'] ?? '') ?? 1) - 1)
+                  .clamp(0, 13),
+        ),
         '/plants-preview': (_) => const LessonRoute(id: 'unit_02'),
         '/bean-preview': (_) => const BeanPreview(),
       },

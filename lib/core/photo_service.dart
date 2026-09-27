@@ -43,32 +43,32 @@ Future<Uint8List> sanitizePhoto(XFile file) async {
   final buffer = await ui.ImmutableBuffer.fromUint8List(
     await file.readAsBytes(),
   );
-  ui.ImageDescriptor? descriptor;
   ui.Codec? codec;
   try {
-    descriptor = await ui.ImageDescriptor.encoded(buffer);
-    if (descriptor.width * descriptor.height > 60000000)
-      throw const FormatException('Image too large');
-    final scale = math.min(
-      1.0,
-      512 / math.max(descriptor.width, descriptor.height),
-    );
-    codec = await descriptor.instantiateCodec(
-      targetWidth: math.max(1, (descriptor.width * scale).round()),
-      targetHeight: math.max(1, (descriptor.height * scale).round()),
+    // This API owns the buffer and exposes dimensions on web as well as mobile.
+    // ImageDescriptor.width/height are unsupported for encoded web images.
+    codec = await ui.instantiateImageCodecWithSize(
+      buffer,
+      getTargetSize: (width, height) {
+        if (width * height > 60000000)
+          throw const FormatException('Image too large');
+        final scale = math.min(1.0, 512 / math.max(width, height));
+        return ui.TargetImageSize(
+          width: math.max(1, (width * scale).round()),
+          height: math.max(1, (height * scale).round()),
+        );
+      },
     );
     final frame = await codec.getNextFrame();
     try {
       final data = await frame.image.toByteData(format: ui.ImageByteFormat.png);
       if (data == null || data.lengthInBytes > 3 * 1024 * 1024)
         throw const FormatException('Unsupported image');
-      return data.buffer.asUint8List();
+      return data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
     } finally {
       frame.image.dispose();
     }
   } finally {
     codec?.dispose();
-    descriptor?.dispose();
-    buffer.dispose();
   }
 }

@@ -1,8 +1,10 @@
 """Replace repeated plant questions with distinct source-linked activities."""
 from copy import deepcopy
+from refresh_plant_review import refresh_plant_review
 
 def refine_plants(book, source):
-    if book.get('contentVersion') == 2:
+    if book.get('contentVersion', 1) >= 2:
+        refresh_plant_review(book)
         return
     old = deepcopy(book['steps'])
     by = {i+1:s for i,s in enumerate(old)}
@@ -50,6 +52,7 @@ def refine_plants(book, source):
             step['playScene']='plant-mission'
     book['steps']=steps
     book['contentVersion']=2
+    refresh_plant_review(book)
     book['legacyReplacements']={by[n]['id']:fridge['id'] for n in range(12,25)}
     book['legacyReplacements'].update({
       by[26]['id']:timeline['id'],by[29]['id']:seed['id'],

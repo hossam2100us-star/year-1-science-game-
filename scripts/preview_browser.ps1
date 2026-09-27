@@ -18,6 +18,7 @@ New-Item -ItemType Directory -Force -Path (Join-Path $previewAssets 'content') |
 Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/content/catalog.json') -Destination (Join-Path $previewAssets 'content/catalog.json') -Force
 Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/content/playable') -Destination (Join-Path $previewAssets 'content') -Recurse -Force
 Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/images') -Destination $previewAssets -Recurse -Force
+Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/audio') -Destination $previewAssets -Recurse -Force
 # Local reviews must load the current build, without a PWA service-worker cache.
 $bootstrap = @'
 {{flutter_js}}

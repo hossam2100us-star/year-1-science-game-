@@ -1,0 +1,1005 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "unit_08",
+  "title": "Planet Earth",
+  "quiz": false,
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    22,
+    23
+  ],
+  "steps": [
+    {
+      "id": "unit_08.step.001",
+      "kind": "explore",
+      "title": "Water world",
+      "prompt": "Explore the water places and listen.",
+      "options": [
+        {
+          "id": "pond",
+          "label": "Pond",
+          "art": "pond"
+        },
+        {
+          "id": "river",
+          "label": "River",
+          "art": "river"
+        },
+        {
+          "id": "ocean",
+          "label": "Ocean",
+          "art": "ocean"
+        },
+        {
+          "id": "stream",
+          "label": "Stream",
+          "art": "stream"
+        },
+        {
+          "id": "lake",
+          "label": "Lake",
+          "art": "lake"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Explore the water places and listen.",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_08",
+      "minTouches": 5,
+      "senseDescriptions": {
+        "pond": "Small and still. Frogs live here.",
+        "stream": "A small ribbon of moving water.",
+        "river": "Big moving water travelling to the sea.",
+        "lake": "Big still water with land all around.",
+        "ocean": "The biggest water of all, and salty."
+      }
+    },
+    {
+      "id": "unit_08.step.002",
+      "kind": "tap-choice",
+      "title": "Our blue home",
+      "prompt": "What covers most of Earth?",
+      "options": [
+        {
+          "id": "water",
+          "label": "Water",
+          "art": "ocean"
+        },
+        {
+          "id": "grass",
+          "label": "Grass",
+          "art": "leaf"
+        },
+        {
+          "id": "sand",
+          "label": "Sand",
+          "art": "sand"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "water"
+      },
+      "assessed": true,
+      "objective": "u08.main.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "water",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": "u08.main.01",
+        "answerKeyPages": [
+          36,
+          37
+        ],
+        "answerKeyText": "water",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_08",
+      "focus": "earth"
+    },
+    {
+      "id": "unit_08.step.003",
+      "kind": "match-lines",
+      "title": "Find the water place",
+      "prompt": "Match each clue to a place.",
+      "options": [
+        {
+          "id": "biggest_and_saltiest",
+          "label": "Biggest and saltiest",
+          "art": "biggest_and_saltiest"
+        },
+        {
+          "id": "big_moving_water",
+          "label": "Big moving water",
+          "art": "big_moving_water"
+        },
+        {
+          "id": "small_and_still_with_frogs",
+          "label": "Small and still, with frogs",
+          "art": "small_and_still_with_frogs"
+        },
+        {
+          "id": "big_and_still_land_all_around",
+          "label": "Big and still, land all around",
+          "art": "big_and_still_land_all_around"
+        }
+      ],
+      "targets": [
+        {
+          "id": "lake",
+          "label": "Lake",
+          "art": "lake"
+        },
+        {
+          "id": "river",
+          "label": "River",
+          "art": "river"
+        },
+        {
+          "id": "pond",
+          "label": "Pond",
+          "art": "pond"
+        },
+        {
+          "id": "ocean",
+          "label": "Ocean",
+          "art": "ocean"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "biggest_and_saltiest": "ocean",
+          "small_and_still_with_frogs": "pond",
+          "big_moving_water": "river",
+          "big_and_still_land_all_around": "lake"
+        }
+      },
+      "assessed": true,
+      "objective": "u08.main.02",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) ocean b) pond c) river d) lake",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": "u08.main.02",
+        "answerKeyPages": [
+          36,
+          37
+        ],
+        "answerKeyText": "a) ocean b) pond c) river d) lake",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_08"
+    },
+    {
+      "id": "unit_08.step.004",
+      "kind": "match-lines",
+      "title": "Animal homes",
+      "prompt": "Help each animal reach its water home.",
+      "options": [
+        {
+          "id": "whale",
+          "label": "Whale",
+          "art": "whale"
+        },
+        {
+          "id": "frog",
+          "label": "Frog",
+          "art": "frog"
+        },
+        {
+          "id": "crocodile",
+          "label": "Crocodile",
+          "art": "crocodile"
+        }
+      ],
+      "targets": [
+        {
+          "id": "pond",
+          "label": "Pond",
+          "art": "pond"
+        },
+        {
+          "id": "river",
+          "label": "River",
+          "art": "river"
+        },
+        {
+          "id": "ocean",
+          "label": "Ocean",
+          "art": "ocean"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "whale": "ocean",
+          "crocodile": "river",
+          "frog": "pond"
+        }
+      },
+      "assessed": true,
+      "objective": "u08.main.03",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) ocean b) river c) pond",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": "u08.main.03",
+        "answerKeyPages": [
+          36,
+          37
+        ],
+        "answerKeyText": "a) ocean b) river c) pond",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_08",
+      "board": "water"
+    },
+    {
+      "id": "unit_08.step.005",
+      "kind": "tap-choice",
+      "title": "Rock collection",
+      "prompt": "Collect everything made from rock.",
+      "options": [
+        {
+          "id": "diamond",
+          "label": "Diamond",
+          "art": "diamond"
+        },
+        {
+          "id": "coal",
+          "label": "Coal",
+          "art": "coal"
+        },
+        {
+          "id": "chair",
+          "label": "Chair",
+          "art": "chair"
+        },
+        {
+          "id": "plastic_bottle",
+          "label": "Plastic bottle",
+          "art": "bottle"
+        },
+        {
+          "id": "t_shirt",
+          "label": "T-shirt",
+          "art": "shirt"
+        },
+        {
+          "id": "stone_wall",
+          "label": "Stone wall",
+          "art": "brick"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "diamond",
+          "coal",
+          "stone_wall"
+        ]
+      },
+      "assessed": true,
+      "objective": "u08.main.04",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Made from rock: diamond, coal, stone wall. Not from rock: plastic bottle, T‑shirt, chair.",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": "u08.main.04",
+        "answerKeyPages": [
+          36,
+          37
+        ],
+        "answerKeyText": "Made from rock: diamond, coal, stone wall. Not from rock: plastic bottle, T‑shirt, chair.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_08"
+    },
+    {
+      "id": "unit_08.step.006",
+      "kind": "free-plant",
+      "title": "Soil microscope",
+      "prompt": "Move the magnifier and find the tiny things in soil.",
+      "options": [
+        {
+          "id": "small_stones",
+          "label": "Small stones",
+          "art": "stone"
+        },
+        {
+          "id": "dead_leaf",
+          "label": "Dead leaf",
+          "art": "dead_leaf"
+        },
+        {
+          "id": "tiny_insect",
+          "label": "Tiny insect",
+          "art": "insect"
+        },
+        {
+          "id": "sand",
+          "label": "Sand",
+          "art": "sand"
+        },
+        {
+          "id": "worm",
+          "label": "Worm",
+          "art": "worm"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Soil is a mixture of small stones, sand, dead leaves and little living creatures.",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_08",
+      "lab": "soil",
+      "safety": "Wash hands afterwards."
+    },
+    {
+      "id": "unit_08.step.007",
+      "kind": "tap-choice",
+      "title": "A spoonful of soil",
+      "prompt": "Choose three things you could find in soil.",
+      "options": [
+        {
+          "id": "small_stones",
+          "label": "Small stones",
+          "art": "stone"
+        },
+        {
+          "id": "worms",
+          "label": "Worms",
+          "art": "worm"
+        },
+        {
+          "id": "trumpet",
+          "label": "Trumpet",
+          "art": "trumpet"
+        },
+        {
+          "id": "dead_leaves",
+          "label": "Dead leaves",
+          "art": "dead_leaf"
+        },
+        {
+          "id": "television",
+          "label": "Television",
+          "art": "tv"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "small_stones",
+          "dead_leaves",
+          "worms"
+        ]
+      },
+      "assessed": true,
+      "objective": "u08.main.05",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Any three of: small stones, sand, bits of dead leaf or plant, worms, tiny insects, water, air.",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": "u08.main.05",
+        "answerKeyPages": [
+          36,
+          37
+        ],
+        "answerKeyText": "Any three of: small stones, sand, bits of dead leaf or plant, worms, tiny insects, water, air.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_08",
+      "focus": "soil"
+    },
+    {
+      "id": "unit_08.step.008",
+      "kind": "tap-choice",
+      "title": "Little geologist",
+      "prompt": "What does a geologist study?",
+      "options": [
+        {
+          "id": "stars",
+          "label": "Stars",
+          "art": "star"
+        },
+        {
+          "id": "animals",
+          "label": "Animals",
+          "art": "cat"
+        },
+        {
+          "id": "rocks",
+          "label": "Rocks",
+          "art": "stone"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "rocks"
+      },
+      "assessed": true,
+      "objective": "u08.main.06",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "rocks (and the ground the Earth is made of)",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": "u08.main.06",
+        "answerKeyPages": [
+          36,
+          37
+        ],
+        "answerKeyText": "rocks (and the ground the Earth is made of)",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_08"
+    },
+    {
+      "id": "unit_08.step.009",
+      "kind": "order-sequence",
+      "title": "The book’s water family",
+      "prompt": "Put the book’s water family in order, smallest first.",
+      "options": [
+        {
+          "id": "ocean",
+          "label": "Ocean",
+          "art": "ocean"
+        },
+        {
+          "id": "lake",
+          "label": "Lake",
+          "art": "lake"
+        },
+        {
+          "id": "river",
+          "label": "River",
+          "art": "river"
+        },
+        {
+          "id": "pond",
+          "label": "Pond",
+          "art": "pond"
+        },
+        {
+          "id": "stream",
+          "label": "Stream",
+          "art": "stream"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "pond",
+          "stream",
+          "river",
+          "lake",
+          "ocean"
+        ]
+      },
+      "assessed": true,
+      "objective": "u08.main.07",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "pond → stream → river → lake → ocean",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": "u08.main.07",
+        "answerKeyPages": [
+          36,
+          37
+        ],
+        "answerKeyText": "pond → stream → river → lake → ocean",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_08"
+    },
+    {
+      "id": "unit_08.step.010",
+      "kind": "tap-choice",
+      "title": "Rock outside",
+      "prompt": "Find two things made from rock.",
+      "options": [
+        {
+          "id": "stone_wall",
+          "label": "Stone wall",
+          "art": "brick"
+        },
+        {
+          "id": "plastic_bottle",
+          "label": "Plastic bottle",
+          "art": "bottle"
+        },
+        {
+          "id": "marble_floor",
+          "label": "Marble floor",
+          "art": "stone"
+        },
+        {
+          "id": "cotton_shirt",
+          "label": "Cotton shirt",
+          "art": "shirt"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "stone_wall",
+          "marble_floor"
+        ]
+      },
+      "assessed": true,
+      "objective": "u08.main.08",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Child's own answers, for example: a stone wall, bricks, a marble floor, a pavement, sand, a mountain.",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": "u08.main.08",
+        "answerKeyPages": [
+          36,
+          37
+        ],
+        "answerKeyText": "Child's own answers, for example: a stone wall, bricks, a marble floor, a pavement, sand, a mountain.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_08"
+    },
+    {
+      "id": "unit_08.step.011",
+      "kind": "free-plant",
+      "title": "My rock museum",
+      "prompt": "Sort the rocks into two groups using your own rule. Both choices are welcome.",
+      "options": [
+        {
+          "id": "large_smooth_stone",
+          "label": "Large smooth stone",
+          "art": "stone"
+        },
+        {
+          "id": "dark_stone",
+          "label": "Dark stone",
+          "art": "coal"
+        },
+        {
+          "id": "small_rough_stone",
+          "label": "Small rough stone",
+          "art": "stone"
+        },
+        {
+          "id": "light_stone",
+          "label": "Light stone",
+          "art": "stone"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Sort the rocks into two groups using your own rule. Both choices are welcome.",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_08",
+      "lab": "rock-sort",
+      "labUi": {
+        "groups": [
+          "My first group",
+          "My second group"
+        ]
+      }
+    },
+    {
+      "id": "unit_08.step.012",
+      "kind": "free-plant",
+      "title": "Clean the beach",
+      "prompt": "Collect the litter so animals do not swallow it.",
+      "options": [
+        {
+          "id": "plastic_bag",
+          "label": "Plastic bag",
+          "art": "bag"
+        },
+        {
+          "id": "paper",
+          "label": "Paper",
+          "art": "paper"
+        },
+        {
+          "id": "bottle",
+          "label": "Bottle",
+          "art": "bottle"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Litter can harm animals. Keep their homes clean.",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_08",
+      "lab": "cleanup"
+    },
+    {
+      "id": "unit_08.step.013",
+      "kind": "match-lines",
+      "title": "Discovery badges",
+      "prompt": "Match each discovery to its answer.",
+      "options": [
+        {
+          "id": "most_of_earth",
+          "label": "Most of Earth",
+          "art": "earth"
+        },
+        {
+          "id": "soil_is",
+          "label": "Soil is",
+          "art": "soil"
+        },
+        {
+          "id": "a_geologist_studies",
+          "label": "A geologist studies",
+          "art": "stone"
+        },
+        {
+          "id": "salty_water",
+          "label": "Salty water",
+          "art": "ocean"
+        },
+        {
+          "id": "coal_comes_from",
+          "label": "Coal comes from",
+          "art": "coal"
+        }
+      ],
+      "targets": [
+        {
+          "id": "rocks",
+          "label": "Rocks",
+          "art": "rocks"
+        },
+        {
+          "id": "rock",
+          "label": "Rock",
+          "art": "rock"
+        },
+        {
+          "id": "a_mixture",
+          "label": "A mixture",
+          "art": "a_mixture"
+        },
+        {
+          "id": "ocean",
+          "label": "Ocean",
+          "art": "ocean"
+        },
+        {
+          "id": "water",
+          "label": "Water",
+          "art": "water"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "most_of_earth": "water",
+          "salty_water": "ocean",
+          "soil_is": "a_mixture",
+          "coal_comes_from": "rock",
+          "a_geologist_studies": "rocks"
+        }
+      },
+      "assessed": true,
+      "objective": "u08.choice.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "water. ocean. a mixture of many things. rock. rocks.",
+      "source": {
+        "pages": [
+          22,
+          23
+        ],
+        "questionId": "u08.choice.01",
+        "answerKeyPages": [
+          36,
+          37
+        ],
+        "answerKeyText": "water",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_08",
+      "extraObjectives": [
+        "u08.choice.02",
+        "u08.choice.03",
+        "u08.choice.04",
+        "u08.choice.05"
+      ],
+      "relatedSources": [
+        {
+          "pages": [
+            22,
+            23
+          ],
+          "questionId": "u08.choice.02",
+          "answerKeyPages": [
+            36,
+            37
+          ],
+          "answerKeyText": "ocean",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            22,
+            23
+          ],
+          "questionId": "u08.choice.03",
+          "answerKeyPages": [
+            36,
+            37
+          ],
+          "answerKeyText": "a mixture of many things",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            22,
+            23
+          ],
+          "questionId": "u08.choice.04",
+          "answerKeyPages": [
+            36,
+            37
+          ],
+          "answerKeyText": "rock",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            22,
+            23
+          ],
+          "questionId": "u08.choice.05",
+          "answerKeyPages": [
+            36,
+            37
+          ],
+          "answerKeyText": "rocks",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        }
+      ],
+      "objectiveItems": {
+        "u08.choice.01": [
+          "most_of_earth"
+        ],
+        "u08.choice.02": [
+          "salty_water"
+        ],
+        "u08.choice.03": [
+          "soil_is"
+        ],
+        "u08.choice.04": [
+          "coal_comes_from"
+        ],
+        "u08.choice.05": [
+          "a_geologist_studies"
+        ]
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "ocean",
+      "word": "ocean",
+      "meaning": "The biggest water on Earth. It is salty.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "lake",
+      "word": "lake",
+      "meaning": "A big area of still water with land all around it.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "river",
+      "word": "river",
+      "meaning": "Water that moves along the land, on its way to the sea.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "stream",
+      "word": "stream",
+      "meaning": "A small, narrow river.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "pond",
+      "word": "pond",
+      "meaning": "A small area of still water, where frogs like to live.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "rock",
+      "word": "rock",
+      "meaning": "The hard, natural material the land is made from.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "soil",
+      "word": "soil",
+      "meaning": "A mixture of tiny stones, sand, dead leaves and little creatures. Plants grow in it.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "geologist",
+      "word": "geologist",
+      "meaning": "A scientist who studies rocks and the ground.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "litter",
+      "word": "litter",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Activity 1 — What is really inside soil?\nPut a spoonful of soil from the garden or a plant pot onto a white plate. Look at it closely with a magnifying glass (the zoom on a phone\ncamera works too). Ask him to name everything he can see: little stones, sand, bits of dead leaf, maybe a tiny insect or a worm. Soil is a\nmixture, not one single thing. Wash hands afterwards.\nActivity 2 — Be a geologist\nA geologist is a scientist who studies rocks. Collect five stones outside and sort them: big and small, rough and smooth, light and dark,\nheavy and light. Ask him to invent his own way of grouping them — then explain his rule to you.\nActivity 3 — Talk about litter\nAsk him: \"What happens if a bird tries to eat a plastic bag? What if a turtle swallows a bottle?\" Six‑year‑olds care deeply about this. Then\npick up three pieces of litter together on your next walk.\npond stream river lake ocean\nfrogs small, moving the Nile big and still the biggest, and salty\nThe water family, from the smallest to the biggest.\n",
+      "safety": "An adult stays with the child for every activity. No glass, no sockets, no flames, and nothing small enough to swallow is left with a child\nalone. Water activities are done in a bowl or the sink, never near electrical items.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ]
+    }
+  ]
+}

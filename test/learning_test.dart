@@ -98,7 +98,15 @@ void main() {
     for (final lesson in library.lessons.values) {
       final responses = <String, dynamic>{
         for (final step in lesson.steps)
-          step.id: {'outcome': 'firstTry', 'completed': true},
+          step.id: {
+            'outcome': 'firstTry',
+            'completed': true,
+            if (step.json['objectiveItems'] is Map)
+              'objectiveEvidence': {
+                for (final objective in step.assessedObjectives)
+                  objective: 'firstTry',
+              },
+          },
       };
       final results = objectiveResults(lesson, responses);
       expect(results.length, lesson.objectives.length);

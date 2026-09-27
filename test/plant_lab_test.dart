@@ -99,53 +99,6 @@ void main() {
       }
     },
   );
-  for (final spec in [
-    (const Size(824, 860), 1.0),
-    (const Size(800, 360), 2.0),
-    (const Size(1280, 800), 1.0),
-  ]) {
-    testWidgets(
-      'Recovered Stem story points to Stem and waits for touching it at ${spec.$1}',
-      (t) async {
-        t.view.physicalSize = spec.$1;
-        t.view.devicePixelRatio = 1;
-        addTearDown(t.view.resetPhysicalSize);
-        addTearDown(t.view.resetDevicePixelRatio);
-        final store = at(
-          2,
-          current: {
-            'selected': ['plant'],
-            'touched': ['plant'],
-          },
-        );
-        await helpers.mount(
-          t,
-          LessonPlayer(lesson: lesson),
-          store,
-          scale: spec.$2,
-        );
-        expect(find.byType(PlantLabStage), findsOneWidget);
-        expect(game(t).activePart, 'stem');
-        expect(find.text('Plant'), findsNothing);
-        expect(find.byKey(const ValueKey('lessonNext')), findsNothing);
-        await helpers.tapVisible(
-          t,
-          find.byKey(const ValueKey('plant-part-stem')),
-        );
-        expect(game(t).animationLeft, greaterThan(0));
-        expect(
-          store.data.journeys['unit_02']!['current']['touched'],
-          contains('stem'),
-        );
-        await helpers.tapVisible(t, find.byKey(const ValueKey('lessonNext')));
-        expect(game(t).activePart, 'leaf');
-        expect(find.text(lesson.steps[3].prompt), findsOneWidget);
-        expect(t.takeException(), isNull);
-        await t.pumpWidget(const SizedBox());
-        await t.pump();
-      },
-    );
-  }
   testWidgets(
     'Exploration speaks the selected part and all four touches persist',
     (t) async {
@@ -169,50 +122,13 @@ void main() {
         hasLength(4),
       );
       expect(store.data.attempts, isEmpty);
-      expect(t.takeException(), isNull);
-      await t.pumpWidget(const SizedBox());
-      await t.pump();
-    },
-  );
-  testWidgets(
-    'Plant puzzle supports drag, retains assembled parts and uses two gentle attempts',
-    (t) async {
-      t.view.physicalSize = const Size(1280, 1000);
-      t.view.devicePixelRatio = 1;
-      addTearDown(t.view.resetPhysicalSize);
-      addTearDown(t.view.resetDevicePixelRatio);
-      final store = at(5);
-      await helpers.mount(t, LessonPlayer(lesson: lesson), store);
-      final piece = find.byKey(const ValueKey('plant-piece'));
-      final roots = find.byKey(const ValueKey('plant-part-roots'));
-      await t.ensureVisible(roots);
-      await t.pump(const Duration(milliseconds: 100));
-      await t.dragFrom(
-        t.getCenter(piece),
-        t.getCenter(roots) - t.getCenter(piece),
-      );
-      await t.pump(const Duration(milliseconds: 300));
-      expect(game(t).discovered, contains('roots'));
-      expect(store.data.journeys['unit_02']!['current']['outcome'], 'firstTry');
       await helpers.tapVisible(t, find.byKey(const ValueKey('lessonNext')));
-      expect(game(t).discovered, contains('roots'));
-      await helpers.tapVisible(
-        t,
-        find.byKey(const ValueKey('plant-part-flower')),
-      );
-      expect(store.data.journeys['unit_02']!['current']['done'], isFalse);
-      await helpers.tapVisible(
-        t,
-        find.byKey(const ValueKey('plant-part-flower')),
-      );
-      expect(
-        store.data.journeys['unit_02']!['current']['outcome'],
-        'explained',
-      );
-      expect(game(t).discovered, containsAll(['roots', 'stem']));
+      expect(find.text('Build your plant'), findsOneWidget);
+      expect(store.data.journeys['unit_02']!['index'], 1);
       expect(t.takeException(), isNull);
       await t.pumpWidget(const SizedBox());
       await t.pump();
     },
   );
 }
+

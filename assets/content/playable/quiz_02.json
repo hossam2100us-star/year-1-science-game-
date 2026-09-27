@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "quiz_02",
+  "title": "Chemistry Quiz",
+  "quiz": true,
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    14
+  ],
+  "steps": [
+    {
+      "id": "quiz_02.step.001",
+      "kind": "match-lines",
+      "title": "Chair detective",
+      "prompt": "Match the object and its material.",
+      "options": [
+        {
+          "id": "object",
+          "label": "Object",
+          "art": "object"
+        },
+        {
+          "id": "material",
+          "label": "Material",
+          "art": "material"
+        }
+      ],
+      "targets": [
+        {
+          "id": "wood",
+          "label": "Wood",
+          "art": "wood"
+        },
+        {
+          "id": "chair",
+          "label": "Chair",
+          "art": "chair"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "object": "chair",
+          "material": "wood"
+        }
+      },
+      "assessed": true,
+      "objective": "quiz02.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "object = chair; material = wood",
+      "source": {
+        "pages": [
+          14
+        ],
+        "questionId": "quiz02.01",
+        "answerKeyPages": [
+          37,
+          38
+        ],
+        "answerKeyText": "object = chair; material = wood",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_02",
+      "focus": "chair"
+    },
+    {
+      "id": "quiz_02.step.002",
+      "kind": "tap-choice",
+      "title": "Material collection",
+      "prompt": "Choose four materials.",
+      "options": [
+        {
+          "id": "wood",
+          "label": "Wood",
+          "art": "wood"
+        },
+        {
+          "id": "plastic",
+          "label": "Plastic",
+          "art": "plastic"
+        },
+        {
+          "id": "chair",
+          "label": "Chair",
+          "art": "chair"
+        },
+        {
+          "id": "metal",
+          "label": "Metal",
+          "art": "metal"
+        },
+        {
+          "id": "glass",
+          "label": "Glass",
+          "art": "glass"
+        },
+        {
+          "id": "spoon",
+          "label": "Spoon",
+          "art": "spoon"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "wood",
+          "metal",
+          "plastic",
+          "glass"
+        ]
+      },
+      "assessed": true,
+      "objective": "quiz02.02",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Any four: wood, metal, plastic, glass, fabric, paper, clay, rubber",
+      "source": {
+        "pages": [
+          14
+        ],
+        "questionId": "quiz02.02",
+        "answerKeyPages": [
+          37,
+          38
+        ],
+        "answerKeyText": "Any four: wood, metal, plastic, glass, fabric, paper, clay, rubber",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_02"
+    },
+    {
+      "id": "quiz_02.step.003",
+      "kind": "tap-choice",
+      "title": "See through",
+      "prompt": "Choose a see-through material.",
+      "options": [
+        {
+          "id": "wood",
+          "label": "Wood",
+          "art": "wood"
+        },
+        {
+          "id": "metal",
+          "label": "Metal",
+          "art": "metal"
+        },
+        {
+          "id": "glass",
+          "label": "Glass",
+          "art": "glass"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "glass"
+      },
+      "assessed": true,
+      "objective": "quiz02.03",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "glass",
+      "source": {
+        "pages": [
+          14
+        ],
+        "questionId": "quiz02.03",
+        "answerKeyPages": [
+          37,
+          38
+        ],
+        "answerKeyText": "glass",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_02",
+      "focus": "window"
+    },
+    {
+      "id": "quiz_02.step.004",
+      "kind": "tap-choice",
+      "title": "Rain cover",
+      "prompt": "Which cover keeps water out?",
+      "options": [
+        {
+          "id": "paper",
+          "label": "Paper",
+          "art": "paper"
+        },
+        {
+          "id": "cotton_cloth",
+          "label": "Cotton cloth",
+          "art": "shirt"
+        },
+        {
+          "id": "plastic",
+          "label": "Plastic",
+          "art": "bottle"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "plastic"
+      },
+      "assessed": true,
+      "objective": "quiz02.04",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "plastic",
+      "source": {
+        "pages": [
+          14
+        ],
+        "questionId": "quiz02.04",
+        "answerKeyPages": [
+          37,
+          38
+        ],
+        "answerKeyText": "plastic",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_02",
+      "focus": "umbrella"
+    },
+    {
+      "id": "quiz_02.step.005",
+      "kind": "tap-choice",
+      "title": "Metal clues",
+      "prompt": "Most metals are...",
+      "options": [
+        {
+          "id": "soft_and_fluffy",
+          "label": "Soft and fluffy",
+          "art": "soft_and_fluffy"
+        },
+        {
+          "id": "hard_and_shiny",
+          "label": "Hard and shiny",
+          "art": "hard_and_shiny"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "hard_and_shiny"
+      },
+      "assessed": true,
+      "objective": "quiz02.05",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "hard and shiny",
+      "source": {
+        "pages": [
+          14
+        ],
+        "questionId": "quiz02.05",
+        "answerKeyPages": [
+          37,
+          38
+        ],
+        "answerKeyText": "hard and shiny",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_02",
+      "focus": "spoon"
+    },
+    {
+      "id": "quiz_02.step.006",
+      "kind": "tap-choice",
+      "title": "Shape actions",
+      "prompt": "Choose the four ways to change shape.",
+      "options": [
+        {
+          "id": "twist",
+          "label": "Twist",
+          "art": "twist"
+        },
+        {
+          "id": "squash",
+          "label": "Squash",
+          "art": "squash"
+        },
+        {
+          "id": "listen",
+          "label": "Listen",
+          "art": "listen"
+        },
+        {
+          "id": "stretch",
+          "label": "Stretch",
+          "art": "stretch"
+        },
+        {
+          "id": "bend",
+          "label": "Bend",
+          "art": "bend"
+        },
+        {
+          "id": "see",
+          "label": "See",
+          "art": "see"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "twist",
+          "stretch",
+          "squash",
+          "bend"
+        ]
+      },
+      "assessed": true,
+      "objective": "quiz02.06",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "twist, stretch, squash, bend",
+      "source": {
+        "pages": [
+          14
+        ],
+        "questionId": "quiz02.06",
+        "answerKeyPages": [
+          37,
+          38
+        ],
+        "answerKeyText": "twist, stretch, squash, bend",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_02"
+    },
+    {
+      "id": "quiz_02.step.007",
+      "kind": "tap-choice",
+      "title": "Stretch it",
+      "prompt": "Which one stretches?",
+      "options": [
+        {
+          "id": "rubber_band",
+          "label": "Rubber band",
+          "art": "rubber_band"
+        },
+        {
+          "id": "brick",
+          "label": "Brick",
+          "art": "brick"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "rubber_band"
+      },
+      "assessed": true,
+      "objective": "quiz02.07",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a rubber band",
+      "source": {
+        "pages": [
+          14
+        ],
+        "questionId": "quiz02.07",
+        "answerKeyPages": [
+          37,
+          38
+        ],
+        "answerKeyText": "a rubber band",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_02"
+    },
+    {
+      "id": "quiz_02.step.008",
+      "kind": "tap-choice",
+      "title": "Potter’s studio",
+      "prompt": "Choose the potter’s material.",
+      "options": [
+        {
+          "id": "clay",
+          "label": "Clay",
+          "art": "clay"
+        },
+        {
+          "id": "metal",
+          "label": "Metal",
+          "art": "metal"
+        },
+        {
+          "id": "glass",
+          "label": "Glass",
+          "art": "glass"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "clay"
+      },
+      "assessed": true,
+      "objective": "quiz02.08",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "clay",
+      "source": {
+        "pages": [
+          14
+        ],
+        "questionId": "quiz02.08",
+        "answerKeyPages": [
+          37,
+          38
+        ],
+        "answerKeyText": "clay",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_02",
+      "focus": "pot"
+    },
+    {
+      "id": "quiz_02.step.009",
+      "kind": "tap-choice",
+      "title": "Glass claim",
+      "prompt": "All glass is red. True or false?",
+      "options": [
+        {
+          "id": "true",
+          "label": "True",
+          "art": "true"
+        },
+        {
+          "id": "false",
+          "label": "False",
+          "art": "false"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "false"
+      },
+      "assessed": true,
+      "objective": "quiz02.09",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "FALSE — glass can be any colour, and much of it is clear",
+      "source": {
+        "pages": [
+          14
+        ],
+        "questionId": "quiz02.09",
+        "answerKeyPages": [
+          37,
+          38
+        ],
+        "answerKeyText": "FALSE — glass can be any colour, and much of it is clear",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_02",
+      "focus": "window"
+    },
+    {
+      "id": "quiz_02.step.010",
+      "kind": "tap-choice",
+      "title": "Kitchen collection",
+      "prompt": "Choose two metal kitchen objects.",
+      "options": [
+        {
+          "id": "metal_spoon",
+          "label": "Metal spoon",
+          "art": "spoon"
+        },
+        {
+          "id": "cotton_towel",
+          "label": "Cotton towel",
+          "art": "shirt"
+        },
+        {
+          "id": "metal_pan",
+          "label": "Metal pan",
+          "art": "pan"
+        },
+        {
+          "id": "paper_tissue",
+          "label": "Paper tissue",
+          "art": "tissue"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "metal_spoon",
+          "metal_pan"
+        ]
+      },
+      "assessed": true,
+      "objective": "quiz02.10",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Any two: spoon, fork, knife, pan, kettle, tap, tray",
+      "source": {
+        "pages": [
+          14
+        ],
+        "questionId": "quiz02.10",
+        "answerKeyPages": [
+          37,
+          38
+        ],
+        "answerKeyText": "Any two: spoon, fork, knife, pan, kettle, tap, tray",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_02"
+    }
+  ],
+  "stickers": [],
+  "homeActivities": []
+}

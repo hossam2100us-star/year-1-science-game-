@@ -22,6 +22,9 @@ class LessonStep {
   String get hint => json['hint'] ?? '';
   String get explanation => json['explanation'] ?? '';
   String get objective => json['objective'] ?? '';
+  Set<String> get assessedObjectives => assessed
+      ? {objective, ...List<String>.from(json['extraObjectives'] ?? [])}
+      : {};
   String? get focus => json['focus'];
   bool get assessed => json['assessed'] == true;
   List<PictureItem> get options => (json['options'] as List)
@@ -68,13 +71,27 @@ class Lesson {
   List<Map<String, dynamic>> get homeActivities =>
       List<Map<String, dynamic>>.from(json['homeActivities']);
   Set<String> get objectives =>
-      steps.where((s) => s.assessed).map((s) => s.objective).toSet();
+      steps.expand((s) => s.assessedObjectives).toSet();
 }
 
 class LessonLibrary {
   LessonLibrary(this.lessons);
   final Map<String, Lesson> lessons;
-  static const availableIds = ['unit_01', 'unit_02', 'unit_03', 'quiz_01'];
+  static const availableIds = [
+    'unit_01',
+    'unit_02',
+    'unit_03',
+    'quiz_01',
+    'unit_04',
+    'quiz_02',
+    'unit_05',
+    'unit_06',
+    'unit_07',
+    'quiz_03',
+    'unit_08',
+    'unit_09',
+    'quiz_04',
+  ];
   static Future<LessonLibrary> load() async {
     final result = <String, Lesson>{};
     for (final id in availableIds) {

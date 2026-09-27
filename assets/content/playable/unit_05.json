@@ -1,0 +1,985 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "unit_05",
+  "title": "Forces",
+  "quiz": false,
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    15,
+    16
+  ],
+  "steps": [
+    {
+      "id": "unit_05.step.001",
+      "kind": "explore",
+      "title": "Movement playground",
+      "prompt": "Touch each movement to hear its name.",
+      "options": [
+        {
+          "id": "push",
+          "label": "Push",
+          "art": "push"
+        },
+        {
+          "id": "roll",
+          "label": "Roll",
+          "art": "ball"
+        },
+        {
+          "id": "swim",
+          "label": "Swim",
+          "art": "fish"
+        },
+        {
+          "id": "slither",
+          "label": "Slither",
+          "art": "snake"
+        },
+        {
+          "id": "pull",
+          "label": "Pull",
+          "art": "pull"
+        },
+        {
+          "id": "fly",
+          "label": "Fly",
+          "art": "bird"
+        },
+        {
+          "id": "hop",
+          "label": "Hop",
+          "art": "kangaroo"
+        },
+        {
+          "id": "crawl",
+          "label": "Crawl",
+          "art": "baby"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Touch each movement to hear its name.",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_05",
+      "minTouches": 8
+    },
+    {
+      "id": "unit_05.step.002",
+      "kind": "free-plant",
+      "title": "Push and pull playground",
+      "prompt": "Move the slider away and towards you. Watch the drawer move.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "A push moves an object away. A pull brings it towards you.",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_05",
+      "lab": "force",
+      "labUi": {
+        "left": "Pull towards you",
+        "right": "Push away from you"
+      }
+    },
+    {
+      "id": "unit_05.step.003",
+      "kind": "match-lines",
+      "title": "Which way?",
+      "prompt": "Connect the movement to its force.",
+      "options": [
+        {
+          "id": "away_from_you",
+          "label": "Away from you",
+          "art": "away_from_you"
+        },
+        {
+          "id": "towards_you",
+          "label": "Towards you",
+          "art": "towards_you"
+        }
+      ],
+      "targets": [
+        {
+          "id": "pull",
+          "label": "Pull",
+          "art": "pull"
+        },
+        {
+          "id": "push",
+          "label": "Push",
+          "art": "push"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "away_from_you": "push",
+          "towards_you": "pull"
+        }
+      },
+      "assessed": true,
+      "objective": "u05.main.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) push b) pull",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": "u05.main.01",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "a) push b) pull",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_05"
+    },
+    {
+      "id": "unit_05.step.004",
+      "kind": "match-lines",
+      "title": "Forces around us",
+      "prompt": "Give each action its force.",
+      "options": [
+        {
+          "id": "ring_a_doorbell",
+          "label": "Ring a doorbell",
+          "art": "doorbell"
+        },
+        {
+          "id": "move_a_swing",
+          "label": "Move a swing",
+          "art": "swing"
+        },
+        {
+          "id": "open_a_drawer",
+          "label": "Open a drawer",
+          "art": "drawer"
+        },
+        {
+          "id": "move_a_trolley",
+          "label": "Move a trolley",
+          "art": "trolley"
+        }
+      ],
+      "targets": [
+        {
+          "id": "both",
+          "label": "Both",
+          "art": "both"
+        },
+        {
+          "id": "pull",
+          "label": "Pull",
+          "art": "pull"
+        },
+        {
+          "id": "push",
+          "label": "Push",
+          "art": "push"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "ring_a_doorbell": "push",
+          "open_a_drawer": "pull",
+          "move_a_swing": "both",
+          "move_a_trolley": "both"
+        }
+      },
+      "assessed": true,
+      "objective": "u05.main.02",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) push b) pull c) both push and pull d) both push and pull",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": "u05.main.02",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "a) push b) pull c) both push and pull d) both push and pull",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_05"
+    },
+    {
+      "id": "unit_05.step.005",
+      "kind": "free-plant",
+      "title": "Float or sink tank",
+      "prompt": "Predict for each object, then drop it into the tank.",
+      "options": [
+        {
+          "id": "balloon",
+          "label": "Balloon",
+          "art": "balloon"
+        },
+        {
+          "id": "metal_nail",
+          "label": "Metal nail",
+          "art": "nail"
+        },
+        {
+          "id": "plastic_pot",
+          "label": "Plastic pot",
+          "art": "plastic_pot"
+        },
+        {
+          "id": "stone",
+          "label": "Stone",
+          "art": "stone"
+        },
+        {
+          "id": "cork",
+          "label": "Cork",
+          "art": "cork"
+        },
+        {
+          "id": "glass_marble",
+          "label": "Glass marble",
+          "art": "glass_marble"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Predict for each object, then drop it into the tank.",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_05",
+      "lab": "tank",
+      "results": {
+        "balloon": "float",
+        "stone": "sink",
+        "metal_nail": "sink",
+        "cork": "float",
+        "plastic_pot": "float",
+        "glass_marble": "sink"
+      },
+      "labUi": {
+        "choices": {
+          "float": "Float",
+          "sink": "Sink"
+        },
+        "action": "Drop into water",
+        "result": "Watch the tank"
+      }
+    },
+    {
+      "id": "unit_05.step.006",
+      "kind": "match-lines",
+      "title": "Tank keeper",
+      "prompt": "Send each object to its place in the tank.",
+      "options": [
+        {
+          "id": "balloon",
+          "label": "Balloon",
+          "art": "balloon"
+        },
+        {
+          "id": "metal_nail",
+          "label": "Metal nail",
+          "art": "nail"
+        },
+        {
+          "id": "plastic_pot",
+          "label": "Plastic pot",
+          "art": "plastic_pot"
+        },
+        {
+          "id": "stone",
+          "label": "Stone",
+          "art": "stone"
+        },
+        {
+          "id": "cork",
+          "label": "Cork",
+          "art": "cork"
+        },
+        {
+          "id": "glass_marble",
+          "label": "Glass marble",
+          "art": "glass_marble"
+        }
+      ],
+      "targets": [
+        {
+          "id": "sink",
+          "label": "Sink",
+          "art": "sink"
+        },
+        {
+          "id": "float",
+          "label": "Float",
+          "art": "float"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "balloon": "float",
+          "stone": "sink",
+          "metal_nail": "sink",
+          "cork": "float",
+          "plastic_pot": "float",
+          "glass_marble": "sink"
+        }
+      },
+      "assessed": true,
+      "objective": "u05.main.03",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) F b) S c) S d) F e) F f) S",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": "u05.main.03",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "a) F b) S c) S d) F e) F f) S",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_05",
+      "board": "tank"
+    },
+    {
+      "id": "unit_05.step.007",
+      "kind": "match-lines",
+      "title": "Animal moves",
+      "prompt": "Match each animal to its movement.",
+      "options": [
+        {
+          "id": "snake",
+          "label": "Snake",
+          "art": "snake"
+        },
+        {
+          "id": "fish",
+          "label": "Fish",
+          "art": "fish"
+        },
+        {
+          "id": "baby",
+          "label": "Baby",
+          "art": "baby"
+        },
+        {
+          "id": "bird",
+          "label": "Bird",
+          "art": "bird"
+        },
+        {
+          "id": "kangaroo",
+          "label": "Kangaroo",
+          "art": "kangaroo"
+        }
+      ],
+      "targets": [
+        {
+          "id": "crawl",
+          "label": "Crawl",
+          "art": "crawl"
+        },
+        {
+          "id": "hop",
+          "label": "Hop",
+          "art": "hop"
+        },
+        {
+          "id": "swim",
+          "label": "Swim",
+          "art": "swim"
+        },
+        {
+          "id": "fly",
+          "label": "Fly",
+          "art": "fly"
+        },
+        {
+          "id": "slither",
+          "label": "Slither",
+          "art": "slither"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "snake": "slither",
+          "bird": "fly",
+          "fish": "swim",
+          "kangaroo": "hop",
+          "baby": "crawl"
+        }
+      },
+      "assessed": true,
+      "objective": "u05.main.04",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "snake – slither | bird – fly | fish – swim | kangaroo – hop | baby – crawl",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": "u05.main.04",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "snake – slither | bird – fly | fish – swim | kangaroo – hop | baby – crawl",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_05"
+    },
+    {
+      "id": "unit_05.step.008",
+      "kind": "free-plant",
+      "title": "Sailboat breeze",
+      "prompt": "Hold the wind button to move the sailboat.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Moving air pushes the sailboat.",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_05",
+      "lab": "sailboat",
+      "labUi": {
+        "action": "Hold to blow"
+      }
+    },
+    {
+      "id": "unit_05.step.009",
+      "kind": "tap-choice",
+      "title": "What moved the boat?",
+      "prompt": "The air moved the sailboat. Was it a push or a pull?",
+      "options": [
+        {
+          "id": "pull",
+          "label": "Pull",
+          "art": "pull"
+        },
+        {
+          "id": "push",
+          "label": "Push",
+          "art": "push"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "push"
+      },
+      "assessed": true,
+      "objective": "u05.main.05",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "PUSH — the moving air pushes the sail.",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": "u05.main.05",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "PUSH — the moving air pushes the sail.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_05",
+      "focus": "sailboat"
+    },
+    {
+      "id": "unit_05.step.010",
+      "kind": "match-lines",
+      "title": "Home helper",
+      "prompt": "Choose a force for each job.",
+      "options": [
+        {
+          "id": "open_a_drawer",
+          "label": "Open a drawer",
+          "art": "drawer"
+        },
+        {
+          "id": "ring_a_doorbell",
+          "label": "Ring a doorbell",
+          "art": "doorbell"
+        }
+      ],
+      "targets": [
+        {
+          "id": "push",
+          "label": "Push",
+          "art": "push"
+        },
+        {
+          "id": "pull",
+          "label": "Pull",
+          "art": "pull"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "open_a_drawer": "pull",
+          "ring_a_doorbell": "push"
+        }
+      },
+      "assessed": true,
+      "objective": "u05.main.06",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Pull: a drawer, a door handle, a zip, a curtain. Push: a doorbell, a light switch, a button, a trolley.",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": "u05.main.06",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "Pull: a drawer, a door handle, a zip, a curtain. Push: a doorbell, a light switch, a button, a trolley.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_05"
+    },
+    {
+      "id": "unit_05.step.011",
+      "kind": "match-lines",
+      "title": "My four moves",
+      "prompt": "Make two pushes and two pulls.",
+      "options": [
+        {
+          "id": "press_a_switch",
+          "label": "Press a switch",
+          "art": "switch"
+        },
+        {
+          "id": "open_a_fridge",
+          "label": "Open a fridge",
+          "art": "fridge"
+        },
+        {
+          "id": "kick_a_ball",
+          "label": "Kick a ball",
+          "art": "ball"
+        },
+        {
+          "id": "close_a_zip",
+          "label": "Close a zip",
+          "art": "zip"
+        }
+      ],
+      "targets": [
+        {
+          "id": "pull",
+          "label": "Pull",
+          "art": "pull"
+        },
+        {
+          "id": "push",
+          "label": "Push",
+          "art": "push"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "press_a_switch": "push",
+          "kick_a_ball": "push",
+          "open_a_fridge": "pull",
+          "close_a_zip": "pull"
+        }
+      },
+      "assessed": true,
+      "objective": "u05.main.07",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Child's own answers. Pushes: pressing a switch, kicking a ball, closing a door, pushing a trolley. Pulls: opening a drawer, pulling a zip, pulling\non socks, opening the fridge.",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": "u05.main.07",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "Child's own answers. Pushes: pressing a switch, kicking a ball, closing a door, pushing a trolley. Pulls: opening a drawer, pulling a zip, pulling\non socks, opening the fridge.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_05"
+    },
+    {
+      "id": "unit_05.step.012",
+      "kind": "free-plant",
+      "title": "Orange surprise",
+      "prompt": "Predict, then test the orange with and without its peel.",
+      "options": [
+        {
+          "id": "with_peel",
+          "label": "With peel",
+          "art": "orange"
+        },
+        {
+          "id": "without_peel",
+          "label": "Without peel",
+          "art": "peeled_orange"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "u05.main.08",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "The orange floats with its peel and sinks without it. Tiny air pockets in the peel help it float.",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": "u05.main.08",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "It sinks. The peel is full of tiny air pockets that hold the orange up; take the peel off and there is nothing to keep it floating.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_05",
+      "lab": "tank",
+      "results": {
+        "with_peel": "float",
+        "without_peel": "sink"
+      },
+      "labUi": {
+        "choices": {
+          "float": "Float",
+          "sink": "Sink"
+        },
+        "action": "Test the orange",
+        "result": "Look at the orange"
+      }
+    },
+    {
+      "id": "unit_05.step.013",
+      "kind": "match-lines",
+      "title": "Discovery badges",
+      "prompt": "Match each discovery to its answer.",
+      "options": [
+        {
+          "id": "a_push_sends_it",
+          "label": "A push sends it",
+          "art": "push"
+        },
+        {
+          "id": "how_a_snake_moves",
+          "label": "How a snake moves",
+          "art": "snake"
+        },
+        {
+          "id": "ring_a_doorbell",
+          "label": "Ring a doorbell",
+          "art": "doorbell"
+        },
+        {
+          "id": "sinks_in_water",
+          "label": "Sinks in water",
+          "art": "coin"
+        },
+        {
+          "id": "send_the_ball_further",
+          "label": "Send the ball further",
+          "art": "ball"
+        }
+      ],
+      "targets": [
+        {
+          "id": "push",
+          "label": "Push",
+          "art": "push"
+        },
+        {
+          "id": "bigger_push",
+          "label": "Bigger push",
+          "art": "bigger_push"
+        },
+        {
+          "id": "slithering",
+          "label": "Slithering",
+          "art": "slithering"
+        },
+        {
+          "id": "metal_coin",
+          "label": "Metal coin",
+          "art": "metal_coin"
+        },
+        {
+          "id": "away",
+          "label": "Away",
+          "art": "away"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "a_push_sends_it": "away",
+          "sinks_in_water": "metal_coin",
+          "how_a_snake_moves": "slithering",
+          "send_the_ball_further": "bigger_push",
+          "ring_a_doorbell": "push"
+        }
+      },
+      "assessed": true,
+      "objective": "u05.choice.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "away from you. a metal coin. slithering. a bigger push. push.",
+      "source": {
+        "pages": [
+          15,
+          16
+        ],
+        "questionId": "u05.choice.01",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "away from you",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_05",
+      "extraObjectives": [
+        "u05.choice.02",
+        "u05.choice.03",
+        "u05.choice.04",
+        "u05.choice.05"
+      ],
+      "relatedSources": [
+        {
+          "pages": [
+            15,
+            16
+          ],
+          "questionId": "u05.choice.02",
+          "answerKeyPages": [
+            36
+          ],
+          "answerKeyText": "a metal coin",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            15,
+            16
+          ],
+          "questionId": "u05.choice.03",
+          "answerKeyPages": [
+            36
+          ],
+          "answerKeyText": "slithering",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            15,
+            16
+          ],
+          "questionId": "u05.choice.04",
+          "answerKeyPages": [
+            36
+          ],
+          "answerKeyText": "a bigger push",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            15,
+            16
+          ],
+          "questionId": "u05.choice.05",
+          "answerKeyPages": [
+            36
+          ],
+          "answerKeyText": "push",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        }
+      ],
+      "objectiveItems": {
+        "u05.choice.01": [
+          "a_push_sends_it"
+        ],
+        "u05.choice.02": [
+          "sinks_in_water"
+        ],
+        "u05.choice.03": [
+          "how_a_snake_moves"
+        ],
+        "u05.choice.04": [
+          "send_the_ball_further"
+        ],
+        "u05.choice.05": [
+          "ring_a_doorbell"
+        ]
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "force",
+      "word": "force",
+      "meaning": "A push or a pull that makes something move or change shape.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "push",
+      "word": "push",
+      "meaning": "Moving something away from you.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "pull",
+      "word": "pull",
+      "meaning": "Moving something towards you.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "float",
+      "word": "float",
+      "meaning": "To stay on top of the water.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "sink",
+      "word": "sink",
+      "meaning": "To go down to the bottom of the water.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "predict",
+      "word": "predict",
+      "meaning": "To say what you think will happen, before you try it.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Activity 1 — Float or sink\nFill a bowl or the sink. Line up: an apple, a stone, a closed plastic bottle, a metal spoon, a coin, a cork, a plastic pot, a small ball. He predicts\nevery single one first and you write the guesses in two columns. Then drop them in one at a time and check.\nA lovely question to leave hanging: \"A small metal nail sinks — so how does a huge metal ship float?\" You do not have to answer it.\nWondering is the point.\nActivity 2 — Make a sailboat\nFold a small boat from aluminium foil. Push a straw through a paper square to make a sail and stand it in the boat. Float it in the bowl and\nblow. Then ask: \"Did I push it or pull it?\" (A push — with air.)\nthese FLOAT on top\napple bottle cork\nstone coin spoon\nthese SINK to the bottom\nDraw this tank on paper and let him place each object himself before you test it.\n",
+      "safety": "An adult stays with the child for every activity. No glass, no sockets, no flames, and nothing small enough to swallow is left with a child\nalone. Water activities are done in a bowl or the sink, never near electrical items.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ]
+    }
+  ]
+}

@@ -1,0 +1,534 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "quiz_04",
+  "title": "Earth and Space Quiz",
+  "quiz": true,
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    26
+  ],
+  "steps": [
+    {
+      "id": "quiz_04.step.001",
+      "kind": "tap-choice",
+      "title": "Blue Earth",
+      "prompt": "Most of Earth is covered in...",
+      "options": [
+        {
+          "id": "water",
+          "label": "Water",
+          "art": "ocean"
+        },
+        {
+          "id": "grass",
+          "label": "Grass",
+          "art": "leaf"
+        },
+        {
+          "id": "sand",
+          "label": "Sand",
+          "art": "sand"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "water"
+      },
+      "assessed": true,
+      "objective": "quiz04.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "water",
+      "source": {
+        "pages": [
+          26
+        ],
+        "questionId": "quiz04.01",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "water",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_04",
+      "focus": "earth"
+    },
+    {
+      "id": "quiz_04.step.002",
+      "kind": "tap-choice",
+      "title": "Water explorer",
+      "prompt": "Choose the biggest and saltiest.",
+      "options": [
+        {
+          "id": "pond",
+          "label": "Pond",
+          "art": "pond"
+        },
+        {
+          "id": "ocean",
+          "label": "Ocean",
+          "art": "ocean"
+        },
+        {
+          "id": "lake",
+          "label": "Lake",
+          "art": "lake"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "ocean"
+      },
+      "assessed": true,
+      "objective": "quiz04.02",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "ocean",
+      "source": {
+        "pages": [
+          26
+        ],
+        "questionId": "quiz04.02",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "ocean",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_04"
+    },
+    {
+      "id": "quiz_04.step.003",
+      "kind": "tap-choice",
+      "title": "Soil discoveries",
+      "prompt": "Choose two things found in soil.",
+      "options": [
+        {
+          "id": "small_stones",
+          "label": "Small stones",
+          "art": "stone"
+        },
+        {
+          "id": "torch",
+          "label": "Torch",
+          "art": "torch"
+        },
+        {
+          "id": "dead_leaves",
+          "label": "Dead leaves",
+          "art": "dead_leaf"
+        },
+        {
+          "id": "trumpet",
+          "label": "Trumpet",
+          "art": "trumpet"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "small_stones",
+          "dead_leaves"
+        ]
+      },
+      "assessed": true,
+      "objective": "quiz04.03",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Any two: small stones, sand, dead leaves, worms, tiny insects, water, air",
+      "source": {
+        "pages": [
+          26
+        ],
+        "questionId": "quiz04.03",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "Any two: small stones, sand, dead leaves, worms, tiny insects, water, air",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_04",
+      "focus": "soil"
+    },
+    {
+      "id": "quiz_04.step.004",
+      "kind": "tap-choice",
+      "title": "Rock scientist",
+      "prompt": "Who studies rocks?",
+      "options": [
+        {
+          "id": "geologist",
+          "label": "Geologist",
+          "art": "geologist"
+        },
+        {
+          "id": "optometrist",
+          "label": "Optometrist",
+          "art": "optometrist"
+        },
+        {
+          "id": "astronomer",
+          "label": "Astronomer",
+          "art": "astronomer"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "geologist"
+      },
+      "assessed": true,
+      "objective": "quiz04.04",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "geologist",
+      "source": {
+        "pages": [
+          26
+        ],
+        "questionId": "quiz04.04",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "geologist",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_04",
+      "focus": "stone"
+    },
+    {
+      "id": "quiz_04.step.005",
+      "kind": "tap-choice",
+      "title": "Shape of Earth",
+      "prompt": "Choose the shape of Earth.",
+      "options": [
+        {
+          "id": "plate",
+          "label": "Plate",
+          "art": "plate"
+        },
+        {
+          "id": "box",
+          "label": "Box",
+          "art": "box"
+        },
+        {
+          "id": "ball",
+          "label": "Ball",
+          "art": "ball"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "ball"
+      },
+      "assessed": true,
+      "objective": "quiz04.05",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a ball",
+      "source": {
+        "pages": [
+          26
+        ],
+        "questionId": "quiz04.05",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "a ball",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_04",
+      "focus": "earth"
+    },
+    {
+      "id": "quiz_04.step.006",
+      "kind": "tap-choice",
+      "title": "Our Sun",
+      "prompt": "The Sun is a...",
+      "options": [
+        {
+          "id": "star",
+          "label": "Star",
+          "art": "star"
+        },
+        {
+          "id": "moon",
+          "label": "Moon",
+          "art": "moon"
+        },
+        {
+          "id": "planet",
+          "label": "Planet",
+          "art": "earth"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "star"
+      },
+      "assessed": true,
+      "objective": "quiz04.06",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "star",
+      "source": {
+        "pages": [
+          26
+        ],
+        "questionId": "quiz04.06",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "star",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_04",
+      "focus": "sun"
+    },
+    {
+      "id": "quiz_04.step.007",
+      "kind": "tap-choice",
+      "title": "Sun gifts",
+      "prompt": "Choose the two gifts.",
+      "options": [
+        {
+          "id": "heat",
+          "label": "Heat",
+          "art": "heat"
+        },
+        {
+          "id": "sound",
+          "label": "Sound",
+          "art": "sound"
+        },
+        {
+          "id": "light",
+          "label": "Light",
+          "art": "light"
+        },
+        {
+          "id": "water",
+          "label": "Water",
+          "art": "water"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "heat",
+          "light"
+        ]
+      },
+      "assessed": true,
+      "objective": "quiz04.07",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "heat and light",
+      "source": {
+        "pages": [
+          26
+        ],
+        "questionId": "quiz04.07",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "heat and light",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_04",
+      "focus": "sun"
+    },
+    {
+      "id": "quiz_04.step.008",
+      "kind": "tap-choice",
+      "title": "Moon claim",
+      "prompt": "Our heat and light come from the Moon. True or false?",
+      "options": [
+        {
+          "id": "true",
+          "label": "True",
+          "art": "true"
+        },
+        {
+          "id": "false",
+          "label": "False",
+          "art": "false"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "false"
+      },
+      "assessed": true,
+      "objective": "quiz04.08",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "FALSE — they come from the Sun",
+      "source": {
+        "pages": [
+          26
+        ],
+        "questionId": "quiz04.08",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "FALSE — they come from the Sun",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_04",
+      "focus": "moon"
+    },
+    {
+      "id": "quiz_04.step.009",
+      "kind": "match-lines",
+      "title": "Moon mission",
+      "prompt": "Complete the first Moon walk record.",
+      "options": [
+        {
+          "id": "person",
+          "label": "Person",
+          "art": "person"
+        },
+        {
+          "id": "year",
+          "label": "Year",
+          "art": "year"
+        }
+      ],
+      "targets": [
+        {
+          "id": "1968",
+          "label": "1968",
+          "art": "1968"
+        },
+        {
+          "id": "neil_armstrong",
+          "label": "Neil Armstrong",
+          "art": "neil_armstrong"
+        },
+        {
+          "id": "1970",
+          "label": "1970",
+          "art": "1970"
+        },
+        {
+          "id": "geologist",
+          "label": "Geologist",
+          "art": "geologist"
+        },
+        {
+          "id": "1969",
+          "label": "1969",
+          "art": "1969"
+        },
+        {
+          "id": "astronomer",
+          "label": "Astronomer",
+          "art": "astronomer"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "person": "neil_armstrong",
+          "year": "1969"
+        }
+      },
+      "assessed": true,
+      "objective": "quiz04.09",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Neil Armstrong, in 1969",
+      "source": {
+        "pages": [
+          26
+        ],
+        "questionId": "quiz04.09",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "Neil Armstrong, in 1969",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_04",
+      "focus": "astronaut"
+    },
+    {
+      "id": "quiz_04.step.010",
+      "kind": "tap-choice",
+      "title": "Air for the astronaut",
+      "prompt": "Why carry an oxygen pack?",
+      "options": [
+        {
+          "id": "there_is_no_air_on_the_moon",
+          "label": "There is no air on the Moon",
+          "art": "there_is_no_air_on_the_moon"
+        },
+        {
+          "id": "to_keep_water_out",
+          "label": "To keep water out",
+          "art": "to_keep_water_out"
+        },
+        {
+          "id": "to_make_music",
+          "label": "To make music",
+          "art": "to_make_music"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "there_is_no_air_on_the_moon"
+      },
+      "assessed": true,
+      "objective": "quiz04.10",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "There is no air on the Moon, so he must carry his own air to breathe",
+      "source": {
+        "pages": [
+          26
+        ],
+        "questionId": "quiz04.10",
+        "answerKeyPages": [
+          38
+        ],
+        "answerKeyText": "There is no air on the Moon, so he must carry his own air to breathe",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "quiz_04",
+      "focus": "astronaut"
+    }
+  ],
+  "stickers": [],
+  "homeActivities": []
+}

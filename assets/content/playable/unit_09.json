@@ -1,0 +1,876 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "unit_09",
+  "title": "Earth in Space",
+  "quiz": false,
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    24,
+    25
+  ],
+  "steps": [
+    {
+      "id": "unit_09.step.001",
+      "kind": "explore",
+      "title": "Space explorers",
+      "prompt": "Explore our three neighbours. Listen to the Sun safety rule.",
+      "options": [
+        {
+          "id": "earth",
+          "label": "Earth",
+          "art": "earth"
+        },
+        {
+          "id": "moon",
+          "label": "Moon",
+          "art": "moon"
+        },
+        {
+          "id": "sun",
+          "label": "Sun",
+          "art": "sun"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Explore our three neighbours. Listen to the Sun safety rule.",
+      "source": {
+        "pages": [
+          24,
+          25
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_09",
+      "minTouches": 3,
+      "safety": "We never, ever look straight at the Sun, not even for a moment. It can hurt your eyes badly.",
+      "senseDescriptions": {
+        "earth": "Earth is a round planet, mostly covered in water.",
+        "sun": "The Sun is a star. It gives us heat and light.",
+        "moon": "The Moon has no light of its own."
+      }
+    },
+    {
+      "id": "unit_09.step.002",
+      "kind": "free-plant",
+      "title": "Day and night",
+      "prompt": "Turn Earth and watch your place move into day and night.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "The side facing the Sun has day. The other side has night.",
+      "source": {
+        "pages": [
+          24,
+          25
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_09",
+      "lab": "day-night",
+      "safety": "We never, ever look straight at the Sun, not even for a moment. It can hurt your eyes badly.",
+      "labUi": {
+        "action": "Turn Earth"
+      }
+    },
+    {
+      "id": "unit_09.step.003",
+      "kind": "match-lines",
+      "title": "Earth explorer",
+      "prompt": "Sort the Earth discoveries.",
+      "options": [
+        {
+          "id": "earth_is_flat",
+          "label": "Earth is flat",
+          "art": "earth_is_flat"
+        },
+        {
+          "id": "earth_is_mostly_water",
+          "label": "Earth is mostly water",
+          "art": "earth_is_mostly_water"
+        },
+        {
+          "id": "our_heat_and_light_come_from_the_moon",
+          "label": "Our heat and light come from the Moon",
+          "art": "our_heat_and_light_come_from_the_moon"
+        },
+        {
+          "id": "earth_is_a_planet",
+          "label": "Earth is a planet",
+          "art": "earth_is_a_planet"
+        },
+        {
+          "id": "humans_can_live_on_earth",
+          "label": "Humans can live on Earth",
+          "art": "humans_can_live_on_earth"
+        }
+      ],
+      "targets": [
+        {
+          "id": "true",
+          "label": "True",
+          "art": "true"
+        },
+        {
+          "id": "false",
+          "label": "False",
+          "art": "false"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "earth_is_flat": "false",
+          "earth_is_a_planet": "true",
+          "earth_is_mostly_water": "true",
+          "humans_can_live_on_earth": "true",
+          "our_heat_and_light_come_from_the_moon": "false"
+        }
+      },
+      "assessed": true,
+      "objective": "u09.main.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) ✗ b) ✓ c) ✓ d) ✓ e) ✗ — heat and light come from the Sun, not the Moon.",
+      "source": {
+        "pages": [
+          24,
+          25
+        ],
+        "questionId": "u09.main.01",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "a) ✗ b) ✓ c) ✓ d) ✓ e) ✗ — heat and light come from the Sun, not the Moon.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_09",
+      "focus": "earth"
+    },
+    {
+      "id": "unit_09.step.004",
+      "kind": "tap-choice",
+      "title": "Star or planet?",
+      "prompt": "What is the Sun?",
+      "options": [
+        {
+          "id": "planet",
+          "label": "Planet",
+          "art": "earth"
+        },
+        {
+          "id": "moon",
+          "label": "Moon",
+          "art": "moon"
+        },
+        {
+          "id": "star",
+          "label": "Star",
+          "art": "star"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "star"
+      },
+      "assessed": true,
+      "objective": "u09.main.02",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a star",
+      "source": {
+        "pages": [
+          24,
+          25
+        ],
+        "questionId": "u09.main.02",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "a star",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_09",
+      "focus": "sun"
+    },
+    {
+      "id": "unit_09.step.005",
+      "kind": "tap-choice",
+      "title": "Gifts from the Sun",
+      "prompt": "Choose the two gifts from the Sun.",
+      "options": [
+        {
+          "id": "light",
+          "label": "Light",
+          "art": "light"
+        },
+        {
+          "id": "sound",
+          "label": "Sound",
+          "art": "sound"
+        },
+        {
+          "id": "water",
+          "label": "Water",
+          "art": "water"
+        },
+        {
+          "id": "heat",
+          "label": "Heat",
+          "art": "heat"
+        },
+        {
+          "id": "air",
+          "label": "Air",
+          "art": "air"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "light",
+          "heat"
+        ]
+      },
+      "assessed": true,
+      "objective": "u09.main.03",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "light and heat only. Not sound, air or water.",
+      "source": {
+        "pages": [
+          24,
+          25
+        ],
+        "questionId": "u09.main.03",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "light and heat only. Not sound, air or water.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_09",
+      "focus": "sun"
+    },
+    {
+      "id": "unit_09.step.006",
+      "kind": "match-lines",
+      "title": "First steps on the Moon",
+      "prompt": "Complete the mission record.",
+      "options": [
+        {
+          "id": "first_person",
+          "label": "First person",
+          "art": "first_person"
+        },
+        {
+          "id": "year",
+          "label": "Year",
+          "art": "year"
+        }
+      ],
+      "targets": [
+        {
+          "id": "1968",
+          "label": "1968",
+          "art": "1968"
+        },
+        {
+          "id": "neil_armstrong",
+          "label": "Neil Armstrong",
+          "art": "neil_armstrong"
+        },
+        {
+          "id": "1970",
+          "label": "1970",
+          "art": "1970"
+        },
+        {
+          "id": "geologist",
+          "label": "Geologist",
+          "art": "geologist"
+        },
+        {
+          "id": "1969",
+          "label": "1969",
+          "art": "1969"
+        },
+        {
+          "id": "astronomer",
+          "label": "Astronomer",
+          "art": "astronomer"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "first_person": "neil_armstrong",
+          "year": "1969"
+        }
+      },
+      "assessed": true,
+      "objective": "u09.main.04",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Neil Armstrong, in 1969.",
+      "source": {
+        "pages": [
+          24,
+          25
+        ],
+        "questionId": "u09.main.04",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "Neil Armstrong, in 1969.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_09",
+      "focus": "astronaut"
+    },
+    {
+      "id": "unit_09.step.007",
+      "kind": "match-lines",
+      "title": "Dress the astronaut",
+      "prompt": "Match each part of the suit to its job.",
+      "options": [
+        {
+          "id": "visor",
+          "label": "Visor",
+          "art": "visor"
+        },
+        {
+          "id": "gloves",
+          "label": "Gloves",
+          "art": "gloves"
+        },
+        {
+          "id": "oxygen_pack",
+          "label": "Oxygen pack",
+          "art": "oxygen"
+        },
+        {
+          "id": "boots",
+          "label": "Boots",
+          "art": "boots"
+        }
+      ],
+      "targets": [
+        {
+          "id": "protect_feet",
+          "label": "Protect feet",
+          "art": "protect_feet"
+        },
+        {
+          "id": "protect_hands",
+          "label": "Protect hands",
+          "art": "protect_hands"
+        },
+        {
+          "id": "breathe",
+          "label": "Breathe",
+          "art": "breathe"
+        },
+        {
+          "id": "protect_eyes",
+          "label": "Protect eyes",
+          "art": "protect_eyes"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "visor": "protect_eyes",
+          "oxygen_pack": "breathe",
+          "gloves": "protect_hands",
+          "boots": "protect_feet"
+        }
+      },
+      "assessed": true,
+      "objective": "u09.main.05",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Any two: visor — protects his eyes; oxygen pack — lets him breathe, because there is no air on the Moon; gloves — protect his hands; boots\n— protect his feet.",
+      "source": {
+        "pages": [
+          24,
+          25
+        ],
+        "questionId": "u09.main.05",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "Any two: visor — protects his eyes; oxygen pack — lets him breathe, because there is no air on the Moon; gloves — protect his hands; boots\n— protect his feet.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_09",
+      "board": "astronaut",
+      "focus": "astronaut"
+    },
+    {
+      "id": "unit_09.step.008",
+      "kind": "tap-choice",
+      "title": "Sun safety",
+      "prompt": "What is our rule?",
+      "options": [
+        {
+          "id": "never_look_straight_at_the_sun",
+          "label": "Never look straight at the Sun",
+          "art": "never_look_straight_at_the_sun"
+        },
+        {
+          "id": "look_straight_at_the_sun",
+          "label": "Look straight at the Sun",
+          "art": "look_straight_at_the_sun"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "never_look_straight_at_the_sun"
+      },
+      "assessed": true,
+      "objective": "u09.main.06",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Never look straight at the Sun — it can badly hurt your eyes.",
+      "source": {
+        "pages": [
+          24,
+          25
+        ],
+        "questionId": "u09.main.06",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "Never look straight at the Sun — it can badly hurt your eyes.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_09",
+      "safety": "We never, ever look straight at the Sun, not even for a moment. It can hurt your eyes badly."
+    },
+    {
+      "id": "unit_09.step.009",
+      "kind": "free-plant",
+      "title": "Paint our planet",
+      "prompt": "Colour the water blue and the land green.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "u09.main.07",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Earth is round and mostly blue because of its water.",
+      "source": {
+        "pages": [
+          24,
+          25
+        ],
+        "questionId": "u09.main.07",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "Child's own drawing: a round Earth with much more blue than green.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_09",
+      "lab": "earth-paint",
+      "labUi": {
+        "water": "Blue water",
+        "land": "Green land"
+      }
+    },
+    {
+      "id": "unit_09.step.010",
+      "kind": "tap-choice",
+      "title": "Everyday sunshine",
+      "prompt": "Choose two things the Sun does for us.",
+      "options": [
+        {
+          "id": "gives_daylight",
+          "label": "Gives daylight",
+          "art": "sun"
+        },
+        {
+          "id": "makes_music",
+          "label": "Makes music",
+          "art": "music"
+        },
+        {
+          "id": "helps_plants_grow",
+          "label": "Helps plants grow",
+          "art": "leaf"
+        },
+        {
+          "id": "gives_the_moon_its_own_light",
+          "label": "Gives the Moon its own light",
+          "art": "moon"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "gives_daylight",
+          "helps_plants_grow"
+        ]
+      },
+      "assessed": true,
+      "objective": "u09.main.08",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Any two: it warms us, it gives us daylight, it dries the washing, it makes plants grow, it warms the sea.",
+      "source": {
+        "pages": [
+          24,
+          25
+        ],
+        "questionId": "u09.main.08",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "Any two: it warms us, it gives us daylight, it dries the washing, it makes plants grow, it warms the sea.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_09"
+    },
+    {
+      "id": "unit_09.step.011",
+      "kind": "free-plant",
+      "title": "My star picture",
+      "prompt": "Touch stars to join them into your own shape. Give it a name.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Touch stars to join them into your own shape. Give it a name.",
+      "source": {
+        "pages": [
+          24,
+          25
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_09",
+      "lab": "stars",
+      "labUi": {
+        "name": "Name my star picture",
+        "finish": "Save my star picture"
+      }
+    },
+    {
+      "id": "unit_09.step.012",
+      "kind": "match-lines",
+      "title": "Discovery badges",
+      "prompt": "Match each discovery to its answer.",
+      "options": [
+        {
+          "id": "earth_is_a",
+          "label": "Earth is a",
+          "art": "earth"
+        },
+        {
+          "id": "earth_looks_mostly",
+          "label": "Earth looks mostly",
+          "art": "earth"
+        },
+        {
+          "id": "studies_the_stars",
+          "label": "Studies the stars",
+          "art": "star"
+        },
+        {
+          "id": "the_sun_is_a",
+          "label": "The Sun is a",
+          "art": "sun"
+        },
+        {
+          "id": "missing_on_the_moon",
+          "label": "Missing on the Moon",
+          "art": "oxygen"
+        }
+      ],
+      "targets": [
+        {
+          "id": "astronomer",
+          "label": "Astronomer",
+          "art": "astronomer"
+        },
+        {
+          "id": "air",
+          "label": "Air",
+          "art": "air"
+        },
+        {
+          "id": "blue",
+          "label": "Blue",
+          "art": "blue"
+        },
+        {
+          "id": "star",
+          "label": "Star",
+          "art": "star"
+        },
+        {
+          "id": "planet",
+          "label": "Planet",
+          "art": "planet"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "earth_is_a": "planet",
+          "the_sun_is_a": "star",
+          "earth_looks_mostly": "blue",
+          "missing_on_the_moon": "air",
+          "studies_the_stars": "astronomer"
+        }
+      },
+      "assessed": true,
+      "objective": "u09.choice.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "planet. star. blue. air. astronomer.",
+      "source": {
+        "pages": [
+          24,
+          25
+        ],
+        "questionId": "u09.choice.01",
+        "answerKeyPages": [
+          37
+        ],
+        "answerKeyText": "planet",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_09",
+      "extraObjectives": [
+        "u09.choice.02",
+        "u09.choice.03",
+        "u09.choice.04",
+        "u09.choice.05"
+      ],
+      "relatedSources": [
+        {
+          "pages": [
+            24,
+            25
+          ],
+          "questionId": "u09.choice.02",
+          "answerKeyPages": [
+            37
+          ],
+          "answerKeyText": "star",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            24,
+            25
+          ],
+          "questionId": "u09.choice.03",
+          "answerKeyPages": [
+            37
+          ],
+          "answerKeyText": "blue",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            24,
+            25
+          ],
+          "questionId": "u09.choice.04",
+          "answerKeyPages": [
+            37
+          ],
+          "answerKeyText": "air",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            24,
+            25
+          ],
+          "questionId": "u09.choice.05",
+          "answerKeyPages": [
+            37
+          ],
+          "answerKeyText": "astronomer",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        }
+      ],
+      "objectiveItems": {
+        "u09.choice.01": [
+          "earth_is_a"
+        ],
+        "u09.choice.02": [
+          "the_sun_is_a"
+        ],
+        "u09.choice.03": [
+          "earth_looks_mostly"
+        ],
+        "u09.choice.04": [
+          "missing_on_the_moon"
+        ],
+        "u09.choice.05": [
+          "studies_the_stars"
+        ]
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "earth",
+      "word": "Earth",
+      "meaning": "and space",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "planet",
+      "word": "planet",
+      "meaning": "A huge round world in space. We live on the planet Earth.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "sun",
+      "word": "Sun",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "star",
+      "word": "star",
+      "meaning": "A huge ball of burning gas that makes its own light. The Sun is a star.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "moon",
+      "word": "Moon",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "heat",
+      "word": "heat",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "light",
+      "word": "light",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "astronaut",
+      "word": "astronaut",
+      "meaning": "A person who travels into space.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "astronomy",
+      "word": "astronomy",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Star spotting\nGo outside after dark, away from bright lights if you can. Look for the brightest stars. Join a few of them with your finger to make a shape\n— that is exactly what people have done for thousands of years, and it is how star pictures like Libra and Cygnus got their names. Let him\ninvent a shape of his own and give it a name.\nvisor — protects his eyes\noxygen pack — so he can breathe\ngloves — protect his hands\nboots — protect his feet\nThere is no air on the Moon, so an astronaut must carry his own.\n",
+      "safety": "An adult stays with the child for every activity. No glass, no sockets, no flames, and nothing small enough to swallow is left with a child\nalone. Water activities are done in a bowl or the sink, never near electrical items.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ]
+    }
+  ]
+}

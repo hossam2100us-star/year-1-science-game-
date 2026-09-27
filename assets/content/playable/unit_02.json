@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": 2,
+  "contentVersion": 4,
   "id": "unit_02",
   "title": "Plants",
   "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
@@ -13,8 +13,8 @@
     {
       "id": "unit_02.step.001",
       "kind": "explore",
-      "title": "The little greenhouse",
-      "prompt": "Touch the plant parts. Listen to their names.",
+      "title": "Plant parts",
+      "prompt": "Touch each part of the plant to discover what it does.",
       "options": [
         {
           "id": "roots",
@@ -65,163 +65,20 @@
       }
     },
     {
-      "id": "unit_02.step.002",
-      "kind": "story",
-      "title": "Roots",
-      "prompt": "Roots — \"the plant's straws\". They drink water from the soil and hold the plant down so the wind cannot blow it away.",
-      "options": [
-        {
-          "id": "roots",
-          "label": "Roots",
-          "art": "roots"
-        }
-      ],
-      "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "",
-      "explanation": "",
-      "scene": "plant",
-      "section": "Big Idea",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      },
-      "playScene": "plant-lab",
-      "focus": "roots",
-      "playInstruction": "Touch the roots. Watch what happens."
-    },
-    {
-      "id": "unit_02.step.003",
-      "kind": "story",
-      "title": "Stem",
-      "prompt": "Stem — \"the plant's neck\". It holds the plant up and carries the water all the way to the leaves.",
-      "options": [
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        }
-      ],
-      "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "",
-      "explanation": "",
-      "scene": "plant",
-      "section": "Big Idea",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      },
-      "playScene": "plant-lab",
-      "focus": "stem",
-      "playInstruction": "Touch the stem. Watch what happens."
-    },
-    {
-      "id": "unit_02.step.004",
-      "kind": "story",
-      "title": "Leaf",
-      "prompt": "Leaf — \"the plant's kitchen\". Leaves catch the sunlight and use it to make the plant's food.",
-      "options": [
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        }
-      ],
-      "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "",
-      "explanation": "",
-      "scene": "plant",
-      "section": "Big Idea",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      },
-      "playScene": "plant-lab",
-      "focus": "leaf",
-      "playInstruction": "Touch the leaf. Watch what happens."
-    },
-    {
-      "id": "unit_02.step.005",
-      "kind": "story",
-      "title": "Flower",
-      "prompt": "Flower — \"where the babies are made\". The flower makes the seeds that grow into new plants.",
-      "options": [
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        }
-      ],
-      "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "",
-      "explanation": "",
-      "scene": "plant",
-      "section": "Big Idea",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      },
-      "playScene": "plant-lab",
-      "focus": "flower",
-      "playInstruction": "Touch the flower. Watch what happens."
-    },
-    {
       "id": "unit_02.step.006",
-      "kind": "label-diagram",
-      "title": "Build a Plant",
-      "prompt": "Put the roots on the plant.",
+      "kind": "free-plant",
+      "title": "Build your plant",
+      "prompt": "Build a plant in the pot. Choose a piece, then touch where it belongs, or drag it there.",
       "options": [
         {
-          "id": "roots",
-          "label": "Roots",
-          "art": "roots"
-        }
-      ],
-      "targets": [
-        {
-          "id": "roots",
-          "label": "Roots",
-          "art": "roots"
+          "id": "flower",
+          "label": "Flower",
+          "art": "flower"
         },
         {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
+          "id": "roots",
+          "label": "Roots",
+          "art": "roots"
         },
         {
           "id": "leaf",
@@ -229,17 +86,13 @@
           "art": "leaf"
         },
         {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
+          "id": "stem",
+          "label": "Stem",
+          "art": "stem"
         }
       ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "roots": "roots"
-        }
-      },
+      "targets": [],
+      "answer": null,
       "assessed": false,
       "objective": "",
       "hint": "Look at the shape and position of each part.",
@@ -258,187 +111,17 @@
       },
       "diagram": "plant",
       "playScene": "plant-lab",
-      "playInstruction": "Drag the picture onto the plant, or touch its place."
-    },
-    {
-      "id": "unit_02.step.007",
-      "kind": "label-diagram",
-      "title": "Build a Plant",
-      "prompt": "Put the stem on the plant.",
-      "options": [
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        }
-      ],
-      "targets": [
-        {
-          "id": "roots",
-          "label": "Roots",
-          "art": "roots"
-        },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "stem": "stem"
-        }
+      "playInstruction": "Build the whole plant. Watch each part come to life.",
+      "minTouches": 4,
+      "buildChallenge": true,
+      "partDescriptions": {
+        "roots": "Roots — \"the plant's straws\". They drink water from the soil and hold the plant down so the wind cannot blow it away.",
+        "stem": "Stem — \"the plant's neck\". It holds the plant up and carries the water all the way to the leaves.",
+        "leaf": "Leaf — \"the plant's kitchen\". Leaves catch the sunlight and use it to make the plant's food.",
+        "flower": "Flower — \"where the babies are made\". The flower makes the seeds that grow into new plants."
       },
-      "assessed": false,
-      "objective": "",
-      "hint": "Look at the shape and position of each part.",
-      "explanation": "It holds the plant up and carries the water all the way to the leaves.",
-      "scene": "plant",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      },
-      "diagram": "plant",
-      "playScene": "plant-lab",
-      "playInstruction": "Drag the picture onto the plant, or touch its place."
-    },
-    {
-      "id": "unit_02.step.008",
-      "kind": "label-diagram",
-      "title": "Build a Plant",
-      "prompt": "Put the leaf on the plant.",
-      "options": [
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        }
-      ],
-      "targets": [
-        {
-          "id": "roots",
-          "label": "Roots",
-          "art": "roots"
-        },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "leaf": "leaf"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Look at the shape and position of each part.",
-      "explanation": "Leaves catch the sunlight and use it to make the plant's food.",
-      "scene": "plant",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      },
-      "diagram": "plant",
-      "playScene": "plant-lab",
-      "playInstruction": "Drag the picture onto the plant, or touch its place."
-    },
-    {
-      "id": "unit_02.step.009",
-      "kind": "label-diagram",
-      "title": "Build a Plant",
-      "prompt": "Put the flower on the plant.",
-      "options": [
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        }
-      ],
-      "targets": [
-        {
-          "id": "roots",
-          "label": "Roots",
-          "art": "roots"
-        },
-        {
-          "id": "stem",
-          "label": "Stem",
-          "art": "stem"
-        },
-        {
-          "id": "leaf",
-          "label": "Leaf",
-          "art": "leaf"
-        },
-        {
-          "id": "flower",
-          "label": "Flower",
-          "art": "flower"
-        }
-      ],
-      "answer": {
-        "type": "mapping",
-        "value": {
-          "flower": "flower"
-        }
-      },
-      "assessed": false,
-      "objective": "",
-      "hint": "Look at the shape and position of each part.",
-      "explanation": "The flower makes the seeds that grow into new plants.",
-      "scene": "plant",
-      "section": "Explore",
-      "source": {
-        "pages": [
-          6,
-          7
-        ],
-        "questionId": null,
-        "answerKeyPages": [],
-        "answerKeyText": "",
-        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
-      },
-      "diagram": "plant",
-      "playScene": "plant-lab",
-      "playInstruction": "Drag the picture onto the plant, or touch its place."
+      "completionText": "You built a whole plant!",
+      "retryText": "Try another place for this part."
     },
     {
       "id": "unit_02.step.010",
@@ -588,24 +271,14 @@
       "prompt": "Fill the five baskets. Drag each food to the part we eat.",
       "options": [
         {
+          "id": "rice",
+          "label": "Rice",
+          "art": "rice"
+        },
+        {
           "id": "carrot",
           "label": "Carrot",
           "art": "carrot"
-        },
-        {
-          "id": "radish",
-          "label": "Radish",
-          "art": "radish"
-        },
-        {
-          "id": "celery",
-          "label": "Celery",
-          "art": "celery"
-        },
-        {
-          "id": "sugar_cane",
-          "label": "Sugar cane",
-          "art": "sugar_cane"
         },
         {
           "id": "lettuce",
@@ -613,24 +286,9 @@
           "art": "lettuce"
         },
         {
-          "id": "mint",
-          "label": "Mint",
-          "art": "mint"
-        },
-        {
-          "id": "parsley",
-          "label": "Parsley",
-          "art": "parsley"
-        },
-        {
-          "id": "cauliflower",
-          "label": "Cauliflower",
-          "art": "cauliflower"
-        },
-        {
-          "id": "broccoli",
-          "label": "Broccoli",
-          "art": "broccoli"
+          "id": "celery",
+          "label": "Celery",
+          "art": "celery"
         },
         {
           "id": "beans",
@@ -638,9 +296,34 @@
           "art": "beans"
         },
         {
-          "id": "rice",
-          "label": "Rice",
-          "art": "rice"
+          "id": "broccoli",
+          "label": "Broccoli",
+          "art": "broccoli"
+        },
+        {
+          "id": "mint",
+          "label": "Mint",
+          "art": "mint"
+        },
+        {
+          "id": "radish",
+          "label": "Radish",
+          "art": "radish"
+        },
+        {
+          "id": "peas",
+          "label": "Peas",
+          "art": "peas"
+        },
+        {
+          "id": "sugar_cane",
+          "label": "Sugar cane",
+          "art": "sugar_cane"
+        },
+        {
+          "id": "parsley",
+          "label": "Parsley",
+          "art": "parsley"
         },
         {
           "id": "lentils",
@@ -648,9 +331,9 @@
           "art": "lentils"
         },
         {
-          "id": "peas",
-          "label": "Peas",
-          "art": "peas"
+          "id": "cauliflower",
+          "label": "Cauliflower",
+          "art": "cauliflower"
         }
       ],
       "targets": [
@@ -1192,7 +875,7 @@
       "id": "unit_02.step.032",
       "kind": "free-plant",
       "title": "My own plant",
-      "prompt": "Build your own plant picture. Touch each part to add it.",
+      "prompt": "Make your own plant. Drag each piece onto the workbench, or choose a piece and touch its space.",
       "options": [
         {
           "id": "roots",
@@ -1447,5 +1130,47 @@
     "unit_02.step.038": "unit_02.step.025",
     "unit_02.step.039": "unit_02.fridge.v2",
     "unit_02.step.040": "unit_02.step.028"
-  }
+  },
+  "previousStepIdsV2": [
+    "unit_02.step.001",
+    "unit_02.step.002",
+    "unit_02.step.003",
+    "unit_02.step.004",
+    "unit_02.step.005",
+    "unit_02.step.006",
+    "unit_02.step.007",
+    "unit_02.step.008",
+    "unit_02.step.009",
+    "unit_02.step.010",
+    "unit_02.step.011",
+    "unit_02.fridge.v2",
+    "unit_02.step.025",
+    "unit_02.bean-trail.v2",
+    "unit_02.step.027",
+    "unit_02.step.028",
+    "unit_02.seed-care.v2",
+    "unit_02.step.030",
+    "unit_02.step.037",
+    "unit_02.step.032",
+    "unit_02.step.033"
+  ],
+  "previousStepIdsV3": [
+    "unit_02.step.001",
+    "unit_02.step.006",
+    "unit_02.step.007",
+    "unit_02.step.008",
+    "unit_02.step.009",
+    "unit_02.step.010",
+    "unit_02.step.011",
+    "unit_02.fridge.v2",
+    "unit_02.step.025",
+    "unit_02.bean-trail.v2",
+    "unit_02.step.027",
+    "unit_02.step.028",
+    "unit_02.seed-care.v2",
+    "unit_02.step.030",
+    "unit_02.step.037",
+    "unit_02.step.032",
+    "unit_02.step.033"
+  ]
 }

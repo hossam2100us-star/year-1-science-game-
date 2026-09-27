@@ -1,0 +1,919 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "unit_06",
+  "title": "Sound",
+  "quiz": false,
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    17,
+    18
+  ],
+  "steps": [
+    {
+      "id": "unit_06.step.001",
+      "kind": "explore",
+      "title": "Band room",
+      "prompt": "Explore the instruments. Listen to the action for each one.",
+      "options": [
+        {
+          "id": "triangle",
+          "label": "Triangle",
+          "art": "triangle"
+        },
+        {
+          "id": "trumpet",
+          "label": "Trumpet",
+          "art": "trumpet"
+        },
+        {
+          "id": "drum",
+          "label": "Drum",
+          "art": "drum"
+        },
+        {
+          "id": "maracas",
+          "label": "Maracas",
+          "art": "maracas"
+        },
+        {
+          "id": "sitar",
+          "label": "Sitar",
+          "art": "sitar"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Explore the instruments. Listen to the action for each one.",
+      "source": {
+        "pages": [
+          17,
+          18
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_06",
+      "minTouches": 5,
+      "senseDescriptions": {
+        "triangle": "Hit the triangle.",
+        "maracas": "Shake the maracas.",
+        "trumpet": "Blow the trumpet.",
+        "sitar": "Pluck the sitar.",
+        "drum": "Beat the drum."
+      },
+      "band": true
+    },
+    {
+      "id": "unit_06.step.002",
+      "kind": "tap-choice",
+      "title": "Sound catcher",
+      "prompt": "Which body part catches the sounds?",
+      "options": [
+        {
+          "id": "eyes",
+          "label": "Eyes",
+          "art": "eyes"
+        },
+        {
+          "id": "nose",
+          "label": "Nose",
+          "art": "nose"
+        },
+        {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "ears"
+      },
+      "assessed": true,
+      "objective": "u06.main.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "My ears.",
+      "source": {
+        "pages": [
+          17,
+          18
+        ],
+        "questionId": "u06.main.01",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "My ears.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_06"
+    },
+    {
+      "id": "unit_06.step.003",
+      "kind": "match-lines",
+      "title": "Conduct the band",
+      "prompt": "Give each instrument its playing action.",
+      "options": [
+        {
+          "id": "triangle",
+          "label": "Triangle",
+          "art": "triangle"
+        },
+        {
+          "id": "trumpet",
+          "label": "Trumpet",
+          "art": "trumpet"
+        },
+        {
+          "id": "drum",
+          "label": "Drum",
+          "art": "drum"
+        },
+        {
+          "id": "maracas",
+          "label": "Maracas",
+          "art": "maracas"
+        },
+        {
+          "id": "sitar",
+          "label": "Sitar",
+          "art": "sitar"
+        }
+      ],
+      "targets": [
+        {
+          "id": "beat",
+          "label": "Beat",
+          "art": "beat"
+        },
+        {
+          "id": "pluck",
+          "label": "Pluck",
+          "art": "pluck"
+        },
+        {
+          "id": "blow",
+          "label": "Blow",
+          "art": "blow"
+        },
+        {
+          "id": "shake",
+          "label": "Shake",
+          "art": "shake"
+        },
+        {
+          "id": "hit",
+          "label": "Hit",
+          "art": "hit"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "triangle": "hit",
+          "maracas": "shake",
+          "trumpet": "blow",
+          "sitar": "pluck",
+          "drum": "beat"
+        }
+      },
+      "assessed": true,
+      "objective": "u06.main.02",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) hit b) shake c) blow d) pluck e) beat",
+      "source": {
+        "pages": [
+          17,
+          18
+        ],
+        "questionId": "u06.main.02",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "a) hit b) shake c) blow d) pluck e) beat",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_06",
+      "band": true
+    },
+    {
+      "id": "unit_06.step.004",
+      "kind": "free-plant",
+      "title": "Sound boxes",
+      "prompt": "Predict which box sounds louder, then shake each box.",
+      "options": [
+        {
+          "id": "stone_box",
+          "label": "Stone box",
+          "art": "stone"
+        },
+        {
+          "id": "feather_box",
+          "label": "Feather box",
+          "art": "feather"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "The hard, heavy stone makes a louder sound than the soft, light feather.",
+      "source": {
+        "pages": [
+          17,
+          18
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_06",
+      "lab": "sound-box",
+      "results": {
+        "stone_box": "loud",
+        "feather_box": "quiet"
+      },
+      "labUi": {
+        "choices": {
+          "loud": "Loud",
+          "quiet": "Quiet"
+        },
+        "action": "Shake the box",
+        "result": "Compare the sounds"
+      }
+    },
+    {
+      "id": "unit_06.step.005",
+      "kind": "tap-choice",
+      "title": "Box detective",
+      "prompt": "Which box makes the louder sound?",
+      "options": [
+        {
+          "id": "feather_box",
+          "label": "Feather box",
+          "art": "feather"
+        },
+        {
+          "id": "stone_box",
+          "label": "Stone box",
+          "art": "stone"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "stone_box"
+      },
+      "assessed": true,
+      "objective": "u06.main.03",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "The stone — it is hard and heavy, so it makes a much louder sound than a feather.",
+      "source": {
+        "pages": [
+          17,
+          18
+        ],
+        "questionId": "u06.main.03",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "The stone — it is hard and heavy, so it makes a much louder sound than a feather.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_06"
+    },
+    {
+      "id": "unit_06.step.006",
+      "kind": "free-plant",
+      "title": "Sound walk",
+      "prompt": "Move away from the drum. Listen and watch the sound fade.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Sound gets quieter and fainter as you move away.",
+      "source": {
+        "pages": [
+          17,
+          18
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_06",
+      "lab": "distance",
+      "labUi": {
+        "near": "Near the drum",
+        "far": "Far away"
+      }
+    },
+    {
+      "id": "unit_06.step.007",
+      "kind": "tap-choice",
+      "title": "Farther away",
+      "prompt": "As you walk away from the drum, what happens?",
+      "options": [
+        {
+          "id": "quieter_and_fainter",
+          "label": "Quieter and fainter",
+          "art": "quieter_and_fainter"
+        },
+        {
+          "id": "louder_and_louder",
+          "label": "Louder and louder",
+          "art": "louder_and_louder"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "quieter_and_fainter"
+      },
+      "assessed": true,
+      "objective": "u06.main.04",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "quieter and fainter (accept: softer, harder to hear)",
+      "source": {
+        "pages": [
+          17,
+          18
+        ],
+        "questionId": "u06.main.04",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "quieter and fainter (accept: softer, harder to hear)",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_06",
+      "focus": "drum"
+    },
+    {
+      "id": "unit_06.step.008",
+      "kind": "match-lines",
+      "title": "Drum explorers",
+      "prompt": "Read the bars. Match the furthest listener and their number of steps.",
+      "options": [
+        {
+          "id": "furthest_listener",
+          "label": "Furthest listener",
+          "art": "furthest_listener"
+        },
+        {
+          "id": "maris_took",
+          "label": "Maris took",
+          "art": "maris_took"
+        }
+      ],
+      "targets": [
+        {
+          "id": "zara",
+          "label": "Zara",
+          "art": "zara"
+        },
+        {
+          "id": "8_steps",
+          "label": "8 steps",
+          "art": "8_steps"
+        },
+        {
+          "id": "annay",
+          "label": "Annay",
+          "art": "annay"
+        },
+        {
+          "id": "23_steps",
+          "label": "23 steps",
+          "art": "23_steps"
+        },
+        {
+          "id": "david",
+          "label": "David",
+          "art": "david"
+        },
+        {
+          "id": "14_steps",
+          "label": "14 steps",
+          "art": "14_steps"
+        },
+        {
+          "id": "maris",
+          "label": "Maris",
+          "art": "maris"
+        },
+        {
+          "id": "20_steps",
+          "label": "20 steps",
+          "art": "20_steps"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "furthest_listener": "maris",
+          "maris_took": "23_steps"
+        }
+      },
+      "assessed": true,
+      "objective": "u06.main.05",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) Maris (23 steps) b) 23 steps",
+      "source": {
+        "pages": [
+          17,
+          18
+        ],
+        "questionId": "u06.main.05",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "a) Maris (23 steps) b) 23 steps",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_06",
+      "table": [
+        {
+          "name": "Annay",
+          "value": 20
+        },
+        {
+          "name": "Zara",
+          "value": 14
+        },
+        {
+          "name": "Maris",
+          "value": 23
+        },
+        {
+          "name": "David",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "unit_06.step.009",
+      "kind": "tap-choice",
+      "title": "Tapping sticks",
+      "prompt": "How can you make the sticks sound louder?",
+      "options": [
+        {
+          "id": "tap_harder",
+          "label": "Tap harder",
+          "art": "tap_harder"
+        },
+        {
+          "id": "tap_more_gently",
+          "label": "Tap more gently",
+          "art": "tap_more_gently"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "tap_harder"
+      },
+      "assessed": true,
+      "objective": "u06.main.06",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Tap them together harder. (A bigger push makes a louder sound.)",
+      "source": {
+        "pages": [
+          17,
+          18
+        ],
+        "questionId": "u06.main.06",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "Tap them together harder. (A bigger push makes a louder sound.)",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_06",
+      "focus": "sticks"
+    },
+    {
+      "id": "unit_06.step.010",
+      "kind": "order-sequence",
+      "title": "Quiet to loud",
+      "prompt": "Touch these sounds in order, quietest first.",
+      "options": [
+        {
+          "id": "thunder",
+          "label": "Thunder",
+          "art": "thunder"
+        },
+        {
+          "id": "door_slamming",
+          "label": "Door slamming",
+          "art": "door"
+        },
+        {
+          "id": "whisper",
+          "label": "Whisper",
+          "art": "whisper"
+        },
+        {
+          "id": "cat_walking",
+          "label": "Cat walking",
+          "art": "cat"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "cat_walking",
+          "whisper",
+          "door_slamming",
+          "thunder"
+        ]
+      },
+      "assessed": true,
+      "objective": "u06.main.07",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "A cat walking → a whisper → a door slamming → thunder.",
+      "source": {
+        "pages": [
+          17,
+          18
+        ],
+        "questionId": "u06.main.07",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "A cat walking → a whisper → a door slamming → thunder.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_06"
+    },
+    {
+      "id": "unit_06.step.011",
+      "kind": "tap-choice",
+      "title": "Feel a hum",
+      "prompt": "Gently touch your throat and hum. What do you feel?",
+      "options": [
+        {
+          "id": "buzzing_or_shaking",
+          "label": "Buzzing or shaking",
+          "art": "buzzing_or_shaking"
+        },
+        {
+          "id": "water_flowing",
+          "label": "Water flowing",
+          "art": "water_flowing"
+        },
+        {
+          "id": "a_bright_light",
+          "label": "A bright light",
+          "art": "a_bright_light"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "buzzing_or_shaking"
+      },
+      "assessed": true,
+      "objective": "u06.main.08",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "A buzzing or shaking under his hand. Sound is made by something shaking very fast.",
+      "source": {
+        "pages": [
+          17,
+          18
+        ],
+        "questionId": "u06.main.08",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "A buzzing or shaking under his hand. Sound is made by something shaking very fast.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_06",
+      "focus": "hum"
+    },
+    {
+      "id": "unit_06.step.012",
+      "kind": "match-lines",
+      "title": "Discovery badges",
+      "prompt": "Match each discovery to its answer.",
+      "options": [
+        {
+          "id": "play_a_drum",
+          "label": "Play a drum",
+          "art": "drum"
+        },
+        {
+          "id": "louder_shaken_box",
+          "label": "Louder shaken box",
+          "art": "stone"
+        },
+        {
+          "id": "instrument_you_blow",
+          "label": "Instrument you blow",
+          "art": "trumpet"
+        },
+        {
+          "id": "walk_away_from_sound",
+          "label": "Walk away from sound",
+          "art": "drum"
+        },
+        {
+          "id": "something_making_a_sound",
+          "label": "Something making a sound",
+          "art": "music"
+        }
+      ],
+      "targets": [
+        {
+          "id": "trumpet",
+          "label": "Trumpet",
+          "art": "trumpet"
+        },
+        {
+          "id": "source_of_sound",
+          "label": "Source of sound",
+          "art": "source_of_sound"
+        },
+        {
+          "id": "stone",
+          "label": "Stone",
+          "art": "stone"
+        },
+        {
+          "id": "fainter",
+          "label": "Fainter",
+          "art": "fainter"
+        },
+        {
+          "id": "beating",
+          "label": "Beating",
+          "art": "beating"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "play_a_drum": "beating",
+          "walk_away_from_sound": "fainter",
+          "louder_shaken_box": "stone",
+          "something_making_a_sound": "source_of_sound",
+          "instrument_you_blow": "trumpet"
+        }
+      },
+      "assessed": true,
+      "objective": "u06.choice.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "beating. fainter. a stone. source of sound. trumpet.",
+      "source": {
+        "pages": [
+          17,
+          18
+        ],
+        "questionId": "u06.choice.01",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "beating",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_06",
+      "extraObjectives": [
+        "u06.choice.02",
+        "u06.choice.03",
+        "u06.choice.04",
+        "u06.choice.05"
+      ],
+      "relatedSources": [
+        {
+          "pages": [
+            17,
+            18
+          ],
+          "questionId": "u06.choice.02",
+          "answerKeyPages": [
+            36
+          ],
+          "answerKeyText": "fainter",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            17,
+            18
+          ],
+          "questionId": "u06.choice.03",
+          "answerKeyPages": [
+            36
+          ],
+          "answerKeyText": "a stone",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            17,
+            18
+          ],
+          "questionId": "u06.choice.04",
+          "answerKeyPages": [
+            36
+          ],
+          "answerKeyText": "source of sound",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            17,
+            18
+          ],
+          "questionId": "u06.choice.05",
+          "answerKeyPages": [
+            36
+          ],
+          "answerKeyText": "trumpet",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        }
+      ],
+      "objectiveItems": {
+        "u06.choice.01": [
+          "play_a_drum"
+        ],
+        "u06.choice.02": [
+          "walk_away_from_sound"
+        ],
+        "u06.choice.03": [
+          "louder_shaken_box"
+        ],
+        "u06.choice.04": [
+          "something_making_a_sound"
+        ],
+        "u06.choice.05": [
+          "instrument_you_blow"
+        ]
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "sound",
+      "word": "sound",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "source_of_sound",
+      "word": "source of sound",
+      "meaning": "Whatever the sound is coming from — a drum, a bell, your voice.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "loud",
+      "word": "loud",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "quiet",
+      "word": "quiet",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "fainter",
+      "word": "fainter",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "ears",
+      "word": "ears",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "hit",
+      "word": "hit",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "shake",
+      "word": "shake",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "blow",
+      "word": "blow",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "pluck",
+      "word": "pluck",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Activity 1 — Sound boxes\nTake three small empty boxes or plastic containers. Put rice in the first, a stone or a coin in the second, cotton wool or a feather in the\nthird. Close them and shake each one. Ask: \"Which is loud? Which is quiet? Why do you think?\" Hard, heavy things make loud sounds.\nSoft, light things make almost none.\nActivity 2 — How far can you hear it?\nStand in one place and bang a pot with a wooden spoon. He walks away one step at a time, counting his steps, until he cannot hear it any\nmore. Write the number down. Now bang the pot harder and repeat. He can walk further this time.\nTwo lessons in one game: a louder sound travels further, and every sound gets fainter with distance.\ndrum 20 steps away\nloud quieter fainter and fainter\nThe further the sound travels, the fainter it gets — until the ear cannot catch it.\n",
+      "safety": "An adult stays with the child for every activity. No glass, no sockets, no flames, and nothing small enough to swallow is left with a child\nalone. Water activities are done in a bowl or the sink, never near electrical items.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ]
+    }
+  ]
+}

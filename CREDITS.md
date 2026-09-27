@@ -1,5 +1,13 @@
 # Asset and content credits
 
+## Ourselves review — 26 September 2026
+
+`lib/features/biology/body_scene.dart`, `biology_art.dart` and `shoe_measure.dart`
+contain original code-drawn educational artwork: explorer characters, eye and sense
+illustrations, everyday objects, quiz objects and shoes. No external or copied book
+artwork is used. Geometry is shared with the interactive body targets. See
+`docs/BIOLOGY_REVIEW_20260926.md` for the source and validation notes.
+
 No book illustrations, copyrighted characters, stock photos, or downloaded character art are included.
 
 | Asset | Origin | License |
@@ -38,3 +46,29 @@ assets/images/islands-v2.png, assets/images/bean-stages-v1.png, and assets/image
 
 - `assets/images/light-room-v1.png` and `assets/images/light-plants-v1.png`: original artwork generated with OpenAI imagegen for the light experiment. No third-party illustration copied. Prompts and source notes: `docs/LIGHT_TEST_ART.md`.
 
+# Plant review illustrations — 26 September 2026
+
+Original code-drawn illustrations in `plant_workshop.dart`: toy car and ball,
+paper sheets, wind, a brown drooping plant, and separate workshop plant pieces.
+No external artwork or book illustrations are copied. The workshop is ungraded;
+its roots, stem, leaves and flower follow the existing source-linked activity.
+
+## Ourselves illustrations — 27 September 2026
+
+`assets/images/explorer-boy-v2.png`, `explorer-girl-v2.png`, `five-senses-v2.png`
+and `sense-objects-v2.png` are original artwork generated for this project with
+the built-in OpenAI image-generation tool. They are bundled for offline use;
+no textbook illustrations or third-party character artwork were copied. These
+are not represented as CC0 stock. Generation briefs and provenance are recorded
+in `docs/OURSELVES_V2_REVIEW.md`.
+
+## Remaining science islands — 27 September 2026
+
+Six original project image atlases are bundled in `assets/images`: materials,
+physics, earth, electric, science-extras and science-details (all `-v1.png`).
+Generated using the built-in OpenAI image tool; no textbook art or third-party
+characters copied. Not represented as CC0 stock. Generation briefs and source
+filenames are in `docs/REMAINING_ISLANDS_REVIEW.md`.
+
+Seven local WAVs in `assets/audio` are original synthesized illustrative tones,
+created by `scripts/build_science_audio.py`; no external recordings are used.

@@ -1,0 +1,928 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "unit_07",
+  "title": "Electricity and Magnets",
+  "quiz": false,
+  "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
+  "sourcePages": [
+    19,
+    20
+  ],
+  "steps": [
+    {
+      "id": "unit_07.step.001",
+      "kind": "explore",
+      "title": "Safe science workshop",
+      "prompt": "Listen to all three safety rules before exploring.",
+      "options": [
+        {
+          "id": "keep_away_from_sockets",
+          "label": "Keep away from sockets",
+          "art": "safe"
+        },
+        {
+          "id": "keep_hands_dry",
+          "label": "Keep hands dry",
+          "art": "dry_hands"
+        },
+        {
+          "id": "grown_ups_plug_things_in",
+          "label": "Grown-ups plug things in",
+          "art": "adult"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Listen to all three safety rules before exploring.",
+      "source": {
+        "pages": [
+          19,
+          20
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_07",
+      "minTouches": 3,
+      "safety": "Electricity is very useful, but it is dangerous. We never put our fingers, or anything else, into a socket. Only grown‑ups plug things in. We never touch electrical things with wet hands.",
+      "senseDescriptions": {
+        "keep_away_from_sockets": "We never put our fingers, or anything else, into a socket.",
+        "grown_ups_plug_things_in": "Only grown-ups plug things in.",
+        "keep_hands_dry": "We never touch electrical things with wet hands."
+      }
+    },
+    {
+      "id": "unit_07.step.002",
+      "kind": "tap-choice",
+      "title": "Power the room",
+      "prompt": "Choose everything that needs electricity.",
+      "options": [
+        {
+          "id": "television",
+          "label": "Television",
+          "art": "tv"
+        },
+        {
+          "id": "vacuum_cleaner",
+          "label": "Vacuum cleaner",
+          "art": "vacuum"
+        },
+        {
+          "id": "lamp",
+          "label": "Lamp",
+          "art": "lamp"
+        },
+        {
+          "id": "dishwasher",
+          "label": "Dishwasher",
+          "art": "dishwasher"
+        },
+        {
+          "id": "book",
+          "label": "Book",
+          "art": "paper"
+        },
+        {
+          "id": "lantern",
+          "label": "Lantern",
+          "art": "lantern"
+        },
+        {
+          "id": "chair",
+          "label": "Chair",
+          "art": "chair"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "television",
+          "vacuum_cleaner",
+          "lamp",
+          "dishwasher"
+        ]
+      },
+      "assessed": true,
+      "objective": "u07.main.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Need electricity: television, vacuum cleaner, lamp, dishwasher. Do not: book, lantern (it uses a flame), chair.",
+      "source": {
+        "pages": [
+          19,
+          20
+        ],
+        "questionId": "u07.main.01",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "Need electricity: television, vacuum cleaner, lamp, dishwasher. Do not: book, lantern (it uses a flame), chair.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_07"
+    },
+    {
+      "id": "unit_07.step.003",
+      "kind": "match-lines",
+      "title": "Then and now",
+      "prompt": "Find the old tool for each electric helper.",
+      "options": [
+        {
+          "id": "lamp",
+          "label": "Lamp",
+          "art": "lamp"
+        },
+        {
+          "id": "vacuum_cleaner",
+          "label": "Vacuum cleaner",
+          "art": "vacuum"
+        }
+      ],
+      "targets": [
+        {
+          "id": "broom",
+          "label": "Broom",
+          "art": "broom"
+        },
+        {
+          "id": "lantern",
+          "label": "Lantern",
+          "art": "lantern"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "lamp": "lantern",
+          "vacuum_cleaner": "broom"
+        }
+      },
+      "assessed": true,
+      "objective": "u07.main.02",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) a lantern or a candle b) a broom",
+      "source": {
+        "pages": [
+          19,
+          20
+        ],
+        "questionId": "u07.main.02",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "a) a lantern or a candle b) a broom",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_07"
+    },
+    {
+      "id": "unit_07.step.004",
+      "kind": "free-plant",
+      "title": "Magnet hunt",
+      "prompt": "Predict for each material, then move the magnet to test it.",
+      "options": [
+        {
+          "id": "iron_nail",
+          "label": "Iron nail",
+          "art": "nail"
+        },
+        {
+          "id": "aluminium_foil",
+          "label": "Aluminium foil",
+          "art": "foil"
+        },
+        {
+          "id": "gold_ring",
+          "label": "Gold ring",
+          "art": "ring"
+        },
+        {
+          "id": "steel_key",
+          "label": "Steel key",
+          "art": "key"
+        },
+        {
+          "id": "plastic_button",
+          "label": "Plastic button",
+          "art": "button"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "A magnet attracts iron and steel, not all metals. It does not attract aluminium, gold or plastic.",
+      "source": {
+        "pages": [
+          19,
+          20
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "science",
+      "theme": "unit_07",
+      "lab": "magnet",
+      "results": {
+        "iron_nail": "pull",
+        "steel_key": "pull",
+        "aluminium_foil": "stay",
+        "plastic_button": "stay",
+        "gold_ring": "stay"
+      },
+      "labUi": {
+        "choices": {
+          "pull": "Magnet pulls it",
+          "stay": "Stays still"
+        },
+        "action": "Move the magnet",
+        "result": "Watch carefully"
+      }
+    },
+    {
+      "id": "unit_07.step.005",
+      "kind": "match-lines",
+      "title": "Magnet discoveries",
+      "prompt": "Sort each statement.",
+      "options": [
+        {
+          "id": "a_magnet_attracts_all_metals",
+          "label": "A magnet attracts all metals",
+          "art": "a_magnet_attracts_all_metals"
+        },
+        {
+          "id": "a_magnet_attracts_iron_and_steel",
+          "label": "A magnet attracts iron and steel",
+          "art": "a_magnet_attracts_iron_and_steel"
+        },
+        {
+          "id": "a_magnet_does_not_attract_all_metals",
+          "label": "A magnet does not attract all metals",
+          "art": "a_magnet_does_not_attract_all_metals"
+        }
+      ],
+      "targets": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "art": "yes"
+        },
+        {
+          "id": "no",
+          "label": "No",
+          "art": "no"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "a_magnet_attracts_all_metals": "no",
+          "a_magnet_does_not_attract_all_metals": "yes",
+          "a_magnet_attracts_iron_and_steel": "yes"
+        }
+      },
+      "assessed": true,
+      "objective": "u07.main.03",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a) NO b) YES c) YES",
+      "source": {
+        "pages": [
+          19,
+          20
+        ],
+        "questionId": "u07.main.03",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "a) NO b) YES c) YES",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_07",
+      "focus": "magnet"
+    },
+    {
+      "id": "unit_07.step.006",
+      "kind": "tap-choice",
+      "title": "Magnet collection",
+      "prompt": "Collect only the objects the magnet pulls.",
+      "options": [
+        {
+          "id": "steel_key",
+          "label": "Steel key",
+          "art": "key"
+        },
+        {
+          "id": "iron_nail",
+          "label": "Iron nail",
+          "art": "nail"
+        },
+        {
+          "id": "steel_coat_hanger",
+          "label": "Steel coat hanger",
+          "art": "hanger"
+        },
+        {
+          "id": "aluminium_foil",
+          "label": "Aluminium foil",
+          "art": "foil"
+        },
+        {
+          "id": "plastic_button",
+          "label": "Plastic button",
+          "art": "button"
+        },
+        {
+          "id": "sock",
+          "label": "Sock",
+          "art": "sock"
+        },
+        {
+          "id": "leaf",
+          "label": "Leaf",
+          "art": "leaf"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "steel_key",
+          "iron_nail",
+          "steel_coat_hanger"
+        ]
+      },
+      "assessed": true,
+      "objective": "u07.main.04",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "The magnet pulls: steel key, iron nail, steel coat hanger. It does not pull the plastic button, the sock, the leaf or the aluminium foil.",
+      "source": {
+        "pages": [
+          19,
+          20
+        ],
+        "questionId": "u07.main.04",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "The magnet pulls: steel key, iron nail, steel coat hanger. It does not pull the plastic button, the sock, the leaf or the aluminium foil.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_07",
+      "focus": "magnet"
+    },
+    {
+      "id": "unit_07.step.007",
+      "kind": "tap-choice",
+      "title": "Inside the torch",
+      "prompt": "What powers this torch without a wall socket?",
+      "options": [
+        {
+          "id": "battery",
+          "label": "Battery",
+          "art": "battery"
+        },
+        {
+          "id": "stone",
+          "label": "Stone",
+          "art": "stone"
+        },
+        {
+          "id": "paper",
+          "label": "Paper",
+          "art": "paper"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "battery"
+      },
+      "assessed": true,
+      "objective": "u07.main.05",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a battery",
+      "source": {
+        "pages": [
+          19,
+          20
+        ],
+        "questionId": "u07.main.05",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "a battery",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_07",
+      "focus": "torch"
+    },
+    {
+      "id": "unit_07.step.008",
+      "kind": "match-lines",
+      "title": "Safety promise",
+      "prompt": "Finish every safety promise.",
+      "options": [
+        {
+          "id": "sockets",
+          "label": "Sockets",
+          "art": "sockets"
+        },
+        {
+          "id": "hands_near_electrical_things",
+          "label": "Hands near electrical things",
+          "art": "hands_near_electrical_things"
+        },
+        {
+          "id": "plugging_in",
+          "label": "Plugging in",
+          "art": "plugging_in"
+        }
+      ],
+      "targets": [
+        {
+          "id": "keep_dry",
+          "label": "Keep dry",
+          "art": "keep_dry"
+        },
+        {
+          "id": "only_grown_ups",
+          "label": "Only grown-ups",
+          "art": "only_grown_ups"
+        },
+        {
+          "id": "keep_fingers_and_objects_out",
+          "label": "Keep fingers and objects out",
+          "art": "keep_fingers_and_objects_out"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "sockets": "keep_fingers_and_objects_out",
+          "plugging_in": "only_grown_ups",
+          "hands_near_electrical_things": "keep_dry"
+        }
+      },
+      "assessed": true,
+      "objective": "u07.main.06",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Never put fingers or objects into a socket; only a grown‑up plugs things in; never touch electrical things with wet hands.",
+      "source": {
+        "pages": [
+          19,
+          20
+        ],
+        "questionId": "u07.main.06",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "Never put fingers or objects into a socket; only a grown‑up plugs things in; never touch electrical things with wet hands.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_07",
+      "safety": "Electricity is very useful, but it is dangerous. We never put our fingers, or anything else, into a socket. Only grown‑ups plug things in. We never touch electrical things with wet hands."
+    },
+    {
+      "id": "unit_07.step.009",
+      "kind": "match-lines",
+      "title": "Plug, battery or neither?",
+      "prompt": "Sort the helpers by their power.",
+      "options": [
+        {
+          "id": "fridge",
+          "label": "Fridge",
+          "art": "fridge"
+        },
+        {
+          "id": "bicycle",
+          "label": "Bicycle",
+          "art": "bicycle"
+        },
+        {
+          "id": "book",
+          "label": "Book",
+          "art": "paper"
+        },
+        {
+          "id": "wall_clock",
+          "label": "Wall clock",
+          "art": "clock"
+        },
+        {
+          "id": "torch",
+          "label": "Torch",
+          "art": "torch"
+        },
+        {
+          "id": "air_conditioner",
+          "label": "Air conditioner",
+          "art": "aircon"
+        }
+      ],
+      "targets": [
+        {
+          "id": "neither",
+          "label": "Neither",
+          "art": "neither"
+        },
+        {
+          "id": "battery",
+          "label": "Battery",
+          "art": "battery"
+        },
+        {
+          "id": "plug",
+          "label": "Plug",
+          "art": "plug"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "fridge": "plug",
+          "wall_clock": "battery",
+          "bicycle": "neither",
+          "torch": "battery",
+          "book": "neither",
+          "air_conditioner": "plug"
+        }
+      },
+      "assessed": true,
+      "objective": "u07.main.07",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Plug: fridge, air conditioner. Battery: wall clock, torch. Neither: bicycle, book.",
+      "source": {
+        "pages": [
+          19,
+          20
+        ],
+        "questionId": "u07.main.07",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "Plug: fridge, air conditioner. Battery: wall clock, torch. Neither: bicycle, book.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_07"
+    },
+    {
+      "id": "unit_07.step.010",
+      "kind": "tap-choice",
+      "title": "Hidden magnets",
+      "prompt": "Find two places magnets can be used.",
+      "options": [
+        {
+          "id": "fridge_door_seal",
+          "label": "Fridge door seal",
+          "art": "fridge"
+        },
+        {
+          "id": "paper_tissue",
+          "label": "Paper tissue",
+          "art": "tissue"
+        },
+        {
+          "id": "cupboard_door_catch",
+          "label": "Cupboard door catch",
+          "art": "cupboard"
+        },
+        {
+          "id": "wooden_chair",
+          "label": "Wooden chair",
+          "art": "chair"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "fridge_door_seal",
+          "cupboard_door_catch"
+        ]
+      },
+      "assessed": true,
+      "objective": "u07.main.08",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "Any two: fridge magnets, the seal on the fridge door, a cupboard door catch, a handbag clasp, a magnetic screwdriver, headphones.",
+      "source": {
+        "pages": [
+          19,
+          20
+        ],
+        "questionId": "u07.main.08",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "Any two: fridge magnets, the seal on the fridge door, a cupboard door catch, a handbag clasp, a magnetic screwdriver, headphones.",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_07"
+    },
+    {
+      "id": "unit_07.step.011",
+      "kind": "match-lines",
+      "title": "Discovery badges",
+      "prompt": "Match each discovery to its answer.",
+      "options": [
+        {
+          "id": "the_magnet_pulls",
+          "label": "The magnet pulls",
+          "art": "magnet"
+        },
+        {
+          "id": "power_for_a_torch",
+          "label": "Power for a torch",
+          "art": "torch"
+        },
+        {
+          "id": "finger_in_a_socket",
+          "label": "Finger in a socket",
+          "art": "safe"
+        },
+        {
+          "id": "light_before_electricity",
+          "label": "Light before electricity",
+          "art": "lantern"
+        },
+        {
+          "id": "magnetic_metals",
+          "label": "Magnetic metals",
+          "art": "key"
+        }
+      ],
+      "targets": [
+        {
+          "id": "never_safe",
+          "label": "Never safe",
+          "art": "never_safe"
+        },
+        {
+          "id": "iron_and_steel",
+          "label": "Iron and steel",
+          "art": "iron_and_steel"
+        },
+        {
+          "id": "battery",
+          "label": "Battery",
+          "art": "battery"
+        },
+        {
+          "id": "lantern",
+          "label": "Lantern",
+          "art": "lantern"
+        },
+        {
+          "id": "steel_key",
+          "label": "Steel key",
+          "art": "steel_key"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "the_magnet_pulls": "steel_key",
+          "light_before_electricity": "lantern",
+          "power_for_a_torch": "battery",
+          "magnetic_metals": "iron_and_steel",
+          "finger_in_a_socket": "never_safe"
+        }
+      },
+      "assessed": true,
+      "objective": "u07.choice.01",
+      "hint": "Look carefully, listen again, and try your discovery.",
+      "explanation": "a steel key. lantern. battery. only iron and steel. never safe.",
+      "source": {
+        "pages": [
+          19,
+          20
+        ],
+        "questionId": "u07.choice.01",
+        "answerKeyPages": [
+          36
+        ],
+        "answerKeyText": "a steel key",
+        "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "science",
+      "theme": "unit_07",
+      "extraObjectives": [
+        "u07.choice.02",
+        "u07.choice.03",
+        "u07.choice.04",
+        "u07.choice.05"
+      ],
+      "relatedSources": [
+        {
+          "pages": [
+            19,
+            20
+          ],
+          "questionId": "u07.choice.02",
+          "answerKeyPages": [
+            36
+          ],
+          "answerKeyText": "lantern",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            19,
+            20
+          ],
+          "questionId": "u07.choice.03",
+          "answerKeyPages": [
+            36
+          ],
+          "answerKeyText": "battery",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            19,
+            20
+          ],
+          "questionId": "u07.choice.04",
+          "answerKeyPages": [
+            36
+          ],
+          "answerKeyText": "only iron and steel",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        },
+        {
+          "pages": [
+            19,
+            20
+          ],
+          "questionId": "u07.choice.05",
+          "answerKeyPages": [
+            36
+          ],
+          "answerKeyText": "never safe",
+          "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+        }
+      ],
+      "objectiveItems": {
+        "u07.choice.01": [
+          "the_magnet_pulls"
+        ],
+        "u07.choice.02": [
+          "light_before_electricity"
+        ],
+        "u07.choice.03": [
+          "power_for_a_torch"
+        ],
+        "u07.choice.04": [
+          "magnetic_metals"
+        ],
+        "u07.choice.05": [
+          "finger_in_a_socket"
+        ]
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "electricity",
+      "word": "electricity",
+      "meaning": "The power that makes lamps, fridges and televisions work.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "appliance",
+      "word": "appliance",
+      "meaning": "A machine in the home that runs on electricity.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "battery",
+      "word": "battery",
+      "meaning": "A small store of electricity you can carry, used in torches and clocks.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "switch",
+      "word": "switch",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "magnet",
+      "word": "magnet",
+      "meaning": "A piece of metal that pulls iron and steel towards it.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "attract",
+      "word": "attract",
+      "meaning": "To pull something towards you without touching it.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "iron",
+      "word": "iron",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "steel",
+      "word": "steel",
+      "meaning": "",
+      "meaningSource": "not_defined_in_book",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "magnetic",
+      "word": "magnetic",
+      "meaning": "A material a magnet will pull, like iron or steel.",
+      "meaningSource": "word_list",
+      "pages": [
+        33,
+        34
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "The magnet hunt — and the big surprise\nTake a fridge magnet around the house. Test a key, a spoon, a coin, an iron nail, a plastic button, a leaf, a piece of aluminium foil, a gold or\nsilver ring. He predicts each one first.\nHere is the surprise: aluminium foil is metal, and gold is metal — but the magnet completely ignores them. So \"it is metal\" is not the right\nanswer. The right answer is: a magnet only pulls iron and steel. Let him discover this himself; do not tell him first.\n+ −\na battery never touch a socket iron and steel only\ntorch, toy car, clock\nThree things to remember from this unit: batteries, socket safety, and what magnets really pull.\n",
+      "safety": "An adult stays with the child for every activity. No glass, no sockets, no flames, and nothing small enough to swallow is left with a child\nalone. Water activities are done in a bowl or the sink, never near electrical items.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ]
+    }
+  ]
+}
