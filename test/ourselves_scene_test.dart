@@ -11,6 +11,7 @@ import 'package:science_adventure/core/models.dart';
 import 'package:science_adventure/core/storage.dart';
 import 'package:science_adventure/features/biology/lesson_player.dart';
 import 'package:science_adventure/features/biology/session.dart';
+import 'package:science_adventure/features/biology/body_workshop.dart';
 
 import 'setup_screen_test.dart' as helpers;
 
@@ -31,10 +32,10 @@ void main() {
       )..addFont(rootBundle.load('assets/fonts/$font.ttf'))).load();
     }
     for (final name in [
-      'explorer-boy-v2.png',
-      'explorer-girl-v2.png',
-      'five-senses-v2.png',
-      'sense-objects-v2.png',
+      'explorer-boy-v2.webp',
+      'explorer-girl-v2.webp',
+      'five-senses-v2.webp',
+      'sense-objects-v2.webp',
     ]) {
       await Flame.images.load(name);
     }
@@ -151,6 +152,47 @@ void main() {
       await helpers.mount(t, LessonPlayer(lesson: lesson), store);
       for (final p in lesson.steps[2].options) {
         await helpers.tapVisible(t, find.byKey(ValueKey('body-piece-${p.id}')));
+        expect(
+          t.widget<BodyWorkshop>(find.byType(BodyWorkshop)).camera,
+          const Rect.fromLTWH(.14, 0, .72, .96),
+        );
+        for (final part in lesson.steps[2].targets) {
+          expect(
+            find.byKey(ValueKey('body-spot-${part.id}')),
+            findsOneWidget,
+            reason: 'Every body part must remain available after selection',
+          );
+        }
+        final targetMaterial = find
+            .ancestor(
+              of: find.byKey(ValueKey('body-spot-${p.id}')),
+              matching: find.byType(Material),
+            )
+            .first;
+        expect(
+          t.widget<Material>(targetMaterial).color,
+          const Color(0xFFFFFCF4),
+          reason: 'Selecting a name must not highlight its correct target',
+        );
+        final markers = find.byWidgetPredicate(
+          (w) =>
+              w.key is ValueKey<String> &&
+              (w.key as ValueKey<String>).value.startsWith('body-spot-'),
+        );
+        final rectangles = [
+          for (final e in markers.evaluate())
+            t.getRect(find.byWidget(e.widget)),
+        ];
+        for (var i = 0; i < rectangles.length; i++) {
+          expect(rectangles[i].width, greaterThanOrEqualTo(64));
+          for (var j = i + 1; j < rectangles.length; j++) {
+            expect(
+              rectangles[i].overlaps(rectangles[j]),
+              isFalse,
+              reason: 'Anatomy touch buttons must not overlap',
+            );
+          }
+        }
         await helpers.tapVisible(t, find.byKey(ValueKey('body-spot-${p.id}')));
         expect(
           store.data.journeys[lesson.id]!['current']['placements'][p.id],
@@ -290,7 +332,7 @@ void main() {
       final spot = find.byKey(ValueKey('body-spot-$id'));
       await t.ensureVisible(spot);
       await t.pump();
-      // The enclosing scene resolves the closest anatomical anchor.
+      // Every explicit marker dispatches its own anatomical ID.
       await t.tapAt(t.getCenter(spot));
       await t.pump();
     }
@@ -318,6 +360,7 @@ void main() {
       await t.runAsync(() async {
         final image = await boundary.toImage();
         final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
+        await Directory('tmp').create(recursive: true);
         await File('tmp/ourselves-v2-${index + 1}.png')
             .writeAsBytes(bytes!.buffer.asUint8List());
         image.dispose();

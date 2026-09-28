@@ -36,7 +36,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Listen to all three safety rules before exploring.",
       "source": {
         "pages": [
@@ -114,7 +114,7 @@
       },
       "assessed": true,
       "objective": "u07.main.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Ask which things need a plug or a battery to work.",
       "explanation": "Need electricity: television, vacuum cleaner, lamp, dishwasher. Do not: book, lantern (it uses a flame), chair.",
       "source": {
         "pages": [
@@ -171,7 +171,7 @@
       },
       "assessed": true,
       "objective": "u07.main.02",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Match the job first: cleaning, washing, light or keeping cool.",
       "explanation": "a) a lantern or a candle b) a broom",
       "source": {
         "pages": [
@@ -192,7 +192,7 @@
     },
     {
       "id": "unit_07.step.004",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Magnet hunt",
       "prompt": "Predict for each material, then move the magnet to test it.",
       "options": [
@@ -226,7 +226,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "A magnet attracts iron and steel, not all metals. It does not attract aluminium, gold or plastic.",
       "source": {
         "pages": [
@@ -303,7 +303,7 @@
       },
       "assessed": true,
       "objective": "u07.main.03",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Compare each claim with what happened during the magnet hunt.",
       "explanation": "a) NO b) YES c) YES",
       "source": {
         "pages": [
@@ -376,7 +376,7 @@
       },
       "assessed": true,
       "objective": "u07.main.04",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about the material of each object, not just its shape.",
       "explanation": "The magnet pulls: steel key, iron nail, steel coat hanger. It does not pull the plastic button, the sock, the leaf or the aluminium foil.",
       "source": {
         "pages": [
@@ -425,7 +425,7 @@
       },
       "assessed": true,
       "objective": "u07.main.05",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about how a torch works when you carry it away from a socket.",
       "explanation": "a battery",
       "source": {
         "pages": [
@@ -494,7 +494,7 @@
       },
       "assessed": true,
       "objective": "u07.main.06",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember the rules about sockets, wet hands and opening appliances.",
       "explanation": "Never put fingers or objects into a socket; only a grown‑up plugs things in; never touch electrical things with wet hands.",
       "source": {
         "pages": [
@@ -581,7 +581,7 @@
       },
       "assessed": true,
       "objective": "u07.main.07",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Look for a wire and plug, a battery, or an object used by hand.",
       "explanation": "Plug: fridge, air conditioner. Battery: wall clock, torch. Neither: bicycle, book.",
       "source": {
         "pages": [
@@ -637,7 +637,7 @@
       },
       "assessed": true,
       "objective": "u07.main.08",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about objects that need to hold a door or a bag closed.",
       "explanation": "Any two: fridge magnets, the seal on the fridge door, a cupboard door catch, a handbag clasp, a magnetic screwdriver, headphones.",
       "source": {
         "pages": [
@@ -727,7 +727,7 @@
       },
       "assessed": true,
       "objective": "u07.choice.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Use the safety rules, torch and magnet experiment to help.",
       "explanation": "a steel key. lantern. battery. only iron and steel. never safe.",
       "source": {
         "pages": [

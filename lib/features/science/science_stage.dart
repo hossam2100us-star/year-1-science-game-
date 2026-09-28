@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../content/lesson.dart';
+import '../../core/touch_cue.dart';
 import 'science_picture.dart';
 
 class ScienceStage extends StatelessWidget {
@@ -44,6 +45,8 @@ class ScienceStage extends StatelessWidget {
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        if (!done)
+          const Align(alignment: Alignment.topRight, child: TouchCue()),
         if (SciencePicture.has(p.art))
           SciencePicture(p.art, height: target ? 78 : 110),
         Text(

@@ -166,6 +166,9 @@ class AppData {
     this.dailySeconds = const {},
     this.pendingPhoto = false,
     this.journeys = const {},
+    this.otherSubjects = const {},
+    this.activeChildId = 'local-child',
+    this.savedChildren = const {},
   });
   final ChildProfile? profile;
   final AppSettings settings;
@@ -173,6 +176,45 @@ class AppData {
   final Map<String, int> dailySeconds;
   final bool pendingPhoto;
   final Map<String, Map<String, dynamic>> journeys;
+
+  /// Science retains its typed accessors; other subjects have isolated records.
+  final Map<String, Map<String, dynamic>> otherSubjects;
+  final String activeChildId;
+  final Map<String, Map<String, dynamic>> savedChildren;
+  Map<String, Map<String, dynamic>> get childRecords => {
+    ...savedChildren,
+    activeChildId: _childJson(),
+  };
+  AppData selectChild(String id) {
+    if (id == activeChildId) return this;
+    final records = childRecords;
+    final child = records.remove(id);
+    if (child == null) throw StateError('Unknown child');
+    return AppData.fromJson(child)
+        .copyWith(activeChildId: id, savedChildren: records);
+  }
+
+  AppData addChild(String id, ChildProfile child) {
+    if (childRecords.containsKey(id)) throw StateError('Duplicate child ID');
+    return AppData(
+      profile: child,
+      settings: settings,
+      activeChildId: id,
+      savedChildren: {
+        for (final entry in childRecords.entries)
+          if (entry.value['profile'] != null) entry.key: entry.value,
+      },
+    );
+  }
+
+  AppData changeChild(String id, AppData Function(AppData) change) {
+    if (id == activeChildId) return change(this);
+    final updated = change(selectChild(id));
+    return copyWith(
+      savedChildren: {...savedChildren, id: updated._childJson()},
+    );
+  }
+
   AppData copyWith({
     ChildProfile? profile,
     AppSettings? settings,
@@ -180,6 +222,9 @@ class AppData {
     Map<String, int>? dailySeconds,
     bool? pendingPhoto,
     Map<String, Map<String, dynamic>>? journeys,
+    Map<String, Map<String, dynamic>>? otherSubjects,
+    String? activeChildId,
+    Map<String, Map<String, dynamic>>? savedChildren,
   }) => AppData(
     profile: profile ?? this.profile,
     settings: settings ?? this.settings,
@@ -187,8 +232,16 @@ class AppData {
     dailySeconds: dailySeconds ?? this.dailySeconds,
     pendingPhoto: pendingPhoto ?? this.pendingPhoto,
     journeys: journeys ?? this.journeys,
+    otherSubjects: otherSubjects ?? this.otherSubjects,
+    activeChildId: activeChildId ?? this.activeChildId,
+    savedChildren: savedChildren ?? this.savedChildren,
   );
-  AppData resetProgress() => AppData(profile: profile, settings: settings);
+  AppData resetProgress() => AppData(
+    profile: profile,
+    settings: settings,
+    activeChildId: activeChildId,
+    savedChildren: savedChildren,
+  );
   bool isComplete(String id) =>
       attempts.any((a) => a.unitId == id && a.completed);
 
@@ -212,30 +265,60 @@ class AppData {
   }
 
   Map<String, dynamic> toJson() => {
-    'schemaVersion': 1,
+    'schemaVersion': 3,
+    'activeChildId': activeChildId,
+    'children': childRecords,
+  };
+  Map<String, dynamic> _childJson() => {
+    'schemaVersion': 2,
     'profile': profile?.toJson(),
     'settings': settings.toJson(),
-    'attempts': attempts.map((a) => a.toJson()).toList(),
     'dailySeconds': dailySeconds,
     'pendingPhoto': pendingPhoto,
-    'journeys': journeys,
+    'subjects': {
+      ...otherSubjects,
+      'science': {
+        'attempts': attempts.map((a) => a.toJson()).toList(),
+        'journeys': journeys,
+      },
+    },
   };
   factory AppData.fromJson(Map<String, dynamic> j) {
-    if (j['schemaVersion'] != 1)
+    if (j['schemaVersion'] == 3) {
+      final id = j['activeChildId'] as String;
+      final records = (j['children'] as Map).map(
+        (k, v) => MapEntry(k as String, Map<String, dynamic>.from(v)),
+      );
+      final active = records.remove(id);
+      if (active == null || !const [1, 2].contains(active['schemaVersion']))
+        throw const FormatException('Invalid child record');
+      return AppData.fromJson(active)
+          .copyWith(activeChildId: id, savedChildren: records);
+    }
+    if (j['schemaVersion'] != 1 && j['schemaVersion'] != 2)
       throw const FormatException('Unsupported save version');
+    final subjects = Map<String, dynamic>.from(j['subjects'] ?? {});
+    final science = j['schemaVersion'] == 1
+        ? j
+        : Map<String, dynamic>.from(subjects['science'] ?? {});
     return AppData(
       profile: j['profile'] == null
           ? null
           : ChildProfile.fromJson(Map<String, dynamic>.from(j['profile'])),
       settings: AppSettings.fromJson(Map<String, dynamic>.from(j['settings'])),
-      attempts: (j['attempts'] as List)
+      attempts: (science['attempts'] as List? ?? [])
           .map((a) => UnitAttempt.fromJson(Map<String, dynamic>.from(a)))
           .toList(),
       dailySeconds: Map<String, int>.from(j['dailySeconds']),
       pendingPhoto: j['pendingPhoto'] as bool? ?? false,
-      journeys: (j['journeys'] as Map? ?? {}).map(
+      journeys: (science['journeys'] as Map? ?? {}).map(
         (k, v) => MapEntry(k as String, Map<String, dynamic>.from(v)),
       ),
+      otherSubjects: {
+        for (final entry in subjects.entries)
+          if (entry.key != 'science')
+            entry.key: Map<String, dynamic>.from(entry.value),
+      },
     );
   }
 }

@@ -44,7 +44,7 @@ def compact_ourselves(book):
     def extras(s,numbers):
         s['relatedSources']=[deepcopy(by[n]['source']) for n in numbers]
         s['extraObjectives']=[by[n]['objective'] for n in numbers]
-    first=deepcopy(by[1]);first['prompt']='Meet our explorer! Touch a body part and listen.'
+    first=deepcopy(by[1]);first['prompt']='Meet our explorer! Touch a hand button and listen. Follow its line to the body part.'
     first['activityView']='body';first['legacyCompletionGroups']=[[sid(1)]]
     first['legacyMergedFrom']=[sid(1)]
     senses=stage(2,'five-senses.v2',[2,3],title='Five ways to discover',activityView='sense-story',
@@ -55,14 +55,14 @@ def compact_ourselves(book):
         'We see with our eyes.','We hear with our ears.','We smell with our nose.','We taste with our tongue.','We touch with our skin.'])}
     senses['minTouches']=5
     body=stage(4,'body-workshop.v2',range(4,17),title='Explorer workshop',activityView='body',
-        prompt='Choose a name, then touch that part of the explorer. You can drag the name there too.')
+        prompt='Choose a name, then touch the hand button pointing to that part. You can drag the name onto the button too.')
     labels=[deepcopy(by[n]['options'][0]) for n in range(4,17)]
     mapping(body,labels,[deepcopy(x) for x in labels],{x['id']:x['id'] for x in labels})
     body['kind']='label-diagram';body['explanation']='You found the explorer’s head, neck, chin, shoulder, arm, elbow, wrist, hand, fingers, leg, knee, ankle and foot.'
     body['legacyPlacementSources']={sid(n):{by[n]['options'][0]['id']:by[n]['options'][0]['id']} for n in range(4,17)}
     eye=stage(38,'eye-workshop.v2',[17,18,19,38],[[17,38],[18,38],[19,38]],
         title='Around my eye',activityView='body',scene='eye',
-        prompt='Give the three eye protectors their names. Choose a name, then touch the part.')
+        prompt='Give the three eye protectors their names. Choose a name, then touch the hand button pointing to the part.')
     names=[item(x) for x in ['eyelash','eyebrow','eyelid']]
     mapping(eye,names,deepcopy(names),{x['id']:x['id'] for x in names});eye['kind']='label-diagram'
     eye['legacyPlacementSources']={sid(n):{by[n]['options'][0]['id']:by[n]['options'][0]['id']} for n in [17,18,19]}

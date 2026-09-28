@@ -98,7 +98,7 @@ const illustratedEyeAnchors = <String, Offset>{
   };
   if (senses.containsKey(id))
     return (
-      asset: 'five-senses-v2.png',
+      asset: 'five-senses-v2.webp',
       crop: Rect.fromLTWH(senses[id]! * .2 + .006, .04, .188, .91),
     );
   const objects = {
@@ -123,14 +123,14 @@ const illustratedEyeAnchors = <String, Offset>{
     final row = i ~/ 3;
     final top = i == 7 ? .66 : rowEdges[row];
     return (
-      asset: 'sense-objects-v2.png',
+      asset: 'sense-objects-v2.webp',
       crop: Rect.fromLTWH((i % 3) / 3, top, 1 / 3, rowEdges[row + 1] - top),
     );
   }
   if (illustratedEyeAnchors.containsKey(id) || id == 'eyelashes') {
     final a = illustratedEyeAnchors[id == 'eyelashes' ? 'eyelash' : id]!;
     return (
-      asset: 'five-senses-v2.png',
+      asset: 'five-senses-v2.webp',
       crop: Rect.fromCenter(
         center: Offset(a.dx * .2, a.dy),
         width: .13,
@@ -141,7 +141,7 @@ const illustratedEyeAnchors = <String, Offset>{
   final point = illustratedBodyAnchors[id];
   if (point != null)
     return (
-      asset: girl ? 'explorer-girl-v2.png' : 'explorer-boy-v2.png',
+      asset: girl ? 'explorer-girl-v2.webp' : 'explorer-boy-v2.webp',
       crop: Rect.fromCenter(center: point, width: .20, height: .14),
     );
   return null;

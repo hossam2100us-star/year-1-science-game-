@@ -154,6 +154,7 @@ void main() {
       await t.runAsync(() async {
         final picture = await boundary.toImage();
         final bytes = await picture.toByteData(format: ui.ImageByteFormat.png);
+        await Directory('tmp').create(recursive: true);
         await File('tmp/plant-review.png')
             .writeAsBytes(bytes!.buffer.asUint8List());
         picture.dispose();

@@ -14,7 +14,7 @@
       "id": "unit_02.step.001",
       "kind": "explore",
       "title": "Plant parts",
-      "prompt": "Touch each part of the plant to discover what it does.",
+      "prompt": "Touch a hand button to discover a plant part. Follow its line to the part.",
       "options": [
         {
           "id": "roots",
@@ -68,7 +68,7 @@
       "id": "unit_02.step.006",
       "kind": "free-plant",
       "title": "Build your plant",
-      "prompt": "Build a plant in the pot. Choose a piece, then touch where it belongs, or drag it there.",
+      "prompt": "Build a plant in the pot. Choose a piece, then touch a hand button where it belongs, or drag it there.",
       "options": [
         {
           "id": "flower",
@@ -875,7 +875,7 @@
       "id": "unit_02.step.032",
       "kind": "free-plant",
       "title": "My own plant",
-      "prompt": "Make your own plant. Drag each piece onto the workbench, or choose a piece and touch its space.",
+      "prompt": "Make your own plant. Choose a piece, then touch a hand button where it belongs. You can drag the piece there too.",
       "options": [
         {
           "id": "roots",
@@ -925,7 +925,8 @@
         "stem": "Stem — \"the plant's neck\". It holds the plant up and carries the water all the way to the leaves.",
         "leaf": "Leaf — \"the plant's kitchen\". Leaves catch the sunlight and use it to make the plant's food.",
         "flower": "Flower — \"where the babies are made\". The flower makes the seeds that grow into new plants."
-      }
+      },
+      "retryText": "Try another place for this part."
     },
     {
       "id": "unit_02.step.033",

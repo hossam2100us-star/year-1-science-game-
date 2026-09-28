@@ -29,7 +29,7 @@ class GardenContent {
   int get version => json['version'];
   String get id => json['id'] ?? 'garden';
   String get storageKey => 'unit_01.$id';
-  String get asset => json['asset'] ?? 'garden-v2.png';
+  String get asset => json['asset'] ?? 'garden-v2.webp';
   int get difficulty => json['difficulty'] ?? 1;
   Map<String, Rect>? get bounds => json['bounds'] == null
       ? null

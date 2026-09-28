@@ -18,8 +18,8 @@ void main() {
       (s) => s.json['experiment'] == 'bean',
     );
     await Future.wait([
-      Flame.images.load('bean-stages-v1.png'),
-      Flame.images.load('greenhouse-v1.png'),
+      Flame.images.load('bean-stages-v1.webp'),
+      Flame.images.load('greenhouse-v1.webp'),
     ]);
   });
   test(

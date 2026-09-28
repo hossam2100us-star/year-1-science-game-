@@ -5,7 +5,7 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 const gardenInk = Color(0xFF25463E);
-const gardenAsset = 'assets/images/garden-v2.png';
+const gardenAsset = 'assets/images/garden-v2.webp';
 
 /// Bounds in the final original illustration; these are also the portrait crops.
 const gardenBounds = <String, Rect>{
@@ -52,7 +52,7 @@ Map<String, Rect> gardenRects(
 class GardenScene extends FlameGame {
   GardenScene({
     required this.onReady,
-    this.asset = 'garden-v2.png',
+    this.asset = 'garden-v2.webp',
     this.bounds = gardenBounds,
     this.guide = 'cat',
     this.difficulty = 1,

@@ -27,7 +27,26 @@ flutter:
     - assets/content/catalog.json
     - assets/content/playable/
     - assets/animations/celebrate.json
-    - assets/images/
+    - assets/images/bean-stages-v1.webp
+    - assets/images/earth-atlas-v1.webp
+    - assets/images/electric-atlas-v1.webp
+    - assets/images/explorer-boy-v2.webp
+    - assets/images/explorer-girl-v2.webp
+    - assets/images/five-senses-v2.webp
+    - assets/images/garden-v2.webp
+    - assets/images/greenhouse-v1.webp
+    - assets/images/home-hunt-v1.webp
+    - assets/images/islands-v2.webp
+    - assets/images/light-plants-v1.webp
+    - assets/images/light-room-v1.webp
+    - assets/images/materials-atlas-v1.webp
+    - assets/images/physics-atlas-v1.webp
+    - assets/images/plant-foods-v1.webp
+    - assets/images/plant-lab-v1.webp
+    - assets/images/river-hunt-v1.webp
+    - assets/images/science-details-v1.webp
+    - assets/images/science-extras-v1.webp
+    - assets/images/sense-objects-v2.webp
     - assets/audio/
   fonts:
     - family: Fredoka

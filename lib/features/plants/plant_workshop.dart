@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../../content/lesson.dart';
+import '../../core/touch_cue.dart';
 
 /// An empty workbench: only placed pieces are painted, never a hidden full plant.
 class PlantWorkshop extends StatefulWidget {
@@ -147,20 +148,17 @@ class _PlantWorkshopState extends State<PlantWorkshop>
                     ),
                     child: DragTarget<String>(
                       onWillAcceptWithDetails: (d) =>
-                          (challenge || d.data == entry.key) &&
+                          widget.step.options.any((p) => p.id == d.data) &&
                           !widget.placed.contains(entry.key),
                       onAcceptWithDetails: (d) => attempt(d.data, entry.key),
                       builder: (context, candidates, rejected) => InkWell(
                         key: ValueKey('workshop-slot-${entry.key}'),
-                        onTap:
-                            picked != null && (challenge || picked == entry.key)
+                        onTap: picked != null
                             ? () => attempt(picked!, entry.key)
                             : null,
                         child: Container(
                           decoration: BoxDecoration(
-                            color:
-                                candidates.isNotEmpty ||
-                                    (!challenge && picked == entry.key)
+                            color: candidates.isNotEmpty
                                 ? const Color(0x44FFD870)
                                 : Colors.transparent,
                             borderRadius: BorderRadius.circular(18),
@@ -171,17 +169,9 @@ class _PlantWorkshopState extends State<PlantWorkshop>
                                     width: 2,
                                   ),
                           ),
-                          child: widget.placed.contains(entry.key) || challenge
+                          child: widget.placed.contains(entry.key)
                               ? null
-                              : Center(
-                                  child: Text(
-                                    widget.step.label(entry.key),
-                                    style: const TextStyle(
-                                      fontSize: 22,
-                                      color: Color(0xFF385936),
-                                    ),
-                                  ),
-                                ),
+                              : const Center(child: TouchCue(size: 48)),
                         ),
                       ),
                     ),

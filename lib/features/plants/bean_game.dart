@@ -4,8 +4,8 @@ import 'dart:ui' as ui;
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
-const beanAtlasAsset = 'assets/images/bean-stages-v1.png';
-const greenhouseAsset = 'assets/images/greenhouse-v1.png';
+const beanAtlasAsset = 'assets/images/bean-stages-v1.webp';
+const greenhouseAsset = 'assets/images/greenhouse-v1.webp';
 
 class BeanGame extends FlameGame {
   BeanGame({required this.onReady});
@@ -17,8 +17,8 @@ class BeanGame extends FlameGame {
   @override
   Future<void> onLoad() async {
     final imagesLoaded = await Future.wait([
-      images.load('bean-stages-v1.png'),
-      images.load('greenhouse-v1.png'),
+      images.load('bean-stages-v1.webp'),
+      images.load('greenhouse-v1.webp'),
     ]);
     atlas = imagesLoaded[0];
     background = imagesLoaded[1];

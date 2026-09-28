@@ -18,7 +18,7 @@ void main() {
     content = GardenContent(
       (await LessonLibrary.load()).lessons['unit_01']!.json['garden'],
     );
-    await Flame.images.load('garden-v2.png');
+    await Flame.images.load('garden-v2.webp');
   });
   test('Garden practice preserves first, hinted, and explained decisions without inflating unit scores', () {
     final round = GardenRound(version: content.version);

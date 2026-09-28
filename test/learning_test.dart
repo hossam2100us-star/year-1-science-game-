@@ -18,8 +18,8 @@ void main() {
   setUpAll(() async {
     library = await LessonLibrary.load();
     await Future.wait([
-      Flame.images.load('bean-stages-v1.png'),
-      Flame.images.load('greenhouse-v1.png'),
+      Flame.images.load('bean-stages-v1.webp'),
+      Flame.images.load('greenhouse-v1.webp'),
     ]);
     helpers.testCatalog = await helpers.loadTestCatalog();
   });

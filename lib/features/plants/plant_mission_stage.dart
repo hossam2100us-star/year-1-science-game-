@@ -4,6 +4,7 @@ import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 
 import '../../content/lesson.dart';
+import '../../core/touch_cue.dart';
 import 'plant_lab_game.dart';
 import 'plant_workshop.dart';
 
@@ -39,7 +40,7 @@ class PlantMissionStage extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
         image: const DecorationImage(
-          image: AssetImage('assets/images/greenhouse-v1.png'),
+          image: AssetImage('assets/images/greenhouse-v1.webp'),
           fit: BoxFit.cover,
           opacity: .35,
         ),
@@ -100,6 +101,7 @@ class PlantMissionStage extends StatelessWidget {
                             child: Column(
                               children: [
                                 PlantMissionPicture(id: target.art, height: 75),
+                                if (!done) const TouchCue(),
                                 Text(
                                   target.label,
                                   textAlign: TextAlign.center,
@@ -177,6 +179,7 @@ class PlantMissionStage extends StatelessWidget {
               ? 100
               : 140,
         ),
+        if (!done) const TouchCue(),
         Text(
           item.label,
           textAlign: TextAlign.center,
@@ -220,7 +223,7 @@ class PlantMissionPicture extends StatelessWidget {
         child: CustomPaint(painter: WorkshopArt(id)),
       );
     }
-    String asset = 'plant-foods-v1.png';
+    String asset = 'plant-foods-v1.webp';
     Rect crop = const Rect.fromLTWH(0, 0, 1, 1);
     final food = foods.indexOf(switch (id) {
       'sunlight' || 'catches_sunlight' => 'light',
@@ -231,10 +234,10 @@ class PlantMissionPicture extends StatelessWidget {
     if (food >= 0) {
       crop = Rect.fromLTWH((food % 4) / 4, (food ~/ 4) / 4, .25, .25);
     } else if (plantPartRegions.containsKey(plantPartId(id))) {
-      asset = 'plant-lab-v1.png';
+      asset = 'plant-lab-v1.webp';
       crop = plantPartRegions[plantPartId(id)]!;
     } else if (id.startsWith('bean_')) {
-      asset = 'bean-stages-v1.png';
+      asset = 'bean-stages-v1.webp';
       final frame = ['bean_1', 'bean_4', 'bean_7', 'bean_8'].indexOf(id);
       crop = Rect.fromLTWH(
         frame.isEven ? 0 : .5,
@@ -252,7 +255,7 @@ class PlantMissionPicture extends StatelessWidget {
       'thin_floppy_stem',
       'not_healthy',
     ].contains(id)) {
-      asset = 'light-plants-v1.png';
+      asset = 'light-plants-v1.webp';
       final pale = [
         'pale_yellow',
         'pale_and_floppy',
@@ -261,7 +264,7 @@ class PlantMissionPicture extends StatelessWidget {
       ].contains(id);
       crop = Rect.fromLTWH(pale ? 2 / 3 : 1 / 3, 0, 1 / 3, 1);
     } else if (['plant', 'holds_the_plant_up'].contains(id)) {
-      asset = 'plant-lab-v1.png';
+      asset = 'plant-lab-v1.webp';
     } else {
       // Text-only alternatives remain explicit; never attach an unrelated image.
       return const SizedBox(height: 12);

@@ -2,6 +2,7 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 import '../../content/lesson.dart';
+import '../../core/touch_cue.dart';
 import 'plant_lab_game.dart';
 import 'plant_workshop.dart';
 
@@ -101,7 +102,6 @@ class _PlantLabStageState extends State<PlantLabStage> {
               .map((o) => plantPartId(o.id))
               .where(plantPartRegions.containsKey)
               .toList();
-    if (shownParts.contains('leaf')) shownParts.add('leaf-right');
     return Column(
       children: [
         if (puzzle)
@@ -154,6 +154,19 @@ class _PlantLabStageState extends State<PlantLabStage> {
               child: LayoutBuilder(
                 builder: (context, box) {
                   final size = Size(box.maxWidth, box.maxHeight);
+                  Offset marker(String id) {
+                    final point = switch (id) {
+                      'flower' => const Offset(.12, .20),
+                      'leaf' => const Offset(.88, .25),
+                      'stem' => const Offset(.88, .65),
+                      _ => const Offset(.12, .80),
+                    };
+                    return Offset(
+                      point.dx * size.width,
+                      point.dy * size.height,
+                    );
+                  }
+
                   return Stack(
                     children: [
                       Positioned.fill(
@@ -161,9 +174,26 @@ class _PlantLabStageState extends State<PlantLabStage> {
                           child: GameWidget<PlantLabGame>(game: game),
                         ),
                       ),
+                      Positioned.fill(
+                        child: IgnorePointer(
+                          child: CustomPaint(
+                            painter: SceneTouchLinks([
+                              for (final part in shownParts)
+                                (
+                                  marker(part),
+                                  plantPartRect(part, size).center,
+                                ),
+                            ]),
+                          ),
+                        ),
+                      ),
                       for (final part in shownParts)
                         Positioned.fromRect(
-                          rect: plantPartRect(part, size, touch: true),
+                          rect: Rect.fromCenter(
+                            center: marker(part),
+                            width: 64,
+                            height: 64,
+                          ),
                           child: DragTarget<String>(
                             onWillAcceptWithDetails: (d) =>
                                 puzzle && !widget.done,
@@ -198,7 +228,7 @@ class _PlantLabStageState extends State<PlantLabStage> {
                                           .firstOrNull
                                           ?.label ??
                                       part,
-                                  child: const SizedBox.expand(),
+                                  child: const TouchCue(size: 64),
                                 ),
                               ),
                             ),
@@ -220,35 +250,17 @@ class _PlantLabStageState extends State<PlantLabStage> {
               label: step.options.firstWhere((o) => o.id == active).label,
             ),
           ),
-        if (step.kind == 'explore' || freeBuild)
-          Padding(
-            padding: const EdgeInsets.only(top: 12),
-            child: Wrap(
-              spacing: 10,
-              runSpacing: 10,
-              alignment: WrapAlignment.center,
-              children: [
-                for (final option in step.options)
-                  OutlinedButton.icon(
-                    key: ValueKey('plant-name-${option.id}'),
-                    onPressed: () => choosePart(plantPartId(option.id)),
-                    icon: Icon(
-                      widget.touched.contains(option.id)
-                          ? Icons.check_circle_rounded
-                          : Icons.touch_app_rounded,
-                    ),
-                    label: Text(option.label),
-                  ),
-              ],
-            ),
-          ),
       ],
     );
   }
 }
 
 class _PartTile extends StatelessWidget {
-  const _PartTile({required this.id, required this.label, this.enlarged = false});
+  const _PartTile({
+    required this.id,
+    required this.label,
+    this.enlarged = false,
+  });
   final String id, label;
   final bool enlarged;
   @override

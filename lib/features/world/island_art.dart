@@ -2,7 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-const worldArtAsset = 'assets/images/islands-v2.png';
+const worldArtAsset = 'assets/images/islands-v2.webp';
 const islandRegions = [
   Rect.fromLTWH(0, 0, .5, .425),
   Rect.fromLTWH(.5, 0, .5, .425),

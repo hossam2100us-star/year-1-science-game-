@@ -4,7 +4,7 @@ import 'dart:ui' as ui;
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
-const plantLabAsset = 'assets/images/plant-lab-v1.png';
+const plantLabAsset = 'assets/images/plant-lab-v1.webp';
 const plantPartRegions = {
   'roots': Rect.fromLTWH(.295, .62, .37, .36),
   'stem': Rect.fromLTWH(.475, .37, .035, .25),
@@ -45,7 +45,7 @@ class PlantLabGame extends FlameGame {
 
   @override
   Future<void> onLoad() async {
-    illustration = await images.load('plant-lab-v1.png');
+    illustration = await images.load('plant-lab-v1.webp');
   }
 
   @override

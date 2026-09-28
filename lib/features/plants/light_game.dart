@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 
 import 'light_model.dart';
 
-const lightRoomAsset = 'assets/images/light-room-v1.png';
-const lightPlantsAsset = 'assets/images/light-plants-v1.png';
+const lightRoomAsset = 'assets/images/light-room-v1.webp';
+const lightPlantsAsset = 'assets/images/light-plants-v1.webp';
 const lightPlantCenters = {'window': .265, 'cupboard': .745};
 
 class LightGame extends FlameGame {
@@ -22,8 +22,8 @@ class LightGame extends FlameGame {
   @override
   Future<void> onLoad() async {
     final loaded = await Future.wait([
-      images.load('light-room-v1.png'),
-      images.load('light-plants-v1.png'),
+      images.load('light-room-v1.webp'),
+      images.load('light-plants-v1.webp'),
     ]);
     room = loaded[0];
     plants = loaded[1];

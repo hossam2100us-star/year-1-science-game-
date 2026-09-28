@@ -35,10 +35,12 @@ class HiveProgressStore implements ProgressStore {
     final previous = box.get('data');
     final oldPhoto = previous == null
         ? null
-        : (jsonDecode(previous) as Map)['profile']?['photo'];
+        : AppData.fromJson(Map<String, dynamic>.from(jsonDecode(previous)))
+              .profile
+              ?.toJson()['photo'];
     final json = data.toJson();
     await box.put('data', jsonEncode(json));
-    if (oldPhoto != json['profile']?['photo']) await box.compact();
+    if (oldPhoto != data.profile?.toJson()['photo']) await box.compact();
     await box.flush();
   }
 }

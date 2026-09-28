@@ -10,7 +10,7 @@ def refresh_plant_review(book):
         book['contentVersion'] = 3
     intro = book['steps'][0]
     intro['title'] = 'Plant parts'
-    intro['prompt'] = 'Touch each part of the plant to discover what it does.'
+    intro['prompt'] = 'Touch a hand button to discover a plant part. Follow its line to the part.'
     if book.get('contentVersion') == 3:
         book['previousStepIdsV3'] = [s['id'] for s in book['steps']]
         build = book['steps'][1]
@@ -32,7 +32,10 @@ def refresh_plant_review(book):
     options = {o['id']: o for o in fridge['options']}
     fridge['options'] = [options[key] for key in order]
     workshop = next(s for s in book['steps'] if s['id'] == 'unit_02.step.032')
-    workshop['prompt'] = 'Make your own plant. Drag each piece onto the workbench, or choose a piece and touch its space.'
+    workshop['prompt'] = 'Make your own plant. Choose a piece, then touch a hand button where it belongs. You can drag the piece there too.'
+    workshop['retryText'] = 'Try another place for this part.'
+    builder = next(s for s in book['steps'] if s['id'] == 'unit_02.step.006')
+    builder['prompt'] = 'Build a plant in the pot. Choose a piece, then touch a hand button where it belongs, or drag it there.'
 
 if __name__ == '__main__':
     path = Path(__file__).resolve().parents[1] / 'assets/content/playable/unit_02.json'

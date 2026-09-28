@@ -47,6 +47,7 @@ class LessonStep {
     'story',
     'free-pair',
     'free-plant',
+    'science-lab',
     'free-measure',
     'predict-then-reveal',
   ].contains(kind);

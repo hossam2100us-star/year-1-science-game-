@@ -46,7 +46,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Explore the instruments. Listen to the action for each one.",
       "source": {
         "pages": [
@@ -101,7 +101,7 @@
       },
       "assessed": true,
       "objective": "u06.main.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about the sense you use to listen.",
       "explanation": "My ears.",
       "source": {
         "pages": [
@@ -191,7 +191,7 @@
       },
       "assessed": true,
       "objective": "u06.main.02",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Imagine playing each instrument. What would your hands or mouth do?",
       "explanation": "a) hit b) shake c) blow d) pluck e) beat",
       "source": {
         "pages": [
@@ -213,7 +213,7 @@
     },
     {
       "id": "unit_06.step.004",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Sound boxes",
       "prompt": "Predict which box sounds louder, then shake each box.",
       "options": [
@@ -232,7 +232,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "The hard, heavy stone makes a louder sound than the soft, light feather.",
       "source": {
         "pages": [
@@ -286,7 +286,7 @@
       },
       "assessed": true,
       "objective": "u06.main.03",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember the two boxes you shook. Compare the sounds you heard.",
       "explanation": "The stone — it is hard and heavy, so it makes a much louder sound than a feather.",
       "source": {
         "pages": [
@@ -307,7 +307,7 @@
     },
     {
       "id": "unit_06.step.006",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Sound walk",
       "prompt": "Move away from the drum. Listen and watch the sound fade.",
       "options": [],
@@ -315,7 +315,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Sound gets quieter and fainter as you move away.",
       "source": {
         "pages": [
@@ -361,7 +361,7 @@
       },
       "assessed": true,
       "objective": "u06.main.04",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about what you heard when you moved farther from the drum.",
       "explanation": "quieter and fainter (accept: softer, harder to hear)",
       "source": {
         "pages": [
@@ -449,7 +449,7 @@
       },
       "assessed": true,
       "objective": "u06.main.05",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Find the longest bar, then read its name and number of steps.",
       "explanation": "a) Maris (23 steps) b) 23 steps",
       "source": {
         "pages": [
@@ -510,7 +510,7 @@
       },
       "assessed": true,
       "objective": "u06.main.06",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Compare a gentle tap with a harder tap.",
       "explanation": "Tap them together harder. (A bigger push makes a louder sound.)",
       "source": {
         "pages": [
@@ -569,7 +569,7 @@
       },
       "assessed": true,
       "objective": "u06.main.07",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Compare two sounds at a time. Begin with the softest one.",
       "explanation": "A cat walking → a whisper → a door slamming → thunder.",
       "source": {
         "pages": [
@@ -617,7 +617,7 @@
       },
       "assessed": true,
       "objective": "u06.main.08",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about the movement under your fingers when you hum.",
       "explanation": "A buzzing or shaking under his hand. Sound is made by something shaking very fast.",
       "source": {
         "pages": [
@@ -708,7 +708,7 @@
       },
       "assessed": true,
       "objective": "u06.choice.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember the instruments, shaking boxes and walk away from the drum.",
       "explanation": "beating. fainter. a stone. source of sound. trumpet.",
       "source": {
         "pages": [

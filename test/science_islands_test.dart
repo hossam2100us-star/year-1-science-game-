@@ -44,7 +44,7 @@ void main() {
     for (final atlas in scienceAtlases.keys) {
       await Flame.images.load(atlas);
     }
-    for (final atlas in ['five-senses-v2.png', 'sense-objects-v2.png']) {
+    for (final atlas in ['five-senses-v2.webp', 'sense-objects-v2.webp']) {
       await Flame.images.load(atlas);
     }
   });
@@ -327,6 +327,7 @@ void main() {
         await t.runAsync(() async {
           final image = await boundary.toImage();
           final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
+          await Directory('tmp').create(recursive: true);
           await File('tmp/${entry.key}-${i + 1}.png')
               .writeAsBytes(bytes!.buffer.asUint8List());
           image.dispose();

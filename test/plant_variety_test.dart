@@ -16,11 +16,11 @@ void main() {
     helpers.testCatalog = await helpers.loadTestCatalog();
     lesson = (await LessonLibrary.load()).lessons['unit_02']!;
     for (final asset in [
-      'plant-foods-v1.png',
-      'plant-lab-v1.png',
-      'greenhouse-v1.png',
-      'bean-stages-v1.png',
-      'light-plants-v1.png',
+      'plant-foods-v1.webp',
+      'plant-lab-v1.webp',
+      'greenhouse-v1.webp',
+      'bean-stages-v1.webp',
+      'light-plants-v1.webp',
     ]) {
       await Flame.images.load(asset);
     }

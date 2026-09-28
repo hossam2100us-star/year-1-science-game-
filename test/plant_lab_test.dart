@@ -21,7 +21,7 @@ void main() {
   setUpAll(() async {
     helpers.testCatalog = await helpers.loadTestCatalog();
     lesson = (await LessonLibrary.load()).lessons['unit_02']!;
-    await Flame.images.load('plant-lab-v1.png');
+    await Flame.images.load('plant-lab-v1.webp');
   });
   MemoryProgressStore at(int index, {Map<String, dynamic>? current}) {
     final session = LessonSession.fresh(lesson)..index = index;
@@ -64,7 +64,7 @@ void main() {
       expect(find.text(lesson.steps.first.title), findsOneWidget);
       await helpers.tapVisible(
         t,
-        find.byKey(const ValueKey('plant-name-stem')),
+        find.byKey(const ValueKey('plant-part-stem')),
       );
       final review = ProviderScope.containerOf(
         t.element(find.byType(PlantLabStage)),
@@ -104,8 +104,22 @@ void main() {
     (t) async {
       final store = at(0);
       await helpers.mount(t, LessonPlayer(lesson: lesson), store);
+      for (final part in lesson.steps.first.options) {
+        expect(find.text(part.label), findsNothing);
+        expect(find.byKey(ValueKey('plant-name-${part.id}')), findsNothing);
+      }
       for (final part in ['roots', 'stem', 'leaf', 'flower']) {
-        await helpers.tapVisible(t, find.byKey(ValueKey('plant-name-$part')));
+        await helpers.tapVisible(t, find.byKey(ValueKey('plant-part-$part')));
+        final rectangles = [
+          for (final id in ['roots', 'stem', 'leaf', 'flower'])
+            t.getRect(find.byKey(ValueKey('plant-part-$id'))),
+        ];
+        for (var i = 0; i < rectangles.length; i++) {
+          expect(rectangles[i].size, const Size(64, 64));
+          for (var j = i + 1; j < rectangles.length; j++) {
+            expect(rectangles[i].overlaps(rectangles[j]), isFalse);
+          }
+        }
         expect(game(t).activePart, part);
         expect(
           find.text(lesson.steps[0].json['partDescriptions'][part]),
@@ -114,7 +128,7 @@ void main() {
       }
       await helpers.tapVisible(
         t,
-        find.byKey(const ValueKey('plant-name-stem')),
+        find.byKey(const ValueKey('plant-part-stem')),
       );
       expect(game(t).activePart, 'stem');
       expect(
@@ -131,4 +145,3 @@ void main() {
     },
   );
 }
-

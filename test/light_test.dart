@@ -20,13 +20,18 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   late Lesson lesson;
   late LessonStep step;
+  late int lightIndex;
   setUpAll(() async {
     helpers.testCatalog = await helpers.loadTestCatalog();
     lesson = (await LessonLibrary.load()).lessons['unit_02']!;
-    step = lesson.steps[10];
+    lightIndex = lesson.steps.indexWhere(
+      (s) => s.json['experiment'] == 'light',
+    );
+    expect(lightIndex, greaterThanOrEqualTo(0));
+    step = lesson.steps[lightIndex];
     await Future.wait([
-      Flame.images.load('light-room-v1.png'),
-      Flame.images.load('light-plants-v1.png'),
+      Flame.images.load('light-room-v1.webp'),
+      Flame.images.load('light-plants-v1.webp'),
     ]);
   });
   LightGame game(WidgetTester t) =>
@@ -70,13 +75,13 @@ void main() {
     (const Size(1280, 800), 1.0),
   ]) {
     testWidgets(
-      'Step 11 saves prediction, waters both, reveals Day 9 and continues at ${spec.$1}',
+      'Light experiment saves prediction, waters both, reveals Day 9 and continues at ${spec.$1}',
       (t) async {
         t.view.physicalSize = spec.$1;
         t.view.devicePixelRatio = 1;
         addTearDown(t.view.resetPhysicalSize);
         addTearDown(t.view.resetDevicePixelRatio);
-        final session = LessonSession.fresh(lesson)..index = 10;
+        final session = LessonSession.fresh(lesson)..index = lightIndex;
         final store = MemoryProgressStore(
           AppData(
             profile: const ChildProfile(name: 'Nour'),
@@ -90,7 +95,10 @@ void main() {
           scale: spec.$2,
         );
         await t.pump(const Duration(milliseconds: 100));
-        expect(find.text('11/21'), findsOneWidget);
+        expect(
+          find.text('${lightIndex + 1}/${lesson.steps.length}'),
+          findsOneWidget,
+        );
         expect(game(t).progress.revealed, isFalse);
         await helpers.tapVisible(
           t,
@@ -127,8 +135,11 @@ void main() {
         );
         expect(store.data.attempts, isEmpty);
         await helpers.tapVisible(t, find.byKey(const ValueKey('light-finish')));
-        expect(store.data.journeys['unit_02']!['index'], 11);
-        expect(find.text('12/21'), findsOneWidget);
+        expect(store.data.journeys['unit_02']!['index'], lightIndex + 1);
+        expect(
+          find.text('${lightIndex + 2}/${lesson.steps.length}'),
+          findsOneWidget,
+        );
         expect(store.data.attempts, isEmpty);
         expect(t.takeException(), isNull);
         await t.pumpWidget(const SizedBox());
@@ -139,7 +150,7 @@ void main() {
   testWidgets(
     'An existing finished generic light experiment resumes at Day 9',
     (t) async {
-      final session = LessonSession.fresh(lesson)..index = 10;
+      final session = LessonSession.fresh(lesson)..index = lightIndex;
       session.current = {
         'prediction': 'pale_and_floppy',
         'frame': 2,
@@ -160,7 +171,7 @@ void main() {
         findsNothing,
       );
       await helpers.tapVisible(t, find.byKey(const ValueKey('light-finish')));
-      expect(store.data.journeys['unit_02']!['index'], 11);
+      expect(store.data.journeys['unit_02']!['index'], lightIndex + 1);
       await t.pumpWidget(const SizedBox());
       await t.pump();
     },
@@ -179,7 +190,7 @@ void main() {
         LightExperiment(
           step: step,
           initial: initial,
-          position: '11/21',
+          position: '${lightIndex + 1}/${lesson.steps.length}',
           onSave: (j) async {
             if (fail && j['revealed'] == true) throw StateError('disk full');
           },
@@ -200,41 +211,43 @@ void main() {
       await t.pump();
     },
   );
-  testWidgets(
-    'Direct step 11 review is isolated from the saved child journey',
-    (t) async {
-      final session = LessonSession.fresh(lesson)..index = 3;
-      final store = MemoryProgressStore(
-        AppData(
-          profile: const ChildProfile(name: 'Nour'),
-          journeys: {'unit_02': session.toJson()},
-        ),
-      );
-      final before = store.data.toJson();
-      await helpers.mount(
-        t,
-        ProviderScope(
-          overrides: [
-            lessonLibraryProvider.overrideWith(
-              (ref) async => LessonLibrary({'unit_02': lesson}),
-            ),
-          ],
-          child: const PlantLabPreview(initialStep: 10),
-        ),
-        store,
-      );
-      await t.pump();
-      await t.pump(const Duration(milliseconds: 100));
-      expect(find.byType(LightExperiment), findsOneWidget);
-      expect(find.text('11/21'), findsOneWidget);
-      await helpers.tapVisible(
-        t,
-        find.byKey(const ValueKey('light-guess-pale_and_floppy')),
-      );
-      expect(store.data.toJson(), before);
-      expect(t.takeException(), isNull);
-      await t.pumpWidget(const SizedBox());
-      await t.pump();
-    },
-  );
+  testWidgets('Direct light review is isolated from the saved child journey', (
+    t,
+  ) async {
+    final session = LessonSession.fresh(lesson)..index = 3;
+    final store = MemoryProgressStore(
+      AppData(
+        profile: const ChildProfile(name: 'Nour'),
+        journeys: {'unit_02': session.toJson()},
+      ),
+    );
+    final before = store.data.toJson();
+    await helpers.mount(
+      t,
+      ProviderScope(
+        overrides: [
+          lessonLibraryProvider.overrideWith(
+            (ref) async => LessonLibrary({'unit_02': lesson}),
+          ),
+        ],
+        child: PlantLabPreview(initialStep: lightIndex),
+      ),
+      store,
+    );
+    await t.pump();
+    await t.pump(const Duration(milliseconds: 100));
+    expect(find.byType(LightExperiment), findsOneWidget);
+    expect(
+      find.text('${lightIndex + 1}/${lesson.steps.length}'),
+      findsOneWidget,
+    );
+    await helpers.tapVisible(
+      t,
+      find.byKey(const ValueKey('light-guess-pale_and_floppy')),
+    );
+    expect(store.data.toJson(), before);
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+    await t.pump();
+  });
 }

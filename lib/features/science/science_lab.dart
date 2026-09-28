@@ -3,6 +3,8 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../../core/touch_cue.dart';
+
 import '../../content/lesson.dart';
 import 'science_picture.dart';
 import '../biology/illustrated_art.dart';
@@ -526,6 +528,8 @@ class _ScienceLabState extends State<ScienceLab> {
                             mode == 'soil' && seen.contains(p.id) ? 155 : 110,
                           ),
                           caption(p.label),
+                          if (mode != 'rock-sort' && !seen.contains(p.id))
+                            const TouchCue(),
                           if (mode == 'rock-sort')
                             Wrap(
                               children: [
@@ -581,7 +585,7 @@ class _ScienceLabState extends State<ScienceLab> {
                               width: 220,
                               height: 220,
                               child: IllustratedArt(
-                                asset: 'earth-atlas-v1.png',
+                                asset: 'earth-atlas-v1.webp',
                                 crop: Rect.fromLTWH(.009, .75, .225, .225),
                               ),
                             ),

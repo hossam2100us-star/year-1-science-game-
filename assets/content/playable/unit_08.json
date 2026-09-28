@@ -46,7 +46,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Explore the water places and listen.",
       "source": {
         "pages": [
@@ -100,7 +100,7 @@
       },
       "assessed": true,
       "objective": "u08.main.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Picture the large blue areas on Earth.",
       "explanation": "water",
       "source": {
         "pages": [
@@ -181,7 +181,7 @@
       },
       "assessed": true,
       "objective": "u08.main.02",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Compare size, moving water and salt water in the clues.",
       "explanation": "a) ocean b) pond c) river d) lake",
       "source": {
         "pages": [
@@ -250,7 +250,7 @@
       },
       "assessed": true,
       "objective": "u08.main.03",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember the water places shown with each animal.",
       "explanation": "a) ocean b) river c) pond",
       "source": {
         "pages": [
@@ -319,7 +319,7 @@
       },
       "assessed": true,
       "objective": "u08.main.04",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about the material each thing is made from.",
       "explanation": "Made from rock: diamond, coal, stone wall. Not from rock: plastic bottle, T‑shirt, chair.",
       "source": {
         "pages": [
@@ -341,7 +341,7 @@
     },
     {
       "id": "unit_08.step.006",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Soil microscope",
       "prompt": "Move the magnifier and find the tiny things in soil.",
       "options": [
@@ -375,7 +375,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Soil is a mixture of small stones, sand, dead leaves and little living creatures.",
       "source": {
         "pages": [
@@ -437,7 +437,7 @@
       },
       "assessed": true,
       "objective": "u08.main.05",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember the tiny things you found with the magnifier.",
       "explanation": "Any three of: small stones, sand, bits of dead leaf or plant, worms, tiny insects, water, air.",
       "source": {
         "pages": [
@@ -487,7 +487,7 @@
       },
       "assessed": true,
       "objective": "u08.main.06",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about the collection a rock scientist would examine.",
       "explanation": "rocks (and the ground the Earth is made of)",
       "source": {
         "pages": [
@@ -552,7 +552,7 @@
       },
       "assessed": true,
       "objective": "u08.main.07",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Compare the sizes in the water family shown in the book.",
       "explanation": "pond → stream → river → lake → ocean",
       "source": {
         "pages": [
@@ -609,7 +609,7 @@
       },
       "assessed": true,
       "objective": "u08.main.08",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about the hard materials used for walls and paths.",
       "explanation": "Child's own answers, for example: a stone wall, bricks, a marble floor, a pavement, sand, a mountain.",
       "source": {
         "pages": [
@@ -631,7 +631,7 @@
     },
     {
       "id": "unit_08.step.011",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "My rock museum",
       "prompt": "Sort the rocks into two groups using your own rule. Both choices are welcome.",
       "options": [
@@ -660,7 +660,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Sort the rocks into two groups using your own rule. Both choices are welcome.",
       "source": {
         "pages": [
@@ -686,7 +686,7 @@
     },
     {
       "id": "unit_08.step.012",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Clean the beach",
       "prompt": "Collect the litter so animals do not swallow it.",
       "options": [
@@ -710,7 +710,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Litter can harm animals. Keep their homes clean.",
       "source": {
         "pages": [
@@ -799,7 +799,7 @@
       },
       "assessed": true,
       "objective": "u08.choice.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Use the water places, soil observations and rock collection to help.",
       "explanation": "water. ocean. a mixture of many things. rock. rocks.",
       "source": {
         "pages": [

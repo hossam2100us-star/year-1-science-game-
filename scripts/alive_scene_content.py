@@ -3,10 +3,10 @@ from copy import deepcopy
 
 def add_alive_scenes(book):
     g=book['garden']
-    g.update(id='garden',asset='garden-v2.png',difficulty=1)
+    g.update(id='garden',asset='garden-v2.webp',difficulty=1)
     g['ui'].update(explained="Let's learn this together.",difficulty='1 - First discoveries',difficultyAr='١ - أول اكتشافاتي',menu='Choose an adventure',menuAr='اختار مغامرة',back='My adventures',titleAr='الجنينة')
     data=[
-      ('home','home-hunt-v1.png','Home detectives','محققين في البيت',2,[
+      ('home','home-hunt-v1.webp','Home detectives','محققين في البيت',2,[
         ('grandmother','Grandmother','الجدة',True,'Think about a person growing and needing food.','Grandmother is alive. People grow, need food and water, and breathe.','u01.main.01',[.045,.135,.222,.646]),
         ('fish','Fish','السمكة',True,'Does a fish need food and grow?','The fish is alive. It grows and needs food.',None,[.285,.270,.110,.170]),
         ('fly','Fly','الذبابة',True,'Think about growing, needing food and making new living things.','The fly is alive. It grows, needs food and can make new living things.','u01.main.08',[.438,.065,.055,.110]),
@@ -15,7 +15,7 @@ def add_alive_scenes(book):
         ('kettle','Kettle','الغلاية',False,'Does a kettle grow or make new kettles?','A kettle is not alive. It does not grow, does not need food, and cannot make new kettles.','u01.main.03',[.798,.213,.099,.175]),
         ('clock','Clock','الساعة',False,'The hands move. Is moving enough?','The clock is not alive. Its hands move, but moving is not enough.','u01.main.05',[.741,.003,.102,.207]),
       ]),
-      ('river','river-hunt-v1.png','River explorers','مستكشفين النهر',3,[
+      ('river','river-hunt-v1.webp','River explorers','مستكشفين النهر',3,[
         ('lizard','Lizard','السحلية',True,'Think about growing and needing food.','The lizard is alive. It grows, needs food and breathes.','u01.main.01',[.035,.250,.266,.192]),
         ('worm','Worm','الدودة',True,'Think about growing, needing food and making new living things.','The worm is alive. It grows and needs food.','u01.main.08',[.354,.732,.104,.120]),
         ('dandelion','Dandelion','الهندباء',True,'It does not walk. But does it grow and make seeds?','The dandelion is alive. It grows, needs water and makes seeds.','u01.main.04',[.016,.461,.265,.433]),

@@ -56,7 +56,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Touch each material and listen to its properties.",
       "source": {
         "pages": [
@@ -122,7 +122,7 @@
       },
       "assessed": true,
       "objective": "u04.main.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "An object is a thing you can use. Ask what it is made from.",
       "explanation": "a) materials b) objects",
       "source": {
         "pages": [
@@ -202,7 +202,7 @@
       },
       "assessed": true,
       "objective": "u04.main.02",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Look at the window, shirt, nail and newspaper. Think about their surfaces.",
       "explanation": "a) glass b) fabric (cotton) c) metal d) paper",
       "source": {
         "pages": [
@@ -265,7 +265,7 @@
       },
       "assessed": true,
       "objective": "u04.main.03",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Imagine touching a metal spoon. Think about hardness, shine and temperature.",
       "explanation": "hard, shiny, cold to touch",
       "source": {
         "pages": [
@@ -336,7 +336,7 @@
       },
       "assessed": true,
       "objective": "u04.main.04",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Check each claim separately. Think about a window you can see through.",
       "explanation": "a) TRUE b) FALSE c) TRUE d) FALSE",
       "source": {
         "pages": [
@@ -359,7 +359,7 @@
     },
     {
       "id": "unit_04.step.006",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Rain laboratory",
       "prompt": "Predict for each cover, then pour the water.",
       "options": [
@@ -388,7 +388,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Plastic and foil keep water out. Cloth and tissue let water through.",
       "source": {
         "pages": [
@@ -462,7 +462,7 @@
       },
       "assessed": true,
       "objective": "u04.main.05",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember which covers kept the inside of the cup dry.",
       "explanation": "Waterproof: plastic and aluminium foil. Not waterproof: cotton cloth, paper, tissue paper.",
       "source": {
         "pages": [
@@ -484,7 +484,7 @@
     },
     {
       "id": "unit_04.step.008",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Shape studio",
       "prompt": "Choose an object, then try a shape-changing action.",
       "options": [
@@ -523,7 +523,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Some materials change shape. A rubber band stretches; a sponge or dough can be squashed; a stone or metal spoon cannot be squashed.",
       "source": {
         "pages": [
@@ -599,7 +599,7 @@
       },
       "assessed": true,
       "objective": "u04.main.06",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Imagine pressing each object between your hands. Would its shape change?",
       "explanation": "Can squash: sponge, dough, bread, a plastic bottle, cotton wool. Cannot squash: a brick, a stone, a metal spoon, a wooden block.",
       "source": {
         "pages": [
@@ -648,7 +648,7 @@
       },
       "assessed": true,
       "objective": "u04.main.07",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about what you need to see when you look out of a window.",
       "explanation": "Because glass is transparent — we need to see through a window, and you cannot see through wood.",
       "source": {
         "pages": [
@@ -706,7 +706,7 @@
       },
       "assessed": true,
       "objective": "u04.main.08",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Look at the outside of the pencil and the dark part that makes a mark.",
       "explanation": "Wood (the body), graphite or lead (the writing part), metal (the ring) and rubber (the eraser). Any two are correct.",
       "source": {
         "pages": [
@@ -729,7 +729,7 @@
     },
     {
       "id": "unit_04.step.012",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Silly umbrella",
       "prompt": "Try paper and plastic in the rain. Which one would you choose?",
       "options": [
@@ -748,7 +748,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Paper soaks up water. Plastic is waterproof.",
       "source": {
         "pages": [
@@ -850,7 +850,7 @@
       },
       "assessed": true,
       "objective": "u04.choice.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Use your rain and shape experiments to help with each discovery.",
       "explanation": "glass. plastic. cold and hard. a rubber band. clay.",
       "source": {
         "pages": [

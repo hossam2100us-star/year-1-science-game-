@@ -12,8 +12,8 @@ import '../../parent/parent_gate.dart';
 import '../../parent/voice_settings.dart';
 
 class ProfileEditor extends ConsumerStatefulWidget {
-  const ProfileEditor({super.key, this.editing = false});
-  final bool editing;
+  const ProfileEditor({super.key, this.editing = false, this.newChild = false});
+  final bool editing, newChild;
   @override
   ConsumerState<ProfileEditor> createState() => _ProfileEditorState();
 }
@@ -31,7 +31,7 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
   @override
   void initState() {
     super.initState();
-    final p = ref.read(appProvider).profile;
+    final p = widget.newChild ? null : ref.read(appProvider).profile;
     if (p != null) {
       _name.text = p.name;
       _gender = p.gender;
@@ -40,7 +40,7 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
       _photo = p.photo;
     }
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      if (ref.read(appProvider).pendingPhoto && mounted) {
+      if (!widget.newChild && ref.read(appProvider).pendingPhoto && mounted) {
         if (await parentGate(context) && mounted) await _recover();
       }
     });
@@ -90,16 +90,19 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
     if (_busy) return;
     await ref.read(narrationProvider).stop();
     if (!mounted) return;
-    if (!widget.editing && !await parentGate(context)) return;
+    if (!widget.editing && !widget.newChild && !await parentGate(context))
+      return;
     if (!mounted) return;
     setState(() {
       _busy = true;
       _message = null;
     });
     try {
-      await ref.read(appProvider.notifier).photoPending(true);
+      if (!widget.newChild)
+        await ref.read(appProvider.notifier).photoPending(true);
       final photo = await _photos.pick();
-      await ref.read(appProvider.notifier).photoPending(false);
+      if (!widget.newChild)
+        await ref.read(appProvider.notifier).photoPending(false);
       if (mounted && photo != null) setState(() => _photo = photo);
     } catch (error) {
       if (mounted)
@@ -117,8 +120,13 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
   Future<void> _save() async {
     setState(() => _busy = true);
     try {
-      await ref.read(appProvider.notifier).saveProfile(_profile);
-      if (widget.editing && mounted) Navigator.of(context).pop();
+      if (widget.newChild) {
+        await ref.read(appProvider.notifier).addChild(_profile);
+      } else {
+        await ref.read(appProvider.notifier).saveProfile(_profile);
+      }
+      if ((widget.editing || widget.newChild) && mounted)
+        Navigator.of(context).pop();
     } catch (_) {
       if (mounted) showSaveError(context);
     } finally {
@@ -334,6 +342,8 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
                                       : _step == 2
                                       ? (widget.editing
                                             ? 'Save my changes'
+                                            : widget.newChild
+                                            ? 'Create child profile'
                                             : 'Start exploring')
                                       : _step == 0 && _name.text.trim().isEmpty
                                       ? 'Skip for now'

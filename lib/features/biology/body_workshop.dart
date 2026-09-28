@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../content/lesson.dart';
 import 'illustrated_art.dart';
 
-/// Direct touch and drag over the artwork. No numbered markers cover the picture.
+/// Separate touch buttons point to anatomical anchors without overlapping.
 class BodyWorkshop extends StatelessWidget {
   const BodyWorkshop({
     super.key,
@@ -28,15 +28,7 @@ class BodyWorkshop extends StatelessWidget {
       eye ? illustratedEyeAnchors : illustratedBodyAnchors;
   Rect get camera {
     if (eye) return const Rect.fromLTWH(.035, .10, .93, .66);
-    final id = chosen;
-    if (!assembling || id == null) return const Rect.fromLTWH(.14, 0, .72, .96);
-    if (['head', 'chin', 'neck'].contains(id))
-      return const Rect.fromLTWH(.28, .045, .44, .25);
-    if (['shoulder', 'arm', 'elbow'].contains(id))
-      return const Rect.fromLTWH(.20, .27, .29, .23);
-    if (['wrist', 'hand', 'fingers'].contains(id))
-      return const Rect.fromLTWH(.14, .48, .20, .14);
-    return const Rect.fromLTWH(.26, .63, .45, .32);
+    return const Rect.fromLTWH(.14, 0, .72, .96);
   }
 
   List<PictureItem> get spots => (assembling ? step.targets : step.options)
@@ -119,11 +111,7 @@ class BodyWorkshop extends StatelessWidget {
   );
   Widget _scene() => LayoutBuilder(
     builder: (context, box) {
-      final height = eye
-          ? 430.0
-          : assembling && chosen != null
-          ? 480.0
-          : 570.0;
+      final height = eye ? 430.0 : 570.0;
       final frame = eye ? const Size(434.4, 724) : const Size(1024, 1536);
       final source = Rect.fromLTWH(
         camera.left * frame.width,
@@ -154,11 +142,38 @@ class BodyWorkshop extends StatelessWidget {
         );
       }
 
+      final markers = <String, Offset>{};
+      const leftParts = {
+        'shoulder',
+        'arm',
+        'elbow',
+        'wrist',
+        'hand',
+        'fingers',
+        'eyes',
+        'eyebrow',
+        'skin',
+      };
+      for (final left in [true, false]) {
+        final column =
+            spots.where((p) => leftParts.contains(p.id) == left).toList()
+              ..sort((a, b) => point(a.id).dy.compareTo(point(b.id).dy));
+        for (var i = 0; i < column.length; i++) {
+          // Equal spacing keeps every 64 dp button separate, even at the wrist.
+          markers[column[i].id] = Offset(
+            left ? 36 : box.maxWidth - 36,
+            column.length == 1
+                ? height / 2
+                : 36 + i * (height - 72) / (column.length - 1),
+          );
+        }
+      }
+
       final asset = eye
-          ? 'five-senses-v2.png'
+          ? 'five-senses-v2.webp'
           : girl
-          ? 'explorer-girl-v2.png'
-          : 'explorer-boy-v2.png';
+          ? 'explorer-girl-v2.webp'
+          : 'explorer-boy-v2.webp';
       final crop = eye
           ? Rect.fromLTWH(
               camera.left * .2,
@@ -172,61 +187,64 @@ class BodyWorkshop extends StatelessWidget {
         child: Container(
           height: height,
           color: const Color(0xFFFFFBEE),
-          child: GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTapUp: (event) {
-              final candidates = [...spots]
-                ..sort(
-                  (a, b) => (point(a.id) - event.localPosition).distance
-                      .compareTo((point(b.id) - event.localPosition).distance),
-                );
-              if (candidates.isNotEmpty &&
-                  (point(candidates.first.id) - event.localPosition).distance <
-                      52)
-                chooseSpot(candidates.first.id);
-            },
-            child: Stack(
-              children: [
-                Positioned.fill(
-                  child: IllustratedArt(asset: asset, crop: crop),
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: IllustratedArt(asset: asset, crop: crop),
+              ),
+              Positioned.fill(
+                child: IgnorePointer(
+                  child: CustomPaint(
+                    painter: _BodyLeaders([
+                      for (final p in spots) (markers[p.id]!, point(p.id)),
+                    ]),
+                  ),
                 ),
-                for (final p in spots)
-                  Positioned.fromRect(
-                    rect: Rect.fromCenter(
-                      center: point(p.id),
-                      width: 72,
-                      height: 72,
-                    ),
-                    child: DragTarget<String>(
-                      onWillAcceptWithDetails: (d) =>
-                          assembling &&
-                          !done &&
-                          step.options.any((o) => o.id == d.data),
-                      onAcceptWithDetails: (d) => onPlace(d.data, p.id),
-                      builder: (context, hover, rejected) => Semantics(
-                        label: p.label,
-                        button: true,
-                        onTap: () => chooseSpot(p.id),
-                        child: Container(
+              ),
+              for (final p in spots)
+                Positioned.fromRect(
+                  rect: Rect.fromCenter(
+                    center: markers[p.id]!,
+                    width: 64,
+                    height: 64,
+                  ),
+                  child: DragTarget<String>(
+                    onWillAcceptWithDetails: (d) =>
+                        assembling &&
+                        !done &&
+                        step.options.any((o) => o.id == d.data),
+                    onAcceptWithDetails: (d) => onPlace(d.data, p.id),
+                    builder: (context, hover, rejected) => Semantics(
+                      label: p.label,
+                      button: true,
+                      onTap: () => chooseSpot(p.id),
+                      child: Material(
+                        color:
+                            hover.isNotEmpty ||
+                                (!assembling && selected.contains(p.id)) ||
+                                placements.containsValue(p.id)
+                            ? const Color(0xFFFFD577)
+                            : const Color(0xFFFFFCF4),
+                        shape: const CircleBorder(
+                          side: BorderSide(color: Color(0xFF356D75), width: 2),
+                        ),
+                        child: InkWell(
                           key: ValueKey('body-spot-${p.id}'),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            border: hover.isNotEmpty
-                                ? Border.all(
-                                    color: const Color(0xFFD7A148),
-                                    width: 3,
-                                  )
-                                : null,
-                            color: hover.isNotEmpty
-                                ? const Color(0x33FFD25B)
-                                : Colors.transparent,
+                          customBorder: const CircleBorder(),
+                          onTap: done ? null : () => chooseSpot(p.id),
+                          child: Icon(
+                            placements.containsValue(p.id)
+                                ? Icons.check_rounded
+                                : Icons.touch_app_rounded,
+                            size: 30,
+                            color: const Color(0xFF254957),
                           ),
                         ),
                       ),
                     ),
                   ),
-              ],
-            ),
+                ),
+            ],
           ),
         ),
       );
@@ -263,4 +281,30 @@ class BodyWorkshop extends StatelessWidget {
         ),
     ],
   );
+}
+
+class _BodyLeaders extends CustomPainter {
+  const _BodyLeaders(this.points);
+  final List<(Offset, Offset)> points;
+  @override
+  void paint(Canvas canvas, Size size) {
+    final line = Paint()
+      ..color = const Color(0xFF356D75)
+      ..strokeWidth = 2;
+    for (final (button, anchor) in points) {
+      canvas.drawLine(
+        button,
+        anchor,
+        Paint()
+          ..color = Colors.white
+          ..strokeWidth = 5,
+      );
+      canvas.drawLine(button, anchor, line);
+      canvas.drawCircle(anchor, 6, Paint()..color = Colors.white);
+      canvas.drawCircle(anchor, 4, line);
+    }
+  }
+
+  @override
+  bool shouldRepaint(_BodyLeaders oldDelegate) => true;
 }

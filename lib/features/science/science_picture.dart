@@ -4,7 +4,7 @@ import '../biology/illustrated_art.dart';
 import '../biology/biology_art.dart';
 
 const scienceAtlases = <String, List<String>>{
-  'science-details-v1.png': [
+  'science-details-v1.webp': [
     'plastic_pot',
     'glass_marble',
     'paper_straw',
@@ -22,7 +22,7 @@ const scienceAtlases = <String, List<String>>{
     'gloves',
     'boots',
   ],
-  'materials-atlas-v1.png': [
+  'materials-atlas-v1.webp': [
     'spoon',
     'chair',
     'window',
@@ -40,7 +40,7 @@ const scienceAtlases = <String, List<String>>{
     'brick',
     'dough',
   ],
-  'physics-atlas-v1.png': [
+  'physics-atlas-v1.webp': [
     'doorbell',
     'drawer',
     'swing',
@@ -58,7 +58,7 @@ const scienceAtlases = <String, List<String>>{
     'magnet',
     'key',
   ],
-  'earth-atlas-v1.png': [
+  'earth-atlas-v1.webp': [
     'pond',
     'stream',
     'river',
@@ -76,7 +76,7 @@ const scienceAtlases = <String, List<String>>{
     'moon',
     'astronaut',
   ],
-  'electric-atlas-v1.png': [
+  'electric-atlas-v1.webp': [
     'tv',
     'vacuum',
     'lantern',
@@ -94,7 +94,7 @@ const scienceAtlases = <String, List<String>>{
     'hanger',
     'sock',
   ],
-  'science-extras-v1.png': [
+  'science-extras-v1.webp': [
     'snake',
     'fish',
     'kangaroo',
@@ -167,11 +167,11 @@ class SciencePicture extends StatelessWidget {
           child: IllustratedArt(
             asset: a.key,
             crop: Rect.fromLTWH(
-              (i % 4) / 4 + (a.key == 'science-details-v1.png' ? 0.018 : 0.006),
+              (i % 4) / 4 + (a.key == 'science-details-v1.webp' ? 0.018 : 0.006),
               (i ~/ 4) / 4 +
-                  (a.key == 'science-details-v1.png' ? 0.018 : 0.006),
-              a.key == 'science-details-v1.png' ? 0.214 : 0.238,
-              a.key == 'science-details-v1.png' ? 0.214 : 0.238,
+                  (a.key == 'science-details-v1.webp' ? 0.018 : 0.006),
+              a.key == 'science-details-v1.webp' ? 0.214 : 0.238,
+              a.key == 'science-details-v1.webp' ? 0.214 : 0.238,
             ),
           ),
         );

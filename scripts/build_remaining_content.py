@@ -1,5 +1,6 @@
 """Source-linked compact Materials, Physics and Earth/Space adventures."""
 import json,re
+from refine_science_review import refine_science_review
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 SRC=ROOT/'assets/content'
@@ -186,6 +187,7 @@ for b in books:
   if 'Try It at Home\n' in intro:
    home=intro.split('Try It at Home\n')[1].split('More examples')[0]
    b['homeActivities']=[dict(text=home,safety=read('parent_guide')['sourceText'].split('Safety, every time\n')[1],pages=b['sourcePages'],safetyPages=[2])]
+ refine_science_review(b)
  (SRC/'playable'/f"{b['id']}.json").write_text(json.dumps(b,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  print(b['id'],len(b['steps']))
 

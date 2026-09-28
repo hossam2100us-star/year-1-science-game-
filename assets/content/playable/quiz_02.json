@@ -47,7 +47,7 @@
       },
       "assessed": true,
       "objective": "quiz02.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Name the thing first, then ask what it is made from.",
       "explanation": "object = chair; material = wood",
       "source": {
         "pages": [
@@ -116,7 +116,7 @@
       },
       "assessed": true,
       "objective": "quiz02.02",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Choose names of materials, rather than objects made from them.",
       "explanation": "Any four: wood, metal, plastic, glass, fabric, paper, clay, rubber",
       "source": {
         "pages": [
@@ -164,7 +164,7 @@
       },
       "assessed": true,
       "objective": "quiz02.03",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about looking through a window.",
       "explanation": "glass",
       "source": {
         "pages": [
@@ -213,7 +213,7 @@
       },
       "assessed": true,
       "objective": "quiz02.04",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember which covers kept the cup dry in the rain experiment.",
       "explanation": "plastic",
       "source": {
         "pages": [
@@ -257,7 +257,7 @@
       },
       "assessed": true,
       "objective": "quiz02.05",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about touching a metal spoon: its surface and how it feels.",
       "explanation": "hard and shiny",
       "source": {
         "pages": [
@@ -326,7 +326,7 @@
       },
       "assessed": true,
       "objective": "quiz02.06",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Imagine changing a shape with your hands in four different ways.",
       "explanation": "twist, stretch, squash, bend",
       "source": {
         "pages": [
@@ -369,7 +369,7 @@
       },
       "assessed": true,
       "objective": "quiz02.07",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about pulling gently on the objects in the shape studio.",
       "explanation": "a rubber band",
       "source": {
         "pages": [
@@ -417,7 +417,7 @@
       },
       "assessed": true,
       "objective": "quiz02.08",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember the soft material shaped into a pot before drying.",
       "explanation": "clay",
       "source": {
         "pages": [
@@ -461,7 +461,7 @@
       },
       "assessed": true,
       "objective": "quiz02.09",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about glass windows you have seen. Are they all the same colour?",
       "explanation": "FALSE — glass can be any colour, and much of it is clear",
       "source": {
         "pages": [
@@ -518,7 +518,7 @@
       },
       "assessed": true,
       "objective": "quiz02.10",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about the materials of the kitchen objects, not their jobs.",
       "explanation": "Any two: spoon, fork, knife, pan, kettle, tap, tray",
       "source": {
         "pages": [

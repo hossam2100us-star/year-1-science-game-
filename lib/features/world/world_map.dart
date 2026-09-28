@@ -13,8 +13,9 @@ import '../biology/sticker_album.dart';
 import 'island_art.dart';
 
 class WorldMap extends ConsumerStatefulWidget {
-  const WorldMap({super.key, required this.onParentChanged});
+  const WorldMap({super.key, required this.onParentChanged, this.onSubjects});
   final ValueChanged<bool> onParentChanged;
+  final VoidCallback? onSubjects;
   @override
   ConsumerState<WorldMap> createState() => _WorldMapState();
 }
@@ -67,6 +68,12 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                 ),
                 child: Row(
                   children: [
+                    if (widget.onSubjects != null)
+                      IconButton(
+                        onPressed: widget.onSubjects,
+                        tooltip: 'Subjects • المواد',
+                        icon: const Icon(Icons.apps_rounded),
+                      ),
                     ChildAvatar(profile: profile, size: 56),
                     const SizedBox(width: 12),
                     Expanded(

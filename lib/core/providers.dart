@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'dart:math';
+
 import 'models.dart';
 import 'storage.dart';
 import 'narration.dart';
@@ -38,20 +40,35 @@ class AppController extends Notifier<AppData> {
     return task;
   }
 
+  Future<void> _childCommit(AppData Function(AppData) change) {
+    final owner = state.activeChildId;
+    return _commit((s) => s.changeChild(owner, change));
+  }
+
+  Future<void> selectChild(String id) => _commit((s) => s.selectChild(id));
+  Future<void> addChild(ChildProfile profile) {
+    final random = Random.secure();
+    final id = List.generate(
+      16,
+      (_) => random.nextInt(256).toRadixString(16).padLeft(2, '0'),
+    ).join();
+    return _commit((s) => s.addChild(id, profile));
+  }
+
   Future<void> saveProfile(ChildProfile profile) =>
-      _commit((s) => s.copyWith(profile: profile));
+      _childCommit((s) => s.copyWith(profile: profile));
   Future<void> settings(AppSettings settings) =>
-      _commit((s) => s.copyWith(settings: settings));
+      _childCommit((s) => s.copyWith(settings: settings));
   Future<void> photoPending(bool value) =>
-      _commit((s) => s.copyWith(pendingPhoto: value));
+      _childCommit((s) => s.copyWith(pendingPhoto: value));
   Future<void> recordAttempt(UnitAttempt attempt) =>
-      _commit((s) => s.copyWith(attempts: [...s.attempts, attempt]));
-  Future<void> usage(DateTime start, DateTime end) => _commit(
+      _childCommit((s) => s.copyWith(attempts: [...s.attempts, attempt]));
+  Future<void> usage(DateTime start, DateTime end) => _childCommit(
     (s) => s.copyWith(dailySeconds: addUsage(s.dailySeconds, start, end)),
   );
   Future<void> saveJourney(String id, Map<String, dynamic> journey) =>
-      _commit((s) => s.copyWith(journeys: {...s.journeys, id: journey}));
-  Future<void> completeJourney(UnitAttempt attempt) => _commit((s) {
+      _childCommit((s) => s.copyWith(journeys: {...s.journeys, id: journey}));
+  Future<void> completeJourney(UnitAttempt attempt) => _childCommit((s) {
     final journeys = Map<String, Map<String, dynamic>>.from(s.journeys)
       ..remove(attempt.unitId);
     final exists = s.attempts.any(
@@ -62,5 +79,5 @@ class AppController extends Notifier<AppData> {
       attempts: exists ? s.attempts : [...s.attempts, attempt],
     );
   });
-  Future<void> resetProgress() => _commit((s) => s.resetProgress());
+  Future<void> resetProgress() => _childCommit((s) => s.resetProgress());
 }

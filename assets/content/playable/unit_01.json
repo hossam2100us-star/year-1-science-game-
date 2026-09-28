@@ -2413,7 +2413,7 @@
       }
     ],
     "id": "garden",
-    "asset": "garden-v2.png",
+    "asset": "garden-v2.webp",
     "difficulty": 1
   },
   "aliveScenes": [
@@ -2588,7 +2588,7 @@
         }
       ],
       "id": "home",
-      "asset": "home-hunt-v1.png",
+      "asset": "home-hunt-v1.webp",
       "difficulty": 2,
       "bounds": {
         "grandmother": [
@@ -2803,7 +2803,7 @@
         }
       ],
       "id": "river",
-      "asset": "river-hunt-v1.png",
+      "asset": "river-hunt-v1.webp",
       "difficulty": 3,
       "bounds": {
         "lizard": [

@@ -61,7 +61,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Touch each movement to hear its name.",
       "source": {
         "pages": [
@@ -81,7 +81,7 @@
     },
     {
       "id": "unit_05.step.002",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Push and pull playground",
       "prompt": "Move the slider away and towards you. Watch the drawer move.",
       "options": [],
@@ -89,7 +89,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "A push moves an object away. A pull brings it towards you.",
       "source": {
         "pages": [
@@ -149,7 +149,7 @@
       },
       "assessed": true,
       "objective": "u05.main.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Imagine where your hand moves: away from you or towards you?",
       "explanation": "a) push b) pull",
       "source": {
         "pages": [
@@ -223,7 +223,7 @@
       },
       "assessed": true,
       "objective": "u05.main.02",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Act out each movement with your hand. Which direction is the force?",
       "explanation": "a) push b) pull c) both push and pull d) both push and pull",
       "source": {
         "pages": [
@@ -244,7 +244,7 @@
     },
     {
       "id": "unit_05.step.005",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Float or sink tank",
       "prompt": "Predict for each object, then drop it into the tank.",
       "options": [
@@ -283,7 +283,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Predict for each object, then drop it into the tank.",
       "source": {
         "pages": [
@@ -379,7 +379,7 @@
       },
       "assessed": true,
       "objective": "u05.main.03",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember where each object stopped in the water tank.",
       "explanation": "a) F b) S c) S d) F e) F f) S",
       "source": {
         "pages": [
@@ -470,7 +470,7 @@
       },
       "assessed": true,
       "objective": "u05.main.04",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Picture the animal moving. Does it use legs, wings or its whole body?",
       "explanation": "snake – slither | bird – fly | fish – swim | kangaroo – hop | baby – crawl",
       "source": {
         "pages": [
@@ -491,7 +491,7 @@
     },
     {
       "id": "unit_05.step.008",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Sailboat breeze",
       "prompt": "Hold the wind button to move the sailboat.",
       "options": [],
@@ -499,7 +499,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Moving air pushes the sailboat.",
       "source": {
         "pages": [
@@ -544,7 +544,7 @@
       },
       "assessed": true,
       "objective": "u05.main.05",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember how the wind met the sail and moved the boat.",
       "explanation": "PUSH — the moving air pushes the sail.",
       "source": {
         "pages": [
@@ -602,7 +602,7 @@
       },
       "assessed": true,
       "objective": "u05.main.06",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Imagine opening a drawer and pressing a switch. Compare your hand movements.",
       "explanation": "Pull: a drawer, a door handle, a zip, a curtain. Push: a doorbell, a light switch, a button, a trolley.",
       "source": {
         "pages": [
@@ -671,7 +671,7 @@
       },
       "assessed": true,
       "objective": "u05.main.07",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Compare the four actions: which move something away, and which bring it towards you?",
       "explanation": "Child's own answers. Pushes: pressing a switch, kicking a ball, closing a door, pushing a trolley. Pulls: opening a drawer, pulling a zip, pulling\non socks, opening the fridge.",
       "source": {
         "pages": [
@@ -692,7 +692,7 @@
     },
     {
       "id": "unit_05.step.012",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Orange surprise",
       "prompt": "Predict, then test the orange with and without its peel.",
       "options": [
@@ -711,7 +711,7 @@
       "answer": null,
       "assessed": false,
       "objective": "u05.main.08",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "The orange floats with its peel and sinks without it. Tiny air pockets in the peel help it float.",
       "source": {
         "pages": [
@@ -814,7 +814,7 @@
       },
       "assessed": true,
       "objective": "u05.choice.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Use the drawer, water tank and sailboat discoveries to find each answer.",
       "explanation": "away from you. a metal coin. slithering. a bigger push. push.",
       "source": {
         "pages": [

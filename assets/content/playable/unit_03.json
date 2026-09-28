@@ -15,7 +15,7 @@
       "id": "unit_03.step.001",
       "kind": "explore",
       "title": "Meet the explorer",
-      "prompt": "Meet our explorer! Touch a body part and listen.",
+      "prompt": "Meet our explorer! Touch a hand button and listen. Follow its line to the body part.",
       "options": [
         {
           "id": "head",
@@ -163,7 +163,7 @@
       "id": "unit_03.body-workshop.v2",
       "kind": "label-diagram",
       "title": "Explorer workshop",
-      "prompt": "Choose a name, then touch that part of the explorer. You can drag the name there too.",
+      "prompt": "Choose a name, then touch the hand button pointing to that part. You can drag the name onto the button too.",
       "options": [
         {
           "id": "head",
@@ -438,7 +438,7 @@
       "id": "unit_03.eye-workshop.v2",
       "kind": "label-diagram",
       "title": "Around my eye",
-      "prompt": "Give the three eye protectors their names. Choose a name, then touch the part.",
+      "prompt": "Give the three eye protectors their names. Choose a name, then touch the hand button pointing to the part.",
       "options": [
         {
           "id": "eyelash",

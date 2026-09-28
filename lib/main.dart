@@ -17,7 +17,8 @@ import 'core/providers.dart';
 import 'core/storage.dart';
 import 'core/widgets.dart';
 import 'features/onboarding/profile_editor.dart';
-import 'features/world/world_map.dart';
+import 'features/world/subject_hub.dart';
+import 'features/onboarding/child_chooser.dart';
 import 'features/biology/lesson_player.dart';
 import 'features/plants/bean_experiment.dart';
 import 'features/plants/plant_lab_preview.dart';
@@ -147,6 +148,7 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
   Timer? _timer;
   DateTime? _last;
   int _sessionSeconds = 0;
+  bool _childChosen = false;
   bool _parent = false, _resumed = true, _breakOpen = false, _exitOpen = false;
   @override
   void initState() {
@@ -168,6 +170,7 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
         _resumed &&
         !_parent &&
         !_breakOpen &&
+        _childChosen &&
         ref.read(appProvider).profile != null;
     if (!active) {
       _last = null;
@@ -238,13 +241,30 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
   }
 
   @override
-  Widget build(BuildContext context) => PopScope(
-    canPop: false,
-    onPopInvokedWithResult: (didPop, result) {
-      if (!didPop) _exit();
-    },
-    child: ref.watch(appProvider).profile == null
-        ? const ProfileEditor()
-        : WorldMap(onParentChanged: _parentChanged),
-  );
+  Widget build(BuildContext context) {
+    ref.listen(appProvider.select((data) => data.activeChildId), (
+      previous,
+      next,
+    ) {
+      _last = null;
+      _sessionSeconds = 0;
+    });
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (!didPop) _exit();
+      },
+      child: ref.watch(appProvider).profile == null
+          ? const ProfileEditor()
+          : !_childChosen
+          ? ChildChooser(
+              onSelected: () => setState(() {
+                _childChosen = true;
+                _last = null;
+              }),
+              onParentChanged: _parentChanged,
+            )
+          : SubjectHub(onParentChanged: _parentChanged),
+    );
+  }
 }

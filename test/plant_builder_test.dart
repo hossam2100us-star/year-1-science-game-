@@ -63,9 +63,26 @@ void main() {
         );
         await helpers.mount(t, LessonPlayer(lesson: lesson), store);
         expect(find.byKey(const ValueKey('lessonNext')), findsNothing);
+        Map<String, Decoration?> slotStyles() => {
+          for (final id in ['roots', 'stem', 'leaf', 'flower'])
+            id:
+                (t
+                            .widget<InkWell>(
+                              find.byKey(ValueKey('workshop-slot-$id')),
+                            )
+                            .child
+                        as Container)
+                    .decoration,
+        };
+        final neutralStyles = slotStyles();
         await helpers.tapVisible(
           t,
           find.byKey(const ValueKey('workshop-piece-roots')),
+        );
+        expect(
+          slotStyles(),
+          neutralStyles,
+          reason: 'Choosing a piece must not reveal its destination',
         );
         await helpers.tapVisible(
           t,
@@ -136,6 +153,7 @@ void main() {
     await t.runAsync(() async {
       final picture = await boundary.toImage();
       final bytes = await picture.toByteData(format: ui.ImageByteFormat.png);
+      await Directory('tmp').create(recursive: true);
       await File('tmp/plant-builder.png')
           .writeAsBytes(bytes!.buffer.asUint8List());
       picture.dispose();

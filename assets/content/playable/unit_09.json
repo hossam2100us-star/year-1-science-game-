@@ -36,7 +36,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Explore our three neighbours. Listen to the Sun safety rule.",
       "source": {
         "pages": [
@@ -62,7 +62,7 @@
     },
     {
       "id": "unit_09.step.002",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Day and night",
       "prompt": "Turn Earth and watch your place move into day and night.",
       "options": [],
@@ -70,7 +70,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "The side facing the Sun has day. The other side has night.",
       "source": {
         "pages": [
@@ -148,7 +148,7 @@
       },
       "assessed": true,
       "objective": "u09.main.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Compare the round Earth and its large blue areas.",
       "explanation": "a) ✗ b) ✓ c) ✓ d) ✓ e) ✗ — heat and light come from the Sun, not the Moon.",
       "source": {
         "pages": [
@@ -197,7 +197,7 @@
       },
       "assessed": true,
       "objective": "u09.main.02",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember how the Sun is different from Earth.",
       "explanation": "a star",
       "source": {
         "pages": [
@@ -259,7 +259,7 @@
       },
       "assessed": true,
       "objective": "u09.main.03",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about what you feel and what helps you see on a sunny day.",
       "explanation": "light and heat only. Not sound, air or water.",
       "source": {
         "pages": [
@@ -337,7 +337,7 @@
       },
       "assessed": true,
       "objective": "u09.main.04",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember the name and year in the Moon mission record.",
       "explanation": "Neil Armstrong, in 1969.",
       "source": {
         "pages": [
@@ -417,7 +417,7 @@
       },
       "assessed": true,
       "objective": "u09.main.05",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about breathing, protecting the head and protecting the feet.",
       "explanation": "Any two: visor — protects his eyes; oxygen pack — lets him breathe, because there is no air on the Moon; gloves — protect his hands; boots\n— protect his feet.",
       "source": {
         "pages": [
@@ -462,7 +462,7 @@
       },
       "assessed": true,
       "objective": "u09.main.06",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Remember the safety rule you heard when meeting the Sun.",
       "explanation": "Never look straight at the Sun — it can badly hurt your eyes.",
       "source": {
         "pages": [
@@ -484,7 +484,7 @@
     },
     {
       "id": "unit_09.step.009",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "Paint our planet",
       "prompt": "Colour the water blue and the land green.",
       "options": [],
@@ -492,7 +492,7 @@
       "answer": null,
       "assessed": false,
       "objective": "u09.main.07",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Earth is round and mostly blue because of its water.",
       "source": {
         "pages": [
@@ -553,7 +553,7 @@
       },
       "assessed": true,
       "objective": "u09.main.08",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Think about a sunny day: seeing things and feeling warm.",
       "explanation": "Any two: it warms us, it gives us daylight, it dries the washing, it makes plants grow, it warms the sea.",
       "source": {
         "pages": [
@@ -574,7 +574,7 @@
     },
     {
       "id": "unit_09.step.011",
-      "kind": "free-plant",
+      "kind": "science-lab",
       "title": "My star picture",
       "prompt": "Touch stars to join them into your own shape. Give it a name.",
       "options": [],
@@ -582,7 +582,7 @@
       "answer": null,
       "assessed": false,
       "objective": "",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "",
       "explanation": "Touch stars to join them into your own shape. Give it a name.",
       "source": {
         "pages": [
@@ -675,7 +675,7 @@
       },
       "assessed": true,
       "objective": "u09.choice.01",
-      "hint": "Look carefully, listen again, and try your discovery.",
+      "hint": "Use the Earth model, Sun discoveries and astronaut suit to help.",
       "explanation": "planet. star. blue. air. astronomer.",
       "source": {
         "pages": [
