@@ -58,15 +58,12 @@ Future<void> _launch() async {
             child: Column(
               children: [
                 Text(
-                  'مش قادرين نفتح البيانات دلوقتي. اقفل اللعبة وافتحها تاني، واتأكد إن فيه مساحة فاضية. بياناتك ماتمسحتش.',
+                  'We could not open your saved data. Restart the game and check the free space on this device. Your saved data has not been deleted.',
                   textDirection: TextDirection.rtl,
                   style: TextStyle(fontFamily: 'Cairo', fontSize: 24),
                 ),
                 SizedBox(height: 24),
-                FilledButton(
-                  onPressed: _launch,
-                  child: Text('جرّب تاني • Retry'),
-                ),
+                FilledButton(onPressed: _launch, child: Text('Retry')),
               ],
             ),
           ),

@@ -15,7 +15,7 @@
       "id": "unit_03.step.001",
       "kind": "explore",
       "title": "Meet the explorer",
-      "prompt": "Meet our explorer! Touch a hand button and listen. Follow its line to the body part.",
+      "prompt": "Touch a hand. Discover a body part.",
       "options": [
         {
           "id": "head",
@@ -72,7 +72,8 @@
       ],
       "legacyMergedFrom": [
         "unit_03.step.001"
-      ]
+      ],
+      "spokenPrompt": "Meet our explorer! Touch a hand button and listen. Follow its line to the body part."
     },
     {
       "id": "unit_03.five-senses.v2",
@@ -163,7 +164,7 @@
       "id": "unit_03.body-workshop.v2",
       "kind": "label-diagram",
       "title": "Explorer workshop",
-      "prompt": "Choose a name, then touch the hand button pointing to that part. You can drag the name onto the button too.",
+      "prompt": "Match names to body parts.",
       "options": [
         {
           "id": "head",
@@ -432,13 +433,14 @@
         "unit_03.step.016": {
           "foot": "foot"
         }
-      }
+      },
+      "spokenPrompt": "Choose a name, then touch the hand button pointing to that part. You can drag the name onto the button too."
     },
     {
       "id": "unit_03.eye-workshop.v2",
       "kind": "label-diagram",
       "title": "Around my eye",
-      "prompt": "Give the three eye protectors their names. Choose a name, then touch the hand button pointing to the part.",
+      "prompt": "Name the three eye protectors.",
       "options": [
         {
           "id": "eyelash",
@@ -483,7 +485,7 @@
       },
       "assessed": true,
       "objective": "u03.main.03",
-      "hint": "Think about the five senses and the explorer's body.",
+      "hint": "Find the hairs above the eye, the hairs along its edge, and the part that closes.",
       "explanation": "The three parts are eyebrow, eyelash and eyelid.",
       "scene": "eye",
       "section": "Challenge",
@@ -523,7 +525,8 @@
         "unit_03.step.019": {
           "eyelid": "eyelid"
         }
-      }
+      },
+      "spokenPrompt": "Give the three eye protectors their names. Choose a name, then touch the hand button pointing to the part."
     },
     {
       "id": "unit_03.sense-partners.v2",
@@ -596,7 +599,7 @@
       },
       "assessed": true,
       "objective": "u03.main.01",
-      "hint": "Think about the five senses and the explorer's body.",
+      "hint": "Think about the body part you use for each discovery.",
       "explanation": "Sight: eyes. Hearing: ears. Smell: nose. Taste: tongue. Touch: skin.",
       "scene": "body",
       "section": "Challenge",
@@ -764,7 +767,7 @@
       },
       "assessed": true,
       "objective": "u03.main.06",
-      "hint": "Think about the five senses and the explorer's body.",
+      "hint": "Imagine doing each action. Would you listen, look, smell, taste or touch?",
       "explanation": "We see with eyes, hear with ears, touch with skin, taste with the tongue and smell with the nose.",
       "scene": "body",
       "section": "Challenge",
@@ -871,17 +874,17 @@
     {
       "id": "unit_03.marbles.v2",
       "kind": "match-lines",
-      "title": "Biggest and smallest",
-      "prompt": "Give the biggest-hand badge and the smallest-hand badge to the right children.",
+      "title": "Compare the marbles",
+      "prompt": "Who holds most marbles? Who holds fewest?",
       "options": [
         {
           "id": "most",
-          "label": "Biggest hand",
+          "label": "Most marbles",
           "art": "big_hand"
         },
         {
           "id": "fewest",
-          "label": "Smallest hand",
+          "label": "Fewest marbles",
           "art": "small_hand"
         }
       ],
@@ -911,8 +914,8 @@
       },
       "assessed": true,
       "objective": "u03.main.04",
-      "hint": "Think about the five senses and the explorer's body.",
-      "explanation": "Zara has the biggest handful: 9 marbles. Jack has the smallest: 5 marbles. David has 6.",
+      "hint": "Compare the numbers of marbles. Find the largest and smallest numbers.",
+      "explanation": "Zara holds the most: 9 marbles. Jack holds the fewest: 5 marbles. David holds 6.",
       "scene": "body",
       "section": "Challenge",
       "source": {
@@ -1048,7 +1051,7 @@
       },
       "assessed": true,
       "objective": "u03.main.02",
-      "hint": "Think about the five senses and the explorer's body.",
+      "hint": "Think about how each sense helps: listening, looking, smelling, tasting or feeling.",
       "explanation": "We have five senses. Taste buds are on the tongue. Smell and taste work together. Sweet, sour and salty are tastes.",
       "scene": "body",
       "section": "Challenge",
@@ -1191,7 +1194,7 @@
       },
       "assessed": true,
       "objective": "u03.main.05",
-      "hint": "Think about the five senses and the explorer's body.",
+      "hint": "Remember which sense the optometrist checks.",
       "explanation": "An optometrist looks after your eyes.",
       "scene": "body",
       "section": "Challenge",
@@ -1262,7 +1265,7 @@
       },
       "assessed": true,
       "objective": "u03.main.07",
-      "hint": "Think about the five senses and the explorer's body.",
+      "hint": "Think about the flavour of the apple and its smell.",
       "explanation": "Taste and smell work together. If you hold your nose you can hardly taste the apple at all.",
       "scene": "body",
       "section": "Challenge",
@@ -1385,7 +1388,7 @@
       },
       "assessed": true,
       "objective": "u03.choice.04",
-      "hint": "Think about the five senses and the explorer's body.",
+      "hint": "Think about the body part doing each job.",
       "explanation": "Eyelashes keep dust out. The elbow is between the wrist and shoulder.",
       "scene": "body",
       "section": "Challenge",

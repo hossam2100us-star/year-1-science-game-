@@ -84,7 +84,7 @@ void main() {
       await mount(tester, const ProfileEditor(), store, scale: 2);
       await tester.enterText(find.byKey(const ValueKey('childName')), 'نور');
       await tapVisible(tester, find.byKey(const ValueKey('profileNext')));
-      await tapVisible(tester, find.text('Girl • بنت'));
+      await tapVisible(tester, find.text('Girl'));
       expect(find.text('Meet Zizi'), findsOneWidget);
       await tapVisible(tester, find.byKey(const ValueKey('profileNext')));
       await tapVisible(tester, find.text('Bunny'));
@@ -155,9 +155,24 @@ void main() {
     );
     await tester.tap(find.text('Open'));
     await tester.pump(const Duration(milliseconds: 400));
-    await tester.enterText(find.byType(TextField), '٥٦');
+    final digits = gateAnswer(tester)
+        .split('')
+        .map((d) => '٠١٢٣٤٥٦٧٨٩'[int.parse(d)])
+        .join();
+    await tester.enterText(find.byType(TextField), digits);
     await tester.tap(find.text('كمّل • Continue'));
     await tester.pump(const Duration(milliseconds: 400));
     expect(passed, isTrue);
   });
+}
+
+String gateAnswer(WidgetTester tester) {
+  final label = tester
+      .widget<Text>(find.byKey(const ValueKey('parent-challenge')))
+      .data!;
+  final values = RegExp(r'\d+')
+      .allMatches(label)
+      .map((m) => int.parse(m.group(0)!))
+      .toList();
+  return '${values[0] * values[1]}';
 }

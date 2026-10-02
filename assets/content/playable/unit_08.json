@@ -511,7 +511,7 @@
       "id": "unit_08.step.009",
       "kind": "order-sequence",
       "title": "The book’s water family",
-      "prompt": "Put the book’s water family in order, smallest first.",
+      "prompt": "Order the water places as this book shows.",
       "options": [
         {
           "id": "ocean",
@@ -553,7 +553,7 @@
       "assessed": true,
       "objective": "u08.main.07",
       "hint": "Compare the sizes in the water family shown in the book.",
-      "explanation": "pond → stream → river → lake → ocean",
+      "explanation": "In this book, the example order is: pond → stream → river → lake → ocean",
       "source": {
         "pages": [
           22,
@@ -756,7 +756,7 @@
         },
         {
           "id": "coal_comes_from",
-          "label": "Coal comes from",
+          "label": "Coal is a type of…",
           "art": "coal"
         }
       ],
@@ -795,6 +795,9 @@
           "soil_is": "a_mixture",
           "coal_comes_from": "rock",
           "a_geologist_studies": "rocks"
+        },
+        "aliases": {
+          "rock": "rocks"
         }
       },
       "assessed": true,

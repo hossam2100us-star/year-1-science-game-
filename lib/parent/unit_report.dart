@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../content/catalog.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
+import '../games/question_engine.dart';
 import '../features/biology/lesson_player.dart';
 import '../features/garden/alive_adventures.dart';
 import '../features/garden/garden_model.dart';
@@ -27,6 +28,13 @@ class UnitReport extends ConsumerWidget {
             .map((e) => e.key)
             .toSet() ??
         <String>{};
+    final liveResults = lesson == null || journey == null
+        ? <String, DecisionOutcome>{}
+        : objectiveResults(lesson, {
+            ...Map<String, dynamic>.from(journey['responses'] ?? {}),
+            if (journey['stepId'] != null && journey['current'] is Map)
+              journey['stepId']: journey['current'],
+          });
     String titleFor(String id) =>
         lesson?.steps
             .where((s) => s.assessedObjectives.contains(id))
@@ -51,6 +59,28 @@ class UnitReport extends ConsumerWidget {
             arabic ? level.arabic : level.title,
             style: Theme.of(context).textTheme.titleLarge,
           ),
+          if (lesson != null)
+            OutlinedButton.icon(
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => LessonRoute(id: level.id),
+                ),
+              ),
+              icon: const Icon(Icons.play_arrow_rounded),
+              label: Text(t('افتح الوحدة للتدريب', 'Open unit for practice')),
+            ),
+          if (liveResults.isNotEmpty) ...[
+            Text(
+              t(
+                'ملاحظات أثناء اللعب — قبل إكمال الوحدة:',
+                'Learning so far — unit in progress:',
+              ),
+            ),
+            for (final entry in liveResults.entries)
+              Text(
+                '${entry.value == DecisionOutcome.firstTry ? '✓' : '↻'} ${titleFor(entry.key)} — ${entry.value == DecisionOutcome.firstTry ? t('أتقن في المحاولة دي', 'Independent this time') : t('محتاج تدريب', 'Practice next')}',
+              ),
+          ],
           if (level.id == 'unit_01' && lesson != null) ...[
             for (final scene in aliveScenes(lesson))
               _sceneReport(scene, data.journeys[scene.storageKey]),
@@ -142,7 +172,9 @@ class UnitReport extends ConsumerWidget {
               ),
             ],
           ],
-          if (lesson != null && latest != null && !lesson.quiz) ...[
+          if (lesson != null &&
+              (latest != null || liveResults.isNotEmpty) &&
+              !lesson.quiz) ...[
             const SizedBox(height: 10),
             Text(
               t(

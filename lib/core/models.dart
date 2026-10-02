@@ -207,6 +207,21 @@ class AppData {
     );
   }
 
+  AppData removeChild(String id, {required String emptyId}) {
+    final records = childRecords;
+    if (records.remove(id) == null) throw StateError('Unknown child');
+    if (id != activeChildId) {
+      records.remove(activeChildId);
+      return copyWith(savedChildren: records);
+    }
+    records.removeWhere((_, value) => value['profile'] == null);
+    if (records.isEmpty) return AppData(activeChildId: emptyId);
+    final nextId = records.keys.first;
+    final next = records.remove(nextId)!;
+    return AppData.fromJson(next)
+        .copyWith(activeChildId: nextId, savedChildren: records);
+  }
+
   AppData changeChild(String id, AppData Function(AppData) change) {
     if (id == activeChildId) return change(this);
     final updated = change(selectChild(id));

@@ -1,5 +1,14 @@
 # Review remediation — 27 September 2026
 
+## Follow-up — 28 September 2026 (review of `49e8316`)
+
+- Both child widget tests load the catalog through `WidgetTester.runAsync`, fixing the order-dependent hang when the whole suite runs.
+- Child cards now offer parent-gated deletion with a separate named confirmation and cancel action. Deletion removes the child's profile/photo, all subject progress, settings and usage from local storage. The next saved child becomes active; deleting the last child returns to profile creation.
+- Hive compaction now considers removed children and photo changes across every child, including inactive profiles. This is local app-data deletion, not a guarantee about operating-system backups.
+- Fresh empty-profile IDs prevent late writes from restoring a deleted child. Tests cover survivor progress, active/inactive/last deletion, stale child updates, the parent gate and cancellation.
+- Full `flutter test --reporter expanded`: **113 passed in 40 seconds**; log: `tmp/audit-latest-tests.log`. `dart analyze --fatal-infos`: no issues. Earlier counts below describe earlier revisions.
+- Lossy image compression, richer units 4–9/Quiz 3, skills, certificate/export, the final parent dashboard and physical-tablet acceptance remain open. Firebase/login/cloud sync are not configured.
+
 The supplied review concerns commit `46ec735`. This record distinguishes verified repairs from product work that remains open. It does not describe the whole game as finished.
 
 ## Verified repairs
@@ -23,7 +32,7 @@ The supplied review concerns commit `46ec735`. This record distinguishes verifie
 
 ## Product work still open
 
-1. **Interaction quality in units 4–9 and Quiz 3.** Hints and asset compression do not replace redesigning the activities. Start with Materials as the reference unit: manipulate objects, predict, test and compare before applying the discovery. Preserve each source objective and its assessment weight.
+1. **Interaction quality in units 07–09 and Quiz 3.** Materials, Forces and Sound now have interaction passes (see docs/TEACHER_REVIEW_REMEDIATION.md). Their visual/device acceptance is still pending; Forces art needs further refinement after user feedback. Continue with Electricity, preserving each source objective and assessment weight.
 2. **Skills area.** The source includes three chart types, chart creation, recording observations and 20 self-check statements. These need a dedicated playable area and ungraded persistence; they are not implemented by this repair.
 3. **Certificate and export.** The source certificate exists, but the runtime certificate and parent-only export are not implemented. Export must follow the specified MediaStore/SAF behavior and be tested on actual Android devices.
 4. **Final parent experience.** ParentArea and UnitReport already provide settings, latest/best attempts, objective details, retry links and home activities. The remaining work is a consolidated final dashboard and access to the missing skills/certificate, not creating a parent area from nothing.

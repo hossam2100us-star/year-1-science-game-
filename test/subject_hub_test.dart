@@ -119,7 +119,7 @@ void main() {
       );
       await t.pumpAndSettle();
       expect(find.byType(WorldMap), findsOneWidget);
-      await t.tap(find.byTooltip('Subjects • المواد'));
+      await t.tap(find.byTooltip('Subjects'));
       await t.pumpAndSettle();
       expect(find.byKey(const ValueKey('subject-science')), findsOneWidget);
       expect(store.data.toJson(), before);

@@ -7,7 +7,7 @@ void showSaveError(BuildContext context) {
   ScaffoldMessenger.of(context).showSnackBar(
     const SnackBar(
       content: Text(
-        'الحفظ ماكملش. فضّي مساحة على الجهاز وجرب تاني. / Could not save. Please try again.',
+        'Could not save. Free some space on this device and try again.',
       ),
     ),
   );

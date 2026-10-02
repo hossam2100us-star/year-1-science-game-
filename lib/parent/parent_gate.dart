@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'dart:math';
+
 import '../core/mascot.dart';
 
 Future<bool> parentGate(BuildContext context) async =>
@@ -17,6 +19,8 @@ class ParentGateDialog extends StatefulWidget {
 }
 
 class _ParentGateDialogState extends State<ParentGateDialog> {
+  final int _left = 3 + Random.secure().nextInt(7);
+  final int _right = 6 + Random.secure().nextInt(4);
   final _answer = TextEditingController();
   bool _retry = false;
   @override
@@ -31,7 +35,7 @@ class _ParentGateDialogState extends State<ParentGateDialog> {
     for (var i = 0; i < 10; i++) {
       answer = answer.replaceAll(arabic[i], '$i');
     }
-    if (answer == '56') {
+    if (answer == '${_left * _right}') {
       Navigator.of(context).pop(true);
     } else {
       setState(() => _retry = true);
@@ -59,9 +63,13 @@ class _ParentGateDialogState extends State<ParentGateDialog> {
             style: TextStyle(fontFamily: 'Cairo', fontSize: 20),
           ),
           const SizedBox(height: 16),
-          const Directionality(
+          Directionality(
             textDirection: TextDirection.ltr,
-            child: Text('7 × 8 = ?', style: TextStyle(fontSize: 32)),
+            child: Text(
+              '$_left × $_right = ?',
+              key: const ValueKey('parent-challenge'),
+              style: const TextStyle(fontSize: 32),
+            ),
           ),
           const SizedBox(height: 16),
           TextField(

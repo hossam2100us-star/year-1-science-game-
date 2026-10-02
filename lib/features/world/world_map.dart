@@ -13,7 +13,13 @@ import '../biology/sticker_album.dart';
 import 'island_art.dart';
 
 class WorldMap extends ConsumerStatefulWidget {
-  const WorldMap({super.key, required this.onParentChanged, this.onSubjects});
+  const WorldMap({
+    super.key,
+    required this.onParentChanged,
+    this.onSubjects,
+    this.preview = false,
+  });
+  final bool preview;
   final ValueChanged<bool> onParentChanged;
   final VoidCallback? onSubjects;
   @override
@@ -45,9 +51,11 @@ class _WorldMapState extends ConsumerState<WorldMap> {
 
   void openIsland(int index) {
     ref.read(narrationProvider).stop();
-    Navigator.of(
-      context,
-    ).push(MaterialPageRoute<void>(builder: (_) => IslandScreen(index: index)));
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => IslandScreen(index: index, preview: widget.preview),
+      ),
+    );
   }
 
   @override
@@ -71,7 +79,7 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                     if (widget.onSubjects != null)
                       IconButton(
                         onPressed: widget.onSubjects,
-                        tooltip: 'Subjects • المواد',
+                        tooltip: 'Subjects',
                         icon: const Icon(Icons.apps_rounded),
                       ),
                     ChildAvatar(profile: profile, size: 56),
@@ -84,7 +92,7 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                     ),
                     IconButton(
                       onPressed: _parents,
-                      tooltip: 'Grown-ups • الأهل',
+                      tooltip: 'Grown-ups',
                       icon: const Icon(Icons.lock_outline_rounded),
                       color: const Color(0xFF245B62),
                     ),
@@ -136,10 +144,9 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                                       child: _IslandLabel(
                                         island: catalog.islands[i],
                                         number: i + 1,
-                                        unlocked: catalog.islandUnlocked(
-                                          i,
-                                          data,
-                                        ),
+                                        unlocked:
+                                            widget.preview ||
+                                            catalog.islandUnlocked(i, data),
                                         completed: catalog.islands[i].levels
                                             .where(
                                               (l) => data.isAdventureComplete(
@@ -279,7 +286,8 @@ void _comingSoon(BuildContext context, String name) {
 }
 
 class IslandScreen extends ConsumerWidget {
-  const IslandScreen({super.key, required this.index});
+  const IslandScreen({super.key, required this.index, this.preview = false});
+  final bool preview;
   final int index;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -287,7 +295,7 @@ class IslandScreen extends ConsumerWidget {
         island = catalog.islands[index],
         data = ref.watch(appProvider);
     final color = Color(island.color),
-        locked = !catalog.islandUnlocked(index, data);
+        locked = !preview && !catalog.islandUnlocked(index, data);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -378,7 +386,9 @@ class IslandScreen extends ConsumerWidget {
                               available: LessonLibrary.availableIds.contains(
                                 island.levels[i].id,
                               ),
-                              unlocked: catalog.levelUnlocked(index, i, data),
+                              unlocked:
+                                  preview ||
+                                  catalog.levelUnlocked(index, i, data),
                               complete: data.isAdventureComplete(
                                 island.levels[i].id,
                               ),
@@ -390,7 +400,8 @@ class IslandScreen extends ConsumerWidget {
                                   _comingSoon(context, level.title);
                                   return;
                                 }
-                                if (!catalog.levelUnlocked(index, i, data)) {
+                                if (!preview &&
+                                    !catalog.levelUnlocked(index, i, data)) {
                                   ref
                                       .read(narrationProvider)
                                       .speak(

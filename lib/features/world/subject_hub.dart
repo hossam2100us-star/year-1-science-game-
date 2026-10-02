@@ -16,7 +16,8 @@ class SubjectHub extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final profile = ref.watch(appProvider).profile!;
+    final profile = ref.watch(appProvider).profile;
+    if (profile == null) return const SizedBox.shrink();
     return Scaffold(
       backgroundColor: const Color(0xFFFFF8EC),
       body: AdventurePage(
@@ -35,7 +36,7 @@ class SubjectHub extends ConsumerWidget {
                   ),
                 ),
                 IconButton(
-                  tooltip: 'Switch child • اختيار طفل',
+                  tooltip: 'Switch child',
                   icon: const Icon(Icons.people_alt_rounded),
                   onPressed: () async {
                     await ref.read(narrationProvider).stop();
@@ -56,7 +57,7 @@ class SubjectHub extends ConsumerWidget {
                   },
                 ),
                 IconButton(
-                  tooltip: 'Grown-ups • الأهل',
+                  tooltip: 'Grown-ups',
                   icon: const Icon(Icons.lock_outline_rounded),
                   onPressed: () async {
                     await ref.read(narrationProvider).stop();
@@ -85,10 +86,7 @@ class SubjectHub extends ConsumerWidget {
               style: Theme.of(context).textTheme.headlineLarge,
             ),
             const SizedBox(height: 8),
-            const Text(
-              'اختار المادة وابدأ مغامرتك',
-              textAlign: TextAlign.center,
-            ),
+            const Text('Choose your adventure', textAlign: TextAlign.center),
             const SizedBox(height: 24),
             Center(
               child: ConstrainedBox(
@@ -129,7 +127,7 @@ class SubjectHub extends ConsumerWidget {
                           ),
                           const SizedBox(height: 16),
                           Text(
-                            'Science • العلوم',
+                            'Science',
                             style: Theme.of(context).textTheme.headlineMedium,
                             textAlign: TextAlign.center,
                           ),

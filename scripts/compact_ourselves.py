@@ -27,6 +27,8 @@ def compact_ourselves(book):
                     s['objectiveItems'][objective]={'u03.choice.01':['hearing'],'u03.choice.02':['tongue_job'],
                         'u03.choice.03':['count'],'u03.choice.05':['arm_joint']}[objective]
                 if s['id']=='unit_03.last-discoveries.v2':s['objectiveItems'][s['objective']]=['dust_guard']
+        from refine_teacher_review import refine_teacher_review
+        refine_teacher_review(book)
         return
     old = deepcopy(book['steps'])
     by = {i+1:s for i,s in enumerate(old)}

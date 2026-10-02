@@ -3,6 +3,8 @@ import '../core/models.dart';
 
 bool matchesAnswer(Map<String, dynamic> answer, dynamic value) {
   final expected = answer['value'];
+  final aliases = Map<String, dynamic>.from(answer['aliases'] ?? {});
+  dynamic canonical(dynamic id) => aliases[id] ?? id;
   switch (answer['type']) {
     case 'single':
       return value is String && value == expected;
@@ -21,7 +23,9 @@ bool matchesAnswer(Map<String, dynamic> answer, dynamic value) {
     case 'mapping':
       if (value is! Map || value.length != (expected as Map).length)
         return false;
-      return expected.entries.every((e) => value[e.key] == e.value);
+      return expected.entries.every(
+        (e) => canonical(value[e.key]) == canonical(e.value),
+      );
     default:
       throw FormatException('Unknown answer type: ${answer['type']}');
   }

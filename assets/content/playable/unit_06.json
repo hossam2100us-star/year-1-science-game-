@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": 1,
+  "contentVersion": 2,
   "id": "unit_06",
   "title": "Sound",
   "quiz": false,
@@ -13,8 +13,8 @@
     {
       "id": "unit_06.step.001",
       "kind": "explore",
-      "title": "Band room",
-      "prompt": "Explore the instruments. Listen to the action for each one.",
+      "title": "Music studio",
+      "prompt": "Explore the music studio. Play every instrument.",
       "options": [
         {
           "id": "triangle",
@@ -70,13 +70,51 @@
         "sitar": "Pluck the sitar.",
         "drum": "Beat the drum."
       },
-      "band": true
+      "band": true,
+      "soundScene": {
+        "mode": "band",
+        "instruction": "Touch an instrument to hear it. Ask the studio how to play it.",
+        "progress": "Discoveries placed",
+        "you": "You",
+        "gentle": "Try a gentle tap",
+        "harder": "Try a harder tap",
+        "quietFirst": "Quietest first",
+        "steps": "steps",
+        "listen": "Listen",
+        "answerFor": "Choose for:",
+        "explored": "Instruments explored",
+        "hearAction": "Hear how to play it",
+        "near": "Move near",
+        "far": "Move far",
+        "moveEarlier": "Move earlier",
+        "moveLater": "Move later",
+        "remove": "Remove this sound",
+        "emptySlot": "Drag a sound here",
+        "placeHere": "Place the sound here",
+        "dragHint": "Drag a sound here",
+        "placeSound": "Place this sound",
+        "chooseToPlace": "Choose a sound to place",
+        "orderSlot": "Sound position",
+        "humSteps": "1. Touch your throat gently.  2. Hum with your own voice.",
+        "yourAnswer": "Your choice",
+        "answerPrompt": "Now choose your answer",
+        "mission": "Discovery",
+        "nextMission": "Next discovery",
+        "walkStart": "Everyone starts at the same drum.",
+        "missions": {
+          "play_a_drum": "Which action plays this drum?",
+          "louder_shaken_box": "Which object made the louder box?",
+          "instrument_you_blow": "Which instrument do you blow?",
+          "walk_away_from_sound": "What happens to sound as you walk away?",
+          "something_making_a_sound": "What do we call something making a sound?"
+        }
+      }
     },
     {
       "id": "unit_06.step.002",
       "kind": "tap-choice",
       "title": "Sound catcher",
-      "prompt": "Which body part catches the sounds?",
+      "prompt": "Find the body part you use to hear. Touch its hand marker.",
       "options": [
         {
           "id": "eyes",
@@ -118,7 +156,52 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_06"
+      "theme": "unit_06",
+      "soundScene": {
+        "mode": "hearing",
+        "instruction": "Look at the whole face. Which part catches sounds?",
+        "progress": "Discoveries placed",
+        "you": "You",
+        "gentle": "Try a gentle tap",
+        "harder": "Try a harder tap",
+        "quietFirst": "Quietest first",
+        "steps": "steps",
+        "listen": "Listen",
+        "answerFor": "Choose for:",
+        "explored": "Instruments explored",
+        "hearAction": "Hear how to play it",
+        "near": "Move near",
+        "far": "Move far",
+        "moveEarlier": "Move earlier",
+        "moveLater": "Move later",
+        "remove": "Remove this sound",
+        "emptySlot": "Drag a sound here",
+        "placeHere": "Place the sound here",
+        "dragHint": "Drag a sound here",
+        "placeSound": "Place this sound",
+        "chooseToPlace": "Choose a sound to place",
+        "orderSlot": "Sound position",
+        "humSteps": "1. Touch your throat gently.  2. Hum with your own voice.",
+        "yourAnswer": "Your choice",
+        "answerPrompt": "Now choose your answer",
+        "mission": "Discovery",
+        "nextMission": "Next discovery",
+        "walkStart": "Everyone starts at the same drum.",
+        "missions": {
+          "play_a_drum": "Which action plays this drum?",
+          "louder_shaken_box": "Which object made the louder box?",
+          "instrument_you_blow": "Which instrument do you blow?",
+          "walk_away_from_sound": "What happens to sound as you walk away?",
+          "something_making_a_sound": "What do we call something making a sound?"
+        }
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use your experiment to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_06.step.003",
@@ -209,13 +292,58 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_06",
-      "band": true
+      "band": true,
+      "soundScene": {
+        "mode": "band",
+        "instruction": "Touch an instrument, then choose its action.",
+        "progress": "Discoveries placed",
+        "you": "You",
+        "gentle": "Try a gentle tap",
+        "harder": "Try a harder tap",
+        "quietFirst": "Quietest first",
+        "steps": "steps",
+        "listen": "Listen",
+        "answerFor": "Choose for:",
+        "explored": "Instruments explored",
+        "hearAction": "Hear how to play it",
+        "near": "Move near",
+        "far": "Move far",
+        "moveEarlier": "Move earlier",
+        "moveLater": "Move later",
+        "remove": "Remove this sound",
+        "emptySlot": "Drag a sound here",
+        "placeHere": "Place the sound here",
+        "dragHint": "Drag a sound here",
+        "placeSound": "Place this sound",
+        "chooseToPlace": "Choose a sound to place",
+        "orderSlot": "Sound position",
+        "humSteps": "1. Touch your throat gently.  2. Hum with your own voice.",
+        "yourAnswer": "Your choice",
+        "answerPrompt": "Now choose your answer",
+        "mission": "Discovery",
+        "nextMission": "Next discovery",
+        "walkStart": "Everyone starts at the same drum.",
+        "missions": {
+          "play_a_drum": "Which action plays this drum?",
+          "louder_shaken_box": "Which object made the louder box?",
+          "instrument_you_blow": "Which instrument do you blow?",
+          "walk_away_from_sound": "What happens to sound as you walk away?",
+          "something_making_a_sound": "What do we call something making a sound?"
+        }
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use your experiment to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_06.step.004",
       "kind": "science-lab",
       "title": "Sound boxes",
-      "prompt": "Predict which box sounds louder, then shake each box.",
+      "prompt": "Predict for each box. Shake it and compare what happens.",
       "options": [
         {
           "id": "stone_box",
@@ -233,7 +361,7 @@
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "The hard, heavy stone makes a louder sound than the soft, light feather.",
+      "explanation": "The stone rattled against the box. The soft feather made no sound in this experiment.",
       "source": {
         "pages": [
           17,
@@ -256,10 +384,28 @@
       "labUi": {
         "choices": {
           "loud": "Loud",
-          "quiet": "Quiet"
+          "quiet": "No sound"
         },
         "action": "Shake the box",
-        "result": "Compare the sounds"
+        "result": "What happened",
+        "pictureChoices": true,
+        "replay": "Shake and listen again",
+        "progress": "Boxes explored",
+        "phases": [
+          "Predict",
+          "Shake",
+          "Notice"
+        ],
+        "prediction": "What do you think this box will sound like?",
+        "yourPrediction": "Your prediction",
+        "nextBox": "Try the other box"
+      },
+      "observationUi": {
+        "review": "Listen again",
+        "changed": "The result was different from your prediction. Let us compare again!",
+        "question": "What did this box sound like?",
+        "retry": "Shake and listen again. Compare this box with the other box.",
+        "complete": "You noticed what happened! Keep exploring."
       }
     },
     {
@@ -303,13 +449,58 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_06"
+      "theme": "unit_06",
+      "soundScene": {
+        "mode": "boxes",
+        "instruction": "Use your experiment to choose.",
+        "progress": "Discoveries placed",
+        "you": "You",
+        "gentle": "Try a gentle tap",
+        "harder": "Try a harder tap",
+        "quietFirst": "Quietest first",
+        "steps": "steps",
+        "listen": "Listen",
+        "answerFor": "Choose for:",
+        "explored": "Instruments explored",
+        "hearAction": "Hear how to play it",
+        "near": "Move near",
+        "far": "Move far",
+        "moveEarlier": "Move earlier",
+        "moveLater": "Move later",
+        "remove": "Remove this sound",
+        "emptySlot": "Drag a sound here",
+        "placeHere": "Place the sound here",
+        "dragHint": "Drag a sound here",
+        "placeSound": "Place this sound",
+        "chooseToPlace": "Choose a sound to place",
+        "orderSlot": "Sound position",
+        "humSteps": "1. Touch your throat gently.  2. Hum with your own voice.",
+        "yourAnswer": "Your choice",
+        "answerPrompt": "Now choose your answer",
+        "mission": "Discovery",
+        "nextMission": "Next discovery",
+        "walkStart": "Everyone starts at the same drum.",
+        "missions": {
+          "play_a_drum": "Which action plays this drum?",
+          "louder_shaken_box": "Which object made the louder box?",
+          "instrument_you_blow": "Which instrument do you blow?",
+          "walk_away_from_sound": "What happens to sound as you walk away?",
+          "something_making_a_sound": "What do we call something making a sound?"
+        }
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use your experiment to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_06.step.006",
       "kind": "science-lab",
       "title": "Sound walk",
-      "prompt": "Move away from the drum. Listen and watch the sound fade.",
+      "prompt": "Move the listener. Play the same drum near and far away.",
       "options": [],
       "targets": [],
       "answer": null,
@@ -334,7 +525,27 @@
       "lab": "distance",
       "labUi": {
         "near": "Near the drum",
-        "far": "Far away"
+        "far": "Far away",
+        "you": "Listener",
+        "listen": "Play the drum",
+        "instruction": "Move near, play the drum. Move far, play it again.",
+        "progress": "Places compared",
+        "replay": "Play again",
+        "result": "The same drum sounded fainter from further away.",
+        "prediction": "What will happen to the same sound further away?",
+        "choices": {
+          "fainter": "It will become fainter",
+          "louder": "It will become louder"
+        },
+        "yourPrediction": "Your prediction",
+        "heardNear": "Near the drum: a louder sound.",
+        "heardFar": "Further away: a fainter sound.",
+        "middle": "Between the two places",
+        "phases": [
+          "Predict",
+          "Listen twice",
+          "Compare"
+        ]
       }
     },
     {
@@ -379,23 +590,68 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_06",
-      "focus": "drum"
+      "focus": "drum",
+      "soundScene": {
+        "mode": "distance",
+        "instruction": "Move the listener and play the drum. Then choose your answer.",
+        "progress": "Discoveries placed",
+        "you": "Listener",
+        "gentle": "Try a gentle tap",
+        "harder": "Try a harder tap",
+        "quietFirst": "Quietest first",
+        "steps": "steps",
+        "listen": "Play the drum again",
+        "answerFor": "Choose for:",
+        "explored": "Instruments explored",
+        "hearAction": "Hear how to play it",
+        "near": "Move near",
+        "far": "Move far",
+        "moveEarlier": "Move earlier",
+        "moveLater": "Move later",
+        "remove": "Remove this sound",
+        "emptySlot": "Drag a sound here",
+        "placeHere": "Place the sound here",
+        "dragHint": "Drag a sound here",
+        "placeSound": "Place this sound",
+        "chooseToPlace": "Choose a sound to place",
+        "orderSlot": "Sound position",
+        "humSteps": "1. Touch your throat gently.  2. Hum with your own voice.",
+        "yourAnswer": "Your choice",
+        "answerPrompt": "Now choose your answer",
+        "mission": "Discovery",
+        "nextMission": "Next discovery",
+        "walkStart": "Everyone starts at the same drum.",
+        "missions": {
+          "play_a_drum": "Which action plays this drum?",
+          "louder_shaken_box": "Which object made the louder box?",
+          "instrument_you_blow": "Which instrument do you blow?",
+          "walk_away_from_sound": "What happens to sound as you walk away?",
+          "something_making_a_sound": "What do we call something making a sound?"
+        }
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use your experiment to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_06.step.008",
       "kind": "match-lines",
       "title": "Drum explorers",
-      "prompt": "Read the bars. Match the furthest listener and their number of steps.",
+      "prompt": "Read the walking tracks to answer two discoveries.",
       "options": [
         {
           "id": "furthest_listener",
-          "label": "Furthest listener",
+          "label": "Who heard furthest?",
           "art": "furthest_listener"
         },
         {
-          "id": "maris_took",
-          "label": "Maris took",
-          "art": "maris_took"
+          "id": "david_took",
+          "label": "How many steps did David take?",
+          "art": "david_took"
         }
       ],
       "targets": [
@@ -444,17 +700,19 @@
         "type": "mapping",
         "value": {
           "furthest_listener": "maris",
-          "maris_took": "23_steps"
+          "david_took": "8_steps"
         }
       },
       "assessed": true,
       "objective": "u06.main.05",
-      "hint": "Find the longest bar, then read its name and number of steps.",
-      "explanation": "a) Maris (23 steps) b) 23 steps",
+      "hint": "Find the longest track, then read David's number of steps.",
+      "explanation": "Maris heard the drum from furthest away: 23 steps. David took 8 steps.",
       "source": {
         "pages": [
           17,
-          18
+          18,
+          27,
+          28
         ],
         "questionId": "u06.main.05",
         "answerKeyPages": [
@@ -484,13 +742,84 @@
           "name": "David",
           "value": 8
         }
-      ]
+      ],
+      "soundScene": {
+        "mode": "chart",
+        "instruction": "Choose a question, then read the walking tracks.",
+        "progress": "Discoveries placed",
+        "you": "You",
+        "gentle": "Try a gentle tap",
+        "harder": "Try a harder tap",
+        "quietFirst": "Quietest first",
+        "steps": "steps",
+        "listen": "Listen",
+        "answerFor": "Choose for:",
+        "explored": "Instruments explored",
+        "hearAction": "Hear how to play it",
+        "near": "Move near",
+        "far": "Move far",
+        "moveEarlier": "Move earlier",
+        "moveLater": "Move later",
+        "remove": "Remove this sound",
+        "emptySlot": "Drag a sound here",
+        "placeHere": "Place the sound here",
+        "dragHint": "Drag a sound here",
+        "placeSound": "Place this sound",
+        "chooseToPlace": "Choose a sound to place",
+        "orderSlot": "Sound position",
+        "humSteps": "1. Touch your throat gently.  2. Hum with your own voice.",
+        "yourAnswer": "Your choice",
+        "answerPrompt": "Now choose your answer",
+        "mission": "Discovery",
+        "nextMission": "Next discovery",
+        "walkStart": "Everyone starts at the same drum.",
+        "missions": {
+          "play_a_drum": "Which action plays this drum?",
+          "louder_shaken_box": "Which object made the louder box?",
+          "instrument_you_blow": "Which instrument do you blow?",
+          "walk_away_from_sound": "What happens to sound as you walk away?",
+          "something_making_a_sound": "What do we call something making a sound?"
+        },
+        "targetGroups": {
+          "furthest_listener": [
+            "annay",
+            "zara",
+            "maris",
+            "david"
+          ],
+          "david_took": [
+            "8_steps",
+            "14_steps",
+            "20_steps",
+            "23_steps"
+          ]
+        }
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use your experiment to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      },
+      "chartQuestionSource": {
+        "contentId": "charts",
+        "pages": [
+          27,
+          28
+        ],
+        "person": "David",
+        "optionId": "david_took",
+        "questionText": "How many steps did David take before he lost the sound?",
+        "answerText": "8 steps, read from the original walking data.",
+        "adaptation": "Question two uses the Chart Skills David question instead of repeating Maris. The original unit answer-key quotation is retained as provenance."
+      }
     },
     {
       "id": "unit_06.step.009",
       "kind": "tap-choice",
       "title": "Tapping sticks",
-      "prompt": "How can you make the sticks sound louder?",
+      "prompt": "Try two taps on the same sticks. How can you make the sound louder?",
       "options": [
         {
           "id": "tap_harder",
@@ -528,13 +857,58 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_06",
-      "focus": "sticks"
+      "focus": "sticks",
+      "soundScene": {
+        "mode": "sticks",
+        "instruction": "Listen to both taps. The buttons below are for your answer.",
+        "progress": "Discoveries placed",
+        "you": "You",
+        "gentle": "Try a gentle tap",
+        "harder": "Try a harder tap",
+        "quietFirst": "Quietest first",
+        "steps": "steps",
+        "listen": "Listen",
+        "answerFor": "Choose for:",
+        "explored": "Instruments explored",
+        "hearAction": "Hear how to play it",
+        "near": "Move near",
+        "far": "Move far",
+        "moveEarlier": "Move earlier",
+        "moveLater": "Move later",
+        "remove": "Remove this sound",
+        "emptySlot": "Drag a sound here",
+        "placeHere": "Place the sound here",
+        "dragHint": "Drag a sound here",
+        "placeSound": "Place this sound",
+        "chooseToPlace": "Choose a sound to place",
+        "orderSlot": "Sound position",
+        "humSteps": "1. Touch your throat gently.  2. Hum with your own voice.",
+        "yourAnswer": "Your choice",
+        "answerPrompt": "Now choose your answer",
+        "mission": "Discovery",
+        "nextMission": "Next discovery",
+        "walkStart": "Everyone starts at the same drum.",
+        "missions": {
+          "play_a_drum": "Which action plays this drum?",
+          "louder_shaken_box": "Which object made the louder box?",
+          "instrument_you_blow": "Which instrument do you blow?",
+          "walk_away_from_sound": "What happens to sound as you walk away?",
+          "something_making_a_sound": "What do we call something making a sound?"
+        }
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use your experiment to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_06.step.010",
       "kind": "order-sequence",
       "title": "Quiet to loud",
-      "prompt": "Touch these sounds in order, quietest first.",
+      "prompt": "Listen to the sounds. Drag them from quietest to loudest.",
       "options": [
         {
           "id": "thunder",
@@ -586,7 +960,52 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_06"
+      "theme": "unit_06",
+      "soundScene": {
+        "mode": "order",
+        "instruction": "Touch each picture to listen. Drag the sounds into order, quietest first.",
+        "progress": "Discoveries placed",
+        "you": "You",
+        "gentle": "Try a gentle tap",
+        "harder": "Try a harder tap",
+        "quietFirst": "Quietest first",
+        "steps": "steps",
+        "listen": "Listen",
+        "answerFor": "Choose for:",
+        "explored": "Instruments explored",
+        "hearAction": "Hear how to play it",
+        "near": "Move near",
+        "far": "Move far",
+        "moveEarlier": "Move earlier",
+        "moveLater": "Move later",
+        "remove": "Remove this sound",
+        "emptySlot": "Drag a sound here",
+        "placeHere": "Place the sound here",
+        "dragHint": "Drag a sound here",
+        "placeSound": "Place this sound",
+        "chooseToPlace": "Choose a sound to place",
+        "orderSlot": "Sound position",
+        "humSteps": "1. Touch your throat gently.  2. Hum with your own voice.",
+        "yourAnswer": "Your choice",
+        "answerPrompt": "Now choose your answer",
+        "mission": "Discovery",
+        "nextMission": "Next discovery",
+        "walkStart": "Everyone starts at the same drum.",
+        "missions": {
+          "play_a_drum": "Which action plays this drum?",
+          "louder_shaken_box": "Which object made the louder box?",
+          "instrument_you_blow": "Which instrument do you blow?",
+          "walk_away_from_sound": "What happens to sound as you walk away?",
+          "something_making_a_sound": "What do we call something making a sound?"
+        }
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use your experiment to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_06.step.011",
@@ -635,13 +1054,58 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_06",
-      "focus": "hum"
+      "focus": "hum",
+      "soundScene": {
+        "mode": "hum",
+        "instruction": "Try this with your own voice. Touch gently. Choose what you felt.",
+        "progress": "Discoveries placed",
+        "you": "You",
+        "gentle": "Try a gentle tap",
+        "harder": "Try a harder tap",
+        "quietFirst": "Quietest first",
+        "steps": "steps",
+        "listen": "Listen",
+        "answerFor": "Choose for:",
+        "explored": "Instruments explored",
+        "hearAction": "Hear how to play it",
+        "near": "Move near",
+        "far": "Move far",
+        "moveEarlier": "Move earlier",
+        "moveLater": "Move later",
+        "remove": "Remove this sound",
+        "emptySlot": "Drag a sound here",
+        "placeHere": "Place the sound here",
+        "dragHint": "Drag a sound here",
+        "placeSound": "Place this sound",
+        "chooseToPlace": "Choose a sound to place",
+        "orderSlot": "Sound position",
+        "humSteps": "1. Touch your throat gently.  2. Hum with your own voice.",
+        "yourAnswer": "Your choice",
+        "answerPrompt": "Now choose your answer",
+        "mission": "Discovery",
+        "nextMission": "Next discovery",
+        "walkStart": "Everyone starts at the same drum.",
+        "missions": {
+          "play_a_drum": "Which action plays this drum?",
+          "louder_shaken_box": "Which object made the louder box?",
+          "instrument_you_blow": "Which instrument do you blow?",
+          "walk_away_from_sound": "What happens to sound as you walk away?",
+          "something_making_a_sound": "What do we call something making a sound?"
+        }
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use your experiment to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_06.step.012",
       "kind": "match-lines",
-      "title": "Discovery badges",
-      "prompt": "Match each discovery to its answer.",
+      "title": "Finish the sound trail",
+      "prompt": "Solve five discoveries. You can go back to change your choices.",
       "options": [
         {
           "id": "play_a_drum",
@@ -651,12 +1115,12 @@
         {
           "id": "louder_shaken_box",
           "label": "Louder shaken box",
-          "art": "stone"
+          "art": "sound_box"
         },
         {
           "id": "instrument_you_blow",
           "label": "Instrument you blow",
-          "art": "trumpet"
+          "art": "band_question"
         },
         {
           "id": "walk_away_from_sound",
@@ -694,6 +1158,41 @@
           "id": "beating",
           "label": "Beating",
           "art": "beating"
+        },
+        {
+          "id": "blowing",
+          "label": "Blowing",
+          "art": "blowing"
+        },
+        {
+          "id": "plucking",
+          "label": "Plucking",
+          "art": "plucking"
+        },
+        {
+          "id": "feather",
+          "label": "Feather",
+          "art": "feather"
+        },
+        {
+          "id": "sitar",
+          "label": "Sitar",
+          "art": "sitar"
+        },
+        {
+          "id": "triangle",
+          "label": "Triangle",
+          "art": "triangle"
+        },
+        {
+          "id": "louder",
+          "label": "Louder",
+          "art": "louder"
+        },
+        {
+          "id": "sink_of_sound",
+          "label": "Sink of sound",
+          "art": "sink_of_sound"
         }
       ],
       "answer": {
@@ -709,7 +1208,7 @@
       "assessed": true,
       "objective": "u06.choice.01",
       "hint": "Remember the instruments, shaking boxes and walk away from the drum.",
-      "explanation": "beating. fainter. a stone. source of sound. trumpet.",
+      "explanation": "Beat a drum. A sound becomes fainter as you walk away. A stone makes the louder shaken box. Anything making a sound is its source. Blow a trumpet.",
       "source": {
         "pages": [
           17,
@@ -798,6 +1297,75 @@
         "u06.choice.05": [
           "instrument_you_blow"
         ]
+      },
+      "soundScene": {
+        "mode": "discoveries",
+        "instruction": "Try one discovery at a time. Use the numbers to revisit one.",
+        "progress": "Discoveries placed",
+        "you": "You",
+        "gentle": "Try a gentle tap",
+        "harder": "Try a harder tap",
+        "quietFirst": "Quietest first",
+        "steps": "steps",
+        "listen": "Listen",
+        "answerFor": "Choose for:",
+        "explored": "Instruments explored",
+        "hearAction": "Hear how to play it",
+        "near": "Move near",
+        "far": "Move far",
+        "moveEarlier": "Move earlier",
+        "moveLater": "Move later",
+        "remove": "Remove this sound",
+        "emptySlot": "Drag a sound here",
+        "placeHere": "Place the sound here",
+        "dragHint": "Drag a sound here",
+        "placeSound": "Place this sound",
+        "chooseToPlace": "Choose a sound to place",
+        "orderSlot": "Sound position",
+        "humSteps": "1. Touch your throat gently.  2. Hum with your own voice.",
+        "yourAnswer": "Your choice",
+        "answerPrompt": "Now choose your answer",
+        "mission": "Discovery",
+        "nextMission": "Next discovery",
+        "walkStart": "Everyone starts at the same drum.",
+        "missions": {
+          "play_a_drum": "Which action plays this drum?",
+          "louder_shaken_box": "Which object made the louder box?",
+          "instrument_you_blow": "Which instrument do you blow?",
+          "walk_away_from_sound": "What happens to sound as you walk away?",
+          "something_making_a_sound": "What do we call something making a sound?"
+        },
+        "missionChoices": {
+          "play_a_drum": [
+            "blowing",
+            "beating",
+            "plucking"
+          ],
+          "louder_shaken_box": [
+            "feather",
+            "stone"
+          ],
+          "instrument_you_blow": [
+            "trumpet",
+            "sitar",
+            "triangle"
+          ],
+          "walk_away_from_sound": [
+            "louder",
+            "fainter"
+          ],
+          "something_making_a_sound": [
+            "source_of_sound",
+            "sink_of_sound"
+          ]
+        }
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use your experiment to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
       }
     }
   ],
@@ -915,5 +1483,56 @@
         2
       ]
     }
-  ]
+  ],
+  "legacySoundChart": {
+    "options": [
+      {
+        "id": "furthest_listener",
+        "label": "Furthest listener",
+        "art": "furthest_listener"
+      },
+      {
+        "id": "maris_took",
+        "label": "Maris took",
+        "art": "maris_took"
+      }
+    ],
+    "answer": {
+      "type": "mapping",
+      "value": {
+        "furthest_listener": "maris",
+        "maris_took": "23_steps"
+      }
+    },
+    "hint": "Find the longest bar, then read its name and number of steps.",
+    "explanation": "a) Maris (23 steps) b) 23 steps",
+    "source": {
+      "pages": [
+        17,
+        18
+      ],
+      "questionId": "u06.main.05",
+      "answerKeyPages": [
+        36
+      ],
+      "answerKeyText": "a) Maris (23 steps) b) 23 steps",
+      "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
+    },
+    "soundScene": {
+      "targetGroups": {
+        "furthest_listener": [
+          "annay",
+          "zara",
+          "maris",
+          "david"
+        ],
+        "maris_took": [
+          "8_steps",
+          "14_steps",
+          "20_steps",
+          "23_steps"
+        ]
+      }
+    }
+  }
 }

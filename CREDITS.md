@@ -29,7 +29,7 @@ Curriculum: the parent's supplied `Science_Made_Simple.pdf`, used as a local ref
 
 A user-selected profile photo is supplied by the parent through the system picker, is never a repository asset, and is never uploaded. Only a resized PNG is retained in private local storage; image metadata is discarded. No camera is used.
 
-No music or sound-effect files are included yet. English narration uses installed offline system voices via flutter_tts.
+Local illustrative synthesized sound effects are bundled; no external recordings are used. English narration uses installed offline system voices via flutter_tts.
 
 
 ## Garden illustration (2026-09-23)
@@ -72,3 +72,18 @@ filenames are in `docs/REMAINING_ISLANDS_REVIEW.md`.
 
 Seven local WAVs in `assets/audio` are original synthesized illustrative tones,
 created by `scripts/build_science_audio.py`; no external recordings are used.
+
+## Sound unit review — 1 October 2026
+
+`assets/images/sound-atlas-v2.png` and `assets/images/sound-details-v2.png`
+are original transparent illustrations generated for this project using the
+built-in OpenAI image-generation tool. No textbook illustrations or third-party
+character artwork were copied, and these are not represented as CC0 stock.
+Exact prompts and installed asset paths are in `docs/SOUND_UNIT_REDESIGN.md`.
+
+The current twelve WAVs in `assets/audio` are original illustrative PCM synthesis
+from `scripts/build_science_audio.py`, including tapping sticks, cat footsteps,
+whisper, door and thunder alongside the instrument and box effects. They are
+not recordings of instruments, people or animals. No external audio is used.
+Following Sound-box feedback, `feather.wav` is a valid silent PCM asset containing
+only zero samples; it represents the feather trial without an audible impact.

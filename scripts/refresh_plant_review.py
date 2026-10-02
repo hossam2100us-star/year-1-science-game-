@@ -37,6 +37,9 @@ def refresh_plant_review(book):
     builder = next(s for s in book['steps'] if s['id'] == 'unit_02.step.006')
     builder['prompt'] = 'Build a plant in the pot. Choose a piece, then touch a hand button where it belongs, or drag it there.'
 
+    from refine_teacher_review import refine_teacher_review
+    refine_teacher_review(book)
+
 if __name__ == '__main__':
     path = Path(__file__).resolve().parents[1] / 'assets/content/playable/unit_02.json'
     book = json.loads(path.read_text(encoding='utf-8'))

@@ -14,7 +14,7 @@ class MainActivity : FlutterActivity() {
                 sciencePlayer?.release(); sciencePlayer = null; result.success(null)
             } else if (call.method == "play") {
                 val name = call.argument<String>("name")
-                if (name !in setOf("triangle", "maracas", "trumpet", "sitar", "drum", "stone", "feather")) {
+                if (name !in setOf("triangle", "maracas", "trumpet", "sitar", "drum", "stone", "feather", "sticks", "cat_steps", "whisper", "door", "thunder")) {
                     result.error("invalid_sound", "Unknown sound", null)
                 } else {
                     try {

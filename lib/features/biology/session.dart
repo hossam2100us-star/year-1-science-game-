@@ -20,6 +20,10 @@ class LessonSession {
       index = index.clamp(0, lesson.steps.length);
       return;
     }
+    if (lesson.id == 'unit_06' && lesson.version == 2 && json['version'] == 1) {
+      _restoreSoundChart(json);
+      return;
+    }
     Set<String>? built;
     if (lesson.id == 'unit_02' && lesson.version == 4) {
       built = <String>{};
@@ -128,12 +132,66 @@ class LessonSession {
   }
   static bool canRestore(Lesson lesson, Map<String, dynamic> saved) =>
       saved['version'] == lesson.version ||
+      (lesson.id == 'unit_06' &&
+          lesson.version == 2 &&
+          saved['version'] == 1) ||
       (lesson.id == 'unit_02' &&
           lesson.version >= 3 &&
           const [1, 2, 3].contains(saved['version'])) ||
       (const ['unit_02', 'unit_03'].contains(lesson.id) &&
           lesson.version == 2 &&
           saved['version'] == 1);
+
+  void _restoreSoundChart(Map<String, dynamic> saved) {
+    const chartId = 'unit_06.step.008';
+    final located = lesson.steps.indexWhere((s) => s.id == saved['stepId']);
+    if (located >= 0) index = located;
+    index = index.clamp(0, lesson.steps.length);
+    final chart = responses[chartId];
+    if (chart is Map) {
+      final migrated = _migrateSoundChartState(chart);
+      final resume = chart['resumeState'];
+      if (resume is Map) {
+        migrated['resumeState'] = _migrateSoundChartState(resume);
+      }
+      responses[chartId] = migrated;
+    }
+    if (!finished && step.id == chartId) {
+      // A completed question keeps the exact question that earned its outcome.
+      // Unfinished work instead resumes the new David question without carrying
+      // the obsolete Maris answer into its assessment.
+      current = _migrateSoundChartState(
+        current,
+        completed: chart is Map && chart['completed'] == true,
+      );
+    }
+  }
+
+  Map<String, dynamic> _migrateSoundChartState(
+    Map state, {
+    bool completed = false,
+  }) {
+    final migrated = Map<String, dynamic>.from(state);
+    if (state['needsCorrection'] != true &&
+        (completed || state['completed'] == true || state['done'] == true)) {
+      migrated['legacySoundChart'] = true;
+      return migrated;
+    }
+    migrated.remove('legacySoundChart');
+    if (state['placements'] is Map) {
+      migrated['placements'] = Map<String, dynamic>.from(state['placements'])
+        ..remove('maris_took');
+    }
+    for (final key in ['selected', 'reviewItems']) {
+      if (state[key] is List) {
+        migrated[key] = (state[key] as List)
+            .where((id) => id != 'maris_took')
+            .toList();
+      }
+    }
+    if (state.containsKey('feedback')) migrated['feedback'] = '';
+    return migrated;
+  }
 
   void _restoreCompactOurselves(Map<String, dynamic> saved) {
     final legacyIds = List<String>.from(lesson.json['legacyStepIds']);

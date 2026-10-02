@@ -86,7 +86,7 @@ void main() {
     },
   );
   testWidgets('Creating a new child preserves the original profile', (t) async {
-    helpers.testCatalog = await helpers.loadTestCatalog();
+    helpers.testCatalog = (await t.runAsync(helpers.loadTestCatalog))!;
     final store = MemoryProgressStore(family().selectChild('local-child'));
     await helpers.mount(
       t,
@@ -115,7 +115,7 @@ void main() {
     );
     await t.enterText(find.byKey(const ValueKey('childName')), 'Mona');
     await helpers.tapVisible(t, find.byKey(const ValueKey('profileNext')));
-    await helpers.tapVisible(t, find.text('Girl • بنت'));
+    await helpers.tapVisible(t, find.text('Girl'));
     await helpers.tapVisible(t, find.byKey(const ValueKey('profileNext')));
     await helpers.tapVisible(t, find.byKey(const ValueKey('profileNext')));
     expect(store.data.profile!.name, 'Mona');
@@ -128,10 +128,74 @@ void main() {
     );
     expect(t.takeException(), isNull);
   });
+  test(
+    'Deleting active, inactive and last children preserves only survivors',
+    () {
+      final original = family();
+      final inactive = original.removeChild('local-child', emptyId: 'fresh');
+      expect(inactive.profile!.name, 'Adam');
+      expect(inactive.childRecords.keys, ['second']);
+      final active = original.removeChild('second', emptyId: 'fresh');
+      expect(active.profile!.name, 'Nour');
+      expect(active.journeys['unit_02']!['index'], 4);
+      final empty = AppData.fromJson(
+        active.removeChild('local-child', emptyId: 'fresh').toJson(),
+      );
+      expect(empty.profile, isNull);
+      expect(empty.journeys, isEmpty);
+      expect(empty.activeChildId, 'fresh');
+      expect(empty.childRecords.containsKey('local-child'), isFalse);
+      expect(
+        () => empty.changeChild(
+          'local-child',
+          (s) => s.copyWith(profile: const ChildProfile(name: 'Old')),
+        ),
+        throwsStateError,
+      );
+    },
+  );
+  testWidgets(
+    'Deleting requires parent gate and confirmation; cancel preserves data',
+    (t) async {
+      helpers.testCatalog = (await t.runAsync(helpers.loadTestCatalog))!;
+      final store = MemoryProgressStore(family());
+      await helpers.mount(
+        t,
+        ChildChooser(onSelected: () {}, onParentChanged: (_) {}),
+        store,
+      );
+      Future<void> openDelete() async {
+        await helpers.tapVisible(
+          t,
+          find.byKey(const ValueKey('delete-child-second')),
+        );
+        expect(
+          find.byKey(const ValueKey('confirm-delete-child')),
+          findsNothing,
+        );
+        await t.enterText(find.byType(TextField), helpers.gateAnswer(t));
+        await helpers.tapVisible(t, find.text('كمّل • Continue'));
+        await t.pumpAndSettle();
+      }
+
+      await openDelete();
+      await helpers.tapVisible(t, find.text('إلغاء'));
+      expect(store.data.childRecords.length, 2);
+      await openDelete();
+      await helpers.tapVisible(
+        t,
+        find.byKey(const ValueKey('confirm-delete-child')),
+      );
+      await t.pumpAndSettle();
+      expect(store.data.profile!.name, 'Nour');
+      expect(store.data.childRecords.containsKey('second'), isFalse);
+      expect(t.takeException(), isNull);
+    },
+  );
   testWidgets('Chooser selects the intended child and gates adding another', (
     t,
   ) async {
-    helpers.testCatalog = await helpers.loadTestCatalog();
+    helpers.testCatalog = (await t.runAsync(helpers.loadTestCatalog))!;
     final store = MemoryProgressStore(family());
     var selected = false;
     await helpers.mount(

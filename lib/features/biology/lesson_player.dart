@@ -64,6 +64,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   Set<String> _selected = {};
   Map<String, String> _placements = {};
   Set<String> _touched = {};
+  Set<String> _reviewItems = {};
+  bool _needsCorrection = false;
   String? _prediction;
   int _frame = 0, _shoeA = 9, _shoeB = 12;
   bool _busy = false, _complete = false, _freeDone = false, _saveFailed = false;
@@ -73,7 +75,28 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   Map<String, dynamic> _light = {};
   Map<String, String> _objectiveEvidence = {};
   Future<void> _writes = Future.value();
-  LessonStep get step => _session.step;
+  LessonStep get step {
+    final current = _session.step;
+    if (current.id != 'unit_06.step.008' ||
+        _session.current['legacySoundChart'] != true) {
+      return current;
+    }
+    final legacy = widget.lesson.json['legacySoundChart'];
+    if (legacy is! Map) return current;
+    return LessonStep({
+      ...current.json,
+      ...Map<String, dynamic>.from(legacy),
+      'soundScene': {
+        ...Map<String, dynamic>.from(current.json['soundScene'] ?? {}),
+        ...Map<String, dynamic>.from(legacy['soundScene'] ?? {}),
+      },
+    });
+  }
+
+  bool get _guidedCorrection => step.json['correctionUi'] is Map;
+  bool get _answerLocked => _engine.done && !_needsCorrection;
+  String _correctionText(String key) =>
+      step.json['correctionUi'][key] as String;
   @override
   void initState() {
     super.initState();
@@ -102,6 +125,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     _selected = Set<String>.from(current['selected'] ?? []);
     _placements = Map<String, String>.from(current['placements'] ?? {});
     _touched = Set<String>.from(current['touched'] ?? []);
+    _reviewItems = Set<String>.from(current['reviewItems'] ?? []);
+    _needsCorrection = current['needsCorrection'] == true && _guidedCorrection;
     _prediction = current['prediction'];
     _frame = current['frame'] ?? 0;
     _freeDone = current['freeDone'] ?? false;
@@ -142,7 +167,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   String get _instruction {
     if (_ourselves || _science)
-      return '${step.json['safety'] ?? ''} ${step.prompt}';
+      return '${step.json['safety'] ?? ''} ${step.json['spokenPrompt'] ?? step.prompt}';
     if (_plantLab)
       return '$_displayPrompt ${step.json['playInstruction'] ?? ''}';
     final names = step.options.map((v) => v.label).join('. ');
@@ -153,17 +178,19 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   }
 
   void _say(String text) {
+    if (_science && widget.lesson.id == 'unit_06') ScienceAudio.stop();
     ref.read(narrationProvider).speak(text);
   }
 
   void _syncGame() {
     _game.selected = _selected;
     _game.placements = _placements;
-    _game.reveal = _engine.done || _freeDone;
+    _game.reveal = _answerLocked || _freeDone;
     _game.frame = _frame;
   }
 
   Map<String, dynamic> _snapshot() => {
+    if (_session.current['legacySoundChart'] == true) 'legacySoundChart': true,
     if (_objectiveEvidence.isNotEmpty)
       'objectiveEvidence': Map<String, String>.from(_objectiveEvidence),
     'bean': Map<String, dynamic>.from(_bean),
@@ -172,6 +199,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     'selected': _selected.toList(),
     'placements': Map<String, String>.from(_placements),
     'touched': _touched.toList(),
+    'reviewItems': _reviewItems.toList(),
+    'needsCorrection': _needsCorrection,
     'prediction': _prediction,
     'frame': _frame,
     'shoeA': _shoeA,
@@ -209,11 +238,14 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   void _playSound(String name, [double loudness = 1]) {
     final settings = ref.read(appProvider).settings;
-    if (settings.sound)
+    if (settings.sound) {
+      // Let the child hear the experimental sound without narration over it.
+      ref.read(narrationProvider).stop();
       ScienceAudio.play(
         name,
-        settings.volume * .35 * loudness,
+        settings.volume * (widget.lesson.id == 'unit_06' ? .5 : .35) * loudness,
       ).catchError((Object _) {});
+    }
   }
 
   void _item(String id) {
@@ -221,15 +253,20 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       final art = step.options.where((p) => p.id == id).firstOrNull?.art;
       if (art != null) _playSound(art);
     }
-    if (_busy || _engine.done || _freeDone || _frame > 0) return;
-    _say(
-      _plantLab && step.kind == 'story'
-          ? step.prompt
-          : _plantLab && step.json['partDescriptions'] != null
-          ? step.json['partDescriptions'][id] ?? step.label(id)
-          : step.json['senseDescriptions']?[id] ?? step.label(id),
-    );
+    if (_busy || _answerLocked || _freeDone || _frame > 0) return;
+    _reviewItems.remove(id);
+    if (!(_science && step.json['band'] == true && step.isFree))
+      _say(
+        _plantLab && step.kind == 'story'
+            ? step.prompt
+            : _plantLab && step.json['partDescriptions'] != null
+            ? step.json['partDescriptions'][id] ?? step.label(id)
+            : step.json['senseDescriptions']?[id] ?? step.label(id),
+      );
     if (['explore', 'story', 'free-plant'].contains(step.kind)) {
+      if (step.json['senseDescriptions'] is Map) {
+        _feedback = step.json['senseDescriptions'][id] ?? '';
+      }
       _touched.remove(id);
       _touched.add(id);
       _selected = {..._touched};
@@ -251,7 +288,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   }
 
   void _place(String item, String target) {
-    if (_busy || _engine.done || _freeDone) return;
+    if (_busy || _answerLocked || _freeDone) return;
+    _reviewItems.remove(item);
     _placements[item] = target;
     if (_ourselves && step.kind == 'label-diagram') {
       final next = step.options
@@ -274,7 +312,23 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       ? _selected.toList()
       : _selected.firstOrNull;
   void _check() {
-    if (_busy || _engine.done) return;
+    if (_busy || _answerLocked) return;
+    if (_needsCorrection) {
+      // This is practice after explanation. Never submit to the scoring engine.
+      final corrected = matchesAnswer(step.answer!, _selection);
+      _markForReview();
+      if (corrected) {
+        _needsCorrection = false;
+        _reviewItems.clear();
+        _feedback = _correctionText('complete');
+        _game.celebration = 1.2;
+      } else {
+        _feedback = '${_correctionText('retry')} ${_answerReference()}';
+      }
+      _changed();
+      _say(_feedback);
+      return;
+    }
     final previousMistakes = _engine.mistakes;
     final success = _engine.submit(_selection);
     final groups = step.json['objectiveItems'];
@@ -294,7 +348,24 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       }
     }
     _feedback = _engine.feedback;
-    if (_engine.done) {
+    if (!_engine.done && step.isMapping) {
+      final expected = Map<String, dynamic>.from(step.answer!['value']);
+      final revisit = expected.keys.where(
+        (id) => _placements[id] != expected[id],
+      );
+      _feedback += ' Look again: ${revisit.map(step.label).join(', ')}.';
+    } else if (!_engine.done && step.isMulti) {
+      final expected = List<String>.from(step.answer!['value']);
+      final found = _selected.where(expected.contains).length;
+      _feedback +=
+          ' $found of ${expected.length} discoveries found. Check your collection.';
+    }
+    if (_guidedCorrection && !success) _markForReview();
+    if (_guidedCorrection && _engine.outcome == DecisionOutcome.explained) {
+      _needsCorrection = true;
+      _feedback += ' ${_correctionText('start')} ${_answerReference()}';
+    } else if (_engine.done) {
+      _reviewItems.clear();
       final value = step.answer!['value'];
       if (step.isMapping)
         _placements = Map<String, String>.from(value);
@@ -310,7 +381,53 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     _say(_feedback);
   }
 
+  void _markForReview() {
+    final expected = step.answer!['value'];
+    final aliases = Map<String, dynamic>.from(step.answer!['aliases'] ?? {});
+    dynamic canonical(dynamic value) => aliases[value] ?? value;
+    if (step.isMapping) {
+      _reviewItems = (expected as Map).keys
+          .cast<String>()
+          .where((id) => canonical(_placements[id]) != canonical(expected[id]))
+          .toSet();
+    } else if (step.isMulti) {
+      // Missing correct choices are not identified before the explanation.
+      _reviewItems = _selected
+          .where((id) => !(expected as List).contains(id))
+          .toSet();
+    } else {
+      _reviewItems = _selected.where((id) => id != expected).toSet();
+    }
+  }
+
+  String _answerReference() {
+    final expected = step.answer!['value'];
+    if (expected is Map) {
+      return expected.entries
+          .where((e) => _reviewItems.contains(e.key))
+          .map((e) => '${step.label(e.key)}: ${step.label(e.value)}')
+          .join('. ');
+    }
+    return (expected is List ? expected : [expected])
+        .map((id) => step.label(id as String))
+        .join(' • ');
+  }
+
   bool get _canContinue {
+    if (_needsCorrection) return false;
+    if (_session.responses[step.id]?['completed'] == true) return true;
+    if (_science && step.json['lab'] == 'distance')
+      return ScienceLab.distanceComplete(_lab);
+    if (_science && step.json['lab'] == 'force')
+      return ScienceLab.forceComplete(_lab);
+    if (_science && step.json['lab'] == 'sailboat')
+      return ScienceLab.boatComplete(_lab);
+    if (_science && step.json['shapeResults'] != null) {
+      return ScienceLab.shapeComplete(step, _lab);
+    }
+    if (_science && step.json['observationUi'] != null) {
+      return ScienceLab.experimentComplete(step, _lab);
+    }
     if (_science && step.json['lab'] != null) return _freeDone;
     if (_science && step.kind == 'explore')
       return step.options.every((o) => _touched.contains(o.id));
@@ -357,6 +474,42 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     }
   }
 
+  Future<void> _previous() async {
+    if (_busy || _session.index == 0) return;
+    final previousIndex = _session.index;
+    final previousCurrent = _snapshot();
+    final previousResponses = Map<String, dynamic>.from(_session.responses);
+    setState(() => _busy = true);
+    try {
+      await ref.read(narrationProvider).stop();
+      await _persist();
+      // Preserve unfinished work separately from immutable completed evidence.
+      if (_session.responses[step.id]?['completed'] != true) {
+        _session.responses[step.id] = {'resumeState': previousCurrent};
+      }
+      _session.index--;
+      final saved = _session.responses[step.id] as Map? ?? {};
+      _session.current = Map<String, dynamic>.from(
+        saved['resumeState'] ?? saved,
+      );
+      await ref
+          .read(appProvider.notifier)
+          .saveJourney(widget.lesson.id, _session.toJson());
+      _game.pauseEngine();
+      _prepare();
+    } catch (_) {
+      _session.index = previousIndex;
+      _session.current = previousCurrent;
+      _session.responses = previousResponses;
+      if (mounted) {
+        showSaveError(context);
+        _prepare();
+      }
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
   Future<void> _next() async {
     if (!_canContinue || _busy) return;
     final previousIndex = _session.index;
@@ -365,16 +518,16 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     setState(() => _busy = true);
     try {
       await _persist();
-      _session.responses[step.id] = {..._snapshot(), 'completed': true};
-      _session.index++;
-      while (!_session.finished &&
-          _session.responses[_session.step.id]?['completed'] == true) {
-        _session.index++;
+      if (_session.responses[step.id]?['completed'] != true) {
+        _session.responses[step.id] = {..._snapshot(), 'completed': true};
       }
+      _session.index++;
       _session.current = _session.finished
           ? {}
           : Map<String, dynamic>.from(
-              _session.responses[_session.step.id]?['resumeState'] ?? {},
+              _session.responses[_session.step.id]?['resumeState'] ??
+                  _session.responses[_session.step.id] ??
+                  {},
             );
       if (_session.finished) {
         await ref.read(appProvider.notifier).completeJourney(_session.result());
@@ -460,6 +613,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         step: step,
         initial: _light,
         position: '${_session.index + 1}/${widget.lesson.steps.length}',
+        onPrevious: _session.index == 0 || _busy ? null : _previous,
         onSave: (value) async {
           final previous = _light;
           _light = Map<String, dynamic>.from(value);
@@ -485,6 +639,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         key: ValueKey(step.id),
         step: step,
         initial: _bean,
+        onPrevious: _session.index == 0 || _busy ? null : _previous,
         onSave: (value) async {
           _bean = Map<String, dynamic>.from(value);
           await _persist();
@@ -510,26 +665,56 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: Row(
-                  children: [
-                    IconButton(
-                      onPressed: _leave,
-                      tooltip: 'Save and return to map',
-                      icon: const Icon(Icons.home_rounded),
-                    ),
-                    Expanded(
-                      child: Text(
-                        step.title == step.section || _plantLab
-                            ? step.title
-                            : '${step.title} • ${step.section}',
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
-                    ),
-                    Text(
-                      '${_session.index + 1}/${widget.lesson.steps.length}',
-                      style: const TextStyle(fontSize: 22),
-                    ),
-                  ],
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final compact = constraints.maxWidth < 600;
+                    final title = Text(
+                      step.title == step.section || _plantLab
+                          ? step.title
+                          : '${step.title} • ${step.section}',
+                      key: const ValueKey('lesson-title'),
+                      maxLines: compact ? 2 : null,
+                      overflow: compact ? TextOverflow.ellipsis : null,
+                      style: compact
+                          ? Theme.of(context).textTheme.titleLarge
+                                ?.copyWith(fontSize: 20)
+                          : Theme.of(context).textTheme.titleLarge,
+                    );
+                    final controls = Row(
+                      children: [
+                        IconButton(
+                          key: const ValueKey('lessonPrevious'),
+                          tooltip: 'Previous screen',
+                          onPressed: _busy || _session.index == 0
+                              ? null
+                              : _previous,
+                          icon: const Icon(Icons.arrow_back_rounded),
+                        ),
+                        IconButton(
+                          onPressed: _leave,
+                          tooltip: 'Save and return to map',
+                          icon: const Icon(Icons.home_rounded),
+                        ),
+                        if (compact) const Spacer() else Expanded(child: title),
+                        Text(
+                          '${_session.index + 1}/${widget.lesson.steps.length}',
+                          style: const TextStyle(fontSize: 22),
+                        ),
+                      ],
+                    );
+                    return compact
+                        ? Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              controls,
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 8),
+                                child: title,
+                              ),
+                            ],
+                          )
+                        : controls;
+                  },
                 ),
               ),
               Expanded(
@@ -544,11 +729,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                       constraints: const BoxConstraints(maxWidth: 1100),
                       child: Column(
                         children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              ScientistOwl(
-                                size: 70,
+                          LayoutBuilder(
+                            builder: (context, constraints) {
+                              final compact = constraints.maxWidth < 600;
+                              final owl = ScientistOwl(
+                                size: compact ? 44 : 70,
                                 gender: profile?.gender ?? ChildGender.boy,
                                 mood: _engine.done
                                     ? (_engine.outcome ==
@@ -558,22 +743,43 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                     : _engine.mistakes > 0
                                     ? OwlMood.thinking
                                     : OwlMood.idle,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  _displayPrompt,
-                                  style: const TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w700,
-                                  ),
+                              );
+                              final prompt = Text(
+                                _displayPrompt,
+                                key: const ValueKey('lesson-prompt'),
+                                style: const TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700,
                                 ),
-                              ),
-                              IconButton(
+                              );
+                              final speaker = IconButton(
                                 onPressed: () => _say(_instruction),
                                 tooltip: 'Listen again',
                                 icon: const Icon(Icons.volume_up_rounded),
-                              ),
-                            ],
+                              );
+                              return compact
+                                  ? Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.stretch,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            owl,
+                                            const Spacer(),
+                                            speaker,
+                                          ],
+                                        ),
+                                        prompt,
+                                      ],
+                                    )
+                                  : Row(
+                                      children: [
+                                        owl,
+                                        Expanded(child: prompt),
+                                        speaker,
+                                      ],
+                                    );
+                            },
                           ),
                           const SizedBox(height: 8),
                           if (step.table.isNotEmpty && !_ourselves && !_science)
@@ -617,14 +823,14 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                               padding: const EdgeInsets.all(16),
                               margin: const EdgeInsets.only(bottom: 12),
                               decoration: BoxDecoration(
-                                color: const Color(0xFFFCE8E6),
+                                color: const Color(0xFFE7EFF0),
                                 borderRadius: BorderRadius.circular(18),
                               ),
                               child: Text(
                                 step.json['safety'],
                                 style: const TextStyle(
                                   fontSize: 22,
-                                  color: Color(0xFFC0392B),
+                                  color: Color(0xFF3B5665),
                                 ),
                               ),
                             ),
@@ -655,9 +861,63 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                     step: step,
                                     selected: _selected,
                                     placements: _placements,
-                                    done: _engine.done,
+                                    done: _answerLocked,
+                                    reviewItems: _reviewItems,
                                     onItem: _item,
                                     onPlace: _place,
+                                    onSound: _playSound,
+                                    onSpeak: (text) {
+                                      ScienceAudio.stop();
+                                      _say(text);
+                                    },
+                                    onOrder: (items) {
+                                      if (_busy ||
+                                          _answerLocked ||
+                                          !step.isOrder)
+                                        return;
+                                      final ids = step.options
+                                          .map((p) => p.id)
+                                          .toSet();
+                                      if (items.toSet().length !=
+                                              items.length ||
+                                          !ids.containsAll(items))
+                                        return;
+                                      _selected = items.toSet();
+                                      _changed();
+                                    },
+                                    onOrderPlacements: (slots) {
+                                      if (_busy ||
+                                          _answerLocked ||
+                                          !step.isOrder)
+                                        return;
+                                      final ids = step.options
+                                          .map((p) => p.id)
+                                          .toSet();
+                                      final validSlots = {
+                                        for (
+                                          var i = 0;
+                                          i < step.options.length;
+                                          i++
+                                        )
+                                          '$i',
+                                      };
+                                      if (!validSlots.containsAll(slots.keys) ||
+                                          !ids.containsAll(slots.values) ||
+                                          slots.values.toSet().length !=
+                                              slots.length)
+                                        return;
+                                      _placements = Map.from(slots);
+                                      _selected = {
+                                        for (
+                                          var i = 0;
+                                          i < step.options.length;
+                                          i++
+                                        )
+                                          if (slots.containsKey('$i'))
+                                            slots['$i']!,
+                                      };
+                                      _changed();
+                                    },
                                   )
                           else if (_ourselves)
                             OurselvesStage(
@@ -801,7 +1061,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                 ),
                               ),
                           ],
-                          if (_engine.done)
+                          if (_answerLocked)
                             Padding(
                               padding: const EdgeInsets.all(12),
                               child: Text(
@@ -838,65 +1098,6 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                 step.json['action'] ?? 'Test my prediction',
                               ),
                             ),
-                          if (!step.isFree &&
-                              !_engine.done &&
-                              (step.isMulti ||
-                                  step.isOrder ||
-                                  step.options.length > 1 && step.isMapping))
-                            Padding(
-                              padding: const EdgeInsets.all(12),
-                              child: FilledButton(
-                                onPressed:
-                                    (step.isMapping
-                                        ? _placements.length !=
-                                              step.options.length
-                                        : _selected.isEmpty)
-                                    ? null
-                                    : _check,
-                                child: const Text('Check my discovery'),
-                              ),
-                            ),
-                          if (_feedback.isNotEmpty)
-                            Container(
-                              margin: const EdgeInsets.symmetric(vertical: 10),
-                              padding: const EdgeInsets.all(16),
-                              decoration: BoxDecoration(
-                                color:
-                                    (_engine.done &&
-                                            _engine.outcome !=
-                                                DecisionOutcome.explained) ||
-                                        _freeDone
-                                    ? const Color(0xFFD9F2DF)
-                                    : const Color(0xFFFFE9C7),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Row(
-                                children: [
-                                  Expanded(child: Text(_feedback)),
-                                  IconButton(
-                                    onPressed: () => _say(_feedback),
-                                    tooltip: 'Listen to feedback',
-                                    icon: const Icon(Icons.volume_up_rounded),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          if (_saveFailed)
-                            const Text(
-                              'Saving needs help. Your last saved step is safe.',
-                            ),
-                          if (_canContinue)
-                            Padding(
-                              padding: const EdgeInsets.all(8),
-                              child: FilledButton.icon(
-                                key: const ValueKey('lessonNext'),
-                                onPressed: _busy ? null : _next,
-                                icon: const Icon(Icons.arrow_forward_rounded),
-                                label: Text(
-                                  _busy ? 'Saving…' : 'Keep exploring',
-                                ),
-                              ),
-                            ),
                           const SizedBox(height: 12),
                         ],
                       ),
@@ -904,12 +1105,84 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                   ),
                 ),
               ),
+              _controls(),
             ],
           ),
         ),
       ),
     );
   }
+
+  Widget _controls() => Container(
+    key: const ValueKey('lesson-controls'),
+    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+    color: const Color(0xFFFFF8EC),
+    child: Row(
+      children: [
+        Expanded(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.sizeOf(context).height * .18,
+            ),
+            child: SingleChildScrollView(
+              child: Text(
+                _saveFailed
+                    ? 'Saving needs help. Your last saved step is safe.'
+                    : _feedback,
+                key: const ValueKey('lesson-feedback'),
+                style: const TextStyle(fontSize: 19),
+              ),
+            ),
+          ),
+        ),
+        if (_feedback.isNotEmpty)
+          IconButton(
+            onPressed: () => _say(_feedback),
+            tooltip: 'Listen to feedback',
+            icon: const Icon(Icons.volume_up_rounded),
+          ),
+        const SizedBox(width: 8),
+        if (!step.isFree &&
+            !_answerLocked &&
+            (step.isMulti || step.isOrder || step.isMapping))
+          FilledButton(
+            style: FilledButton.styleFrom(
+              minimumSize: const Size(64, 56),
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+              textStyle: const TextStyle(fontFamily: 'Nunito', fontSize: 18),
+            ),
+            onPressed:
+                _busy ||
+                    (step.isMapping
+                        ? _placements.length != step.options.length
+                        : _selected.isEmpty ||
+                              (_science &&
+                                  widget.lesson.id == 'unit_06' &&
+                                  step.isOrder &&
+                                  _selected.length != step.options.length))
+                ? null
+                : _check,
+            child: Text(
+              _needsCorrection
+                  ? _correctionText('check')
+                  : 'Check my discovery',
+            ),
+          ),
+        if (_canContinue)
+          FilledButton.icon(
+            key: const ValueKey('lessonNext'),
+            style: FilledButton.styleFrom(
+              minimumSize: const Size(64, 56),
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+              textStyle: const TextStyle(fontFamily: 'Nunito', fontSize: 18),
+            ),
+            onPressed: _busy ? null : _next,
+            icon: const Icon(Icons.arrow_forward_rounded),
+            label: Text(_busy ? 'Saving…' : 'Keep exploring'),
+          ),
+      ],
+    ),
+  );
 
   Widget _measure() => _ourselves
       ? ShoeMeasure(

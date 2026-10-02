@@ -237,7 +237,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
                       errorBuilder: (_, error) => Center(
                         child: FilledButton(
                           onPressed: leave,
-                          child: const Text('Back • رجوع'),
+                          child: const Text('Back'),
                         ),
                       ),
                     ),
@@ -389,17 +389,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
                                           MediaQuery.textScalerOf(context)
                                                   .scale(1) <
                                               1.5)
-                                        Text(
-                                          round.results.isEmpty
-                                              ? t('tutorialAr')
-                                              : t('huntAr'),
-                                          textDirection: TextDirection.rtl,
-                                          style: TextStyle(
-                                            fontFamily: 'Cairo',
-                                            fontSize: small ? 15 : 18,
-                                            color: gardenInk,
-                                          ),
-                                        ),
+                                        const SizedBox.shrink(),
                                     ],
                                   ),
                                 ),
@@ -532,15 +522,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
           ),
           textAlign: TextAlign.center,
         ),
-        Text(
-          item.nameAr,
-          textDirection: TextDirection.rtl,
-          style: const TextStyle(
-            fontFamily: 'Cairo',
-            fontSize: 18,
-            color: gardenInk,
-          ),
-        ),
+        const SizedBox.shrink(),
       ],
     );
     final choices = Column(
@@ -570,16 +552,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
             ),
           ],
         ),
-        if (!done)
-          Text(
-            t('questionAr'),
-            textDirection: TextDirection.rtl,
-            style: const TextStyle(
-              fontFamily: 'Cairo',
-              fontSize: 18,
-              color: gardenInk,
-            ),
-          ),
+        if (!done) const SizedBox.shrink(),
         const SizedBox(height: 8),
         if (!done)
           Row(
@@ -655,17 +628,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
                       : OwlMood.happy,
                 ),
                 const SizedBox(width: 8),
-                Expanded(
-                  child: Text(
-                    done ? t('nextAr') : t('dragAr'),
-                    textDirection: TextDirection.rtl,
-                    style: const TextStyle(
-                      fontFamily: 'Cairo',
-                      fontSize: 19,
-                      color: gardenInk,
-                    ),
-                  ),
-                ),
+                const Expanded(child: SizedBox.shrink()),
               ],
             ),
           ),
@@ -727,15 +690,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text(
-                    alive ? t('aliveAr') : t('notAliveAr'),
-                    style: const TextStyle(
-                      fontFamily: 'Cairo',
-                      fontSize: 18,
-                      color: gardenInk,
-                    ),
-                    textDirection: TextDirection.rtl,
-                  ),
+                  const SizedBox.shrink(),
                 ],
               ),
             ),
@@ -764,15 +719,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
         ),
         textAlign: TextAlign.center,
       ),
-      Text(
-        t('finishedAr'),
-        style: const TextStyle(
-          fontFamily: 'Cairo',
-          fontSize: 22,
-          color: gardenInk,
-        ),
-        textDirection: TextDirection.rtl,
-      ),
+      const SizedBox.shrink(),
       const SizedBox(height: 12),
       Wrap(
         alignment: WrapAlignment.center,

@@ -16,12 +16,14 @@ class LightExperiment extends ConsumerStatefulWidget {
     required this.onFinished,
     required this.onLeave,
     required this.position,
+    this.onPrevious,
   });
   final LessonStep step;
   final Map<String, dynamic> initial;
   final Future<void> Function(Map<String, dynamic>) onSave;
   final Future<void> Function() onFinished, onLeave;
   final String position;
+  final Future<void> Function()? onPrevious;
   @override
   ConsumerState<LightExperiment> createState() => _LightExperimentState();
 }
@@ -166,10 +168,17 @@ class _LightExperimentState extends ConsumerState<LightExperiment>
                   children: [
                     Row(
                       children: [
+                        if (widget.onPrevious != null)
+                          IconButton(
+                            key: const ValueKey('lessonPrevious'),
+                            tooltip: 'Previous screen',
+                            onPressed: busy ? null : widget.onPrevious,
+                            icon: const Icon(Icons.arrow_back_rounded),
+                          ),
                         IconButton(
                           onPressed: busy ? null : leave,
                           tooltip: 'My island',
-                          icon: const Icon(Icons.arrow_back_rounded),
+                          icon: const Icon(Icons.home_rounded),
                         ),
                         Expanded(
                           child: Text(

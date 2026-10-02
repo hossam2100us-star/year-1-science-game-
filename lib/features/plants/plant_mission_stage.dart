@@ -100,20 +100,18 @@ class PlantMissionStage extends StatelessWidget {
                             padding: const EdgeInsets.all(10),
                             child: Column(
                               children: [
-                                PlantMissionPicture(id: target.art, height: 75),
+                                PlantMissionPicture(id: target.art, height: 48),
                                 if (!done) const TouchCue(),
                                 Text(
                                   target.label,
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                ConstrainedBox(
-                                  constraints: const BoxConstraints(
-                                    maxHeight: 76,
-                                  ),
+                                SizedBox(
+                                  height: 48,
                                   child: SingleChildScrollView(
                                     child: Column(
                                       children: [
@@ -124,7 +122,7 @@ class PlantMissionStage extends StatelessWidget {
                                             item.label,
                                             textAlign: TextAlign.center,
                                             style: const TextStyle(
-                                              fontSize: 22,
+                                              fontSize: 20,
                                             ),
                                           ),
                                       ],
@@ -156,7 +154,7 @@ class PlantMissionStage extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       onTap: done ? null : () => onItem(item.id),
       child: SizedBox(
-        width: step.options.length > 8 ? 132 : 190,
+        width: step.options.length > 8 ? 154 : 190,
         child: _tile(item, false),
       ),
     ),
@@ -176,17 +174,22 @@ class PlantMissionStage extends StatelessWidget {
           height: dragging
               ? 90
               : step.options.length > 8
-              ? 100
+              ? 65
               : 140,
         ),
         if (!done) const TouchCue(),
         Text(
           item.label,
           textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 22),
+          style: const TextStyle(fontSize: 20),
         ),
-        if (placements.containsKey(item.id))
-          const Icon(Icons.inventory_2_outlined),
+        if (step.isMapping)
+          SizedBox(
+            height: 24,
+            child: placements.containsKey(item.id)
+                ? const Icon(Icons.inventory_2_outlined)
+                : null,
+          ),
       ],
     ),
   );

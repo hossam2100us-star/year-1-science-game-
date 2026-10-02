@@ -47,6 +47,8 @@ flutter:
     - assets/images/science-details-v1.webp
     - assets/images/science-extras-v1.webp
     - assets/images/sense-objects-v2.webp
+    - assets/images/sound-atlas-v2.png
+    - assets/images/sound-details-v2.png
     - assets/audio/
   fonts:
     - family: Fredoka

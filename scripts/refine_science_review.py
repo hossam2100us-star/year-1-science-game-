@@ -103,6 +103,30 @@ def refine_science_review(book):
         step['hint'] = hint
         if step.get('lab') and step['kind'] == 'free-plant':
             step['kind'] = 'science-lab'
+    if book['id'] == 'unit_04':
+        for step in book['steps']:
+            if step.get('lab'):
+                if step['lab'] == 'waterproof':
+                    step['waterScene'] = 'umbrella' if step['id'].endswith('012') else 'cup'
+                continue
+            number = int(step['id'].split('.')[-1])
+            step['workshop'] = {
+                'mode': 'collect' if number in (7, 11) else 'workshop',
+                'focus': {2: 'spoon', 4: 'spoon', 5: 'window', 10: 'window', 11: 'pencil'}.get(number, 'spoon'),
+                'discover': 'Touch a hand marker to discover a material. Explore every object.',
+                'sort': 'Choose an object or discovery, then touch a drawer. You can change your choices before checking.',
+            }
+            if number == 3:
+                step['prompt'] = 'Put each object in its material drawer. Drag it, or touch the object and then a drawer.'
+            elif number == 7:
+                step['prompt'] = 'Pack every waterproof material for the rain. Touch again to take one out.'
+
+    from refine_teacher_review import refine_teacher_review
+    refine_teacher_review(book)
+    from refine_forces import refine_forces
+    refine_forces(book)
+    from refine_sound import refine_sound
+    refine_sound(book)
 
 if __name__ == '__main__':
     root = Path(__file__).resolve().parents[1] / 'assets/content/playable'

@@ -215,14 +215,14 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
                               textCapitalization: TextCapitalization.words,
                               autocorrect: false,
                               decoration: const InputDecoration(
-                                labelText: 'My first name • اسمي',
+                                labelText: 'My first name',
                                 hintText: 'Your name',
                               ),
                               onChanged: (_) => setState(() {}),
                               onSubmitted: (_) => _changeStep(1),
                             ),
                             const Text(
-                              'First name only • الاسم الأول بس',
+                              'First name only',
                               style: TextStyle(
                                 fontFamily: 'Cairo',
                                 fontSize: 22,
@@ -238,8 +238,8 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
                                 for (final gender in ChildGender.values)
                                   ChoiceTile(
                                     label: gender == ChildGender.boy
-                                        ? 'Boy • ولد'
-                                        : 'Girl • بنت',
+                                        ? 'Boy'
+                                        : 'Girl',
                                     selected: _gender == gender,
                                     onTap: () =>
                                         setState(() => _gender = gender),
@@ -287,7 +287,7 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
                             ),
                             const SizedBox(height: 12),
                             const Text(
-                              'My photo stays on this device.\nصورتي بتفضل على الجهاز بس.',
+                              'My photo stays on this device.',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Cairo',
@@ -299,7 +299,7 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
                                 onPressed: () => setState(() => _photo = null),
                                 child: const Padding(
                                   padding: EdgeInsets.all(12),
-                                  child: Text('Remove my photo • شيل الصورة'),
+                                  child: Text('Remove my photo'),
                                 ),
                               ),
                           ],

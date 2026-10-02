@@ -74,31 +74,37 @@
       "theme": "unit_04",
       "minTouches": 7,
       "senseDescriptions": {
-        "metal": "Metal is usually hard, shiny and cold to touch.",
-        "wood": "Wood is hard and can be rough or smooth.",
+        "metal": "A spoon is an object. Metal is its material. Metal is usually hard, shiny and cold to touch.",
+        "wood": "A chair is an object. Wood is its material. Wood is hard and can be rough or smooth.",
         "plastic": "Plastic is light and waterproof.",
         "glass": "Glass is hard, smooth and see-through.",
         "fabric": "Fabric is soft and bendy.",
         "paper": "Paper is light, thin and soaks up water.",
         "clay": "Clay is soft when wet and hard when dry."
       },
-      "safety": "Glass objects are for looking at and talking about, not for testing. Use a plastic cup when you want to talk about \"see-through\"."
+      "safety": "Glass objects are for looking at and talking about, not for testing. Use a plastic cup when you want to talk about \"see-through\".",
+      "workshop": {
+        "mode": "workshop",
+        "focus": "spoon",
+        "discover": "Touch every hand. Discover each material.",
+        "sort": "Touch an object, then a drawer."
+      }
     },
     {
       "id": "unit_04.step.002",
       "kind": "match-lines",
       "title": "Object or material?",
-      "prompt": "Give each idea its name.",
+      "prompt": "Sort objects and materials.",
       "options": [
         {
           "id": "things_a_spoon_and_a_chair",
-          "label": "Things: a spoon and a chair",
+          "label": "Spoon and chair",
           "art": "chair"
         },
         {
           "id": "what_things_are_made_from_metal_and_wood",
-          "label": "What things are made from: metal and wood",
-          "art": "spoon"
+          "label": "Metal and wood",
+          "art": "wood"
         }
       ],
       "targets": [
@@ -140,13 +146,26 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_04"
+      "theme": "unit_04",
+      "workshop": {
+        "mode": "workshop",
+        "focus": "spoon",
+        "discover": "Touch every hand. Discover each material.",
+        "sort": "Touch an object, then a drawer."
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_04.step.003",
       "kind": "match-lines",
       "title": "Stock the workshop",
-      "prompt": "Move each object to its material.",
+      "prompt": "Sort objects into material drawers.",
       "options": [
         {
           "id": "window",
@@ -220,7 +239,21 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_04"
+      "theme": "unit_04",
+      "workshop": {
+        "mode": "workshop",
+        "focus": "spoon",
+        "discover": "Touch every hand. Discover each material.",
+        "sort": "Touch an object, then a drawer."
+      },
+      "spokenPrompt": "Put each object in its material drawer. Drag it, or touch the object and then a drawer.",
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_04.step.004",
@@ -284,7 +317,20 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_04",
-      "focus": "spoon"
+      "focus": "spoon",
+      "workshop": {
+        "mode": "workshop",
+        "focus": "spoon",
+        "discover": "Touch every hand. Discover each material.",
+        "sort": "Touch an object, then a drawer."
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_04.step.005",
@@ -355,7 +401,20 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_04",
-      "focus": "window"
+      "focus": "window",
+      "workshop": {
+        "mode": "workshop",
+        "focus": "window",
+        "discover": "Touch every hand. Discover each material.",
+        "sort": "Touch an object, then a drawer."
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_04.step.006",
@@ -418,23 +477,31 @@
         },
         "action": "Pour water",
         "result": "Look inside the cup"
+      },
+      "waterScene": "cup",
+      "observationUi": {
+        "review": "Look again",
+        "changed": "The result was different from your prediction. Let us look again!",
+        "question": "What did the water test show?",
+        "retry": "Look at the water and the result above. What happened?",
+        "complete": "You noticed what happened! Keep exploring."
       }
     },
     {
       "id": "unit_04.step.007",
       "kind": "tap-choice",
       "title": "Pack for the rain",
-      "prompt": "Choose every waterproof material.",
+      "prompt": "Pack every waterproof material.",
       "options": [
         {
           "id": "plastic",
           "label": "Plastic",
-          "art": "bottle"
+          "art": "plastic"
         },
         {
           "id": "paper",
           "label": "Paper",
-          "art": "paper"
+          "art": "paper_sheet"
         },
         {
           "id": "aluminium_foil",
@@ -444,7 +511,7 @@
         {
           "id": "cotton_cloth",
           "label": "Cotton cloth",
-          "art": "shirt"
+          "art": "fabric"
         },
         {
           "id": "tissue_paper",
@@ -480,13 +547,31 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_04"
+      "theme": "unit_04",
+      "workshop": {
+        "mode": "pack",
+        "focus": "spoon",
+        "discover": "Touch every hand. Discover each material.",
+        "sort": "Touch an object, then a drawer.",
+        "instruction": "Touch a sample to pack or unpack it. You can also drag it into the bag.",
+        "packed": "My rain kit",
+        "empty": "Choose your materials",
+        "remove": "Touch a packed sample to take it out."
+      },
+      "spokenPrompt": "Pack every waterproof material for the rain. Touch again to take one out.",
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_04.step.008",
       "kind": "science-lab",
       "title": "Shape studio",
-      "prompt": "Choose an object, then try a shape-changing action.",
+      "prompt": "Choose an object. Predict, then try an action.",
       "options": [
         {
           "id": "dough",
@@ -546,7 +631,61 @@
           "Stretch",
           "Squash",
           "Bend"
+        ],
+        "predict": "Will its shape change?",
+        "choices": {
+          "change": "It will change",
+          "same": "It will stay the same"
+        },
+        "try": "Try the action",
+        "reset": "Try again",
+        "progress": "Actions tried",
+        "changed": "Its shape changed.",
+        "same": "It kept its shape.",
+        "instruction": "Try all four actions. Try a soft object and a hard object too.",
+        "comparison": "Results compared"
+      },
+      "shapeActions": {
+        "dough": [
+          "Twist",
+          "Squash"
+        ],
+        "sponge": [
+          "Squash"
+        ],
+        "paper_straw": [
+          "Bend"
+        ],
+        "rubber_band": [
+          "Stretch"
+        ],
+        "metal_spoon": [
+          "Squash"
+        ],
+        "stone": [
+          "Squash"
         ]
+      },
+      "shapeResults": {
+        "dough": {
+          "Twist": "change",
+          "Squash": "change"
+        },
+        "sponge": {
+          "Squash": "change"
+        },
+        "paper_straw": {
+          "Bend": "change"
+        },
+        "rubber_band": {
+          "Stretch": "change"
+        },
+        "metal_spoon": {
+          "Squash": "same"
+        },
+        "stone": {
+          "Squash": "same"
+        }
       }
     },
     {
@@ -617,7 +756,24 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_04"
+      "theme": "unit_04",
+      "workshop": {
+        "mode": "squash",
+        "focus": "spoon",
+        "discover": "Touch every hand. Discover each material.",
+        "sort": "Touch an object, then a drawer.",
+        "instruction": "Touch an object, then a tray. You can move it again before checking.",
+        "packed": "My rain kit",
+        "empty": "Choose your materials",
+        "remove": "Touch a packed sample to take it out."
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_04.step.010",
@@ -667,7 +823,24 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_04",
-      "focus": "window"
+      "focus": "window",
+      "workshop": {
+        "mode": "window",
+        "focus": "window",
+        "discover": "Touch every hand. Discover each material.",
+        "sort": "Touch an object, then a drawer.",
+        "instruction": "Look at the whole window. Choose the reason that makes it useful.",
+        "packed": "My rain kit",
+        "empty": "Choose your materials",
+        "remove": "Touch a packed sample to take it out."
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_04.step.011",
@@ -678,12 +851,12 @@
         {
           "id": "wood",
           "label": "Wood",
-          "art": "chair"
+          "art": "wood"
         },
         {
           "id": "fabric",
           "label": "Fabric",
-          "art": "shirt"
+          "art": "fabric"
         },
         {
           "id": "graphite",
@@ -693,7 +866,7 @@
         {
           "id": "glass",
           "label": "Glass",
-          "art": "window"
+          "art": "glass"
         }
       ],
       "targets": [],
@@ -707,7 +880,7 @@
       "assessed": true,
       "objective": "u04.main.08",
       "hint": "Look at the outside of the pencil and the dark part that makes a mark.",
-      "explanation": "Wood (the body), graphite or lead (the writing part), metal (the ring) and rubber (the eraser). Any two are correct.",
+      "explanation": "This plain writing pencil has a wooden body and a graphite writing core.",
       "source": {
         "pages": [
           12,
@@ -725,13 +898,30 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_04",
-      "focus": "pencil"
+      "focus": "pencil",
+      "workshop": {
+        "mode": "pencil",
+        "focus": "pencil",
+        "discover": "Touch every hand. Discover each material.",
+        "sort": "Touch an object, then a drawer.",
+        "instruction": "Look at this pencil. Collect two material samples.",
+        "packed": "My rain kit",
+        "empty": "Choose your materials",
+        "remove": "Touch a packed sample to take it out."
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_04.step.012",
       "kind": "science-lab",
-      "title": "Silly umbrella",
-      "prompt": "Try paper and plastic in the rain. Which one would you choose?",
+      "title": "Build a rain shelter",
+      "prompt": "Test both covers. Choose one for your shelter.",
       "options": [
         {
           "id": "paper",
@@ -775,15 +965,29 @@
           "wet": "Lets water through"
         },
         "action": "Start the rain",
-        "result": "Under the umbrella"
+        "result": "Under the umbrella",
+        "decision": {
+          "question": "Which cover will keep your shelter dry?",
+          "result": "dry",
+          "retry": "Look under each cover again. Which kept the rain out?",
+          "complete": "Your shelter is ready for the rain!"
+        }
       },
-      "focus": "umbrella"
+      "focus": "umbrella",
+      "waterScene": "umbrella",
+      "observationUi": {
+        "review": "Look again",
+        "changed": "The result was different from your prediction. Let us look again!",
+        "question": "What did the water test show?",
+        "retry": "Look at the water and the result above. What happened?",
+        "complete": "You noticed what happened! Keep exploring."
+      }
     },
     {
       "id": "unit_04.step.013",
       "kind": "match-lines",
-      "title": "Discovery badges",
-      "prompt": "Match each discovery to its answer.",
+      "title": "Finish the workshop",
+      "prompt": "Solve the five workshop discoveries.",
       "options": [
         {
           "id": "a_see_through_window",
@@ -808,7 +1012,7 @@
         {
           "id": "an_object_you_can_stretch",
           "label": "An object you can stretch",
-          "art": "rubber_band"
+          "art": "stretch_mission"
         }
       ],
       "targets": [
@@ -945,6 +1149,23 @@
         "u04.choice.05": [
           "a_potter_shapes_this"
         ]
+      },
+      "workshop": {
+        "mode": "missions",
+        "focus": "spoon",
+        "discover": "Touch every hand. Discover each material.",
+        "sort": "Touch an object, then a drawer.",
+        "instruction": "Touch a hand in the workshop, then choose a discovery below.",
+        "packed": "My rain kit",
+        "empty": "Choose your materials",
+        "remove": "Touch a packed sample to take it out."
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
       }
     }
   ],

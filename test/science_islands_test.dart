@@ -47,6 +47,9 @@ void main() {
     for (final atlas in ['five-senses-v2.webp', 'sense-objects-v2.webp']) {
       await Flame.images.load(atlas);
     }
+    for (final atlas in ['sound-atlas-v2.png', 'sound-details-v2.png']) {
+      await Flame.images.load(atlas);
+    }
   });
   void size(WidgetTester t, Size s) {
     t.view.physicalSize = s;
@@ -189,6 +192,13 @@ void main() {
             find.byKey(ValueKey('lab-guess-${choices.last}')),
           );
           await helpers.tapVisible(t, find.byKey(const ValueKey('lab-test')));
+          if (s.json['observationUi'] != null &&
+              choices.last != s.json['results'][p.id]) {
+            await helpers.tapVisible(
+              t,
+              find.byKey(ValueKey('lab-observe-${s.json['results'][p.id]}')),
+            );
+          }
         }
         expect(store.data.journeys[id]!['current']['freeDone'], true);
         expect(store.data.journeys[id]!['current']['outcome'], isNull);
@@ -214,10 +224,22 @@ void main() {
         final store = storeFor(b, i);
         await helpers.mount(t, LessonPlayer(lesson: b), store);
         final keys = <String>[];
-        if (mode == 'shape')
-          keys.addAll(
-            ['Twist', 'Stretch', 'Squash', 'Bend'].map((a) => 'lab-action-$a'),
-          );
+        if (mode == 'shape') {
+          for (final trial in [
+            ('dough', 'Twist'),
+            ('rubber_band', 'Stretch'),
+            ('sponge', 'Squash'),
+            ('paper_straw', 'Bend'),
+            ('stone', 'Squash'),
+          ]) {
+            keys.addAll([
+              'lab-shape-${trial.$1}',
+              'lab-action-${trial.$2}',
+              'lab-shape-guess-change',
+              'lab-shape-test',
+            ]);
+          }
+        }
         if (mode == 'soil' || mode == 'cleanup')
           keys.addAll(s.options.map((p) => 'lab-find-${p.id}'));
         if (mode == 'rock-sort')
@@ -250,12 +272,41 @@ void main() {
         final i = b.steps.indexWhere((s) => s.json['lab'] == mode);
         final store = storeFor(b, i);
         await helpers.mount(t, LessonPlayer(lesson: b), store);
-        var slider = t.widget<Slider>(find.byKey(const ValueKey('lab-slider')));
-        slider.onChanged!(.1);
-        await t.pump(const Duration(milliseconds: 300));
-        slider = t.widget<Slider>(find.byKey(const ValueKey('lab-slider')));
-        slider.onChanged!(.9);
-        await t.pump(const Duration(milliseconds: 300));
+        if (id == 'unit_05') {
+          for (final key in [
+            'force-pull',
+            'force-push',
+            'force-part-compare',
+            'force-guess-gentle',
+            'force-test-gentle',
+            'force-test-strong',
+          ]) {
+            await helpers.tapVisible(t, find.byKey(ValueKey('lab-$key')));
+          }
+        } else {
+          await helpers.tapVisible(
+            t,
+            find.byKey(const ValueKey('lab-distance-guess-fainter')),
+          );
+          var slider = t.widget<Slider>(
+            find.byKey(const ValueKey('lab-slider')),
+          );
+          slider.onChanged!(.1);
+          slider.onChangeEnd!(.1);
+          await t.pump(const Duration(milliseconds: 300));
+          await helpers.tapVisible(
+            t,
+            find.byKey(const ValueKey('lab-distance-listen')),
+          );
+          slider = t.widget<Slider>(find.byKey(const ValueKey('lab-slider')));
+          slider.onChanged!(.9);
+          slider.onChangeEnd!(.9);
+          await t.pump(const Duration(milliseconds: 300));
+          await helpers.tapVisible(
+            t,
+            find.byKey(const ValueKey('lab-distance-listen')),
+          );
+        }
         expect(store.data.journeys[id]!['current']['freeDone'], true);
         await t.pumpWidget(const SizedBox());
       }
@@ -263,6 +314,10 @@ void main() {
       final i = forces.steps.indexWhere((s) => s.json['lab'] == 'sailboat');
       final boat = storeFor(forces, i);
       await helpers.mount(t, LessonPlayer(lesson: forces), boat);
+      await helpers.tapVisible(
+        t,
+        find.byKey(const ValueKey('lab-boat-guess-still')),
+      );
       for (var n = 0; n < 7; n++) {
         await helpers.tapVisible(t, find.byKey(const ValueKey('lab-blow')));
       }
@@ -302,7 +357,7 @@ void main() {
   testWidgets('Render new islands for visual review', (t) async {
     size(t, const Size(1280, 950));
     for (final entry in {
-      'unit_04': [0, 5],
+      'unit_04': [0, 1, 2, 5, 11],
       'unit_05': [3, 4],
       'unit_06': [0, 7],
       'unit_07': [3, 8],

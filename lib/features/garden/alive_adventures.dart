@@ -106,14 +106,7 @@ class _AliveAdventuresState extends ConsumerState<AliveAdventures> {
                                     scene.text('difficulty'),
                                     style: const TextStyle(fontSize: 22),
                                   ),
-                                  Text(
-                                    '${scene.text('titleAr')} • ${scene.text('difficultyAr')}',
-                                    textDirection: TextDirection.rtl,
-                                    style: const TextStyle(
-                                      fontFamily: 'Cairo',
-                                      fontSize: 20,
-                                    ),
-                                  ),
+                                  const SizedBox.shrink(),
                                   const SizedBox(height: 8),
                                   Row(
                                     children: [

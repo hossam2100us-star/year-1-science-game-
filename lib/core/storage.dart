@@ -33,14 +33,20 @@ class HiveProgressStore implements ProgressStore {
   @override
   Future<void> write(AppData data) async {
     final previous = box.get('data');
-    final oldPhoto = previous == null
-        ? null
+    final oldChildren = previous == null
+        ? <String, Map<String, dynamic>>{}
         : AppData.fromJson(Map<String, dynamic>.from(jsonDecode(previous)))
-              .profile
-              ?.toJson()['photo'];
+              .childRecords;
+    final children = data.childRecords;
+    final removedPrivateData = oldChildren.entries.any(
+      (entry) =>
+          !children.containsKey(entry.key) ||
+          entry.value['profile']?['photo'] !=
+              children[entry.key]?['profile']?['photo'],
+    );
     final json = data.toJson();
     await box.put('data', jsonEncode(json));
-    if (oldPhoto != data.profile?.toJson()['photo']) await box.compact();
+    if (removedPrivateData) await box.compact();
     await box.flush();
   }
 }

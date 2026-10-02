@@ -49,11 +49,13 @@ class BeanExperiment extends ConsumerStatefulWidget {
     required this.initial,
     required this.onSave,
     required this.onFinished,
+    this.onPrevious,
   });
   final LessonStep step;
   final Map<String, dynamic> initial;
   final Future<void> Function(Map<String, dynamic>) onSave;
   final Future<void> Function() onFinished;
+  final Future<void> Function()? onPrevious;
   @override
   ConsumerState<BeanExperiment> createState() => _BeanExperimentState();
 }
@@ -190,13 +192,24 @@ class _BeanExperimentState extends ConsumerState<BeanExperiment>
                   right: 12,
                   child: Row(
                     children: [
+                      if (widget.onPrevious != null)
+                        Material(
+                          color: const Color(0xFFFFF8EC),
+                          borderRadius: BorderRadius.circular(20),
+                          child: IconButton(
+                            key: const ValueKey('lessonPrevious'),
+                            tooltip: 'Previous screen',
+                            onPressed: busy ? null : widget.onPrevious,
+                            icon: const Icon(Icons.arrow_back_rounded),
+                          ),
+                        ),
                       Material(
                         color: const Color(0xFFFFF8EC),
                         borderRadius: BorderRadius.circular(20),
                         child: IconButton(
                           onPressed: busy ? null : leave,
                           tooltip: 'My island',
-                          icon: const Icon(Icons.arrow_back_rounded),
+                          icon: const Icon(Icons.home_rounded),
                         ),
                       ),
                       const SizedBox(width: 12),

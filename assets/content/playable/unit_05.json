@@ -14,7 +14,7 @@
       "id": "unit_05.step.001",
       "kind": "explore",
       "title": "Movement playground",
-      "prompt": "Touch each movement to hear its name.",
+      "prompt": "Touch a hand. Watch how things move.",
       "options": [
         {
           "id": "push",
@@ -77,13 +77,39 @@
       "section": "Explore",
       "playScene": "science",
       "theme": "unit_05",
-      "minTouches": 8
+      "minTouches": 8,
+      "forceScene": {
+        "mode": "movement",
+        "instruction": "Explore every movement. You can watch each one again.",
+        "you": "You",
+        "progress": "Discoveries placed"
+      },
+      "senseDescriptions": {
+        "push": "Push sends an object away from you.",
+        "pull": "Pull brings an object towards you.",
+        "roll": "The ball rolls.",
+        "swim": "The fish swims.",
+        "slither": "The snake slithers.",
+        "fly": "The bird flies.",
+        "hop": "The kangaroo hops.",
+        "crawl": "The baby crawls."
+      },
+      "motions": {
+        "push": "push",
+        "pull": "pull",
+        "roll": "roll",
+        "swim": "swim",
+        "slither": "slither",
+        "fly": "fly",
+        "hop": "hop",
+        "crawl": "crawl"
+      }
     },
     {
       "id": "unit_05.step.002",
       "kind": "science-lab",
       "title": "Push and pull playground",
-      "prompt": "Move the slider away and towards you. Watch the drawer move.",
+      "prompt": "Move the trolley. Compare two pushes on the ball.",
       "options": [],
       "targets": [],
       "answer": null,
@@ -108,14 +134,28 @@
       "lab": "force",
       "labUi": {
         "left": "Pull towards you",
-        "right": "Push away from you"
+        "right": "Push away from you",
+        "you": "You",
+        "push": "Push away",
+        "pull": "Pull closer",
+        "instruction": "Drag the trolley away from you and back, or use the buttons.",
+        "compare": "Start the same ball in the same place. Try both pushes.",
+        "gentle": "Gentle push",
+        "strong": "Bigger push",
+        "result": "The bigger push sent the same ball further.",
+        "progress": "Moves explored",
+        "pushProgress": "Pushes compared",
+        "prediction": "Which push will send the ball further?",
+        "test": "Try this push",
+        "moveStage": "Move the trolley",
+        "compareStage": "Compare two pushes"
       }
     },
     {
       "id": "unit_05.step.003",
       "kind": "match-lines",
-      "title": "Which way?",
-      "prompt": "Connect the movement to its force.",
+      "title": "Trolley directions",
+      "prompt": "Watch each trolley move. Choose push or pull.",
       "options": [
         {
           "id": "away_from_you",
@@ -150,7 +190,7 @@
       "assessed": true,
       "objective": "u05.main.01",
       "hint": "Imagine where your hand moves: away from you or towards you?",
-      "explanation": "a) push b) pull",
+      "explanation": "A push moves the trolley away from you. A pull brings it towards you.",
       "source": {
         "pages": [
           15,
@@ -166,7 +206,24 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_05"
+      "theme": "unit_05",
+      "forceScene": {
+        "mode": "direction",
+        "instruction": "Touch a trolley to watch. You are at the left of each track.",
+        "you": "You",
+        "progress": "Discoveries placed"
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      },
+      "motions": {
+        "away_from_you": "push",
+        "towards_you": "pull"
+      }
     },
     {
       "id": "unit_05.step.004",
@@ -240,7 +297,20 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_05"
+      "theme": "unit_05",
+      "forceScene": {
+        "mode": "home",
+        "instruction": "Touch an object in the scene. Choose the force for its job.",
+        "you": "You",
+        "progress": "Discoveries placed"
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_05.step.005",
@@ -314,7 +384,15 @@
           "sink": "Sink"
         },
         "action": "Drop into water",
-        "result": "Watch the tank"
+        "result": "Watch the tank",
+        "pictureChoices": true
+      },
+      "observationUi": {
+        "review": "Look again",
+        "changed": "The result was different from your prediction. Let us look again!",
+        "question": "What did the water test show?",
+        "retry": "Look at the object in the water. Where did it stop?",
+        "complete": "You noticed what happened! Keep exploring."
       }
     },
     {
@@ -380,7 +458,7 @@
       "assessed": true,
       "objective": "u05.main.03",
       "hint": "Remember where each object stopped in the water tank.",
-      "explanation": "a) F b) S c) S d) F e) F f) S",
+      "explanation": "The balloon, cork and plastic pot float. The stone, metal nail and glass marble sink.",
       "source": {
         "pages": [
           15,
@@ -397,13 +475,26 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_05",
-      "board": "tank"
+      "board": "tank",
+      "forceScene": {
+        "mode": "tank",
+        "instruction": "Touch an object, then a place in the tank. You can also drag it.",
+        "you": "You",
+        "progress": "Discoveries placed"
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_05.step.007",
       "kind": "match-lines",
       "title": "Animal moves",
-      "prompt": "Match each animal to its movement.",
+      "prompt": "Choose how each living thing moves.",
       "options": [
         {
           "id": "snake",
@@ -487,13 +578,26 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_05"
+      "theme": "unit_05",
+      "forceScene": {
+        "mode": "animals",
+        "instruction": "Touch a hand, then choose a movement.",
+        "you": "You",
+        "progress": "Discoveries placed"
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_05.step.008",
       "kind": "science-lab",
       "title": "Sailboat breeze",
-      "prompt": "Hold the wind button to move the sailboat.",
+      "prompt": "Predict first. Then make some wind.",
       "options": [],
       "targets": [],
       "answer": null,
@@ -517,7 +621,15 @@
       "theme": "unit_05",
       "lab": "sailboat",
       "labUi": {
-        "action": "Hold to blow"
+        "action": "Hold to blow",
+        "prediction": "What will happen when you blow?",
+        "choices": {
+          "moves": "The boat will move",
+          "still": "The boat will stay still"
+        },
+        "result": "Moving air pushed the boat.",
+        "observe": "What happened to the boat?",
+        "retry": "Look where the boat is now. Did it move?"
       }
     },
     {
@@ -562,7 +674,20 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_05",
-      "focus": "sailboat"
+      "focus": "sailboat",
+      "forceScene": {
+        "mode": "boat",
+        "instruction": "Remember the wind experiment. Choose the force.",
+        "you": "You",
+        "progress": "Discoveries placed"
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_05.step.010",
@@ -619,13 +744,26 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_05"
+      "theme": "unit_05",
+      "forceScene": {
+        "mode": "home",
+        "instruction": "Touch an object in the scene. Choose the force for its job.",
+        "you": "You",
+        "progress": "Discoveries placed"
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_05.step.011",
       "kind": "match-lines",
       "title": "My four moves",
-      "prompt": "Make two pushes and two pulls.",
+      "prompt": "Find two pushes and two pulls in this room.",
       "options": [
         {
           "id": "press_a_switch",
@@ -688,7 +826,20 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_05"
+      "theme": "unit_05",
+      "forceScene": {
+        "mode": "jobs",
+        "instruction": "Touch each job, then choose its force. Check after all four.",
+        "you": "You",
+        "progress": "Discoveries placed"
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
+      }
     },
     {
       "id": "unit_05.step.012",
@@ -740,14 +891,22 @@
           "sink": "Sink"
         },
         "action": "Test the orange",
-        "result": "Look at the orange"
+        "result": "Look at the orange",
+        "pictureChoices": true
+      },
+      "observationUi": {
+        "review": "Look again",
+        "changed": "The result was different from your prediction. Let us look again!",
+        "question": "What did the water test show?",
+        "retry": "Look at the object in the water. Where did it stop?",
+        "complete": "You noticed what happened! Keep exploring."
       }
     },
     {
       "id": "unit_05.step.013",
       "kind": "match-lines",
-      "title": "Discovery badges",
-      "prompt": "Match each discovery to its answer.",
+      "title": "Finish the movement trail",
+      "prompt": "Use your experiments to solve five discoveries.",
       "options": [
         {
           "id": "a_push_sends_it",
@@ -767,7 +926,7 @@
         {
           "id": "sinks_in_water",
           "label": "Sinks in water",
-          "art": "coin"
+          "art": "tank_question"
         },
         {
           "id": "send_the_ball_further",
@@ -815,7 +974,7 @@
       "assessed": true,
       "objective": "u05.choice.01",
       "hint": "Use the drawer, water tank and sailboat discoveries to find each answer.",
-      "explanation": "away from you. a metal coin. slithering. a bigger push. push.",
+      "explanation": "A push sends an object away. A metal coin sinks. A snake slithers. A bigger push sends the ball further. Ringing a doorbell uses a push.",
       "source": {
         "pages": [
           15,
@@ -904,6 +1063,19 @@
         "u05.choice.05": [
           "ring_a_doorbell"
         ]
+      },
+      "forceScene": {
+        "mode": "discoveries",
+        "instruction": "Touch a discovery, then choose its answer.",
+        "you": "You",
+        "progress": "Discoveries placed"
+      },
+      "correctionUi": {
+        "review": "Look at this choice again",
+        "start": "Now try it yourself. Change your choices using these clues:",
+        "retry": "Keep trying. Use the discovery to help you.",
+        "complete": "You did it yourself! You can keep exploring.",
+        "check": "Check my practice"
       }
     }
   ],

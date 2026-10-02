@@ -45,6 +45,24 @@ for file in sorted((ROOT/'assets/content/playable').glob('*.json')):
   else: assert not step['assessed']
   if step['kind']=='predict-then-reveal':
    assert not step['assessed'] and step['frames']
+  scene=step.get('soundScene',{})
+  if 'missionChoices' in scene:
+   groups=scene['missionChoices']
+   assert set(groups)==set(options),(file,step['id'],'mission coverage')
+   for question,choices in groups.items():
+    assert 2<=len(choices)<=3 and len(choices)==len(set(choices))
+    assert set(choices)<=set(targets)
+    assert answer['value'][question] in choices
+  if 'chartQuestionSource' in step:
+   adapted=step['chartQuestionSource']
+   assert adapted['contentId']=='charts'
+   chart=json.loads((ROOT/'assets/content/charts.json').read_text(encoding='utf-8-sig'))
+   assert chart['sourceSha256']==book['sourceSha256']
+   assert set(adapted['pages'])<=set(chart['sourcePages'])
+   assert set(adapted['pages'])<=set(step['source']['pages'])
+   assert adapted['questionText'] in chart['sourceText']
+   row=next(row for row in step['table'] if row['name']==adapted['person'])
+   assert answer['value'][adapted['optionId']]==f"{row['value']}_steps"
  assert covered==set(originals),(file,set(originals)-covered)
  if book['quiz']:
   assert len(book['steps'])==10

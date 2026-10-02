@@ -228,7 +228,23 @@ class _PlantLabStageState extends State<PlantLabStage> {
                                           .firstOrNull
                                           ?.label ??
                                       part,
-                                  child: const TouchCue(size: 64),
+                                  child:
+                                      step.kind == 'explore' &&
+                                          widget.touched.any(
+                                            (id) =>
+                                                plantPartId(id) ==
+                                                plantPartId(part),
+                                          )
+                                      ? const SizedBox(
+                                          width: 64,
+                                          height: 64,
+                                          child: Icon(
+                                            Icons.check_circle_outline,
+                                            size: 44,
+                                            color: Color(0xFF437A69),
+                                          ),
+                                        )
+                                      : const TouchCue(size: 64),
                                 ),
                               ),
                             ),

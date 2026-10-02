@@ -46,6 +46,13 @@ class AppController extends Notifier<AppData> {
   }
 
   Future<void> selectChild(String id) => _commit((s) => s.selectChild(id));
+  Future<void> removeChild(String id) => _commit(
+    (s) => s.removeChild(
+      id,
+      emptyId:
+          'empty-${DateTime.now().microsecondsSinceEpoch}-${Random.secure().nextInt(1 << 32)}',
+    ),
+  );
   Future<void> addChild(ChildProfile profile) {
     final random = Random.secure();
     final id = List.generate(

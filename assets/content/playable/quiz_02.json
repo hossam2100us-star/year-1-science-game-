@@ -245,6 +245,11 @@
           "art": "soft_and_fluffy"
         },
         {
+          "id": "hard_and_fluffy",
+          "label": "Hard and fluffy",
+          "art": "hard_and_fluffy"
+        },
+        {
           "id": "hard_and_shiny",
           "label": "Hard and shiny",
           "art": "hard_and_shiny"
@@ -355,6 +360,11 @@
           "id": "rubber_band",
           "label": "Rubber band",
           "art": "rubber_band"
+        },
+        {
+          "id": "metal_spoon",
+          "label": "Metal spoon",
+          "art": "spoon"
         },
         {
           "id": "brick",

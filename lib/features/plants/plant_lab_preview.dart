@@ -6,6 +6,7 @@ import '../../core/providers.dart';
 import '../../core/storage.dart';
 import '../biology/lesson_player.dart';
 import '../biology/session.dart';
+import '../world/world_map.dart';
 
 /// A web review starts at the revised scene without replacing the child's journey.
 class PlantLabPreview extends ConsumerStatefulWidget {
@@ -23,6 +24,7 @@ class PlantLabPreview extends ConsumerStatefulWidget {
 class _PlantLabPreviewState extends ConsumerState<PlantLabPreview> {
   late final MemoryProgressStore store;
   bool seeded = false;
+  final navigatorKey = GlobalKey<NavigatorState>();
   @override
   void initState() {
     super.initState();
@@ -60,6 +62,12 @@ class _PlantLabPreviewState extends ConsumerState<PlantLabPreview> {
       );
       seeded = true;
     }
+    final islandIndex = ref
+        .read(catalogProvider)
+        .islands
+        .indexWhere(
+          (island) => island.levels.any((level) => level.id == widget.lessonId),
+        );
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -90,7 +98,31 @@ class _PlantLabPreviewState extends ConsumerState<PlantLabPreview> {
                   storeProvider.overrideWithValue(store),
                   appProvider.overrideWith(AppController.new),
                 ],
-                child: LessonRoute(id: widget.lessonId),
+                // Keep all pushed routes under the same temporary store. A direct
+                // review link must return to its island, not the outer home route.
+                child: NavigatorPopHandler<Object?>(
+                  onPopWithResult: (_) => navigatorKey.currentState!.maybePop(),
+                  child: Navigator(
+                    key: navigatorKey,
+                    onGenerateInitialRoutes: (_, _) => [
+                      MaterialPageRoute<void>(
+                        settings: const RouteSettings(name: '/'),
+                        builder: (_) =>
+                            WorldMap(preview: true, onParentChanged: (_) {}),
+                      ),
+                      if (islandIndex >= 0)
+                        MaterialPageRoute<void>(
+                          settings: const RouteSettings(name: '/island'),
+                          builder: (_) =>
+                              IslandScreen(index: islandIndex, preview: true),
+                        ),
+                      MaterialPageRoute<void>(
+                        settings: const RouteSettings(name: '/lesson'),
+                        builder: (_) => LessonRoute(id: widget.lessonId),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ],

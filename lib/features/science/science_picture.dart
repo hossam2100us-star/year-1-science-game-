@@ -167,7 +167,8 @@ class SciencePicture extends StatelessWidget {
           child: IllustratedArt(
             asset: a.key,
             crop: Rect.fromLTWH(
-              (i % 4) / 4 + (a.key == 'science-details-v1.webp' ? 0.018 : 0.006),
+              (i % 4) / 4 +
+                  (a.key == 'science-details-v1.webp' ? 0.018 : 0.006),
               (i ~/ 4) / 4 +
                   (a.key == 'science-details-v1.webp' ? 0.018 : 0.006),
               a.key == 'science-details-v1.webp' ? 0.214 : 0.238,
