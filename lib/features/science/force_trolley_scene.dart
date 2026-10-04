@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import 'force_picture.dart';
 
-/// A fixed child gives every demonstration the same away/towards reference.
-/// The rope makes pulling visible; the cart travels independently of the child.
+/// Push maintains hand contact; pull maintains a visible rope connection.
+/// Assessment scenes retain their neutral reference and resting poses.
 class ForceTrolleyScene extends StatelessWidget {
   const ForceTrolleyScene({
     super.key,
@@ -34,6 +34,9 @@ class ForceTrolleyScene extends StatelessWidget {
           final playing = active && !reduced;
           final distance = playing ? (motion == 'pull' ? 1 - t : t) : .35;
           final cartLeft = 130 + travel * distance;
+          final childLeft = playing && showAction && motion == 'push'
+              ? cartLeft - 144
+              : 0.0;
           return SizedBox(
             height: 225,
             child: Stack(
@@ -61,7 +64,8 @@ class ForceTrolleyScene extends StatelessWidget {
                     ),
                   ),
                 Positioned(
-                  left: 0,
+                  key: const ValueKey('trolley-child'),
+                  left: childLeft,
                   bottom: 45,
                   child: ForcePicture(
                     playing && showAction ? 'explorer_$motion' : 'explorer',
@@ -69,12 +73,13 @@ class ForceTrolleyScene extends StatelessWidget {
                   ),
                 ),
                 Positioned(
+                  key: const ValueKey('trolley-cart'),
                   left: cartLeft,
                   bottom: 45,
                   child: const ForcePicture('trolley', height: 112),
                 ),
                 Positioned(
-                  left: 0,
+                  left: childLeft,
                   bottom: 0,
                   width: 225,
                   child: Text(

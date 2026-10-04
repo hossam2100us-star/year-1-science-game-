@@ -69,7 +69,8 @@
         "river": "Big moving water travelling to the sea.",
         "lake": "Big still water with land all around.",
         "ocean": "The biggest water of all, and salty."
-      }
+      },
+      "shortExplanation": "Water can be found in ponds, streams, rivers, lakes and oceans."
     },
     {
       "id": "unit_08.step.002",
@@ -119,7 +120,8 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_08",
-      "focus": "earth"
+      "focus": "earth",
+      "shortExplanation": "Most of Earth is covered in water."
     },
     {
       "id": "unit_08.step.003",
@@ -199,7 +201,8 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_08"
+      "theme": "unit_08",
+      "shortExplanation": "Ocean: large, salty; pond: small, still; river: flowing; lake: still with land around it."
     },
     {
       "id": "unit_08.step.004",
@@ -269,7 +272,8 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_08",
-      "board": "water"
+      "board": "water",
+      "shortExplanation": "Whales live in oceans; crocodiles can live in rivers; frogs can live by ponds."
     },
     {
       "id": "unit_08.step.005",
@@ -337,7 +341,8 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_08"
+      "theme": "unit_08",
+      "shortExplanation": "The diamond, coal and stone wall belong in this rock collection."
     },
     {
       "id": "unit_08.step.006",
@@ -392,7 +397,8 @@
       "playScene": "science",
       "theme": "unit_08",
       "lab": "soil",
-      "safety": "Wash hands afterwards."
+      "safety": "Wash hands afterwards.",
+      "shortExplanation": "Soil is a mixture of small stones, sand, dead leaves and little living creatures."
     },
     {
       "id": "unit_08.step.007",
@@ -456,7 +462,8 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_08",
-      "focus": "soil"
+      "focus": "soil",
+      "shortExplanation": "You can find small stones, dead leaves and worms in soil."
     },
     {
       "id": "unit_08.step.008",
@@ -505,7 +512,8 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_08"
+      "theme": "unit_08",
+      "shortExplanation": "A geologist is a scientist who studies rocks and the ground under our feet."
     },
     {
       "id": "unit_08.step.009",
@@ -570,7 +578,8 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_08"
+      "theme": "unit_08",
+      "shortExplanation": "The book shows this order: pond, stream, river, lake, then ocean."
     },
     {
       "id": "unit_08.step.010",
@@ -627,7 +636,8 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_08"
+      "theme": "unit_08",
+      "shortExplanation": "The stone wall and marble floor are made from rock."
     },
     {
       "id": "unit_08.step.011",
@@ -682,7 +692,8 @@
           "My first group",
           "My second group"
         ]
-      }
+      },
+      "shortExplanation": "Rocks can go into different groups."
     },
     {
       "id": "unit_08.step.012",
@@ -726,7 +737,8 @@
       "section": "Explore",
       "playScene": "science",
       "theme": "unit_08",
-      "lab": "cleanup"
+      "lab": "cleanup",
+      "shortExplanation": "Litter can harm animals."
     },
     {
       "id": "unit_08.step.013",
@@ -897,7 +909,8 @@
         "u08.choice.05": [
           "a_geologist_studies"
         ]
-      }
+      },
+      "shortExplanation": "Earth's surface: mostly water; oceans: salty; soil: a mixture; coal: rock; geologists study rocks."
     }
   ],
   "stickers": [
@@ -1003,6 +1016,177 @@
       "safetyPages": [
         2
       ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "u08.main.01",
+      "text": "Look at a globe or Earth picture. Ask which colour covers most of it and what that colour represents.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u08.main.02",
+      "text": "Compare pond, lake, river and ocean pictures. Ask which flow, which are still and which have salty water.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u08.main.03",
+      "text": "Match whale, crocodile and frog pictures to water homes. Discuss why animals need suitable homes.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u08.main.04",
+      "text": "Compare a stone, coal picture and diamond picture with a bottle and fabric. Ask which belong with rocks.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u08.main.05",
+      "text": "Look at a soil photograph. Find small stones, leaves and creatures; discuss why soil is a mixture.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u08.main.06",
+      "text": "Pretend to be geologists examining clean adult-selected stones. Ask what a geologist studies.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u08.main.07",
+      "text": "Arrange the book water-place pictures in its example order. Compare still and flowing water without assuming all rivers are smaller than lakes.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u08.main.08",
+      "text": "Find pictures of a stone wall and marble floor. Ask what they are made from.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u08.choice.01",
+      "text": "Look at a globe or Earth picture. Ask what covers most of its surface and makes it look blue.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u08.choice.02",
+      "text": "Compare the book water-place pictures. Ask which place has a large area of salty water.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u08.choice.03",
+      "text": "Look at a soil photograph and name stones, leaves and other parts. Ask why soil is a mixture.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u08.choice.04",
+      "text": "Compare coal, wood and plastic pictures. Ask which belongs with rocks.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u08.choice.05",
+      "text": "Pretend to examine clean adult-selected stones as a geologist. Ask which materials geologists study.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
     }
   ]
 }

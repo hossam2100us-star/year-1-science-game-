@@ -45,6 +45,8 @@ def refresh_plant_review(book):
 
     from refine_teacher_review import refine_teacher_review
     refine_teacher_review(book)
+    from refine_latest_teacher_review import refine_latest_teacher_review
+    refine_latest_teacher_review(book)
 
 if __name__ == '__main__':
     path = Path(__file__).resolve().parents[1] / 'assets/content/playable/unit_02.json'

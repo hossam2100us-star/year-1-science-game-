@@ -39,6 +39,11 @@ void main() {
       DecisionOutcome.explained,
     );
     resumed.next();
+    expect(resumed.selected, 'cloud');
+    expect(resumed.needsCorrection, true);
+    resumed.answer(content.item('cloud'), false);
+    expect(resumed.results['cloud'], 'explained');
+    resumed.next();
     resumed.select('tree');
     expect(
       resumed.answer(content.item('tree'), true),
@@ -88,6 +93,14 @@ void main() {
         expect(
           find.byKey(const ValueKey('garden-explanation')),
           findsOneWidget,
+        );
+        await helpers.tapVisible(
+          tester,
+          find.byKey(const ValueKey('garden-alive')),
+        );
+        expect(
+          store.data.journeys[GardenRound.storageKey]!['needsCorrection'],
+          false,
         );
         await helpers.tapVisible(
           tester,

@@ -11,6 +11,7 @@ import '../../parent/parent_area.dart';
 import '../biology/lesson_player.dart';
 import '../biology/sticker_album.dart';
 import 'island_art.dart';
+import 'todays_challenge.dart';
 
 class WorldMap extends ConsumerStatefulWidget {
   const WorldMap({
@@ -99,6 +100,7 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                   ],
                 ),
               ),
+              const TodaysChallenge(),
               LayoutBuilder(
                 builder: (context, box) {
                   final largeText =

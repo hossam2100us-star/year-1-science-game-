@@ -69,7 +69,8 @@
       "quizContext": {
         "setting": "workshop",
         "art": "chair"
-      }
+      },
+      "shortExplanation": "The chair is an object; wood is the material used to make it."
     },
     {
       "id": "quiz_02.step.002",
@@ -141,7 +142,8 @@
       "quizContext": {
         "setting": "workshop",
         "art": null
-      }
+      },
+      "shortExplanation": "Wood, metal, plastic and glass are materials."
     },
     {
       "id": "quiz_02.step.003",
@@ -194,7 +196,8 @@
       "quizContext": {
         "setting": "workshop",
         "art": "window"
-      }
+      },
+      "shortExplanation": "Clear glass lets you see through it, like a window."
     },
     {
       "id": "quiz_02.step.004",
@@ -247,7 +250,8 @@
       "quizContext": {
         "setting": "rain",
         "art": "umbrella"
-      }
+      },
+      "shortExplanation": "The plastic cover keeps water out."
     },
     {
       "id": "quiz_02.step.005",
@@ -300,7 +304,8 @@
       "quizContext": {
         "setting": "workshop",
         "art": "spoon"
-      }
+      },
+      "shortExplanation": "Most metals are hard and shiny."
     },
     {
       "id": "quiz_02.step.006",
@@ -372,7 +377,8 @@
       "quizContext": {
         "setting": "workshop",
         "art": "dough"
-      }
+      },
+      "shortExplanation": "You can twist, stretch, squash or bend an object to change its shape."
     },
     {
       "id": "quiz_02.step.007",
@@ -424,7 +430,8 @@
       "quizContext": {
         "setting": "workshop",
         "art": null
-      }
+      },
+      "shortExplanation": "The rubber band gets longer when you pull it."
     },
     {
       "id": "quiz_02.step.008",
@@ -477,7 +484,8 @@
       "quizContext": {
         "setting": "workshop",
         "art": "pot"
-      }
+      },
+      "shortExplanation": "A potter uses soft clay to make a pot."
     },
     {
       "id": "quiz_02.step.009",
@@ -525,7 +533,8 @@
       "quizContext": {
         "setting": "workshop",
         "art": null
-      }
+      },
+      "shortExplanation": "Glass can be clear or different colours."
     },
     {
       "id": "quiz_02.step.010",
@@ -585,9 +594,132 @@
       "quizContext": {
         "setting": "workshop",
         "art": null
-      }
+      },
+      "shortExplanation": "The spoon and pan are made from metal."
     }
   ],
   "stickers": [],
-  "homeActivities": []
+  "homeActivities": [],
+  "goalActivities": [
+    {
+      "objective": "quiz02.01",
+      "text": "Draw a wooden chair. Ask which word names the object and which names the material it is made from.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz02.02",
+      "text": "Use pictures of wood, metal, plastic and glass. Name four materials and an object made from each.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz02.03",
+      "text": "Compare a clear window with a wooden wall in pictures. Ask which material is see-through.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz02.04",
+      "text": "Put a few water drops on plastic and tissue over a tray with an adult. Ask which cover keeps water out.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz02.05",
+      "text": "Compare a cool metal spoon with a wooden spoon. Ask which feels hard and looks shiny.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz02.06",
+      "text": "With adult-selected safe flexible materials, try twisting, stretching, squashing and bending. Name how each changes shape.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz02.07",
+      "text": "Gently stretch a large rubber band with an adult. Ask how its length changes; keep it away from faces.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz02.08",
+      "text": "Shape a pretend pot from safe modelling clay. Ask which material a potter uses and why it can be shaped.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz02.09",
+      "text": "Compare photographs of clear, blue and red glass. Ask whether all glass is red and explain the different colours.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz02.10",
+      "text": "Look at an intact spoon and pan with an adult. Ask which material they are made from; compare with a towel.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ]
 }

@@ -19,6 +19,8 @@ bool gardenResultsComplete(Object? results) =>
 
 bool gardenAdventureComplete(Map<String, dynamic>? journey) {
   if (journey == null || journey['version'] != 1) return false;
+  if (journey['needsCorrection'] == true && journey['completedOnce'] != true)
+    return false;
   if (journey['completedOnce'] == true ||
       gardenResultsComplete(journey['results']))
     return true;

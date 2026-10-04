@@ -108,7 +108,8 @@
           "walk_away_from_sound": "What happens to sound as you walk away?",
           "something_making_a_sound": "What do we call something making a sound?"
         }
-      }
+      },
+      "shortExplanation": "Playing an instrument makes a sound."
     },
     {
       "id": "unit_06.step.002",
@@ -201,7 +202,8 @@
         "retry": "Keep trying. Use your experiment to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Your ears catch sounds so you can hear them."
     },
     {
       "id": "unit_06.step.003",
@@ -340,7 +342,8 @@
         "retry": "Keep trying. Use your experiment to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Hit triangles; beat drums; shake maracas; blow trumpets; pluck sitar strings."
     },
     {
       "id": "unit_06.step.004",
@@ -410,7 +413,8 @@
         "question": "What did this box sound like?",
         "retry": "Try again. Shake the box and listen.",
         "complete": "You noticed what happened! Keep exploring."
-      }
+      },
+      "shortExplanation": "The stone rattled against the box."
     },
     {
       "id": "unit_06.step.005",
@@ -498,7 +502,8 @@
         "retry": "Keep trying. Use your experiment to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "The stone box is louder."
     },
     {
       "id": "unit_06.step.006",
@@ -550,7 +555,8 @@
           "Listen twice",
           "Compare"
         ]
-      }
+      },
+      "shortExplanation": "Sound gets quieter and fainter as you move away."
     },
     {
       "id": "unit_06.step.007",
@@ -639,7 +645,8 @@
         "retry": "Keep trying. Use your experiment to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "The drum sounds quieter and fainter as you move farther away."
     },
     {
       "id": "unit_06.step.008",
@@ -817,7 +824,8 @@
         "questionText": "How many steps did David take before he lost the sound?",
         "answerText": "8 steps, read from the original walking data.",
         "adaptation": "Question two uses the Chart Skills David question instead of repeating Maris. The original unit answer-key quotation is retained as provenance."
-      }
+      },
+      "shortExplanation": "Maris heard the drum furthest away: 23 steps. David took 8 steps."
     },
     {
       "id": "unit_06.step.009",
@@ -906,7 +914,8 @@
         "retry": "Keep trying. Use your experiment to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Tapping the sticks together harder makes a louder sound."
     },
     {
       "id": "unit_06.step.010",
@@ -1009,7 +1018,8 @@
         "retry": "Keep trying. Use your experiment to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Quietest to loudest here: cat's footsteps, whisper, slamming door, thunder."
     },
     {
       "id": "unit_06.step.011",
@@ -1103,7 +1113,8 @@
         "retry": "Keep trying. Use your experiment to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "You feel a buzzing or shaking in your throat when you hum."
     },
     {
       "id": "unit_06.step.012",
@@ -1370,7 +1381,8 @@
         "retry": "Keep trying. Use your experiment to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Beat drums; distance makes sound fainter; stones rattle; sound-makers are sources; blow trumpets."
     }
   ],
   "stickers": [
@@ -1538,5 +1550,178 @@
         ]
       }
     }
-  }
+  },
+  "goalActivities": [
+    {
+      "objective": "u06.main.01",
+      "text": "Listen to a gentle household sound. Ask which body part helps your child hear it.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u06.main.02",
+      "text": "Mime a triangle, drum, maracas, trumpet and sitar. Match them to hitting, beating, shaking, blowing and plucking.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u06.main.03",
+      "text": "Review the stone and feather box test. Ask why the hard stone was easier to hear.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u06.main.04",
+      "text": "Play a quiet sound, then move farther away with an adult. Ask whether it becomes easier or harder to hear.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u06.main.05",
+      "text": "Draw the drum explorers and their step counts. Ask who heard it furthest away, how many steps they took and how you know.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18,
+        27,
+        28
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u06.main.06",
+      "text": "Tap two wooden spoons gently, then a little harder. Ask how the loudness changes.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u06.main.07",
+      "text": "Recall a whisper, footsteps, door and thunder. Arrange their pictures from quiet to loud as in the game.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u06.main.08",
+      "text": "Hum gently and rest your own fingers on your throat. Ask what buzzing or shaking you feel.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u06.choice.01",
+      "text": "Mime a drumstick moving onto a drum. Ask what beating the drum does to make a sound.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u06.choice.02",
+      "text": "Play a quiet sound and move farther away with an adult. Ask whether it becomes fainter or louder.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u06.choice.03",
+      "text": "Review the stone and feather box test pictures. Ask which box sounded louder and why.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u06.choice.04",
+      "text": "Hum gently. Ask what made the sound and what the term source of sound means.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u06.choice.05",
+      "text": "Mime blowing a trumpet, shaking maracas and plucking strings. Ask which instrument makes a sound when blown.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        17,
+        18
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ]
 }

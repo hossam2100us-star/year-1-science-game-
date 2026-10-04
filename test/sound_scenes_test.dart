@@ -255,7 +255,13 @@ void main() {
       await helpers.tapVisible(t, find.text('Check my discovery'));
       expect(current(store)['outcome'], 'firstTry');
       expect(current(store)['mistakes'], 0);
-      expect(current(store)['placements'], lesson.steps[2].answer!['value']);
+      expect(current(store)['placements'], {
+        'triangle': 'beat',
+        'drum': 'hit',
+        'trumpet': 'blow',
+        'sitar': 'pluck',
+        'maracas': 'shake',
+      });
       final completed = Map.from(current(store));
       await tap(t, 'lessonPrevious');
       await tap(t, 'lessonNext');

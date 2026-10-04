@@ -116,7 +116,8 @@
         "fly": "fly",
         "hop": "hop",
         "crawl": "crawl"
-      }
+      },
+      "shortExplanation": "Objects and living things can move in different ways."
     },
     {
       "id": "unit_05.step.002",
@@ -184,7 +185,8 @@
           "guess": "Try the pushes",
           "gentle": "Try a bigger push"
         }
-      }
+      },
+      "shortExplanation": "A push moves the trolley away; a pull brings it towards you."
     },
     {
       "id": "unit_05.step.003",
@@ -258,7 +260,8 @@
       "motions": {
         "away_from_you": "push",
         "towards_you": "pull"
-      }
+      },
+      "shortExplanation": "A push moves the trolley away; a pull brings it towards you."
     },
     {
       "id": "unit_05.step.004",
@@ -345,7 +348,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Push a doorbell; pull a drawer; swings and trolleys can be pushed or pulled."
     },
     {
       "id": "unit_05.step.005",
@@ -428,7 +432,8 @@
         "question": "What did the water test show?",
         "retry": "Look at the object in the water. Where did it stop?",
         "complete": "You noticed what happened! Keep exploring."
-      }
+      },
+      "shortExplanation": "In our tank, the balloon, cork and plastic pot float."
     },
     {
       "id": "unit_05.step.006",
@@ -523,7 +528,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Balloon, cork and plastic pot float; stone, metal nail and glass marble sink."
     },
     {
       "id": "unit_05.step.007",
@@ -626,7 +632,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Snakes slither; birds fly; fish swim; kangaroos hop; babies crawl."
     },
     {
       "id": "unit_05.step.008",
@@ -665,7 +672,8 @@
         "result": "Moving air pushed the boat.",
         "observe": "What happened to the boat?",
         "retry": "Look where the boat is now. Did it move?"
-      }
+      },
+      "shortExplanation": "Moving air pushes the sailboat."
     },
     {
       "id": "unit_05.step.009",
@@ -722,7 +730,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Moving air pushes the sail and makes the boat move."
     },
     {
       "id": "unit_05.step.010",
@@ -792,7 +801,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Pull a drawer open; push a doorbell to ring it."
     },
     {
       "id": "unit_05.step.011",
@@ -874,7 +884,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Push a switch and kick a ball; pull a fridge door and a zip."
     },
     {
       "id": "unit_05.step.012",
@@ -935,7 +946,8 @@
         "question": "What did the water test show?",
         "retry": "Look at the object in the water. Where did it stop?",
         "complete": "You noticed what happened! Keep exploring."
-      }
+      },
+      "shortExplanation": "In our test, the orange floats with its peel and sinks without it."
     },
     {
       "id": "unit_05.step.013",
@@ -1121,7 +1133,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Push sends away; coins sink; snakes slither; bigger pushes move farther; push doorbells."
     }
   ],
   "stickers": [
@@ -1197,6 +1210,164 @@
       "safetyPages": [
         2
       ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "u05.main.01",
+      "text": "Move a toy trolley gently away and towards you. Ask your child to describe a push and a pull.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u05.main.02",
+      "text": "Mime a doorbell, drawer, swing and trolley. Ask which are pushed, pulled or can move with either force.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u05.main.03",
+      "text": "With an adult, compare a cork and a smooth stone in a shallow tray of water. Predict, then observe.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u05.main.04",
+      "text": "Act out flying, crawling, hopping and slithering. Ask which animals move in those ways.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u05.main.05",
+      "text": "Blow gently towards a paper sail on a toy boat. Ask what pushes the sail.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u05.main.06",
+      "text": "Mime a doorbell and drawer. Ask your child to explain how each is moved.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u05.main.07",
+      "text": "Act out a switch, zip, fridge door and ball. Ask whether each action pushes or pulls.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u05.choice.01",
+      "text": "Push a toy gently away from you. Ask which direction a push sends it.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u05.choice.02",
+      "text": "Compare the coin and cork experiment pictures. Ask which object sank and which floated.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u05.choice.03",
+      "text": "Mime a snake moving along the floor. Ask what slithering means and how it differs from flying or hopping.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u05.choice.04",
+      "text": "Move a toy gently with two different pushes. Ask which bigger push moved it farther in this test.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u05.choice.05",
+      "text": "Mime pressing a doorbell. Ask whether the button needs a push or a pull.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        15,
+        16
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
     }
   ]
 }

@@ -270,7 +270,7 @@ class BasketPicture extends CustomPainter {
     );
     _icon(
       c,
-        alive ? Icons.spa_rounded : Icons.category_rounded,
+      alive ? Icons.spa_rounded : Icons.category_rounded,
       badge.topLeft,
       badge.width,
       alive ? const Color(0xFF468C66) : const Color(0xFF537C9D),

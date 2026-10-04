@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../content/lesson.dart';
 import '../../core/touch_cue.dart';
 import 'science_picture.dart';
+import 'discovery_world.dart';
 
 /// Story settings and one-at-a-time discoveries. This presentation reads only
 /// the learner's saved choices; the answer values remain in the question engine.
@@ -120,7 +121,7 @@ class _ScienceWorldStageState extends State<ScienceWorldStage> {
     if (next < 0 || next >= step.options.length) return;
     setState(() => index = next);
     // Navigation is speech only: it never selects or places an answer.
-    widget.onSpeak?.call(current.label);
+    widget.onSpeak?.call(discovering ? discoverySpeech : current.label);
   }
 
   String get discoverySpeech =>
@@ -155,7 +156,15 @@ class _ScienceWorldStageState extends State<ScienceWorldStage> {
       child: Stack(
         children: [
           Positioned.fill(child: ScienceWorldBackdrop(row: row)),
-          Padding(padding: const EdgeInsets.all(18), child: child),
+          Padding(
+            padding: const EdgeInsets.all(18),
+            child: DefaultTextStyle.merge(
+              style: TextStyle(
+                color: row == 2 ? Colors.white : const Color(0xFF263D3B),
+              ),
+              child: child,
+            ),
+          ),
         ],
       ),
     ),
@@ -340,7 +349,20 @@ class _ScienceWorldStageState extends State<ScienceWorldStage> {
       guideHeader(),
       text(discoveryInstruction, size: 18),
       const SizedBox(height: 10),
-      guidedScene(),
+      if (DiscoveryWorld.supports(step))
+        DiscoveryWorld(
+          step: step,
+          index: index,
+          onFocus: move,
+          onDiscover: (id) {
+            setState(
+              () => index = step.options.indexWhere((item) => item.id == id),
+            );
+            discover();
+          },
+        )
+      else
+        guidedScene(),
       navigation(),
     ],
   );
@@ -462,7 +484,7 @@ class _WorldPainter extends CustomPainter {
             ? [const Color(0xFFFFF6DF), const Color(0xFFEBE1C6)]
             : row == 1
             ? [const Color(0xFFE6F1EB), const Color(0xFFEFF1D9)]
-            : [const Color(0xFFE5EAF8), const Color(0xFFF1E8F5)],
+            : [const Color(0xFF1D3053), const Color(0xFF0B132C)],
       );
     canvas.drawRect(Offset.zero & size, paint);
     paint.shader = null;
@@ -482,31 +504,8 @@ class _WorldPainter extends CustomPainter {
           paint,
         );
       }
-      paint.color = const Color(0xFFCCB792);
-      canvas.drawRRect(
-        RRect.fromRectAndRadius(
-          Rect.fromLTWH(w * .025, h * .30, w * .13, 8),
-          const Radius.circular(4),
-        ),
-        paint,
-      );
-      canvas.drawRRect(
-        RRect.fromRectAndRadius(
-          Rect.fromLTWH(w * .82, h * .17, w * .15, 8),
-          const Radius.circular(4),
-        ),
-        paint,
-      );
       paint.color = const Color(0x3DB6B28B);
       canvas.drawOval(Rect.fromLTWH(w * .18, h * .84, w * .64, h * .10), paint);
-      paint.color = const Color(0x55C9B88F);
-      canvas.drawRRect(
-        RRect.fromRectAndRadius(
-          Rect.fromLTWH(w * .045, h * .045, w * .11, h * .13),
-          const Radius.circular(12),
-        ),
-        paint,
-      );
     } else if (row == 1) {
       paint.color = const Color(0xB5FFFFFF);
       canvas.drawOval(Rect.fromLTWH(w * .02, h * .08, w * .24, h * .06), paint);
@@ -555,8 +554,7 @@ class _WorldPainter extends CustomPainter {
       }
       paint.style = PaintingStyle.fill;
     } else {
-      // Sparse gentle space wash, with clear centre for the whole model.
-      paint.color = const Color(0xB3A9B6D1);
+      paint.color = const Color(0xCCD4E2F5);
       for (final point in [
         const Offset(.08, .11),
         const Offset(.86, .08),
@@ -567,7 +565,7 @@ class _WorldPainter extends CustomPainter {
         final centre = Offset(w * point.dx, h * point.dy);
         canvas.drawCircle(centre, 2.5, paint);
       }
-      paint.color = const Color(0xFFD4CEDC);
+      paint.color = const Color(0xFF283D5E);
       canvas.drawPath(
         Path()
           ..moveTo(0, h * .87)
@@ -578,7 +576,7 @@ class _WorldPainter extends CustomPainter {
           ..close(),
         paint,
       );
-      paint.color = const Color(0xB3B9B3C7);
+      paint.color = const Color(0xB3435674);
       canvas.drawOval(
         Rect.fromLTWH(w * .75, h * .90, w * .15, h * .035),
         paint,

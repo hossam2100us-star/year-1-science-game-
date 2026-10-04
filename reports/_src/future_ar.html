@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>معمارية النظام المستقبلية — Science Adventure</title>
+<link rel="stylesheet" href="report_ar.css"></head><body>
+
+<div class="cover">
+  <h1>معمارية النظام المستقبلية</h1>
+  <div class="sub">تحويل Science Adventure إلى: تطبيق Android + تطبيق ويب + خادم Backend + قاعدة بيانات مركزية<br>مع تسجيل دخول بالإيميل ومزامنة بيانات تعمل بدون إنترنت أولًا (Offline-First)</div>
+  <div class="meta">
+    <p><b>الحالة:</b> تصميم وتخطيط فقط. لم يتم بناء أي شيء من هذا المستند.</p>
+    <p><b>مبني على:</b> فحص commit <code>9fbdaf4</code> بتاريخ <span class="ltr">2026-10-04</span>؛ راجع Software_Technical_Audit_Report_AR.pdf</p>
+    <p><b>التوصية:</b> B — إعادة هيكلة تطبيق Flutter الحالي؛ إضافة NestJS + PostgreSQL؛ عميل ويب بـ Flutter Web</p>
+  </div>
+</div>
+
+<h2>المحتويات</h2>
+<ol class="toc">
+<li>ملخص النظام الحالي</li><li>المشاكل التي تمنع التوسع</li><li>المعمارية المستهدفة</li><li>التقنيات الموصى بها</li>
+<li>معمارية الـ Backend</li><li>معمارية قاعدة البيانات</li><li>معمارية Android</li><li>معمارية الويب</li>
+<li>معمارية تسجيل الدخول</li><li>نموذج الصلاحيات</li><li>معمارية الـ API</li><li>معمارية المزامنة</li>
+<li>استراتيجية العمل بدون إنترنت</li><li>حل التعارضات</li><li>معمارية النشر</li><li>استراتيجية النسخ الاحتياطي</li>
+<li>استراتيجية المراقبة</li><li>استراتيجية ترحيل البيانات</li><li>خطة التطوير</li><li>المخاطر</li><li>التوصية النهائية</li>
+<li>ملحق: البيئات، وشكل المشاريع المستقبلي</li>
+</ol>
+
+<h2>1. ملخص النظام الحالي</h2>
+<p>لعبة Flutter 3.47.5 تعمل بدون إنترنت (حوالي 22.4 ألف سطر Dart) على Android. تستخدم Riverpod للحالة، وFlame للمشاهد، ودروس JSON مضمّنة. كل البيانات موجودة في مفتاح Hive واحد يحتوي على كتلة JSON: <code class="ltr">{schemaVersion:3, activeChildId, children:{id → {profile, settings, dailySeconds, subjects.science{attempts, journeys}}}}</code>. لا توجد حسابات ولا شبكة ولا صلاحيات. أكثر من طفل يستخدمون نفس الجهاز، مع بوابة للأهل.</p>
+<p><b>ما يريد المستخدم نقله للسيرفر</b> ("البيانات" في هذا المنتج): حساب ولي الأمر، ملفات الأطفال، إعدادات كل طفل، محاولات التقييم (الدرجات)، حالة الدروس الجارية ("journeys")، ووقت الاستخدام. محتوى الدروس نفسه يظل مضمّنًا داخل التطبيقات ومرقّمًا بـ <code>contentVersion</code>.</p>
+
+<h2>2. المشاكل التي تمنع التوسع</h2>
+<table>
+<tr><th>العائق</th><th>لماذا يمنع المزامنة أو الويب</th><th>المرجع</th></tr>
+<tr><td>التخزين ككتلة JSON واحدة</td><td>لا يوجد إصدار لكل سجل، ولا تتبع للتغييرات، ولا تحديث جزئي؛ مستحيل عمل outbox</td><td>AUD-004</td></tr>
+<tr><td>حالة <code>Map&lt;String,dynamic&gt;</code> بدون أنواع</td><td>لا يوجد شكل بيانات مشترك مع السيرفر؛ مستحيل التحقق</td><td>AUD-003</td></tr>
+<tr><td>الترحيل داخل الـ widgets</td><td>السيرفر سيحتاج تكرار كود الترحيل لكل وحدة</td><td>AUD-007</td></tr>
+<tr><td>معرّفات غير فريدة عالميًا</td><td>المعرّف الافتراضي للطفل <code>'local-child'</code>؛ معرّفات المحاولات <code>'{lesson}-{micros}'</code> غير فريدة بين الأجهزة</td><td>models.dart، session.dart</td></tr>
+<tr><td>عيب في توليد المعرّف على الويب</td><td>حذف الطفل النشط يفشل على الويب</td><td>AUD-005</td></tr>
+<tr><td>لا يوجد تسجيل أو CI</td><td>الأنظمة الموزعة تحتاج مراقبة واختبارات آلية</td><td>AUD-001/009</td></tr>
+<tr><td>قرار المنتج "لا حسابات ولا إرسال بيانات"</td><td>لازم يُراجع رسميًا، مع رأي قانوني وخاص بالخصوصية (بيانات أطفال)</td><td>REC-01</td></tr>
+</table>
+
+<h2>3. المعمارية المستهدفة</h2>
+<pre>
+   ┌──────────────────────────┐                     ┌──────────────────────────┐
+   │  ANDROID APP (Flutter)   │                     │  WEB APP (Flutter Web)   │
+   │  game + parent area      │                     │  game + parent portal    │
+   │  SQLite (drift) + outbox │                     │  IndexedDB cache         │
+   │  tokens in Keystore      │                     │  refresh = HttpOnly cookie│
+   └────────────┬─────────────┘                     └────────────┬─────────────┘
+                │  HTTPS (TLS 1.2+), REST/JSON, OpenAPI client   │
+                └───────────────────────┬────────────────────────┘
+                                        ▼
+                          ┌──────────────────────────┐
+                          │ Reverse proxy (Caddy)    │  TLS, HSTS, rate limit
+                          └────────────┬─────────────┘
+                                       ▼
+                          ┌──────────────────────────┐      ┌───────────────────┐
+                          │ BACKEND API (NestJS)     │─────►│ Email provider    │
+                          │ auth · children · sync   │      └───────────────────┘
+                          └──────┬────────────┬──────┘      ┌───────────────────┐
+                                 │            └────────────►│ Object storage    │
+                                 ▼                          │ (opt-in photos)   │
+                          ┌──────────────────────────┐      └───────────────────┘
+                          │ PostgreSQL (central DB)  │──► encrypted off-site backups
+                          └──────────────────────────┘
+</pre>
+<p><b>رحلة المستخدم المستهدفة:</b></p>
+<ol>
+<li>ولي الأمر ينشئ حسابًا بالإيميل من Android.</li>
+<li>يسجل الدخول ويربط ملفات الأطفال الموجودة على الجهاز بحسابه.</li>
+<li>نتائج اللعب تُحفظ على الجهاز وتُرفع للسيرفر.</li>
+<li>بعدها يفتح تطبيق الويب على الكمبيوتر ويسجل بنفس الإيميل.</li>
+<li>يجد نفس الأطفال ونفس التقدم، ويعدّل إعدادات طفل.</li>
+<li>تطبيق Android يسحب التعديل في المزامنة التالية: عند فتح التطبيق، أو خلال 15 دقيقة، أو بزر "Sync now".</li>
+</ol>
+
+<h2>4. التقنيات الموصى بها</h2>
+<table>
+<tr><th>الطبقة</th><th>الاختيار</th><th>لماذا (حسب المشروع الفعلي)</th><th>البدائل التي تم تقييمها</th></tr>
+<tr><td>الموبايل</td><td><b>Flutter (يبقى)</b> + drift (SQLite) + flutter_secure_storage + عميل HTTP مولّد من OpenAPI</td><td>22 ألف سطر من واجهة ومشاهد Flame شغالة؛ اختبارات موجودة؛ العمل بدون إنترنت يحتاج قاعدة بيانات محلية علائقية</td><td>إعادة كتابة بـ Kotlin أصلي: بلا فائدة، ونخسر إعادة الاستخدام على الويب</td></tr>
+<tr><td>الويب</td><td><b>Flutter Web</b> (نفس الكود)</td><td>التطبيق يُبنى للويب بالفعل (استيرادات شرطية، معاينة شغالة، CanvasKit مضمّن). اللعبة معتمدة على الرسم وFlame، فنقلها لـ React أو Vue أو Angular يعني إعادة كتابة كل مشهد.</td><td>Next.js: الأفضل للظهور في محركات البحث ولموقع تعريفي وقانوني. React/Vue/Angular: تكرار اللعبة. يُنصح بها فقط لموقع عام منفصل.</td></tr>
+<tr><td>الـ Backend</td><td><b>NestJS (TypeScript، Node 22 LTS)</b> كـ modular monolith</td><td>بنية منظمة (modules وcontrollers وservices وguards وpipes) تطابق التصميم المطلوب مباشرة؛ توليد OpenAPI يعطي عميل Dart بأنواع واضحة؛ سهولة إيجاد مطورين؛ مناسب لمزامنة JSON</td><td>.NET / Spring Boot: ممتازان لكنهما أثقل لفريق صغير. Django / FastAPI: جيدان، والفريق يستخدم Python أصلًا لأدوات المحتوى، وهما اختيار ثانٍ مقبول. <b>Serverpod (Dart)</b>: نماذج مشتركة مع Flutter، لكن مجتمعه أصغر. <b>Supabase</b>: أسرع طريق (Postgres + Auth + RLS مُدار)، لكن تحكم أقل في منطق المزامنة.</td></tr>
+<tr><td>قاعدة البيانات</td><td><b>PostgreSQL 17/18</b></td><td>علاقات وقيود قوية للملكية (FK)، إيميل غير حساس لحالة الأحرف (<code>citext</code>)، JSONB لحالة الدروس بإصداراتها، قفل صفوف للتحكم المتفائل، نوع <code>uuid</code> أصلي (PG 18 فيه <code>uuidv7()</code>)</td><td>MySQL: مقبول لكن أضعف في JSON والقيود. MongoDB: ضمانات علائقية أضعف للملكية وتسجيل الدخول</td></tr>
+<tr><td>ORM / Migrations</td><td>Prisma (أو Drizzle) مع ملفات migration في Git</td><td>استعلامات بأنواع واضحة، وSQL قابل للمراجعة</td><td>TypeORM</td></tr>
+<tr><td>نوع الـ API</td><td><b>REST + OpenAPI 3.1</b></td><td>راجع القسم 11</td><td>GraphQL</td></tr>
+<tr><td>المهام الخلفية</td><td>pg-boss (طابور على PostgreSQL)</td><td>بدون بنية إضافية (لا حاجة لـ Redis بهذا الحجم)</td><td>BullMQ + Redis</td></tr>
+<tr><td>الاستضافة</td><td>Docker Compose على VM واحد + PostgreSQL مُدار</td><td>بسيط، رخيص، يكبر رأسيًا ثم أفقيًا</td><td>Kubernetes: غير مبرر بهذا الحجم</td></tr>
+</table>
+
+<h2>5. معمارية الـ Backend</h2>
+<pre>
+backend/src
+├── main.ts                     bootstrap: helmet, CORS allowlist, body limit, versioning /api/v1
+├── config/                     env schema (zod) validated at boot; no defaults for secrets
+├── common/
+│   ├── filters/                ProblemDetailsFilter → RFC 9457 application/problem+json
+│   ├── guards/                 JwtAuthGuard, ChildOwnershipGuard, RateLimitGuard
+│   ├── interceptors/           RequestId, Logging (redacted), Timeout
+│   ├── pipes/                  ValidationPipe(whitelist, forbidNonWhitelisted, transform)
+│   └── logger/                 pino JSON; redact: password, token, authorization, cookie, email, name
+├── modules/
+│   ├── auth/      controller · AuthService · TokenService · PasswordService(Argon2id) · dto/
+│   ├── users/     controller (/users/me) · UserService · UserRepository
+│   ├── devices/   DeviceService (register, last_seen)
+│   ├── children/  controller · ChildService · ChildRepository · dto/ (CreateChild, PatchChild)
+│   ├── progress/  AttemptService · JourneyService · UsageService · repositories
+│   ├── sync/      SyncController · SyncService(push/pull) · ConflictResolver · MutationLog
+│   ├── email/     EmailService (provider adapter, templates, no PII in logs)
+│   └── health/    /health/live, /health/ready (DB ping)
+└── prisma/        schema.prisma · migrations/
+</pre>
+<table>
+<tr><th>الجانب</th><th>التصميم</th></tr>
+<tr><td>Controllers</td><td>خفيفة: تقرأ الـ DTO، تنادي الـ service، وتحوّل النتيجة لـ DTO للرد. لا ترجع كائنات الـ ORM مباشرة أبدًا.</td></tr>
+<tr><td>Services</td><td>قواعد العمل، المعاملات (transactions)، التحقق من الملكية (حماية إضافية بعد الـ guards)</td></tr>
+<tr><td>Repositories</td><td>كل استعلام يأخذ <code>userId</code>؛ لا توجد دوال "ابحث بالمعرّف" بدون المالك</td></tr>
+<tr><td>DTOs / Validators</td><td>class-validator أو zod؛ أنواع صارمة؛ حدود للطول (الاسم 1–24 حرفًا، حروف ومسافة و- و')؛ التحقق من القيم المسموحة؛ حد أقصى لحجم الدفعات</td></tr>
+<tr><td>تسجيل الدخول</td><td>Passport-JWT (توقيع EdDSA أو RS256 مع تدوير المفاتيح عبر <code>kid</code>)؛ refresh tokens عشوائية غير مقروءة (opaque)</td></tr>
+<tr><td>Middleware</td><td>helmet، CORS لنطاقات محددة، ضغط، request-id، حد لحجم الطلب 1 MB (للمزامنة)، حدود للمعدل (لكل IP ولكل حساب)</td></tr>
+<tr><td>الأخطاء</td><td>Problem details بنوع وكود ثابتين؛ بدون stack traces في الإنتاج؛ رسائل عامة في تسجيل الدخول</td></tr>
+<tr><td>التسجيل (Logging)</td><td>JSON منظم مع correlation id، مع إخفاء البيانات الشخصية؛ أحداث التدقيق تُخزن منفصلة</td></tr>
+<tr><td>الإعدادات</td><td>متغيرات بيئة (12-factor)؛ الأسرار من secret manager أو Docker secrets؛ التطبيق يتوقف فورًا لو إعداد ناقص</td></tr>
+</table>
+
+<h2>6. معمارية قاعدة البيانات</h2>
+<p>كل مفتاح أساسي لكيان يتزامن هو <b>UUIDv7 يولّده الجهاز</b>. السبب: الأجهزة تنشئ سجلات بدون إنترنت بدون تصادم، والمعرّفات مرتبة زمنيًا (مناسبة للفهارس)، وPostgres يخزنها كنوع أصلي. اخترنا UUIDv7 بدل ULID بسبب نوع <code>uuid</code> الأصلي. لا نستخدم الترقيم التلقائي (auto-increment) للكيانات التي تتزامن.</p>
+<table>
+<tr><th>الجدول</th><th>الأعمدة الأساسية</th><th>القيود والفهارس</th></tr>
+<tr><td><b>users</b></td><td>id uuid PK، email citext، password_hash، email_verified_at، status، created_at، updated_at، deleted_at</td><td>UNIQUE(email) WHERE deleted_at IS NULL؛ CHECK على status</td></tr>
+<tr><td><b>refresh_tokens</b></td><td>id، user_id FK، family_id، token_hash bytea، device_id، expires_at، revoked_at، replaced_by</td><td>UNIQUE(token_hash)؛ INDEX(user_id)، INDEX(family_id)؛ ON DELETE CASCADE</td></tr>
+<tr><td><b>email_tokens</b></td><td>id، user_id FK، purpose، token_hash، expires_at، used_at</td><td>UNIQUE(token_hash)؛ استخدام مرة واحدة</td></tr>
+<tr><td><b>devices</b></td><td>id uuid (من الجهاز)، user_id FK، platform، last_seen_at</td><td>INDEX(user_id)</td></tr>
+<tr><td><b>child_profiles</b></td><td>id uuid (من الجهاز)، user_id FK، display_name، gender، avatar، palette، photo_object_key، version، change_seq، server_updated_at، deleted_at</td><td>INDEX(user_id, change_seq)؛ CHECK طول الاسم بين 1 و24؛ حد أقصى 10 أطفال لكل حساب (قاعدة في الـ service)</td></tr>
+<tr><td><b>child_settings</b></td><td>child_id PK/FK، arabic، break_minutes، volume، sound، music، narration، boy_voice، girl_voice، version، change_seq</td><td>CHECK break_minutes بين 5 و30؛ CHECK volume بين 0 و1</td></tr>
+<tr><td><b>unit_attempts</b></td><td>id uuid PK، child_id FK، unit_id، content_version، completed، effort_stars، completed_at، legacy_attempt_id، change_seq</td><td>INDEX(child_id, unit_id, completed_at DESC)؛ CHECK effort_stars بين 0 و3؛ <b>إضافة فقط (append-only)</b></td></tr>
+<tr><td><b>attempt_objectives</b></td><td>attempt_id FK، objective_id، outcome</td><td>PK(attempt_id, objective_id)؛ CHECK outcome ضمن ('firstTry','afterHint','explained')</td></tr>
+<tr><td><b>journeys</b></td><td>child_id FK، lesson_id، content_version، state jsonb، progress_rank، version، change_seq، deleted_at</td><td>PK(child_id, lesson_id)؛ state يُتحقق منه بـ JSON Schema لكل إصدار درس</td></tr>
+<tr><td><b>usage_daily</b></td><td>child_id FK، device_id FK، day date، seconds</td><td>PK(child_id, device_id, day)؛ CHECK seconds بين 0 و86400</td></tr>
+<tr><td><b>processed_mutations</b></td><td>user_id، mutation_id، result jsonb، created_at</td><td>PK(user_id, mutation_id)؛ تنظيف بعد 30 يومًا</td></tr>
+<tr><td><b>audit_log</b></td><td>id bigserial، user_id، action، meta jsonb، created_at</td><td>INDEX(user_id, created_at)؛ بدون بيانات شخصية أو توكنات</td></tr>
+</table>
+<p><b>مؤشر المزامنة (cursor):</b> sequence عام <code>change_seq_seq</code>. أي إضافة أو تعديل أو حذف (tombstone) يضع <code>change_seq = nextval()</code> داخل نفس المعاملة. السحب (pull) يرجع الصفوف التي <code>change_seq &gt; :cursor</code> لأطفال المستخدم فقط، مرتبة ومقسمة لصفحات. (حالات ترتيب الـ commit النادرة تُعالج بالقراءة حتى أقل sequence جارٍ، أو بمعاملة كتابة واحدة لكل push.)</p>
+<pre>
+ users 1───* refresh_tokens        users 1───* devices
+   │ 1                               │
+   └───* child_profiles 1───1 child_settings
+              │ 1
+              ├───* unit_attempts 1───* attempt_objectives
+              ├───* journeys            (PK child_id + lesson_id)
+              └───* usage_daily  *───1 devices   (PK child_id + device_id + day)
+</pre>
+
+<h2>7. معمارية Android</h2>
+<pre>
+ Android UI (widgets, Flame scenes)
+        │
+ Controllers (Riverpod Notifiers: LessonController, ChildController, ParentController)
+        │
+ Repositories (ChildRepository, ProgressRepository, SettingsRepository, AuthRepository)
+        │                                   │
+ Local DB (drift/SQLite)  ◄──── Sync Engine ────►  Remote API client (OpenAPI-generated)
+   tables + outbox + sync_meta                         │
+                                                  Backend (HTTPS)
+</pre>
+<table>
+<tr><th>القرار</th><th>الفئة</th><th>البنود</th></tr>
+<tr><td><b>KEEP — نحتفظ به</b></td><td>أصول مثبتة</td><td>Flutter + Riverpod؛ مشاهد Flame والرسومات؛ ملفات المحتوى JSON والـ schemas وأدوات التحقق؛ <code>AttemptRecorder</code> و<code>addUsage</code> وقواعد الفتح؛ تنظيف الصور؛ قناة الصوت في MainActivity؛ إعدادات الأمان في الـ Manifest؛ فكرة بوابة الأهل؛ الاختبارات الموجودة</td></tr>
+<tr><td><b>REFACTOR LATER — نعيد هيكلته لاحقًا</b></td><td>البنية</td><td>LessonPlayer ← controller + عارض لكل مشهد؛ ترحيل <code>LessonSession</code> ← سجل ترحيل؛ <code>AppController</code> ← repositories؛ معالجة الأخطاء والتسجيل؛ النصوص ← ARB</td></tr>
+<tr><td><b>REPLACE LATER — نستبدله لاحقًا</b></td><td>الأساسات</td><td>كتلة Hive ← جداول drift + outbox؛ maps الدروس بدون أنواع ← نماذج typed؛ كاش <code>Flame.images</code> بلا حد ← محمّل محدود؛ صور بدون ضغط فاقد ← WebP مضغوط + تقسيم AAB؛ بوابة الأهل ← نسخة أقوى</td></tr>
+<tr><td><b>REMOVE LATER — نحذفه لاحقًا</b></td><td>الديون</td><td><code>force_creature.dart</code>؛ 24 صورة غير مستخدمة من Git؛ مسارات المعاينة من <code>main.dart</code> (تنتقل لـ <code>main_preview.dart</code>)؛ طريقة سكريبتات الترقيع في <code>tmp/</code></td></tr>
+</table>
+<p><b>طريق الانتقال (لم يُنفّذ):</b></p>
+<ol>
+<li>إضافة واجهات repositories تعتمد على Hive الحالي، فلا يتغير السلوك.</li>
+<li>إضافة النماذج typed وتحويل الـ controllers لاستخدام الـ repositories.</li>
+<li>إضافة تنفيذ drift مع ترحيل محلي لمرة واحدة (القسم 18)، وما زال كل شيء بدون إنترنت.</li>
+<li>إضافة الـ API البعيد ومحرك المزامنة خلف مفتاح تشغيل (feature flag)، يعمل فقط عند تسجيل دخول ولي الأمر.</li>
+</ol>
+<p><b>تفاصيل Android:</b></p>
+<ul>
+<li>صلاحية <code>INTERNET</code>، فقط بعد قرار الخصوصية.</li>
+<li><code>network_security_config</code> يمنع الاتصال غير المشفر ويعتمد شهادات النظام فقط.</li>
+<li>مزامنة دورية عبر WorkManager (كل 15 دقيقة على الأقل، بشرط وجود شبكة).</li>
+<li>التوكنات في <code>flutter_secure_storage</code> (Keystore).</li>
+<li>نسخ <code>dev / staging / prod</code> باستخدام <code>applicationIdSuffix</code>، و<code>--dart-define-from-file</code> لتحديد <code>API_BASE_URL</code>.</li>
+</ul>
+
+<h2>8. معمارية الويب</h2>
+<table>
+<tr><th>الجانب</th><th>التصميم</th></tr>
+<tr><td>الإطار</td><td>Flutter Web (CanvasKit مضمّن محليًا)؛ نقطة دخول <code>lib/main_web.dart</code></td></tr>
+<tr><td>البنية</td><td>حزم مشتركة: <code>packages/domain</code> (النماذج وقواعد الدمج)، <code>packages/data</code> (repositories والمزامنة)، <code>packages/api_client</code> (مولّد)، <code>packages/ui</code> (نظام التصميم والمشاهد)؛ وتطبيق خفيف لكل من Android والويب</td></tr>
+<tr><td>التوجيه (Routing)</td><td><code>go_router</code> بمسارات URL: <code>/login</code>، <code>/children</code>، <code>/children/:id/reports</code>، <code>/play/:lessonId</code>، <code>/account</code>؛ مع تحويل تلقائي لو المستخدم غير مسجل</td></tr>
+<tr><td>تسجيل الدخول</td><td>refresh token في cookie بخصائص <code>HttpOnly; Secure; SameSite=Strict</code> محصور في <code>/api/v1/auth</code>؛ access token في الذاكرة فقط؛ تجديد صامت عند فتح الصفحة؛ حماية CSRF بـ SameSite + header مخصص إلزامي في التجديد</td></tr>
+<tr><td>إدارة الحالة</td><td>Riverpod (مثل Android)</td></tr>
+<tr><td>طبقة الـ API</td><td>عميل Dart مولّد مع interceptors (التوكن، إعادة المحاولة بتأخير متزايد، تحويل أخطاء problem+json)</td></tr>
+<tr><td>كاش محلي</td><td>drift على الويب (IndexedDB/OPFS) لعرض التقدم غير الحساس بدون إنترنت؛ يُمسح عند الخروج</td></tr>
+<tr><td>النماذج والتحقق</td><td>قواعد تحقق مشتركة من <code>domain</code> (نفس قواعد الـ DTO على السيرفر)؛ أخطاء بجوار الحقل</td></tr>
+<tr><td>الأخطاء</td><td>معالج أخطاء عام؛ شريط "أنت غير متصل"؛ رسائل دقيقة حسب كود الخطأ</td></tr>
+<tr><td>التجاوب</td><td>نقاط الكسر: أقل من 600 موبايل (عمود واحد)، 600–1024 تابلت (لوحتان)، أكبر من 1024 كمبيوتر (قائمة جانبية + محتوى). اللعبة تحافظ على نسبة العرض مع هوامش.</td></tr>
+<tr><td>headers الأمان</td><td>CSP (<code>script-src 'self' 'wasm-unsafe-eval'</code>)، HSTS، X-Content-Type-Options، frame-ancestors 'none'</td></tr>
+</table>
+
+<h2>9. معمارية تسجيل الدخول</h2>
+<table>
+<tr><th>العملية</th><th>التصميم</th></tr>
+<tr><td>إنشاء حساب</td><td>إيميل + كلمة سر (12 حرفًا على الأقل وحتى 128؛ فحص هل كلمة السر مسرّبة عبر API بنظام k-anonymity؛ بدون قواعد تركيب معقدة). نفس الرد 202 سواء الإيميل موجود أم لا.</td></tr>
+<tr><td>تأكيد الإيميل</td><td>توكن عشوائي 256 بت، مخزن مشفّرًا (SHA-256)، صالح 24 ساعة، استخدام مرة واحدة؛ الدخول مسموح لكن المزامنة ممنوعة حتى التأكيد</td></tr>
+<tr><td>تسجيل الدخول</td><td>تحقق بزمن ثابت؛ رسالة خطأ عامة؛ حد 5 محاولات في الدقيقة لكل حساب وIP مع تأخير متزايد؛ تسجيل معرّف الجهاز</td></tr>
+<tr><td>تسجيل الخروج</td><td>إلغاء عائلة الـ refresh الحالية؛ <b>الخروج من كل الأجهزة</b> يلغي كل العائلات</td></tr>
+<tr><td>نسيت / إعادة تعيين كلمة السر</td><td>نفس الرد العام؛ توكن صالح 30 دقيقة لمرة واحدة؛ عند إعادة التعيين تُلغى كل الجلسات ويُرسل إيميل تنبيه</td></tr>
+<tr><td>تغيير كلمة السر</td><td>يتطلب كلمة السر الحالية؛ يلغي الجلسات الأخرى</td></tr>
+<tr><td>إيقاف / حذف الحساب</td><td>حذف مؤقت مع مهلة 14 يومًا، ثم حذف نهائي لكل بيانات الأطفال (حق المسح)؛ إمكانية تصدير البيانات (JSON) قبل الحذف</td></tr>
+<tr><td>مستقبلًا</td><td>الدخول بـ Google أو Microsoft عبر OIDC (Authorization Code + PKCE)، مربوط بنفس الإيميل المؤكد</td></tr>
+</table>
+<div class="callout"><b>تشفير كلمات السر: Argon2id</b>، وهو الاختيار الأول في OWASP Password Storage Cheat Sheet. يحتاج ذاكرة كبيرة (memory-hard)، فيقاوم الكسر بكروت الشاشة وASIC أفضل من bcrypt. كذلك bcrypt يقص كلمة السر عند 72 بايت. الإعدادات الأساسية: m = 19 MiB، t = 2، p = 1، وتُضبط بحيث يأخذ التشفير حوالي 100–300 ms على سيرفر الإنتاج. نخزّن نص PHC الذي يحمل الإعدادات، فيمكن ترقيتها عند الدخول التالي. <b>bcrypt</b> (cost 12 أو أكثر) بديل مقبول لو المنصة لا تدعم Argon2.</div>
+<h3>أمان الجلسات</h3>
+<table>
+<tr><th>العنصر</th><th>التصميم</th></tr>
+<tr><td>Access token</td><td>JWT صالح 15 دقيقة، يحتوي: <code>sub</code>، <code>sid</code> (العائلة)، <code>iat</code>، <code>exp</code>، <code>aud</code>، <code>iss</code>؛ توقيع غير متماثل مع تدوير المفاتيح عبر <code>kid</code>؛ بدون بيانات شخصية</td></tr>
+<tr><td>Refresh token</td><td>قيمة عشوائية 256 بت غير مقروءة؛ السيرفر يخزن البصمة (hash) فقط؛ نافذة متجددة 30 يومًا، وحد أقصى مطلق 90 يومًا</td></tr>
+<tr><td>التدوير (Rotation)</td><td>كل تجديد يصدر توكن جديد ويعلّم القديم كمستبدل</td></tr>
+<tr><td>كشف إعادة الاستخدام</td><td>استخدام توكن تم تدويره بالفعل يلغي العائلة كلها (علامة سرقة) ويُرسل إيميل لولي الأمر</td></tr>
+<tr><td>الإلغاء</td><td>الخروج، تغيير أو إعادة تعيين كلمة السر، إيقاف الحساب؛ الـ access tokens تنتهي خلال 15 دقيقة (مع قائمة منع اختيارية بـ <code>sid</code> للإلغاء الفوري)</td></tr>
+<tr><td>التخزين على Android</td><td>الـ refresh token في <code>flutter_secure_storage</code> المدعوم بـ Keystore؛ الـ access token في الذاكرة؛ أبدًا في Hive أو السجلات أو تقارير الأعطال</td></tr>
+<tr><td>التخزين على الويب</td><td>الـ refresh token في cookie بخصائص HttpOnly وSecure وSameSite=Strict؛ الـ access token في الذاكرة. <b>لا توكنات طويلة العمر في localStorage.</b></td></tr>
+</table>
+
+<h2>10. نموذج الصلاحيات</h2>
+<ul>
+<li><b>المستأجر (tenant) = حساب ولي الأمر.</b> كل طفل ومحاولة ودرس جارٍ وسجل استخدام يتبع <code>user_id</code> واحدًا فقط (عن طريق <code>child_profiles.user_id</code>).</li>
+<li>الـ <code>user_id</code> يُؤخذ دائمًا من حقل <code>sub</code> في التوكن الموثق، و<b>أبدًا</b> من المسار أو جسم الطلب.</li>
+<li><code>ChildOwnershipGuard</code> يتحقق من <code>:childId</code> بشرط <code>WHERE id = :childId AND user_id = :sub AND deleted_at IS NULL</code>. لو لم يجد نتيجة يرد بـ <b>404</b> وليس 403، حتى لا يمكن تخمين المعرّفات.</li>
+<li>المزامنة (push) تتحقق داخل نفس المعاملة أن كل كيان في الطلب ملك للمستخدم. استعلامات السحب (pull) تمر عبر <code>child_profiles.user_id = :sub</code>.</li>
+<li>حماية إضافية اختيارية: <b>Row-Level Security</b> في PostgreSQL مع <code>SET app.user_id</code> لكل معاملة.</li>
+<li>اختبارات آلية لـ BOLA/IDOR: توكن المستخدم B على كل معرّف يخص المستخدم A لازم يرجع 404.</li>
+<li>الأدوار حاليًا: <code>parent</code> فقط. مستقبلًا: <code>co_parent</code> (بدعوة)، و<code>teacher</code> (قراءة مجمّعة فقط)، عبر جدول <code>account_members</code>.</li>
+</ul>
+
+<h2>11. معمارية الـ API</h2>
+<p><b>لماذا REST وليس GraphQL:</b></p>
+<ul>
+<li>المزامنة عبارة عن دفعات push وpull، فتناسبها نقطتا POST وGET بشكل طبيعي.</li>
+<li>REST أسهل في تحديد المعدل والتخزين المؤقت والتسجيل والتأمين لكل مسار.</li>
+<li>OpenAPI يولّد عميل Dart للتطبيقين.</li>
+<li>مرونة GraphQL في الاستعلامات تضيف تعقيدًا (حدود تكلفة الاستعلام، وصلاحيات لكل حقل) بدون فائدة لنموذج بيانات صغير وثابت كهذا.</li>
+</ul>
+<table>
+<tr><th>Method</th><th>Endpoint</th><th>الغرض</th><th>Auth</th><th>الصلاحية</th><th>الطلب ← الرد</th><th>التحقق</th></tr>
+<tr><td>POST</td><td class="ltr">/api/v1/auth/register</td><td>إنشاء حساب</td><td>لا</td><td>—</td><td class="ltr">{email, password} → 202</td><td>صيغة الإيميل، كلمة سر 12–128، فحص التسريب، حد المعدل</td></tr>
+<tr><td>POST</td><td class="ltr">/api/v1/auth/verify-email</td><td>تأكيد الإيميل</td><td>لا</td><td>التوكن</td><td class="ltr">{token} → 204</td><td>صيغة التوكن، غير منتهٍ، غير مستخدم</td></tr>
+<tr><td>POST</td><td class="ltr">/api/v1/auth/resend-verification</td><td>إعادة إرسال الرابط</td><td>لا</td><td>—</td><td class="ltr">{email} → 202</td><td>حد المعدل</td></tr>
+<tr><td>POST</td><td class="ltr">/api/v1/auth/login</td><td>بدء جلسة</td><td>لا</td><td>—</td><td class="ltr">{email, password, deviceId, platform} → {accessToken, expiresIn, refreshToken*}</td><td>*في الجسم على Android، وفي cookie على الويب؛ حد المعدل</td></tr>
+<tr><td>POST</td><td class="ltr">/api/v1/auth/refresh</td><td>تدوير التوكنات</td><td>Refresh token</td><td>العائلة صالحة</td><td class="ltr">{refreshToken} | cookie → new pair</td><td>كشف إعادة الاستخدام</td></tr>
+<tr><td>POST</td><td class="ltr">/api/v1/auth/logout</td><td>إنهاء الجلسة</td><td>Bearer</td><td>جلسته</td><td class="ltr">{all?: bool} → 204</td><td>—</td></tr>
+<tr><td>POST</td><td class="ltr">/api/v1/auth/forgot-password</td><td>إرسال رابط إعادة التعيين</td><td>لا</td><td>—</td><td class="ltr">{email} → 202</td><td>رد عام، حد المعدل</td></tr>
+<tr><td>POST</td><td class="ltr">/api/v1/auth/reset-password</td><td>كلمة سر جديدة</td><td>Reset token</td><td>التوكن</td><td class="ltr">{token, newPassword} → 204</td><td>سياسة كلمة السر؛ إلغاء الجلسات</td></tr>
+<tr><td>POST</td><td class="ltr">/api/v1/auth/change-password</td><td>تغيير كلمة السر</td><td>Bearer</td><td>نفسه</td><td class="ltr">{currentPassword, newPassword} → 204</td><td>إعادة التحقق</td></tr>
+<tr><td>GET</td><td class="ltr">/api/v1/users/me</td><td>بيانات الحساب</td><td>Bearer</td><td>نفسه</td><td class="ltr">→ {id, email, verified, createdAt}</td><td>—</td></tr>
+<tr><td>DELETE</td><td class="ltr">/api/v1/users/me</td><td>حذف الحساب</td><td>Bearer + كلمة السر</td><td>نفسه</td><td class="ltr">{password} → 202</td><td>إعادة التحقق؛ مهلة</td></tr>
+<tr><td>GET</td><td class="ltr">/api/v1/users/me/export</td><td>تصدير البيانات</td><td>Bearer</td><td>نفسه</td><td class="ltr">→ JSON</td><td>حد المعدل</td></tr>
+<tr><td>GET</td><td class="ltr">/api/v1/children</td><td>قائمة الأطفال</td><td>Bearer</td><td>المالك</td><td class="ltr">→ [ChildDto]</td><td>—</td></tr>
+<tr><td>POST</td><td class="ltr">/api/v1/children</td><td>إضافة طفل</td><td>Bearer</td><td>المالك</td><td class="ltr">{id(uuid), displayName, gender, avatar, palette} → 201</td><td>الاسم 1–24 حرفًا، القيم المسموحة، حد 10 أطفال</td></tr>
+<tr><td>PATCH</td><td class="ltr">/api/v1/children/{childId}</td><td>تعديل طفل</td><td>Bearer</td><td>ChildOwnershipGuard</td><td class="ltr">{…fields, baseVersion} + If-Match → 200 | 409 {server}</td><td>تحكم متفائل بالتزامن</td></tr>
+<tr><td>DELETE</td><td class="ltr">/api/v1/children/{childId}</td><td>حذف طفل</td><td>Bearer</td><td>ChildOwnershipGuard</td><td class="ltr">→ 204 (tombstone)</td><td>—</td></tr>
+<tr><td>GET / PUT</td><td class="ltr">/api/v1/children/{childId}/settings</td><td>الإعدادات</td><td>Bearer</td><td>ChildOwnershipGuard</td><td class="ltr">SettingsDto + baseVersion</td><td>النطاقات</td></tr>
+<tr><td>GET</td><td class="ltr">/api/v1/children/{childId}/attempts?unitId=</td><td>التقارير</td><td>Bearer</td><td>ChildOwnershipGuard</td><td class="ltr">→ [AttemptDto] paginated</td><td>حدود الصفحات</td></tr>
+<tr><td>GET</td><td class="ltr">/api/v1/children/{childId}/reports/summary</td><td>تقرير الأهل</td><td>Bearer</td><td>ChildOwnershipGuard</td><td>آخر وأفضل محاولة لكل وحدة، والاستخدام اليومي</td><td>—</td></tr>
+<tr><td>POST</td><td class="ltr">/api/v1/sync/push</td><td>رفع التغييرات</td><td>Bearer (مؤكد)</td><td>كل كيان ملك للمستخدم</td><td class="ltr">{deviceId, mutations:[{mutationId, entity, op, id, baseVersion, payload}]} (≤100) → [{mutationId, status, version, changeSeq, server?}]</td><td>schema لكل كيان؛ منع التكرار</td></tr>
+<tr><td>GET</td><td class="ltr">/api/v1/sync/pull?since=&amp;limit=</td><td>سحب التغييرات</td><td>Bearer (مؤكد)</td><td>عبر user_id</td><td class="ltr">→ {changes:[…], cursor, hasMore}</td><td>limit ≤ 500</td></tr>
+<tr><td>POST</td><td class="ltr">/api/v1/devices</td><td>تسجيل جهاز</td><td>Bearer</td><td>نفسه</td><td class="ltr">{id, platform} → 204</td><td>uuid</td></tr>
+<tr><td>GET</td><td class="ltr">/health/live, /health/ready</td><td>فحص الحالة</td><td>داخلي</td><td>—</td><td class="ltr">→ 200</td><td>—</td></tr>
+</table>
+<p>القواعد العامة: JSON بأسماء camelCase؛ تواريخ RFC 3339 بتوقيت UTC؛ أخطاء RFC 9457؛ header <code>Idempotency-Key</code> لطلبات POST غير المزامنة؛ إصدار في المسار <code>/api/v1</code>؛ تقسيم صفحات بالـ cursor.</p>
+
+<h2>12. معمارية المزامنة</h2>
+<pre>
+ Android UI → Controller → Repository ──(1 transaction)──► Local DB row (sync_status = pending, version++)
+                                         └──────────────► outbox(mutation_id UUIDv7, entity, op, base_version, payload)
+ Sync Engine (single-flight, triggered) ─► PUSH /sync/push (batches ≤ 100, ordered by outbox seq)
+                                         ◄─ per-mutation results → mark synced / resolve conflict / quarantine
+                                         ─► PULL /sync/pull?since=cursor (pages until hasMore = false)
+                                         ◄─ upsert rows; rows with pending local edits go through merge
+                                         → save new cursor (sync_meta) → UI streams update
+</pre>
+<table>
+<tr><th>الجانب</th><th>التصميم</th></tr>
+<tr><td>الإضافة (Create)</td><td>الجهاز يولّد UUIDv7؛ عملية <code>create</code> في الـ outbox؛ السيرفر يضيف، أو يرد <code>duplicate</code> لو المعرّف موجود لنفس المستخدم بنفس البيانات</td></tr>
+<tr><td>التعديل (Update)</td><td>عملية <code>patch</code> بالحقول المتغيرة فقط + <code>baseVersion</code>؛ السيرفر يطبق لو الإصدار مطابق، وإلا يشغّل حل التعارض</td></tr>
+<tr><td>الحذف (Delete)</td><td>عملية <code>delete</code> ← tombstone على السيرفر (<code>deleted_at</code> وزيادة change_seq)؛ يُحتفظ بها 180 يومًا على الأقل حتى تستلمها الأجهزة التي كانت غير متصلة لفترة طويلة؛ بعدها الجهاز ذو المؤشر القديم يعمل مزامنة كاملة</td></tr>
+<tr><td>المزامنة الأولى</td><td>رفع البيانات المحلية المربوطة (القسم 18)، ثم السحب من المؤشر 0 على صفحات</td></tr>
+<tr><td>المزامنة التزايدية</td><td>سحب <code>since=cursor</code>؛ السيرفر يرجع تغييرات أطفال المستخدم فقط</td></tr>
+<tr><td>المزامنة التلقائية</td><td>عند فتح التطبيق، العودة إليه، بعد 5 ثواني من أي تغيير محلي، عند رجوع الإنترنت، كل 15 دقيقة على الأقل عبر WorkManager (Android)، عند تركيز التبويب (الويب)</td></tr>
+<tr><td>المزامنة اليدوية</td><td>زر "Sync now" في ركن الأهل، مع وقت آخر مزامنة وعدد التغييرات المعلقة والأخطاء</td></tr>
+<tr><td>إعادة المحاولة</td><td>تأخير متزايد 2^n ثانية مع عشوائية كاملة، بحد أقصى 15 دقيقة؛ يرجع للصفر عند النجاح؛ تُعاد المحاولة مع أخطاء الشبكة و5xx و429 (مع احترام <code>Retry-After</code>)</td></tr>
+<tr><td>فشل المزامنة</td><td>رفض بسبب خطأ تحقق (4xx) ينقل التغيير إلى جدول <b>عزل (quarantine)</b>، ولا يُحذف بصمت أبدًا، ويُعرض لولي الأمر مع خيارين: إعادة المحاولة بعد تحديث التطبيق، أو التجاهل مع تأكيد</td></tr>
+<tr><td>منع التكرار</td><td>معرّفات من الجهاز + جدول <code>processed_mutations(user_id, mutation_id)</code> على السيرفر (يرجع النتيجة المخزنة عند الإعادة) + قيود unique</td></tr>
+<tr><td>الترتيب</td><td>الـ outbox يُعالج بالترتيب لكل كيان؛ الإضافة قبل التعديل؛ الكيان الأب (ملف الطفل) قبل التابع (المحاولات)</td></tr>
+<tr><td>التزامن</td><td>مزامنة واحدة في نفس الوقت لكل جهاز (mutex)؛ الرفع قبل السحب</td></tr>
+</table>
+
+<h2>13. استراتيجية العمل بدون إنترنت</h2>
+<ul>
+<li><b>العمل بدون إنترنت هو الوضع الافتراضي.</b> كل ميزات اللعبة تعمل بدون شبكة وبدون حساب، مثل الآن تمامًا.</li>
+<li>قاعدة البيانات المحلية هي مصدر الحقيقة للواجهة، والسيرفر هو مصدر الحقيقة لتوحيد البيانات بين الأجهزة.</li>
+<li>وضع الاتصال يضيف فقط رفعًا وسحبًا في الخلفية. لا شيء في مسار اللعب ينتظر الشبكة أبدًا.</li>
+<li>لو انتهى الـ access token والجهاز غير متصل، اللعب يستمر، والتجديد يحدث عند رجوع الاتصال. لو فشل التجديد (توكن ملغى)، تبقى البيانات المحلية ويُطلب من ولي الأمر الدخول مرة أخرى، والتغييرات المعلقة تنتظر.</li>
+<li>عند الخروج من الحساب يُسأل ولي الأمر: هل يبقى الأطفال على الجهاز (الافتراضي: يبقون بدون ربط) أم يُحذفون؟</li>
+<li>محتوى الدروس يظل مضمّنًا. لو الجهاز على <code>contentVersion</code> أقدم، تُخزن بيانات السيرفر الأحدث وتُعرض باستخدام سجل الترحيل على الجهاز. لو غير متوافقة، يظهر للدرس "حدّث التطبيق لتكمل هذا الدرس"، وتبقى باقي البيانات قابلة للاستخدام.</li>
+</ul>
+
+<h2>14. حل التعارضات</h2>
+<p><b>السيناريو:</b> ولي الأمر عدّل نفس السجل على الموبايل (بدون إنترنت) وعلى الكمبيوتر. <b>المبدأ:</b> لا نستخدم "آخر كتابة تكسب" (Last Write Wins) بشكل أعمى لأي شيء يمثل دليلًا على تعلم الطفل. كل نوع بيانات له قاعدة دمج تناسب معناه. التحكم المتفائل بالتزامن (<code>version</code>) يكتشف التعارض، و<code>server_updated_at</code> و<code>device_id</code> يُستخدمان لفك التعادل وللتدقيق.</p>
+<table>
+<tr><th>الكيان</th><th>نوع التعارض</th><th>طريقة الحل</th><th>فقد بيانات؟</th></tr>
+<tr><td>unit_attempts</td><td>لا يمكن حدوثه</td><td><b>إضافة فقط</b>، غير قابلة للتعديل، ومحمية من التكرار بالمعرّف. محاولات الجهازين تُحفظ كلها. "الأحدث" و"الأفضل" يُحسبان.</td><td>لا</td></tr>
+<tr><td>attempt_objectives</td><td>لا يوجد</td><td>صفوف ثابتة تابعة للمحاولة</td><td>لا</td></tr>
+<tr><td>usage_daily</td><td>زيادات متزامنة</td><td><b>عدّاد لكل جهاز</b> (المفتاح يشمل device_id)؛ الإجمالي = مجموع الأجهزة (G-counter CRDT)</td><td>لا</td></tr>
+<tr><td>child_profiles / child_settings</td><td>تعديلات متزامنة</td><td><b>دمج ثلاثي على مستوى الحقل</b> مقارنة بالإصدار الأساسي: الحقول المختلفة تُطبق من الطرفين تلقائيًا. نفس الحقل بقيمتين مختلفتين ← في الإعدادات (قيمة منخفضة) يكسب الأحدث حسب <code>وقت استلام السيرفر</code> مع تسجيل القيمة القديمة في التدقيق؛ في حقول هوية الطفل (الاسم، الصورة، النوع) ← السيرفر يحتفظ بقيمته ويرجع تعارضًا، والجهاز يعرض على ولي الأمر "الموبايل يقول X والويب يقول Y — اختر".</td><td>لا يوجد فقد صامت</td></tr>
+<tr><td>journeys (درس جارٍ)</td><td>الجهازان تقدّما في نفس الدرس</td><td><b>دمج يحافظ على التقدم:</b> اتحاد إجابات الخطوات المكتملة، مع الاحتفاظ <b>بأول نتيجة مسجلة</b> لكل هدف (يطابق قاعدة <code>AttemptRecorder</code> الحالية لمنع تضخيم الدرجات)؛ الموضع = الأبعد (<code>progress_rank</code>)؛ حالة الواجهة المؤقتة للطرف الآخر تُهمل</td><td>لا فقد للتقييم</td></tr>
+<tr><td>حذف مقابل تعديل</td><td>طرف حذف طفلًا والآخر عدّله</td><td><b>الحذف يكسب</b> (نية خصوصية، مؤكدة خلف بوابة الأهل). محاولات التعديل تُعزل وتُعرض لولي الأمر 14 يومًا قبل الحذف النهائي.</td><td>قابل للاسترجاع 14 يومًا</td></tr>
+<tr><td>تكرار الإنشاء</td><td>نفس الطفل اتعمل على جهازين قبل الربط</td><td>لا يُدمج تلقائيًا بالاسم أبدًا. ولي الأمر يرى الاثنين ويقرر الدمج (المحاولات تنتقل، والدروس تُدمج بالقاعدة السابقة).</td><td>لا</td></tr>
+</table>
+<p><b>بيانات لكل صف</b></p>
+<ul>
+<li><b>على الجهاز:</b>
+  <ul>
+  <li><code>version</code>: آخر إصدار من السيرفر.</li>
+  <li><code>sync_status</code>: synced أو pending أو conflict أو quarantined.</li>
+  <li><code>updated_at</code>: بساعة الجهاز، للعلم فقط.</li>
+  <li><code>last_modified_device</code>.</li>
+  </ul></li>
+<li><b>على السيرفر:</b> <code>version</code> و<code>change_seq</code> و<code>server_updated_at</code>.</li>
+</ul>
+<p>ساعات الأجهزة <b>لا تُستخدم أبدًا</b> لتحديد الفائز.</p>
+
+<h2>15. معمارية النشر</h2>
+<pre>
+ Users ──HTTPS──► Caddy (TLS auto-renew, HSTS, rate limit, gzip/brotli)
+                    ├── /            → web container (static Flutter Web build, long-cache hashed assets)
+                    └── /api/v1/*    → api containers (NestJS ×2, health-checked, rolling restart)
+                                          ├── PostgreSQL (managed, private network, TLS, PITR)
+                                          ├── Object storage (private bucket, signed URLs ≤ 5 min)
+                                          └── Email provider (SPF/DKIM/DMARC configured)
+ Ops: Uptime monitor · Prometheus/Grafana (or SaaS) · Loki logs · Sentry (PII scrubbing) · backups → off-site bucket
+ CI/CD: GitHub Actions → test → build images (pinned digests) → scan (Trivy/osv) → deploy staging → manual approval → prod
+</pre>
+<p><b>Docker: نعم.</b></p>
+<ul>
+<li>صور multi-stage.</li>
+<li>تشغيل بمستخدم غير root.</li>
+<li>نظام ملفات للقراءة فقط.</li>
+<li>فحوصات صحة (healthchecks).</li>
+<li>ملف Compose لكل بيئة.</li>
+</ul>
+<p><b>Kubernetes: لا يُنصح به.</b> الحمل المتوقع (تطبيق عائلي وتعليمي، ومزامنة JSON) يكفيه VM واحد مع تكبير رأسي. نعيد التفكير فقط لو احتجنا أكثر من منطقة جغرافية، أو تجاوزنا حوالي 5 خدمات، أو احتجنا تكبيرًا أفقيًا تلقائيًا مستمرًا.</p>
+<p>إصدارات Android تمر عبر Play Console بهذا الترتيب: داخلي ← اختبار مغلق ← طرح تدريجي للإنتاج.</p>
+
+<h2>16. استراتيجية النسخ الاحتياطي</h2>
+<table>
+<tr><th>البند</th><th>السياسة</th></tr>
+<tr><td>النسخ التلقائي</td><td>PITR في PostgreSQL المُدار، أو WAL-G/pgBackRest لو استضافة ذاتية: أرشفة WAL مستمرة + نسخة أساسية ليلية</td></tr>
+<tr><td>التكرار</td><td>WAL مستمر (الهدف RPO ≤ 15 دقيقة)؛ نسخة كاملة يومية؛ <code>pg_dump</code> منطقي أسبوعي (لسهولة النقل)</td></tr>
+<tr><td>مدة الاحتفاظ</td><td>نافذة PITR لمدة 14 يومًا؛ النسخ اليومية 30 يومًا؛ النسخ الشهرية 12 شهرًا (بشرط ألا تتجاوز مدة الاحتفاظ ببيانات الحسابات المحذوفة في سياسة الخصوصية، مع توثيق طريقة الحذف)</td></tr>
+<tr><td>الأمان</td><td>تشفير أثناء التخزين (AES-256) وأثناء النقل؛ bucket خارجي عند مزود أو منطقة مختلفة؛ قفل للنسخ ضد برامج الفدية؛ بيانات دخول منفصلة</td></tr>
+<tr><td>طريقة الاسترجاع</td><td>دليل تشغيل: إنشاء instance جديد ← استرجاع النسخة الأساسية + WAL حتى الوقت المطلوب ← فحص الـ migrations ← اختبارات سريعة ← تغيير عنوان الاتصال ← مراجعة مؤشرات المزامنة (الأجهزة التي مؤشرها بعد نقطة الاسترجاع تعمل مزامنة كاملة)</td></tr>
+<tr><td>اختبار الاسترجاع</td><td>استرجاع آلي شهري إلى staging مع فحص السلامة (عدد الصفوف، checksums)؛ تمرين موقوت كل ثلاثة أشهر</td></tr>
+<tr><td>التعافي من الكوارث</td><td>الهدف RTO ≤ 4 ساعات (هدف يُتحقق منه بالتمرين)؛ البنية كلها ككود (Compose وسكريبتات) لإعادة البناء في منطقة أخرى؛ DNS TTL مدته 300 ثانية</td></tr>
+<tr><td>شبكة أمان من الأجهزة</td><td>قواعد البيانات المحلية على الأجهزة فيها نسخة كاملة من بياناتها، ويمكنها إعادة الرفع بعد استرجاع السيرفر (المعرّفات تمنع التكرار)</td></tr>
+</table>
+
+<h2>17. استراتيجية المراقبة</h2>
+<table>
+<tr><th>الإشارة</th><th>التنفيذ</th><th>التنبيه</th></tr>
+<tr><td>سجلات التطبيق</td><td>pino JSON مع request id والمسار والحالة والزمن وبصمة معرّف المستخدم؛ قائمة إخفاء</td><td>ارتفاع مفاجئ في الأخطاء</td></tr>
+<tr><td>سجلات السيرفر</td><td>سجلات Caddy (مع اختصار الـ IP)، ومخرجات الحاويات ← Loki</td><td>—</td></tr>
+<tr><td>أخطاء الـ API</td><td>معدل 5xx، وعدد أنواع الأخطاء؛ Sentry مع <code>sendDefaultPii=false</code></td><td>5xx أكثر من 1% لمدة 5 دقائق</td></tr>
+<tr><td>قاعدة البيانات</td><td>الاتصالات، الاستعلامات البطيئة (<code>pg_stat_statements</code>)، عمر آخر نسخة احتياطية، المساحة</td><td>آخر نسخة أقدم من 26 ساعة؛ المساحة أكثر من 80%</td></tr>
+<tr><td>فشل تسجيل الدخول</td><td>المحاولات الفاشلة لكل حساب وIP، أحداث إعادة استخدام التوكن، طلبات إعادة التعيين</td><td>اكتشاف إعادة استخدام؛ نمط تخمين</td></tr>
+<tr><td>صحة المزامنة</td><td>زمن الرفع والسحب، معدل التعارض، عدد المعزول، تأخر الأجهزة</td><td>ارتفاع مفاجئ في التعارض أو العزل</td></tr>
+<tr><td>الأداء</td><td>زمن p50/p95/p99 لكل مسار؛ المعالج والذاكرة</td><td>p95 أكثر من 500 ms لمدة 10 دقائق</td></tr>
+<tr><td>التوفر</td><td>فحص خارجي على <code>/health/ready</code> وصفحة الويب كل دقيقة</td><td>فشلان متتاليان</td></tr>
+<tr><td>سجلات التدقيق</td><td>الدخول، الخروج، تغيير أو إعادة تعيين كلمة السر، تغيير الإيميل، إضافة أو حذف طفل، حذف الحساب، تصدير البيانات</td><td>—</td></tr>
+<tr><td>الموبايل</td><td>تقارير أعطال اختيارية تحترم الخصوصية (بدون أسماء أو صور)؛ سجل تشخيص محلي يمكن لولي الأمر تصديره</td><td>الجلسات بدون أعطال أقل من 99.5%</td></tr>
+</table>
+<p><b>لا يُسجَّل أبدًا:</b></p>
+<ul>
+<li>كلمات السر.</li>
+<li>التوكنات (access وrefresh وreset وverify).</li>
+<li>الـ headers من نوع Authorization وCookie.</li>
+<li>أسماء الأطفال وصورهم.</li>
+<li>الإيميلات كنص صريح (تُخزن ببصمة hash لو احتجنا الربط بين السجلات).</li>
+</ul>
+
+<h2>18. استراتيجية ترحيل البيانات الحالية (بدون فقد أي بيانات)</h2>
+<pre>
+ Existing Hive blob (schemaVersion 3)
+   ↓ 1. Local upgrade (offline): parse per child, tolerant; a bad child is isolated, not fatal
+   ↓ 2. Write all rows to SQLite in ONE transaction; keep the Hive blob untouched as a backup (≥ 2 releases)
+   ↓ 3. Verify counts and checksums (children, attempts, objectives, journeys, usage-days) → else roll back and keep Hive
+   ↓ 4. ID normalisation: 'local-child' and non-UUID ids → UUIDv7 (legacy_id kept);
+   ↓    attempt ids '{lesson}-{micros}' → UUIDv7 with legacy_attempt_id
+   ↓ 5. Parent creates an account or logs in (behind the parent gate)
+   ↓ 6. Parent confirms "Link these children to my account" (per child; unlinked children stay local)
+   ↓ 7. Initial upload via /sync/push in batches (idempotent mutation ids; resumable after interruption)
+   ↓ 8. Server validation: applied → synced; rejected → quarantined locally (shown, never deleted)
+   ↓ 9. Pull from cursor 0 (brings children created on other devices)
+   ↓ 10. If both sides have children: show both, parent decides merge or keep (no auto-merge)
+   ↓ 11. Enable incremental sync
+</pre>
+<p><b>بالعربي:</b></p>
+<ol>
+<li>ترقية محلية بدون إنترنت: قراءة كل طفل لوحده بتسامح، والطفل التالف يُعزل ولا يوقف الباقي.</li>
+<li>كتابة كل الصفوف في SQLite داخل معاملة واحدة، مع ترك كتلة Hive كما هي كنسخة احتياطية لمدة إصدارين على الأقل.</li>
+<li>مطابقة الأعداد والـ checksums؛ لو حصل اختلاف نتراجع ونستمر على Hive.</li>
+<li>توحيد المعرّفات: <code>'local-child'</code> والمعرّفات غير UUID تتحول إلى UUIDv7، مع حفظ المعرّف القديم.</li>
+<li>ولي الأمر ينشئ حسابًا أو يسجل الدخول، خلف بوابة الأهل.</li>
+<li>ولي الأمر يؤكد ربط كل طفل بحسابه؛ الطفل غير المربوط يبقى محليًا.</li>
+<li>رفع أولي على دفعات، محمي من التكرار، ويكمل من حيث توقف لو انقطع.</li>
+<li>ما يرفضه السيرفر يُعزل محليًا ويُعرض، ولا يُحذف أبدًا.</li>
+<li>سحب من المؤشر 0 لجلب الأطفال من الأجهزة الأخرى.</li>
+<li>لو يوجد أطفال على الطرفين، يُعرض الاثنان وولي الأمر يقرر الدمج أو الإبقاء منفصلين، بدون دمج تلقائي.</li>
+<li>تفعيل المزامنة التزايدية.</li>
+</ol>
+<p><b>ضمانات إضافية:</b></p>
+<ul>
+<li>وضع تجربة (dry-run) للترحيل في نسخ Debug.</li>
+<li>مصفوفة اختبار من بيانات حقيقية مجهولة الهوية من كل إصدار حفظ قديم (v1 وv2 وv3، وكل إصدار لحالة الدروس).</li>
+<li>علامة نجاح محلية، بدون إرسال أي بيانات.</li>
+<li>زر "تصدير إنقاذ" في ركن الأهل يكتب البيانات المحلية الخام في ملف يختاره المستخدم.</li>
+</ul>
+
+<h2>19. خطة التطوير</h2>
+<table>
+<tr><th>المرحلة</th><th>الاسم</th><th>الأولوية</th><th>تعتمد على</th><th>التعقيد</th><th>المخرجات الأساسية</th></tr>
+<tr><td>0</td><td>التحضير، CI، بناء قابل للتكرار، مفتاح التوقيع</td><td>P0</td><td>—</td><td>M</td><td>CI ناجح، AAB للإصدار، تقرير اختبار على جهاز</td></tr>
+<tr><td>1</td><td>إصلاح المشاكل الحالية المهمة + قرار الخصوصية</td><td>P0/P1</td><td>0</td><td>M</td><td>إصدار إصلاحي، وثيقة القرار</td></tr>
+<tr><td>2</td><td>إعادة هيكلة Android: نماذج typed، repositories، drift، ترحيل محلي</td><td>P0</td><td>1</td><td>XL</td><td>تطبيق معاد هيكلته بنفس السلوك تمامًا</td></tr>
+<tr><td>3</td><td>تصميم قاعدة البيانات وعقد الـ API (OpenAPI، مواصفات المزامنة، نموذج التهديدات)</td><td>P1</td><td>2</td><td>M</td><td>openapi.yaml، ERD، مواصفات المزامنة</td></tr>
+<tr><td>4</td><td>نواة الـ Backend + تسجيل الدخول</td><td>P1</td><td>3</td><td>L</td><td>خدمة API، اختبارات تسجيل الدخول</td></tr>
+<tr><td>5</td><td>ربط Android بالـ API (حسابات اختيارية)</td><td>P1</td><td>4</td><td>M</td><td>تطبيق مع دخول اختياري</td></tr>
+<tr><td>6</td><td>المزامنة</td><td>P1</td><td>5</td><td>XL</td><td>مزامنة بين أكثر من جهاز، تقرير اختبار</td></tr>
+<tr><td>7</td><td>تطبيق الويب (Flutter Web)</td><td>P2</td><td>6</td><td>M–L</td><td>تطبيق ويب على staging</td></tr>
+<tr><td>8</td><td>تقوية الأمان + اختبار اختراق</td><td>P1</td><td>4–7</td><td>M</td><td>تقرير الاختبار والإصلاحات</td></tr>
+<tr><td>9</td><td>الاختبار وضمان الجودة (أجهزة، إمكانية وصول، تحميل)</td><td>P1</td><td>7</td><td>M–L</td><td>اعتماد الجودة</td></tr>
+<tr><td>10</td><td>Staging</td><td>P1</td><td>9</td><td>S–M</td><td>نسخ مرشحة، اختبار مغلق</td></tr>
+<tr><td>11</td><td>الإنتاج (طرح تدريجي)</td><td>P1</td><td>10</td><td>M</td><td>نظام يعمل، لوحات مراقبة، أدلة تشغيل</td></tr>
+</table>
+<p class="small">الأولويات: P0 حرج · P1 عالي · P2 متوسط · P3 تحسين. لم نضع مدة زمنية بالأسابيع لأن حجم الفريق ومدى تفرغه ونطاق بوابة الأهل غير معروفين، وأي رقم سيكون دقة زائفة. يُعاد التقدير بعد المرحلة 0. التفاصيل الكاملة لكل مرحلة (الهدف، المهام، المخاطر، المهارات) في <code>Development_Roadmap.md</code>.</p>
+
+<h2>20. المخاطر</h2>
+<table>
+<tr><th>الخطر</th><th>الاحتمال</th><th>التأثير</th><th>التخفيف</th></tr>
+<tr><td>عدم الالتزام بقوانين خصوصية الأطفال</td><td>متوسط</td><td>عالٍ جدًا</td><td>مراجعة قانونية في المرحلة 1؛ الحساب ملك ولي الأمر؛ موافقة؛ تقليل البيانات؛ لا رفع للصور افتراضيًا؛ تصدير وحذف</td></tr>
+<tr><td>فقد بيانات أثناء الترحيل المحلي</td><td>منخفض إلى متوسط</td><td>عالٍ جدًا</td><td>ترحيل داخل معاملة، checksums، الإبقاء على نسخة Hive، تصدير إنقاذ، مصفوفة اختبارات</td></tr>
+<tr><td>أخطاء المزامنة (فقد أو تكرار التقدم)</td><td>متوسط</td><td>عالٍ</td><td>قواعد دمج لكل كيان، منع التكرار، اختبارات property-based وعلى جهازين، العزل بدل الحذف</td></tr>
+<tr><td>خسارة ثقة "بدون صلاحيات / بدون إنترنت"</td><td>متوسط</td><td>متوسط</td><td>الحسابات اختيارية؛ شرح واضح؛ لا Analytics</td></tr>
+<tr><td>ضياع مفتاح التوقيع</td><td>منخفض</td><td>عالٍ جدًا</td><td>Play App Signing، نسختان احتياطيتان غير متصلتين، توثيق المسؤولية</td></tr>
+<tr><td>أعطال في المشاهد بسبب إعادة الهيكلة</td><td>متوسط</td><td>متوسط</td><td>الـ 203 اختبار الحالية + golden؛ إصدار إعادة هيكلة بنفس السلوك قبل أي عمل على الـ Backend</td></tr>
+<tr><td>أداء Flutter Web (حجم الحزمة وأول تحميل)</td><td>متوسط</td><td>متوسط</td><td>تحميل مؤجل، تحسين الأصول، تخزين مؤقت؛ Next.js فقط لصفحة تعريفية عامة</td></tr>
+<tr><td>فريق صغير / مطور واحد</td><td>عالٍ</td><td>عالٍ</td><td>CI، توثيق، أدوات قابلة للتكرار، قاعدة بيانات مُدارة لتقليل عبء التشغيل</td></tr>
+<tr><td>الاستيلاء على حساب</td><td>منخفض</td><td>عالٍ</td><td>Argon2id، حدود المعدل، تدوير التوكنات مع كشف إعادة الاستخدام، تنبيهات، تحقق بخطوتين لاحقًا</td></tr>
+</table>
+
+<h2>21. التوصية النهائية</h2>
+<div class="callout"><b>B — إعادة هيكلة التطبيق الحالي.</b>
+<ul>
+<li>نحتفظ بعميل Flutter (Android + ويب من كود واحد).</li>
+<li>نعيد بناء طبقة البيانات: نماذج typed، repositories، drift/SQLite، outbox.</li>
+<li>نضيف Backend بـ <b>NestJS + PostgreSQL</b> بعقد <b>REST/OpenAPI</b>.</li>
+<li><b>تسجيل دخول بالإيميل لولي الأمر</b>: Argon2id، وJWT صالح 15 دقيقة، وrefresh tokens تتدوّر مع كشف إعادة الاستخدام، وتخزين في Keystore أو cookies من نوع HttpOnly.</li>
+<li><b>مزامنة تعمل بدون إنترنت أولًا</b>: push/pull بمؤشرات change_seq، وتغييرات محمية من التكرار، وتحكم متفائل بالتزامن، وقواعد دمج لكل كيان لا تضيع بيانات التعلم بصمت أبدًا.</li>
+</ul>
+<b>شرط مسبق:</b> مراجعة قرار "لا حسابات ولا إرسال بيانات" مع رأي قانوني وخاص بالخصوصية قبل المرحلة 3.</div>
+
+<h2 class="pb">ملحق أ: البيئات</h2>
+<table>
+<tr><th></th><th>Development</th><th>Staging</th><th>Production</th></tr>
+<tr><td>Backend</td><td>Docker Compose محليًا مع إعادة تحميل فورية</td><td>نفس صور الإنتاج على VM منفصل</td><td>VM (أو أكثر) مؤمّن</td></tr>
+<tr><td>قاعدة البيانات</td><td>حاوية Postgres محلية ببيانات <b>صناعية</b></td><td>instance مُدار منفصل؛ بيانات صناعية فقط (أبدًا بيانات أطفال حقيقية)</td><td>PostgreSQL مُدار مع PITR</td></tr>
+<tr><td>عنوان الـ API</td><td class="ltr">http://localhost:3000 (emulator 10.0.2.2)</td><td class="ltr">https://api.staging.&lt;domain&gt;</td><td class="ltr">https://api.&lt;domain&gt;</td></tr>
+<tr><td>Android</td><td>نسخة <code>dev</code> بلاحقة <code>.dev</code>؛ الاتصال غير المشفر مسموح لـ localhost فقط</td><td>نسخة <code>staging</code> بلاحقة <code>.staging</code>؛ HTTPS فقط</td><td>نسخة <code>prod</code>؛ HTTPS فقط؛ كود معمّى</td></tr>
+<tr><td>الإعدادات</td><td><code>.env.example</code> في Git و<code>.env</code> خارجه؛ <code>--dart-define-from-file=env/dev.json</code></td><td>الأسرار في مخزن أسرار CI أو secret manager</td><td>secret manager؛ تدوير مفاتيح JWT (<code>kid</code>)</td></tr>
+<tr><td>الإيميل</td><td>ملتقط محلي (Mailpit)</td><td>بيئة تجريبية عند المزود</td><td>المزود مع SPF وDKIM وDMARC</td></tr>
+</table>
+<p><b>قواعد عامة:</b></p>
+<ul>
+<li>الأسرار لا تدخل Git أبدًا، مع فحص آلي للأسرار في CI.</li>
+<li>لكل بيئة بيانات دخول ومفاتيح JWT خاصة بها.</li>
+<li>الإعدادات يُتحقق منها عند التشغيل.</li>
+<li>تطبيقات العميل تحتوي على إعدادات عامة فقط (عنوان الـ API)، وأبدًا أسرار.</li>
+</ul>
+
+<h2>ملحق ب: شكل المشاريع المستقبلي (مقترح، لم يُنشأ)</h2>
+<pre>
+/science-adventure
+├── apps/
+│   ├── mobile/            Flutter app shell (Android) — flavours dev/staging/prod
+│   └── web/               Flutter Web shell (main_web.dart, web/index.html, CSP)
+├── packages/
+│   ├── domain/            typed models, merge rules, validators (pure Dart, 100 % unit tested)
+│   ├── data/              repositories, drift DB, outbox, sync engine
+│   ├── api_client/        generated from openapi.yaml
+│   ├── ui/                design system, scenes, Flame games, assets
+│   └── content/           lesson JSON, schemas, migration registry
+├── backend/               NestJS service (src/, prisma/, test/)
+├── database/              ERD, migration notes, seed scripts (synthetic only)
+├── api/                   openapi.yaml (single source of truth)
+├── infrastructure/        docker-compose.*.yml, Caddyfile, backup scripts, runbooks
+├── tools/content/         Python content pipeline + validators
+├── docs/                  ADRs, privacy, threat model, runbooks
+└── .github/workflows/     ci-mobile.yml, ci-backend.yml, deploy.yml, security-scan.yml
+</pre>
+<p>نوصي بمستودع واحد (monorepo، باستخدام melos لحزم Dart)، حتى يتغير عقد الـ API وعميل Dart والسيرفر معًا في نفس التعديل.</p>
+</body></html>

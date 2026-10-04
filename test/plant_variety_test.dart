@@ -159,10 +159,7 @@ void main() {
           }
         }
         await helpers.tapVisible(t, find.text('Check my discovery'));
-        expect(
-          find.textContaining('You looked really carefully!'),
-          findsOneWidget,
-        );
+        expect(find.textContaining(step.shortExplanation), findsOneWidget);
         expect(
           store.data.journeys[lesson.id]!['current']['outcome'],
           'firstTry',

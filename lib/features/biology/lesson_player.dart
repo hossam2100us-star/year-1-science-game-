@@ -2,6 +2,9 @@ import 'dart:async';
 
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/answer_summary.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
 
@@ -51,8 +54,13 @@ class LessonRoute extends ConsumerWidget {
 }
 
 class LessonPlayer extends ConsumerStatefulWidget {
-  const LessonPlayer({super.key, required this.lesson});
+  const LessonPlayer({
+    super.key,
+    required this.lesson,
+    this.onPracticeComplete,
+  });
   final Lesson lesson;
+  final Future<void> Function(DecisionOutcome)? onPracticeComplete;
   @override
   ConsumerState<LessonPlayer> createState() => _LessonPlayerState();
 }
@@ -88,6 +96,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     return LessonStep({
       ...current.json,
       ...Map<String, dynamic>.from(legacy),
+      'shortExplanation': legacy['shortExplanation'] ?? legacy['explanation'],
       'soundScene': {
         ...Map<String, dynamic>.from(current.json['soundScene'] ?? {}),
         ...Map<String, dynamic>.from(legacy['soundScene'] ?? {}),
@@ -95,15 +104,24 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     });
   }
 
-  bool get _guidedCorrection => step.json['correctionUi'] is Map;
+  bool get _guidedCorrection => step.assessed && step.answer != null;
   bool get _answerLocked => _engine.done && !_needsCorrection;
   String _correctionText(String key) =>
-      step.json['correctionUi'][key] as String;
+      step.json['correctionUi']?[key] as String? ??
+      const {
+        'start': 'Now try the discovery yourself.',
+        'retry': 'Look again, then change your choice.',
+        'complete': 'You corrected it yourself. Keep exploring!',
+        'review': 'Look again',
+        'check': 'Check my changes',
+      }[key]!;
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    final saved = ref.read(appProvider).journeys[widget.lesson.id];
+    final saved = widget.onPracticeComplete == null
+        ? ref.read(appProvider).journeys[widget.lesson.id]
+        : null;
     _session = saved != null && LessonSession.canRestore(widget.lesson, saved)
         ? LessonSession.restore(widget.lesson, saved)
         : LessonSession.fresh(widget.lesson);
@@ -243,7 +261,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     'outcome': _engine.outcome?.name,
   };
   Future<void> _persist() {
-    if (_complete) return Future.value();
+    if (_complete || widget.onPracticeComplete != null) return Future.value();
     _session.current = _snapshot();
     final snapshot = _session.toJson();
     // Copy nested collections before the next interaction mutates the session.
@@ -406,13 +424,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       _feedback += ' ${_correctionText('start')} ${_answerReference()}';
     } else if (_engine.done) {
       _reviewItems.clear();
-      final value = step.answer!['value'];
-      if (step.isMapping)
-        _placements = Map<String, String>.from(value);
-      else if (value is List)
-        _selected = Set<String>.from(value);
-      else
-        _selected = {value as String};
+      // Keep the learner's accepted words and ordering, including aliases.
+      // Post-explanation correction is checked separately without regrading.
       if (success) _game.celebration = 1.2;
     } else {
       _game.wobble = .65;
@@ -530,9 +543,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       _session.current = Map<String, dynamic>.from(
         saved['resumeState'] ?? saved,
       );
-      await ref
-          .read(appProvider.notifier)
-          .saveJourney(widget.lesson.id, _session.toJson());
+      if (widget.onPracticeComplete == null) {
+        await ref
+            .read(appProvider.notifier)
+            .saveJourney(widget.lesson.id, _session.toJson());
+      }
       _game.pauseEngine();
       _prepare();
     } catch (_) {
@@ -568,15 +583,24 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                   {},
             );
       if (_session.finished) {
+        if (widget.onPracticeComplete != null) {
+          await widget.onPracticeComplete!(
+            _engine.outcome ?? DecisionOutcome.explained,
+          );
+          if (mounted) Navigator.of(context).pop();
+          return;
+        }
         await ref.read(appProvider.notifier).completeJourney(_session.result());
         if (mounted) {
           setState(() => _complete = true);
           _say(_resultText);
         }
       } else {
-        await ref
-            .read(appProvider.notifier)
-            .saveJourney(widget.lesson.id, _session.toJson());
+        if (widget.onPracticeComplete == null) {
+          await ref
+              .read(appProvider.notifier)
+              .saveJourney(widget.lesson.id, _session.toJson());
+        }
         _game.pauseEngine();
         _prepare();
       }
@@ -643,6 +667,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   @override
   Widget build(BuildContext context) {
+    // A practice save can notify providers while its route is popping. There
+    // is no next step in this one-discovery session to render during that frame.
+    if (widget.onPracticeComplete != null && _session.finished) {
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    }
     final profile = ref.watch(appProvider).profile;
     if (_complete) return _completion(context);
     if (step.json['experiment'] == 'light') {
@@ -912,7 +941,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                     onSound: _playSound,
                                     onSpeak: (text) {
                                       ScienceAudio.stop();
-                                      if (_guidedForces) {
+                                      if (_guidedForces ||
+                                          step.kind == 'explore') {
                                         final stories =
                                             step.json['forceScene']?['gardenStories']
                                                 as Map?;
@@ -978,7 +1008,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                               step: step,
                               selected: _selected,
                               placements: _placements,
-                              done: _engine.done || _freeDone,
+                              done: _answerLocked || _freeDone,
                               girl: profile?.gender == ChildGender.girl,
                               onItem: _item,
                               onPlace: _place,
@@ -998,7 +1028,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                               selected: _selected,
                               touched: _touched,
                               placements: _placements,
-                              done: _engine.done,
+                              done: _answerLocked,
                               assembled: {
                                 for (final previous in widget.lesson.steps.take(
                                   _session.index,
@@ -1021,7 +1051,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                               step: step,
                               selected: _selected,
                               placements: _placements,
-                              done: _engine.done,
+                              done: _answerLocked,
                               onItem: _item,
                               onPlace: _place,
                             )
@@ -1048,7 +1078,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                               !_ourselves &&
                               !_plantLab &&
                               !_plantMission &&
-                              !_engine.done &&
+                              !_answerLocked &&
                               !_freeDone &&
                               _frame == 0)
                             Wrap(
@@ -1079,7 +1109,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                               !_plantLab &&
                               !_plantMission &&
                               step.isMapping &&
-                              !_engine.done) ...[
+                              !_answerLocked) ...[
                             const SizedBox(height: 10),
                             Wrap(
                               spacing: 8,
@@ -1105,32 +1135,35 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                             if (_placements.isNotEmpty)
                               Padding(
                                 padding: const EdgeInsets.all(8),
-                                child: Text(
-                                  _placements.entries
-                                      .map(
-                                        (e) =>
-                                            '${step.label(e.key)} → ${step.kind == 'label-diagram' ? 'Place ${step.targets.indexWhere((t) => t.id == e.value) + 1}' : step.label(e.value)}',
-                                      )
-                                      .join(' • '),
+                                child: AnswerSummary(
+                                  pairs: [
+                                    for (final e in _placements.entries)
+                                      (
+                                        step.label(e.key),
+                                        step.kind == 'label-diagram'
+                                            ? 'Place ${step.targets.indexWhere((t) => t.id == e.value) + 1}'
+                                            : step.label(e.value),
+                                      ),
+                                  ],
                                 ),
                               ),
                           ],
                           if (_answerLocked)
                             Padding(
                               padding: const EdgeInsets.all(12),
-                              child: Text(
-                                step.isMapping
-                                    ? _placements.entries
-                                          .map(
-                                            (e) =>
-                                                '${step.label(e.key)} → ${step.label(e.value)}',
-                                          )
-                                          .join(' • ')
-                                    : _selected.map(step.label).join(' → '),
-                                style: const TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                              child: AnswerSummary(
+                                pairs: step.isMapping
+                                    ? [
+                                        for (final e in _placements.entries)
+                                          (
+                                            step.label(e.key),
+                                            step.label(e.value),
+                                          ),
+                                      ]
+                                    : const [],
+                                sequence: step.isMapping
+                                    ? const []
+                                    : _selected.map(step.label).toList(),
                               ),
                             ),
                           if (step.kind == 'free-measure' && !_freeDone)
@@ -1182,7 +1215,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
               child: Text(
                 _saveFailed
                     ? 'Saving needs help. Your last saved step is safe.'
-                    : _feedback,
+                    : _visibleFeedback,
                 key: const ValueKey('lesson-feedback'),
                 style: const TextStyle(fontSize: 19),
               ),
@@ -1237,6 +1270,15 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       ],
     ),
   );
+
+  String get _visibleFeedback {
+    if (_engine.done &&
+        step.explanation.isNotEmpty &&
+        _feedback.contains(step.explanation)) {
+      return '${step.shortExplanation}${_needsCorrection ? ' Now try it yourself.' : ''}';
+    }
+    return _feedback;
+  }
 
   Widget _measure() => _ourselves
       ? ShoeMeasure(

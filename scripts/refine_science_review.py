@@ -178,6 +178,8 @@ def refine_science_review(book):
     refine_sound(book)
     from child_feedback import apply_child_feedback
     apply_child_feedback(book)
+    from refine_latest_teacher_review import refine_latest_teacher_review
+    refine_latest_teacher_review(book)
 
 if __name__ == '__main__':
     root = Path(__file__).resolve().parents[1] / 'assets/content/playable'

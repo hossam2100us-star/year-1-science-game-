@@ -155,6 +155,7 @@ class SciencePicture extends StatelessWidget {
   final String art;
   final double height;
   static bool has(String id) =>
+      id == 'book' ||
       _forceCutouts.containsKey(id) ||
       soundSpriteCells.containsKey(id) ||
       soundDetailCells.containsKey(id) ||
@@ -164,6 +165,13 @@ class SciencePicture extends StatelessWidget {
       ['leaf', 'bird', 'cat'].contains(id);
   @override
   Widget build(BuildContext context) {
+    if (art == 'book') {
+      return SizedBox(
+        height: height,
+        width: height * 1.25,
+        child: const IllustratedArt(asset: 'book-v1.png'),
+      );
+    }
     if (art == 'magnet') return MagnetPicture(height: height);
     // Reuse the accepted transparent illustrations across subjects. Static
     // assessed scenes use the resting pose and never play an outcome animation.

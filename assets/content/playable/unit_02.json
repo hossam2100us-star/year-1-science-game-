@@ -63,7 +63,8 @@
         "leaf": "Leaf — \"the plant's kitchen\". Leaves catch the sunlight and use it to make the plant's food.",
         "flower": "Flower — \"where the babies are made\". The flower makes the seeds that grow into new plants."
       },
-      "spokenPrompt": "Touch a hand button to discover a plant part. Follow its line to the part."
+      "spokenPrompt": "Touch a hand button to discover a plant part. Follow its line to the part.",
+      "shortExplanation": ""
     },
     {
       "id": "unit_02.step.006",
@@ -123,7 +124,8 @@
       },
       "completionText": "You built a whole plant!",
       "retryText": "Try another place for this part.",
-      "spokenPrompt": "Build a plant in the pot. Choose a piece, then touch a hand button where it belongs, or drag it there."
+      "spokenPrompt": "Build a plant in the pot. Choose a piece, then touch a hand button where it belongs, or drag it there.",
+      "shortExplanation": "Roots take in water."
     },
     {
       "id": "unit_02.step.010",
@@ -195,7 +197,8 @@
         "continue": "Keep exploring",
         "saveError": "Could not save yet. Please try again.",
         "predict": "Make a guess, then water the bean."
-      }
+      },
+      "shortExplanation": "The root comes first."
     },
     {
       "id": "unit_02.step.011",
@@ -265,7 +268,8 @@
         "kindComparison": "You made a prediction and looked carefully!",
         "continue": "Keep exploring",
         "saveError": "Could not save yet. Tap to try again. Your last saved step is safe."
-      }
+      },
+      "shortExplanation": "The plant in the dark becomes pale and floppy."
     },
     {
       "id": "unit_02.fridge.v2",
@@ -431,7 +435,8 @@
           "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
         }
       ],
-      "playScene": "plant-mission"
+      "playScene": "plant-mission",
+      "shortExplanation": "Roots: carrots; stems: celery; leaves: lettuce; flowers: broccoli; seeds: beans."
     },
     {
       "id": "unit_02.step.025",
@@ -535,7 +540,8 @@
           "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
         }
       ],
-      "playScene": "plant-mission"
+      "playScene": "plant-mission",
+      "shortExplanation": "Roots take in water; stems support; leaves make food; flowers produce seeds."
     },
     {
       "id": "unit_02.bean-trail.v2",
@@ -592,7 +598,8 @@
         "answerKeyText": "The root comes first — the seed needs a drink before it can grow upwards.",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "playScene": "plant-mission"
+      "playScene": "plant-mission",
+      "shortExplanation": "Day 1: seed; day 4: root; day 7: shoot; day 8: green leaves."
     },
     {
       "id": "unit_02.step.027",
@@ -647,7 +654,8 @@
         "answerKeyText": "Water and light. (Warmth and air are also correct if he says them.)",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "playScene": "plant-mission"
+      "playScene": "plant-mission",
+      "shortExplanation": "A plant needs water and light to stay healthy."
     },
     {
       "id": "unit_02.step.028",
@@ -727,7 +735,8 @@
           "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
         }
       ],
-      "playScene": "plant-mission"
+      "playScene": "plant-mission",
+      "shortExplanation": "Without light, the plant has pale yellow leaves and a thin, floppy stem."
     },
     {
       "id": "unit_02.seed-care.v2",
@@ -769,7 +778,8 @@
         "answerKeyText": "a) TRUE b) FALSE — a plant is a living thing c) TRUE",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "playScene": "plant-mission"
+      "playScene": "plant-mission",
+      "shortExplanation": "A seed needs water to start growing."
     },
     {
       "id": "unit_02.step.030",
@@ -811,7 +821,8 @@
         "answerKeyText": "a) TRUE b) FALSE — a plant is a living thing c) TRUE",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "playScene": "plant-mission"
+      "playScene": "plant-mission",
+      "shortExplanation": "A plant is a living thing."
     },
     {
       "id": "unit_02.step.037",
@@ -872,7 +883,8 @@
           "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
         }
       ],
-      "playScene": "plant-mission"
+      "playScene": "plant-mission",
+      "shortExplanation": "Leaves make the plant's food using sunlight."
     },
     {
       "id": "unit_02.step.032",
@@ -930,7 +942,8 @@
         "flower": "Flower — \"where the babies are made\". The flower makes the seeds that grow into new plants."
       },
       "retryText": "Try another place for this part.",
-      "spokenPrompt": "Make your own plant. Choose a piece, then touch a hand button where it belongs. You can drag the piece there too."
+      "spokenPrompt": "Make your own plant. Choose a piece, then touch a hand button where it belongs. You can drag the piece there too.",
+      "shortExplanation": "You made a plant with roots, stem, leaf and flower."
     },
     {
       "id": "unit_02.step.033",
@@ -972,7 +985,8 @@
         "answerKeyText": "It would dry out: the leaves would droop and go brown, and in the end the plant would die.",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "playScene": "plant-mission"
+      "playScene": "plant-mission",
+      "shortExplanation": "Without water, leaves droop and turn brown; the plant dries out and can die."
     }
   ],
   "stickers": [
@@ -1177,5 +1191,111 @@
     "unit_02.step.037",
     "unit_02.step.032",
     "unit_02.step.033"
+  ],
+  "goalActivities": [
+    {
+      "objective": "u02.main.08",
+      "text": "Sort familiar vegetable pictures into roots, stems, leaves, flowers and seeds. Discuss one tricky example.",
+      "safety": "An adult prepares materials. Use clean beans and pots; do not eat experiment seeds or plants.",
+      "pages": [
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u02.main.01",
+      "text": "Use a plant picture to find roots, stem, leaves and flowers. Match them to taking in water, support, food-making and seed-making.",
+      "safety": "An adult prepares materials. Use clean beans and pots; do not eat experiment seeds or plants.",
+      "pages": [
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u02.main.02",
+      "text": "Draw a bean growing over several days. Ask your child to place root, shoot and leaves in order.",
+      "safety": "An adult prepares materials. Use clean beans and pots; do not eat experiment seeds or plants.",
+      "pages": [
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u02.main.03",
+      "text": "Compare photographs of healthy and pale plants. Ask what plants need to grow well.",
+      "safety": "An adult prepares materials. Use clean beans and pots; do not eat experiment seeds or plants.",
+      "pages": [
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u02.main.04",
+      "text": "Look at the light-test pictures together. Ask what changed in the plant kept in darkness.",
+      "safety": "An adult prepares materials. Use clean beans and pots; do not eat experiment seeds or plants.",
+      "pages": [
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u02.main.05",
+      "text": "Compare dry and damp bean pictures with an adult. Ask why water helps a seed start growing, and why a growing plant is alive.",
+      "safety": "An adult prepares materials. Use clean beans and pots; do not eat experiment seeds or plants.",
+      "pages": [
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u02.choice.02",
+      "text": "Look at leaves on a plant picture. Ask how sunlight helps leaves make the plant's food.",
+      "safety": "An adult prepares materials. Use clean beans and pots; do not eat experiment seeds or plants.",
+      "pages": [
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u02.main.07",
+      "text": "Check a houseplant together. Ask what may happen if it has no water.",
+      "safety": "An adult prepares materials. Use clean beans and pots; do not eat experiment seeds or plants.",
+      "pages": [
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
   ]
 }

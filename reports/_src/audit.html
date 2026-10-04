@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Software Technical Audit Report — Science Adventure</title>
+<link rel="stylesheet" href="report.css"></head><body>
+
+<div class="cover">
+  <h1>Software Technical Audit Report</h1>
+  <div class="sub">Science Adventure — offline Flutter science game for children (Android)</div>
+  <div class="score">63 / 100 <span style="font-size:16pt;color:#5b6b7c">Acceptable</span></div>
+  <div class="meta">
+    <p><b>Application:</b> <code>science_adventure</code> 0.3.0+3 · package <code>com.scienceadventure.app</code></p>
+    <p><b>Commit audited:</b> <code>9fbdaf4</code> on <code>main</code> · <b>Date:</b> 2026-10-04</p>
+    <p><b>Mode:</b> STRICT READ-ONLY. No source, build, manifest or dependency file was modified.</p>
+    <p><b>Roles applied:</b> Software Architect · Android/Flutter · Web · Backend · DB · Security · UI/UX · QA · DevOps · Code Review</p>
+    <p><b>Companion documents:</b> Future_System_Architecture.pdf · Issues_Register.md · Security_Findings.md · Test_Results.md · Architecture_Diagrams.md · Development_Roadmap.md · Executive_Summary.md</p>
+  </div>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Executive Summary</li><li>Project Overview</li><li>Technology Stack</li><li>Current Architecture</li><li>Code Quality Review</li>
+<li>Security Review</li><li>UI/UX Review</li><li>Performance Review</li><li>Functional Test Results</li><li>Testing Review</li>
+<li>Dependency Review</li><li>Strengths</li><li>Weaknesses</li><li>Critical Issues</li><li>Technical Debt</li>
+<li>Issues Register</li><li>Score</li><li>Recommendations</li><li>Final Technical Assessment</li><li>Appendix: Method, Evidence and Git Safety</li>
+</ol>
+
+<h2>1. Executive Summary</h2>
+<p>Science Adventure is a well-intentioned, privacy-respecting <b>offline</b> learning game. The project is called an "Android app", but it is actually built with <b>Flutter</b>: 83 Dart files and ≈22,400 lines in <code>lib/</code>, plus a thin Kotlin host. The code compiles cleanly, all <b>203 automated tests pass</b>, a debug APK builds, and the APK requests <b>no Android platform permissions</b>. Security and privacy are the strongest areas.</p>
+<p>The main weaknesses are structural. A single machine holds the toolchain and there is no CI. One 1,391-line widget runs most of the gameplay. State is untyped JSON maps. The whole save (every child, including base64 photos) is rewritten as one Hive value every 10 seconds and on every interaction. These issues do not hurt today's single-device, offline use much, but they are the main <b>blockers</b> to turning the product into Android + Web + Backend + Central Database with sync.</p>
+<div class="callout"><b>Verdict:</b> Overall <b>63/100 (Acceptable)</b>. Recommendation <b>B — Refactor the existing application</b>, not a rewrite. Flutter already targets the web, so the game can be reused. The data layer must be rebuilt (typed models + SQLite + outbox) <i>before</i> backend and sync work starts.<br>
+<b>Issues:</b> 0 Critical · 4 High · 8 Medium · 8 Low · 2 Info.</div>
+
+<h2>2. Project Overview</h2>
+<table>
+<tr><th style="width:28%">Item</th><th>Observation</th></tr>
+<tr><td>Purpose</td><td>Science curriculum game (based on the parent-supplied book "Science Made Simple") for young children. It teaches through interactive scenes: alive/not alive, plants, ourselves, materials, forces, sound, electricity and magnets, Earth and space.</td></tr>
+<tr><td>Content</td><td>4 islands · 13 playable lessons (9 units + 4 quizzes) in <code>assets/content/playable/*.json</code> (436 KB), validated against <code>schemas/lesson.schema.json</code> by Python scripts</td></tr>
+<tr><td>Users</td><td>Children (multiple local profiles) and parents (parent area behind a multiplication gate)</td></tr>
+<tr><td>Platforms</td><td>Android (minSdk 24, targetSdk 36, landscape-locked). A web build exists for previews only. No iOS project.</td></tr>
+<tr><td>Data</td><td>Local only: child profile (first name, gender, avatar or photo, palette), settings, assessment attempts, in-progress lesson "journeys", and daily usage seconds</td></tr>
+<tr><td>Connectivity</td><td>None. No INTERNET permission. TTS uses offline voices only.</td></tr>
+<tr><td>Repo size</td><td>324 tracked files. Git pack 83.5 MB (dominated by images). 31 design and review documents in <code>docs/</code>, plus a 705-line <code>GAME_MASTER_INSTRUCTIONS.md</code></td></tr>
+<tr><td>History</td><td>17 commits between 2026-09-24 and 2026-10-04 (rapid, feature-heavy iterations)</td></tr>
+</table>
+
+<h2>3. Technology Stack</h2>
+<table>
+<tr><th>Layer</th><th>Technology (exact versions)</th><th>Notes</th></tr>
+<tr><td>Language / SDK</td><td>Dart 3.13.4 · Flutter 3.47.5 (pinned in <code>.flutter-version</code>)</td><td>Toolchain stored in gitignored <code>.tools/</code></td></tr>
+<tr><td>Android host</td><td>Kotlin <code>MainActivity</code>; AGP 9.1.0; Kotlin 2.4.0; Gradle 9.3.1 (SHA-256 pinned); JDK 21; Java/Kotlin target 17; compileSdk 36; NDK 28.2</td><td>Release: R8 minify and resource shrinking on; signing from untracked <code>key.properties</code></td></tr>
+<tr><td>State management</td><td>flutter_riverpod 3.4.3</td><td><code>Notifier&lt;AppData&gt;</code> with a serialised write queue</td></tr>
+<tr><td>Persistence</td><td>hive 2.2.3 / hive_flutter 1.1.0</td><td>One <code>Box&lt;String&gt;</code>, one key <code>data</code> (JSON)</td></tr>
+<tr><td>Game engine</td><td>flame 1.38.2</td><td>Scenes, sprite/atlas painting</td></tr>
+<tr><td>Media</td><td>flutter_tts 4.2.5 · lottie 3.6.1 · native MediaPlayer via MethodChannel</td><td>Offline voices filtered</td></tr>
+<tr><td>Device</td><td>image_picker 1.2.3 · path_provider 2.1.6</td><td>System photo picker, no storage permission</td></tr>
+<tr><td>i18n</td><td>flutter_localizations; inline <code>t(ar, en)</code> helpers</td><td>No ARB files</td></tr>
+<tr><td>Fonts / assets</td><td>Fredoka, Nunito, Cairo (OFL) · 26 bundled images (WebP/PNG) · 12 WAV</td><td>Original AI-generated art (see CREDITS.md)</td></tr>
+<tr><td>Tooling</td><td>PowerShell build scripts; Python content pipeline (jsonschema)</td><td>No CI</td></tr>
+<tr><td>Tests</td><td>flutter_test (35 files, 203 tests); 1 Python test</td><td>No integration_test / goldens</td></tr>
+<tr><td>Not present</td><td>Network/HTTP, REST, database server, authentication, analytics, crash reporting, DI framework, code generation</td><td>—</td></tr>
+</table>
+
+<h2>4. Current Architecture</h2>
+<p><b>Style:</b> a <b>custom feature-folder architecture with Riverpod state</b>, close to a simplified MVVM. There is a separate <code>core</code> layer (models, storage, providers, design system) and feature folders (<code>features/biology</code>, <code>plants</code>, <code>science</code>, <code>garden</code>, <code>world</code>, <code>onboarding</code>, <code>parent</code>). It is <i>not</i> Clean Architecture. There is no domain or use-case layer, and most gameplay logic and save migrations live inside <code>StatefulWidget</code>s.</p>
+<pre>
+ ┌──────────────────────────── UI LAYER (Flutter widgets) ────────────────────────────┐
+ │ AdventureHome ─► ChildChooser/ProfileEditor ─► SubjectHub ─► WorldMap              │
+ │                                                     └─► LessonPlayer (1,391 LOC)   │
+ │ ParentGate ─► ParentArea / UnitReport / VoiceSettings      └─► scene widgets       │
+ └───────────────┬───────────────────────────────┬─────────────────────┬──────────────┘
+                 │ ref.watch / ref.read           │ Flame GameWidget     │ MethodChannel
+ ┌───────────────▼──────────────┐  ┌──────────────▼────────────┐  ┌─────▼──────────────┐
+ │ STATE (Riverpod)             │  │ GAME LAYER (Flame)        │  │ Kotlin MainActivity│
+ │ AppController: AppData       │  │ DiscoveryGame, GardenScene│  │ allowlisted sounds │
+ │ lessonLibraryProvider        │  │ Bean/Light/PlantLab games │  └────────────────────┘
+ │ NarrationService (TTS)       │  └──────────────┬────────────┘
+ └───────────────┬──────────────┘                 │
+ ┌───────────────▼──────────────┐  ┌──────────────▼────────────┐
+ │ DATA: ProgressStore iface    │  │ BUNDLED ASSETS            │
+ │  └ HiveProgressStore         │  │ catalog.json, 13 lessons, │
+ │     box 'science_adventure_v1│  │ 26 images, 12 WAV, fonts  │
+ │     key 'data' = 1 JSON blob │  └───────────────────────────┘
+ └──────────────────────────────┘
+</pre>
+<table>
+<tr><th>Criterion</th><th>Rating</th><th>Reason</th></tr>
+<tr><td>Separation of concerns</td><td>Fair</td><td>Core models and domain rules (<code>AttemptRecorder</code>, <code>addUsage</code>, unlock rules) are pure and testable. Scene logic, persistence snapshots and migrations sit in widgets.</td></tr>
+<tr><td>Modularity</td><td>Fair</td><td>Feature folders exist, but <code>lesson_player.dart</code> imports 20+ features. Dependency direction is UI → everything.</td></tr>
+<tr><td>Testability</td><td>Good (unit) / Fair (UI)</td><td>The <code>ProgressStore</code> interface and <code>MemoryProgressStore</code> make state testable. The big widgets need full widget tests.</td></tr>
+<tr><td>Scalability / extensibility</td><td>Weak</td><td>Every new scene type adds branches to <code>LessonPlayer</code> and <code>LessonSession</code>. Content contracts are untyped.</td></tr>
+<tr><td>Maintainability</td><td>Fair</td><td>Readable naming and consistent formatting, but large files and per-unit special cases.</td></tr>
+</table>
+<div class="callout"><b>Fit for Android + Web + Backend + Central DB?</b> <b>Partially.</b> Flutter and Riverpod suit the client side well (one codebase for Android and Web). The persistence and domain layers <b>need refactoring</b> (typed models, repositories, relational local DB, outbox) before sync. Classification: <b>Refactoring</b>, not a partial or full rewrite.</div>
+
+<h2>5. Code Quality Review</h2>
+<table>
+<tr><th>Aspect</th><th>Assessment</th></tr>
+<tr><td>Organisation / folders</td><td>Clear top-level split (<code>core</code>, <code>content</code>, <code>features/*</code>, <code>games</code>, <code>parent</code>). Some misplacement: the <code>LessonPlayer</code> used by every subject lives in <code>features/biology</code>.</td></tr>
+<tr><td>Naming</td><td>Generally descriptive (<code>AttemptRecorder</code>, <code>gardenAdventureComplete</code>). Terse private names in places (<code>_lab</code>, <code>_bean</code>, <code>_light</code> as dynamic maps).</td></tr>
+<tr><td>Formatting / static analysis</td><td><code>dart format</code> style is consistent and <code>flutter analyze</code> is clean, <i>but</i> only 3 lint rules are enabled (AUD-013).</td></tr>
+<tr><td>Immutability</td><td>Good. Models are <code>const</code> with <code>copyWith</code>, and state transitions are pure functions.</td></tr>
+<tr><td>Error handling</td><td>Weak. 32 <code>catch (_)</code> blocks with no logging, and generic "free some space" messages (AUD-009).</td></tr>
+<tr><td>Logging</td><td>None (no logger, no crash reporting). This is privacy-friendly but makes field diagnosis impossible.</td></tr>
+<tr><td>Configuration</td><td>Hard-coded constants (timer 10 s, break 5–30 min, volume factors <code>.5/.35</code> per unit). Preview routes sit in <code>main.dart</code>.</td></tr>
+</table>
+<h3>Findings by smell</h3>
+<table>
+<tr><th>Smell</th><th>Where</th><th>Impact</th><th>Severity</th><th>Suggested fix (not implemented)</th></tr>
+<tr><td>God class / large function</td><td><code>lesson_player.dart</code> 1,391 LOC; <code>build()</code> ≈750 LOC; <code>science_lab.dart</code> 1,209; <code>sound_stage.dart</code> 1,031</td><td>High regression risk, slow onboarding</td><td><span class="badge HIGH">HIGH</span></td><td>Controller + one renderer per <code>playScene</code>, plus a registry</td></tr>
+<tr><td>Primitive obsession / untyped data</td><td>184 <code>json['…']</code> accesses; 23 <code>Map&lt;String,dynamic&gt;</code> in LessonPlayer alone</td><td>Runtime cast errors; no API contract</td><td><span class="badge HIGH">HIGH</span></td><td>freezed / json_serializable models</td></tr>
+<tr><td>Hard-coded special cases</td><td><code>'unit_06.step.008'</code>, per-unit migrations in <code>session.dart</code></td><td>Logic grows with every content revision</td><td><span class="badge MEDIUM">MEDIUM</span></td><td>Versioned migration registry, data-driven variants</td></tr>
+<tr><td>Dead code</td><td><code>force_creature.dart</code> (620 LOC, never imported)</td><td>Confusion, build size</td><td><span class="badge MEDIUM">MEDIUM</span></td><td>Delete</td></tr>
+<tr><td>Unused assets</td><td>24 tracked images not in <code>pubspec.yaml</code> (~45 MB)</td><td>Repo bloat</td><td><span class="badge MEDIUM">MEDIUM</span></td><td>Git LFS or art archive</td></tr>
+<tr><td>Magic numbers</td><td>Volume factors, timer periods, image limits, gate ranges</td><td>Tuning requires code edits</td><td><span class="badge LOW">LOW</span></td><td>Named constants / config</td></tr>
+<tr><td>Side effects in build</td><td><code>narration.configure()</code> in <code>build</code>; <code>FutureBuilder(future: load())</code> in build</td><td>Redundant work, flicker</td><td><span class="badge LOW">LOW</span></td><td><code>ref.listen</code>; cached futures</td></tr>
+<tr><td>Workflow debt</td><td><code>tmp/</code>: 300+ one-off Python patch scripts and logs</td><td>Untracked change process</td><td><span class="badge MEDIUM">MEDIUM</span></td><td>Normal commits plus review and CI</td></tr>
+<tr><td>Circular dependencies</td><td>None found at package level (feature folders import each other one way through LessonPlayer)</td><td>—</td><td><span class="badge INFO">INFO</span></td><td>—</td></tr>
+<tr><td>Unused dependencies</td><td>None. All 8 direct dependencies are imported.</td><td>—</td><td><span class="badge OK">OK</span></td><td>—</td></tr>
+</table>
+
+<h2>6. Security Review</h2>
+<p>Safe static review against OWASP MASVS v2, ASVS and the Mobile Top 10, plus local runtime checks (APK permission dump, network capture of the web preview). No exploitation was done. Full detail: <code>Security_Findings.md</code>.</p>
+<table>
+<tr><th>Area</th><th>Result</th></tr>
+<tr><td>Secrets</td><td><span class="badge OK">PASS</span> None found. Signing material is gitignored.</td></tr>
+<tr><td>Permissions</td><td><span class="badge OK">PASS</span> No platform permissions in the built APK. Only an AndroidX internal signature permission.</td></tr>
+<tr><td>Exported components / deep links / WebView</td><td><span class="badge OK">PASS</span> Launcher activity only, <code>taskAffinity=""</code>, no deep links, no WebView</td></tr>
+<tr><td>Backup / data extraction</td><td><span class="badge OK">PASS</span> <code>allowBackup=false</code>; all domains excluded from cloud backup and device transfer</td></tr>
+<tr><td>Native bridge</td><td><span class="badge OK">PASS</span> Sound names allowlisted (prevents path traversal); volume clamped</td></tr>
+<tr><td>Photo handling</td><td><span class="badge OK">PASS</span> Re-encoded, metadata stripped, size and pixel caps; temp file deleted only inside the app cache</td></tr>
+<tr><td>Network</td><td><span class="badge OK">PASS</span> No network code; all 98 preview requests were local; offline TTS voices only</td></tr>
+<tr><td>Local storage</td><td><span class="badge LOW">LOW</span> Child PII in plaintext Hive inside the sandbox (SEC-01)</td></tr>
+<tr><td>Resilience</td><td><span class="badge LOW">LOW</span> Dart obfuscation not yet configured (SEC-02)</td></tr>
+<tr><td>Parent gate</td><td><span class="badge LOW">LOW</span> Same problem after failure, unlimited tries (SEC-03)</td></tr>
+<tr><td>Input validation</td><td><span class="badge INFO">INFO</span> Name accepts markup but is rendered inertly (SEC-05). Validate when data leaves the device.</td></tr>
+<tr><td>Auth / sessions / tokens</td><td>Not applicable (no accounts). Designed in the future-architecture report.</td></tr>
+</table>
+<p><b>Security score 17/20.</b> The deductions are hardening items, not vulnerabilities.</p>
+
+<h2>7. UI/UX Review</h2>
+<p>Sources: 94 test-generated screenshots in <code>tmp/</code> (1280×800 and 360-wide variants) and live use of the web preview at phone width.</p>
+<table>
+<tr><th>Aspect</th><th>Observation</th><th>Rating</th></tr>
+<tr><td>Overall design</td><td>Warm, consistent cream and teal palette; original illustrated scenes of high quality; friendly owl guide (Zizo/Zizi)</td><td>Strong</td></tr>
+<tr><td>Navigation</td><td>Clear hierarchy (Child → Subject → Island → Lesson → Step). Back and Home always visible. Step counter "n/13". Island locking explained.</td><td>Good</td></tr>
+<tr><td>Typography</td><td>Fredoka headings, Nunito body, Cairo Arabic; large sizes. Long titles truncate at phone width.</td><td>Good</td></tr>
+<tr><td>Touch targets</td><td>Large buttons and hotspots with a "touch cue" hand icon, suitable for small fingers</td><td>Strong</td></tr>
+<tr><td>Accessibility</td><td>Semantics labels present throughout (screen reader read every control). Text-scale branches exist. The disabled "Check" button has low contrast. Pre-readers depend on English TTS.</td><td>Fair–Good</td></tr>
+<tr><td>Feedback</td><td>Gentle hints without penalties ("Hmm, let's look again…"), explanations after answers, stars for effort</td><td>Strong</td></tr>
+<tr><td>Empty / error states</td><td>Good parent empty states ("no attempt yet does not mean the child doesn't understand"). Error messages are misleading ("free some space" for code errors).</td><td>Mixed</td></tr>
+<tr><td>Localisation</td><td>Parent area bilingual (Arabic RTL / English). Child area English only. Some dialogs Arabic only.</td><td>Weak</td></tr>
+<tr><td>Layout / spacing</td><td>Challenge screens leave ~40 % empty space at the bottom on tablets; the body-parts screen has 16 labels with crossing lines (cognitive load)</td><td>Fair</td></tr>
+<tr><td>Consistency</td><td>Duplicate heading/subtitle on the hub; the parent-gate owl always says "Zizo"</td><td>Fair</td></tr>
+</table>
+<p><b>Recommended improvements (not applied):</b> a decision on child-facing language plus ARB; scale challenge content to the available height and anchor "Check" near the content; disabled-button contrast ≥ 3:1; ellipsis plus a tooltip for long titles; gender-aware gate mascot; reduce the body-parts matching to batches of 4–6; dedicated, accurate error messages.</p>
+
+<h2>8. Performance Review</h2>
+<table>
+<tr><th>Area</th><th>Finding</th><th>Measured?</th></tr>
+<tr><td>Startup</td><td>Opens Hive, decodes the full blob and validates it, then loads the catalog. The lesson library (13 JSON files, 436 KB) loads eagerly when the map opens.</td><td>NOT MEASURED</td></tr>
+<tr><td>Memory</td><td>26 images, 43.7 MB on disk, ≈156 MB decoded RGBA if all cached. <code>Flame.images</code> global cache never evicted.</td><td>Static estimate only; runtime NOT MEASURED</td></tr>
+<tr><td>Disk I/O / main thread</td><td>Every interaction and every 10 s: decode the previous blob + encode the full blob (all children, base64 photos) + flush, on the UI isolate</td><td>NOT MEASURED</td></tr>
+<tr><td>Rendering</td><td>Large atlases drawn with <code>FilterQuality.high</code>; futures re-created in <code>build</code></td><td>NOT MEASURED</td></tr>
+<tr><td>Native audio</td><td><code>MediaPlayer.prepare()</code> synchronous on the main thread (small WAVs)</td><td>NOT MEASURED</td></tr>
+<tr><td>Network</td><td>None</td><td>—</td></tr>
+<tr><td>APK size</td><td>Debug APK 208.2 MB (kernel blob 70 MB, 3 ABIs × libflutter ≈107 MB, assets 45.7 MB). The release AAB will be far smaller.</td><td>Debug measured; release NOT MEASURED</td></tr>
+<tr><td>Memory leaks</td><td>Controllers and observers are disposed in the reviewed widgets; MediaPlayer is released on stop. No leak was proven.</td><td>NOT MEASURED</td></tr>
+</table>
+
+<h2>9. Functional Test Results</h2>
+<p>Run on the prebuilt web preview (served read-only on localhost) because no Android device or emulator was available. Details: <code>Test_Results.md</code>.</p>
+<table>
+<tr><th>ID</th><th>Feature</th><th>Status</th></tr>
+<tr><td>FT-01–06</td><td>Launch, onboarding (empty, long and script-like name), gender/avatar, persistence after restart</td><td><span class="badge OK">PASS</span></td></tr>
+<tr><td>FT-07</td><td>Subject hub (duplicate heading, mid-word wrap)</td><td><span class="badge MEDIUM">PARTIAL</span></td></tr>
+<tr><td>FT-08</td><td>Island / level locking</td><td><span class="badge OK">PASS</span></td></tr>
+<tr><td>FT-09</td><td>Lesson list (title truncation)</td><td><span class="badge MEDIUM">PARTIAL</span></td></tr>
+<tr><td>FT-10–11</td><td>Gameplay: hint on a wrong answer, explanation and progress on a correct one</td><td><span class="badge OK">PASS</span></td></tr>
+<tr><td>FT-12–14</td><td>Parent gate (wrong, empty, Arabic digits), parent empty states</td><td><span class="badge OK">PASS</span></td></tr>
+<tr><td>FT-15–16, 18</td><td>Mid-activity persistence; local-only network traffic; no console errors</td><td><span class="badge OK">PASS</span></td></tr>
+<tr><td>FT-17</td><td><b>Delete active child on web → "Could not save" (AUD-005)</b></td><td><span class="badge HIGH">FAIL</span></td></tr>
+<tr><td>FT-19–24</td><td>Duplicate names, large data, photo picker, TTS, break reminder, Android back</td><td><span class="badge INFO">NOT TESTED</span></td></tr>
+</table>
+<p>Totals: 15 PASS · 2 PARTIAL · 1 FAIL · 6 NOT TESTED.</p>
+
+<h2>10. Testing Review</h2>
+<table>
+<tr><th>Type</th><th>Present?</th><th>Notes</th></tr>
+<tr><td>Unit tests</td><td>Yes</td><td>Models, usage splitting, migrations, catalog integrity, narration with a fake engine</td></tr>
+<tr><td>Widget tests</td><td>Yes (majority)</td><td>Scene flows, navigation, progression, scoring retention, touch interactions</td></tr>
+<tr><td>Integration tests (device)</td><td>No</td><td>No <code>integration_test/</code></td></tr>
+<tr><td>Golden / visual regression</td><td>No (screenshots written to <code>tmp/</code> without comparison)</td><td>Side-effect files; no assertion</td></tr>
+<tr><td>Database / storage tests</td><td>Partial</td><td>Round-trips through <code>MemoryProgressStore</code>; no Hive corruption tests</td></tr>
+<tr><td>Web platform tests</td><td>No</td><td>Missed AUD-005</td></tr>
+<tr><td>CI</td><td>No</td><td>Tests run manually; results stored in <code>tmp/*.log</code></td></tr>
+<tr><td>Result now</td><td colspan="2"><b>203/203 passed in 87 s</b></td></tr>
+</table>
+<p><b>Future test strategy:</b> a pyramid of pure-domain unit tests (models, migrations, merge rules, property-based sync tests) → repository tests on in-memory SQLite → widget and golden tests per scene → integration tests on 2 device classes (low-RAM tablet, phone) → web tests (<code>--platform chrome</code>) → backend unit, e2e and contract tests (OpenAPI) → security tests (auth, BOLA) → k6 load tests for sync. All gated in CI.</p>
+
+<h2>11. Dependency Review</h2>
+<table>
+<tr><th>Package</th><th>Version</th><th>Status</th></tr>
+<tr><td>flutter_riverpod</td><td>3.4.3</td><td>Current</td></tr>
+<tr><td>flame</td><td>1.38.2</td><td>Current</td></tr>
+<tr><td>hive / hive_flutter</td><td>2.2.3 / 1.1.0</td><td>Current on pub.dev, but upstream is no longer actively developed (community fork <code>hive_ce</code>). Replace in the refactor.</td></tr>
+<tr><td>flutter_tts</td><td>4.2.5</td><td>Current</td></tr>
+<tr><td>image_picker</td><td>1.2.3</td><td>Current (transitive Android/iOS implementations have patch updates)</td></tr>
+<tr><td>path_provider</td><td>2.1.6</td><td>Current</td></tr>
+<tr><td>lottie</td><td>3.6.1</td><td>Current (used for one celebration animation)</td></tr>
+<tr><td>Transitive</td><td>7 packages behind (cross_file, image_picker_android/ios, jni, material_color_utilities, objective_c, test_api)</td><td>Patch / minor only</td></tr>
+</table>
+<p>Exact pinning plus a committed lockfile plus <code>--enforce-lockfile</code> is good supply-chain practice. <b>No CVE claims</b>: no vulnerability database was queried. Add <code>osv-scanner</code> to CI.</p>
+
+<h2>12. Strengths</h2>
+<ul>
+<li>Exemplary privacy posture for a children's app: zero permissions, no network, no trackers, backups disabled, sanitised photos.</li>
+<li>Clean static analysis, consistent formatting, immutable models, and a serialised save queue that publishes state only after the write succeeds.</li>
+<li>A meaningful assessment design: first outcome retained, free play and predictions not graded, effort stars kept separate from understanding.</li>
+<li>203 passing behaviour-focused tests, and a content-validation pipeline with JSON Schema and answer-key traceability.</li>
+<li>High-quality original art, large touch targets, semantic labels, gentle feedback.</li>
+<li>Careful release hygiene: pinned Gradle checksum, signing outside Git, a release build blocked without a key, R8 enabled.</li>
+<li>Extensive design documentation (decisions, reviews, remediation logs).</li>
+</ul>
+
+<h2>13. Weaknesses</h2>
+<ul>
+<li>Toolchain on a single machine, no CI, ad-hoc patch-script workflow.</li>
+<li>God classes and untyped JSON state; migrations embedded in UI code.</li>
+<li>Monolithic save blob rewritten very frequently; no corruption recovery.</li>
+<li>Heavy assets with an unbounded image cache; release build never produced or tested on a device.</li>
+<li>Swallowed exceptions and misleading errors; no logging.</li>
+<li>Child UI English only; localisation not systematic.</li>
+</ul>
+
+<h2>14. Critical Issues (must be addressed before a production release)</h2>
+<p>No CRITICAL-severity defects. The following HIGH and MEDIUM items should be resolved before a public release:</p>
+<ol>
+<li><b>AUD-001</b>: reproducible build, CI and a release signing key with backups.</li>
+<li><b>AUD-004 / AUD-006</b>: save-data resilience (last-good backup, per-child parsing), so a corrupt record cannot lock a child out.</li>
+<li><b>AUD-005</b>: delete-child failure on web (before any web launch).</li>
+<li><b>AUD-008</b>: memory profiling on a low-RAM tablet, and asset optimisation.</li>
+<li><b>REC-04</b>: release AAB with obfuscation, tested on physical devices.</li>
+</ol>
+
+<h2>15. Technical Debt</h2>
+<table>
+<tr><th>Debt item</th><th>Interest (cost if ignored)</th></tr>
+<tr><td>Untyped content and journey state</td><td>Every new scene adds string keys; sync and backend contracts impossible to validate</td></tr>
+<tr><td>LessonPlayer monolith</td><td>Change cost and regression risk rise with each unit</td></tr>
+<tr><td>Hard-coded per-unit migrations</td><td>Must be replicated server-side once synced</td></tr>
+<tr><td>Single-blob Hive storage</td><td>Blocks partial updates, sync and scaling to many children</td></tr>
+<tr><td>Assets in Git and lossless WebP</td><td>Slow clones, large APK</td></tr>
+<tr><td>No CI and local-only toolchain</td><td>Bus factor of 1; "works on my machine" risk</td></tr>
+<tr><td>Inline strings</td><td>Expensive to localise later</td></tr>
+</table>
+
+<h2>16. Issues Register</h2>
+<table>
+<tr><th>ID</th><th>Issue</th><th>Category</th><th>Sev.</th><th>Type</th><th>Location</th><th>Effort</th></tr>
+<tr><td>AUD-001</td><td>Non-reproducible build, no CI</td><td>DevOps</td><td><span class="badge HIGH">HIGH</span></td><td>Confirmed</td><td>repo, scripts/</td><td>M</td></tr>
+<tr><td>AUD-002</td><td>LessonPlayer god class</td><td>Code quality</td><td><span class="badge HIGH">HIGH</span></td><td>Confirmed</td><td>lesson_player.dart</td><td>L</td></tr>
+<tr><td>AUD-003</td><td>Untyped Map&lt;String,dynamic&gt; state</td><td>Architecture</td><td><span class="badge HIGH">HIGH</span></td><td>Confirmed</td><td>content/, session.dart</td><td>L</td></tr>
+<tr><td>AUD-004</td><td>Full-blob save incl. photos, every 10 s and every interaction</td><td>Perf / Data</td><td><span class="badge HIGH">HIGH</span></td><td>Confirmed (impact not measured)</td><td>storage.dart, main.dart</td><td>L</td></tr>
+<tr><td>AUD-005</td><td>Web delete-child failure (<code>nextInt(1&lt;&lt;32)</code>)</td><td>Bug</td><td><span class="badge MEDIUM">MEDIUM</span></td><td>Confirmed</td><td>providers.dart:53</td><td>S</td></tr>
+<tr><td>AUD-006</td><td>No save-corruption recovery</td><td>Reliability</td><td><span class="badge MEDIUM">MEDIUM</span></td><td>Confirmed</td><td>main.dart, models.dart</td><td>M</td></tr>
+<tr><td>AUD-007</td><td>Hard-coded migrations in UI / session</td><td>Maintainability</td><td><span class="badge MEDIUM">MEDIUM</span></td><td>Confirmed</td><td>session.dart</td><td>M</td></tr>
+<tr><td>AUD-008</td><td>Heavy images, unbounded cache</td><td>Performance</td><td><span class="badge MEDIUM">MEDIUM</span></td><td>Confirmed / Potential OOM</td><td>assets, Flame.images</td><td>M</td></tr>
+<tr><td>AUD-009</td><td>Swallowed exceptions, misleading errors</td><td>Error handling</td><td><span class="badge MEDIUM">MEDIUM</span></td><td>Confirmed</td><td>32 sites</td><td>M</td></tr>
+<tr><td>AUD-010</td><td>Test gaps and tests writing files</td><td>Testing</td><td><span class="badge MEDIUM">MEDIUM</span></td><td>Confirmed</td><td>test/</td><td>M</td></tr>
+<tr><td>AUD-011</td><td>No localisation system</td><td>UX / i18n</td><td><span class="badge MEDIUM">MEDIUM</span></td><td>Confirmed</td><td>all screens</td><td>L</td></tr>
+<tr><td>AUD-012</td><td>Repo bloat, dead code</td><td>Maintainability</td><td><span class="badge MEDIUM">MEDIUM</span></td><td>Confirmed</td><td>assets/images, force_creature.dart</td><td>S</td></tr>
+<tr><td>AUD-013</td><td>Minimal lint rules</td><td>Code quality</td><td><span class="badge LOW">LOW</span></td><td>Confirmed</td><td>analysis_options.yaml</td><td>S–M</td></tr>
+<tr><td>AUD-014</td><td>Preview routes in production entry point</td><td>Code quality</td><td><span class="badge LOW">LOW</span></td><td>Confirmed</td><td>main.dart</td><td>S</td></tr>
+<tr><td>AUD-015</td><td>Weak parent gate</td><td>Child safety</td><td><span class="badge LOW">LOW</span></td><td>Confirmed</td><td>parent_gate.dart</td><td>S</td></tr>
+<tr><td>AUD-016</td><td>Side effects and futures in build()</td><td>Code quality</td><td><span class="badge LOW">LOW</span></td><td>Confirmed</td><td>main.dart, illustrated_art.dart</td><td>S</td></tr>
+<tr><td>AUD-017</td><td>Plaintext local PII (mitigated)</td><td>Security</td><td><span class="badge LOW">LOW</span></td><td>Confirmed</td><td>storage.dart</td><td>S–M</td></tr>
+<tr><td>AUD-018</td><td>UI polish defects</td><td>UI/UX</td><td><span class="badge LOW">LOW</span></td><td>Confirmed</td><td>hub, map, gate</td><td>S–M</td></tr>
+<tr><td>AUD-019</td><td>copyWith cannot reset voice</td><td>Code quality</td><td><span class="badge LOW">LOW</span></td><td>Confirmed</td><td>models.dart</td><td>S</td></tr>
+<tr><td>AUD-020</td><td>MediaPlayer.prepare on main thread</td><td>Performance</td><td><span class="badge LOW">LOW</span></td><td>Potential</td><td>MainActivity.kt</td><td>S</td></tr>
+<tr><td>AUD-021</td><td>hive upstream maintenance</td><td>Dependencies</td><td><span class="badge INFO">INFO</span></td><td>Potential</td><td>pubspec.yaml</td><td>—</td></tr>
+<tr><td>AUD-022</td><td>README links an untracked APK</td><td>Docs</td><td><span class="badge INFO">INFO</span></td><td>Confirmed</td><td>README.md</td><td>S</td></tr>
+</table>
+<p class="small">Full evidence, impact and recommendations for each row are in <code>Issues_Register.md</code>, along with recommendations REC-01…REC-06.</p>
+
+<h2>17. Score</h2>
+<table>
+<tr><th>Category</th><th>Score</th><th style="width:22%">Bar</th><th>Reason</th></tr>
+<tr><td>Code Quality</td><td>11 / 20</td><td><div class="bar"><span style="width:55%"></span></div></td><td>Clean analyzer, immutable models, good naming in core; undermined by god classes, untyped maps, dead code, swallowed errors, weak lint set</td></tr>
+<tr><td>Architecture</td><td>8 / 15</td><td><div class="bar"><span style="width:53%"></span></div></td><td>Sensible Riverpod and feature split with a storage interface seam; no domain or repository layer; logic and migrations in widgets; single-blob persistence</td></tr>
+<tr><td>Security</td><td>17 / 20</td><td><div class="bar"><span style="width:85%"></span></div></td><td>Zero permissions, no secrets, no network, backups off, sanitised photos, allowlisted native bridge; minor hardening left</td></tr>
+<tr><td>UI / UX</td><td>11 / 15</td><td><div class="bar"><span style="width:73%"></span></div></td><td>Excellent art, large targets, semantics, gentle feedback; localisation, polish defects, misleading errors</td></tr>
+<tr><td>Performance</td><td>5 / 10</td><td><div class="bar"><span style="width:50%"></span></div></td><td>Heavy assets with no eviction; frequent full-blob writes on the UI isolate; nothing measured on a device</td></tr>
+<tr><td>Testing</td><td>6 / 10</td><td><div class="bar"><span style="width:60%"></span></div></td><td>203 passing behavioural tests; no CI, integration, golden or web tests; side-effect screenshots</td></tr>
+<tr><td>Maintainability</td><td>5 / 10</td><td><div class="bar"><span style="width:50%"></span></div></td><td>Rich docs, but single-machine toolchain, patch-script workflow, hard-coded migrations, repo bloat</td></tr>
+<tr><th>Overall</th><th>63 / 100</th><th colspan="2">Acceptable (60–69)</th></tr>
+</table>
+
+<h2>18. Recommendations</h2>
+<ol>
+<li>CI and a reproducible toolchain; protect the release key (AUD-001).</li>
+<li>Revise the privacy decision before accounts and sync; parent-owned accounts; no photo sync by default (REC-01/03).</li>
+<li>Fix AUD-005 and add web and provider tests.</li>
+<li>Save resilience and accurate, privacy-safe logging (AUD-006/009).</li>
+<li>Typed domain models and repositories (AUD-003).</li>
+<li>Decompose LessonPlayer; migration registry (AUD-002/007).</li>
+<li>SQLite (drift) plus an outbox, with a zero-loss local migration (AUD-004).</li>
+<li>Asset optimisation and device profiling (AUD-008).</li>
+<li>OpenAPI contract and sync design, then NestJS + PostgreSQL + email auth.</li>
+<li>Optional accounts → sync → Flutter Web, each with a security review.</li>
+</ol>
+
+<h2>19. Final Technical Assessment</h2>
+<div class="callout"><b>Decision: B — Refactor Existing Application.</b><br>
+<b>Why not A (continue as is):</b> the data layer cannot support sync, and the god classes will slow every feature.<br>
+<b>Why not C or D (rewrite):</b> the UI, game scenes, art, content pipeline and 203 tests are valuable and working. Flutter already compiles to the web, so a rewrite would throw away that working code and gain almost nothing. The problems are concentrated in two areas (persistence and the lesson runtime) that can be replaced step by step behind interfaces (<code>ProgressStore</code> already exists).<br>
+<b>Readiness for production (offline Android):</b> close, after Phase 0–1 items (release build, CI, data resilience, device testing).<br>
+<b>Readiness for Android + Web + Backend:</b> not yet. Phase 2 (typed models + local DB) is the critical path.</div>
+
+<h2 class="pb">Appendix A: Method, Evidence and Git Safety</h2>
+<table>
+<tr><th>Step</th><th>Detail</th></tr>
+<tr><td>Initial git status</td><td>Branch <code>main</code> @ <code>9fbdaf4</code>; one pre-existing untracked file <code>docs/LATEST_TEACHER_REVIEW_2026_10_04.md</code> (not created by the audit)</td></tr>
+<tr><td>Static review</td><td>All core files read in full; large files sampled; grep metrics (catch blocks, dynamic maps, step-ID literals, image loading, semantics)</td></tr>
+<tr><td>Dependency restore</td><td>Owner approved <code>flutter pub get --enforce-lockfile</code>; <code>pubspec.lock</code> hash unchanged</td></tr>
+<tr><td>Commands run</td><td><code>flutter analyze</code>, <code>flutter pub outdated</code>, <code>flutter test</code>, <code>flutter build apk --debug</code>, <code>aapt2 dump</code>, <code>apksigner verify</code>, <code>unzip -l</code></td></tr>
+<tr><td>Runtime</td><td>Prebuilt web preview served read-only on 127.0.0.1:8799 (helper script in <code>reports/_scratch/</code>), driven via the built-in browser; test data deleted afterwards</td></tr>
+<tr><td>Generated side effects</td><td>Gitignored only: <code>build/</code>, <code>.dart_tool/</code>, 94 test screenshots in <code>tmp/</code>; global Pub cache populated</td></tr>
+<tr><td>Not done (by rule)</td><td>No source edits, no formatting, no fixes, no commits, branches, stash, reset or push</td></tr>
+<tr><td>Final git status</td><td>Unchanged tracked files; untracked: the pre-existing doc + <code>reports/</code></td></tr>
+</table>
+<p><b>SOURCE CODE MODIFIED: NO</b></p>
+</body></html>

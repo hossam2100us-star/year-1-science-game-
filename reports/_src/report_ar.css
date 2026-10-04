@@ -1,0 +1,13 @@
+@import url("report.css");
+@font-face { font-family: "CairoLocal"; src: url("../../assets/fonts/Cairo.ttf"); }
+html, body { direction: rtl; }
+body { font-family: "CairoLocal", "Segoe UI", Tahoma, Arial, sans-serif; font-size: 10.4pt; line-height: 1.6; }
+h1, h2, h3 { font-family: "CairoLocal", "Segoe UI", Tahoma, sans-serif; }
+th, td { text-align: right; }
+.callout { border-left: none; border-right: 4px solid var(--accent); }
+.warn { border-right-color: var(--high); }
+pre, code, .ltr { direction: ltr; unicode-bidi: isolate; }
+pre { text-align: left; }
+code { unicode-bidi: isolate; }
+ol, ul { padding-right: 22px; padding-left: 0; }
+.bar > span { margin-left: auto; }

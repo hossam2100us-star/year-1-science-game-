@@ -101,7 +101,7 @@ void main() {
       await helpers.mount(t, LessonPlayer(lesson: materials), store);
       expect(find.textContaining('a) materials'), findsNothing);
       expect(
-        find.textContaining(done ? step.explanation : step.hint),
+        find.textContaining(done ? step.shortExplanation : step.hint),
         findsOneWidget,
       );
       if (outcome == 'hint') {

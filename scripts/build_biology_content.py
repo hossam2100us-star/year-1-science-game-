@@ -277,5 +277,9 @@ refresh_quiz(quiz)
 from child_feedback import apply_child_feedback
 for b in [b1,b2,b3,quiz]:
  apply_child_feedback(b)
+ from refine_latest_teacher_review import refine_latest_teacher_review
+ # Unit 02 here is the legacy seed; its final compaction applies the review.
+ if b['id'] != 'unit_02' or b['contentVersion'] >= 4:
+  refine_latest_teacher_review(b)
  (OUT/f'{b["id"]}.json').write_text(json.dumps(b,ensure_ascii=False,indent=2),encoding="utf-8")
  print(b["id"],len(b["steps"]),"steps")

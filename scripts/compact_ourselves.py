@@ -66,6 +66,8 @@ def compact_ourselves(book):
                     'dust_guard':['eyelash','nose','knee'],
                     'arm_joint':['knee','elbow','eyelash'],
                 }
+        from refine_latest_teacher_review import refine_latest_teacher_review
+        refine_latest_teacher_review(book)
         return
     old = deepcopy(book['steps'])
     by = {i+1:s for i,s in enumerate(old)}

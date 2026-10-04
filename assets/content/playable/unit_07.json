@@ -58,7 +58,8 @@
         "keep_away_from_sockets": "We never put our fingers, or anything else, into a socket.",
         "grown_ups_plug_things_in": "Only grown-ups plug things in.",
         "keep_hands_dry": "We never touch electrical things with wet hands."
-      }
+      },
+      "shortExplanation": "The rules keep you safe."
     },
     {
       "id": "unit_07.step.002",
@@ -89,7 +90,7 @@
         {
           "id": "book",
           "label": "Book",
-          "art": "paper"
+          "art": "book"
         },
         {
           "id": "lantern",
@@ -140,7 +141,8 @@
         "television",
         "lantern",
         "dishwasher"
-      ]
+      ],
+      "shortExplanation": "The television, vacuum cleaner, lamp and dishwasher need electricity to work."
     },
     {
       "id": "unit_07.step.003",
@@ -197,7 +199,8 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_07"
+      "theme": "unit_07",
+      "shortExplanation": "Lanterns give light like lamps; brooms clean like vacuum cleaners."
     },
     {
       "id": "unit_07.step.004",
@@ -266,7 +269,8 @@
         },
         "action": "Move the magnet",
         "result": "Watch carefully"
-      }
+      },
+      "shortExplanation": "A magnet attracts iron and steel, not all metals."
     },
     {
       "id": "unit_07.step.005",
@@ -330,7 +334,8 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_07",
-      "focus": "magnet"
+      "focus": "magnet",
+      "shortExplanation": "A magnet pulls iron and steel."
     },
     {
       "id": "unit_07.step.006",
@@ -403,7 +408,8 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_07",
-      "focus": "magnet"
+      "focus": "magnet",
+      "shortExplanation": "The magnet pulls the steel key, iron nail and steel coat hanger."
     },
     {
       "id": "unit_07.step.007",
@@ -452,7 +458,8 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_07",
-      "focus": "torch"
+      "focus": "torch",
+      "shortExplanation": "A battery gives the torch electricity to make light."
     },
     {
       "id": "unit_07.step.008",
@@ -521,7 +528,8 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_07",
-      "safety": "Electricity is very useful, but it is dangerous. We never put our fingers, or anything else, into a socket. Only grown‑ups plug things in. We never touch electrical things with wet hands."
+      "safety": "Electricity is very useful, but it is dangerous. We never put our fingers, or anything else, into a socket. Only grown‑ups plug things in. We never touch electrical things with wet hands.",
+      "shortExplanation": "Keep fingers and objects out of sockets; grown-ups handle plugs; keep hands dry near electrical things."
     },
     {
       "id": "unit_07.step.009",
@@ -542,7 +550,7 @@
         {
           "id": "book",
           "label": "Book",
-          "art": "paper"
+          "art": "book"
         },
         {
           "id": "wall_clock",
@@ -607,7 +615,8 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_07"
+      "theme": "unit_07",
+      "shortExplanation": "Plugs: fridge, air conditioner; batteries: clock, torch; neither: bicycle, book."
     },
     {
       "id": "unit_07.step.010",
@@ -663,7 +672,8 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_07"
+      "theme": "unit_07",
+      "shortExplanation": "Magnets can hold a fridge door seal and a cupboard door catch closed."
     },
     {
       "id": "unit_07.step.011",
@@ -826,7 +836,8 @@
         "u07.choice.05": [
           "finger_in_a_socket"
         ]
-      }
+      },
+      "shortExplanation": "Magnets pull steel; lanterns light; batteries power torches; iron and steel are magnetic; avoid sockets."
     }
   ],
   "stickers": [
@@ -932,6 +943,177 @@
       "safetyPages": [
         2
       ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "u07.main.01",
+      "text": "Sort pictures of appliances, books and chairs. Ask which need electricity to work.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u07.main.02",
+      "text": "Compare pictures of a lamp and lantern, then a vacuum and broom. Ask what job each pair does.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u07.main.03",
+      "text": "Use a child-safe magnet with adult-selected objects. Ask why it pulls some metals but not every metal.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u07.main.04",
+      "text": "Predict whether an adult-selected steel object, plastic object and aluminium foil will be attracted. Test safely.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u07.main.05",
+      "text": "Look at a closed battery torch. Ask what gives it electricity when it is away from a socket.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u07.main.06",
+      "text": "Role-play the safety rules with pictures: keep away from sockets, dry hands, and ask a grown-up.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u07.main.07",
+      "text": "Sort pictures into plug, battery and neither. Ask why a bicycle and book need neither.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u07.main.08",
+      "text": "Compare fridge door seal and cupboard catch pictures with an adult. Ask how magnets help each door stay shut.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u07.choice.01",
+      "text": "Compare steel key, plastic button and sock pictures. Ask which object a magnet attracts and why.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u07.choice.02",
+      "text": "Compare lamp and flame-lantern pictures. Ask which older tool gave light before electric lamps.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u07.choice.03",
+      "text": "Look at a closed battery torch. Ask what gives it electricity away from a wall socket.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u07.choice.04",
+      "text": "Review a magnet test with iron, steel and aluminium foil. Ask which metals are attracted in the test.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u07.choice.05",
+      "text": "Use socket safety pictures. Ask whether fingers or objects ever belong in sockets and who handles plugs.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
     }
   ]
 }

@@ -58,7 +58,8 @@
         "earth": "Earth is a round planet, mostly covered in water.",
         "sun": "The Sun is a star. It gives us heat and light.",
         "moon": "The Moon has no light of its own."
-      }
+      },
+      "shortExplanation": "Earth is our planet, and the Sun is a star."
     },
     {
       "id": "unit_09.step.002",
@@ -90,7 +91,8 @@
       "safety": "We never, ever look straight at the Sun, not even for a moment. It can hurt your eyes badly.",
       "labUi": {
         "action": "Turn Earth"
-      }
+      },
+      "shortExplanation": "The side facing the Sun has day."
     },
     {
       "id": "unit_09.step.003",
@@ -166,7 +168,8 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_09",
-      "focus": "earth"
+      "focus": "earth",
+      "shortExplanation": "Earth is round, with water covering most of its surface; the Sun supplies heat and light."
     },
     {
       "id": "unit_09.step.004",
@@ -215,7 +218,8 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_09",
-      "focus": "sun"
+      "focus": "sun",
+      "shortExplanation": "The Sun is a star that gives us heat and light."
     },
     {
       "id": "unit_09.step.005",
@@ -277,7 +281,8 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_09",
-      "focus": "sun"
+      "focus": "sun",
+      "shortExplanation": "The Sun gives us light and heat."
     },
     {
       "id": "unit_09.step.006",
@@ -355,7 +360,8 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_09",
-      "focus": "astronaut"
+      "focus": "astronaut",
+      "shortExplanation": "Neil Armstrong first walked on the Moon in 1969."
     },
     {
       "id": "unit_09.step.007",
@@ -436,7 +442,8 @@
       "playScene": "science",
       "theme": "unit_09",
       "board": "astronaut",
-      "focus": "astronaut"
+      "focus": "astronaut",
+      "shortExplanation": "Visor protects eyes; gloves, hands; boots, feet; oxygen pack provides air to breathe."
     },
     {
       "id": "unit_09.step.008",
@@ -480,7 +487,8 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "unit_09",
-      "safety": "We never, ever look straight at the Sun, not even for a moment. It can hurt your eyes badly."
+      "safety": "We never, ever look straight at the Sun, not even for a moment. It can hurt your eyes badly.",
+      "shortExplanation": "Never look straight at the Sun — it can badly hurt your eyes."
     },
     {
       "id": "unit_09.step.009",
@@ -514,7 +522,8 @@
       "labUi": {
         "water": "Blue water",
         "land": "Green land"
-      }
+      },
+      "shortExplanation": "Earth is round and mostly blue because of its water."
     },
     {
       "id": "unit_09.step.010",
@@ -570,7 +579,8 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_09"
+      "theme": "unit_09",
+      "shortExplanation": "The Sun gives us daylight and helps plants grow."
     },
     {
       "id": "unit_09.step.011",
@@ -602,7 +612,8 @@
       "labUi": {
         "name": "Name my star picture",
         "finish": "Save my star picture"
-      }
+      },
+      "shortExplanation": "The lines join the stars into your own picture."
     },
     {
       "id": "unit_09.step.012",
@@ -765,7 +776,8 @@
         "u09.choice.05": [
           "studies_the_stars"
         ]
-      }
+      },
+      "shortExplanation": "Earth: planet, mostly blue; Sun: star; Moon: no air to breathe; astronomers study stars."
     }
   ],
   "stickers": [
@@ -871,6 +883,164 @@
       "safetyPages": [
         2
       ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "u09.main.01",
+      "text": "Use an Earth picture to find its round shape and water. Ask where our heat and light come from.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u09.main.02",
+      "text": "Compare Sun and Earth pictures. Ask which is a star and which is our planet.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u09.main.03",
+      "text": "Draw the Sun lighting and warming Earth. Ask which two gifts it gives us and how its light helps plants.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u09.main.04",
+      "text": "Look at a Moon-landing picture. Recall who first walked on the Moon and when.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u09.main.05",
+      "text": "Draw an astronaut suit. Match visor, gloves and boots to eyes, hands and feet; explain how the oxygen pack allows breathing on the Moon.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u09.main.06",
+      "text": "Role-play Sun safety with an indoor picture. Ask why we never look straight at the Sun.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u09.main.08",
+      "text": "Compare daylight and a dark room in pictures. Discuss how sunlight helps us see and plants make food.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u09.choice.01",
+      "text": "Compare Earth and Sun pictures indoors. Ask which is our planet and which is a star.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u09.choice.02",
+      "text": "Look at a Sun picture indoors. Ask why the Sun belongs with stars rather than planets.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u09.choice.03",
+      "text": "Draw Earth with large blue water areas. Ask why our planet looks mostly blue.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u09.choice.04",
+      "text": "Draw an astronaut oxygen pack on the Moon. Ask what is missing there that the astronaut needs to breathe.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u09.choice.05",
+      "text": "Pretend to study star pictures indoors. Ask what an astronomer studies and how this differs from studying rocks.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        24,
+        25
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
     }
   ]
 }

@@ -678,7 +678,7 @@ void main() {
   );
 
   testWidgets(
-    'Trolleys move in opposite directions relative to a fixed illustrated child',
+    'Push keeps contact as child and trolley move; pull stays connected',
     (t) async {
       size(t, const Size(600, 360));
       for (final (width, motion) in [
@@ -722,11 +722,24 @@ void main() {
           cartNow,
           motion == 'push' ? greaterThan(cartStart) : lessThan(cartStart),
         );
-        expect(t.getCenter(child).dx, childStart);
+        if (motion == 'push') {
+          expect(
+            t.getCenter(child).dx - childStart,
+            closeTo(cartNow - cartStart, .01),
+          );
+        } else {
+          expect(t.getCenter(child).dx, childStart);
+        }
         expect(t.getRect(cart).right, lessThanOrEqualTo(width));
         expect(t.getRect(child).left, greaterThanOrEqualTo(0));
         await capture(t, boundary, '$motion-mid-motion-${width.toInt()}');
         await t.pump(const Duration(milliseconds: 1100));
+        if (motion == 'push') {
+          expect(
+            t.getCenter(cart).dx - t.getCenter(child).dx,
+            closeTo(cartStart - childStart, .01),
+          );
+        }
         expect(t.getRect(cart).right, lessThanOrEqualTo(width));
         await t.pumpWidget(const SizedBox());
       }

@@ -136,6 +136,16 @@ void main() {
             );
             await helpers.tapVisible(
               t,
+              find.byKey(
+                ValueKey(item.alive ? 'garden-alive' : 'garden-not-alive'),
+              ),
+            );
+            expect(
+              store.data.journeys[scene.storageKey]!['needsCorrection'],
+              false,
+            );
+            await helpers.tapVisible(
+              t,
               find.byKey(const ValueKey('garden-next')),
             );
             expect(

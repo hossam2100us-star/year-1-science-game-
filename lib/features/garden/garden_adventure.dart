@@ -12,8 +12,13 @@ import 'garden_model.dart';
 import 'garden_scene.dart';
 
 class GardenAdventure extends ConsumerStatefulWidget {
-  const GardenAdventure({super.key, required this.content});
+  const GardenAdventure({
+    super.key,
+    required this.content,
+    this.onPracticeComplete,
+  });
   final GardenContent content;
+  final Future<void> Function(DecisionOutcome)? onPracticeComplete;
   @override
   ConsumerState<GardenAdventure> createState() => _GardenAdventureState();
 }
@@ -34,7 +39,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   String get feedbackTitle => explained ? t('explained') : t('praise');
   String get prompt => selected != null
       ? round.feedback
-            ? '$feedbackTitle ${selected!.explanation}'
+            ? '$feedbackTitle ${selected!.explanation}${round.needsCorrection ? ' Now choose for yourself.' : ''}'
             : round.mistakes > 0
             ? '${t('retry')} ${selected!.hint}'
             : (selected!.question ??
@@ -49,7 +54,9 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    final saved = ref.read(appProvider).journeys[content.storageKey];
+    final saved = widget.onPracticeComplete == null
+        ? ref.read(appProvider).journeys[content.storageKey]
+        : null;
     round = saved == null
         ? GardenRound(
             version: content.version,
@@ -90,6 +97,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   }
 
   Future<void> persist() {
+    if (widget.onPracticeComplete != null) return Future.value();
     final snapshot = round.toJson(), writer = ref.read(appProvider.notifier);
     final task = writes.then(
       (_) => writer.saveJourney(content.storageKey, snapshot),
@@ -122,19 +130,29 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   }
 
   void answer(bool alive) {
-    if (selected == null || busy || round.feedback) return;
+    if (selected == null || busy || (round.feedback && !round.needsCorrection))
+      return;
+    final correcting = round.needsCorrection;
     final outcome = round.answer(selected!, alive);
-    if (outcome != null && outcome != DecisionOutcome.explained)
+    if ((outcome != null && outcome != DecisionOutcome.explained) ||
+        (correcting && !round.needsCorrection))
       scene.celebration = 1.2;
     changed();
     _speak(prompt);
   }
 
   Future<void> next() async {
-    if (busy) return;
+    if (busy || round.needsCorrection) return;
     setState(() => busy = true);
     try {
       await persist();
+      if (widget.onPracticeComplete != null && selected != null) {
+        await widget.onPracticeComplete!(
+          DecisionOutcome.values.byName(round.results[selected!.id]!),
+        );
+        if (mounted) Navigator.of(context).pop();
+        return;
+      }
       round.next();
       sync();
       await persist();
@@ -478,7 +496,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   );
 
   Widget _decision(ChildProfile profile, bool small) {
-    final item = selected!, done = round.feedback;
+    final item = selected!, done = round.feedback && !round.needsCorrection;
     final picture = Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -532,7 +550,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
           children: [
             Expanded(
               child: Text(
-                done
+                round.feedback
                     ? feedbackTitle
                     : (item.question ??
                           t('question')
@@ -562,7 +580,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
               Expanded(child: _basket(false, small)),
             ],
           ),
-        if (round.mistakes > 0 && !done)
+        if (round.mistakes > 0 && !round.feedback)
           Container(
             margin: const EdgeInsets.only(top: 10),
             padding: const EdgeInsets.all(10),
@@ -576,6 +594,17 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
               style: const TextStyle(fontSize: 22, color: gardenInk),
             ),
           ),
+        if (round.needsCorrection) ...[
+          Text(
+            item.explanation,
+            key: const ValueKey('garden-explanation'),
+            style: const TextStyle(fontSize: 22, color: gardenInk),
+          ),
+          const Text(
+            'Now choose for yourself.',
+            style: TextStyle(fontSize: 22, color: gardenInk),
+          ),
+        ],
         if (done) ...[
           Row(
             children: [
@@ -651,7 +680,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   }
 
   Widget _basket(bool alive, bool small) {
-    final enabled = !round.feedback && !busy;
+    final enabled = (!round.feedback || round.needsCorrection) && !busy;
     return DragTarget<String>(
       onWillAcceptWithDetails: (d) => enabled && d.data == selected!.id,
       onAcceptWithDetails: (_) => answer(alive),

@@ -73,7 +73,8 @@
       "legacyMergedFrom": [
         "unit_03.step.001"
       ],
-      "spokenPrompt": "Meet our explorer! Touch a hand button and listen. Follow its line to the body part."
+      "spokenPrompt": "Meet our explorer! Touch a hand button and listen. Follow its line to the body part.",
+      "shortExplanation": ""
     },
     {
       "id": "unit_03.five-senses.v2",
@@ -158,7 +159,8 @@
         "unit_03.step.003": [
           "touch"
         ]
-      }
+      },
+      "shortExplanation": "Eyes see, ears hear, noses smell, tongues taste, and skin feels."
     },
     {
       "id": "unit_03.body-workshop.v2",
@@ -434,7 +436,8 @@
           "foot": "foot"
         }
       },
-      "spokenPrompt": "Choose a name, then touch the hand button pointing to that part. You can drag the name onto the button too."
+      "spokenPrompt": "Choose a name, then touch the hand button pointing to that part. You can drag the name onto the button too.",
+      "shortExplanation": "Your whole body has many parts to discover, from your head to your feet."
     },
     {
       "id": "unit_03.eye-workshop.v2",
@@ -526,7 +529,8 @@
           "eyelid": "eyelid"
         }
       },
-      "spokenPrompt": "Give the three eye protectors their names. Choose a name, then touch the hand button pointing to the part."
+      "spokenPrompt": "Give the three eye protectors their names. Choose a name, then touch the hand button pointing to the part.",
+      "shortExplanation": "Your eyebrows, eyelashes and eyelids help protect your eyes."
     },
     {
       "id": "unit_03.sense-partners.v2",
@@ -691,7 +695,8 @@
           "nose",
           "skin"
         ]
-      }
+      },
+      "shortExplanation": "Eyes see, ears hear, noses smell, tongues taste, and skin feels."
     },
     {
       "id": "unit_03.sense-stories.v2",
@@ -877,7 +882,8 @@
           "touch",
           "sight"
         ]
-      }
+      },
+      "shortExplanation": "Eyes see, ears hear, noses smell, tongues taste, and skin feels."
     },
     {
       "id": "unit_03.step.030",
@@ -948,7 +954,8 @@
         [
           "unit_03.step.030"
         ]
-      ]
+      ],
+      "shortExplanation": "We can see, smell, touch and taste the watermelon."
     },
     {
       "id": "unit_03.marbles.v2",
@@ -1053,7 +1060,8 @@
         "unit_03.step.040": {
           "fewest": "jack"
         }
-      }
+      },
+      "shortExplanation": "Zara has most: 9 marbles. Jack has fewest: 5. David has 6."
     },
     {
       "id": "unit_03.sense-lab.v2",
@@ -1267,7 +1275,8 @@
           "sweet",
           "five"
         ]
-      }
+      },
+      "shortExplanation": "Five senses; tongue taste buds help taste; holding nose reduces flavour; sweet, sour, salty tastes."
     },
     {
       "id": "unit_03.step.041",
@@ -1325,7 +1334,8 @@
         [
           "unit_03.step.041"
         ]
-      ]
+      ],
+      "shortExplanation": "An optometrist looks after your eyes."
     },
     {
       "id": "unit_03.step.043",
@@ -1396,7 +1406,8 @@
         [
           "unit_03.step.043"
         ]
-      ]
+      ],
+      "shortExplanation": "Taste and smell work together."
     },
     {
       "id": "unit_03.step.044",
@@ -1442,7 +1453,8 @@
         [
           "unit_03.step.044"
         ]
-      ]
+      ],
+      "shortExplanation": "Compare the two numbers."
     },
     {
       "id": "unit_03.last-discoveries.v2",
@@ -1568,7 +1580,8 @@
           "elbow",
           "eyelash"
         ]
-      }
+      },
+      "shortExplanation": "Eyelashes keep dust out. The elbow is between the wrist and shoulder."
     }
   ],
   "stickers": [
@@ -1741,5 +1754,175 @@
     "unit_03.step.047": "u03.choice.03",
     "unit_03.step.048": "u03.choice.04",
     "unit_03.step.049": "u03.choice.05"
-  }
+  },
+  "goalActivities": [
+    {
+      "objective": "u03.main.03",
+      "text": "Use a face drawing to find eyebrows, eyelashes and eyelids. Discuss how each protects the eye.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u03.main.01",
+      "text": "Describe seeing, hearing, smelling, tasting and feeling familiar things. Ask which body part helps with each of the five senses.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u03.choice.01",
+      "text": "Describe hearing gentle music or a bird sound. Ask which body part helps us hear.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u03.main.06",
+      "text": "Make a sentence for each sense using familiar sights, gentle sounds, smells, food tastes and textures. Ask which body part helps.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u03.main.04",
+      "text": "Make three small groups of counters. Ask which group has most and which has fewest.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u03.main.02",
+      "text": "Name the five senses. Use a tongue drawing to find taste buds; discuss how smell helps flavour and familiar sweet, sour and salty tastes.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u03.choice.02",
+      "text": "Use a tongue drawing to locate taste buds. Ask which body part helps us taste familiar food.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u03.choice.03",
+      "text": "Name sight, hearing, smell, taste and touch with familiar examples. Count how many senses there are.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u03.main.05",
+      "text": "Pretend to visit an eye specialist using a drawing. Ask which body part the optometrist checks.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u03.main.07",
+      "text": "Talk about the smell and taste of a familiar apple. Ask why both senses help us notice flavour.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u03.choice.04",
+      "text": "Find eyelashes on a face drawing. Ask how they help keep dust out of our eyes.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u03.choice.05",
+      "text": "Follow a whole arm in a picture from shoulder to wrist. Ask which joint lies between them.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ]
 }

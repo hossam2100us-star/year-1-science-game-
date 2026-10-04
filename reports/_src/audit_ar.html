@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>تقرير الفحص الفني للبرنامج — Science Adventure</title>
+<link rel="stylesheet" href="report_ar.css"></head><body>
+
+<div class="cover">
+  <h1>تقرير الفحص الفني للبرنامج</h1>
+  <div class="sub">Science Adventure — لعبة علوم تعليمية للأطفال تعمل بدون إنترنت (Flutter / Android)</div>
+  <div class="score"><span class="ltr">63 / 100</span> <span style="font-size:16pt;color:#5b6b7c">مقبول</span></div>
+  <div class="meta">
+    <p><b>التطبيق:</b> <code>science_adventure</code> <span class="ltr">0.3.0+3</span> · الحزمة <code>com.scienceadventure.app</code></p>
+    <p><b>النسخة التي تم فحصها:</b> commit <code>9fbdaf4</code> على فرع <code>main</code> · <b>التاريخ:</b> <span class="ltr">2026-10-04</span></p>
+    <p><b>طريقة العمل:</b> قراءة فقط (STRICT READ-ONLY). لم يتم تعديل أي ملف كود أو Gradle أو Manifest أو مكتبات.</p>
+    <p><b>الأدوار المطبّقة:</b> Software Architect · Android/Flutter · Web · Backend · Database · Security · UI/UX · QA · DevOps · Code Review</p>
+    <p><b>ملفات مرافقة:</b> Future_System_Architecture_AR.pdf · Issues_Register.md · Security_Findings.md · Test_Results.md · Architecture_Diagrams.md · Development_Roadmap.md · Executive_Summary.md</p>
+  </div>
+</div>
+
+<h2>المحتويات</h2>
+<ol class="toc">
+<li>الملخص التنفيذي</li><li>نظرة عامة على المشروع</li><li>التقنيات المستخدمة</li><li>المعمارية الحالية</li><li>مراجعة جودة الكود</li>
+<li>مراجعة الأمان</li><li>مراجعة الواجهة وتجربة المستخدم</li><li>مراجعة الأداء</li><li>نتائج الاختبار الوظيفي</li><li>مراجعة الاختبارات</li>
+<li>مراجعة المكتبات</li><li>نقاط القوة</li><li>نقاط الضعف</li><li>المشاكل الحرجة</li><li>الديون التقنية</li>
+<li>سجل المشاكل</li><li>التقييم بالدرجات</li><li>التوصيات</li><li>التقييم الفني النهائي</li><li>ملحق: طريقة الفحص والأدلة وسلامة Git</li>
+</ol>
+
+<h2>1. الملخص التنفيذي</h2>
+<p>Science Adventure لعبة تعليمية تحترم خصوصية الطفل وتعمل <b>بدون إنترنت</b>. المشروع يوصف بأنه "تطبيق Android"، لكنه في الحقيقة مبني بـ <b>Flutter</b>: فيه 83 ملف Dart وحوالي 22,400 سطر في <code>lib/</code>، بالإضافة إلى طبقة Kotlin صغيرة. الكود يُبنى من غير أخطاء، و<b>كل الـ 203 اختبار آلي نجحوا</b>، وتم بناء ملف APK، والتطبيق <b>لا يطلب أي صلاحيات من نظام Android</b>. الأمان والخصوصية هما أقوى جانب في المشروع.</p>
+<p>نقاط الضعف الأساسية هيكلية. أدوات البناء موجودة على جهاز واحد فقط، ولا يوجد CI. ملف واحد (Widget) طوله 1,391 سطر يدير معظم منطق اللعب. البيانات مخزنة كـ JSON بدون أنواع واضحة (untyped). كل الحفظ (كل الأطفال بصورهم بصيغة base64) يُعاد كتابته كقيمة واحدة في Hive كل 10 ثواني ومع كل تفاعل. هذه المشاكل لا تؤثر كثيرًا على الاستخدام الحالي (جهاز واحد بدون إنترنت)، لكنها <b>العائق الأساسي</b> أمام تحويل المنتج إلى Android + Web + Backend + قاعدة بيانات مركزية مع مزامنة.</p>
+<div class="callout"><b>الحكم:</b> الدرجة الكلية <b>63/100 (مقبول)</b>. التوصية <b>B — إعادة هيكلة التطبيق الحالي (Refactor)</b>، وليس إعادة كتابته. Flutter يعمل على الويب أصلًا، فاللعبة نفسها يمكن إعادة استخدامها. لكن طبقة البيانات لازم يُعاد بناؤها (نماذج typed + SQLite + outbox) <i>قبل</i> البدء في الـ Backend والمزامنة.<br>
+<b>المشاكل:</b> 0 حرجة · 4 عالية · 8 متوسطة · 8 منخفضة · 2 معلومات.</div>
+
+<h2>2. نظرة عامة على المشروع</h2>
+<table>
+<tr><th style="width:26%">البند</th><th>الملاحظة</th></tr>
+<tr><td>الهدف</td><td>لعبة لمنهج العلوم (مبنية على كتاب "Science Made Simple" الذي قدّمه ولي الأمر) للأطفال الصغار. التعلم عن طريق مشاهد تفاعلية: حي وغير حي، النباتات، جسمنا، المواد، القوى، الصوت، الكهرباء والمغناطيس، الأرض والفضاء.</td></tr>
+<tr><td>المحتوى</td><td>4 جزر · 13 درسًا قابلًا للعب (9 وحدات + 4 مسابقات) في <code>assets/content/playable/*.json</code> (436 KB)، يتم التحقق منها مقابل <code>schemas/lesson.schema.json</code> بسكريبتات Python</td></tr>
+<tr><td>المستخدمون</td><td>الأطفال (أكثر من ملف على نفس الجهاز) والأهل (ركن الأهل محمي بسؤال ضرب)</td></tr>
+<tr><td>المنصات</td><td>Android (minSdk 24، targetSdk 36، بالعرض فقط). يوجد بناء للويب للمعاينة فقط. لا يوجد مشروع iOS.</td></tr>
+<tr><td>البيانات</td><td>محلية فقط: ملف الطفل (الاسم الأول، النوع، الشخصية أو الصورة، الألوان)، الإعدادات، محاولات التقييم، حالة الدروس الجارية ("journeys")، وثواني الاستخدام اليومية</td></tr>
+<tr><td>الاتصال</td><td>لا يوجد. لا توجد صلاحية INTERNET. القراءة الصوتية تستخدم أصواتًا محلية فقط.</td></tr>
+<tr><td>حجم المستودع</td><td>324 ملفًا متتبعًا. حجم Git pack هو 83.5 MB (أغلبه صور). 31 ملف تصميم ومراجعة في <code>docs/</code>، بالإضافة إلى <code>GAME_MASTER_INSTRUCTIONS.md</code> (705 سطر)</td></tr>
+<tr><td>التاريخ</td><td>17 commit بين <span class="ltr">2026-09-24</span> و<span class="ltr">2026-10-04</span> (تطوير سريع ومليء بالميزات)</td></tr>
+</table>
+
+<h2>3. التقنيات المستخدمة</h2>
+<table>
+<tr><th>الطبقة</th><th>التقنية (الإصدارات بالضبط)</th><th>ملاحظات</th></tr>
+<tr><td>اللغة / SDK</td><td>Dart 3.13.4 · Flutter 3.47.5 (مثبت في <code>.flutter-version</code>)</td><td>أدوات البناء في <code>.tools/</code> وهو خارج Git</td></tr>
+<tr><td>طبقة Android</td><td>Kotlin <code>MainActivity</code>؛ AGP 9.1.0؛ Kotlin 2.4.0؛ Gradle 9.3.1 (مع SHA-256)؛ JDK 21؛ Target 17؛ compileSdk 36؛ NDK 28.2</td><td>نسخة Release: R8 وتصغير الموارد مفعّلان؛ التوقيع من <code>key.properties</code> غير المتتبع</td></tr>
+<tr><td>إدارة الحالة</td><td>flutter_riverpod 3.4.3</td><td><code>Notifier&lt;AppData&gt;</code> مع طابور كتابة متسلسل</td></tr>
+<tr><td>التخزين</td><td>hive 2.2.3 / hive_flutter 1.1.0</td><td><code>Box&lt;String&gt;</code> واحد بمفتاح واحد <code>data</code> (JSON)</td></tr>
+<tr><td>محرك الألعاب</td><td>flame 1.38.2</td><td>المشاهد ورسم الصور</td></tr>
+<tr><td>الوسائط</td><td>flutter_tts 4.2.5 · lottie 3.6.1 · MediaPlayer أصلي عبر MethodChannel</td><td>فلترة الأصوات المحلية فقط</td></tr>
+<tr><td>الجهاز</td><td>image_picker 1.2.3 · path_provider 2.1.6</td><td>منتقي صور النظام، بدون صلاحية تخزين</td></tr>
+<tr><td>اللغات</td><td>flutter_localizations؛ دوال <code>t(ar, en)</code> داخل الكود</td><td>لا توجد ملفات ARB</td></tr>
+<tr><td>الخطوط والأصول</td><td>Fredoka وNunito وCairo (OFL) · 26 صورة مضمّنة (WebP/PNG) · 12 ملف WAV</td><td>رسومات أصلية (CREDITS.md)</td></tr>
+<tr><td>الأدوات</td><td>سكريبتات PowerShell للبناء؛ سلسلة محتوى بـ Python (jsonschema)</td><td>لا يوجد CI</td></tr>
+<tr><td>الاختبارات</td><td>flutter_test (35 ملفًا، 203 اختبار)؛ اختبار Python واحد</td><td>لا يوجد integration_test ولا golden</td></tr>
+<tr><td>غير موجود</td><td>شبكة/HTTP، REST، خادم قاعدة بيانات، تسجيل دخول، Analytics، تقارير الأعطال، DI، توليد كود</td><td>—</td></tr>
+</table>
+
+<h2>4. المعمارية الحالية</h2>
+<p><b>النمط:</b> <b>معمارية مخصصة مقسمة حسب الميزات (feature folders) مع حالة Riverpod</b>، وهي قريبة من MVVM مبسّط. توجد طبقة <code>core</code> منفصلة (النماذج، التخزين، providers، نظام التصميم)، ومجلدات للميزات (<code>features/biology</code>، <code>plants</code>، <code>science</code>، <code>garden</code>، <code>world</code>، <code>onboarding</code>، <code>parent</code>). هي <i>ليست</i> Clean Architecture: لا توجد طبقة domain أو use-case، ومعظم منطق اللعب وترحيل البيانات المحفوظة موجود داخل <code>StatefulWidget</code>.</p>
+<pre>
+ ┌──────────────────────────── UI LAYER (Flutter widgets) ────────────────────────────┐
+ │ AdventureHome ─► ChildChooser/ProfileEditor ─► SubjectHub ─► WorldMap              │
+ │                                                     └─► LessonPlayer (1,391 LOC)   │
+ │ ParentGate ─► ParentArea / UnitReport / VoiceSettings      └─► scene widgets       │
+ └───────────────┬───────────────────────────────┬─────────────────────┬──────────────┘
+                 │ ref.watch / ref.read           │ Flame GameWidget     │ MethodChannel
+ ┌───────────────▼──────────────┐  ┌──────────────▼────────────┐  ┌─────▼──────────────┐
+ │ STATE (Riverpod)             │  │ GAME LAYER (Flame)        │  │ Kotlin MainActivity│
+ │ AppController: AppData       │  │ DiscoveryGame, GardenScene│  │ allowlisted sounds │
+ │ lessonLibraryProvider        │  │ Bean/Light/PlantLab games │  └────────────────────┘
+ │ NarrationService (TTS)       │  └──────────────┬────────────┘
+ └───────────────┬──────────────┘                 │
+ ┌───────────────▼──────────────┐  ┌──────────────▼────────────┐
+ │ DATA: ProgressStore iface    │  │ BUNDLED ASSETS            │
+ │  └ HiveProgressStore         │  │ catalog.json, 13 lessons, │
+ │     box 'science_adventure_v1│  │ 26 images, 12 WAV, fonts  │
+ │     key 'data' = 1 JSON blob │  └───────────────────────────┘
+ └──────────────────────────────┘
+</pre>
+<table>
+<tr><th>المعيار</th><th>التقييم</th><th>السبب</th></tr>
+<tr><td>فصل المسؤوليات</td><td>متوسط</td><td>نماذج core وقواعد الـ domain (<code>AttemptRecorder</code> و<code>addUsage</code> وقواعد الفتح) نقية وقابلة للاختبار. منطق المشاهد وحفظ اللقطات والترحيل موجود داخل الـ widgets.</td></tr>
+<tr><td>التقسيم (Modularity)</td><td>متوسط</td><td>مجلدات الميزات موجودة، لكن <code>lesson_player.dart</code> يستورد أكثر من 20 ميزة. اتجاه الاعتماد: الواجهة ← كل شيء.</td></tr>
+<tr><td>قابلية الاختبار</td><td>جيد (unit) / متوسط (UI)</td><td>واجهة <code>ProgressStore</code> و<code>MemoryProgressStore</code> تجعل الحالة قابلة للاختبار. الـ widgets الكبيرة تحتاج اختبارات widget كاملة.</td></tr>
+<tr><td>التوسع والإضافة</td><td>ضعيف</td><td>كل نوع مشهد جديد يضيف تفرعات في <code>LessonPlayer</code> و<code>LessonSession</code>. عقود المحتوى بدون أنواع.</td></tr>
+<tr><td>سهولة الصيانة</td><td>متوسط</td><td>أسماء واضحة وتنسيق ثابت، لكن ملفات كبيرة وحالات خاصة لكل وحدة.</td></tr>
+</table>
+<div class="callout"><b>هل تصلح للتوسع إلى Android + Web + Backend + قاعدة بيانات مركزية؟</b> <b>جزئيًا.</b> Flutter وRiverpod مناسبان جدًا لجانب العميل (كود واحد لـ Android والويب). أما طبقتا التخزين والـ domain <b>فتحتاجان إعادة هيكلة</b> (نماذج typed، repositories، قاعدة بيانات محلية علائقية، outbox) قبل المزامنة. التصنيف: <b>Refactoring</b>، وليس إعادة كتابة جزئية أو كاملة.</div>
+
+<h2>5. مراجعة جودة الكود</h2>
+<table>
+<tr><th>الجانب</th><th>التقييم</th></tr>
+<tr><td>التنظيم والمجلدات</td><td>تقسيم واضح في المستوى الأعلى (<code>core</code>، <code>content</code>، <code>features/*</code>، <code>games</code>، <code>parent</code>). بعض الأماكن غير مناسبة: <code>LessonPlayer</code> المستخدم في كل المواد موجود في <code>features/biology</code>.</td></tr>
+<tr><td>التسمية</td><td>واضحة عمومًا (<code>AttemptRecorder</code>، <code>gardenAdventureComplete</code>). أسماء خاصة مختصرة أحيانًا (<code>_lab</code>، <code>_bean</code>، <code>_light</code> كـ maps ديناميكية).</td></tr>
+<tr><td>التنسيق والتحليل الآلي</td><td>تنسيق <code>dart format</code> ثابت و<code>flutter analyze</code> بدون ملاحظات، <i>لكن</i> 3 قواعد lint فقط مفعّلة (AUD-013).</td></tr>
+<tr><td>عدم القابلية للتغيير (Immutability)</td><td>جيد. النماذج <code>const</code> مع <code>copyWith</code>، وتغييرات الحالة دوال نقية.</td></tr>
+<tr><td>معالجة الأخطاء</td><td>ضعيفة. 32 مكان <code>catch (_)</code> بدون أي تسجيل، ورسالة عامة "وفّر مساحة" (AUD-009).</td></tr>
+<tr><td>التسجيل (Logging)</td><td>لا يوجد (لا logger ولا تقارير أعطال). مفيد للخصوصية لكنه يجعل تشخيص المشاكل عند المستخدم مستحيلًا.</td></tr>
+<tr><td>الإعدادات</td><td>قيم ثابتة داخل الكود (مؤقت 10 ثواني، الراحة 5–30 دقيقة، معاملات الصوت <code>.5/.35</code> لكل وحدة). مسارات المعاينة داخل <code>main.dart</code>.</td></tr>
+</table>
+<h3>المشاكل حسب النوع</h3>
+<table>
+<tr><th>المشكلة</th><th>المكان</th><th>التأثير</th><th>الخطورة</th><th>الحل المقترح (لم يُنفَّذ)</th></tr>
+<tr><td>God class / دوال كبيرة</td><td><code>lesson_player.dart</code> 1,391 سطر؛ <code>build()</code> حوالي 750 سطر؛ <code>science_lab.dart</code> 1,209؛ <code>sound_stage.dart</code> 1,031</td><td>خطر كبير من كسر أشياء أخرى، صعوبة على المطورين الجدد</td><td><span class="badge HIGH">عالية</span></td><td>Controller + عارض (renderer) لكل <code>playScene</code> + registry</td></tr>
+<tr><td>بيانات بدون أنواع</td><td>184 وصول <code>json['…']</code>؛ 23 <code>Map&lt;String,dynamic&gt;</code> في LessonPlayer وحده</td><td>أخطاء تحويل وقت التشغيل؛ لا يوجد عقد API</td><td><span class="badge HIGH">عالية</span></td><td>نماذج freezed / json_serializable</td></tr>
+<tr><td>حالات خاصة مكتوبة بالقيمة</td><td><code>'unit_06.step.008'</code>، ترحيل لكل وحدة في <code>session.dart</code></td><td>المنطق يكبر مع كل تعديل محتوى</td><td><span class="badge MEDIUM">متوسطة</span></td><td>سجل ترحيل بإصدارات، وتنويعات مبنية على البيانات</td></tr>
+<tr><td>كود ميت</td><td><code>force_creature.dart</code> (620 سطر، غير مستورد في أي مكان)</td><td>ارتباك، حجم البناء</td><td><span class="badge MEDIUM">متوسطة</span></td><td>حذفه</td></tr>
+<tr><td>أصول غير مستخدمة</td><td>24 صورة متتبعة في Git وليست في <code>pubspec.yaml</code> (حوالي 45 MB)</td><td>تضخم المستودع</td><td><span class="badge MEDIUM">متوسطة</span></td><td>Git LFS أو أرشيف للرسومات</td></tr>
+<tr><td>أرقام سحرية</td><td>معاملات الصوت، فترات المؤقت، حدود الصور، نطاق سؤال الأهل</td><td>الضبط يحتاج تعديل كود</td><td><span class="badge LOW">منخفضة</span></td><td>ثوابت بأسماء / إعدادات</td></tr>
+<tr><td>آثار جانبية داخل build</td><td><code>narration.configure()</code> داخل <code>build</code>؛ <code>FutureBuilder(future: load())</code> داخل build</td><td>عمل زائد، وميض</td><td><span class="badge LOW">منخفضة</span></td><td><code>ref.listen</code>؛ تخزين الـ futures</td></tr>
+<tr><td>دين في طريقة العمل</td><td><code>tmp/</code>: أكثر من 300 سكريبت Python للترقيع وملفات سجلات</td><td>طريقة تعديل غير متتبعة</td><td><span class="badge MEDIUM">متوسطة</span></td><td>commits عادية + مراجعة + CI</td></tr>
+<tr><td>اعتماديات دائرية</td><td>لم توجد على مستوى الحزم</td><td>—</td><td><span class="badge INFO">معلومة</span></td><td>—</td></tr>
+<tr><td>مكتبات غير مستخدمة</td><td>لا يوجد. كل المكتبات المباشرة الثمانية مستخدمة.</td><td>—</td><td><span class="badge OK">سليم</span></td><td>—</td></tr>
+</table>
+
+<h2>6. مراجعة الأمان</h2>
+<p>مراجعة ثابتة آمنة حسب OWASP MASVS v2 وASVS وMobile Top 10، بالإضافة إلى فحوصات محلية وقت التشغيل (قراءة صلاحيات APK، ومراقبة طلبات الشبكة في نسخة الويب). لم يتم أي استغلال. التفاصيل الكاملة في <code>Security_Findings.md</code>.</p>
+<table>
+<tr><th>المجال</th><th>النتيجة</th></tr>
+<tr><td>الأسرار</td><td><span class="badge OK">ناجح</span> لا توجد. ملفات التوقيع مستبعدة من Git.</td></tr>
+<tr><td>الصلاحيات</td><td><span class="badge OK">ناجح</span> لا توجد صلاحيات نظام في APK المبني. فقط صلاحية توقيع داخلية من AndroidX.</td></tr>
+<tr><td>المكونات المكشوفة / Deep links / WebView</td><td><span class="badge OK">ناجح</span> شاشة التشغيل فقط، <code>taskAffinity=""</code>، لا deep links، لا WebView</td></tr>
+<tr><td>النسخ الاحتياطي ونقل البيانات</td><td><span class="badge OK">ناجح</span> <code>allowBackup=false</code>؛ كل المجالات مستبعدة من النسخ السحابي والنقل بين الأجهزة</td></tr>
+<tr><td>الجسر الأصلي (Native)</td><td><span class="badge OK">ناجح</span> أسماء الأصوات من قائمة مسموحة (يمنع Path Traversal)؛ الصوت محدود</td></tr>
+<tr><td>التعامل مع الصور</td><td><span class="badge OK">ناجح</span> إعادة ترميز، حذف البيانات الوصفية، حدود للحجم والبكسلات؛ حذف الملف المؤقت فقط داخل كاش التطبيق</td></tr>
+<tr><td>الشبكة</td><td><span class="badge OK">ناجح</span> لا يوجد كود شبكة؛ كل الـ 98 طلب في المعاينة كانت محلية؛ أصوات TTS محلية فقط</td></tr>
+<tr><td>التخزين المحلي</td><td><span class="badge LOW">منخفضة</span> بيانات الطفل في Hive بدون تشفير داخل sandbox (SEC-01)</td></tr>
+<tr><td>الصلابة (Resilience)</td><td><span class="badge LOW">منخفضة</span> لم يتم إعداد تعمية (obfuscation) كود Dart بعد (SEC-02)</td></tr>
+<tr><td>بوابة الأهل</td><td><span class="badge LOW">منخفضة</span> نفس السؤال بعد الخطأ، ومحاولات غير محدودة (SEC-03)</td></tr>
+<tr><td>التحقق من المدخلات</td><td><span class="badge INFO">معلومة</span> الاسم يقبل رموز HTML لكنها تُعرض كنص عادي (SEC-05). يجب التحقق عند خروج البيانات من الجهاز.</td></tr>
+<tr><td>تسجيل الدخول / الجلسات / التوكنات</td><td>غير موجود (لا توجد حسابات). تم تصميمه في تقرير المعمارية المستقبلية.</td></tr>
+</table>
+<p><b>درجة الأمان 17/20.</b> الخصومات بنود تحسين، وليست ثغرات.</p>
+
+<h2>7. مراجعة الواجهة وتجربة المستخدم</h2>
+<p>المصادر: 94 لقطة شاشة أنتجتها الاختبارات في <code>tmp/</code> (مقاسات 1280×800 و360 عرضًا)، واستخدام فعلي لنسخة الويب بعرض موبايل.</p>
+<table>
+<tr><th>الجانب</th><th>الملاحظة</th><th>التقييم</th></tr>
+<tr><td>التصميم العام</td><td>ألوان دافئة ومتناسقة (كريمي وأزرق مخضر)؛ مشاهد مرسومة أصلية بجودة عالية؛ مرشد بومة لطيف (زيزو/زيزي)</td><td>قوي</td></tr>
+<tr><td>التنقل</td><td>تسلسل واضح (الطفل ← المادة ← الجزيرة ← الدرس ← الخطوة). زر الرجوع والرئيسية ظاهران دائمًا. عداد "n/13". قفل الجزر مشروح.</td><td>جيد</td></tr>
+<tr><td>الخطوط</td><td>Fredoka للعناوين وNunito للنص وCairo للعربي؛ مقاسات كبيرة. العناوين الطويلة تُقص على عرض الموبايل.</td><td>جيد</td></tr>
+<tr><td>مساحات اللمس</td><td>أزرار ونقاط لمس كبيرة مع أيقونة يد إرشادية، مناسبة لأصابع الأطفال</td><td>قوي</td></tr>
+<tr><td>إمكانية الوصول</td><td>وصف Semantics موجود في كل مكان (قارئ الشاشة قرأ كل عنصر). يوجد تعامل مع تكبير الخط. زر "Check" المعطّل تباينه ضعيف. الأطفال الذين لا يقرؤون يعتمدون على صوت إنجليزي.</td><td>متوسط إلى جيد</td></tr>
+<tr><td>ردود الفعل</td><td>تلميحات لطيفة بدون عقاب ("Hmm, let's look again…")، شرح بعد الإجابة، نجوم للمجهود</td><td>قوي</td></tr>
+<tr><td>الحالات الفارغة والأخطاء</td><td>حالات فارغة جيدة في ركن الأهل ("مفيش محاولة لسه، ومش معناه إن الطفل مش فاهم"). رسائل الخطأ مضللة ("وفّر مساحة" لأخطاء في الكود).</td><td>مختلط</td></tr>
+<tr><td>اللغات</td><td>ركن الأهل بلغتين (عربي RTL / إنجليزي). واجهة الطفل إنجليزي فقط. بعض النوافذ عربي فقط.</td><td>ضعيف</td></tr>
+<tr><td>التخطيط والمسافات</td><td>شاشات التحدي تترك حوالي 40% فراغ أسفل الشاشة على التابلت؛ شاشة أجزاء الجسم فيها 16 كلمة وخطوط متقاطعة (حمل ذهني كبير)</td><td>متوسط</td></tr>
+<tr><td>الاتساق</td><td>العنوان مكرر كعنوان وعنوان فرعي في شاشة المواد؛ بومة بوابة الأهل دائمًا "زيزو"</td><td>متوسط</td></tr>
+</table>
+<p><b>تحسينات مقترحة (لم تُطبّق):</b> قرار بلغة واجهة الطفل + ملفات ARB؛ تكبير محتوى التحديات ليملأ الارتفاع وتقريب زر "Check" من المحتوى؛ تباين الزر المعطّل لا يقل عن 3:1؛ قص العناوين الطويلة بنقاط مع تلميح؛ بومة البوابة حسب نوع الطفل؛ تقسيم أجزاء الجسم لمجموعات من 4–6؛ رسائل خطأ دقيقة لكل حالة.</p>
+
+<h2>8. مراجعة الأداء</h2>
+<table>
+<tr><th>المجال</th><th>الملاحظة</th><th>هل تم القياس؟</th></tr>
+<tr><td>بدء التشغيل</td><td>يفتح Hive ويفك كل الكتلة ويتحقق منها، ثم يحمّل الفهرس. مكتبة الدروس (13 ملف JSON، 436 KB) تُحمّل كلها عند فتح الخريطة.</td><td>NOT MEASURED</td></tr>
+<tr><td>الذاكرة</td><td>26 صورة، 43.7 MB على القرص، وحوالي 156 MB بعد فك الضغط (RGBA) لو اتخزنت كلها. كاش <code>Flame.images</code> العام لا يُفرّغ أبدًا.</td><td>تقدير ثابت فقط؛ وقت التشغيل NOT MEASURED</td></tr>
+<tr><td>القرص / الخيط الرئيسي</td><td>مع كل تفاعل وكل 10 ثواني: فك الكتلة السابقة + ترميز الكتلة كاملة (كل الأطفال وصورهم base64) + flush، على خيط الواجهة</td><td>NOT MEASURED</td></tr>
+<tr><td>الرسم</td><td>صور كبيرة تُرسم بـ <code>FilterQuality.high</code>؛ futures تُنشأ من جديد داخل <code>build</code></td><td>NOT MEASURED</td></tr>
+<tr><td>الصوت الأصلي</td><td><code>MediaPlayer.prepare()</code> متزامن على الخيط الرئيسي (ملفات WAV صغيرة)</td><td>NOT MEASURED</td></tr>
+<tr><td>الشبكة</td><td>لا يوجد</td><td>—</td></tr>
+<tr><td>حجم APK</td><td>نسخة Debug بحجم 208.2 MB (kernel blob 70 MB، 3 معماريات × libflutter حوالي 107 MB، أصول 45.7 MB). نسخة AAB للإصدار ستكون أصغر بكثير.</td><td>Debug تم قياسه؛ Release NOT MEASURED</td></tr>
+<tr><td>تسرب الذاكرة</td><td>الـ controllers والـ observers يتم التخلص منها في الـ widgets التي راجعناها؛ MediaPlayer يُحرّر عند التوقف. لم يثبت وجود تسرب.</td><td>NOT MEASURED</td></tr>
+</table>
+
+<h2>9. نتائج الاختبار الوظيفي</h2>
+<p>تم التشغيل على نسخة الويب الجاهزة (تُقدَّم للقراءة فقط على localhost) لأنه لم يكن هناك جهاز Android أو محاكي. التفاصيل في <code>Test_Results.md</code>.</p>
+<table>
+<tr><th>الرقم</th><th>الميزة</th><th>الحالة</th></tr>
+<tr><td>FT-01–06</td><td>التشغيل، التسجيل الأول (اسم فارغ، طويل، وشبيه بسكريبت)، النوع والشخصية، الحفظ بعد إعادة التشغيل</td><td><span class="badge OK">PASS</span></td></tr>
+<tr><td>FT-07</td><td>شاشة المواد (عنوان مكرر، كسر الاسم في نص الكلمة)</td><td><span class="badge MEDIUM">PARTIAL</span></td></tr>
+<tr><td>FT-08</td><td>قفل الجزر والمستويات</td><td><span class="badge OK">PASS</span></td></tr>
+<tr><td>FT-09</td><td>قائمة الدروس (قص العنوان)</td><td><span class="badge MEDIUM">PARTIAL</span></td></tr>
+<tr><td>FT-10–11</td><td>اللعب: تلميح عند الخطأ، وشرح وتقدم عند الصح</td><td><span class="badge OK">PASS</span></td></tr>
+<tr><td>FT-12–14</td><td>بوابة الأهل (إجابة خاطئة، فارغة، أرقام عربية)، حالات ركن الأهل الفارغة</td><td><span class="badge OK">PASS</span></td></tr>
+<tr><td>FT-15–16، 18</td><td>حفظ الحالة في منتصف النشاط؛ الشبكة محلية فقط؛ لا أخطاء في الـ console</td><td><span class="badge OK">PASS</span></td></tr>
+<tr><td>FT-17</td><td><b>حذف الطفل النشط على الويب ← "Could not save" (AUD-005)</b></td><td><span class="badge HIGH">FAIL</span></td></tr>
+<tr><td>FT-19–24</td><td>أسماء مكررة، بيانات كبيرة، منتقي الصور، الصوت، تذكير الراحة، زر الرجوع في Android</td><td><span class="badge INFO">NOT TESTED</span></td></tr>
+</table>
+<p>الإجمالي: 15 ناجح · 2 جزئي · 1 فاشل · 6 لم تُختبر.</p>
+
+<h2>10. مراجعة الاختبارات</h2>
+<table>
+<tr><th>النوع</th><th>موجود؟</th><th>ملاحظات</th></tr>
+<tr><td>Unit tests</td><td>نعم</td><td>النماذج، توزيع وقت الاستخدام، الترحيل، سلامة الفهرس، القراءة الصوتية بمحرك وهمي</td></tr>
+<tr><td>Widget tests</td><td>نعم (الأغلبية)</td><td>تدفق المشاهد، التنقل، التقدم، الحفاظ على الدرجات، تفاعلات اللمس</td></tr>
+<tr><td>Integration tests (على جهاز)</td><td>لا</td><td>لا يوجد <code>integration_test/</code></td></tr>
+<tr><td>Golden / مقارنة بصرية</td><td>لا (لقطات تُكتب في <code>tmp/</code> بدون مقارنة)</td><td>ملفات جانبية؛ بدون تحقق</td></tr>
+<tr><td>اختبارات التخزين</td><td>جزئي</td><td>عبر <code>MemoryProgressStore</code>؛ لا اختبار لتلف بيانات Hive</td></tr>
+<tr><td>اختبارات على الويب</td><td>لا</td><td>لذلك لم يُكتشف AUD-005</td></tr>
+<tr><td>CI</td><td>لا</td><td>الاختبارات تُشغَّل يدويًا؛ النتائج في <code>tmp/*.log</code></td></tr>
+<tr><td>النتيجة الآن</td><td colspan="2"><b>203/203 نجحوا في 87 ثانية</b></td></tr>
+</table>
+<p><b>استراتيجية الاختبار المستقبلية:</b> هرم يبدأ باختبارات unit للـ domain (النماذج، الترحيل، قواعد الدمج، اختبارات property-based للمزامنة) ← اختبارات repositories على SQLite في الذاكرة ← اختبارات widget وgolden لكل مشهد ← integration على فئتين من الأجهزة (تابلت ذاكرته قليلة، وموبايل) ← اختبارات الويب (<code>--platform chrome</code>) ← اختبارات Backend (unit وe2e وعقد OpenAPI) ← اختبارات أمان (تسجيل الدخول، BOLA) ← اختبارات تحميل k6 للمزامنة. وكل ذلك داخل CI.</p>
+
+<h2>11. مراجعة المكتبات</h2>
+<table>
+<tr><th>المكتبة</th><th>الإصدار</th><th>الحالة</th></tr>
+<tr><td>flutter_riverpod</td><td>3.4.3</td><td>حديثة</td></tr>
+<tr><td>flame</td><td>1.38.2</td><td>حديثة</td></tr>
+<tr><td>hive / hive_flutter</td><td>2.2.3 / 1.1.0</td><td>آخر إصدار على pub.dev، لكن التطوير الأصلي متوقف تقريبًا (يوجد fork مجتمعي <code>hive_ce</code>). يُستبدل أثناء إعادة الهيكلة.</td></tr>
+<tr><td>flutter_tts</td><td>4.2.5</td><td>حديثة</td></tr>
+<tr><td>image_picker</td><td>1.2.3</td><td>حديثة (توجد تحديثات patch لتطبيقات Android/iOS الفرعية)</td></tr>
+<tr><td>path_provider</td><td>2.1.6</td><td>حديثة</td></tr>
+<tr><td>lottie</td><td>3.6.1</td><td>حديثة (مستخدمة لحركة احتفال واحدة)</td></tr>
+<tr><td>مكتبات غير مباشرة</td><td>7 مكتبات متأخرة (cross_file، image_picker_android/ios، jni، material_color_utilities، objective_c، test_api)</td><td>تحديثات patch / minor فقط</td></tr>
+</table>
+<p>تثبيت الإصدارات بالضبط + ملف lock محفوظ + <code>--enforce-lockfile</code> ممارسة جيدة لسلسلة التوريد. <b>لا ندّعي وجود أي CVE</b> لأنه لم يتم الاستعلام من قاعدة بيانات ثغرات. يُنصح بإضافة <code>osv-scanner</code> إلى CI.</p>
+
+<h2>12. نقاط القوة</h2>
+<ul>
+<li>خصوصية ممتازة لتطبيق أطفال: بدون صلاحيات، بدون شبكة، بدون تتبع، النسخ الاحتياطي مقفول، الصور منظفة.</li>
+<li>تحليل آلي نظيف، تنسيق ثابت، نماذج غير قابلة للتغيير، وطابور حفظ لا يعرض الحالة الجديدة إلا بعد نجاح الكتابة.</li>
+<li>تصميم تقييم مدروس: أول نتيجة فقط تُحتسب، اللعب الحر والتوقعات بدون درجات، ونجوم المجهود منفصلة عن الفهم.</li>
+<li>203 اختبار ناجح يركز على السلوك، وسلسلة تحقق من المحتوى بـ JSON Schema مع ربط بمفتاح الإجابات.</li>
+<li>رسومات أصلية عالية الجودة، أهداف لمس كبيرة، وصف للعناصر، وردود فعل لطيفة.</li>
+<li>عناية بالإصدار: checksum مثبت لـ Gradle، التوقيع خارج Git، منع بناء Release بدون مفتاح، R8 مفعّل.</li>
+<li>توثيق تصميم واسع (قرارات، مراجعات، سجلات إصلاح).</li>
+</ul>
+
+<h2>13. نقاط الضعف</h2>
+<ul>
+<li>أدوات البناء على جهاز واحد، بدون CI، وطريقة عمل بسكريبتات ترقيع مؤقتة.</li>
+<li>God classes وحالة JSON بدون أنواع؛ الترحيل داخل كود الواجهة.</li>
+<li>كتلة حفظ واحدة تُكتب بشكل متكرر جدًا؛ لا يوجد استرجاع عند التلف.</li>
+<li>صور ثقيلة مع كاش بدون حد؛ لم يتم بناء نسخة Release ولا اختبارها على جهاز.</li>
+<li>استثناءات مكتومة ورسائل خطأ مضللة؛ لا يوجد تسجيل.</li>
+<li>واجهة الطفل إنجليزي فقط؛ الترجمة غير منظمة.</li>
+</ul>
+
+<h2>14. المشاكل الحرجة (يجب حلها قبل الإصدار للجمهور)</h2>
+<p>لا توجد مشاكل بدرجة CRITICAL. البنود العالية والمتوسطة التالية يجب حلها قبل أي إصدار عام:</p>
+<ol>
+<li><b>AUD-001</b>: بناء قابل للتكرار، CI، ومفتاح توقيع للإصدار مع نسخ احتياطية.</li>
+<li><b>AUD-004 / AUD-006</b>: حماية البيانات المحفوظة (نسخة سليمة أخيرة، قراءة كل طفل لوحده)، حتى لا يُحرم طفل من تقدمه بسبب سجل تالف.</li>
+<li><b>AUD-005</b>: فشل حذف الطفل على الويب (قبل أي إطلاق للويب).</li>
+<li><b>AUD-008</b>: قياس الذاكرة على تابلت ذاكرته قليلة، وتحسين الصور.</li>
+<li><b>REC-04</b>: نسخة AAB للإصدار مع تعمية الكود، ومختبرة على أجهزة حقيقية.</li>
+</ol>
+
+<h2>15. الديون التقنية</h2>
+<table>
+<tr><th>بند الدين</th><th>التكلفة لو تم تجاهله</th></tr>
+<tr><td>حالة المحتوى والدروس بدون أنواع</td><td>كل مشهد جديد يضيف مفاتيح نصية؛ مستحيل التحقق من عقود المزامنة والـ Backend</td></tr>
+<tr><td>ملف LessonPlayer الضخم</td><td>تكلفة التعديل وخطر الأعطال يزيدان مع كل وحدة</td></tr>
+<tr><td>ترحيل مكتوب يدويًا لكل وحدة</td><td>يجب تكراره على السيرفر بعد المزامنة</td></tr>
+<tr><td>تخزين Hive ككتلة واحدة</td><td>يمنع التحديث الجزئي والمزامنة وزيادة عدد الأطفال</td></tr>
+<tr><td>الأصول داخل Git وصور WebP بدون ضغط فاقد</td><td>نسخ المستودع بطيء، APK كبير</td></tr>
+<tr><td>لا CI وأدوات محلية فقط</td><td>المشروع معتمد على شخص واحد وجهاز واحد</td></tr>
+<tr><td>النصوص داخل الكود</td><td>الترجمة لاحقًا مكلفة</td></tr>
+</table>
+
+<h2>16. سجل المشاكل</h2>
+<table>
+<tr><th>الرقم</th><th>المشكلة</th><th>الفئة</th><th>الخطورة</th><th>النوع</th><th>المكان</th><th>الجهد</th></tr>
+<tr><td>AUD-001</td><td>البناء غير قابل للتكرار، لا يوجد CI</td><td>DevOps</td><td><span class="badge HIGH">عالية</span></td><td>مؤكدة</td><td>المستودع، scripts/</td><td>M</td></tr>
+<tr><td>AUD-002</td><td>LessonPlayer كـ God class</td><td>جودة الكود</td><td><span class="badge HIGH">عالية</span></td><td>مؤكدة</td><td>lesson_player.dart</td><td>L</td></tr>
+<tr><td>AUD-003</td><td>حالة Map&lt;String,dynamic&gt; بدون أنواع</td><td>المعمارية</td><td><span class="badge HIGH">عالية</span></td><td>مؤكدة</td><td>content/، session.dart</td><td>L</td></tr>
+<tr><td>AUD-004</td><td>حفظ الكتلة كاملة مع الصور كل 10 ثواني ومع كل تفاعل</td><td>أداء / بيانات</td><td><span class="badge HIGH">عالية</span></td><td>مؤكدة (التأثير لم يُقس)</td><td>storage.dart، main.dart</td><td>L</td></tr>
+<tr><td>AUD-005</td><td>فشل حذف الطفل على الويب (<code>nextInt(1&lt;&lt;32)</code>)</td><td>عيب</td><td><span class="badge MEDIUM">متوسطة</span></td><td>مؤكدة</td><td>providers.dart:53</td><td>S</td></tr>
+<tr><td>AUD-006</td><td>لا يوجد استرجاع عند تلف البيانات</td><td>الاعتمادية</td><td><span class="badge MEDIUM">متوسطة</span></td><td>مؤكدة</td><td>main.dart، models.dart</td><td>M</td></tr>
+<tr><td>AUD-007</td><td>ترحيل مكتوب داخل الواجهة والجلسة</td><td>الصيانة</td><td><span class="badge MEDIUM">متوسطة</span></td><td>مؤكدة</td><td>session.dart</td><td>M</td></tr>
+<tr><td>AUD-008</td><td>صور ثقيلة وكاش بلا حد</td><td>الأداء</td><td><span class="badge MEDIUM">متوسطة</span></td><td>مؤكدة / OOM محتمل</td><td>assets، Flame.images</td><td>M</td></tr>
+<tr><td>AUD-009</td><td>استثناءات مكتومة ورسائل مضللة</td><td>معالجة الأخطاء</td><td><span class="badge MEDIUM">متوسطة</span></td><td>مؤكدة</td><td>32 موضعًا</td><td>M</td></tr>
+<tr><td>AUD-010</td><td>ثغرات في الاختبارات واختبارات تكتب ملفات</td><td>الاختبارات</td><td><span class="badge MEDIUM">متوسطة</span></td><td>مؤكدة</td><td>test/</td><td>M</td></tr>
+<tr><td>AUD-011</td><td>لا يوجد نظام ترجمة</td><td>UX / لغات</td><td><span class="badge MEDIUM">متوسطة</span></td><td>مؤكدة</td><td>كل الشاشات</td><td>L</td></tr>
+<tr><td>AUD-012</td><td>تضخم المستودع وكود ميت</td><td>الصيانة</td><td><span class="badge MEDIUM">متوسطة</span></td><td>مؤكدة</td><td>assets/images، force_creature.dart</td><td>S</td></tr>
+<tr><td>AUD-013</td><td>قواعد lint قليلة</td><td>جودة الكود</td><td><span class="badge LOW">منخفضة</span></td><td>مؤكدة</td><td>analysis_options.yaml</td><td>S–M</td></tr>
+<tr><td>AUD-014</td><td>مسارات المعاينة داخل كود الإنتاج</td><td>جودة الكود</td><td><span class="badge LOW">منخفضة</span></td><td>مؤكدة</td><td>main.dart</td><td>S</td></tr>
+<tr><td>AUD-015</td><td>بوابة أهل ضعيفة</td><td>أمان الطفل</td><td><span class="badge LOW">منخفضة</span></td><td>مؤكدة</td><td>parent_gate.dart</td><td>S</td></tr>
+<tr><td>AUD-016</td><td>آثار جانبية وfutures داخل build()</td><td>جودة الكود</td><td><span class="badge LOW">منخفضة</span></td><td>مؤكدة</td><td>main.dart، illustrated_art.dart</td><td>S</td></tr>
+<tr><td>AUD-017</td><td>بيانات شخصية محلية بدون تشفير (مخففة)</td><td>الأمان</td><td><span class="badge LOW">منخفضة</span></td><td>مؤكدة</td><td>storage.dart</td><td>S–M</td></tr>
+<tr><td>AUD-018</td><td>عيوب تشطيب في الواجهة</td><td>UI/UX</td><td><span class="badge LOW">منخفضة</span></td><td>مؤكدة</td><td>شاشة المواد، الخريطة، البوابة</td><td>S–M</td></tr>
+<tr><td>AUD-019</td><td>copyWith لا يرجّع الصوت للافتراضي</td><td>جودة الكود</td><td><span class="badge LOW">منخفضة</span></td><td>مؤكدة</td><td>models.dart</td><td>S</td></tr>
+<tr><td>AUD-020</td><td>MediaPlayer.prepare على الخيط الرئيسي</td><td>الأداء</td><td><span class="badge LOW">منخفضة</span></td><td>محتملة</td><td>MainActivity.kt</td><td>S</td></tr>
+<tr><td>AUD-021</td><td>توقف تطوير hive</td><td>المكتبات</td><td><span class="badge INFO">معلومة</span></td><td>محتملة</td><td>pubspec.yaml</td><td>—</td></tr>
+<tr><td>AUD-022</td><td>README يشير لملف APK غير موجود في Git</td><td>التوثيق</td><td><span class="badge INFO">معلومة</span></td><td>مؤكدة</td><td>README.md</td><td>S</td></tr>
+</table>
+<p class="small">الأدلة والتأثير والتوصية الكاملة لكل بند موجودة في <code>Issues_Register.md</code>، مع التوصيات REC-01 إلى REC-06. الجهد: S (يوم أو أقل) · M (أيام) · L (1–3 أسابيع) · XL (أكثر من 3 أسابيع)، تقدير نسبي لمطور Flutter خبير واحد.</p>
+
+<h2>17. التقييم بالدرجات</h2>
+<table>
+<tr><th>الفئة</th><th>الدرجة</th><th style="width:20%">المؤشر</th><th>السبب</th></tr>
+<tr><td>جودة الكود</td><td class="ltr">11 / 20</td><td><div class="bar"><span style="width:55%"></span></div></td><td>تحليل نظيف، نماذج غير قابلة للتغيير، أسماء جيدة في core؛ لكن God classes وmaps بدون أنواع وكود ميت وأخطاء مكتومة وقواعد lint ضعيفة</td></tr>
+<tr><td>المعمارية</td><td class="ltr">8 / 15</td><td><div class="bar"><span style="width:53%"></span></div></td><td>تقسيم معقول بـ Riverpod وميزات مع واجهة تخزين؛ لا طبقة domain ولا repositories؛ المنطق والترحيل داخل widgets؛ تخزين ككتلة واحدة</td></tr>
+<tr><td>الأمان</td><td class="ltr">17 / 20</td><td><div class="bar"><span style="width:85%"></span></div></td><td>بدون صلاحيات، بدون أسرار، بدون شبكة، النسخ الاحتياطي مقفول، الصور منظفة، الجسر الأصلي بقائمة مسموحة؛ تحسينات بسيطة متبقية</td></tr>
+<tr><td>الواجهة وتجربة المستخدم</td><td class="ltr">11 / 15</td><td><div class="bar"><span style="width:73%"></span></div></td><td>رسومات ممتازة، أهداف كبيرة، semantics، ردود لطيفة؛ ضعف في الترجمة وعيوب تشطيب ورسائل مضللة</td></tr>
+<tr><td>الأداء</td><td class="ltr">5 / 10</td><td><div class="bar"><span style="width:50%"></span></div></td><td>صور ثقيلة بدون تفريغ؛ كتابة الكتلة كاملة بتكرار على خيط الواجهة؛ لم يُقس شيء على جهاز</td></tr>
+<tr><td>الاختبارات</td><td class="ltr">6 / 10</td><td><div class="bar"><span style="width:60%"></span></div></td><td>203 اختبار سلوكي ناجح؛ لا CI ولا integration ولا golden ولا ويب؛ لقطات جانبية</td></tr>
+<tr><td>سهولة الصيانة</td><td class="ltr">5 / 10</td><td><div class="bar"><span style="width:50%"></span></div></td><td>توثيق غني، لكن أدوات على جهاز واحد، سكريبتات ترقيع، ترحيل مكتوب يدويًا، تضخم المستودع</td></tr>
+<tr><th>الإجمالي</th><th class="ltr">63 / 100</th><th colspan="2">مقبول (60–69)</th></tr>
+</table>
+<p class="small">المقياس: 90–100 ممتاز · 80–89 جيد جدًا · 70–79 جيد · 60–69 مقبول · 50–59 يحتاج تحسين · أقل من 50 يحتاج إعادة هيكلة كبيرة.</p>
+
+<h2>18. التوصيات</h2>
+<ol>
+<li>CI وأدوات بناء قابلة للتكرار، وحماية مفتاح الإصدار (AUD-001).</li>
+<li>مراجعة قرار الخصوصية قبل الحسابات والمزامنة؛ الحساب ملك ولي الأمر؛ الصور لا تُرفع افتراضيًا (REC-01/03).</li>
+<li>إصلاح AUD-005 وإضافة اختبارات الويب والـ providers.</li>
+<li>حماية البيانات المحفوظة، وتسجيل دقيق يحترم الخصوصية (AUD-006/009).</li>
+<li>نماذج domain بأنواع واضحة وrepositories (AUD-003).</li>
+<li>تقسيم LessonPlayer؛ سجل للترحيل (AUD-002/007).</li>
+<li>SQLite (drift) + outbox مع ترحيل محلي بدون فقد بيانات (AUD-004).</li>
+<li>تحسين الصور وقياس الأداء على الأجهزة (AUD-008).</li>
+<li>تصميم عقد OpenAPI وبروتوكول المزامنة، ثم NestJS + PostgreSQL + تسجيل بالإيميل.</li>
+<li>حسابات اختيارية ← مزامنة ← Flutter Web، مع مراجعة أمان لكل مرحلة.</li>
+</ol>
+
+<h2>19. التقييم الفني النهائي</h2>
+<div class="callout"><b>القرار: B — إعادة هيكلة التطبيق الحالي (Refactor).</b><br>
+<b>لماذا ليس A (الاستمرار كما هو):</b> طبقة البيانات لا تتحمل المزامنة، والـ God classes ستبطئ كل ميزة جديدة.<br>
+<b>لماذا ليس C أو D (إعادة كتابة):</b> الواجهة ومشاهد اللعب والرسومات وسلسلة المحتوى والـ 203 اختبار كلها ذات قيمة وتعمل. Flutter يعمل على الويب أصلًا، فإعادة الكتابة ستضيع كودًا شغالًا بدون مكسب يُذكر. المشاكل مركزة في منطقتين (التخزين ومحرك الدروس)، ويمكن استبدالهما خطوة بخطوة خلف واجهات (<code>ProgressStore</code> موجودة بالفعل).<br>
+<b>الجاهزية للإنتاج (Android بدون إنترنت):</b> قريبة، بعد بنود المرحلتين 0 و1 (نسخة Release، CI، حماية البيانات، الاختبار على أجهزة).<br>
+<b>الجاهزية لـ Android + Web + Backend:</b> ليست جاهزة بعد. المرحلة 2 (نماذج typed + قاعدة بيانات محلية) هي المسار الحرج.</div>
+
+<h2 class="pb">ملحق أ: طريقة الفحص والأدلة وسلامة Git</h2>
+<table>
+<tr><th>الخطوة</th><th>التفاصيل</th></tr>
+<tr><td>حالة Git في البداية</td><td>الفرع <code>main</code> على <code>9fbdaf4</code>؛ ملف واحد غير متتبع كان موجودًا قبل الفحص <code>docs/LATEST_TEACHER_REVIEW_2026_10_04.md</code> (ليس من إنشاء الفحص)</td></tr>
+<tr><td>المراجعة الثابتة</td><td>قراءة كل ملفات core بالكامل؛ عينات من الملفات الكبيرة؛ مقاييس بالبحث (catch، maps ديناميكية، أرقام خطوات ثابتة، تحميل الصور، semantics)</td></tr>
+<tr><td>استعادة المكتبات</td><td>وافق صاحب المشروع على <code>flutter pub get --enforce-lockfile</code>؛ بصمة <code>pubspec.lock</code> لم تتغير</td></tr>
+<tr><td>الأوامر المنفذة</td><td><code>flutter analyze</code>، <code>flutter pub outdated</code>، <code>flutter test</code>، <code>flutter build apk --debug</code>، <code>aapt2 dump</code>، <code>apksigner verify</code>، <code>unzip -l</code></td></tr>
+<tr><td>وقت التشغيل</td><td>نسخة الويب الجاهزة قُدّمت للقراءة فقط على 127.0.0.1:8799 (سكريبت مساعد في <code>reports/_scratch/</code>)، وتم استخدامها من المتصفح المدمج؛ بيانات التجربة حُذفت بعدها</td></tr>
+<tr><td>ملفات جانبية مولّدة</td><td>كلها في مجلدات يتجاهلها Git: <code>build/</code>، <code>.dart_tool/</code>، 94 لقطة شاشة من الاختبارات في <code>tmp/</code>؛ وامتلأ كاش Pub العام</td></tr>
+<tr><td>ما لم يُفعل (حسب القواعد)</td><td>لا تعديل في الكود، لا تنسيق، لا إصلاحات، لا commit ولا branch ولا stash ولا reset ولا push</td></tr>
+<tr><td>حالة Git في النهاية</td><td>الملفات المتتبعة بدون تغيير؛ غير المتتبع: الملف الذي كان موجودًا + <code>reports/</code></td></tr>
+</table>
+<p><b>SOURCE CODE MODIFIED: NO — لم يتم تعديل كود المشروع</b></p>
+</body></html>

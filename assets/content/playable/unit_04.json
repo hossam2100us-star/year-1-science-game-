@@ -88,7 +88,8 @@
         "focus": "spoon",
         "discover": "Touch every hand. Discover each material.",
         "sort": "Touch an object, then a drawer."
-      }
+      },
+      "shortExplanation": "Materials feel and look different."
     },
     {
       "id": "unit_04.step.002",
@@ -169,7 +170,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Spoons and chairs are objects; metal and wood are materials used to make them."
     },
     {
       "id": "unit_04.step.003",
@@ -263,7 +265,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Window: glass; T-shirt: fabric; nail: metal; newspaper: paper."
     },
     {
       "id": "unit_04.step.004",
@@ -340,7 +343,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Most metals are hard and shiny, and can feel cold to touch."
     },
     {
       "id": "unit_04.step.005",
@@ -424,7 +428,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Glass is hard, can break, can be see-through, and comes in many colours."
     },
     {
       "id": "unit_04.step.006",
@@ -495,7 +500,8 @@
         "question": "What did the water test show?",
         "retry": "Look at the water and the result above. What happened?",
         "complete": "You noticed what happened! Keep exploring."
-      }
+      },
+      "shortExplanation": "Plastic and foil keep water out."
     },
     {
       "id": "unit_04.step.007",
@@ -575,7 +581,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Plastic and foil keep water out; cloth, paper and tissue let water through."
     },
     {
       "id": "unit_04.step.008",
@@ -696,7 +703,8 @@
         "stone": {
           "Squash": "same"
         }
-      }
+      },
+      "shortExplanation": "You can stretch a rubber band and squash sponge or dough with your hands."
     },
     {
       "id": "unit_04.step.009",
@@ -783,7 +791,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Sponge and dough squash; stone and a metal spoon stay hard."
     },
     {
       "id": "unit_04.step.010",
@@ -850,7 +859,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Glass is transparent, which means see-through."
     },
     {
       "id": "unit_04.step.011",
@@ -925,7 +935,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Wood surrounds the pencil; graphite inside makes the writing marks."
     },
     {
       "id": "unit_04.step.012",
@@ -991,7 +1002,8 @@
         "question": "What did the water test show?",
         "retry": "Look at the water and the result above. What happened?",
         "complete": "You noticed what happened! Keep exploring."
-      }
+      },
+      "shortExplanation": "Paper soaks up water."
     },
     {
       "id": "unit_04.step.013",
@@ -1176,7 +1188,8 @@
         "retry": "Keep trying. Use the discovery to help you.",
         "complete": "You did it yourself! You can keep exploring.",
         "check": "Check my practice"
-      }
+      },
+      "shortExplanation": "Glass windows; plastic raincovers; cold, hard metals; stretching rubber bands; potters shape clay."
     }
   ],
   "stickers": [
@@ -1292,6 +1305,177 @@
       "safetyPages": [
         2
       ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "u04.main.01",
+      "text": "Name a spoon and a chair, then their materials. Ask how an object differs from its material.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u04.main.02",
+      "text": "Sort pictures of a window, T-shirt, nail and newspaper into glass, fabric, metal and paper. Explain the material used for each object.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u04.main.03",
+      "text": "Compare a cool metal spoon with a wooden spoon. Ask which feels hard, looks shiny and feels cooler at the same room temperature.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u04.main.04",
+      "text": "Compare pictures of clear and coloured glass. Discuss how glass can be see-through, hard and breakable without handling broken glass.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u04.main.05",
+      "text": "Put a few water drops on plastic and tissue over a tray. Ask which keeps the water out.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u04.main.06",
+      "text": "Press a sponge and a smooth stone gently. Ask which changes shape and which stays hard.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u04.main.07",
+      "text": "Compare a window with a wall. Ask which lets light through and what transparent means.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u04.main.08",
+      "text": "Look at an intact pencil. Ask which part is wood and which part makes the marks.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u04.choice.01",
+      "text": "Compare window and wall pictures. Ask why clear glass is useful when we need to see through a window.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u04.choice.02",
+      "text": "Compare plastic and tissue covers over a tray with adult-applied water drops. Ask which material keeps rain out.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u04.choice.03",
+      "text": "Compare a cool metal spoon with a wooden spoon. Ask why the metal can feel cold and hard.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u04.choice.04",
+      "text": "Gently stretch a large rubber band with an adult. Ask which material gets longer when pulled; keep it away from faces.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "u04.choice.05",
+      "text": "Shape a pretend pot from safe modelling clay. Ask what material a potter shapes to make pots.",
+      "safety": "An adult supervises. No broken glass, sharp objects, hot materials or swallowing small pieces.",
+      "pages": [
+        12,
+        13
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
     }
   ]
 }

@@ -63,5 +63,7 @@ if __name__ == '__main__':
     for path in sorted((ROOT / 'assets/content/playable').glob('*.json')):
         book = json.loads(path.read_text(encoding='utf-8'))
         count = apply_child_feedback(book, strict=True)
+        from refine_latest_teacher_review import refine_latest_teacher_review
+        refine_latest_teacher_review(book)
         path.write_text(json.dumps(book, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         print(f'{book["id"]}: {count} editorial entries applied')

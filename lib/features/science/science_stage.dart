@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../core/answer_summary.dart';
+
 import '../../content/lesson.dart';
 import '../../core/touch_cue.dart';
 import 'science_picture.dart';
@@ -7,6 +9,7 @@ import 'material_workshop.dart';
 import 'force_stage.dart';
 import 'sound_stage.dart';
 import 'science_world_stage.dart';
+import 'quiz_action_stage.dart';
 
 class ScienceStage extends StatelessWidget {
   const ScienceStage({
@@ -127,7 +130,15 @@ class ScienceStage extends StatelessWidget {
     ],
   );
   @override
-  Widget build(BuildContext context) => step.json['soundScene'] != null
+  Widget build(BuildContext context) => step.json['quizInteraction'] != null
+      ? QuizActionStage(
+          key: ValueKey(step.id),
+          step: step,
+          done: done,
+          onItem: onItem,
+          onSound: onSound,
+        )
+      : step.json['soundScene'] != null
       ? SoundStage(
           key: ValueKey('sound-${step.id}'),
           step: step,
@@ -224,10 +235,8 @@ class ScienceStage extends StatelessWidget {
               if (step.isOrder && selected.isNotEmpty)
                 Padding(
                   padding: const EdgeInsets.all(12),
-                  child: Text(
-                    selected.map(step.label).join(' → '),
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 22),
+                  child: AnswerSummary(
+                    sequence: selected.map(step.label).toList(),
                   ),
                 ),
               if (step.targets.isNotEmpty) ...[

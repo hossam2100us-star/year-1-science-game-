@@ -35,6 +35,14 @@ class UnitReport extends ConsumerWidget {
             if (journey['stepId'] != null && journey['current'] is Map)
               journey['stepId']: journey['current'],
           });
+    final weakAlive =
+        level.id == 'unit_01' &&
+        lesson != null &&
+        aliveScenes(lesson).any(
+          (scene) => Map<String, String>.from(
+            data.journeys[scene.storageKey]?['results'] ?? {},
+          ).values.any((outcome) => outcome != 'firstTry'),
+        );
     String titleFor(String id) =>
         lesson?.steps
             .where((s) => s.assessedObjectives.contains(id))
@@ -77,8 +85,20 @@ class UnitReport extends ConsumerWidget {
               ),
             ),
             for (final entry in liveResults.entries)
-              Text(
-                '${entry.value == DecisionOutcome.firstTry ? '✓' : '↻'} ${titleFor(entry.key)} — ${entry.value == DecisionOutcome.firstTry ? t('أتقن في المحاولة دي', 'Independent this time') : t('محتاج تدريب', 'Practice next')}',
+              Row(
+                children: [
+                  Icon(
+                    entry.value == DecisionOutcome.firstTry
+                        ? Icons.check_circle_outline_rounded
+                        : Icons.replay_rounded,
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      '${titleFor(entry.key)} — ${entry.value == DecisionOutcome.firstTry ? t('أتقن في المحاولة دي', 'Independent this time') : t('محتاج تدريب', 'Practice next')}',
+                    ),
+                  ),
+                ],
               ),
           ],
           if (level.id == 'unit_01' && lesson != null) ...[
@@ -169,6 +189,40 @@ class UnitReport extends ConsumerWidget {
                   );
                 },
                 child: Text(t('ارجع للعبة للتدريب', 'Replay for practice')),
+              ),
+            ],
+          ],
+          if (lesson != null) ...[
+            for (final activity
+                in List<Map<String, dynamic>>.from(
+                  lesson.json['goalActivities'] ?? [],
+                ).where(
+                  (a) =>
+                      remaining.contains(a['objective']) ||
+                      (weakAlive && a['objective'] == 'u01.main.01') ||
+                      (liveResults[a['objective']] != null &&
+                          liveResults[a['objective']] !=
+                              DecisionOutcome.firstTry),
+                )) ...[
+              const SizedBox(height: 12),
+              Text(
+                t(
+                  'تدريب مناسب للهدف: ${titleFor(activity['objective'])}',
+                  'Practice for: ${titleFor(activity['objective'])}',
+                ),
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Text(activity['text'], textDirection: TextDirection.ltr),
+              Text(
+                activity['safety'],
+                textDirection: TextDirection.ltr,
+                style: const TextStyle(color: Color(0xFFC0392B)),
+              ),
+              Text(
+                t(
+                  'مرجع الهدف: ${activity['pages'].join(', ')}',
+                  'Goal source pages: ${activity['pages'].join(', ')}',
+                ),
               ),
             ],
           ],

@@ -59,7 +59,8 @@
       "quizContext": {
         "setting": "earth",
         "art": "earth"
-      }
+      },
+      "shortExplanation": "Most of Earth is covered in water."
     },
     {
       "id": "quiz_04.step.002",
@@ -110,7 +111,8 @@
       "quizContext": {
         "setting": "water",
         "art": null
-      }
+      },
+      "shortExplanation": "The ocean is a very large area of salty water."
     },
     {
       "id": "quiz_04.step.003",
@@ -170,7 +172,8 @@
       "quizContext": {
         "setting": "earth",
         "art": "soil"
-      }
+      },
+      "shortExplanation": "Small stones and dead leaves can be found in soil."
     },
     {
       "id": "quiz_04.step.004",
@@ -222,7 +225,8 @@
       "quizContext": {
         "setting": "earth",
         "art": "stone"
-      }
+      },
+      "shortExplanation": "A geologist is a scientist who studies rocks."
     },
     {
       "id": "quiz_04.step.005",
@@ -274,7 +278,8 @@
       "quizContext": {
         "setting": "space",
         "art": "earth"
-      }
+      },
+      "shortExplanation": "Earth is round like a ball."
     },
     {
       "id": "quiz_04.step.006",
@@ -326,7 +331,8 @@
       "quizContext": {
         "setting": "space",
         "art": "sun"
-      }
+      },
+      "shortExplanation": "The Sun is a star."
     },
     {
       "id": "quiz_04.step.007",
@@ -386,7 +392,8 @@
       "quizContext": {
         "setting": "space",
         "art": "sun"
-      }
+      },
+      "shortExplanation": "The Sun gives us heat and light."
     },
     {
       "id": "quiz_04.step.008",
@@ -433,7 +440,8 @@
       "quizContext": {
         "setting": "space",
         "art": "moon"
-      }
+      },
+      "shortExplanation": "Our heat and light come from the Sun."
     },
     {
       "id": "quiz_04.step.009",
@@ -514,7 +522,8 @@
       "quizContext": {
         "setting": "space",
         "art": "astronaut"
-      }
+      },
+      "shortExplanation": "Neil Armstrong first walked on the Moon in 1969."
     },
     {
       "id": "quiz_04.step.010",
@@ -566,9 +575,132 @@
       "quizContext": {
         "setting": "space",
         "art": "astronaut"
-      }
+      },
+      "shortExplanation": "The oxygen pack helps the astronaut breathe because there is no air on the Moon."
     }
   ],
   "stickers": [],
-  "homeActivities": []
+  "homeActivities": [],
+  "goalActivities": [
+    {
+      "objective": "quiz04.01",
+      "text": "Look at a globe or Earth picture. Ask what covers most of the surface and makes it look blue.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        26
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz04.02",
+      "text": "Compare the book pond, lake, river and ocean pictures. Ask which is the largest water place shown and has salty water.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        26
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz04.03",
+      "text": "Look at a soil photograph. Find two things such as small stones and dead leaves; explain that soil is a mixture.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        26
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz04.04",
+      "text": "Pretend to be a scientist examining clean adult-selected stones. Ask what a geologist studies.",
+      "safety": "Use clean adult-selected samples or pictures. Stay away from open water, unknown rocks and dirty soil; wash hands.",
+      "pages": [
+        26
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz04.05",
+      "text": "Draw Earth next to a ball picture. Ask which shape describes our planet.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        26
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz04.06",
+      "text": "Compare Sun and Earth pictures indoors. Ask which is a star that makes its own heat and light.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        26
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz04.07",
+      "text": "Draw the Sun lighting and warming Earth. Ask which two gifts it gives us: heat and light.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        26
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz04.08",
+      "text": "Compare Sun and Moon pictures indoors. Ask which supplies our heat and light and why the Moon does not make its own light.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        26
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz04.09",
+      "text": "Look at a Moon-landing photograph. Recall Neil Armstrong and the year 1969 as the first Moon walk.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        26
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz04.10",
+      "text": "Draw an astronaut oxygen pack. Ask why it supplies air to breathe when there is no air to breathe on the Moon.",
+      "safety": "Never look straight at the Sun. Use indoor pictures and models; never aim binoculars or telescopes at the Sun.",
+      "pages": [
+        26
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ]
 }

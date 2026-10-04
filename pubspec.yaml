@@ -53,6 +53,9 @@ flutter:
     - assets/images/forces-characters-v4.png
     - assets/images/forces-details-v4.png
     - assets/images/forces-garden-v6.png
+    - assets/images/book-v1.png
+    - assets/images/electric-safety-v1.png
+    - assets/images/water-world-v1.png
     - assets/audio/
   fonts:
     - family: Fredoka

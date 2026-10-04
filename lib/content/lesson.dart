@@ -21,6 +21,7 @@ class LessonStep {
   String get section => json['section'] ?? 'Explore';
   String get hint => json['hint'] ?? '';
   String get explanation => json['explanation'] ?? '';
+  String get shortExplanation => json['shortExplanation'] ?? explanation;
   String get objective => json['objective'] ?? '';
   Set<String> get assessedObjectives => assessed
       ? {objective, ...List<String>.from(json['extraObjectives'] ?? [])}

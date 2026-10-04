@@ -56,11 +56,14 @@ class GardenRound {
     this.selected,
     this.mistakes = 0,
     this.feedback = false,
+    this.needsCorrection = false,
     this.completedOnce = false,
     Map<String, String>? results,
+    Map<String, String>? observedAt,
     List<Map<String, dynamic>>? history,
   }) : roundId = roundId ?? DateTime.now().microsecondsSinceEpoch.toString(),
        results = results ?? {},
+       observedAt = observedAt ?? {},
        history = history ?? [];
   static const storageKey = 'unit_01.garden';
   final int version;
@@ -69,38 +72,52 @@ class GardenRound {
   String? selected;
   int mistakes;
   bool feedback;
+  bool needsCorrection;
   final bool completedOnce;
   final Map<String, String> results;
+
+  /// The decision time, rather than the time this resumable round was opened.
+  final Map<String, String> observedAt;
   final List<Map<String, dynamic>> history;
   bool finished(GardenContent c) =>
       results.length == c.items.length && selected == null;
-  DecisionOutcome? answer(GardenItem item, bool alive) {
+  DecisionOutcome? answer(GardenItem item, bool alive, {DateTime? now}) {
+    if (needsCorrection && selected == item.id) {
+      if (alive == item.alive) needsCorrection = false;
+      return null; // Practice retains the original explained outcome.
+    }
     if (feedback || results.containsKey(item.id)) return null;
     if (alive == item.alive) {
       final outcome = mistakes == 0
           ? DecisionOutcome.firstTry
           : DecisionOutcome.afterHint;
       results[item.id] = outcome.name;
+      observedAt[item.id] = (now ?? DateTime.now()).toIso8601String();
       feedback = true;
       return outcome;
     }
     mistakes++;
     if (mistakes >= 2) {
       results[item.id] = DecisionOutcome.explained.name;
+      observedAt[item.id] = (now ?? DateTime.now()).toIso8601String();
       feedback = true;
+      needsCorrection = true;
       return DecisionOutcome.explained;
     }
     return null;
   }
 
   void select(String id) {
+    if (needsCorrection) return;
     if (results.containsKey(id)) return;
     selected = id;
     mistakes = 0;
     feedback = false;
+    needsCorrection = false;
   }
 
   void next() {
+    if (needsCorrection) return;
     selected = null;
     mistakes = 0;
     feedback = false;
@@ -108,12 +125,16 @@ class GardenRound {
 
   Map<String, dynamic> toJson() => {
     'version': version,
-    'completedOnce': completedOnce || requiredIds.every(results.containsKey),
+    'completedOnce':
+        completedOnce ||
+        (!needsCorrection && requiredIds.every(results.containsKey)),
     'roundId': roundId,
     'selected': selected,
     'mistakes': mistakes,
     'feedback': feedback,
+    'needsCorrection': needsCorrection,
     'results': Map<String, String>.from(results),
+    'observedAt': Map<String, String>.from(observedAt),
     'history': history.map((h) => Map<String, dynamic>.from(h)).toList(),
   };
   factory GardenRound.restore(Map<String, dynamic> j, GardenContent content) {
@@ -129,12 +150,20 @@ class GardenRound {
             !DecisionOutcome.values.any((o) => o.name == v),
       );
     final selected = j['selected'] as String?;
+    final recorded = j['observedAt'] as Map? ?? {};
+    final legacyMicros = int.tryParse(j['roundId']?.toString() ?? '');
+    final legacyObserved =
+        (legacyMicros == null
+                ? DateTime(1970)
+                : DateTime.fromMicrosecondsSinceEpoch(legacyMicros))
+            .toIso8601String();
     return GardenRound(
       version: content.version,
       requiredIds: content.items.map((i) => i.id).toSet(),
       completedOnce:
           j['completedOnce'] == true ||
-          content.items.every((i) => results.containsKey(i.id)) ||
+          (j['needsCorrection'] != true &&
+              content.items.every((i) => results.containsKey(i.id))) ||
           (j['history'] as List? ?? []).any(
             (h) =>
                 h is Map &&
@@ -150,7 +179,17 @@ class GardenRound {
       selected: content.items.any((i) => i.id == selected) ? selected : null,
       mistakes: (j['mistakes'] as int? ?? 0).clamp(0, 2),
       feedback: j['feedback'] == true,
+      needsCorrection:
+          j['needsCorrection'] == true &&
+          selected != null &&
+          results[selected] == DecisionOutcome.explained.name,
       results: results,
+      observedAt: {
+        for (final id in results.keys)
+          id: recorded[id] is String && DateTime.tryParse(recorded[id]) != null
+              ? recorded[id] as String
+              : legacyObserved,
+      },
       history: List<Map<String, dynamic>>.from(j['history'] ?? []),
     );
   }
@@ -164,6 +203,7 @@ class GardenRound {
         'roundId': roundId,
         'date': DateTime.now().toIso8601String(),
         'results': Map<String, String>.from(results),
+        'observedAt': Map<String, String>.from(observedAt),
       },
     ].reversed.take(20).toList().reversed.toList(),
   );

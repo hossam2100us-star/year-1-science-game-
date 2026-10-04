@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Future System Architecture — Science Adventure</title>
+<link rel="stylesheet" href="report.css"></head><body>
+
+<div class="cover">
+  <h1>Future System Architecture</h1>
+  <div class="sub">Science Adventure → Android App + Web App + Backend Server + Central Database<br>with Email Authentication and Offline-First Data Synchronisation</div>
+  <div class="meta">
+    <p><b>Status:</b> DESIGN AND PLAN ONLY. Nothing in this document has been built.</p>
+    <p><b>Based on:</b> audit of commit <code>9fbdaf4</code> (2026-10-04); see Software_Technical_Audit_Report.pdf</p>
+    <p><b>Recommendation:</b> B — Refactor the existing Flutter application; add NestJS + PostgreSQL; Flutter Web client</p>
+  </div>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>Current System Summary</li><li>Problems Blocking Expansion</li><li>Target Architecture</li><li>Recommended Technology Stack</li>
+<li>Backend Architecture</li><li>Database Architecture</li><li>Android Architecture</li><li>Web Architecture</li>
+<li>Authentication Architecture</li><li>Authorization Model</li><li>API Architecture</li><li>Synchronization Architecture</li>
+<li>Offline Strategy</li><li>Conflict Resolution</li><li>Deployment Architecture</li><li>Backup Strategy</li>
+<li>Monitoring Strategy</li><li>Migration Strategy</li><li>Development Roadmap</li><li>Risks</li><li>Final Recommendation</li>
+<li>Appendix: Environments, Future Repository Structure</li>
+</ol>
+
+<h2>1. Current System Summary</h2>
+<p>An offline Flutter 3.47.5 game (≈22.4k Dart LOC) for Android. It uses Riverpod state, Flame scenes and bundled JSON lessons. All data lives in one Hive key containing a JSON blob: <code>{schemaVersion:3, activeChildId, children:{id → {profile, settings, dailySeconds, subjects.science{attempts, journeys}}}}</code>. There are no accounts, no network and no permissions. Multiple child profiles share a device behind a parent gate.</p>
+<p><b>What the user wants to move to a server</b> (the "data" in this product): parent account, child profiles, per-child settings, assessment attempts (scores), in-progress lesson state ("journeys"), and usage time. Lesson content stays bundled in the apps and is versioned by <code>contentVersion</code>.</p>
+
+<h2>2. Problems Blocking Expansion</h2>
+<table>
+<tr><th>Blocker</th><th>Why it blocks sync / web</th><th>Ref</th></tr>
+<tr><td>Single JSON blob persistence</td><td>No per-record versioning, change tracking or partial updates; an outbox is impossible</td><td>AUD-004</td></tr>
+<tr><td>Untyped <code>Map&lt;String,dynamic&gt;</code> state</td><td>No schema shared with a server; validation impossible</td><td>AUD-003</td></tr>
+<tr><td>Migrations inside widgets</td><td>The server would need to replicate per-unit migration code</td><td>AUD-007</td></tr>
+<tr><td>Non-global IDs</td><td>Default child id <code>'local-child'</code>; attempt IDs <code>'{lesson}-{micros}'</code> are not globally unique</td><td>models.dart, session.dart</td></tr>
+<tr><td>Web bug in ID generation</td><td>Deleting the active child fails on web</td><td>AUD-005</td></tr>
+<tr><td>No logging or CI</td><td>Distributed systems need observability and automated tests</td><td>AUD-001/009</td></tr>
+<tr><td>Product decision "no accounts / no data sending"</td><td>Must be formally revised, with privacy and legal input (children's data)</td><td>REC-01</td></tr>
+</table>
+
+<h2>3. Target Architecture</h2>
+<pre>
+   ┌──────────────────────────┐                     ┌──────────────────────────┐
+   │  ANDROID APP (Flutter)   │                     │  WEB APP (Flutter Web)   │
+   │  game + parent area      │                     │  game + parent portal    │
+   │  SQLite (drift) + outbox │                     │  IndexedDB cache         │
+   │  tokens in Keystore      │                     │  refresh = HttpOnly cookie│
+   └────────────┬─────────────┘                     └────────────┬─────────────┘
+                │  HTTPS (TLS 1.2+), REST/JSON, OpenAPI client   │
+                └───────────────────────┬────────────────────────┘
+                                        ▼
+                          ┌──────────────────────────┐
+                          │ Reverse proxy (Caddy)    │  TLS, HSTS, rate limit
+                          └────────────┬─────────────┘
+                                       ▼
+                          ┌──────────────────────────┐      ┌───────────────────┐
+                          │ BACKEND API (NestJS)     │─────►│ Email provider    │
+                          │ auth · children · sync   │      └───────────────────┘
+                          └──────┬────────────┬──────┘      ┌───────────────────┐
+                                 │            └────────────►│ Object storage    │
+                                 ▼                          │ (opt-in photos)   │
+                          ┌──────────────────────────┐      └───────────────────┘
+                          │ PostgreSQL (central DB)  │──► encrypted off-site backups
+                          └──────────────────────────┘
+</pre>
+<p><b>Target user journey.</b> A parent creates an account by email on Android, logs in and links the local children. Play results are saved locally and synced. Later the parent opens the web app on a computer, logs in with the same email, sees the same children and progress, and edits a child's settings. Android pulls the change on its next sync (on resume, within 15 minutes, or via "Sync now").</p>
+
+<h2>4. Recommended Technology Stack</h2>
+<table>
+<tr><th>Layer</th><th>Choice</th><th>Why (grounded in this project)</th><th>Alternatives evaluated</th></tr>
+<tr><td>Mobile</td><td><b>Flutter (keep)</b> + drift (SQLite) + flutter_secure_storage + dio/http client generated from OpenAPI</td><td>22k LOC of working UI and Flame scenes; tests; offline-first needs a relational local DB</td><td>Native Kotlin rewrite: no benefit, loses the web reuse</td></tr>
+<tr><td>Web</td><td><b>Flutter Web</b> (same codebase)</td><td>The app already compiles for web (conditional imports, working preview, CanvasKit bundled). The game is canvas/Flame-heavy, so a React/Vue/Angular port would mean rewriting every scene.</td><td>Next.js: best for SEO and a marketing/legal site. React/Vue/Angular: would duplicate the game. Recommended only for a separate public site.</td></tr>
+<tr><td>Backend</td><td><b>NestJS (TypeScript, Node 22 LTS)</b> as a modular monolith</td><td>Opinionated structure (modules, controllers, services, guards, pipes) maps directly to the required design; first-class OpenAPI generation → typed Dart client; large talent pool; good fit for I/O-bound JSON sync</td><td>.NET / Spring Boot: excellent but heavier for a small team. Django / FastAPI: good, and the team already uses Python for content tooling; viable second choice. <b>Serverpod (Dart)</b>: shares models with Flutter end to end; smaller ecosystem. <b>Supabase</b>: fastest path (managed Postgres + Auth + RLS), less control over sync semantics.</td></tr>
+<tr><td>Database</td><td><b>PostgreSQL 17/18</b></td><td>Relational integrity for ownership (FKs), <code>citext</code> emails, JSONB for versioned journey state, row-level locking for optimistic concurrency, native <code>uuid</code> (PG 18 has built-in <code>uuidv7()</code>)</td><td>MySQL: fine but weaker JSON and constraints. MongoDB: weaker relational guarantees for ownership and auth</td></tr>
+<tr><td>ORM / migrations</td><td>Prisma (or Drizzle) migrations in Git</td><td>Typed queries, reviewed SQL migrations</td><td>TypeORM</td></tr>
+<tr><td>API style</td><td><b>REST + OpenAPI 3.1</b></td><td>See §11</td><td>GraphQL</td></tr>
+<tr><td>Jobs</td><td>pg-boss (queue on PostgreSQL)</td><td>No extra infrastructure (no Redis needed at this scale)</td><td>BullMQ + Redis</td></tr>
+<tr><td>Hosting</td><td>Docker Compose on one VM + managed PostgreSQL</td><td>Simple, cheap, scalable vertically and then horizontally</td><td>Kubernetes: not justified at this scale</td></tr>
+</table>
+
+<h2>5. Backend Architecture</h2>
+<pre>
+backend/src
+├── main.ts                     bootstrap: helmet, CORS allowlist, body limit, versioning /api/v1
+├── config/                     env schema (zod) validated at boot; no defaults for secrets
+├── common/
+│   ├── filters/                ProblemDetailsFilter → RFC 9457 application/problem+json
+│   ├── guards/                 JwtAuthGuard, ChildOwnershipGuard, RateLimitGuard
+│   ├── interceptors/           RequestId, Logging (redacted), Timeout
+│   ├── pipes/                  ValidationPipe(whitelist, forbidNonWhitelisted, transform)
+│   └── logger/                 pino JSON; redact: password, token, authorization, cookie, email, name
+├── modules/
+│   ├── auth/      controller · AuthService · TokenService · PasswordService(Argon2id) · dto/
+│   ├── users/     controller (/users/me) · UserService · UserRepository
+│   ├── devices/   DeviceService (register, last_seen)
+│   ├── children/  controller · ChildService · ChildRepository · dto/ (CreateChild, PatchChild)
+│   ├── progress/  AttemptService · JourneyService · UsageService · repositories
+│   ├── sync/      SyncController · SyncService(push/pull) · ConflictResolver · MutationLog
+│   ├── email/     EmailService (provider adapter, templates, no PII in logs)
+│   └── health/    /health/live, /health/ready (DB ping)
+└── prisma/        schema.prisma · migrations/
+</pre>
+<table>
+<tr><th>Concern</th><th>Design</th></tr>
+<tr><td>Controllers</td><td>Thin: parse DTO → call service → map to response DTO. Never return ORM entities.</td></tr>
+<tr><td>Services</td><td>Business rules, transactions, ownership checks (defence in depth beyond guards)</td></tr>
+<tr><td>Repositories</td><td>Every query takes <code>userId</code>; there are no "find by id" methods without an owner</td></tr>
+<tr><td>DTOs / validators</td><td>class-validator or zod; strict types; length limits (name 1–24, Unicode letters/space/-/'); enum checks; max batch sizes</td></tr>
+<tr><td>Auth</td><td>Passport-JWT (EdDSA or RS256 with <code>kid</code> rotation); opaque refresh tokens</td></tr>
+<tr><td>Middleware</td><td>helmet, CORS (exact origins), compression, request-id, body limit 1 MB (sync), rate limits (per IP + per account)</td></tr>
+<tr><td>Errors</td><td>Problem details with a stable <code>type</code> and <code>code</code>; no stack traces in production; generic auth errors</td></tr>
+<tr><td>Logging</td><td>Structured JSON, correlation id, PII-redacted; audit events stored separately</td></tr>
+<tr><td>Configuration</td><td>12-factor env vars; secrets from a secret manager or Docker secrets; fail fast if missing</td></tr>
+</table>
+
+<h2>6. Database Architecture</h2>
+<p>Every primary key of a synced entity is a <b>client-generated UUIDv7</b>. Clients create records offline without collisions, IDs sort by time (index-friendly), and Postgres stores them natively. UUIDv7 was chosen over ULID for the native <code>uuid</code> type. Auto-increment IDs are not used for synced entities.</p>
+<table>
+<tr><th>Table</th><th>Key columns</th><th>Constraints / indexes</th></tr>
+<tr><td><b>users</b></td><td>id uuid PK, email citext, password_hash, email_verified_at, status, created_at, updated_at, deleted_at</td><td>UNIQUE(email) WHERE deleted_at IS NULL; CHECK status IN (…)</td></tr>
+<tr><td><b>refresh_tokens</b></td><td>id, user_id FK, family_id, token_hash bytea, device_id, expires_at, revoked_at, replaced_by</td><td>UNIQUE(token_hash); INDEX(user_id), INDEX(family_id); ON DELETE CASCADE</td></tr>
+<tr><td><b>email_tokens</b></td><td>id, user_id FK, purpose, token_hash, expires_at, used_at</td><td>UNIQUE(token_hash); single-use</td></tr>
+<tr><td><b>devices</b></td><td>id uuid (client), user_id FK, platform, last_seen_at</td><td>INDEX(user_id)</td></tr>
+<tr><td><b>child_profiles</b></td><td>id uuid (client), user_id FK, display_name, gender, avatar, palette, photo_object_key, version, change_seq, server_updated_at, deleted_at</td><td>INDEX(user_id, change_seq); CHECK length(display_name) BETWEEN 1 AND 24; max 10 children per user (service rule)</td></tr>
+<tr><td><b>child_settings</b></td><td>child_id PK/FK, arabic, break_minutes, volume, sound, music, narration, boy_voice, girl_voice, version, change_seq</td><td>CHECK break_minutes BETWEEN 5 AND 30; CHECK volume BETWEEN 0 AND 1</td></tr>
+<tr><td><b>unit_attempts</b></td><td>id uuid PK, child_id FK, unit_id, content_version, completed, effort_stars, completed_at, legacy_attempt_id, change_seq</td><td>INDEX(child_id, unit_id, completed_at DESC); CHECK effort_stars BETWEEN 0 AND 3; <b>append-only</b></td></tr>
+<tr><td><b>attempt_objectives</b></td><td>attempt_id FK, objective_id, outcome</td><td>PK(attempt_id, objective_id); CHECK outcome IN ('firstTry','afterHint','explained')</td></tr>
+<tr><td><b>journeys</b></td><td>child_id FK, lesson_id, content_version, state jsonb, progress_rank, version, change_seq, deleted_at</td><td>PK(child_id, lesson_id); state validated against a JSON Schema per lesson version</td></tr>
+<tr><td><b>usage_daily</b></td><td>child_id FK, device_id FK, day date, seconds</td><td>PK(child_id, device_id, day); CHECK seconds BETWEEN 0 AND 86400</td></tr>
+<tr><td><b>processed_mutations</b></td><td>user_id, mutation_id, result jsonb, created_at</td><td>PK(user_id, mutation_id); TTL cleanup after 30 days</td></tr>
+<tr><td><b>audit_log</b></td><td>id bigserial, user_id, action, meta jsonb, created_at</td><td>INDEX(user_id, created_at); no PII or tokens</td></tr>
+</table>
+<p><b>Sync cursor.</b> A global sequence <code>change_seq_seq</code>. Every insert, update or tombstone sets <code>change_seq = nextval()</code> inside the same transaction. Pull returns rows with <code>change_seq &gt; :cursor</code> for the caller's children, ordered, with a page limit. (Commit-order edge cases are handled by reading only up to the minimum in-flight sequence, or by using a single writer transaction per push.)</p>
+<pre>
+ users 1───* refresh_tokens        users 1───* devices
+   │ 1                               │
+   └───* child_profiles 1───1 child_settings
+              │ 1
+              ├───* unit_attempts 1───* attempt_objectives
+              ├───* journeys            (PK child_id + lesson_id)
+              └───* usage_daily  *───1 devices   (PK child_id + device_id + day)
+</pre>
+
+<h2>7. Android Architecture</h2>
+<pre>
+ Android UI (widgets, Flame scenes)
+        │
+ Controllers (Riverpod Notifiers: LessonController, ChildController, ParentController)
+        │
+ Repositories (ChildRepository, ProgressRepository, SettingsRepository, AuthRepository)
+        │                                   │
+ Local DB (drift/SQLite)  ◄──── Sync Engine ────►  Remote API client (OpenAPI-generated)
+   tables + outbox + sync_meta                         │
+                                                  Backend (HTTPS)
+</pre>
+<table>
+<tr><th>Decision</th><th>Category</th><th>Items</th></tr>
+<tr><td rowspan="1"><b>KEEP</b></td><td>Proven assets</td><td>Flutter + Riverpod; Flame scenes and art; content JSON + schemas + validators; <code>AttemptRecorder</code>, <code>addUsage</code>, unlock rules; photo sanitisation; MainActivity sound channel; manifest security posture; parent gate concept; existing tests</td></tr>
+<tr><td><b>REFACTOR LATER</b></td><td>Structure</td><td>LessonPlayer → controller + scene renderers; <code>LessonSession</code> migrations → registry; <code>AppController</code> → repositories; error handling + logging; strings → ARB</td></tr>
+<tr><td><b>REPLACE LATER</b></td><td>Foundations</td><td>Hive blob → drift tables + outbox; untyped journey maps → typed models; unbounded <code>Flame.images</code> → bounded loader; lossless assets → lossy WebP/AAB splits; parent gate → stronger variant</td></tr>
+<tr><td><b>REMOVE LATER</b></td><td>Debt</td><td><code>force_creature.dart</code>; 24 unused images from Git; preview routes in <code>main.dart</code> (move to <code>main_preview.dart</code>); <code>tmp/</code> patch-script workflow</td></tr>
+</table>
+<p><b>Transition path (not executed):</b> (1) Introduce repository interfaces backed by the existing Hive store, so behaviour does not change. (2) Add typed models and switch the controllers to the repositories. (3) Add the drift implementation plus a one-time local migration (§18), still offline. (4) Add the remote API and sync engine behind a feature flag, active only when a parent is logged in.</p>
+<p><b>Android specifics:</b> <code>INTERNET</code> permission (only after the privacy decision); <code>network_security_config</code> with cleartext disabled and system CAs only; WorkManager periodic sync (≥ 15 min, network-connected constraint); tokens in <code>flutter_secure_storage</code> (Keystore); flavours <code>dev / staging / prod</code> with <code>applicationIdSuffix</code> and <code>--dart-define-from-file</code> for <code>API_BASE_URL</code>.</p>
+
+<h2>8. Web Architecture</h2>
+<table>
+<tr><th>Concern</th><th>Design</th></tr>
+<tr><td>Framework</td><td>Flutter Web (CanvasKit, already bundled locally); entry point <code>lib/main_web.dart</code></td></tr>
+<tr><td>Structure</td><td>Shared packages: <code>packages/domain</code> (models, merge rules), <code>packages/data</code> (repositories, sync), <code>packages/api_client</code> (generated), <code>packages/ui</code> (design system, scenes); thin app shells for Android and Web</td></tr>
+<tr><td>Routing</td><td><code>go_router</code> with URL paths: <code>/login</code>, <code>/children</code>, <code>/children/:id/reports</code>, <code>/play/:lessonId</code>, <code>/account</code>; auth redirect guard</td></tr>
+<tr><td>Authentication</td><td>Refresh token in an <code>HttpOnly; Secure; SameSite=Strict</code> cookie scoped to <code>/api/v1/auth</code>; access token held in memory; silent refresh on load; CSRF: SameSite plus a required custom header on refresh</td></tr>
+<tr><td>State</td><td>Riverpod (same as Android)</td></tr>
+<tr><td>API layer</td><td>Generated Dart client with interceptors (auth, retry with backoff, problem+json mapping)</td></tr>
+<tr><td>Local cache</td><td>drift on web (IndexedDB/OPFS) for offline viewing of non-sensitive progress; cleared on logout</td></tr>
+<tr><td>Forms / validation</td><td>Shared validators from <code>domain</code> (same rules as the server DTOs); inline errors</td></tr>
+<tr><td>Errors</td><td>Global error boundary; offline banner; accurate messages per problem <code>code</code></td></tr>
+<tr><td>Responsive</td><td>Breakpoints: &lt;600 phone (single column), 600–1024 tablet (two-pane), &gt;1024 desktop (sidebar + content). The game keeps a landscape aspect box with letterboxing.</td></tr>
+<tr><td>Security headers</td><td>CSP (<code>script-src 'self' 'wasm-unsafe-eval'</code>), HSTS, X-Content-Type-Options, frame-ancestors 'none'</td></tr>
+</table>
+
+<h2>9. Authentication Architecture</h2>
+<table>
+<tr><th>Flow</th><th>Design</th></tr>
+<tr><td>Register</td><td>Email plus password (≥ 12 chars, up to 128; breached-password check via k-anonymity range API; no composition rules). Same 202 response whether the email exists or not.</td></tr>
+<tr><td>Email verification</td><td>256-bit random token, stored hashed (SHA-256), 24 h, single use; login allowed but sync blocked until verified</td></tr>
+<tr><td>Login</td><td>Constant-time verification; generic error; rate limit 5/min per account and IP with progressive delay; device id recorded</td></tr>
+<tr><td>Logout</td><td>Revoke the current refresh family; <b>logout-all</b> revokes all families</td></tr>
+<tr><td>Forgot / reset password</td><td>Same generic response; token 30 min single use; on reset revoke all sessions and email a notification</td></tr>
+<tr><td>Change password</td><td>Requires the current password; revokes other sessions</td></tr>
+<tr><td>Account disable / delete</td><td>Soft delete with a 14-day grace period, then hard delete of all child data (right to erasure); export endpoint (JSON) before deletion</td></tr>
+<tr><td>Future</td><td>Google / Microsoft sign-in via OIDC (Authorization Code + PKCE), linked to the same verified email</td></tr>
+</table>
+<div class="callout"><b>Password hashing: Argon2id</b> (OWASP Password Storage Cheat Sheet first choice). It is memory-hard, so it resists GPU and ASIC cracking better than bcrypt. bcrypt also truncates input at 72 bytes. Baseline parameters: m = 19 MiB, t = 2, p = 1, tuned so one hash takes about 100–300 ms on production hardware. Store the PHC string, which carries the parameters so they can be upgraded on next login. <b>bcrypt</b> (cost ≥ 12) is an acceptable fallback if the platform lacks Argon2.</div>
+<h3>Session security</h3>
+<table>
+<tr><th>Element</th><th>Design</th></tr>
+<tr><td>Access token</td><td>JWT, 15 min, claims: <code>sub</code>, <code>sid</code> (family), <code>iat</code>, <code>exp</code>, <code>aud</code>, <code>iss</code>; asymmetric signature with <code>kid</code> rotation; no PII</td></tr>
+<tr><td>Refresh token</td><td>Opaque 256-bit random value; server stores only its hash; 30-day sliding window, 90-day absolute limit</td></tr>
+<tr><td>Rotation</td><td>Each refresh issues a new token and marks the old one replaced</td></tr>
+<tr><td>Reuse detection</td><td>Presenting an already-rotated token revokes the entire family (theft signal) and emails the parent</td></tr>
+<tr><td>Revocation</td><td>Logout, password change or reset, account disable; access tokens expire within 15 min (optional deny-list by <code>sid</code> for immediate revocation)</td></tr>
+<tr><td>Android storage</td><td>Refresh token in Keystore-backed <code>flutter_secure_storage</code>; access token in memory; never Hive, logs or crash reports</td></tr>
+<tr><td>Web storage</td><td>Refresh token in an HttpOnly Secure SameSite=Strict cookie; access token in memory. <b>No long-lived tokens in localStorage.</b></td></tr>
+</table>
+
+<h2>10. Authorization Model</h2>
+<ul>
+<li><b>Tenant = parent account.</b> Every child, attempt, journey and usage row belongs to exactly one <code>user_id</code> (through <code>child_profiles.user_id</code>).</li>
+<li>The <code>user_id</code> always comes from the verified token <code>sub</code> and <b>never</b> from the path or body.</li>
+<li><code>ChildOwnershipGuard</code> resolves <code>:childId</code> with <code>WHERE id = :childId AND user_id = :sub AND deleted_at IS NULL</code>. If nothing matches it returns <b>404</b>, not 403, so IDs cannot be enumerated.</li>
+<li>Sync push validates that every mutation's entity belongs to the caller inside the same transaction. Pull queries join through <code>child_profiles.user_id = :sub</code>.</li>
+<li>Optional defence in depth: PostgreSQL <b>Row-Level Security</b> with <code>SET app.user_id</code> per transaction.</li>
+<li>Automated BOLA/IDOR tests: user B's token against every user A resource ID must return 404.</li>
+<li>Roles for now: <code>parent</code> only. Future: <code>co_parent</code> (invited), <code>teacher</code> (read-only aggregated), modelled as an <code>account_members</code> table.</li>
+</ul>
+
+<h2>11. API Architecture</h2>
+<p><b>REST over GraphQL.</b> Sync is batch push/pull, which maps naturally to two POST/GET endpoints. REST is easy to rate-limit, cache, log and secure per route. OpenAPI generates the Dart client for both apps. GraphQL's flexible querying adds complexity (query cost limits, authorization per field) without a benefit for this small, fixed data model.</p>
+<table>
+<tr><th>Method</th><th>Endpoint</th><th>Purpose</th><th>Auth</th><th>Authorisation</th><th>Request → Response</th><th>Validation</th></tr>
+<tr><td>POST</td><td>/api/v1/auth/register</td><td>Create account</td><td>None</td><td>—</td><td>{email, password} → 202</td><td>email RFC, pw 12–128, breached check, rate limit</td></tr>
+<tr><td>POST</td><td>/api/v1/auth/verify-email</td><td>Verify email</td><td>None</td><td>token</td><td>{token} → 204</td><td>token format, unexpired, unused</td></tr>
+<tr><td>POST</td><td>/api/v1/auth/resend-verification</td><td>Resend link</td><td>None</td><td>—</td><td>{email} → 202</td><td>rate limit</td></tr>
+<tr><td>POST</td><td>/api/v1/auth/login</td><td>Start session</td><td>None</td><td>—</td><td>{email, password, deviceId, platform} → {accessToken, expiresIn, refreshToken*}</td><td>*body on Android, cookie on web; rate limit</td></tr>
+<tr><td>POST</td><td>/api/v1/auth/refresh</td><td>Rotate tokens</td><td>Refresh token</td><td>family valid</td><td>{refreshToken} or cookie → new pair</td><td>reuse detection</td></tr>
+<tr><td>POST</td><td>/api/v1/auth/logout</td><td>End session</td><td>Bearer</td><td>own session</td><td>{all?: bool} → 204</td><td>—</td></tr>
+<tr><td>POST</td><td>/api/v1/auth/forgot-password</td><td>Send reset link</td><td>None</td><td>—</td><td>{email} → 202</td><td>generic response, rate limit</td></tr>
+<tr><td>POST</td><td>/api/v1/auth/reset-password</td><td>Set new password</td><td>Reset token</td><td>token</td><td>{token, newPassword} → 204</td><td>pw policy; revoke sessions</td></tr>
+<tr><td>POST</td><td>/api/v1/auth/change-password</td><td>Change password</td><td>Bearer</td><td>self</td><td>{currentPassword, newPassword} → 204</td><td>re-auth</td></tr>
+<tr><td>GET</td><td>/api/v1/users/me</td><td>Profile</td><td>Bearer</td><td>self</td><td>→ {id, email, verified, createdAt}</td><td>—</td></tr>
+<tr><td>DELETE</td><td>/api/v1/users/me</td><td>Delete account</td><td>Bearer + password</td><td>self</td><td>{password} → 202 (grace period)</td><td>re-auth</td></tr>
+<tr><td>GET</td><td>/api/v1/users/me/export</td><td>Data export</td><td>Bearer</td><td>self</td><td>→ JSON of all data</td><td>rate limit</td></tr>
+<tr><td>GET</td><td>/api/v1/children</td><td>List children</td><td>Bearer</td><td>owner</td><td>→ [ChildDto]</td><td>—</td></tr>
+<tr><td>POST</td><td>/api/v1/children</td><td>Create child</td><td>Bearer</td><td>owner</td><td>{id(uuid), displayName, gender, avatar, palette} → 201 ChildDto</td><td>name 1–24 letters, enums, max 10 per user</td></tr>
+<tr><td>PATCH</td><td>/api/v1/children/{childId}</td><td>Update child</td><td>Bearer</td><td>ChildOwnershipGuard</td><td>{…fields, baseVersion} + If-Match → 200 or 409 {server}</td><td>optimistic concurrency</td></tr>
+<tr><td>DELETE</td><td>/api/v1/children/{childId}</td><td>Delete child</td><td>Bearer</td><td>ChildOwnershipGuard</td><td>→ 204 (tombstone)</td><td>—</td></tr>
+<tr><td>GET / PUT</td><td>/api/v1/children/{childId}/settings</td><td>Settings</td><td>Bearer</td><td>ChildOwnershipGuard</td><td>SettingsDto + baseVersion</td><td>ranges</td></tr>
+<tr><td>GET</td><td>/api/v1/children/{childId}/attempts?unitId=</td><td>Reports</td><td>Bearer</td><td>ChildOwnershipGuard</td><td>→ [AttemptDto] paginated</td><td>pagination limits</td></tr>
+<tr><td>GET</td><td>/api/v1/children/{childId}/reports/summary</td><td>Parent report</td><td>Bearer</td><td>ChildOwnershipGuard</td><td>→ latest/best per unit, usage per day</td><td>—</td></tr>
+<tr><td>POST</td><td>/api/v1/sync/push</td><td>Upload mutations</td><td>Bearer (verified)</td><td>each entity owned</td><td>{deviceId, mutations:[{mutationId, entity, op, id, baseVersion, payload}]} (≤100) → [{mutationId, status: applied|duplicate|conflict|rejected, version, changeSeq, server?, error?}]</td><td>per-entity schema; idempotency</td></tr>
+<tr><td>GET</td><td>/api/v1/sync/pull?since=&amp;limit=</td><td>Download changes</td><td>Bearer (verified)</td><td>joined by user_id</td><td>→ {changes:[…], cursor, hasMore}</td><td>limit ≤ 500</td></tr>
+<tr><td>POST</td><td>/api/v1/devices</td><td>Register device</td><td>Bearer</td><td>self</td><td>{id, platform} → 204</td><td>uuid</td></tr>
+<tr><td>GET</td><td>/health/live, /health/ready</td><td>Probes</td><td>None (internal)</td><td>—</td><td>→ 200</td><td>—</td></tr>
+</table>
+<p>Conventions: JSON camelCase; RFC 3339 UTC timestamps; RFC 9457 errors; <code>Idempotency-Key</code> on non-sync POSTs; <code>/api/v1</code> URI versioning; cursor pagination.</p>
+
+<h2>12. Synchronization Architecture</h2>
+<pre>
+ Android UI → Controller → Repository ──(1 transaction)──► Local DB row (sync_status = pending, version++)
+                                         └──────────────► outbox(mutation_id UUIDv7, entity, op, base_version, payload)
+ Sync Engine (single-flight, triggered) ─► PUSH /sync/push (batches ≤ 100, ordered by outbox seq)
+                                         ◄─ per-mutation results → mark synced / resolve conflict / quarantine
+                                         ─► PULL /sync/pull?since=cursor (pages until hasMore = false)
+                                         ◄─ upsert rows; rows with pending local edits go through merge
+                                         → save new cursor (sync_meta) → UI streams update
+</pre>
+<table>
+<tr><th>Aspect</th><th>Design</th></tr>
+<tr><td>Create</td><td>Client generates a UUIDv7; outbox op <code>create</code>; the server inserts, or returns <code>duplicate</code> if the id already exists for the same user with an identical payload</td></tr>
+<tr><td>Update</td><td>Op <code>patch</code> with only the changed fields plus <code>baseVersion</code>; the server applies it if the version matches, otherwise runs the conflict resolver</td></tr>
+<tr><td>Delete</td><td>Op <code>delete</code> → server tombstone (<code>deleted_at</code>, change_seq bump); tombstones kept ≥ 180 days so long-offline devices still receive them; afterwards a device with a stale cursor does a full resync</td></tr>
+<tr><td>Initial sync</td><td>Upload linked local data (§18), then pull from cursor 0, paged</td></tr>
+<tr><td>Incremental sync</td><td>Pull <code>since=cursor</code>; the server returns only changes for the caller's children</td></tr>
+<tr><td>Automatic triggers</td><td>App start, app resume, 5 s debounce after a local change, connectivity regained, WorkManager every ≥ 15 min (Android), tab focus (web)</td></tr>
+<tr><td>Manual</td><td>"Sync now" in the parent area, showing last sync time, pending count and errors</td></tr>
+<tr><td>Retry</td><td>Exponential backoff 2^n s with full jitter, capped at 15 min; reset on success; network errors and 5xx/429 retried (honouring <code>Retry-After</code>)</td></tr>
+<tr><td>Failed sync</td><td>A 4xx validation <code>rejected</code> moves the mutation to a <b>quarantine</b> table (never silently dropped) and shows it to the parent with options: retry after update, or discard (with confirmation)</td></tr>
+<tr><td>Duplicate prevention</td><td>Client-generated IDs, plus <code>processed_mutations(user_id, mutation_id)</code> on the server (returns the stored result on replay), plus unique constraints</td></tr>
+<tr><td>Ordering</td><td>The outbox is processed in order per entity; creates before patches; a parent (child profile) before dependants (attempts)</td></tr>
+<tr><td>Concurrency</td><td>One sync at a time per device (mutex); push before pull</td></tr>
+</table>
+
+<h2>13. Offline Strategy</h2>
+<ul>
+<li><b>Offline is the default mode.</b> Every game feature works without a network or an account, exactly as today.</li>
+<li>The local DB is the source of truth for the UI. The server is the source of truth for cross-device convergence.</li>
+<li>Online mode only adds background push/pull. Nothing in the gameplay path ever waits on the network.</li>
+<li>When an access token expires offline, play continues; refresh happens on reconnect. If the refresh fails (revoked), local data is kept and the parent is asked to log in again; pending mutations wait.</li>
+<li>Logout asks whether to keep local children on the device (default: keep, unlinked) or remove them.</li>
+<li>Lesson content stays bundled. If a device is on an older <code>contentVersion</code>, server data from newer content is stored but rendered with the device's migration registry. If it is incompatible, the lesson shows "update the app to continue this lesson" while other data stays usable.</li>
+</ul>
+
+<h2>14. Conflict Resolution</h2>
+<p><b>Scenario:</b> the parent edits the same record on the phone (offline) and on the computer. <b>Principle:</b> no blind last-write-wins for anything that represents learning evidence. Each entity type gets a merge rule that fits its meaning. Optimistic concurrency (<code>version</code>) detects the conflict, and <code>server_updated_at</code> and <code>device_id</code> serve as tie-breakers and audit.</p>
+<table>
+<tr><th>Entity</th><th>Conflict type</th><th>Resolution</th><th>Data loss?</th></tr>
+<tr><td>unit_attempts</td><td>None possible</td><td><b>Append-only</b>, immutable, idempotent by id. Both devices' attempts are kept. "Latest" and "best" are computed.</td><td>No</td></tr>
+<tr><td>attempt_objectives</td><td>None</td><td>Immutable child rows of an attempt</td><td>No</td></tr>
+<tr><td>usage_daily</td><td>Concurrent increments</td><td><b>Per-device counter</b> (PK includes device_id); totals = SUM over devices (a G-counter CRDT)</td><td>No</td></tr>
+<tr><td>child_profiles / child_settings</td><td>Concurrent edits</td><td><b>Field-level three-way merge</b> against the base version: disjoint fields are both applied automatically. The same field with different values → for settings (low value) the later <code>server receive time</code> wins and the overwritten value is recorded in audit; for profile identity fields (name, photo, gender) → the server keeps its value, returns a conflict, and the client shows the parent "Phone says X, Web says Y — choose".</td><td>No silent loss</td></tr>
+<tr><td>journeys (in-progress lesson state)</td><td>Two devices advanced the same lesson</td><td><b>Progress-monotonic merge:</b> union of completed step responses, keeping the <b>first recorded outcome</b> per objective (matches the existing <code>AttemptRecorder</code> rule against score inflation); position = the further one (<code>progress_rank</code>); the transient UI state of the losing side is discarded</td><td>No assessment loss</td></tr>
+<tr><td>Delete vs edit</td><td>One side deleted a child, the other edited</td><td><b>Delete wins</b> (privacy intent, confirmed behind the parent gate). The edit's attempts are quarantined and shown to the parent for 14 days before purge.</td><td>Recoverable for 14 days</td></tr>
+<tr><td>Create duplicates</td><td>Same child created on two devices before linking</td><td>Never auto-merged by name. The parent sees both and may merge (attempts re-parented, journeys merged by the rule above).</td><td>No</td></tr>
+</table>
+<p>Per-row metadata on the client: <code>version</code> (last server version seen), <code>sync_status</code> (synced | pending | conflict | quarantined), <code>updated_at</code> (local clock, informational only), <code>last_modified_device</code>. The server keeps <code>version</code>, <code>change_seq</code> and <code>server_updated_at</code>. Device clocks are <b>never</b> used to decide a winner.</p>
+
+<h2>15. Deployment Architecture</h2>
+<pre>
+ Users ──HTTPS──► Caddy (TLS auto-renew, HSTS, rate limit, gzip/brotli)
+                    ├── /            → web container (static Flutter Web build, long-cache hashed assets)
+                    └── /api/v1/*    → api containers (NestJS ×2, health-checked, rolling restart)
+                                          ├── PostgreSQL (managed, private network, TLS, PITR)
+                                          ├── Object storage (private bucket, signed URLs ≤ 5 min)
+                                          └── Email provider (SPF/DKIM/DMARC configured)
+ Ops: Uptime monitor · Prometheus/Grafana (or SaaS) · Loki logs · Sentry (PII scrubbing) · backups → off-site bucket
+ CI/CD: GitHub Actions → test → build images (pinned digests) → scan (Trivy/osv) → deploy staging → manual approval → prod
+</pre>
+<p><b>Docker:</b> yes. Multi-stage images, non-root user, read-only filesystem, healthchecks, one Compose file per environment. <b>Kubernetes: not recommended.</b> The expected load (a family and education app, JSON sync) fits a single VM with vertical scaling. Revisit only if there are multiple regions, more than about 5 services, or sustained horizontal autoscaling needs. Android releases go through the Play Console (internal → closed → staged production rollout).</p>
+
+<h2>16. Backup Strategy</h2>
+<table>
+<tr><th>Item</th><th>Policy</th></tr>
+<tr><td>Automatic backup</td><td>Managed PostgreSQL PITR, or self-hosted WAL-G/pgBackRest: continuous WAL archiving plus nightly base backup</td></tr>
+<tr><td>Frequency</td><td>WAL continuous (target RPO ≤ 15 min); full base backup daily; logical <code>pg_dump</code> weekly (portability)</td></tr>
+<tr><td>Retention</td><td>PITR window 14 days; daily backups 30 days; monthly backups 12 months (must not exceed the privacy policy's retention for deleted accounts — purge pipeline documented)</td></tr>
+<tr><td>Security</td><td>Encrypted at rest (AES-256) and in transit; off-site bucket at a different provider or region; object lock / immutability against ransomware; separate credentials</td></tr>
+<tr><td>Restore process</td><td>Runbook: provision a new instance → restore base + WAL to the target time → run migrations check → smoke tests → switch the connection string → verify sync cursors (clients with a cursor beyond the restore point do a full resync)</td></tr>
+<tr><td>Restore testing</td><td>Monthly automated restore into staging plus integrity checks (row counts, checksum queries); quarterly timed drill</td></tr>
+<tr><td>Disaster recovery</td><td>Target RTO ≤ 4 h (target, to be validated by drill); infrastructure as code (Compose + scripts) to rebuild in another region; DNS TTL 300 s</td></tr>
+<tr><td>Client safety net</td><td>The devices' local DBs hold a full copy of their data and can re-push after a server restore (idempotent IDs)</td></tr>
+</table>
+
+<h2>17. Monitoring Strategy</h2>
+<table>
+<tr><th>Signal</th><th>Implementation</th><th>Alert</th></tr>
+<tr><td>Application logs</td><td>pino JSON with request id, route, status, latency, user id hash; redaction list</td><td>Error-rate spike</td></tr>
+<tr><td>Server logs</td><td>Caddy access logs (IP truncated), container stdout → Loki</td><td>—</td></tr>
+<tr><td>API errors</td><td>5xx rate, problem-type counts; Sentry with <code>sendDefaultPii=false</code></td><td>5xx &gt; 1 % for 5 min</td></tr>
+<tr><td>Database</td><td>Connections, slow queries (<code>pg_stat_statements</code>), replication/backup age, disk</td><td>Backup age &gt; 26 h; disk &gt; 80 %</td></tr>
+<tr><td>Auth failures</td><td>Failed logins per account/IP, refresh-token reuse events, reset requests</td><td>Reuse detected; brute-force pattern</td></tr>
+<tr><td>Sync health</td><td>Push/pull latency, conflict rate, quarantine count, client-reported lag</td><td>Conflict or quarantine spike</td></tr>
+<tr><td>Performance</td><td>p50/p95/p99 latency per route; CPU/RAM</td><td>p95 &gt; 500 ms for 10 min</td></tr>
+<tr><td>Uptime</td><td>External probe on <code>/health/ready</code> and the web root every minute</td><td>2 consecutive failures</td></tr>
+<tr><td>Audit logs</td><td>Login, logout, password change/reset, email change, child create/delete, account delete, data export</td><td>—</td></tr>
+<tr><td>Mobile</td><td>Opt-in, privacy-safe crash reporting (no names or photos); local diagnostic log exportable by the parent</td><td>Crash-free sessions &lt; 99.5 %</td></tr>
+</table>
+<p><b>Never logged:</b> passwords, tokens (access, refresh, reset, verify), Authorization and Cookie headers, child names, photos, emails in plaintext (hash them when correlation is needed).</p>
+
+<h2>18. Migration Strategy (existing local data, zero data loss)</h2>
+<pre>
+ Existing Hive blob (schemaVersion 3)
+   ↓ 1. Local upgrade (offline): parse per child, tolerant; a bad child is isolated, not fatal
+   ↓ 2. Write all rows to SQLite in ONE transaction; keep the Hive blob untouched as a backup (≥ 2 releases)
+   ↓ 3. Verify counts and checksums (children, attempts, objectives, journeys, usage-days) → else roll back and keep Hive
+   ↓ 4. ID normalisation: 'local-child' and non-UUID ids → UUIDv7 (legacy_id kept);
+   ↓    attempt ids '{lesson}-{micros}' → UUIDv7 with legacy_attempt_id
+   ↓ 5. Parent creates an account or logs in (behind the parent gate)
+   ↓ 6. Parent confirms "Link these children to my account" (per child; unlinked children stay local)
+   ↓ 7. Initial upload via /sync/push in batches (idempotent mutation ids; resumable after interruption)
+   ↓ 8. Server validation: applied → synced; rejected → quarantined locally (shown, never deleted)
+   ↓ 9. Pull from cursor 0 (brings children created on other devices)
+   ↓ 10. If both sides have children: show both, parent decides merge or keep (no auto-merge)
+   ↓ 11. Enable incremental sync
+</pre>
+<p>Safeguards: a migration dry-run mode in debug builds; a test matrix of real anonymised blobs from each historic schema (v1, v2, v3 plus each journey version); telemetry-free success flag stored locally; a "rescue export" button in the parent area that writes the raw local data to a user-chosen file.</p>
+
+<h2>19. Development Roadmap</h2>
+<table>
+<tr><th>Phase</th><th>Name</th><th>Priority</th><th>Depends on</th><th>Complexity</th><th>Key deliverables</th></tr>
+<tr><td>0</td><td>Preparation, CI, reproducible build, signing key</td><td>P0</td><td>—</td><td>M</td><td>Green CI, release AAB, device test report</td></tr>
+<tr><td>1</td><td>Fix critical existing issues + privacy decision</td><td>P0/P1</td><td>0</td><td>M</td><td>Patch release, decision record</td></tr>
+<tr><td>2</td><td>Android refactor: typed models, repositories, drift, local migration</td><td>P0</td><td>1</td><td>XL</td><td>Behaviour-identical refactored app</td></tr>
+<tr><td>3</td><td>Database design and API contract (OpenAPI, sync spec, threat model)</td><td>P1</td><td>2</td><td>M</td><td>openapi.yaml, ERD, sync spec</td></tr>
+<tr><td>4</td><td>Backend core + authentication</td><td>P1</td><td>3</td><td>L</td><td>API service, auth tests</td></tr>
+<tr><td>5</td><td>Android API integration (optional accounts)</td><td>P1</td><td>4</td><td>M</td><td>App with optional login</td></tr>
+<tr><td>6</td><td>Synchronisation</td><td>P1</td><td>5</td><td>XL</td><td>Multi-device sync, test report</td></tr>
+<tr><td>7</td><td>Web application (Flutter Web)</td><td>P2</td><td>6</td><td>M–L</td><td>Web app on staging</td></tr>
+<tr><td>8</td><td>Security hardening + pentest</td><td>P1</td><td>4–7</td><td>M</td><td>Pentest report, fixes</td></tr>
+<tr><td>9</td><td>Testing and QA (device farm, a11y, load)</td><td>P1</td><td>7</td><td>M–L</td><td>QA sign-off</td></tr>
+<tr><td>10</td><td>Staging</td><td>P1</td><td>9</td><td>S–M</td><td>RC builds, closed testing</td></tr>
+<tr><td>11</td><td>Production (staged rollout)</td><td>P1</td><td>10</td><td>M</td><td>Live system, dashboards, runbooks</td></tr>
+</table>
+<p class="small">No calendar durations are given. Team size, availability and portal scope are unknown, so week estimates would be false precision. Re-estimate after Phase 0. Full per-phase objectives, tasks, risks and skills: <code>Development_Roadmap.md</code>.</p>
+
+<h2>20. Risks</h2>
+<table>
+<tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Mitigation</th></tr>
+<tr><td>Children's-privacy and legal non-compliance</td><td>Medium</td><td>Very high</td><td>Legal review in Phase 1; parent-owned accounts; consent; minimisation; no photo sync by default; export and deletion</td></tr>
+<tr><td>Data loss during local migration</td><td>Low–Medium</td><td>Very high</td><td>Transactional migration, checksums, keep the Hive backup, rescue export, test matrix</td></tr>
+<tr><td>Sync bugs (lost or duplicated progress)</td><td>Medium</td><td>High</td><td>Per-entity merge rules, idempotency, property-based and two-device tests, quarantine instead of delete</td></tr>
+<tr><td>Loss of the "zero permissions / offline" trust</td><td>Medium</td><td>Medium</td><td>Accounts optional; clear explanation; no analytics</td></tr>
+<tr><td>Signing key loss</td><td>Low</td><td>Very high</td><td>Play App Signing, two offline backups, documented custody</td></tr>
+<tr><td>Refactor regressions in scenes</td><td>Medium</td><td>Medium</td><td>Existing 203 tests plus goldens; behaviour-identical refactor release before any backend work</td></tr>
+<tr><td>Flutter Web performance (bundle, first load)</td><td>Medium</td><td>Medium</td><td>Deferred imports, asset optimisation, caching; Next.js only for a public landing site</td></tr>
+<tr><td>Small team / single maintainer</td><td>High</td><td>High</td><td>CI, docs, reproducible toolchain, a managed DB to reduce operations load</td></tr>
+<tr><td>Account takeover</td><td>Low</td><td>High</td><td>Argon2id, rate limits, token rotation with reuse detection, notifications, optional 2FA later</td></tr>
+</table>
+
+<h2>21. Final Recommendation</h2>
+<div class="callout"><b>B — Refactor the existing application.</b> Keep the Flutter client (Android + Web from one codebase). Rebuild the data layer (typed models, repositories, drift/SQLite, outbox). Add a <b>NestJS + PostgreSQL</b> backend with a <b>REST/OpenAPI</b> contract, <b>parent email authentication</b> (Argon2id, 15-min JWT + rotating refresh tokens with reuse detection, Keystore / HttpOnly cookies) and <b>offline-first sync</b> (push/pull with change_seq cursors, idempotent mutations, optimistic concurrency, per-entity merge rules that never silently lose learning data).<br><br>
+<b>Precondition:</b> revise the "no accounts / no data sending" decision with privacy and legal input before Phase 3.</div>
+
+<h2 class="pb">Appendix A: Environments</h2>
+<table>
+<tr><th></th><th>Development</th><th>Staging</th><th>Production</th></tr>
+<tr><td>Backend</td><td>Docker Compose locally, hot reload</td><td>Same images as prod, separate VM</td><td>Hardened VM(s)</td></tr>
+<tr><td>Database</td><td>Local Postgres container, seeded <b>synthetic</b> data</td><td>Separate managed instance; synthetic data only (never real child data)</td><td>Managed PostgreSQL with PITR</td></tr>
+<tr><td>API URL</td><td><code>http://localhost:3000</code> (emulator <code>10.0.2.2</code>)</td><td><code>https://api.staging.&lt;domain&gt;</code></td><td><code>https://api.&lt;domain&gt;</code></td></tr>
+<tr><td>Android</td><td>flavour <code>dev</code>, id suffix <code>.dev</code>; cleartext allowed for localhost only (dev network config)</td><td>flavour <code>staging</code>, <code>.staging</code>; HTTPS only</td><td>flavour <code>prod</code>; HTTPS only; obfuscated</td></tr>
+<tr><td>Config</td><td><code>.env.example</code> committed, <code>.env</code> ignored; <code>--dart-define-from-file=env/dev.json</code></td><td>Secrets in CI secret store / secret manager</td><td>Secret manager; rotated JWT keys (<code>kid</code>)</td></tr>
+<tr><td>Email</td><td>Local catcher (Mailpit)</td><td>Provider sandbox</td><td>Provider with SPF/DKIM/DMARC</td></tr>
+</table>
+<p>Rules: secrets never in Git (secret scanning in CI); each environment has its own DB credentials and JWT keys; configuration validated at boot; client builds embed only public configuration (API base URL), never secrets.</p>
+
+<h2>Appendix B: Future Repository / Project Structure (proposal, not created)</h2>
+<pre>
+/science-adventure
+├── apps/
+│   ├── mobile/            Flutter app shell (Android) — flavours dev/staging/prod
+│   └── web/               Flutter Web shell (main_web.dart, web/index.html, CSP)
+├── packages/
+│   ├── domain/            typed models, merge rules, validators (pure Dart, 100 % unit tested)
+│   ├── data/              repositories, drift DB, outbox, sync engine
+│   ├── api_client/        generated from openapi.yaml
+│   ├── ui/                design system, scenes, Flame games, assets
+│   └── content/           lesson JSON, schemas, migration registry
+├── backend/               NestJS service (src/, prisma/, test/)
+├── database/              ERD, migration notes, seed scripts (synthetic only)
+├── api/                   openapi.yaml (single source of truth)
+├── infrastructure/        docker-compose.*.yml, Caddyfile, backup scripts, runbooks
+├── tools/content/         Python content pipeline + validators
+├── docs/                  ADRs, privacy, threat model, runbooks
+└── .github/workflows/     ci-mobile.yml, ci-backend.yml, deploy.yml, security-scan.yml
+</pre>
+<p>A monorepo (melos for Dart packages) is recommended so the API contract, the Dart client and the server stay in one change set.</p>
+</body></html>

@@ -36,6 +36,9 @@ for file in sorted((ROOT/'assets/content/playable').glob('*.json')):
   if step['assessed']:
    assert qid and step['objective']==qid
    assert step['hint'].strip() and step['explanation'].strip()
+  assert 'shortExplanation' in step,(file,step['id'],'short explanation missing')
+  assert len(step['shortExplanation'].split())<=16,(file,step['id'],'visible explanation too long')
+  if step['explanation']: assert step['shortExplanation'].strip()
   options=[o['id'] for o in step['options']]
   targets=[t['id'] for t in step['targets']]
   assert len(options)==len(set(options))
@@ -71,6 +74,16 @@ for file in sorted((ROOT/'assets/content/playable').glob('*.json')):
    row=next(row for row in step['table'] if row['name']==adapted['person'])
    assert answer['value'][adapted['optionId']]==f"{row['value']}_steps"
  assert covered==set(originals),(file,set(originals)-covered)
+ goals={goal for step in book['steps'] if step['assessed'] for goal in [step['objective']]+step.get('extraObjectives',[])}
+ activities=book.get('goalActivities',[])
+ assert {a['objective'] for a in activities}==goals,(file,'goal activity coverage')
+ assert len(activities)==len(goals),(file,'duplicate goal activities')
+ for activity in activities:
+  assert activity['text'].strip() and activity['safety'].strip() and activity['adapted'] is True
+  goal_step=next(s for s in book['steps'] if activity['objective'] in [s['objective']]+s.get('extraObjectives',[]))
+  allowed_pages={p for source_record in [goal_step['source']]+goal_step.get('relatedSources',[]) for p in source_record['pages']}
+  assert activity['pages'] and set(activity['pages'])<=allowed_pages
+  assert activity['safetyPages']==[2]
  if book['quiz']:
   assert len(book['steps'])==10
   assert len({s['objective'] for s in book['steps'] if s['assessed']})==10

@@ -73,7 +73,8 @@
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
       "playScene": "ourselves",
-      "activityView": "park"
+      "activityView": "park",
+      "shortExplanation": "The cat, tree and baby are living things."
     },
     {
       "id": "quiz_01.step.002",
@@ -123,7 +124,8 @@
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
       "playScene": "ourselves",
-      "activityView": "discovery"
+      "activityView": "discovery",
+      "shortExplanation": "Living things grow and breathe."
     },
     {
       "id": "quiz_01.step.003",
@@ -174,7 +176,8 @@
         "answerKeyText": "the roots",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "playScene": "plant-mission"
+      "playScene": "plant-mission",
+      "shortExplanation": "The roots drink water from the soil."
     },
     {
       "id": "quiz_01.step.004",
@@ -228,7 +231,8 @@
         "answerKeyText": "water and light",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "playScene": "plant-mission"
+      "playScene": "plant-mission",
+      "shortExplanation": "A plant needs water and light to stay healthy."
     },
     {
       "id": "quiz_01.step.005",
@@ -269,7 +273,8 @@
         "answerKeyText": "pale yellow",
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
-      "playScene": "plant-mission"
+      "playScene": "plant-mission",
+      "shortExplanation": "Without light, the plant's leaves become pale yellow."
     },
     {
       "id": "quiz_01.step.006",
@@ -337,7 +342,8 @@
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
       "playScene": "ourselves",
-      "activityView": "discovery"
+      "activityView": "discovery",
+      "shortExplanation": "The five senses are sight, hearing, smell, taste and touch."
     },
     {
       "id": "quiz_01.step.007",
@@ -384,7 +390,8 @@
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
       "playScene": "ourselves",
-      "activityView": "discovery"
+      "activityView": "discovery",
+      "shortExplanation": "We taste with the tongue."
     },
     {
       "id": "quiz_01.step.008",
@@ -427,7 +434,8 @@
       },
       "focus": "Car",
       "playScene": "ourselves",
-      "activityView": "discovery"
+      "activityView": "discovery",
+      "shortExplanation": "Moving is not enough; a car does not grow, eat or make babies."
     },
     {
       "id": "quiz_01.step.009",
@@ -496,7 +504,8 @@
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
       "playScene": "ourselves",
-      "activityView": "body"
+      "activityView": "body",
+      "shortExplanation": "The path goes from shoulder to arm, elbow, wrist, hand and fingers."
     },
     {
       "id": "quiz_01.step.010",
@@ -543,7 +552,8 @@
         "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508"
       },
       "playScene": "ourselves",
-      "activityView": "discovery"
+      "activityView": "discovery",
+      "shortExplanation": "An optometrist checks that eyes see clearly and gives people glasses."
     }
   ],
   "stickers": [],
@@ -560,6 +570,128 @@
     {
       "min": 0,
       "max": 4
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "quiz01.01",
+      "text": "Sort pictures of a cat, tree, baby and toys. Ask which are living and how you can tell.",
+      "safety": "An adult supervises. Observe animals without touching, feeding or disturbing them.",
+      "pages": [
+        11
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz01.02",
+      "text": "Compare a baby and grown animal in pictures. Ask for two signs of life, such as growing and breathing.",
+      "safety": "An adult supervises. Observe animals without touching, feeding or disturbing them.",
+      "pages": [
+        11
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz01.03",
+      "text": "Point to roots on a whole-plant picture. Ask which part takes water from the soil.",
+      "safety": "An adult prepares materials. Use clean beans and pots; do not eat experiment seeds or plants.",
+      "pages": [
+        11
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz01.04",
+      "text": "Compare healthy and pale plant pictures. Ask which two things the plant needs: water and light.",
+      "safety": "An adult prepares materials. Use clean beans and pots; do not eat experiment seeds or plants.",
+      "pages": [
+        11
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz01.05",
+      "text": "Compare the light-test pictures. Ask what colour the leaves became after time in the dark cupboard.",
+      "safety": "An adult prepares materials. Use clean beans and pots; do not eat experiment seeds or plants.",
+      "pages": [
+        11
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz01.06",
+      "text": "Name sight, hearing, smell, taste and touch. Describe a familiar discovery for each sense, then count all five.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        11
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz01.07",
+      "text": "Use a tongue drawing and describe a familiar food taste. Ask which body part helps us taste.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        11
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz01.08",
+      "text": "Roll a toy car gently. Ask why moving does not make it alive: can it grow or make new living things?",
+      "safety": "An adult supervises. Observe animals without touching, feeding or disturbing them.",
+      "pages": [
+        11
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz01.09",
+      "text": "Use a whole-body picture. Follow shoulder, arm, elbow, wrist, hand and fingers in order; ask where each part is.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        11
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz01.10",
+      "text": "Pretend to visit an optometrist using drawings. Ask who checks our eyes, helps us see clearly and may give us glasses.",
+      "safety": "Use safe familiar objects. No unknown tasting, eye touching, small counters for children who mouth objects, or loud sounds.",
+      "pages": [
+        11
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
     }
   ]
 }

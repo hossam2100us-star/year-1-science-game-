@@ -54,7 +54,9 @@
       "quizContext": {
         "setting": "workshop",
         "art": "drawer"
-      }
+      },
+      "shortExplanation": "A pull brings the drawer towards you and opens it.",
+      "quizInteraction": "drawer-gesture"
     },
     {
       "id": "quiz_03.step.002",
@@ -101,7 +103,9 @@
       "quizContext": {
         "setting": "workshop",
         "art": "doorbell"
-      }
+      },
+      "shortExplanation": "Pushing the button rings the doorbell.",
+      "quizInteraction": "doorbell-action"
     },
     {
       "id": "quiz_03.step.003",
@@ -166,7 +170,8 @@
       "quizContext": {
         "setting": "water",
         "art": null
-      }
+      },
+      "shortExplanation": "The cork and closed plastic bottle stay at the top of the water."
     },
     {
       "id": "quiz_03.step.004",
@@ -213,7 +218,9 @@
       "quizContext": {
         "setting": "sound",
         "art": "drum"
-      }
+      },
+      "shortExplanation": "Something that makes a sound is called a source of sound.",
+      "quizInteraction": "source-drop"
     },
     {
       "id": "quiz_03.step.005",
@@ -260,7 +267,9 @@
       "quizContext": {
         "setting": "sound",
         "art": "drum"
-      }
+      },
+      "shortExplanation": "The drum sounds quieter and fainter as you move farther away.",
+      "quizInteraction": "distance-observe"
     },
     {
       "id": "quiz_03.step.006",
@@ -312,7 +321,8 @@
       "quizContext": {
         "setting": "sound",
         "art": "trumpet"
-      }
+      },
+      "shortExplanation": "You blow into a trumpet to make a sound."
     },
     {
       "id": "quiz_03.step.007",
@@ -363,7 +373,8 @@
       "quizContext": {
         "setting": "sound",
         "art": "drum"
-      }
+      },
+      "shortExplanation": "Your ears catch sounds so you can hear them."
     },
     {
       "id": "quiz_03.step.008",
@@ -423,7 +434,8 @@
       "quizContext": {
         "setting": "electric",
         "art": "magnet"
-      }
+      },
+      "shortExplanation": "Iron and steel are metals that a magnet can pull."
     },
     {
       "id": "quiz_03.step.009",
@@ -470,7 +482,8 @@
       "quizContext": {
         "setting": "electric",
         "art": "magnet"
-      }
+      },
+      "shortExplanation": "Magnets pull iron and steel, but not aluminium or gold."
     },
     {
       "id": "quiz_03.step.010",
@@ -521,9 +534,132 @@
       "quizContext": {
         "setting": "electric",
         "art": "battery"
-      }
+      },
+      "shortExplanation": "The torch uses a battery to make light."
     }
   ],
   "stickers": [],
-  "homeActivities": []
+  "homeActivities": [],
+  "goalActivities": [
+    {
+      "objective": "quiz03.01",
+      "text": "Mime opening a drawer towards you. Ask whether this is a push or a pull.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        21
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz03.02",
+      "text": "Mime pressing a doorbell button in. Ask whether your finger pushes or pulls the button.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        21
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz03.03",
+      "text": "Compare cork, closed plastic bottle and stone test pictures. Ask which stayed at the water surface and which sank.",
+      "safety": "An adult supervises. Use gentle forces and shallow water; keep small objects away from mouths.",
+      "pages": [
+        21
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz03.04",
+      "text": "Listen to a gentle hum. Ask what made the sound and why the sound-maker is called its source.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        21
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz03.05",
+      "text": "Play a quiet sound, then move farther away with an adult. Ask whether the sound becomes louder or quieter.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        21
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz03.06",
+      "text": "Mime playing a trumpet. Ask which action makes its sound: blowing, shaking or plucking.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        21
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz03.07",
+      "text": "Listen to a gentle household sound. Ask which part of the body helps us hear it.",
+      "safety": "Keep sounds gentle and away from ears. Do not shout or make sudden loud noises.",
+      "pages": [
+        21
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz03.08",
+      "text": "With an adult, compare pictures of iron, steel, plastic and wood. Ask which two metals a magnet attracts.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        21
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz03.09",
+      "text": "Review a magnet test with iron, steel and aluminium foil. Ask why being metal does not always mean being attracted.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        21
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "quiz03.10",
+      "text": "Look at a closed battery torch. Ask what powers its light when it is away from a socket.",
+      "safety": "Never touch sockets, wires or mains electricity. Only an adult handles plugs. No loose batteries or small powerful magnets.",
+      "pages": [
+        21
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ]
 }
