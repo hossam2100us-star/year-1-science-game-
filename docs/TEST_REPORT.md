@@ -42,11 +42,12 @@ contrast, name batches, image budget, goldens.
 
 | Job | Result |
 |---|---|
-| analyze-and-test (ubuntu) | PASS on pushes after the formatting fix |
+| analyze-and-test (ubuntu) | PASS (run on `f0f3649`) |
 | web-tests (`flutter test --platform chrome test/web`) | PASS — AUD-005 verified in real Chrome |
+| web-build | skipped (no `web/` target yet; added in M4) |
 | content-validation (`validate_playable.py`) | PASS |
-| goldens (windows-latest) | see the latest run on the pull request |
-| android-build (debug, obfuscated release AAB, per-ABI release APKs, permission check) | see the latest run on the pull request |
+| goldens (windows-latest) | PASS, 5/5 |
+| android-build (debug, obfuscated release AAB, per-ABI release APKs, permission check) | PASS: release builds succeed with obfuscation; no platform permissions in release APKs |
 | security-scan: gitleaks | PASS (no secrets in history) |
 | security-scan: osv-scanner | Found 30+ advisories in `pypdf 6.10.0` and 2 in `sharp 0.34.4` (local tooling only); both upgraded |
 
@@ -58,5 +59,6 @@ contrast, name batches, image budget, goldens.
 | Images inside debug APK | ≈ 45.7 MB (audit) | 7.1 MB | zip entry sizes |
 | Debug APK | 222.4 MB | 198.5 MB | file size |
 | Image quality | — | PSNR 32.5-41.3 dB on the game background | same tool; owner reviewed comparisons |
-| Release AAB size | NOT MEASURED locally | CI step summary | needs signing key locally |
+| Release AAB (obfuscated, all ABIs) | never built (audit) | 61,938,245 bytes (59.1 MB) | CI, throwaway key |
+| Release APK per ABI | never built | arm64 26.7 MB · armv7 24.3 MB · x86_64 28.2 MB (MiB) | CI `--split-per-abi` |
 | Startup time, memory on device | NOT MEASURED | NOT MEASURED | no device available |
