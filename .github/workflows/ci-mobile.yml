@@ -54,7 +54,7 @@ jobs:
           cache: true
       - run: flutter pub get --enforce-lockfile
       - name: Web platform tests (Chrome)
-        run: flutter test --platform chrome --tags web
+        run: flutter test --platform chrome test/web
 
   content-validation:
     runs-on: ubuntu-latest
