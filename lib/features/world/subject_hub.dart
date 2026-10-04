@@ -62,7 +62,10 @@ class SubjectHub extends ConsumerWidget {
                   onPressed: () async {
                     await ref.read(narrationProvider).stop();
                     if (!context.mounted ||
-                        !await parentGate(context) ||
+                        !await parentGate(
+                          context,
+                          gender: ref.read(appProvider).profile?.gender,
+                        ) ||
                         !context.mounted)
                       return;
                     onParentChanged(true);

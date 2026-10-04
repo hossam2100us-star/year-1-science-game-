@@ -32,7 +32,12 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
     BuildContext context,
     String Function(String, String) t,
   ) async {
-    if (!await parentGate(context) || !context.mounted) return;
+    if (!await parentGate(
+          context,
+          gender: ref.read(appProvider).profile?.gender,
+        ) ||
+        !context.mounted)
+      return;
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (dialog) => AlertDialog(
@@ -357,7 +362,11 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                       const SizedBox(height: 12),
                       OutlinedButton(
                         onPressed: () async {
-                          if (!await parentGate(context) || !context.mounted)
+                          if (!await parentGate(
+                                context,
+                                gender: ref.read(appProvider).profile?.gender,
+                              ) ||
+                              !context.mounted)
                             return;
                           final confirmed = await showDialog<bool>(
                             context: context,

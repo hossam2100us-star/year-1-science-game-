@@ -28,7 +28,13 @@ class _ChildChooserState extends ConsumerState<ChildChooser> {
     widget.onParentChanged(true);
     try {
       await ref.read(narrationProvider).stop();
-      if (!mounted || !await parentGate(context) || !mounted) return;
+      if (!mounted ||
+          !await parentGate(
+            context,
+            gender: ref.read(appProvider).profile?.gender,
+          ) ||
+          !mounted)
+        return;
       final confirmed = await showDialog<bool>(
         context: context,
         builder: (dialog) => AlertDialog(
@@ -77,7 +83,13 @@ class _ChildChooserState extends ConsumerState<ChildChooser> {
   Future<void> add() async {
     if (busy) return;
     await ref.read(narrationProvider).stop();
-    if (!mounted || !await parentGate(context) || !mounted) return;
+    if (!mounted ||
+        !await parentGate(
+          context,
+          gender: ref.read(appProvider).profile?.gender,
+        ) ||
+        !mounted)
+      return;
     widget.onParentChanged(true);
     try {
       await Navigator.of(context).push(

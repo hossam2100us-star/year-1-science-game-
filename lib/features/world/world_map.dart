@@ -43,7 +43,13 @@ class _WorldMapState extends ConsumerState<WorldMap> {
 
   Future<void> _parents() async {
     await ref.read(narrationProvider).stop();
-    if (!mounted || !await parentGate(context) || !mounted) return;
+    if (!mounted ||
+        !await parentGate(
+          context,
+          gender: ref.read(appProvider).profile?.gender,
+        ) ||
+        !mounted)
+      return;
     widget.onParentChanged(true);
     await Navigator.of(context)
         .push(MaterialPageRoute<void>(builder: (_) => const ParentArea()));

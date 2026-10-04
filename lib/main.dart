@@ -236,7 +236,12 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
     if (_exitOpen) return;
     _exitOpen = true;
     await ref.read(narrationProvider).stop();
-    if (mounted && await parentGate(context)) await SystemNavigator.pop();
+    if (mounted &&
+        await parentGate(
+          context,
+          gender: ref.read(appProvider).profile?.gender,
+        ))
+      await SystemNavigator.pop();
     _exitOpen = false;
   }
 

@@ -167,7 +167,10 @@ class VoiceHelpButton extends ConsumerWidget {
             onPressed: () async {
               await voice.stop();
               if (!context.mounted ||
-                  !await parentGate(context) ||
+                  !await parentGate(
+                    context,
+                    gender: ref.read(appProvider).profile?.gender,
+                  ) ||
                   !context.mounted)
                 return;
               await showDialog<void>(

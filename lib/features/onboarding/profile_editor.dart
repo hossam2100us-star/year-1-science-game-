@@ -42,7 +42,12 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
     }
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (!widget.newChild && ref.read(appProvider).pendingPhoto && mounted) {
-        if (await parentGate(context) && mounted) await _recover();
+        if (await parentGate(
+              context,
+              gender: ref.read(appProvider).profile?.gender,
+            ) &&
+            mounted)
+          await _recover();
       }
     });
   }
@@ -97,7 +102,12 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
     if (_busy) return;
     await ref.read(narrationProvider).stop();
     if (!mounted) return;
-    if (!widget.editing && !widget.newChild && !await parentGate(context))
+    if (!widget.editing &&
+        !widget.newChild &&
+        !await parentGate(
+          context,
+          gender: ref.read(appProvider).profile?.gender,
+        ))
       return;
     if (!mounted) return;
     setState(() {
