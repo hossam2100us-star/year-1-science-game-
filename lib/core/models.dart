@@ -305,6 +305,9 @@ class AppData {
     return all.isEmpty ? null : all.first;
   }
 
+  /// The active child as a current-schema (v2) child record.
+  Map<String, dynamic> get activeChildRecord => _childJson();
+
   Map<String, dynamic> toJson() => {
     'schemaVersion': 3,
     'activeChildId': activeChildId,
