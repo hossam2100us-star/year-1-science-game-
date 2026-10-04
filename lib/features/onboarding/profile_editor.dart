@@ -9,6 +9,7 @@ import '../../core/models.dart';
 import '../../core/narration.dart';
 import '../../core/photo_service.dart';
 import '../../core/providers.dart';
+import '../../core/validation.dart';
 import '../../core/widgets.dart';
 import '../../parent/parent_gate.dart';
 import '../../parent/voice_settings.dart';
@@ -260,12 +261,8 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
                             TextField(
                               key: const ValueKey('childName'),
                               controller: _name,
-                              maxLength: 24,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.deny(
-                                  RegExp(r'[\n\r\t]'),
-                                ),
-                              ],
+                              maxLength: ChildName.maxLength,
+                              inputFormatters: ChildName.inputFormatters,
                               textCapitalization: TextCapitalization.words,
                               autocorrect: false,
                               decoration: const InputDecoration(
