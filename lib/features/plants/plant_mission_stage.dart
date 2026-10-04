@@ -1,6 +1,5 @@
 import 'dart:ui' as ui;
 
-import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 
 import '../../content/lesson.dart';
@@ -9,6 +8,7 @@ import '../biology/illustrated_art.dart';
 import 'plant_lab_game.dart';
 import 'plant_lab_stage.dart';
 import 'plant_workshop.dart';
+import '../../core/game_image.dart';
 
 /// Illustrated choices keep each label attached to its own picture.
 class PlantMissionStage extends StatelessWidget {
@@ -508,11 +508,10 @@ class PlantMissionPicture extends StatelessWidget {
     return SizedBox(
       height: height,
       width: double.infinity,
-      child: FutureBuilder<ui.Image>(
-        future: Flame.images.load(asset),
-        builder: (context, snapshot) => snapshot.hasData
-            ? CustomPaint(painter: _PlantCrop(snapshot.data!, crop))
-            : const SizedBox.shrink(),
+      child: GameImage(
+        asset: asset,
+        builder: (context, image) =>
+            CustomPaint(painter: _PlantCrop(image, crop)),
       ),
     );
   }

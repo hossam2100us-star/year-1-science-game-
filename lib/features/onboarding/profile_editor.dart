@@ -6,6 +6,7 @@ import '../../core/design.dart';
 import '../../core/diagnostics/app_log.dart';
 import '../../core/mascot.dart';
 import '../../core/models.dart';
+import '../../core/narration.dart';
 import '../../core/photo_service.dart';
 import '../../core/providers.dart';
 import '../../core/widgets.dart';
@@ -29,10 +30,25 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
   Uint8List? _photo;
   bool _busy = false;
   String? _message;
+  late final NarrationService _narration;
+  late AppSettings _latestSettings;
+
+  /// The guide's voice follows the gender being chosen, before it is saved.
+  void _configureVoice() => _narration.configure(_latestSettings, _gender);
+
+  void _chooseGender(ChildGender gender) {
+    setState(() => _gender = gender);
+    _configureVoice();
+  }
+
   @override
   void initState() {
     super.initState();
-    final p = widget.newChild ? null : ref.read(appProvider).profile;
+    final data = ref.read(appProvider);
+    _narration = ref.read(narrationProvider);
+    _latestSettings = data.settings;
+    _savedGender = data.profile?.gender ?? ChildGender.boy;
+    final p = widget.newChild ? null : data.profile;
     if (p != null) {
       _name.text = p.name;
       _gender = p.gender;
@@ -40,6 +56,7 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
       _avatar = p.avatar;
       _photo = p.photo;
     }
+    _configureVoice();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (!widget.newChild && ref.read(appProvider).pendingPhoto && mounted) {
         if (await parentGate(
@@ -54,10 +71,15 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
 
   @override
   void dispose() {
+    // Hand the voice back to the saved child: the editor may have previewed
+    // the other guide's voice without saving.
+    _narration.configure(_latestSettings, _savedGender);
     _name.dispose();
     _scroll.dispose();
     super.dispose();
   }
+
+  ChildGender _savedGender = ChildGender.boy;
 
   void _changeStep(int step) {
     FocusScope.of(context).unfocus();
@@ -160,9 +182,15 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
       1 => 'Choose boy or girl. Your scientist friend and colours will change with you.',
       _ => 'Choose your picture. Fox, Bunny, or Cat. A grown-up can help you choose your own photo. Then tap Start exploring.',
     };
-    ref
-        .read(narrationProvider)
-        .configure(ref.watch(appProvider).settings, _gender);
+    // Keep narration current without configuring it inside build().
+    ref.listen(appProvider.select((d) => (d.settings, d.profile?.gender)), (
+      _,
+      next,
+    ) {
+      _latestSettings = next.$1;
+      _savedGender = next.$2 ?? ChildGender.boy;
+      _configureVoice();
+    });
     return Theme(
       data: adventureTheme(profile),
       child: Builder(
@@ -259,8 +287,7 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
                                         ? 'Boy'
                                         : 'Girl',
                                     selected: _gender == gender,
-                                    onTap: () =>
-                                        setState(() => _gender = gender),
+                                    onTap: () => _chooseGender(gender),
                                     child: ScientistOwl(
                                       gender: gender,
                                       size: 90,

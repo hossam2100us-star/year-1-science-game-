@@ -76,14 +76,33 @@ Future<void> _launch() async {
   );
 }
 
-class ScienceAdventureApp extends ConsumerWidget {
+class ScienceAdventureApp extends ConsumerStatefulWidget {
   const ScienceAdventureApp({super.key});
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ScienceAdventureApp> createState() =>
+      _ScienceAdventureAppState();
+}
+
+class _ScienceAdventureAppState extends ConsumerState<ScienceAdventureApp> {
+  void _configureVoice(AppData data) => ref
+      .read(narrationProvider)
+      .configure(data.settings, data.profile?.gender ?? ChildGender.boy);
+
+  @override
+  void initState() {
+    super.initState();
+    _configureVoice(ref.read(appProvider));
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final data = ref.watch(appProvider);
-    ref
-        .read(narrationProvider)
-        .configure(data.settings, data.profile?.gender ?? ChildGender.boy);
+    // Narration follows settings and the active child; configured on change,
+    // not on every rebuild (AUD-016).
+    ref.listen(
+      appProvider.select((d) => (d.settings, d.profile?.gender)),
+      (_, _) => _configureVoice(ref.read(appProvider)),
+    );
     return MaterialApp(
       title: 'Science Adventure',
       debugShowCheckedModeBanner: false,

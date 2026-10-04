@@ -1,7 +1,8 @@
 import 'dart:ui' as ui;
 
-import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/game_image.dart';
 
 class IllustratedArt extends StatelessWidget {
   const IllustratedArt({
@@ -12,17 +13,17 @@ class IllustratedArt extends StatelessWidget {
   final String asset;
   final Rect crop;
   @override
-  Widget build(BuildContext context) => FutureBuilder<ui.Image>(
-    future: Flame.images.load(asset),
-    builder: (context, snapshot) => snapshot.hasData
-        ? CustomPaint(painter: IllustrationPainter(snapshot.data!, crop))
-        : const Center(
-            child: SizedBox(
-              width: 28,
-              height: 28,
-              child: CircularProgressIndicator(strokeWidth: 2),
-            ),
-          ),
+  Widget build(BuildContext context) => GameImage(
+    asset: asset,
+    builder: (context, image) =>
+        CustomPaint(painter: IllustrationPainter(image, crop)),
+    placeholder: const Center(
+      child: SizedBox(
+        width: 28,
+        height: 28,
+        child: CircularProgressIndicator(strokeWidth: 2),
+      ),
+    ),
   );
 }
 
