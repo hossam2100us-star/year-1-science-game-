@@ -120,15 +120,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     needs: analyze-and-test
-    if: hashFiles('web/index.html') != ''
     steps:
       - uses: actions/checkout@v4
+      - name: Web target present?
+        id: web
+        run: echo "present=$([ -f web/index.html ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
       - uses: subosito/flutter-action@v2
+        if: steps.web.outputs.present == 'true'
         with:
           channel: stable
           flutter-version: ${{ env.FLUTTER_VERSION }}
           cache: true
-      - run: flutter pub get --enforce-lockfile
-      - run: flutter build web --release
+      - if: steps.web.outputs.present == 'true'
+        run: flutter pub get --enforce-lockfile
+      - if: steps.web.outputs.present == 'true'
+        run: flutter build web --release
       - name: Web bundle size
+        if: steps.web.outputs.present == 'true'
         run: du -sh build/web | tee -a "$GITHUB_STEP_SUMMARY"
