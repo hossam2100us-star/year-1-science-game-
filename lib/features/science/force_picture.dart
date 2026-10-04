@@ -8,10 +8,10 @@ import 'science_picture.dart';
 import '../../core/game_image.dart';
 
 const forceArtAssets = [
-  'forces-objects-v4.png',
-  'forces-characters-v4.png',
-  'forces-details-v4.png',
-  'forces-garden-v6.png',
+  'forces-objects-v4.webp',
+  'forces-characters-v4.webp',
+  'forces-details-v4.webp',
+  'forces-garden-v6.webp',
 ];
 
 const _objects = {

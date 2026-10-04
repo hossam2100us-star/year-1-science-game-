@@ -85,7 +85,7 @@ const illustratedEyeAnchors = <String, Offset>{
   // Music is represented by a musical instrument, not an unrelated symbol.
   if (const ['music', 'hear_music', 'sound', 'loud'].contains(id)) {
     return (
-      asset: 'sound-atlas-v2.png',
+      asset: 'sound-atlas-v2.webp',
       crop: const Rect.fromLTWH(.25, 0, .25, .35),
     );
   }
@@ -103,7 +103,7 @@ const illustratedEyeAnchors = <String, Offset>{
   }
   if (id == 'paper') {
     return (
-      asset: 'science-details-v2.png',
+      asset: 'science-details-v2.webp',
       crop: const Rect.fromLTWH(643 / 1269, 366 / 1240, 307 / 1269, 264 / 1240),
     );
   }

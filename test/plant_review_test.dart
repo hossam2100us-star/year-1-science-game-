@@ -21,7 +21,7 @@ void main() {
   setUpAll(() async {
     helpers.testCatalog = await helpers.loadTestCatalog();
     lesson = (await LessonLibrary.load()).lessons['unit_02']!;
-    await Flame.images.load('science-details-v2.png');
+    await Flame.images.load('science-details-v2.webp');
   });
   test('Fridge neighbours belong to different food groups', () {
     final step = lesson.steps[4];

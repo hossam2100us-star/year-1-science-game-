@@ -21,7 +21,7 @@ void main() {
       'greenhouse-v1.webp',
       'bean-stages-v1.webp',
       'light-plants-v1.webp',
-      'science-details-v2.png',
+      'science-details-v2.webp',
     ]) {
       await Flame.images.load(asset);
     }

@@ -39,8 +39,8 @@ void main() {
     for (final atlas in scienceAtlases.keys) {
       await Flame.images.load(atlas);
     }
-    await Flame.images.load('sound-atlas-v2.png');
-    await Flame.images.load('sound-details-v2.png');
+    await Flame.images.load('sound-atlas-v2.webp');
+    await Flame.images.load('sound-details-v2.webp');
   });
   setUp(() {
     audio.clear();

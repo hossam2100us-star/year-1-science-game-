@@ -9,7 +9,7 @@ import 'force_motion.dart';
 import 'force_trolley_scene.dart';
 import '../../core/game_image.dart';
 
-const forceGardenAsset = 'forces-garden-v6.png';
+const forceGardenAsset = 'forces-garden-v6.webp';
 
 /// Stable hitboxes sit in real habitats; only the last touched subject moves.
 class ForceGardenScene extends StatelessWidget {

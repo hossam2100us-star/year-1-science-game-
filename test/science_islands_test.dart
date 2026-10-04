@@ -48,7 +48,7 @@ void main() {
     for (final atlas in ['five-senses-v2.webp', 'sense-objects-v2.webp']) {
       await Flame.images.load(atlas);
     }
-    for (final atlas in ['sound-atlas-v2.png', 'sound-details-v2.png']) {
+    for (final atlas in ['sound-atlas-v2.webp', 'sound-details-v2.webp']) {
       await Flame.images.load(atlas);
     }
     for (final atlas in forceArtAssets) {

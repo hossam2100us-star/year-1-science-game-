@@ -18,7 +18,7 @@ void main() {
   setUpAll(() async {
     library = await LessonLibrary.load();
     helpers.testCatalog = await helpers.loadTestCatalog();
-    for (final file in ['materials-atlas-v2.png', 'science-details-v2.png']) {
+    for (final file in ['materials-atlas-v2.webp', 'science-details-v2.webp']) {
       await Flame.images.load(file);
     }
   });

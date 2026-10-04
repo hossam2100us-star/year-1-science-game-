@@ -77,7 +77,7 @@ created by `scripts/build_science_audio.py`; no external recordings are used.
 
 ## Sound unit review — 1 October 2026
 
-`assets/images/sound-atlas-v2.png` and `assets/images/sound-details-v2.png`
+`assets/images/sound-atlas-v2.webp` and `assets/images/sound-details-v2.webp`
 are original transparent illustrations generated for this project using the
 built-in OpenAI image-generation tool. No textbook illustrations or third-party
 character artwork were copied, and these are not represented as CC0 stock.
@@ -98,3 +98,12 @@ and WebP) and the PNG masters of bundled WebP files. They remain available in
 Git history (any commit before the clean-up). 17 masters were pixel-identical
 to the bundled WebP; bean-stages-v1, greenhouse-v1 and light-plants-v1 PNGs
 were earlier drafts of the refined, bundled WebP art.
+
+## Lossy WebP re-encode — 4 October 2026 (AUD-008)
+
+All 29 bundled images were re-encoded as WebP (quality 80, alpha 90) at
+their exact pixel size with tools/images/optimize.mjs after the owner
+approved side-by-side comparisons (PSNR 32.5–41.3 dB on the game
+background). Bundled art went from 50.6 MB to 7.1 MB. The previous PNG and
+lossless WebP files remain in Git history. The artwork and its provenance
+are unchanged.

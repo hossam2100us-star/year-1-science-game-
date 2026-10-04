@@ -3,14 +3,14 @@ import 'dart:ui';
 // Measured from generated alpha silhouettes, with five pixels of edge padding.
 // Source images are unchanged. Whole cells would include neighbouring subjects.
 const scienceAtlasSizes = <String, Size>{
-  'materials-atlas-v2.png': Size(1254, 1254),
-  'electric-atlas-v2.png': Size(1254, 1254),
-  'earth-atlas-v2.png': Size(1254, 1254),
-  'science-details-v2.png': Size(1269, 1240),
+  'materials-atlas-v2.webp': Size(1254, 1254),
+  'electric-atlas-v2.webp': Size(1254, 1254),
+  'earth-atlas-v2.webp': Size(1254, 1254),
+  'science-details-v2.webp': Size(1269, 1240),
 };
 
 const scienceAtlasBounds = <String, List<Rect>>{
-  'materials-atlas-v2.png': [
+  'materials-atlas-v2.webp': [
     Rect.fromLTWH(22, 48, 296, 258),
     Rect.fromLTWH(369, 8, 220, 321),
     Rect.fromLTWH(653, 34, 259, 278),
@@ -28,7 +28,7 @@ const scienceAtlasBounds = <String, List<Rect>>{
     Rect.fromLTWH(641, 970, 283, 219),
     Rect.fromLTWH(956, 958, 272, 235),
   ],
-  'electric-atlas-v2.png': [
+  'electric-atlas-v2.webp': [
     Rect.fromLTWH(22, 73, 294, 234),
     Rect.fromLTWH(333, 9, 276, 324),
     Rect.fromLTWH(695, 7, 176, 321),
@@ -46,7 +46,7 @@ const scienceAtlasBounds = <String, List<Rect>>{
     Rect.fromLTWH(628, 962, 318, 224),
     Rect.fromLTWH(964, 945, 265, 298),
   ],
-  'earth-atlas-v2.png': [
+  'earth-atlas-v2.webp': [
     Rect.fromLTWH(17, 53, 292, 296),
     Rect.fromLTWH(327, 27, 293, 321),
     Rect.fromLTWH(634, 78, 294, 274),
@@ -64,7 +64,7 @@ const scienceAtlasBounds = <String, List<Rect>>{
     Rect.fromLTWH(654, 943, 270, 270),
     Rect.fromLTWH(1007, 920, 174, 308),
   ],
-  'science-details-v2.png': [
+  'science-details-v2.webp': [
     Rect.fromLTWH(56, 72, 234, 235),
     Rect.fromLTWH(400, 105, 186, 187),
     Rect.fromLTWH(656, 50, 264, 268),

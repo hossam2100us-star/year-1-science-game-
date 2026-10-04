@@ -12,7 +12,7 @@ class ForceObject extends StatelessWidget {
     width: size,
     height: size,
     child: IllustratedArt(
-      asset: 'forces-details-v4.png',
+      asset: 'forces-details-v4.webp',
       crop: Rect.fromLTWH(art == 'switch' ? 0 : .5, 0, .5, 1),
     ),
   );

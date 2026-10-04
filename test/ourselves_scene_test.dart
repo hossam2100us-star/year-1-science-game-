@@ -38,8 +38,8 @@ void main() {
       'explorer-girl-v2.webp',
       'five-senses-v2.webp',
       'sense-objects-v2.webp',
-      'sound-atlas-v2.png',
-      'science-details-v2.png',
+      'sound-atlas-v2.webp',
+      'science-details-v2.webp',
       'plant-lab-v1.webp',
       'garden-v2.webp',
     ]) {
