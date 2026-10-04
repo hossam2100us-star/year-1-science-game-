@@ -15,7 +15,7 @@ passes (see `docs/TEST_REPORT.md`).
 ---
 
 ### AUD-001 — Non-reproducible build, no CI
-Status: **FIXED** (VERIFIED once the Android release job is green on the PR)
+Status: **VERIFIED** — CI run on `f0f3649` green on every job, including obfuscated release AAB/APKs (59.1 MB AAB; 24.3-28.2 MB per-ABI APKs)
 Files: `.github/workflows/ci-mobile.yml`, `.github/workflows/security-scan.yml`, `dart_test.yaml`, `docs/RELEASE.md`
 Verification: CI runs pinned Flutter 3.47.5 from a clean runner: lockfile
 restore, format, analyze, tests, Chrome tests, goldens (Windows), content
@@ -168,7 +168,7 @@ Status: AUD-023 **TODO (M2)** with the migration; 024-026 documented as future w
 | ID | Status | Where |
 |---|---|---|
 | SEC-01 | Documented decision (ADR-0003) | AUD-017 |
-| SEC-02 | **FIXED** — obfuscated release build in CI; verified when the PR's Android job is green | AUD-001 |
+| SEC-02 | **VERIFIED** — obfuscated release AAB/APKs built in CI | AUD-001 |
 | SEC-03 | **VERIFIED** | AUD-015 |
 | SEC-04 | **VERIFIED** | AUD-009 |
 | SEC-05 | **VERIFIED** — `lib/core/validation.dart`, `test/web/child_name_test.dart` (`28cc9cd`) | |

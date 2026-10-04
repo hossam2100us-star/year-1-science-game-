@@ -26,7 +26,7 @@ Detailed evidence per item lives in `docs/REMEDIATION_PROGRESS.md`.
 
 | ID | Finding | Severity | Verified? | Files | Proposed Fix | Tests | Status |
 |---|---|---|---|---|---|---|---|
-| AUD-001 | Non-reproducible build, no CI | HIGH | Yes — no `.github/`, toolchain only in gitignored `.tools/` | `.github/workflows/`, `scripts/`, `docs/RELEASE.md` | `ci-mobile.yml` (pinned Flutter 3.47.5, `--enforce-lockfile`, format, `analyze --fatal-infos`, tests, chrome tests, APK + web build, content validators), `security-scan.yml`, documented toolchain + release signing | CI run | FIXED |
+| AUD-001 | Non-reproducible build, no CI | HIGH | Yes — no `.github/`, toolchain only in gitignored `.tools/` | `.github/workflows/`, `scripts/`, `docs/RELEASE.md` | `ci-mobile.yml` (pinned Flutter 3.47.5, `--enforce-lockfile`, format, `analyze --fatal-infos`, tests, chrome tests, APK + web build, content validators), `security-scan.yml`, documented toolchain + release signing | CI run | VERIFIED |
 | AUD-002 | `LessonPlayer` god class | HIGH | Yes — 1,423 LOC, `build()` 663-1191 | `lib/features/biology/lesson_player.dart` | `LessonController` + `SceneRenderer` registry, one renderer per play scene; characterization tests first | widget tests per scene | TODO (M2) |
 | AUD-003 | Untyped `Map<String,dynamic>` state | HIGH | Yes — 190 `json['…']` accesses | `lib/content/lesson.dart`, `session.dart`, scenes | Typed models (freezed/json_serializable) with `extras` for unknown keys, strict + versioned parsing | model + legacy tests | TODO (M2) |
 | AUD-004 | Full Hive blob rewritten on every interaction / 10 s | HIGH | Yes — `storage.dart:34-51`, `main.dart:155` | `lib/core/storage.dart`, `providers.dart` | Drift/SQLite normalized tables, repositories, outbox, photos as files, usage buffered 60 s | repository + migration tests | TODO (M2) |
@@ -58,7 +58,7 @@ Detailed evidence per item lives in `docs/REMEDIATION_PROGRESS.md`.
 | ID | Finding | Severity | Verified? | Files | Proposed Fix | Tests | Status |
 |---|---|---|---|---|---|---|---|
 | SEC-01 | Child PII plaintext in sandbox | LOW | Yes | `storage.dart` | = AUD-017 | — | VERIFIED |
-| SEC-02 | No Dart obfuscation | LOW | Yes | build docs/scripts | `--obfuscate --split-debug-info` for release, symbols kept private | CI release build | FIXED |
+| SEC-02 | No Dart obfuscation | LOW | Yes | build docs/scripts | `--obfuscate --split-debug-info` for release, symbols kept private | CI release build | VERIFIED |
 | SEC-03 | Weak parent gate | LOW | Yes | `parent_gate.dart` | = AUD-015 | gate tests | VERIFIED |
 | SEC-04 | Swallowed errors, no diagnostic trail | LOW | Yes | `lib/` | = AUD-009 | logger tests | VERIFIED |
 | SEC-05 | No name character validation | INFO | Yes | `profile_editor.dart` | Validate on input (letters, space, `-`, `'`, 1-24); legacy names untouched | validator tests | VERIFIED |
