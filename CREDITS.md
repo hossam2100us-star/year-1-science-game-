@@ -34,17 +34,17 @@ Local illustrative synthesized sound effects are bundled; no external recordings
 
 ## Garden illustration (2026-09-23)
 
-assets/images/garden-v2.png: original image generated for this project using the built-in image generation tool, with a targeted refinement. No third-party artwork or book illustrations were used. Not represented as a CC0 asset. Prompts and provenance: docs/GARDEN_ART_PROMPT.md. The game renders source regions of the same asset for matching object portraits. Existing sound/third-party licenses are unchanged.
+assets/images/garden-v2.webp (bundled; its earlier PNG master is in Git history): original image generated for this project using the built-in image generation tool, with a targeted refinement. No third-party artwork or book illustrations were used. Not represented as a CC0 asset. Prompts and provenance: docs/GARDEN_ART_PROMPT.md. The game renders source regions of the same asset for matching object portraits. Existing sound/third-party licenses are unchanged.
 
 ## Illustrated islands and plants (2026-09-24)
 
-assets/images/islands-v2.png, assets/images/bean-stages-v1.png, and assets/images/greenhouse-v1.png: original images generated for this project with the built-in image generation tool. No third-party artwork or textbook images were used; these are not described as CC0 stock. Exact prompts and source review are in docs/ISLANDS_AND_BEAN_ART.md. All files are bundled for offline use.
+assets/images/islands-v2.webp, assets/images/bean-stages-v1.webp, and assets/images/greenhouse-v1.webp (PNG masters in Git history): original images generated for this project with the built-in image generation tool. No third-party artwork or textbook images were used; these are not described as CC0 stock. Exact prompts and source review are in docs/ISLANDS_AND_BEAN_ART.md. All files are bundled for offline use.
 
 
-- `assets/images/plant-lab-v1.png`: original artwork generated with OpenAI imagegen for this project; no third-party illustration copied. Prompt and use: `docs/PLANT_LAB_ART.md`.
+- `assets/images/plant-lab-v1.webp`: original artwork generated with OpenAI imagegen for this project; no third-party illustration copied. Prompt and use: `docs/PLANT_LAB_ART.md`.
 
 
-- `assets/images/light-room-v1.png` and `assets/images/light-plants-v1.png`: original artwork generated with OpenAI imagegen for the light experiment. No third-party illustration copied. Prompts and source notes: `docs/LIGHT_TEST_ART.md`.
+- `assets/images/light-room-v1.webp` and `assets/images/light-plants-v1.webp`: original artwork generated with OpenAI imagegen for the light experiment. No third-party illustration copied. Prompts and source notes: `docs/LIGHT_TEST_ART.md`.
 
 # Plant review illustrations — 26 September 2026
 
@@ -55,8 +55,8 @@ its roots, stem, leaves and flower follow the existing source-linked activity.
 
 ## Ourselves illustrations — 27 September 2026
 
-`assets/images/explorer-boy-v2.png`, `explorer-girl-v2.png`, `five-senses-v2.png`
-and `sense-objects-v2.png` are original artwork generated for this project with
+`assets/images/explorer-boy-v2.webp`, `explorer-girl-v2.webp`, `five-senses-v2.webp`
+and `sense-objects-v2.webp` are original artwork generated for this project with
 the built-in OpenAI image-generation tool. They are bundled for offline use;
 no textbook illustrations or third-party character artwork were copied. These
 are not represented as CC0 stock. Generation briefs and provenance are recorded
@@ -65,7 +65,9 @@ in `docs/OURSELVES_V2_REVIEW.md`.
 ## Remaining science islands — 27 September 2026
 
 Six original project image atlases are bundled in `assets/images`: materials,
-physics, earth, electric, science-extras and science-details (all `-v1.png`).
+physics, earth, electric, science-extras and science-details. Bundled now:
+physics-atlas-v1 and science-extras-v1 (WebP), and the v2 materials, earth,
+electric and science-details atlases; the superseded v1 files are in Git history.
 Generated using the built-in OpenAI image tool; no textbook art or third-party
 characters copied. Not represented as CC0 stock. Generation briefs and source
 filenames are in `docs/REMAINING_ISLANDS_REVIEW.md`.
@@ -87,3 +89,12 @@ whisper, door and thunder alongside the instrument and box effects. They are
 not recordings of instruments, people or animals. No external audio is used.
 Following Sound-box feedback, `feather.wav` is a valid silent PCM asset containing
 only zero samples; it represents the feather trial without an audible impact.
+
+## Repository clean-up — 4 October 2026 (AUD-012)
+
+24 image files that were never bundled were removed from the working tree:
+the superseded v1 atlases (earth, electric, materials, science-details; PNG
+and WebP) and the PNG masters of bundled WebP files. They remain available in
+Git history (any commit before the clean-up). 17 masters were pixel-identical
+to the bundled WebP; bean-stages-v1, greenhouse-v1 and light-plants-v1 PNGs
+were earlier drafts of the refined, bundled WebP art.
