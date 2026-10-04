@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'dart:math';
-
+import 'ids.dart';
 import 'models.dart';
 import 'storage.dart';
 import 'narration.dart';
@@ -47,21 +46,10 @@ class AppController extends Notifier<AppData> {
   }
 
   Future<void> selectChild(String id) => _commit((s) => s.selectChild(id));
-  Future<void> removeChild(String id) => _commit(
-    (s) => s.removeChild(
-      id,
-      emptyId:
-          'empty-${DateTime.now().microsecondsSinceEpoch}-${Random.secure().nextInt(1 << 32)}',
-    ),
-  );
-  Future<void> addChild(ChildProfile profile) {
-    final random = Random.secure();
-    final id = List.generate(
-      16,
-      (_) => random.nextInt(256).toRadixString(16).padLeft(2, '0'),
-    ).join();
-    return _commit((s) => s.addChild(id, profile));
-  }
+  Future<void> removeChild(String id) =>
+      _commit((s) => s.removeChild(id, emptyId: Ids.uuidV7()));
+  Future<void> addChild(ChildProfile profile) =>
+      _commit((s) => s.addChild(Ids.uuidV7(), profile));
 
   Future<void> saveProfile(ChildProfile profile) =>
       _childCommit((s) => s.copyWith(profile: profile));
