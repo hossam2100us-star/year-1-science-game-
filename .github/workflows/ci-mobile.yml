@@ -56,6 +56,29 @@ jobs:
       - name: Web platform tests (Chrome)
         run: flutter test --platform chrome test/web
 
+  goldens:
+    # Baselines in test/goldens were generated on Windows; compare on the
+    # same OS so anti-aliasing differences cannot cause false failures.
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+      - run: flutter pub get --enforce-lockfile
+      - name: Golden (visual regression) tests
+        run: flutter test --tags golden
+      - name: Upload failure diffs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: golden-failures
+          path: test/goldens/failures/
+          retention-days: 7
+
   content-validation:
     runs-on: ubuntu-latest
     timeout-minutes: 10

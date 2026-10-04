@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flame/flame.dart';
@@ -22,6 +21,7 @@ import 'package:science_adventure/features/world/todays_challenge.dart';
 import 'package:science_adventure/parent/unit_report.dart';
 
 import 'setup_screen_test.dart' as helpers;
+import 'support/review_images.dart';
 
 class _Voice extends helpers.SilentNarration {
   final spoken = <String>[];
@@ -114,9 +114,7 @@ void main() {
                     as RenderRepaintBoundary)
                 .toImage();
         final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
-        final file = File('tmp/latest-review/$name.png');
-        await file.parent.create(recursive: true);
-        await file.writeAsBytes(bytes!.buffer.asUint8List());
+        await saveReviewImage('latest-review/$name.png', bytes);
         image.dispose();
       });
 

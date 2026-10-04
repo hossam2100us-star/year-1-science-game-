@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -12,6 +11,7 @@ import 'package:science_adventure/features/biology/lesson_player.dart';
 import 'package:science_adventure/features/plants/plant_workshop.dart';
 
 import 'setup_screen_test.dart' as helpers;
+import 'support/review_images.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -153,9 +153,7 @@ void main() {
     await t.runAsync(() async {
       final picture = await boundary.toImage();
       final bytes = await picture.toByteData(format: ui.ImageByteFormat.png);
-      await Directory('tmp').create(recursive: true);
-      await File('tmp/plant-builder.png')
-          .writeAsBytes(bytes!.buffer.asUint8List());
+      await saveReviewImage('plant-builder.png', bytes);
       picture.dispose();
     });
     expect(t.takeException(), isNull);

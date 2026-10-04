@@ -22,3 +22,6 @@ curriculum/*.pdf
 *.log
 __pycache__/
 output/apk/
+
+# Golden test diff output
+test/goldens/failures/

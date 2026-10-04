@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flame/flame.dart';
@@ -19,6 +18,7 @@ import 'package:science_adventure/features/science/sound_box_lab.dart';
 import 'package:science_adventure/games/question_engine.dart';
 
 import 'setup_screen_test.dart' as helpers;
+import 'support/review_images.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -120,9 +120,7 @@ void main() {
             key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
         final image = await boundary.toImage();
         final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
-        await Directory('tmp/sound-scenes').create(recursive: true);
-        await File('tmp/sound-scenes/$name.png')
-            .writeAsBytes(bytes!.buffer.asUint8List());
+        await saveReviewImage('sound-scenes/$name.png', bytes);
         image.dispose();
       });
 

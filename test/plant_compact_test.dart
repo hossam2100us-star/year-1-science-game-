@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -7,6 +6,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:science_adventure/content/lesson.dart';
 import 'package:science_adventure/features/biology/session.dart';
 import 'package:science_adventure/features/plants/plant_lab_stage.dart';
+
+import 'support/review_images.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -92,9 +93,7 @@ void main() {
       await t.runAsync(() async {
         final picture = await boundary.toImage();
         final bytes = await picture.toByteData(format: ui.ImageByteFormat.png);
-        await Directory('tmp').create(recursive: true);
-        await File('tmp/plant-compact.png')
-            .writeAsBytes(bytes!.buffer.asUint8List());
+        await saveReviewImage('plant-compact.png', bytes);
         picture.dispose();
       });
       await t.pumpWidget(const SizedBox());

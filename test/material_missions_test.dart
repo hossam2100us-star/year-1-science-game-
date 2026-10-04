@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flame/flame.dart';
@@ -16,6 +15,7 @@ import 'package:science_adventure/features/science/material_workshop.dart';
 import 'package:science_adventure/features/science/science_picture.dart';
 
 import 'setup_screen_test.dart' as helpers;
+import 'support/review_images.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -76,9 +76,7 @@ void main() {
             key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
         final image = await boundary.toImage();
         final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
-        await Directory('tmp/material-missions').create(recursive: true);
-        await File('tmp/material-missions/$name.png')
-            .writeAsBytes(bytes!.buffer.asUint8List());
+        await saveReviewImage('material-missions/$name.png', bytes);
         image.dispose();
       });
 
