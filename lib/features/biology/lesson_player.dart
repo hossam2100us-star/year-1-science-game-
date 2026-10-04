@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/answer_summary.dart';
@@ -18,18 +17,14 @@ import '../../core/widgets.dart';
 import '../../games/discovery_game.dart';
 import '../../games/question_engine.dart';
 import 'session.dart';
-import 'ourselves_stage.dart';
+import '../lesson/scene_kind.dart';
+import '../lesson/scene_renderers.dart';
+import '../lesson/step_rules.dart';
 import 'shoe_measure.dart';
-import '../science/science_stage.dart';
-import '../science/science_lab.dart';
 import '../science/force_guided_lab.dart';
 import '../science/force_discovery.dart';
 import '../science/science_audio.dart';
-import '../plants/bean_experiment.dart';
-import '../plants/light_experiment.dart';
 import '../plants/light_model.dart';
-import '../plants/plant_lab_stage.dart';
-import '../plants/plant_mission_stage.dart';
 import '../garden/alive_adventures.dart';
 
 class LessonRoute extends ConsumerWidget {
@@ -70,7 +65,8 @@ class LessonPlayer extends ConsumerStatefulWidget {
 }
 
 class _LessonPlayerState extends ConsumerState<LessonPlayer>
-    with WidgetsBindingObserver {
+    with WidgetsBindingObserver
+    implements LessonSceneHost {
   late LessonSession _session;
   late QuestionEngine _engine;
   late DiscoveryGame _game;
@@ -89,6 +85,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   Map<String, dynamic> _light = {};
   Map<String, String> _objectiveEvidence = {};
   Future<void> _writes = Future.value();
+  @override
   LessonStep get step {
     final current = _session.step;
     if (current.id != 'unit_06.step.008' ||
@@ -195,16 +192,16 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     });
   }
 
-  bool get _plantMission => step.json['playScene'] == 'plant-mission';
-  bool get _science => step.json['playScene'] == 'science';
+  SceneKind get _kind => SceneKind.of(step);
+  bool get _science => _kind.isScience;
   bool get _movementGarden =>
       _science && step.json['forceScene']?['gardenStories'] is Map;
   bool get _guidedForces =>
       _science &&
       (step.json['lab'] == 'force' ||
           step.json['forceScene']?['mode'] == 'movement');
-  bool get _ourselves => step.json['playScene'] == 'ourselves';
-  bool get _plantLab => step.json['playScene'] == 'plant-lab';
+  bool get _ourselves => _kind == SceneKind.ourselves;
+  bool get _plantLab => _kind == SceneKind.plantLab;
   String get _displayPrompt =>
       _plantLab && step.json['partDescriptions'] != null && _selected.isNotEmpty
       ? step.json['partDescriptions'][_selected.last] ?? step.prompt
@@ -367,32 +364,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     if (step.options.length == 1) _check();
   }
 
-  dynamic get _selection => step.isMapping
-      ? _placements
-      : step.isMulti || step.isOrder
-      ? _selected.toList()
-      : _selected.firstOrNull;
-  bool _mappingItemMatches(String id) => matchesAnswer(
-    {
-      ...step.answer!,
-      'value': {id: (step.answer!['value'] as Map)[id]},
-    },
-    {id: _placements[id]},
-  );
-  String _assessmentFeedback() {
-    var feedback = _engine.feedback;
-    if (!_engine.done && _engine.mistakes > 0 && step.isMapping) {
-      final expected = Map<String, dynamic>.from(step.answer!['value']);
-      final revisit = expected.keys.where((id) => !_mappingItemMatches(id));
-      feedback += ' Look again: ${revisit.map(step.label).join(', ')}.';
-    } else if (!_engine.done && _engine.mistakes > 0 && step.isMulti) {
-      final expected = List<String>.from(step.answer!['value']);
-      final found = _selected.where(expected.contains).length;
-      feedback +=
-          ' $found of ${expected.length} discoveries found. Check your collection.';
-    }
-    return feedback;
-  }
+  Object? get _selection => StepRules.selection(step, _selected, _placements);
+  bool _mappingItemMatches(String id) =>
+      StepRules.mappingItemMatches(step, _placements, id);
+  String _assessmentFeedback() =>
+      StepRules.assessmentFeedback(step, _engine, _selected, _placements);
 
   void _check() {
     if (_busy || _answerLocked) return;
@@ -447,71 +423,20 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     _say(_feedback);
   }
 
-  void _markForReview() {
-    final expected = step.answer!['value'];
-    if (step.isMapping) {
-      _reviewItems = (expected as Map).keys
-          .cast<String>()
-          .where((id) => !_mappingItemMatches(id))
-          .toSet();
-    } else if (step.isMulti) {
-      // Missing correct choices are not identified before the explanation.
-      _reviewItems = _selected
-          .where((id) => !(expected as List).contains(id))
-          .toSet();
-    } else {
-      _reviewItems = _selected.where((id) => id != expected).toSet();
-    }
-  }
+  void _markForReview() =>
+      _reviewItems = StepRules.reviewItems(step, _selected, _placements);
 
-  String _answerReference() {
-    final expected = step.answer!['value'];
-    if (expected is Map) {
-      return expected.entries
-          .where((e) => _reviewItems.contains(e.key))
-          .map((e) => '${step.label(e.key)}: ${step.label(e.value)}')
-          .join('. ');
-    }
-    return (expected is List ? expected : [expected])
-        .map((id) => step.label(id as String))
-        .join(' • ');
-  }
+  String _answerReference() => StepRules.answerReference(step, _reviewItems);
 
-  bool get _canContinue {
-    if (_needsCorrection) return false;
-    if (_session.responses[step.id]?['completed'] == true) return true;
-    if (_science && step.json['lab'] == 'distance') {
-      return ScienceLab.distanceComplete(_lab);
-    }
-    if (_science && step.json['lab'] == 'force') {
-      return ScienceLab.forceComplete(_lab);
-    }
-    if (_science && step.json['lab'] == 'sailboat') {
-      return ScienceLab.boatComplete(_lab);
-    }
-    if (_science && step.json['shapeResults'] != null) {
-      return ScienceLab.shapeComplete(step, _lab);
-    }
-    if (_science && step.json['observationUi'] != null) {
-      return ScienceLab.experimentComplete(step, _lab);
-    }
-    if (_science && step.json['lab'] != null) return _freeDone;
-    if (_science && step.kind == 'explore') {
-      return step.options.every((o) => _touched.contains(o.id));
-    }
-    if (_ourselves && (step.kind == 'explore' || step.kind == 'story')) {
-      return step.options.every((o) => _touched.contains(o.id));
-    }
-    if (_plantLab && step.kind == 'story') return _touched.contains(step.focus);
-    if (_plantLab && (step.kind == 'explore' || step.kind == 'free-plant')) {
-      return step.options.every((item) => _touched.contains(item.id));
-    }
-    if (_engine.done || _freeDone || step.kind == 'story') return true;
-    if (step.kind == 'explore' || step.kind == 'free-plant') {
-      return _touched.length >= (step.json['minTouches'] ?? 3);
-    }
-    return false;
-  }
+  bool get _canContinue => StepRules.canContinue(
+    step: step,
+    needsCorrection: _needsCorrection,
+    alreadyCompleted: _session.responses[step.id]?['completed'] == true,
+    lab: _lab,
+    touched: _touched,
+    engineDone: _engine.done,
+    freeDone: _freeDone,
+  );
 
   Future<void> _testPrediction() async {
     if (_selected.isEmpty && _prediction == null || _busy) return;
@@ -688,6 +613,166 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     super.dispose();
   }
 
+  // ---- LessonSceneHost: what scene renderers may use (AUD-002) ----------
+
+  @override
+  Lesson get lesson => widget.lesson;
+  @override
+  int get stepIndex => _session.index;
+  @override
+  String get position => '${_session.index + 1}/${widget.lesson.steps.length}';
+  @override
+  Set<String> get selected => _selected;
+  @override
+  Map<String, String> get placements => _placements;
+  @override
+  Set<String> get touched => _touched;
+  @override
+  Set<String> get reviewItems => _reviewItems;
+  @override
+  bool get answerLocked => _answerLocked;
+  @override
+  bool get freeDone => _freeDone;
+  @override
+  bool get busy => _busy;
+  @override
+  bool get girl => ref.read(appProvider).profile?.gender == ChildGender.girl;
+  @override
+  int get frame => _frame;
+  @override
+  Map<String, dynamic> get lab => _lab;
+  @override
+  Map<String, dynamic> get bean => _bean;
+  @override
+  Map<String, dynamic> get light => _light;
+  @override
+  DiscoveryGame get game => _game;
+
+  @override
+  Set<String> get assembledPlantParts => {
+    for (final previous in widget.lesson.steps.take(_session.index))
+      if (previous.json['playScene'] == 'plant-lab' &&
+          previous.kind == 'label-diagram' &&
+          _session.responses[previous.id]?['completed'] == true)
+        ...Map<String, String>.from(previous.answer!['value'] as Map).values,
+  };
+
+  @override
+  void item(String id) => _item(id);
+  @override
+  void place(String item, String target) => _place(item, target);
+  @override
+  void say(String text) => _say(text);
+  @override
+  void playSound(String name, [double loudness = 1]) =>
+      _playSound(name, loudness);
+
+  @override
+  void showFeedback(String text) {
+    if (!mounted) return;
+    _feedback = text;
+    _changed();
+  }
+
+  @override
+  void sceneSpoke(String text) {
+    ScienceAudio.stop();
+    if (_guidedForces || step.kind == 'explore') {
+      final stories = step.json['forceScene']?['gardenStories'] as Map?;
+      _feedback = stories?.containsValue(text) == true ? '' : text;
+      _changed();
+    }
+    _say(text);
+  }
+
+  @override
+  void reorder(List<String> items) {
+    if (_busy || _answerLocked || !step.isOrder) return;
+    final ids = step.options.map((p) => p.id).toSet();
+    if (items.toSet().length != items.length || !ids.containsAll(items)) {
+      return;
+    }
+    _selected = items.toSet();
+    _changed();
+  }
+
+  @override
+  void reorderSlots(Map<String, String> slots) {
+    if (_busy || _answerLocked || !step.isOrder) return;
+    final ids = step.options.map((p) => p.id).toSet();
+    final validSlots = {for (var i = 0; i < step.options.length; i++) '$i'};
+    if (!validSlots.containsAll(slots.keys) ||
+        !ids.containsAll(slots.values) ||
+        slots.values.toSet().length != slots.length) {
+      return;
+    }
+    _placements = Map.from(slots);
+    _selected = {
+      for (var i = 0; i < step.options.length; i++)
+        if (slots.containsKey('$i')) slots['$i']!,
+    };
+    _changed();
+  }
+
+  @override
+  Future<void> saveLab(Map<String, dynamic> data, bool complete) async {
+    final previous = _lab;
+    final wasDone = _freeDone;
+    _lab = Map<String, dynamic>.from(data);
+    _freeDone = complete || wasDone;
+    try {
+      await _persist();
+      if (mounted) setState(() {});
+    } catch (_) {
+      _lab = previous;
+      _freeDone = wasDone;
+      rethrow;
+    }
+  }
+
+  @override
+  Future<void> saveLight(Map<String, dynamic> value) async {
+    final previous = _light;
+    _light = Map<String, dynamic>.from(value);
+    try {
+      await _persist();
+    } catch (_) {
+      _light = previous;
+      rethrow;
+    }
+  }
+
+  @override
+  Future<void> finishLight() async {
+    _prediction = _light['prediction'];
+    _frame = step.frames.length;
+    _freeDone = true;
+    _feedback = step.explanation;
+    await _next();
+  }
+
+  @override
+  Future<void> saveBean(Map<String, dynamic> value) async {
+    _bean = Map<String, dynamic>.from(value);
+    await _persist();
+  }
+
+  @override
+  Future<void> finishBean() async {
+    _prediction = _bean['prediction'];
+    _frame = 4;
+    _freeDone = true;
+    _feedback = step.explanation;
+    await _next();
+  }
+
+  @override
+  Future<void> Function()? get previous =>
+      _session.index == 0 || _busy ? null : _previous;
+
+  @override
+  Future<void> leave() => _leave();
+
   @override
   Widget build(BuildContext context) {
     // A practice save can notify providers while its route is popping. There
@@ -697,52 +782,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     }
     final profile = ref.watch(appProvider).profile;
     if (_complete) return _completion(context);
-    if (step.json['experiment'] == 'light') {
-      return LightExperiment(
-        key: ValueKey(step.id),
-        step: step,
-        initial: _light,
-        position: '${_session.index + 1}/${widget.lesson.steps.length}',
-        onPrevious: _session.index == 0 || _busy ? null : _previous,
-        onSave: (value) async {
-          final previous = _light;
-          _light = Map<String, dynamic>.from(value);
-          try {
-            await _persist();
-          } catch (_) {
-            _light = previous;
-            rethrow;
-          }
-        },
-        onFinished: () async {
-          _prediction = _light['prediction'];
-          _frame = step.frames.length;
-          _freeDone = true;
-          _feedback = step.explanation;
-          await _next();
-        },
-        onLeave: _leave,
-      );
-    }
-    if (step.json['experiment'] == 'bean') {
-      return BeanExperiment(
-        key: ValueKey(step.id),
-        step: step,
-        initial: _bean,
-        onPrevious: _session.index == 0 || _busy ? null : _previous,
-        onSave: (value) async {
-          _bean = Map<String, dynamic>.from(value);
-          await _persist();
-        },
-        onFinished: () async {
-          _prediction = _bean['prediction'];
-          _frame = 4;
-          _freeDone = true;
-          _feedback = step.explanation;
-          await _next();
-        },
-      );
-    }
+    final renderer = SceneRenderer.of(_kind);
+    if (_kind.fullScreen) return renderer.build(context, this);
 
     _game.reducedMotion = MediaQuery.disableAnimationsOf(context);
     return PopScope(
@@ -761,7 +802,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                     final compact = constraints.maxWidth < 600;
                     final titleText = step.title == step.section || _plantLab
                         ? step.title
-                        : '${step.title} • ${step.section}';
+                        : '${step.title} â€¢ ${step.section}';
                     // A shortened phone title keeps its full text on
                     // long-press (AUD-018).
                     final title = Tooltip(
@@ -936,256 +977,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                 ),
                               ),
                             ),
-                          if (_science)
-                            step.json['lab'] != null
-                                ? ScienceLab(
-                                    key: ValueKey(step.id),
-                                    step: step,
-                                    data: _lab,
-                                    onSpeak: _say,
-                                    onSound: _playSound,
-                                    onFeedback: (text) {
-                                      if (!mounted) return;
-                                      _feedback = text;
-                                      _changed();
-                                    },
-                                    onChange: (data, complete) async {
-                                      final previous = _lab;
-                                      final wasDone = _freeDone;
-                                      _lab = Map<String, dynamic>.from(data);
-                                      _freeDone = complete || wasDone;
-                                      try {
-                                        await _persist();
-                                        if (mounted) setState(() {});
-                                      } catch (_) {
-                                        _lab = previous;
-                                        _freeDone = wasDone;
-                                        rethrow;
-                                      }
-                                    },
-                                  )
-                                : ScienceStage(
-                                    step: step,
-                                    selected: _selected,
-                                    placements: _placements,
-                                    done: _answerLocked,
-                                    reviewItems: _reviewItems,
-                                    onItem: _item,
-                                    onPlace: _place,
-                                    onSound: _playSound,
-                                    onSpeak: (text) {
-                                      ScienceAudio.stop();
-                                      if (_guidedForces ||
-                                          step.kind == 'explore') {
-                                        final stories =
-                                            step.json['forceScene']?['gardenStories']
-                                                as Map?;
-                                        _feedback =
-                                            stories?.containsValue(text) == true
-                                            ? ''
-                                            : text;
-                                        _changed();
-                                      }
-                                      _say(text);
-                                    },
-                                    onOrder: (items) {
-                                      if (_busy ||
-                                          _answerLocked ||
-                                          !step.isOrder) {
-                                        return;
-                                      }
-                                      final ids = step.options
-                                          .map((p) => p.id)
-                                          .toSet();
-                                      if (items.toSet().length !=
-                                              items.length ||
-                                          !ids.containsAll(items)) {
-                                        return;
-                                      }
-                                      _selected = items.toSet();
-                                      _changed();
-                                    },
-                                    onOrderPlacements: (slots) {
-                                      if (_busy ||
-                                          _answerLocked ||
-                                          !step.isOrder) {
-                                        return;
-                                      }
-                                      final ids = step.options
-                                          .map((p) => p.id)
-                                          .toSet();
-                                      final validSlots = {
-                                        for (
-                                          var i = 0;
-                                          i < step.options.length;
-                                          i++
-                                        )
-                                          '$i',
-                                      };
-                                      if (!validSlots.containsAll(slots.keys) ||
-                                          !ids.containsAll(slots.values) ||
-                                          slots.values.toSet().length !=
-                                              slots.length) {
-                                        return;
-                                      }
-                                      _placements = Map.from(slots);
-                                      _selected = {
-                                        for (
-                                          var i = 0;
-                                          i < step.options.length;
-                                          i++
-                                        )
-                                          if (slots.containsKey('$i'))
-                                            slots['$i']!,
-                                      };
-                                      _changed();
-                                    },
-                                  )
-                          else if (_ourselves)
-                            OurselvesStage(
-                              step: step,
-                              selected: _selected,
-                              placements: _placements,
-                              done: _answerLocked || _freeDone,
-                              girl: profile?.gender == ChildGender.girl,
-                              onItem: _item,
-                              onPlace: _place,
-                            )
-                          else if (_plantLab) ...[
-                            if (step.json['playInstruction'] != null)
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 10),
-                                child: Text(
-                                  step.json['playInstruction'],
-                                  style: const TextStyle(fontSize: 22),
-                                ),
-                              ),
-                            PlantLabStage(
-                              key: ValueKey(step.id),
-                              step: step,
-                              selected: _selected,
-                              touched: _touched,
-                              placements: _placements,
-                              done: _answerLocked,
-                              assembled: {
-                                for (final previous in widget.lesson.steps.take(
-                                  _session.index,
-                                ))
-                                  if (previous.json['playScene'] ==
-                                          'plant-lab' &&
-                                      previous.kind == 'label-diagram' &&
-                                      _session.responses[previous
-                                              .id]?['completed'] ==
-                                          true)
-                                    ...Map<String, String>.from(
-                                      previous.answer!['value'],
-                                    ).values,
-                              },
-                              onItem: _item,
-                              onPlace: _place,
-                            ),
-                          ] else if (_plantMission)
-                            PlantMissionStage(
-                              step: step,
-                              selected: _selected,
-                              placements: _placements,
-                              done: _answerLocked,
-                              onItem: _item,
-                              onPlace: _place,
-                            )
-                          else
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(24),
-                              child: SizedBox(
-                                height:
-                                    (MediaQuery.sizeOf(context).height * .55)
-                                        .clamp(
-                                          step.kind == 'label-diagram'
-                                              ? 300.0
-                                              : 240.0,
-                                          380.0,
-                                        ),
-                                child: GameWidget<DiscoveryGame>(
-                                  key: ValueKey(step.id),
-                                  game: _game,
-                                ),
-                              ),
-                            ),
+                          renderer.build(context, this),
                           const SizedBox(height: 10),
-                          if (!_science &&
-                              !_ourselves &&
-                              !_plantLab &&
-                              !_plantMission &&
-                              !_answerLocked &&
-                              !_freeDone &&
-                              _frame == 0)
-                            Wrap(
-                              spacing: 8,
-                              runSpacing: 8,
-                              alignment: WrapAlignment.center,
-                              children: [
-                                for (final item in step.options)
-                                  OutlinedButton(
-                                    onPressed: _busy
-                                        ? null
-                                        : () => _item(item.id),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        if (_selected.contains(item.id))
-                                          const Icon(
-                                            Icons.check_circle_rounded,
-                                          ),
-                                        Flexible(child: Text(item.label)),
-                                      ],
-                                    ),
-                                  ),
-                              ],
-                            ),
-                          if (!_science &&
-                              !_ourselves &&
-                              !_plantLab &&
-                              !_plantMission &&
-                              step.isMapping &&
-                              !_answerLocked) ...[
-                            const SizedBox(height: 10),
-                            Wrap(
-                              spacing: 8,
-                              runSpacing: 8,
-                              alignment: WrapAlignment.center,
-                              children: [
-                                for (var i = 0; i < step.targets.length; i++)
-                                  FilledButton.tonal(
-                                    onPressed: _selected.isEmpty
-                                        ? null
-                                        : () => _place(
-                                            _selected.first,
-                                            step.targets[i].id,
-                                          ),
-                                    child: Text(
-                                      step.kind == 'label-diagram'
-                                          ? 'Place ${i + 1}'
-                                          : step.targets[i].label,
-                                    ),
-                                  ),
-                              ],
-                            ),
-                            if (_placements.isNotEmpty)
-                              Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: AnswerSummary(
-                                  pairs: [
-                                    for (final e in _placements.entries)
-                                      (
-                                        step.label(e.key),
-                                        step.kind == 'label-diagram'
-                                            ? 'Place ${step.targets.indexWhere((t) => t.id == e.value) + 1}'
-                                            : step.label(e.value),
-                                      ),
-                                  ],
-                                ),
-                              ),
-                          ],
+                          ?renderer.below(context, this),
                           if (_answerLocked)
                             Padding(
                               padding: const EdgeInsets.all(12),
@@ -1303,7 +1097,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
             ),
             onPressed: _busy ? null : _next,
             icon: const Icon(Icons.arrow_forward_rounded),
-            label: Text(_busy ? 'Saving…' : 'Keep exploring'),
+            label: Text(_busy ? 'Savingâ€¦' : 'Keep exploring'),
           ),
       ],
     ),
