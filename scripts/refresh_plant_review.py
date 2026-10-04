@@ -3,6 +3,12 @@ import json
 from pathlib import Path
 
 def refresh_plant_review(book):
+    for step in book['steps']:
+        if step.get('experiment') == 'bean':
+            step['playUi']['predict'] = 'Make a guess, then water the bean.'
+            step['playUi']['saveError'] = 'Could not save yet. Please try again.'
+        elif step.get('experiment') == 'light':
+            step['playUi']['saveError'] = 'Could not save yet. Tap to try again. Your last saved step is safe.'
     if book.get('contentVersion') == 2:
         book['previousStepIdsV2'] = [s['id'] for s in book['steps']]
         removed = {f'unit_02.step.{n:03}' for n in range(2, 6)}

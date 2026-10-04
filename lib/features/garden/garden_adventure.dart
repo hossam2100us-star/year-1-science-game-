@@ -448,7 +448,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
                           onPressed: () => persist().catchError((Object _) {}),
                           child: Text(
                             t('saveError'),
-                            textDirection: TextDirection.rtl,
+                            textDirection: TextDirection.ltr,
                           ),
                         ),
                       ),

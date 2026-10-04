@@ -21,6 +21,7 @@ void main() {
       'greenhouse-v1.webp',
       'bean-stages-v1.webp',
       'light-plants-v1.webp',
+      'science-details-v2.png',
     ]) {
       await Flame.images.load(asset);
     }
@@ -127,7 +128,14 @@ void main() {
               .onPressed,
           isNull,
         );
-        for (final item in step.options) {
+        for (var i = 0; i < step.options.length; i++) {
+          final item = step.options[i];
+          final visibleFoods = find.byWidgetPredicate(
+            (w) =>
+                w.key is ValueKey<String> &&
+                (w.key as ValueKey<String>).value.startsWith('mission-item-'),
+          );
+          expect(visibleFoods, findsOneWidget);
           await helpers.tapVisible(
             t,
             find.byKey(ValueKey('mission-item-${item.id}')),
@@ -138,6 +146,17 @@ void main() {
               ValueKey("mission-target-${step.answer!['value'][item.id]}"),
             ),
           );
+          expect(
+            store.data.journeys[lesson.id]!['current']['outcome'],
+            isNull,
+            reason: 'A basket choice must not award a result before checking',
+          );
+          if (i + 1 < step.options.length) {
+            await helpers.tapVisible(
+              t,
+              find.byKey(const ValueKey('plant-collection-next')),
+            );
+          }
         }
         await helpers.tapVisible(t, find.text('Check my discovery'));
         expect(
@@ -155,4 +174,59 @@ void main() {
       },
     );
   }
+  testWidgets('Food trail resumes and lets a wrong basket be corrected', (
+    t,
+  ) async {
+    t.view.physicalSize = const Size(1100, 850);
+    t.view.devicePixelRatio = 1;
+    addTearDown(t.view.resetPhysicalSize);
+    addTearDown(t.view.resetDevicePixelRatio);
+    final step = lesson.steps[4];
+    final session = LessonSession.fresh(lesson)..index = 4;
+    final store = MemoryProgressStore(
+      AppData(
+        profile: const ChildProfile(name: 'Nour'),
+        journeys: {lesson.id: session.toJson()},
+      ),
+    );
+    await helpers.mount(t, LessonPlayer(lesson: lesson), store);
+    final first = step.options.first;
+    final correct = step.answer!['value'][first.id] as String;
+    final wrong = step.targets.firstWhere((p) => p.id != correct).id;
+    await helpers.tapVisible(
+      t,
+      find.byKey(ValueKey('mission-item-${first.id}')),
+    );
+    await helpers.tapVisible(t, find.byKey(ValueKey('mission-target-$wrong')));
+    await helpers.tapVisible(
+      t,
+      find.byKey(const ValueKey('plant-collection-next')),
+    );
+    final second = step.options[1];
+    await t.pumpWidget(const SizedBox());
+    await helpers.mount(t, LessonPlayer(lesson: lesson), store);
+    expect(find.byKey(ValueKey('mission-item-${second.id}')), findsOneWidget);
+    expect(
+      store.data.journeys[lesson.id]!['current']['placements'][first.id],
+      wrong,
+    );
+    expect(store.data.journeys[lesson.id]!['current']['outcome'], isNull);
+    await helpers.tapVisible(
+      t,
+      find.byKey(const ValueKey('plant-collection-previous')),
+    );
+    final food = find.byKey(ValueKey('mission-item-${first.id}'));
+    final basket = find.byKey(ValueKey('mission-target-$correct'));
+    await t.ensureVisible(food);
+    await t.pump();
+    await t.drag(food, t.getCenter(basket) - t.getCenter(food));
+    await t.pump();
+    expect(
+      store.data.journeys[lesson.id]!['current']['placements'][first.id],
+      correct,
+    );
+    expect(store.data.journeys[lesson.id]!['current']['outcome'], isNull);
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+  });
 }

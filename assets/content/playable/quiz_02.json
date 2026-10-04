@@ -48,7 +48,7 @@
       "assessed": true,
       "objective": "quiz02.01",
       "hint": "Name the thing first, then ask what it is made from.",
-      "explanation": "object = chair; material = wood",
+      "explanation": "The chair is the object. Wood is the material used to make this chair.",
       "source": {
         "pages": [
           14
@@ -65,7 +65,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_02",
-      "focus": "chair"
+      "focus": "chair",
+      "quizContext": {
+        "setting": "workshop",
+        "art": "chair"
+      }
     },
     {
       "id": "quiz_02.step.002",
@@ -117,7 +121,7 @@
       "assessed": true,
       "objective": "quiz02.02",
       "hint": "Choose names of materials, rather than objects made from them.",
-      "explanation": "Any four: wood, metal, plastic, glass, fabric, paper, clay, rubber",
+      "explanation": "Wood, metal, plastic and glass are materials. We use materials to make objects such as chairs and spoons.",
       "source": {
         "pages": [
           14
@@ -133,7 +137,11 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "quiz_02"
+      "theme": "quiz_02",
+      "quizContext": {
+        "setting": "workshop",
+        "art": null
+      }
     },
     {
       "id": "quiz_02.step.003",
@@ -165,7 +173,7 @@
       "assessed": true,
       "objective": "quiz02.03",
       "hint": "Think about looking through a window.",
-      "explanation": "glass",
+      "explanation": "Clear glass lets you see through it, like a window.",
       "source": {
         "pages": [
           14
@@ -182,7 +190,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_02",
-      "focus": "window"
+      "focus": "window",
+      "quizContext": {
+        "setting": "workshop",
+        "art": "window"
+      }
     },
     {
       "id": "quiz_02.step.004",
@@ -214,7 +226,7 @@
       "assessed": true,
       "objective": "quiz02.04",
       "hint": "Remember which covers kept the cup dry in the rain experiment.",
-      "explanation": "plastic",
+      "explanation": "The plastic cover keeps water out. It keeps the things underneath dry.",
       "source": {
         "pages": [
           14
@@ -231,7 +243,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_02",
-      "focus": "umbrella"
+      "focus": "umbrella",
+      "quizContext": {
+        "setting": "rain",
+        "art": "umbrella"
+      }
     },
     {
       "id": "quiz_02.step.005",
@@ -263,7 +279,7 @@
       "assessed": true,
       "objective": "quiz02.05",
       "hint": "Think about touching a metal spoon: its surface and how it feels.",
-      "explanation": "hard and shiny",
+      "explanation": "Most metals are hard and shiny. A metal spoon feels hard and can look shiny.",
       "source": {
         "pages": [
           14
@@ -280,7 +296,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_02",
-      "focus": "spoon"
+      "focus": "spoon",
+      "quizContext": {
+        "setting": "workshop",
+        "art": "spoon"
+      }
     },
     {
       "id": "quiz_02.step.006",
@@ -332,7 +352,7 @@
       "assessed": true,
       "objective": "quiz02.06",
       "hint": "Imagine changing a shape with your hands in four different ways.",
-      "explanation": "twist, stretch, squash, bend",
+      "explanation": "You can twist, stretch, squash or bend an object to change its shape.",
       "source": {
         "pages": [
           14
@@ -348,7 +368,11 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "quiz_02"
+      "theme": "quiz_02",
+      "quizContext": {
+        "setting": "workshop",
+        "art": "dough"
+      }
     },
     {
       "id": "quiz_02.step.007",
@@ -380,7 +404,7 @@
       "assessed": true,
       "objective": "quiz02.07",
       "hint": "Think about pulling gently on the objects in the shape studio.",
-      "explanation": "a rubber band",
+      "explanation": "The rubber band gets longer when you pull it. That is stretching.",
       "source": {
         "pages": [
           14
@@ -396,7 +420,11 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "quiz_02"
+      "theme": "quiz_02",
+      "quizContext": {
+        "setting": "workshop",
+        "art": null
+      }
     },
     {
       "id": "quiz_02.step.008",
@@ -428,7 +456,7 @@
       "assessed": true,
       "objective": "quiz02.08",
       "hint": "Remember the soft material shaped into a pot before drying.",
-      "explanation": "clay",
+      "explanation": "A potter uses soft clay to make a pot. The clay can be shaped before it dries.",
       "source": {
         "pages": [
           14
@@ -445,7 +473,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_02",
-      "focus": "pot"
+      "focus": "pot",
+      "quizContext": {
+        "setting": "workshop",
+        "art": "pot"
+      }
     },
     {
       "id": "quiz_02.step.009",
@@ -472,7 +504,7 @@
       "assessed": true,
       "objective": "quiz02.09",
       "hint": "Think about glass windows you have seen. Are they all the same colour?",
-      "explanation": "FALSE — glass can be any colour, and much of it is clear",
+      "explanation": "Glass can be clear or different colours. It is not always red.",
       "source": {
         "pages": [
           14
@@ -489,7 +521,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_02",
-      "focus": "window"
+      "focus": "window",
+      "quizContext": {
+        "setting": "workshop",
+        "art": null
+      }
     },
     {
       "id": "quiz_02.step.010",
@@ -529,7 +565,7 @@
       "assessed": true,
       "objective": "quiz02.10",
       "hint": "Think about the materials of the kitchen objects, not their jobs.",
-      "explanation": "Any two: spoon, fork, knife, pan, kettle, tap, tray",
+      "explanation": "The spoon and pan are made from metal. The towel is cotton, and the tissue is paper.",
       "source": {
         "pages": [
           14
@@ -545,7 +581,11 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "quiz_02"
+      "theme": "quiz_02",
+      "quizContext": {
+        "setting": "workshop",
+        "art": null
+      }
     }
   ],
   "stickers": [],

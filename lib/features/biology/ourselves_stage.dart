@@ -36,6 +36,18 @@ class OurselvesStage extends StatelessWidget {
         onItem: onItem,
         onPlace: onPlace,
       );
+    if (step.isMapping && step.table.isEmpty) {
+      return _DiscoveryQuestions(
+        key: ValueKey(step.id),
+        step: step,
+        selected: selected,
+        placements: placements,
+        done: done,
+        girl: girl,
+        onItem: onItem,
+        onPlace: onPlace,
+      );
+    }
     if (step.kind == 'free-measure') return const SizedBox.shrink();
     if (step.table.isNotEmpty)
       return Column(
@@ -251,7 +263,28 @@ class OurselvesStage extends StatelessWidget {
 
   Widget _park(BuildContext context) => LayoutBuilder(
     builder: (context, box) {
-      final side = (box.maxWidth / 3).clamp(110.0, 220.0);
+      final available = (box.maxWidth - 32).clamp(1.0, double.infinity);
+      final labelStyle = DefaultTextStyle.of(context).style
+          .merge(const TextStyle(fontSize: 24, fontWeight: FontWeight.bold));
+      var minimum = 110.0;
+      for (final item in step.options) {
+        for (final word in item.label.split(RegExp(r'\s+'))) {
+          final text = TextPainter(
+            text: TextSpan(text: word, style: labelStyle),
+            textDirection: Directionality.of(context),
+            textScaler: MediaQuery.textScalerOf(context),
+          )..layout();
+          final needed = text.width + 26;
+          if (needed > minimum) minimum = needed;
+          text.dispose();
+        }
+      }
+      final columns = ((available + 12) / (minimum + 12)).floor().clamp(1, 3);
+      final widest = minimum > 220 ? minimum : 220.0;
+      final side = ((available - 12 * (columns - 1)) / columns).clamp(
+        minimum.clamp(1.0, available),
+        widest,
+      );
       return Container(
         width: double.infinity,
         padding: const EdgeInsets.all(16),
@@ -465,4 +498,224 @@ class OurselvesStage extends StatelessWidget {
         ),
     ],
   );
+}
+
+/// One discovery stays visible while its answer is chosen. The lesson still
+/// records every original mapping and checks the complete board together.
+class _DiscoveryQuestions extends StatefulWidget {
+  const _DiscoveryQuestions({
+    super.key,
+    required this.step,
+    required this.selected,
+    required this.placements,
+    required this.done,
+    required this.girl,
+    required this.onItem,
+    required this.onPlace,
+  });
+  final LessonStep step;
+  final Set<String> selected;
+  final Map<String, String> placements;
+  final bool done, girl;
+  final ValueChanged<String> onItem;
+  final void Function(String, String) onPlace;
+
+  @override
+  State<_DiscoveryQuestions> createState() => _DiscoveryQuestionsState();
+}
+
+class _DiscoveryQuestionsState extends State<_DiscoveryQuestions> {
+  late int index;
+  PictureItem get question => widget.step.options[index];
+
+  @override
+  void initState() {
+    super.initState();
+    final selectedIndex = widget.step.options.indexWhere(
+      (p) => widget.selected.contains(p.id),
+    );
+    final missingIndex = widget.step.options.indexWhere(
+      (p) => !widget.placements.containsKey(p.id),
+    );
+    index = selectedIndex >= 0
+        ? selectedIndex
+        : missingIndex >= 0
+        ? missingIndex
+        : 0;
+  }
+
+  void move(int next) {
+    setState(() => index = next);
+    if (!widget.done) widget.onItem(question.id);
+  }
+
+  List<PictureItem> get choices {
+    final group = widget.step.json['discoveryChoices']?[question.id];
+    if (group is! List) return widget.step.targets;
+    return [
+      for (final id in group) ...widget.step.targets.where((p) => p.id == id),
+    ];
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final answer = widget.placements[question.id];
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: const Color(0xFFEAF2E8),
+        borderRadius: BorderRadius.circular(26),
+      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              IconButton(
+                key: const ValueKey('biology-discovery-previous'),
+                tooltip: 'Previous discovery',
+                onPressed: index == 0 ? null : () => move(index - 1),
+                icon: const Icon(Icons.arrow_back_rounded),
+              ),
+              Expanded(
+                child: Text(
+                  'Discovery ${index + 1} / ${widget.step.options.length}',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+              const SizedBox(width: 48),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Draggable<String>(
+            data: question.id,
+            maxSimultaneousDrags: widget.done ? 0 : 1,
+            feedback: Material(
+              borderRadius: BorderRadius.circular(20),
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Text(question.label),
+              ),
+            ),
+            child: Material(
+              color: const Color(0xFFFFFCF4),
+              borderRadius: BorderRadius.circular(22),
+              child: InkWell(
+                key: ValueKey('biology-item-${question.id}'),
+                borderRadius: BorderRadius.circular(22),
+                onTap: widget.done ? null : () => widget.onItem(question.id),
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      if (!(widget.step.json['questionWithoutArt'] as List? ??
+                              const [])
+                          .contains(question.id))
+                        BiologyPicture(
+                          art: question.art,
+                          height: 155,
+                          girl: widget.girl,
+                        ),
+                      const SizedBox(height: 8),
+                      Text(
+                        question.label,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 14),
+            child: Text(
+              'Choose its partner below.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          Wrap(
+            spacing: 10,
+            runSpacing: 10,
+            alignment: WrapAlignment.center,
+            children: [
+              for (final target in choices)
+                DragTarget<String>(
+                  onWillAcceptWithDetails: (details) =>
+                      !widget.done && details.data == question.id,
+                  onAcceptWithDetails: (details) =>
+                      widget.onPlace(details.data, target.id),
+                  builder: (context, hover, rejected) => Material(
+                    color: answer == target.id || hover.isNotEmpty
+                        ? const Color(0xFFE0ECE5)
+                        : const Color(0xFFFFFCF4),
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                        color: Color(0xFF78A68D),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: InkWell(
+                      key: ValueKey('biology-target-${target.id}'),
+                      borderRadius: BorderRadius.circular(20),
+                      onTap: widget.done
+                          ? null
+                          : () => widget.onPlace(question.id, target.id),
+                      child: SizedBox(
+                        width: 132,
+                        child: Padding(
+                          padding: const EdgeInsets.all(12),
+                          child: Column(
+                            children: [
+                              BiologyPicture(
+                                art: target.art,
+                                height: 76,
+                                girl: widget.girl,
+                              ),
+                              Text(
+                                target.label,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(fontSize: 22),
+                              ),
+                              if (answer == target.id)
+                                const Icon(
+                                  Icons.radio_button_checked,
+                                  color: Color(0xFF356D75),
+                                ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          if (index + 1 < widget.step.options.length)
+            FilledButton.icon(
+              key: const ValueKey('biology-discovery-next'),
+              onPressed: answer == null && !widget.done
+                  ? null
+                  : () => move(index + 1),
+              icon: const Icon(Icons.arrow_forward_rounded),
+              label: const Text('Next discovery'),
+            )
+          else if (answer != null)
+            const Text(
+              'Check your discoveries below.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 20),
+            ),
+        ],
+      ),
+    );
+  }
 }

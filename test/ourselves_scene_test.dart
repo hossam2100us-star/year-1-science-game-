@@ -12,6 +12,8 @@ import 'package:science_adventure/core/storage.dart';
 import 'package:science_adventure/features/biology/lesson_player.dart';
 import 'package:science_adventure/features/biology/session.dart';
 import 'package:science_adventure/features/biology/body_workshop.dart';
+import 'package:science_adventure/features/biology/biology_art.dart';
+import 'package:science_adventure/features/plants/plant_mission_stage.dart';
 
 import 'setup_screen_test.dart' as helpers;
 
@@ -36,6 +38,10 @@ void main() {
       'explorer-girl-v2.webp',
       'five-senses-v2.webp',
       'sense-objects-v2.webp',
+      'sound-atlas-v2.png',
+      'science-details-v2.png',
+      'plant-lab-v1.webp',
+      'garden-v2.webp',
     ]) {
       await Flame.images.load(name);
     }
@@ -89,6 +95,26 @@ void main() {
     });
     expect(lesson.steps[2].options.length, 13);
   });
+  test(
+    'Each grouped discovery keeps its source answer among three partners',
+    () {
+      for (final step in lesson.steps.where(
+        (s) => s.json['discoveryChoices'] is Map,
+      )) {
+        final groups = step.json['discoveryChoices'] as Map;
+        expect(groups.keys.toSet(), step.options.map((p) => p.id).toSet());
+        final answer = step.answer!['value'] as Map;
+        final allTargets = step.targets.map((p) => p.id).toSet();
+        for (final item in step.options) {
+          final choices = List<String>.from(groups[item.id]);
+          expect(choices.length, 3, reason: item.id);
+          expect(choices.toSet().length, 3);
+          expect(choices.every(allTargets.contains), isTrue);
+          expect(choices, contains(answer[item.id]));
+        }
+      }
+    },
+  );
   test('Old completed attempt retains its identity and assisted evidence', () {
     final session = LessonSession.restore(lesson, oldSave(49));
     expect(session.finished, true);
@@ -245,25 +271,40 @@ void main() {
     final store = storeFor(lesson, 8);
     await helpers.mount(t, LessonPlayer(lesson: lesson), store);
     final answers = lesson.steps[8].answer!['value'] as Map;
-    for (final e in answers.entries) {
+    for (var i = 0; i < lesson.steps[8].options.length; i++) {
+      final item = lesson.steps[8].options[i];
       await helpers.tapVisible(
         t,
-        find.byKey(ValueKey('biology-item-${e.key}')),
+        find.byKey(ValueKey('biology-item-${item.id}')),
       );
       await helpers.tapVisible(
         t,
         find.byKey(
           ValueKey(
-            'biology-target-${e.key == 'apple_helper' ? 'ears' : e.value}',
+            'biology-target-${item.id == 'apple_helper' ? 'ears' : answers[item.id]}',
           ),
         ),
       );
+      if (i + 1 < lesson.steps[8].options.length) {
+        await helpers.tapVisible(
+          t,
+          find.byKey(const ValueKey('biology-discovery-next')),
+        );
+      }
     }
     await helpers.tapVisible(t, find.text('Check my discovery'));
     final before = Map.from(
       store.data.journeys[lesson.id]!['current']['objectiveEvidence'],
     );
     expect(before.values.where((v) => v == 'firstTry').length, 2);
+    await helpers.tapVisible(
+      t,
+      find.byKey(const ValueKey('biology-discovery-previous')),
+    );
+    await helpers.tapVisible(
+      t,
+      find.byKey(const ValueKey('biology-discovery-previous')),
+    );
     await helpers.tapVisible(
       t,
       find.byKey(const ValueKey('biology-item-apple_helper')),
@@ -279,6 +320,100 @@ void main() {
     expect(after.values.where((v) => v == 'afterHint').length, 1);
     await t.pumpWidget(const SizedBox());
   });
+  testWidgets(
+    'Discovery trail shows one scene and retains every original answer',
+    (t) async {
+      size(t, const Size(1100, 800));
+      final store = storeFor(lesson, 5);
+      await helpers.mount(t, LessonPlayer(lesson: lesson), store);
+      final step = lesson.steps[5];
+      for (var i = 0; i < step.options.length; i++) {
+        final item = step.options[i];
+        final visibleQuestions = find.byWidgetPredicate(
+          (w) =>
+              w.key is ValueKey<String> &&
+              (w.key as ValueKey<String>).value.startsWith('biology-item-'),
+        );
+        expect(visibleQuestions, findsOneWidget);
+        expect(find.byKey(ValueKey('biology-item-${item.id}')), findsOneWidget);
+        expect(
+          find.byKey(
+            ValueKey('biology-target-${step.answer!['value'][item.id]}'),
+          ),
+          findsOneWidget,
+        );
+        final partners = find.byWidgetPredicate(
+          (w) =>
+              w.key is ValueKey<String> &&
+              (w.key as ValueKey<String>).value.startsWith('biology-target-'),
+        );
+        expect(partners, findsNWidgets(3));
+        await helpers.tapVisible(
+          t,
+          find.byKey(
+            ValueKey('biology-target-${step.answer!['value'][item.id]}'),
+          ),
+        );
+        expect(store.data.journeys[lesson.id]!['current']['done'], false);
+        if (i + 1 < step.options.length) {
+          await helpers.tapVisible(
+            t,
+            find.byKey(const ValueKey('biology-discovery-next')),
+          );
+        }
+      }
+      await helpers.tapVisible(t, find.text('Check my discovery'));
+      expect(store.data.journeys[lesson.id]!['current']['outcome'], 'firstTry');
+      expect(
+        (store.data.journeys[lesson.id]!['current']['placements'] as Map)
+            .length,
+        step.options.length,
+      );
+      await t.pumpWidget(const SizedBox());
+    },
+  );
+  testWidgets(
+    'Sense detective has three partners and does not picture its count answer',
+    (t) async {
+      size(t, const Size(1100, 800));
+      final store = storeFor(lesson, 8);
+      await helpers.mount(t, LessonPlayer(lesson: lesson), store);
+      expect(find.byKey(const ValueKey('biology-item-count')), findsOneWidget);
+      final targets = find.byWidgetPredicate(
+        (w) =>
+            w.key is ValueKey<String> &&
+            (w.key as ValueKey<String>).value.startsWith('biology-target-'),
+      );
+      expect(targets, findsNWidgets(3));
+      expect(
+        find.byWidgetPredicate((w) => w is BiologyPicture && w.art == 'five'),
+        findsOneWidget,
+        reason: 'Five is only an answer option, never the question image',
+      );
+      await helpers.tapVisible(
+        t,
+        find.byKey(const ValueKey('biology-target-ten')),
+      );
+      await helpers.tapVisible(
+        t,
+        find.byKey(const ValueKey('biology-discovery-next')),
+      );
+      expect(
+        find.byKey(const ValueKey('biology-item-apple_helper')),
+        findsOneWidget,
+      );
+      await helpers.tapVisible(
+        t,
+        find.byKey(const ValueKey('biology-discovery-previous')),
+      );
+      expect(
+        store.data.journeys[lesson.id]!['current']['placements']['count'],
+        'ten',
+      );
+      expect(store.data.journeys[lesson.id]!['current']['outcome'], isNull);
+      await t.pumpWidget(const SizedBox());
+    },
+  );
   testWidgets('Marbles use source counts and two independent comparisons', (
     t,
   ) async {
@@ -341,6 +476,33 @@ void main() {
     expect(t.takeException(), isNull);
     await t.pumpWidget(const SizedBox());
   });
+  testWidgets('Quiz garden labels keep whole words at phone width and 1.5x', (
+    t,
+  ) async {
+    size(t, const Size(360, 740));
+    final store = storeFor(quiz, 0);
+    await helpers.mount(t, LessonPlayer(lesson: quiz), store, scale: 1.5);
+    final table = find.text('Table');
+    await t.ensureVisible(table);
+    await t.pump();
+    final paragraph = t.renderObject<RenderParagraph>(table);
+    expect(
+      paragraph.getBoxesForSelection(
+        const TextSelection(baseOffset: 0, extentOffset: 5),
+      ),
+      hasLength(1),
+      reason: 'Table must not wrap into Tabl and e',
+    );
+    expect(t.widget<Text>(table).style!.fontSize, 24);
+    final step = quiz.steps.first;
+    for (final id in List<String>.from(step.answer!['value'])) {
+      await helpers.tapVisible(t, find.byKey(ValueKey('biology-item-$id')));
+    }
+    await helpers.tapVisible(t, find.text('Check my discovery'));
+    expect(store.data.journeys[quiz.id]!['current']['outcome'], 'firstTry');
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+  });
   testWidgets('Render actual revised screens for visual review', (t) async {
     size(t, const Size(1280, 900));
     for (final index in [0, 1, 2, 3, 4, 5, 7]) {
@@ -367,5 +529,68 @@ void main() {
       });
       await t.pumpWidget(const SizedBox());
     }
+  });
+  testWidgets('Render revised biology subjects on the child scene colour', (
+    t,
+  ) async {
+    size(t, const Size(1280, 900));
+    final key = GlobalKey();
+    await t.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: RepaintBoundary(
+            key: key,
+            child: ColoredBox(
+              color: const Color(0xFFE6F0D7),
+              child: Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: [
+                  for (final art in [
+                    'hear_music',
+                    'smell_flowers',
+                    'Car',
+                    'toys',
+                    'paper',
+                    'wind',
+                    'dry_and_drooping',
+                  ])
+                    SizedBox(
+                      width: 305,
+                      child: Column(
+                        children: [
+                          if (const [
+                            'toys',
+                            'paper',
+                            'wind',
+                            'dry_and_drooping',
+                          ].contains(art))
+                            PlantMissionPicture(id: art, height: 175)
+                          else
+                            BiologyPicture(art: art, height: 175),
+                          Text(art),
+                        ],
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    await t.pump();
+    expect(t.takeException(), isNull);
+    final boundary =
+        key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
+    await t.runAsync(() async {
+      final image = await boundary.toImage();
+      final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
+      await Directory('tmp').create(recursive: true);
+      await File('tmp/biology-subjects-review.png')
+          .writeAsBytes(bytes!.buffer.asUint8List());
+      image.dispose();
+    });
+    await t.pumpWidget(const SizedBox());
   });
 }

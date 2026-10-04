@@ -274,6 +274,8 @@ add_garden(b1)
 from refresh_ourselves import refresh_ourselves, refresh_quiz
 refresh_ourselves(b3)
 refresh_quiz(quiz)
+from child_feedback import apply_child_feedback
 for b in [b1,b2,b3,quiz]:
+ apply_child_feedback(b)
  (OUT/f'{b["id"]}.json').write_text(json.dumps(b,ensure_ascii=False,indent=2),encoding="utf-8")
  print(b["id"],len(b["steps"]),"steps")

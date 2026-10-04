@@ -47,7 +47,7 @@
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "Explore the water places and listen.",
+      "explanation": "Water can be found in ponds, streams, rivers, lakes and oceans. These water places have different sizes and shapes.",
       "source": {
         "pages": [
           22,
@@ -101,7 +101,7 @@
       "assessed": true,
       "objective": "u08.main.01",
       "hint": "Picture the large blue areas on Earth.",
-      "explanation": "water",
+      "explanation": "Most of Earth is covered in water. Its large water areas make Earth look mostly blue.",
       "source": {
         "pages": [
           22,
@@ -182,7 +182,7 @@
       "assessed": true,
       "objective": "u08.main.02",
       "hint": "Compare size, moving water and salt water in the clues.",
-      "explanation": "a) ocean b) pond c) river d) lake",
+      "explanation": "The ocean is big and salty. A river has moving water. A pond is small and still, while a lake is big and still with land around it.",
       "source": {
         "pages": [
           22,
@@ -251,7 +251,7 @@
       "assessed": true,
       "objective": "u08.main.03",
       "hint": "Remember the water places shown with each animal.",
-      "explanation": "a) ocean b) river c) pond",
+      "explanation": "The ocean is a whale's home. Crocodiles can live in rivers, and frogs can live by ponds.",
       "source": {
         "pages": [
           22,
@@ -320,7 +320,7 @@
       "assessed": true,
       "objective": "u08.main.04",
       "hint": "Think about the material each thing is made from.",
-      "explanation": "Made from rock: diamond, coal, stone wall. Not from rock: plastic bottle, T‑shirt, chair.",
+      "explanation": "The diamond, coal and stone wall belong in this rock collection. The bottle, T-shirt and chair are made from other materials.",
       "source": {
         "pages": [
           22,
@@ -438,7 +438,7 @@
       "assessed": true,
       "objective": "u08.main.05",
       "hint": "Remember the tiny things you found with the magnifier.",
-      "explanation": "Any three of: small stones, sand, bits of dead leaf or plant, worms, tiny insects, water, air.",
+      "explanation": "You can find small stones, dead leaves and worms in soil. Soil is a mixture of many things.",
       "source": {
         "pages": [
           22,
@@ -488,7 +488,7 @@
       "assessed": true,
       "objective": "u08.main.06",
       "hint": "Think about the collection a rock scientist would examine.",
-      "explanation": "rocks (and the ground the Earth is made of)",
+      "explanation": "A geologist is a scientist who studies rocks and the ground under our feet.",
       "source": {
         "pages": [
           22,
@@ -553,7 +553,7 @@
       "assessed": true,
       "objective": "u08.main.07",
       "hint": "Compare the sizes in the water family shown in the book.",
-      "explanation": "In this book, the example order is: pond → stream → river → lake → ocean",
+      "explanation": "The book shows this order: pond, stream, river, lake, then ocean. Follow the order of these examples.",
       "source": {
         "pages": [
           22,
@@ -610,7 +610,7 @@
       "assessed": true,
       "objective": "u08.main.08",
       "hint": "Think about the hard materials used for walls and paths.",
-      "explanation": "Child's own answers, for example: a stone wall, bricks, a marble floor, a pavement, sand, a mountain.",
+      "explanation": "The stone wall and marble floor are made from rock. The bottle is plastic, and the shirt is cotton.",
       "source": {
         "pages": [
           22,
@@ -661,7 +661,7 @@
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "Sort the rocks into two groups using your own rule. Both choices are welcome.",
+      "explanation": "Rocks can go into different groups. You can sort them by size, colour or how they feel.",
       "source": {
         "pages": [
           22,
@@ -803,7 +803,7 @@
       "assessed": true,
       "objective": "u08.choice.01",
       "hint": "Use the water places, soil observations and rock collection to help.",
-      "explanation": "water. ocean. a mixture of many things. rock. rocks.",
+      "explanation": "Water covers most of Earth, and ocean water is salty. Soil is a mixture of many things. Coal is a kind of rock, and a geologist studies rocks.",
       "source": {
         "pages": [
           22,

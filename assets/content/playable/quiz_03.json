@@ -34,7 +34,7 @@
       "assessed": true,
       "objective": "quiz03.01",
       "hint": "Imagine your hand moving as you open the drawer.",
-      "explanation": "pull",
+      "explanation": "A pull brings the drawer towards you and opens it.",
       "source": {
         "pages": [
           21
@@ -50,7 +50,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_03",
-      "focus": "drawer"
+      "focus": "drawer",
+      "quizContext": {
+        "setting": "workshop",
+        "art": "drawer"
+      }
     },
     {
       "id": "quiz_03.step.002",
@@ -77,7 +81,7 @@
       "assessed": true,
       "objective": "quiz03.02",
       "hint": "Imagine your finger moving against the doorbell button.",
-      "explanation": "push",
+      "explanation": "Pushing the button rings the doorbell. Your finger presses it in.",
       "source": {
         "pages": [
           21
@@ -93,7 +97,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_03",
-      "focus": "doorbell"
+      "focus": "doorbell",
+      "quizContext": {
+        "setting": "workshop",
+        "art": "doorbell"
+      }
     },
     {
       "id": "quiz_03.step.003",
@@ -138,7 +146,7 @@
       "assessed": true,
       "objective": "quiz03.03",
       "hint": "Remember which objects stayed at the top of the water tank.",
-      "explanation": "cork and closed plastic bottle",
+      "explanation": "The cork and closed plastic bottle stay at the top of the water. That means they float.",
       "source": {
         "pages": [
           21
@@ -154,7 +162,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_03",
-      "board": "tank"
+      "board": "tank",
+      "quizContext": {
+        "setting": "water",
+        "art": null
+      }
     },
     {
       "id": "quiz_03.step.004",
@@ -181,7 +193,7 @@
       "assessed": true,
       "objective": "quiz03.04",
       "hint": "Think about the word for where a sound begins.",
-      "explanation": "a source of sound",
+      "explanation": "Something that makes a sound is called a source of sound.",
       "source": {
         "pages": [
           21
@@ -197,7 +209,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_03",
-      "focus": "drum"
+      "focus": "drum",
+      "quizContext": {
+        "setting": "sound",
+        "art": "drum"
+      }
     },
     {
       "id": "quiz_03.step.005",
@@ -224,7 +240,7 @@
       "assessed": true,
       "objective": "quiz03.05",
       "hint": "Remember listening while moving away from the drum.",
-      "explanation": "It gets fainter and quieter, until you cannot hear it at all",
+      "explanation": "The drum sounds quieter and fainter as you move farther away. Far away, you may not hear it.",
       "source": {
         "pages": [
           21
@@ -240,7 +256,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_03",
-      "focus": "drum"
+      "focus": "drum",
+      "quizContext": {
+        "setting": "sound",
+        "art": "drum"
+      }
     },
     {
       "id": "quiz_03.step.006",
@@ -272,7 +292,7 @@
       "assessed": true,
       "objective": "quiz03.06",
       "hint": "Imagine how your mouth makes the trumpet sound.",
-      "explanation": "blow",
+      "explanation": "You blow into a trumpet to make a sound.",
       "source": {
         "pages": [
           21
@@ -288,7 +308,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_03",
-      "focus": "trumpet"
+      "focus": "trumpet",
+      "quizContext": {
+        "setting": "sound",
+        "art": "trumpet"
+      }
     },
     {
       "id": "quiz_03.step.007",
@@ -320,7 +344,7 @@
       "assessed": true,
       "objective": "quiz03.07",
       "hint": "Think about the sense you use when listening.",
-      "explanation": "my ears",
+      "explanation": "Your ears catch sounds so you can hear them.",
       "source": {
         "pages": [
           21
@@ -335,7 +359,11 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "quiz_03"
+      "theme": "quiz_03",
+      "quizContext": {
+        "setting": "sound",
+        "art": "drum"
+      }
     },
     {
       "id": "quiz_03.step.008",
@@ -375,7 +403,7 @@
       "assessed": true,
       "objective": "quiz03.08",
       "hint": "Recall which materials moved towards the magnet in the hunt.",
-      "explanation": "iron and steel",
+      "explanation": "Iron and steel are metals that a magnet can pull.",
       "source": {
         "pages": [
           21
@@ -391,7 +419,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_03",
-      "focus": "magnet"
+      "focus": "magnet",
+      "quizContext": {
+        "setting": "electric",
+        "art": "magnet"
+      }
     },
     {
       "id": "quiz_03.step.009",
@@ -418,7 +450,7 @@
       "assessed": true,
       "objective": "quiz03.09",
       "hint": "Remember testing different metals. Did they all move?",
-      "explanation": "FALSE — it ignores aluminium, gold and many other metals",
+      "explanation": "A magnet does not pull every metal. It pulls iron and steel, but it does not pull aluminium or gold.",
       "source": {
         "pages": [
           21
@@ -434,7 +466,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_03",
-      "focus": "foil"
+      "focus": "foil",
+      "quizContext": {
+        "setting": "electric",
+        "art": "magnet"
+      }
     },
     {
       "id": "quiz_03.step.010",
@@ -466,7 +502,7 @@
       "assessed": true,
       "objective": "quiz03.10",
       "hint": "Look for a helper you can use away from a wall socket.",
-      "explanation": "Any one: torch, wall clock, remote control, toy car, mobile phone",
+      "explanation": "The torch uses a battery to make light. It can work away from a wall socket.",
       "source": {
         "pages": [
           21
@@ -481,7 +517,11 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "quiz_03"
+      "theme": "quiz_03",
+      "quizContext": {
+        "setting": "electric",
+        "art": "battery"
+      }
     }
   ],
   "stickers": [],

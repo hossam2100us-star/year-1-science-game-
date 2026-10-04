@@ -46,7 +46,7 @@ Use case scientific-educational. Production sprite atlas supplement for a polish
 
 ## Audio and verification
 
-`scripts/build_science_audio.py` generates twelve local assets, including cat footsteps, whisper, door and thunder, plus a silent feather-box file. These are synthesized PCM, not recorded instruments or speech. Files are mono 16-bit at 22,050 Hz, with no clipped samples. Measured RMS follows cat footsteps < whisper < door < thunder; the feather file contains only zero samples. The two stick trials share one sample. Android's local sound allowlist includes the four added names.
+`scripts/build_science_audio.py` generates twelve local assets, including cat footsteps, whisper, door, thunder and the silent feather-box file. These are synthesized PCM, not recorded instruments or speech. Files are mono 16-bit at 22,050 Hz, with no clipped samples. Measured RMS follows cat footsteps < whisper < door < thunder; the feather file contains only zero samples. The two stick trials share one sample. Android's local sound allowlist includes the four added names.
 
 - Final `dart analyze --fatal-infos`: no issues (`tmp/sound-review-v2-analyze.log`).
 - Full `flutter test` for the preceding visual pass: **149 passed**, including 12 Sound tests (`tmp/sound-review-v2-full-tests.log`). This run includes the narrow-screen header fix; the later four feedback changes have separate validation below.
@@ -63,3 +63,42 @@ The new chart variant has separate provenance and content-version migration so a
 Sound order uses the existing placements map with keys `0`–`3` to preserve empty positions. Its selected sequence is derived in slot order, contains only valid unique option IDs, and is assessed only when all four slots are filled. Playing a source picture writes no answer. Placement and rearrangement remain separate from checking and guided correction.
 
 The content validator now checks every final discovery has two or three unique valid alternatives including its correct answer. It also verifies that the David question occurs in the Chart Skills source, its pages are included, and the answer matches David's original chart value. `test/sound_audio_test.dart` confirms silent feather PCM and audible stone PCM.
+
+### Feedback validation — 3 October 2026
+
+- **22 focused tests passed**: 13 Sound scene tests, 8 progress tests and 1 audio test. Coverage includes source-tap playback without placement, drag into sparse slots, rearrangement and persistence, the chart-version migration, the original final-discovery alternatives and silent feather PCM.
+- The generic science integration test was updated to use the new placement interaction instead of the former tap-to-order expectation; its targeted run passed (`tmp/sound-feedback-assessed-tests.log`).
+- Final `dart analyze --fatal-infos`: no issues (`tmp/sound-feedback-analyze.log`). Full `flutter test`: **159 passed in 62 seconds** (`tmp/sound-feedback-full-tests.log`). Content/source validation: **187 activities passed** (`tmp/sound-feedback-content.log`). The earlier 149-test result belongs to the preceding visual pass.
+- The final local web build succeeded in **54.6 seconds** (`tmp/sound-feedback-preview.log`). After restarting the local preview server, the page, main JavaScript, unit-06 JSON and feather WAV returned HTTP 200. The served feather SHA-256 matches the silent source file, and the built unit-06 JSON hash matches the source. Review: `http://127.0.0.1:8765/review/sound-feedback-v3/?preview=biology-v1&lesson=unit_06&step=4`.
+
+These checks do not establish audible browser playback or physical-tablet acceptance. No APK, deployment or commit is part of this feedback pass.
+
+### Band stability and restored feedback - 3 October 2026
+Conduct the band now reserves both its Choose for row and every instrument answer caption with heights measured for width and text scaling. Hit and Beat are equivalent only in this task, retaining the book answer values. Incorrect-item feedback, correction markers and objective evidence share the grading engine's alias comparison. Restoring assessed work refreshes wording from current content rather than replaying cached teacher notes; saved answers, mistakes and grades remain unchanged. Thirty focused Sound scene/progress tests and all 168 full-suite tests passed; analyzer and 187-activity checks are clean. Full scope is recorded in docs/OCTOBER_REVIEW_REMEDIATION.md.
+
+### Sound boxes: visible wrong-observation response - 3 October 2026
+
+Activity 4 previously only set a local retry flag on a wrong observation. Its
+message could sit below the current viewport, was not narrated, and repeated
+wrong taps had no apparent response. SoundBoxLab now sends its instructions to
+the player's fixed feedback bar. Prediction selection confirms the saved guess
+and asks the child to shake. After shaking, a mismatch prompts another listen;
+speech does not cut off the experimental audio. Every wrong observation shows
+and narrates a short retry message and marks the chosen alternative with `?`.
+Correct observation confirms the result, and changing boxes refreshes the
+instruction. Both boxes must be observed correctly before continuing. Original
+guesses remain saved and ungraded; feather PCM remains silent.
+
+All **21 focused Sound tests passed**, then **171 full-suite tests passed in
+108 seconds** (`tmp/sound-box-reaction-full-tests.log`). Coverage includes both
+boxes with wrong predictions/observations, repeated spoken retry, replay without
+interrupted experiment audio, and full feedback visibility at 1280x800 and
+800x360 with 1.5x text. The two wrong-observation renders were inspected.
+All 187 activities pass content validation. Physical-device audibility remains
+unverified.
+
+The local web build succeeded in 103.2 seconds
+(`tmp/sound-box-reaction-preview.log`); the page, JavaScript and Sound JSON return
+HTTP 200. Served instructions, changed preview Dart files and built Sound JSON
+match their sources. Current activity-4 preview:
+`http://127.0.0.1:8765/review/sound-box-response-v3/?preview=biology-v1&lesson=unit_06&step=4`.

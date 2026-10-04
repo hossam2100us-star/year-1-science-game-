@@ -19,6 +19,8 @@ def refine_sound(book):
             },
         }
     book['contentVersion'] = 2
+    # Historical questions/answers stay intact; the spoken explanation is prose.
+    book['legacySoundChart']['explanation'] = 'Maris heard the drum from furthest away. The chart shows that Maris took 23 steps.'
     modes = {1: 'band', 2: 'hearing', 3: 'band', 5: 'boxes', 7: 'distance',
              8: 'chart', 9: 'sticks', 10: 'order', 11: 'hum', 12: 'discoveries'}
     for number, step in enumerate(book['steps'], 1):
@@ -69,21 +71,27 @@ def refine_sound(book):
         elif number == 2:
             step['prompt'] = 'Find the body part you use to hear. Touch its hand marker.'
             step['soundScene']['instruction'] = 'Look at the whole face. Which part catches sounds?'
+        elif number == 3:
+            step['soundScene']['instruction'] = 'Choose an instrument. Listen, then choose its action.'
+            # Both words describe striking these two percussion instruments.
+            # Limit the equivalence to this activity, retaining the book keys.
+            step['answer'].setdefault('aliases', {})['hit'] = 'beat'
         elif number == 4:
             step['prompt'] = 'Predict for each box. Shake it and compare what happens.'
             step['labUi'].update({'pictureChoices': True, 'replay': 'Shake and listen again',
                                   'progress': 'Boxes explored',
                                   'phases': ['Predict', 'Shake', 'Notice'],
                                   'prediction': 'What do you think this box will sound like?',
+                                  'afterPrediction': 'Now shake this box and listen.',
                                   'yourPrediction': 'Your prediction', 'nextBox': 'Try the other box'})
             step['labUi']['choices'] = {'loud': 'Loud', 'quiet': 'No sound'}
             step['labUi']['result'] = 'What happened'
             step['explanation'] = 'The stone rattled against the box. The soft feather made no sound in this experiment.'
             step['observationUi'] = {
                 'review': 'Listen again',
-                'changed': 'The result was different from your prediction. Let us compare again!',
+                'changed': 'Your prediction was different. Shake and listen again.',
                 'question': 'What did this box sound like?',
-                'retry': 'Shake and listen again. Compare this box with the other box.',
+                'retry': 'Try again. Shake the box and listen.',
                 'complete': 'You noticed what happened! Keep exploring.',
             }
         elif number == 6:
@@ -158,6 +166,8 @@ def refine_sound(book):
                     option['art'] = 'band_question'
             step['explanation'] = 'Beat a drum. A sound becomes fainter as you walk away. A stone makes the louder shaken box. Anything making a sound is its source. Blow a trumpet.'
 
+    from child_feedback import apply_child_feedback
+    apply_child_feedback(book)
 
 if __name__ == '__main__':
     path = Path(__file__).resolve().parents[1] / 'assets/content/playable/unit_06.json'

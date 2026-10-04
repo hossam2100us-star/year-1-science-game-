@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../../core/touch_cue.dart';
@@ -26,15 +28,18 @@ class _SoundDistanceState extends State<SoundDistance> {
   @override
   Widget build(BuildContext context) => LayoutBuilder(
     builder: (context, box) {
-      final compact = box.maxWidth < 400;
-      final listenerHeight = compact ? 130.0 : 175.0;
-      final start = compact ? 105.0 : 125.0;
-      final travel = (box.maxWidth - start - listenerHeight * 1.25 - 20).clamp(
+      // A padded phone previously had only a few pixels of travel. Scale a
+      // complete scene so near and far stay visibly separate on every device.
+      final sceneWidth = math.max(640.0, box.maxWidth);
+      final scale = box.maxWidth / sceneWidth;
+      const listenerHeight = 175.0;
+      const start = 210.0;
+      final travel = (sceneWidth - start - listenerHeight * 1.25 - 20).clamp(
         0.0,
         1500.0,
       );
       final position = dragging ?? widget.position;
-      return ClipRRect(
+      final scene = ClipRRect(
         borderRadius: BorderRadius.circular(26),
         child: Container(
           height: 255,
@@ -71,7 +76,7 @@ class _SoundDistanceState extends State<SoundDistance> {
                       SoundDemonstration(
                         'drum',
                         key: ValueKey('distance-drum-${widget.pulse}'),
-                        height: compact ? 105 : 145,
+                        height: 145,
                         play: widget.pulse > 0,
                       ),
                       if (widget.onListen != null)
@@ -86,7 +91,7 @@ class _SoundDistanceState extends State<SoundDistance> {
               ),
               for (var i = 0; i < 5; i++)
                 Positioned(
-                  left: 150 + travel * i / 5,
+                  left: start + travel * i / 5,
                   bottom: 34,
                   child: const Icon(
                     Icons.circle,
@@ -111,7 +116,7 @@ class _SoundDistanceState extends State<SoundDistance> {
                       : (d) => setState(
                           () => dragging =
                               ((dragging ?? widget.position) +
-                                      d.delta.dx / travel)
+                                      d.delta.dx / (travel * scale))
                                   .clamp(0.0, 1.0),
                         ),
                   onHorizontalDragEnd: widget.onMove == null || travel == 0
@@ -124,13 +129,13 @@ class _SoundDistanceState extends State<SoundDistance> {
                   onHorizontalDragCancel: () => setState(() => dragging = null),
                   child: Semantics(
                     label: widget.listenerLabel,
-                    child: Stack(
+                    child: const Stack(
                       children: [
                         SoundPicture('listener', height: listenerHeight),
                         Positioned(
                           right: listenerHeight * .18,
                           bottom: 15,
-                          child: const TouchCue(),
+                          child: TouchCue(),
                         ),
                       ],
                     ),
@@ -139,6 +144,13 @@ class _SoundDistanceState extends State<SoundDistance> {
               ),
             ],
           ),
+        ),
+      );
+      return SizedBox(
+        width: box.maxWidth,
+        height: 255 * scale,
+        child: FittedBox(
+          child: SizedBox(width: sceneWidth, height: 255, child: scene),
         ),
       );
     },

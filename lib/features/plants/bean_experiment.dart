@@ -274,12 +274,9 @@ class _BeanExperimentState extends ConsumerState<BeanExperiment>
                           const SizedBox(height: 12),
                           if (progress.frame == 0) ...[
                             Text(
-                              ui('predictAr'),
-                              textDirection: TextDirection.rtl,
-                              style: const TextStyle(
-                                fontFamily: 'Cairo',
-                                fontSize: 18,
-                              ),
+                              ui('predict'),
+                              textDirection: TextDirection.ltr,
+                              style: const TextStyle(fontSize: 18),
                             ),
                             const SizedBox(height: 12),
                             Wrap(
@@ -352,11 +349,8 @@ class _BeanExperimentState extends ConsumerState<BeanExperiment>
                           if (saveFailed)
                             Text(
                               ui('saveError'),
-                              textDirection: TextDirection.rtl,
-                              style: const TextStyle(
-                                fontFamily: 'Cairo',
-                                fontSize: 18,
-                              ),
+                              textDirection: TextDirection.ltr,
+                              style: const TextStyle(fontSize: 18),
                             ),
                         ],
                       ),

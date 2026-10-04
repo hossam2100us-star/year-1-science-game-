@@ -29,6 +29,43 @@ def compact_ourselves(book):
                 if s['id']=='unit_03.last-discoveries.v2':s['objectiveItems'][s['objective']]=['dust_guard']
         from refine_teacher_review import refine_teacher_review
         refine_teacher_review(book)
+        for s in book['steps']:
+            if s['id']=='unit_03.sense-partners.v2':
+                s['discoveryChoices']={
+                    'sight':['nose','eyes','ears'],
+                    'smell':['tongue','eyes','nose'],
+                    'touch':['ears','skin','tongue'],
+                    'hearing':['skin','ears','eyes'],
+                    'taste':['tongue','nose','skin'],
+                }
+            if s['id']=='unit_03.sense-stories.v2':
+                s['discoveryChoices']={
+                    'see_birds':['smell','hearing','sight'],
+                    'soft_cat':['touch','sight','taste'],
+                    'smell_flowers':['hearing','smell','touch'],
+                    'example_26':['smell','taste','sight'],
+                    'example_28':['hearing','smell','touch'],
+                    'hear_music':['hearing','sight','smell'],
+                    'sweet_honey':['sight','touch','taste'],
+                    'example_25':['smell','taste','hearing'],
+                    'example_27':['touch','hearing','taste'],
+                    'example_29':['taste','touch','sight'],
+                }
+            if s['id']=='unit_03.sense-lab.v2':
+                # Keep the full original answer/target list for assessment and
+                # saves; show only plausible partners for the current question.
+                s['questionWithoutArt']=['count']
+                s['discoveryChoices']={
+                    'count':['ten','ears','five'],
+                    'apple_helper':['sweet','nose','ears'],
+                    'tongue_job':['nose','taste_buds','ears'],
+                    'taste_word':['loud','sweet','five'],
+                }
+            if s['id']=='unit_03.last-discoveries.v2':
+                s['discoveryChoices']={
+                    'dust_guard':['eyelash','nose','knee'],
+                    'arm_joint':['knee','elbow','eyelash'],
+                }
         return
     old = deepcopy(book['steps'])
     by = {i+1:s for i,s in enumerate(old)}

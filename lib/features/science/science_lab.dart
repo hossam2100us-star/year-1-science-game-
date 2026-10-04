@@ -7,15 +7,16 @@ import '../../core/touch_cue.dart';
 
 import '../../content/lesson.dart';
 import 'science_picture.dart';
+import 'science_world_stage.dart';
 import 'water_trial.dart';
 import 'shape_trial.dart';
-import 'force_track.dart';
 import 'force_picture.dart';
+import 'force_guided_lab.dart';
 import 'sound_picture.dart';
 import 'sound_distance.dart';
 import 'sound_box_lab.dart';
 import 'sound_ui.dart';
-import '../biology/illustrated_art.dart';
+import 'earth_collection.dart';
 
 /// Ungraded experiments retain guesses before revealing any source-defined result.
 class ScienceLab extends StatefulWidget {
@@ -26,12 +27,14 @@ class ScienceLab extends StatefulWidget {
     required this.onChange,
     required this.onSpeak,
     required this.onSound,
+    this.onFeedback,
   });
   final LessonStep step;
   final Map<String, dynamic> data;
   final Future<void> Function(Map<String, dynamic>, bool) onChange;
   final ValueChanged<String> onSpeak;
   final void Function(String, double) onSound;
+  final ValueChanged<String>? onFeedback;
 
   /// Predictions are never scored; only mismatches need an observation check.
   static List<String> pendingObservations(
@@ -168,6 +171,7 @@ class _ScienceLabState extends State<ScienceLab> {
           onChange: widget.onChange,
           onSound: widget.onSound,
           onSpeak: widget.onSpeak,
+          onFeedback: widget.onFeedback,
         )
       : Container(
           width: double.infinity,
@@ -296,6 +300,14 @@ class _ScienceLabState extends State<ScienceLab> {
                   const Positioned(right: 12, bottom: 12, child: TouchCue()),
               ],
             ),
+          )
+        else if (mode == 'magnet')
+          _magnetScene(
+            item,
+            revealed,
+            result,
+            guesses.containsKey(active),
+            () => test(active, tested),
           )
         else
           SizedBox(
@@ -465,6 +477,82 @@ class _ScienceLabState extends State<ScienceLab> {
     );
   }
 
+  Widget _magnetScene(
+    PictureItem item,
+    bool revealed,
+    String result,
+    bool predicted,
+    VoidCallback tryMagnet,
+  ) => ClipRRect(
+    key: const ValueKey('lab-magnet-scene'),
+    borderRadius: BorderRadius.circular(24),
+    child: Stack(
+      children: [
+        const Positioned.fill(child: ScienceWorldBackdrop(row: 0)),
+        SizedBox(
+          height: 250,
+          width: double.infinity,
+          child: FittedBox(
+            child: SizedBox(
+              width: 440,
+              height: 250,
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 35,
+                    top: 70,
+                    child: Draggable<String>(
+                      data: 'magnet',
+                      maxSimultaneousDrags: predicted && !revealed && !busy
+                          ? 1
+                          : 0,
+                      feedback: Material(
+                        color: Colors.transparent,
+                        child: picture('magnet', 105),
+                      ),
+                      childWhenDragging: const SizedBox(
+                        width: 132,
+                        height: 105,
+                      ),
+                      child: picture('magnet', 105),
+                    ),
+                  ),
+                  AnimatedPositioned(
+                    key: const ValueKey('lab-magnet-object'),
+                    duration: MediaQuery.disableAnimationsOf(context)
+                        ? Duration.zero
+                        : const Duration(milliseconds: 850),
+                    curve: Curves.easeInOut,
+                    left: revealed && result == 'pull' ? 155 : 275,
+                    top: 70,
+                    child: DragTarget<String>(
+                      onWillAcceptWithDetails: (details) =>
+                          !busy &&
+                          predicted &&
+                          !revealed &&
+                          details.data == 'magnet',
+                      onAcceptWithDetails: (_) => tryMagnet(),
+                      builder: (context, candidates, rejected) => SizedBox(
+                        width: 140,
+                        height: 140,
+                        child: Column(
+                          children: [
+                            picture(item.art, 105),
+                            if (predicted && !revealed) const TouchCue(),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+
   void replayBox(String active) {
     if (busy) return;
     setState(() {
@@ -550,120 +638,13 @@ class _ScienceLabState extends State<ScienceLab> {
     }
   }
 
-  Future<void> moveForce(double value) async {
-    final next = {
-      ...state,
-      'position': value,
-      'visited': {
-        ...visited,
-        if (value < .25) 'near',
-        if (value > .75) 'far',
-      }.toList(),
-    };
-    if (await save(next, complete: ScienceLab.forceComplete(next)) && mounted) {
-      widget.onSpeak(value < .5 ? ui['left'] : ui['right']);
-    }
-  }
-
-  Widget _force() {
-    final position = (state['position'] as num? ?? .5).toDouble();
-    final trials = List<String>.from(state['pushTrials'] ?? []);
-    final comparing = state['forcePart'] == 'compare';
-    return Column(
-      children: [
-        Wrap(
-          alignment: WrapAlignment.center,
-          children: [
-            button(
-              'force-part-move',
-              '${visited.toSet().containsAll(['near', 'far']) ? '✓ ' : ''}${ui['moveStage']}',
-              () => save({'forcePart': 'move'}),
-            ),
-            button(
-              'force-part-compare',
-              '${trials.length == 2 ? '✓ ' : ''}${ui['compareStage']}',
-              () => save({'forcePart': 'compare'}),
-            ),
-          ],
-        ),
-        if (!comparing) ...[
-          caption(ui['instruction']),
-          ForceTrack(
-            position: position,
-            art: 'trolley',
-            you: ui['you'],
-            onMove: busy ? null : moveForce,
-          ),
-          Wrap(
-            alignment: WrapAlignment.center,
-            children: [
-              button('force-pull', ui['pull'], () => moveForce(.05)),
-              button('force-push', ui['push'], () => moveForce(.95)),
-            ],
-          ),
-          caption('${ui['progress']}: ${visited.length} / 2'),
-        ] else ...[
-          caption(ui['compare']),
-          if (trials.isEmpty) ...[
-            caption(ui['prediction']),
-            Wrap(
-              alignment: WrapAlignment.center,
-              children: [
-                for (final id in ['gentle', 'strong'])
-                  button(
-                    'force-guess-$id',
-                    '${state['forceGuess'] == id ? '✓ ' : ''}${ui[id]}',
-                    () => save({'forceGuess': id}),
-                  ),
-              ],
-            ),
-          ],
-          ForceTrack(
-            key: ValueKey('ball-run-${state['ballRun'] ?? 0}'),
-            animateFromStart: true,
-            position: (state['ballDistance'] as num? ?? 0).toDouble(),
-            art: 'ball',
-            you: ui['you'],
-            comparisons: [
-              if (trials.contains('gentle')) .35,
-              if (trials.contains('strong')) .9,
-            ],
-          ),
-          Wrap(
-            alignment: WrapAlignment.center,
-            children: [
-              for (final id in ['gentle', 'strong'])
-                button(
-                  'force-test-$id',
-                  '${ui['test']}: ${ui[id]}',
-                  state['forceGuess'] == null
-                      ? null
-                      : () async {
-                          final next = {
-                            ...state,
-                            'ballDistance': id == 'gentle' ? 0.35 : 0.9,
-                            'ballRun': (state['ballRun'] as int? ?? 0) + 1,
-                            'pushTrials': {...trials, id}.toList(),
-                          };
-                          if (await save(
-                                next,
-                                complete: ScienceLab.forceComplete(next),
-                              ) &&
-                              mounted)
-                            widget.onSpeak(ui[id]);
-                        },
-                ),
-            ],
-          ),
-          if (trials.length == 2) ...[
-            caption(ui['result']),
-            caption('Your prediction: ${ui[state['forceGuess']]}'),
-          ],
-          caption('${ui['pushProgress']}: ${trials.length} / 2'),
-        ],
-      ],
-    );
-  }
+  Widget _force() => ForceGuidedLab(
+    data: state,
+    ui: ui,
+    onSave: (next) => save(next, complete: ScienceLab.forceComplete(next)),
+    onSpeak: widget.onSpeak,
+    onFeedback: widget.onFeedback,
+  );
 
   Widget _distance() {
     final v = soundPosition ?? (state['position'] as num? ?? .5).toDouble();
@@ -954,99 +935,13 @@ class _ScienceLabState extends State<ScienceLab> {
   }
 
   Widget _collection() {
-    final seen = visited;
-    final all = widget.step.options;
-    return Column(
-      children: [
-        if (mode == 'cleanup') picture('ocean', 170),
-        if (mode == 'soil') ...[
-          picture('soil', 150),
-          const Draggable<String>(
-            data: 'lens',
-            feedback: Material(
-              color: Colors.transparent,
-              child: Icon(
-                Icons.search_rounded,
-                size: 100,
-                color: Color(0xFF436E80),
-              ),
-            ),
-            child: Icon(
-              Icons.search_rounded,
-              size: 72,
-              color: Color(0xFF436E80),
-            ),
-          ),
-        ],
-        Wrap(
-          spacing: 18,
-          runSpacing: 16,
-          alignment: WrapAlignment.center,
-          children: [
-            for (final p in all)
-              if (mode != 'cleanup' || !seen.contains(p.id))
-                DragTarget<String>(
-                  onWillAcceptWithDetails: (d) =>
-                      mode == 'soil' && d.data == 'lens',
-                  onAcceptWithDetails: (_) {
-                    final v = {...seen, p.id}.toList();
-                    save({'visited': v}, complete: v.length == all.length);
-                    widget.onSpeak(p.label);
-                  },
-                  builder: (context, hover, rejected) => InkWell(
-                    key: ValueKey('lab-find-${p.id}'),
-                    onTap: mode == 'rock-sort'
-                        ? null
-                        : () {
-                            final v = {...seen, p.id}.toList();
-                            save({
-                              'visited': v,
-                            }, complete: v.length == all.length);
-                            widget.onSpeak(p.label);
-                          },
-                    child: Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: seen.contains(p.id)
-                            ? const Color(0xFFCEEBDB)
-                            : Colors.white,
-                        borderRadius: BorderRadius.circular(24),
-                      ),
-                      child: Column(
-                        children: [
-                          picture(
-                            p.art,
-                            mode == 'soil' && seen.contains(p.id) ? 155 : 110,
-                          ),
-                          caption(p.label),
-                          if (mode != 'rock-sort' && !seen.contains(p.id))
-                            const TouchCue(),
-                          if (mode == 'rock-sort')
-                            Wrap(
-                              children: [
-                                for (final g in ui['groups'])
-                                  button(
-                                    'group-${p.id}-$g',
-                                    '${state[p.id] == g ? '✓ ' : ''}$g',
-                                    () {
-                                      final v = {...seen, p.id}.toList();
-                                      save({
-                                        p.id: g,
-                                        'visited': v,
-                                      }, complete: v.length == all.length);
-                                    },
-                                  ),
-                              ],
-                            ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-          ],
-        ),
-        caption('${seen.length} / ${all.length} explored'),
-      ],
+    return EarthCollection(
+      key: ValueKey(widget.step.id),
+      step: widget.step,
+      data: state,
+      onChange: widget.onChange,
+      onSpeak: widget.onSpeak,
+      onFeedback: widget.onFeedback,
     );
   }
 
@@ -1055,62 +950,64 @@ class _ScienceLabState extends State<ScienceLab> {
     final angle = turns * math.pi / 2;
     return Column(
       children: [
-        SizedBox(
-          height: 310,
-          child: LayoutBuilder(
-            builder: (context, c) => Stack(
-              alignment: Alignment.center,
-              children: [
-                Positioned(left: 0, child: picture('sun', 110)),
-                Positioned(
-                  right: c.maxWidth * .1,
+        ClipRRect(
+          borderRadius: BorderRadius.circular(24),
+          child: Stack(
+            children: [
+              const Positioned.fill(child: ScienceWorldBackdrop(row: 2)),
+              SizedBox(
+                height: 270,
+                width: double.infinity,
+                child: FittedBox(
                   child: SizedBox(
-                    width: 220,
-                    height: 220,
+                    width: 500,
+                    height: 270,
                     child: Stack(
+                      alignment: Alignment.center,
                       children: [
-                        ClipOval(
-                          child: Transform.rotate(
-                            angle: angle,
-                            child: const SizedBox(
-                              width: 220,
-                              height: 220,
-                              child: IllustratedArt(
-                                asset: 'earth-atlas-v1.webp',
-                                crop: Rect.fromLTWH(.009, .75, .225, .225),
-                              ),
-                            ),
-                          ),
-                        ),
+                        Positioned(left: 22, child: picture('sun', 130)),
                         Positioned(
-                          right: 0,
-                          top: 0,
-                          bottom: 0,
-                          width: 110,
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              color: Color(0xBB172A43),
-                              borderRadius: BorderRadius.horizontal(
-                                right: Radius.circular(110),
-                              ),
+                          right: 25,
+                          child: SizedBox(
+                            width: 220,
+                            height: 220,
+                            child: Stack(
+                              children: [
+                                ClipOval(
+                                  child: Transform.rotate(
+                                    angle: angle,
+                                    child: const SizedBox(
+                                      width: 220,
+                                      height: 220,
+                                      child: SciencePicture(
+                                        'earth',
+                                        height: 220,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const Positioned.fill(
+                                  child: CustomPaint(painter: _NightShade()),
+                                ),
+                                Positioned(
+                                  left: 96 + 60 * math.cos(angle),
+                                  top: 96 + 60 * math.sin(angle),
+                                  child: const Icon(
+                                    Icons.location_on_rounded,
+                                    size: 28,
+                                    color: Color(0xFFEB5D51),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 95 + 80 * math.cos(angle),
-                          top: 95 + 80 * math.sin(angle),
-                          child: const Icon(
-                            Icons.location_on_rounded,
-                            size: 28,
-                            color: Color(0xFFEB5D51),
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         caption(math.cos(angle) < 0 ? 'Your place: Day' : 'Your place: Night'),
@@ -1207,6 +1104,27 @@ class _ScienceLabState extends State<ScienceLab> {
       ],
     );
   }
+}
+
+class _NightShade extends CustomPainter {
+  const _NightShade();
+  @override
+  void paint(Canvas canvas, Size size) {
+    final centre = Offset(size.width / 2, size.height / 2);
+    final path = Path()
+      ..moveTo(centre.dx, centre.dy)
+      ..arcTo(
+        Rect.fromCircle(center: centre, radius: size.height * .475),
+        -math.pi / 2,
+        math.pi,
+        false,
+      )
+      ..close();
+    canvas.drawPath(path, Paint()..color = const Color(0xBB172A43));
+  }
+
+  @override
+  bool shouldRepaint(_NightShade old) => false;
 }
 
 class PlanetPainter extends CustomPainter {

@@ -47,7 +47,7 @@
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "Explore the instruments. Listen to the action for each one.",
+      "explanation": "Playing an instrument makes a sound. The sound starts in the instrument.",
       "source": {
         "pages": [
           17,
@@ -140,7 +140,7 @@
       "assessed": true,
       "objective": "u06.main.01",
       "hint": "Think about the sense you use to listen.",
-      "explanation": "My ears.",
+      "explanation": "Your ears catch sounds so you can hear them.",
       "source": {
         "pages": [
           17,
@@ -270,12 +270,15 @@
           "trumpet": "blow",
           "sitar": "pluck",
           "drum": "beat"
+        },
+        "aliases": {
+          "hit": "beat"
         }
       },
       "assessed": true,
       "objective": "u06.main.02",
       "hint": "Imagine playing each instrument. What would your hands or mouth do?",
-      "explanation": "a) hit b) shake c) blow d) pluck e) beat",
+      "explanation": "Hit the triangle and beat the drum. Shake the maracas, blow the trumpet and pluck the sitar's strings. These actions make the instruments sound.",
       "source": {
         "pages": [
           17,
@@ -295,7 +298,7 @@
       "band": true,
       "soundScene": {
         "mode": "band",
-        "instruction": "Touch an instrument, then choose its action.",
+        "instruction": "Choose an instrument. Listen, then choose its action.",
         "progress": "Discoveries placed",
         "you": "You",
         "gentle": "Try a gentle tap",
@@ -398,13 +401,14 @@
         ],
         "prediction": "What do you think this box will sound like?",
         "yourPrediction": "Your prediction",
-        "nextBox": "Try the other box"
+        "nextBox": "Try the other box",
+        "afterPrediction": "Now shake this box and listen."
       },
       "observationUi": {
         "review": "Listen again",
-        "changed": "The result was different from your prediction. Let us compare again!",
+        "changed": "Your prediction was different. Shake and listen again.",
         "question": "What did this box sound like?",
-        "retry": "Shake and listen again. Compare this box with the other box.",
+        "retry": "Try again. Shake the box and listen.",
         "complete": "You noticed what happened! Keep exploring."
       }
     },
@@ -433,7 +437,7 @@
       "assessed": true,
       "objective": "u06.main.03",
       "hint": "Remember the two boxes you shook. Compare the sounds you heard.",
-      "explanation": "The stone — it is hard and heavy, so it makes a much louder sound than a feather.",
+      "explanation": "The stone box is louder. The hard stone rattles against the box, while the soft feather makes no sound in this experiment.",
       "source": {
         "pages": [
           17,
@@ -573,7 +577,7 @@
       "assessed": true,
       "objective": "u06.main.04",
       "hint": "Think about what you heard when you moved farther from the drum.",
-      "explanation": "quieter and fainter (accept: softer, harder to hear)",
+      "explanation": "The drum sounds quieter and fainter as you move farther away. Its sound becomes harder to hear.",
       "source": {
         "pages": [
           17,
@@ -840,7 +844,7 @@
       "assessed": true,
       "objective": "u06.main.06",
       "hint": "Compare a gentle tap with a harder tap.",
-      "explanation": "Tap them together harder. (A bigger push makes a louder sound.)",
+      "explanation": "Tapping the sticks together harder makes a louder sound. A gentle tap makes a quieter sound.",
       "source": {
         "pages": [
           17,
@@ -944,7 +948,7 @@
       "assessed": true,
       "objective": "u06.main.07",
       "hint": "Compare two sounds at a time. Begin with the softest one.",
-      "explanation": "A cat walking → a whisper → a door slamming → thunder.",
+      "explanation": "In this activity, the cat's footsteps are quietest. Next comes the whisper, then the slamming door. Thunder is loudest.",
       "source": {
         "pages": [
           17,
@@ -1037,7 +1041,7 @@
       "assessed": true,
       "objective": "u06.main.08",
       "hint": "Think about the movement under your fingers when you hum.",
-      "explanation": "A buzzing or shaking under his hand. Sound is made by something shaking very fast.",
+      "explanation": "You feel a buzzing or shaking in your throat when you hum. Something shaking very fast makes the sound.",
       "source": {
         "pages": [
           17,
@@ -1505,7 +1509,7 @@
       }
     },
     "hint": "Find the longest bar, then read its name and number of steps.",
-    "explanation": "a) Maris (23 steps) b) 23 steps",
+    "explanation": "Maris heard the drum from furthest away. The chart shows that Maris took 23 steps.",
     "source": {
       "pages": [
         17,

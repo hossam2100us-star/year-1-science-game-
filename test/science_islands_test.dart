@@ -12,6 +12,7 @@ import 'package:science_adventure/core/storage.dart';
 import 'package:science_adventure/features/biology/lesson_player.dart';
 import 'package:science_adventure/features/biology/session.dart';
 import 'package:science_adventure/features/science/science_picture.dart';
+import 'package:science_adventure/features/science/force_picture.dart';
 import 'package:science_adventure/games/question_engine.dart';
 
 import 'setup_screen_test.dart' as helpers;
@@ -48,6 +49,9 @@ void main() {
       await Flame.images.load(atlas);
     }
     for (final atlas in ['sound-atlas-v2.png', 'sound-details-v2.png']) {
+      await Flame.images.load(atlas);
+    }
+    for (final atlas in forceArtAssets) {
       await Flame.images.load(atlas);
     }
   });
@@ -127,7 +131,15 @@ void main() {
           await helpers.mount(t, LessonPlayer(lesson: b), store);
           final a = s.answer!['value'];
           if (s.isMapping) {
-            for (final e in (a as Map).entries) {
+            final guided =
+                ['unit_07', 'unit_08', 'unit_09'].contains(id) ||
+                s.json['quizContext'] != null;
+            final entries = guided
+                ? s.options.map(
+                    (item) => MapEntry(item.id, (a as Map)[item.id]),
+                  )
+                : (a as Map).entries;
+            for (final e in entries) {
               await helpers.tapVisible(
                 t,
                 find.byKey(ValueKey('science-item-${e.key}')),
@@ -136,13 +148,28 @@ void main() {
                 t,
                 find.byKey(ValueKey('science-target-${e.value}')),
               );
+              if (guided && e.key != s.options.last.id) {
+                await helpers.tapVisible(
+                  t,
+                  find.byKey(const ValueKey('science-world-next')),
+                );
+              }
             }
           } else {
+            var position = 0;
             for (final v in a is List ? a : [a]) {
               await helpers.tapVisible(
                 t,
                 find.byKey(ValueKey('science-item-$v')),
               );
+              if (s.isOrder && s.json['soundScene']?['mode'] == 'order') {
+                // Source touches listen; the accessible placement action ranks.
+                await helpers.tapVisible(
+                  t,
+                  find.byKey(ValueKey('sound-order-place-$position')),
+                );
+                position++;
+              }
             }
           }
           if (s.isMapping || s.isMulti || s.isOrder)
@@ -247,6 +274,18 @@ void main() {
         if (mode == 'day-night') keys.addAll(List.filled(4, 'lab-turn'));
         if (mode == 'earth-paint') keys.addAll(['lab-water', 'lab-land']);
         for (final k in keys) {
+          if (mode == 'soil' && find.byKey(ValueKey(k)).evaluate().isEmpty) {
+            final id = k.substring('lab-find-'.length);
+            final spot = ['small_stones', 'dead_leaf'].contains(id)
+                ? 0
+                : ['tiny_insect', 'sand'].contains(id)
+                ? 1
+                : 2;
+            await helpers.tapVisible(
+              t,
+              find.byKey(ValueKey('lab-soil-spot-$spot')),
+            );
+          }
           await helpers.tapVisible(t, find.byKey(ValueKey(k)));
         }
         expect(
@@ -274,11 +313,13 @@ void main() {
         await helpers.mount(t, LessonPlayer(lesson: b), store);
         if (id == 'unit_05') {
           for (final key in [
-            'force-pull',
             'force-push',
-            'force-part-compare',
+            'force-guide-next',
+            'force-pull',
+            'force-guide-next',
             'force-guess-gentle',
             'force-test-gentle',
+            'force-guide-next',
             'force-test-strong',
           ]) {
             await helpers.tapVisible(t, find.byKey(ValueKey('lab-$key')));

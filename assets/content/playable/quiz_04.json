@@ -39,7 +39,7 @@
       "assessed": true,
       "objective": "quiz04.01",
       "hint": "Think about the large blue areas on the Earth model.",
-      "explanation": "water",
+      "explanation": "Most of Earth is covered in water. The water makes Earth look mostly blue.",
       "source": {
         "pages": [
           26
@@ -55,7 +55,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_04",
-      "focus": "earth"
+      "focus": "earth",
+      "quizContext": {
+        "setting": "earth",
+        "art": "earth"
+      }
     },
     {
       "id": "quiz_04.step.002",
@@ -87,7 +91,7 @@
       "assessed": true,
       "objective": "quiz04.02",
       "hint": "Compare the size and saltiness of the water places.",
-      "explanation": "ocean",
+      "explanation": "The ocean is a very large area of salty water. It is the biggest water place shown here.",
       "source": {
         "pages": [
           26
@@ -102,7 +106,11 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "quiz_04"
+      "theme": "quiz_04",
+      "quizContext": {
+        "setting": "water",
+        "art": null
+      }
     },
     {
       "id": "quiz_04.step.003",
@@ -142,7 +150,7 @@
       "assessed": true,
       "objective": "quiz04.03",
       "hint": "Remember what you discovered with the soil magnifier.",
-      "explanation": "Any two: small stones, sand, dead leaves, worms, tiny insects, water, air",
+      "explanation": "Small stones and dead leaves can be found in soil. Soil is a mixture of many things.",
       "source": {
         "pages": [
           26
@@ -158,7 +166,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_04",
-      "focus": "soil"
+      "focus": "soil",
+      "quizContext": {
+        "setting": "earth",
+        "art": "soil"
+      }
     },
     {
       "id": "quiz_04.step.004",
@@ -190,7 +202,7 @@
       "assessed": true,
       "objective": "quiz04.04",
       "hint": "Think about the name of a scientist who examines a rock collection.",
-      "explanation": "geologist",
+      "explanation": "A geologist is a scientist who studies rocks.",
       "source": {
         "pages": [
           26
@@ -206,7 +218,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_04",
-      "focus": "stone"
+      "focus": "stone",
+      "quizContext": {
+        "setting": "earth",
+        "art": "stone"
+      }
     },
     {
       "id": "quiz_04.step.005",
@@ -238,7 +254,7 @@
       "assessed": true,
       "objective": "quiz04.05",
       "hint": "Picture the Earth model you turned.",
-      "explanation": "a ball",
+      "explanation": "Earth is round like a ball.",
       "source": {
         "pages": [
           26
@@ -254,7 +270,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_04",
-      "focus": "earth"
+      "focus": "earth",
+      "quizContext": {
+        "setting": "space",
+        "art": "earth"
+      }
     },
     {
       "id": "quiz_04.step.006",
@@ -286,7 +306,7 @@
       "assessed": true,
       "objective": "quiz04.06",
       "hint": "Remember how the Sun is different from our planet.",
-      "explanation": "star",
+      "explanation": "The Sun is a star. It makes its own heat and light.",
       "source": {
         "pages": [
           26
@@ -302,7 +322,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_04",
-      "focus": "sun"
+      "focus": "sun",
+      "quizContext": {
+        "setting": "space",
+        "art": "sun"
+      }
     },
     {
       "id": "quiz_04.step.007",
@@ -342,7 +366,7 @@
       "assessed": true,
       "objective": "quiz04.07",
       "hint": "Think about seeing in daylight and feeling warm.",
-      "explanation": "heat and light",
+      "explanation": "The Sun gives us heat and light. Its light helps us see during the day.",
       "source": {
         "pages": [
           26
@@ -358,7 +382,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_04",
-      "focus": "sun"
+      "focus": "sun",
+      "quizContext": {
+        "setting": "space",
+        "art": "sun"
+      }
     },
     {
       "id": "quiz_04.step.008",
@@ -385,7 +413,7 @@
       "assessed": true,
       "objective": "quiz04.08",
       "hint": "Compare what the book says about the Sun and the Moon.",
-      "explanation": "FALSE — they come from the Sun",
+      "explanation": "Our heat and light come from the Sun. The Moon does not make its own light.",
       "source": {
         "pages": [
           26
@@ -401,7 +429,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_04",
-      "focus": "moon"
+      "focus": "moon",
+      "quizContext": {
+        "setting": "space",
+        "art": "moon"
+      }
     },
     {
       "id": "quiz_04.step.009",
@@ -462,7 +494,7 @@
       "assessed": true,
       "objective": "quiz04.09",
       "hint": "Recall the astronaut name and the year on the Moon mission record.",
-      "explanation": "Neil Armstrong, in 1969",
+      "explanation": "Neil Armstrong was the first person to walk on the Moon. He went there in 1969.",
       "source": {
         "pages": [
           26
@@ -478,7 +510,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_04",
-      "focus": "astronaut"
+      "focus": "astronaut",
+      "quizContext": {
+        "setting": "space",
+        "art": "astronaut"
+      }
     },
     {
       "id": "quiz_04.step.010",
@@ -510,7 +546,7 @@
       "assessed": true,
       "objective": "quiz04.10",
       "hint": "Think about what the astronaut needs in order to breathe.",
-      "explanation": "There is no air on the Moon, so he must carry his own air to breathe",
+      "explanation": "The oxygen pack helps the astronaut breathe because there is no air on the Moon.",
       "source": {
         "pages": [
           26
@@ -526,7 +562,11 @@
       "section": "Challenge",
       "playScene": "science",
       "theme": "quiz_04",
-      "focus": "astronaut"
+      "focus": "astronaut",
+      "quizContext": {
+        "setting": "space",
+        "art": "astronaut"
+      }
     }
   ],
   "stickers": [],

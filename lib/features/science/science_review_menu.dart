@@ -11,6 +11,9 @@ class ScienceReviewMenu extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     const previews = {
+      'unit_01': ('حي وغير حي', 'Garden discoveries', 'cat'),
+      'unit_02': ('النباتات', 'Plant discoveries', 'flower'),
+      'unit_03': ('أنفسنا', 'Meet the explorer', 'eyes'),
       'unit_04': ('خصائص المواد', 'Maker’s workshop', 'spoon'),
       'unit_05': ('القوى والحركة', 'Movement playground', 'sailboat'),
       'unit_06': ('الصوت', 'Band room', 'drum'),
@@ -24,7 +27,7 @@ class ScienceReviewMenu extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'باقي مغامرات العلوم',
+          'مراجعة مغامرات العلوم',
           textDirection: TextDirection.rtl,
         ),
       ),
@@ -49,7 +52,10 @@ class ScienceReviewMenu extends ConsumerWidget {
                   children: [
                     for (final e in previews.entries)
                       SizedBox(
-                        width: 330,
+                        width: (MediaQuery.sizeOf(context).width - 44).clamp(
+                          48.0,
+                          330.0,
+                        ),
                         child: Card(
                           color: const Color(0xFFFFFCF3),
                           child: InkWell(
@@ -77,7 +83,9 @@ class ScienceReviewMenu extends ConsumerWidget {
                                       .watch(lessonLibraryProvider)
                                       .when(
                                         data: (b) => Text(
-                                          '${b.lessons[e.key]!.steps.length} نشاط',
+                                          e.key == 'unit_01'
+                                              ? '٣ مغامرات'
+                                              : '${b.lessons[e.key]!.steps.length} نشاط',
                                           textDirection: TextDirection.rtl,
                                         ),
                                         loading: () => const SizedBox(),
@@ -98,11 +106,13 @@ class ScienceReviewMenu extends ConsumerWidget {
                   alignment: WrapAlignment.center,
                   children: [
                     for (final e in {
+                      'quiz_01': 'تحدي الأحياء',
                       'quiz_02': 'تحدي المواد',
                       'quiz_03': 'تحدي الفيزياء',
                       'quiz_04': 'تحدي الأرض والفضاء',
                     }.entries)
                       FilledButton.tonal(
+                        key: ValueKey('review-${e.key}'),
                         onPressed: () => open(e.key),
                         child: Padding(
                           padding: const EdgeInsets.all(12),

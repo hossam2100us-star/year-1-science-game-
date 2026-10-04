@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
+import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -20,6 +21,7 @@ void main() {
   setUpAll(() async {
     helpers.testCatalog = await helpers.loadTestCatalog();
     lesson = (await LessonLibrary.load()).lessons['unit_02']!;
+    await Flame.images.load('science-details-v2.png');
   });
   test('Fridge neighbours belong to different food groups', () {
     final step = lesson.steps[4];

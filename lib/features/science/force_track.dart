@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'force_picture.dart';
+import '../../core/touch_cue.dart';
 
 /// The person stays at the left, so away/towards have a stable reference.
 class ForceTrack extends StatefulWidget {
@@ -12,12 +13,16 @@ class ForceTrack extends StatefulWidget {
     this.onMove,
     this.animateFromStart = false,
     this.comparisons = const [],
+    this.goalPosition,
+    this.onReplay,
   });
   final double position;
   final bool animateFromStart;
   final String art, you;
   final ValueChanged<double>? onMove;
   final List<double> comparisons;
+  final double? goalPosition;
+  final VoidCallback? onReplay;
   @override
   State<ForceTrack> createState() => _ForceTrackState();
 }
@@ -39,41 +44,55 @@ class _ForceTrackState extends State<ForceTrack> {
   @override
   Widget build(BuildContext context) => LayoutBuilder(
     builder: (context, box) {
-      final travel = (box.maxWidth - 220).clamp(80.0, 1200.0);
+      final sceneWidth = box.maxWidth < 500 ? 500.0 : box.maxWidth;
+      final scale = box.maxWidth / sceneWidth;
+      final travel = (sceneWidth - 305).clamp(50.0, 1200.0);
       final position = dragPosition ?? initialPosition ?? widget.position;
-      return SizedBox(
+      final scene = SizedBox(
+        width: sceneWidth,
         height: 210,
         child: Stack(
           children: [
             Positioned(
-              left: 95,
+              left: 120,
               right: 12,
               bottom: 40,
               child: Container(
-                height: 18,
+                height: 10,
                 decoration: BoxDecoration(
                   color: const Color(0xFFB8D1C4),
                   borderRadius: BorderRadius.circular(9),
                 ),
               ),
             ),
+            const Positioned(
+              left: 0,
+              bottom: 45,
+              child: ForcePicture('explorer', height: 145),
+            ),
             Positioned(
-              left: 10,
-              bottom: 35,
-              child: Column(
-                children: [
-                  const Icon(
-                    Icons.person_outline_rounded,
-                    size: 65,
-                    color: Color(0xFF617D83),
-                  ),
-                  Text(widget.you, style: const TextStyle(fontSize: 20)),
-                ],
+              left: 0,
+              bottom: 0,
+              width: 181.25,
+              child: Text(
+                widget.you,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 18),
               ),
             ),
+            if (widget.goalPosition != null)
+              Positioned(
+                left: 175 + travel * widget.goalPosition!,
+                bottom: 25,
+                child: const Icon(
+                  Icons.flag_rounded,
+                  color: Color(0xFF936C42),
+                  size: 30,
+                ),
+              ),
             for (final mark in widget.comparisons)
               Positioned(
-                left: 100 + travel * mark,
+                left: 215 + travel * mark,
                 bottom: 28,
                 child: Container(
                   width: 4,
@@ -90,10 +109,11 @@ class _ForceTrackState extends State<ForceTrack> {
                   : const Duration(milliseconds: 1400),
               curve: Curves.easeOutCubic,
               builder: (context, value, _) => Positioned(
-                left: 90 + travel * value,
+                left: 145 + travel * value,
                 bottom: 45,
                 child: GestureDetector(
                   key: const ValueKey('force-track-object'),
+                  onTap: widget.onReplay,
                   onHorizontalDragStart: widget.onMove == null
                       ? null
                       : (_) => setState(() => dragPosition = widget.position),
@@ -102,7 +122,7 @@ class _ForceTrackState extends State<ForceTrack> {
                       : (d) => setState(
                           () => dragPosition =
                               ((dragPosition ?? widget.position) +
-                                      d.delta.dx / travel)
+                                      d.delta.dx / (travel * scale))
                                   .clamp(0.0, 1.0),
                         ),
                   onHorizontalDragEnd: widget.onMove == null
@@ -114,16 +134,36 @@ class _ForceTrackState extends State<ForceTrack> {
                         },
                   onHorizontalDragCancel: () =>
                       setState(() => dragPosition = null),
-                  child: ForcePicture(
-                    widget.art,
+                  child: SizedBox(
+                    width: 144,
                     height: 115,
-                    phase: value * travel / (widget.art == 'ball' ? 37 : 10),
+                    child: Stack(
+                      children: [
+                        ForcePicture(
+                          widget.art,
+                          height: 115,
+                          phase:
+                              value * travel / (widget.art == 'ball' ? 37 : 10),
+                        ),
+                        if (widget.onMove != null || widget.onReplay != null)
+                          const Positioned(
+                            right: 0,
+                            bottom: 0,
+                            child: TouchCue(),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
           ],
         ),
+      );
+      return SizedBox(
+        width: box.maxWidth,
+        height: 210 * scale,
+        child: FittedBox(child: scene),
       );
     },
   );

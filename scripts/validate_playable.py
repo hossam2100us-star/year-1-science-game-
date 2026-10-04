@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 import jsonschema
+from child_feedback import feedback_issues, load_overrides
 ROOT=Path(__file__).resolve().parents[1]
 schema=json.loads((ROOT/'schemas/lesson.schema.json').read_text(encoding='utf-8'))
 jsonschema.Draft202012Validator.check_schema(schema)
@@ -13,9 +14,15 @@ for file in sorted((ROOT/'assets/content/playable').glob('*.json')):
  assert book['sourceSha256']==source['sourceSha256']
  originals={q['id']:q for q in source['sourceQuestions']}
  covered=set()
+ overrides=load_overrides(book['id'])
+ assert set(overrides)<=set(s['id'] for s in book['steps']),(file,'stale child feedback IDs')
  for step in book['steps']:
   assert step['id'] not in seen;seen.add(step['id']);total+=1
   assert step['source']['sourceSha256']==source['sourceSha256']
+  if step['assessed'] or step['explanation'].strip():
+   assert not feedback_issues(step['explanation']),(file,step['id'],feedback_issues(step['explanation']))
+  for field,text in overrides.get(step['id'],{}).items():
+   assert step[field]==text,(file,step['id'],'editorial feedback was overwritten')
   qid=step['source']['questionId']
   if qid:
    covered.add(qid);assert qid in originals,(file,qid)
@@ -68,6 +75,11 @@ for file in sorted((ROOT/'assets/content/playable').glob('*.json')):
   assert len(book['steps'])==10
   assert len({s['objective'] for s in book['steps'] if s['assessed']})==10
  else:assert book['steps'][0]['kind']=='explore'
+ if book['id']=='quiz_01':
+  hints=[s['hint'].strip().casefold() for s in book['steps']]
+  assert len(hints)==len(set(hints)),(file,'Quiz 1 needs a different hint for each question')
+ if 'legacySoundChart' in book:
+  assert not feedback_issues(book['legacySoundChart']['explanation']),(file,'legacy sound explanation')
  for sticker in book['stickers']:
   if sticker['meaningSource']=='not_defined_in_book':assert not sticker['meaning']
   else:assert sticker['meaning'].strip()

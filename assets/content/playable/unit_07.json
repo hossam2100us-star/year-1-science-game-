@@ -37,7 +37,7 @@
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "Listen to all three safety rules before exploring.",
+      "explanation": "The rules keep you safe. Keep away from sockets, keep your hands dry, and let grown-ups plug things in.",
       "source": {
         "pages": [
           19,
@@ -115,7 +115,7 @@
       "assessed": true,
       "objective": "u07.main.01",
       "hint": "Ask which things need a plug or a battery to work.",
-      "explanation": "Need electricity: television, vacuum cleaner, lamp, dishwasher. Do not: book, lantern (it uses a flame), chair.",
+      "explanation": "The television, vacuum cleaner, lamp and dishwasher need electricity to work. The book and chair do not. This lantern uses a flame instead.",
       "source": {
         "pages": [
           19,
@@ -131,7 +131,16 @@
       "scene": "workshop",
       "section": "Challenge",
       "playScene": "science",
-      "theme": "unit_07"
+      "theme": "unit_07",
+      "choiceOrder": [
+        "lamp",
+        "vacuum_cleaner",
+        "book",
+        "chair",
+        "television",
+        "lantern",
+        "dishwasher"
+      ]
     },
     {
       "id": "unit_07.step.003",
@@ -171,8 +180,8 @@
       },
       "assessed": true,
       "objective": "u07.main.02",
-      "hint": "Match the job first: cleaning, washing, light or keeping cool.",
-      "explanation": "a) a lantern or a candle b) a broom",
+      "hint": "Think about which helper gives light and which one sweeps up dirt.",
+      "explanation": "A lantern gives light like a lamp. A broom cleans like a vacuum cleaner.",
       "source": {
         "pages": [
           19,
@@ -304,7 +313,7 @@
       "assessed": true,
       "objective": "u07.main.03",
       "hint": "Compare each claim with what happened during the magnet hunt.",
-      "explanation": "a) NO b) YES c) YES",
+      "explanation": "A magnet pulls iron and steel. It does not pull every metal, so the claim about all metals is wrong.",
       "source": {
         "pages": [
           19,
@@ -377,7 +386,7 @@
       "assessed": true,
       "objective": "u07.main.04",
       "hint": "Think about the material of each object, not just its shape.",
-      "explanation": "The magnet pulls: steel key, iron nail, steel coat hanger. It does not pull the plastic button, the sock, the leaf or the aluminium foil.",
+      "explanation": "The magnet pulls the steel key, iron nail and steel coat hanger. Iron and steel are metals a magnet can pull.",
       "source": {
         "pages": [
           19,
@@ -426,7 +435,7 @@
       "assessed": true,
       "objective": "u07.main.05",
       "hint": "Think about how a torch works when you carry it away from a socket.",
-      "explanation": "a battery",
+      "explanation": "A battery gives the torch electricity to make light. You can carry the torch away from a wall socket.",
       "source": {
         "pages": [
           19,
@@ -494,8 +503,8 @@
       },
       "assessed": true,
       "objective": "u07.main.06",
-      "hint": "Remember the rules about sockets, wet hands and opening appliances.",
-      "explanation": "Never put fingers or objects into a socket; only a grown‑up plugs things in; never touch electrical things with wet hands.",
+      "hint": "Remember the rules about sockets, dry hands and who may plug things in.",
+      "explanation": "Keep fingers and objects out of sockets. Let grown-ups plug things in, and keep your hands dry near electrical things.",
       "source": {
         "pages": [
           19,
@@ -582,7 +591,7 @@
       "assessed": true,
       "objective": "u07.main.07",
       "hint": "Look for a wire and plug, a battery, or an object used by hand.",
-      "explanation": "Plug: fridge, air conditioner. Battery: wall clock, torch. Neither: bicycle, book.",
+      "explanation": "The fridge and air conditioner use a plug. The wall clock and torch use batteries. The bicycle and book need neither.",
       "source": {
         "pages": [
           19,
@@ -638,7 +647,7 @@
       "assessed": true,
       "objective": "u07.main.08",
       "hint": "Think about objects that need to hold a door or a bag closed.",
-      "explanation": "Any two: fridge magnets, the seal on the fridge door, a cupboard door catch, a handbag clasp, a magnetic screwdriver, headphones.",
+      "explanation": "Magnets can hold a fridge door seal and a cupboard door catch closed. They help the doors stay shut.",
       "source": {
         "pages": [
           19,
@@ -728,7 +737,7 @@
       "assessed": true,
       "objective": "u07.choice.01",
       "hint": "Use the safety rules, torch and magnet experiment to help.",
-      "explanation": "a steel key. lantern. battery. only iron and steel. never safe.",
+      "explanation": "A magnet pulls the steel key. Iron and steel are magnetic metals. A lantern gives light, and a battery powers a torch. Fingers must stay out of sockets.",
       "source": {
         "pages": [
           19,

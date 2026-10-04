@@ -57,7 +57,7 @@
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "Touch each material and listen to its properties.",
+      "explanation": "Materials feel and look different. Listen to what each one is like.",
       "source": {
         "pages": [
           12,
@@ -129,7 +129,7 @@
       "assessed": true,
       "objective": "u04.main.01",
       "hint": "An object is a thing you can use. Ask what it is made from.",
-      "explanation": "a) materials b) objects",
+      "explanation": "A spoon and a chair are objects. Metal and wood are materials used to make objects.",
       "source": {
         "pages": [
           12,
@@ -151,7 +151,17 @@
         "mode": "workshop",
         "focus": "spoon",
         "discover": "Touch every hand. Discover each material.",
-        "sort": "Touch an object, then a drawer."
+        "sort": "Touch an object, then a drawer.",
+        "pairedExamples": {
+          "things_a_spoon_and_a_chair": [
+            "spoon",
+            "chair"
+          ],
+          "what_things_are_made_from_metal_and_wood": [
+            "metal",
+            "wood"
+          ]
+        }
       },
       "correctionUi": {
         "review": "Look at this choice again",
@@ -222,7 +232,7 @@
       "assessed": true,
       "objective": "u04.main.02",
       "hint": "Look at the window, shirt, nail and newspaper. Think about their surfaces.",
-      "explanation": "a) glass b) fabric (cotton) c) metal d) paper",
+      "explanation": "The window is glass. The T-shirt is fabric. The nail is metal. The newspaper is paper.",
       "source": {
         "pages": [
           12,
@@ -299,7 +309,7 @@
       "assessed": true,
       "objective": "u04.main.03",
       "hint": "Imagine touching a metal spoon. Think about hardness, shine and temperature.",
-      "explanation": "hard, shiny, cold to touch",
+      "explanation": "Most metals are hard and shiny. They can feel cold when you touch them.",
       "source": {
         "pages": [
           12,
@@ -383,7 +393,7 @@
       "assessed": true,
       "objective": "u04.main.04",
       "hint": "Check each claim separately. Think about a window you can see through.",
-      "explanation": "a) TRUE b) FALSE c) TRUE d) FALSE",
+      "explanation": "Glass is hard and can break. It can be see-through and comes in many colours.",
       "source": {
         "pages": [
           12,
@@ -530,7 +540,7 @@
       "assessed": true,
       "objective": "u04.main.05",
       "hint": "Remember which covers kept the inside of the cup dry.",
-      "explanation": "Waterproof: plastic and aluminium foil. Not waterproof: cotton cloth, paper, tissue paper.",
+      "explanation": "Plastic and aluminium foil keep water out. Cloth, paper and tissue let water through.",
       "source": {
         "pages": [
           12,
@@ -609,7 +619,7 @@
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "Some materials change shape. A rubber band stretches; a sponge or dough can be squashed; a stone or metal spoon cannot be squashed.",
+      "explanation": "You can stretch a rubber band and squash sponge or dough with your hands. A stone and a metal spoon stay hard.",
       "source": {
         "pages": [
           12,
@@ -739,7 +749,7 @@
       "assessed": true,
       "objective": "u04.main.06",
       "hint": "Imagine pressing each object between your hands. Would its shape change?",
-      "explanation": "Can squash: sponge, dough, bread, a plastic bottle, cotton wool. Cannot squash: a brick, a stone, a metal spoon, a wooden block.",
+      "explanation": "Sponge and dough squash when you press them. A stone and a metal spoon stay hard.",
       "source": {
         "pages": [
           12,
@@ -805,7 +815,7 @@
       "assessed": true,
       "objective": "u04.main.07",
       "hint": "Think about what you need to see when you look out of a window.",
-      "explanation": "Because glass is transparent — we need to see through a window, and you cannot see through wood.",
+      "explanation": "Glass is transparent, which means see-through. It lets us look through a window.",
       "source": {
         "pages": [
           12,
@@ -880,7 +890,7 @@
       "assessed": true,
       "objective": "u04.main.08",
       "hint": "Look at the outside of the pencil and the dark part that makes a mark.",
-      "explanation": "This plain writing pencil has a wooden body and a graphite writing core.",
+      "explanation": "The pencil has wood on the outside. The graphite inside makes marks when you write.",
       "source": {
         "pages": [
           12,
@@ -1055,7 +1065,7 @@
       "assessed": true,
       "objective": "u04.choice.01",
       "hint": "Use your rain and shape experiments to help with each discovery.",
-      "explanation": "glass. plastic. cold and hard. a rubber band. clay.",
+      "explanation": "Glass makes a see-through window. Plastic keeps rain out. Most metals feel cold and hard. A rubber band stretches. A potter shapes clay into pots.",
       "source": {
         "pages": [
           12,

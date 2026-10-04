@@ -29,8 +29,8 @@ void main() {
       'MaterialIcons',
     )..addFont(rootBundle.load('fonts/MaterialIcons-Regular.otf'))).load();
     for (final file in [
-      'materials-atlas-v1.webp',
-      'science-details-v1.webp',
+      'materials-atlas-v2.png',
+      'science-details-v2.png',
       'physics-atlas-v1.webp',
     ]) {
       await Flame.images.load(file);

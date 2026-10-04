@@ -413,7 +413,7 @@ class _LightExperimentState extends ConsumerState<LightExperiment>
                         padding: const EdgeInsets.all(12),
                         child: Text(
                           ui('saveError'),
-                          textDirection: TextDirection.rtl,
+                          textDirection: TextDirection.ltr,
                           style: const TextStyle(
                             fontFamily: 'Cairo',
                             fontSize: 20,

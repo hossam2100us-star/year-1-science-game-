@@ -17,6 +17,8 @@ import 'ourselves_stage.dart';
 import 'shoe_measure.dart';
 import '../science/science_stage.dart';
 import '../science/science_lab.dart';
+import '../science/force_guided_lab.dart';
+import '../science/force_discovery.dart';
 import '../science/science_audio.dart';
 import '../plants/bean_experiment.dart';
 import '../plants/light_experiment.dart';
@@ -131,6 +133,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     _frame = current['frame'] ?? 0;
     _freeDone = current['freeDone'] ?? false;
     _feedback = current['feedback'] ?? '';
+    // The garden resumes at an unfinished place, not the last watched subject.
+    if (_movementGarden) _feedback = '';
     _shoeA = current['shoeA'] ?? 9;
     _shoeB = current['shoeB'] ?? 12;
     _engine = QuestionEngine(
@@ -141,6 +145,19 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
           ? null
           : DecisionOutcome.values.byName(current['outcome']),
     );
+    // Wording can change without changing content IDs or historical grades.
+    // Never replay a cached teacher key when reopening assessed work.
+    if (step.assessed && !step.isFree) {
+      _feedback = _assessmentFeedback();
+      if (_needsCorrection) {
+        _markForReview();
+        _feedback += ' ${_correctionText('start')} ${_answerReference()}';
+      } else if (_engine.done) {
+        _reviewItems.clear();
+      } else if (_guidedCorrection && _engine.mistakes > 0) {
+        _markForReview();
+      }
+    }
     _game = DiscoveryGame(
       step: step,
       onItem: _item,
@@ -158,6 +175,12 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   bool get _plantMission => step.json['playScene'] == 'plant-mission';
   bool get _science => step.json['playScene'] == 'science';
+  bool get _movementGarden =>
+      _science && step.json['forceScene']?['gardenStories'] is Map;
+  bool get _guidedForces =>
+      _science &&
+      (step.json['lab'] == 'force' ||
+          step.json['forceScene']?['mode'] == 'movement');
   bool get _ourselves => step.json['playScene'] == 'ourselves';
   bool get _plantLab => step.json['playScene'] == 'plant-lab';
   String get _displayPrompt =>
@@ -166,6 +189,14 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       : step.prompt;
 
   String get _instruction {
+    if (_movementGarden) {
+      return step.json['forceScene']['gardenStories'][forceGardenResumeSpot(
+        _touched,
+      )];
+    }
+    if (_science && step.json['lab'] == 'force') {
+      return step.json['labUi']['guideInstructions'][forceGuideStage(_lab)];
+    }
     if (_ourselves || _science)
       return '${step.json['safety'] ?? ''} ${step.json['spokenPrompt'] ?? step.prompt}';
     if (_plantLab)
@@ -311,6 +342,28 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       : step.isMulti || step.isOrder
       ? _selected.toList()
       : _selected.firstOrNull;
+  bool _mappingItemMatches(String id) => matchesAnswer(
+    {
+      ...step.answer!,
+      'value': {id: (step.answer!['value'] as Map)[id]},
+    },
+    {id: _placements[id]},
+  );
+  String _assessmentFeedback() {
+    var feedback = _engine.feedback;
+    if (!_engine.done && _engine.mistakes > 0 && step.isMapping) {
+      final expected = Map<String, dynamic>.from(step.answer!['value']);
+      final revisit = expected.keys.where((id) => !_mappingItemMatches(id));
+      feedback += ' Look again: ${revisit.map(step.label).join(', ')}.';
+    } else if (!_engine.done && _engine.mistakes > 0 && step.isMulti) {
+      final expected = List<String>.from(step.answer!['value']);
+      final found = _selected.where(expected.contains).length;
+      feedback +=
+          ' $found of ${expected.length} discoveries found. Check your collection.';
+    }
+    return feedback;
+  }
+
   void _check() {
     if (_busy || _answerLocked) return;
     if (_needsCorrection) {
@@ -333,11 +386,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     final success = _engine.submit(_selection);
     final groups = step.json['objectiveItems'];
     if (groups is Map && step.isMapping) {
-      final answers = step.answer!['value'] as Map;
       for (final entry in groups.entries) {
         if (_objectiveEvidence.containsKey(entry.key)) continue;
         final correct = (entry.value as List).every(
-          (id) => _placements[id] == answers[id],
+          (id) => _mappingItemMatches(id),
         );
         if (correct)
           _objectiveEvidence[entry.key] = previousMistakes == 0
@@ -347,19 +399,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
           _objectiveEvidence[entry.key] = 'explained';
       }
     }
-    _feedback = _engine.feedback;
-    if (!_engine.done && step.isMapping) {
-      final expected = Map<String, dynamic>.from(step.answer!['value']);
-      final revisit = expected.keys.where(
-        (id) => _placements[id] != expected[id],
-      );
-      _feedback += ' Look again: ${revisit.map(step.label).join(', ')}.';
-    } else if (!_engine.done && step.isMulti) {
-      final expected = List<String>.from(step.answer!['value']);
-      final found = _selected.where(expected.contains).length;
-      _feedback +=
-          ' $found of ${expected.length} discoveries found. Check your collection.';
-    }
+    _feedback = _assessmentFeedback();
     if (_guidedCorrection && !success) _markForReview();
     if (_guidedCorrection && _engine.outcome == DecisionOutcome.explained) {
       _needsCorrection = true;
@@ -383,12 +423,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   void _markForReview() {
     final expected = step.answer!['value'];
-    final aliases = Map<String, dynamic>.from(step.answer!['aliases'] ?? {});
-    dynamic canonical(dynamic value) => aliases[value] ?? value;
     if (step.isMapping) {
       _reviewItems = (expected as Map).keys
           .cast<String>()
-          .where((id) => canonical(_placements[id]) != canonical(expected[id]))
+          .where((id) => !_mappingItemMatches(id))
           .toSet();
     } else if (step.isMulti) {
       // Missing correct choices are not identified before the explanation.
@@ -729,59 +767,60 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                       constraints: const BoxConstraints(maxWidth: 1100),
                       child: Column(
                         children: [
-                          LayoutBuilder(
-                            builder: (context, constraints) {
-                              final compact = constraints.maxWidth < 600;
-                              final owl = ScientistOwl(
-                                size: compact ? 44 : 70,
-                                gender: profile?.gender ?? ChildGender.boy,
-                                mood: _engine.done
-                                    ? (_engine.outcome ==
-                                              DecisionOutcome.explained
-                                          ? OwlMood.thinking
-                                          : OwlMood.cheering)
-                                    : _engine.mistakes > 0
-                                    ? OwlMood.thinking
-                                    : OwlMood.idle,
-                              );
-                              final prompt = Text(
-                                _displayPrompt,
-                                key: const ValueKey('lesson-prompt'),
-                                style: const TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              );
-                              final speaker = IconButton(
-                                onPressed: () => _say(_instruction),
-                                tooltip: 'Listen again',
-                                icon: const Icon(Icons.volume_up_rounded),
-                              );
-                              return compact
-                                  ? Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.stretch,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            owl,
-                                            const Spacer(),
-                                            speaker,
-                                          ],
-                                        ),
-                                        prompt,
-                                      ],
-                                    )
-                                  : Row(
-                                      children: [
-                                        owl,
-                                        Expanded(child: prompt),
-                                        speaker,
-                                      ],
-                                    );
-                            },
-                          ),
-                          const SizedBox(height: 8),
+                          if (!_guidedForces)
+                            LayoutBuilder(
+                              builder: (context, constraints) {
+                                final compact = constraints.maxWidth < 600;
+                                final owl = ScientistOwl(
+                                  size: compact ? 44 : 70,
+                                  gender: profile?.gender ?? ChildGender.boy,
+                                  mood: _engine.done
+                                      ? (_engine.outcome ==
+                                                DecisionOutcome.explained
+                                            ? OwlMood.thinking
+                                            : OwlMood.cheering)
+                                      : _engine.mistakes > 0
+                                      ? OwlMood.thinking
+                                      : OwlMood.idle,
+                                );
+                                final prompt = Text(
+                                  _displayPrompt,
+                                  key: const ValueKey('lesson-prompt'),
+                                  style: const TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                );
+                                final speaker = IconButton(
+                                  onPressed: () => _say(_instruction),
+                                  tooltip: 'Listen again',
+                                  icon: const Icon(Icons.volume_up_rounded),
+                                );
+                                return compact
+                                    ? Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.stretch,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              owl,
+                                              const Spacer(),
+                                              speaker,
+                                            ],
+                                          ),
+                                          prompt,
+                                        ],
+                                      )
+                                    : Row(
+                                        children: [
+                                          owl,
+                                          Expanded(child: prompt),
+                                          speaker,
+                                        ],
+                                      );
+                              },
+                            ),
+                          if (!_guidedForces) const SizedBox(height: 8),
                           if (step.table.isNotEmpty && !_ourselves && !_science)
                             Wrap(
                               spacing: 20,
@@ -842,6 +881,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                     data: _lab,
                                     onSpeak: _say,
                                     onSound: _playSound,
+                                    onFeedback: (text) {
+                                      if (!mounted) return;
+                                      _feedback = text;
+                                      _changed();
+                                    },
                                     onChange: (data, complete) async {
                                       final previous = _lab;
                                       final wasDone = _freeDone;
@@ -868,6 +912,16 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                     onSound: _playSound,
                                     onSpeak: (text) {
                                       ScienceAudio.stop();
+                                      if (_guidedForces) {
+                                        final stories =
+                                            step.json['forceScene']?['gardenStories']
+                                                as Map?;
+                                        _feedback =
+                                            stories?.containsValue(text) == true
+                                            ? ''
+                                            : text;
+                                        _changed();
+                                      }
                                       _say(text);
                                     },
                                     onOrder: (items) {

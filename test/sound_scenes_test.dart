@@ -14,6 +14,9 @@ import 'package:science_adventure/features/biology/session.dart';
 import 'package:science_adventure/features/science/science_picture.dart';
 import 'package:science_adventure/features/science/sound_picture.dart';
 import 'package:science_adventure/features/science/sound_distance.dart';
+import 'package:science_adventure/features/science/sound_stage.dart';
+import 'package:science_adventure/features/science/sound_box_lab.dart';
+import 'package:science_adventure/games/question_engine.dart';
 
 import 'setup_screen_test.dart' as helpers;
 
@@ -153,6 +156,156 @@ void main() {
     },
   );
 
+  for (final configuration in [
+    (const Size(1280, 800), 1.0),
+    (const Size(800, 360), 1.5),
+  ]) {
+    testWidgets(
+      'Band action positions stay fixed during selection, answers and replay at ${configuration.$1} with ${configuration.$2} text',
+      (t) async {
+        size(t, configuration.$1);
+        await helpers.mount(
+          t,
+          LessonPlayer(lesson: lesson),
+          start(2),
+          scale: configuration.$2,
+        );
+        Map<String, Rect> positions() {
+          final origin = t.getTopLeft(find.byType(SoundStage));
+          return {
+            for (final target in lesson.steps[2].targets)
+              target.id: t
+                  .getRect(find.byKey(ValueKey('science-target-${target.id}')))
+                  .shift(-origin),
+          };
+        }
+
+        final initial = positions();
+        await choose(t, 'sitar');
+        expect(positions(), initial);
+        await tap(t, 'science-target-pluck');
+        expect(positions(), initial);
+        await helpers.tapVisible(t, find.byTooltip('Listen again'));
+        expect(positions(), initial);
+        for (final entry in [
+          ('triangle', 'hit'),
+          ('drum', 'beat'),
+          ('trumpet', 'blow'),
+          ('maracas', 'shake'),
+        ]) {
+          await place(t, entry.$1, entry.$2);
+          expect(positions(), initial);
+        }
+        await helpers.tapVisible(t, find.text('Check my discovery'));
+        expect(positions(), initial);
+        expect(t.takeException(), isNull);
+      },
+    );
+  }
+
+  test(
+    'Band accepts Hit and Beat for percussion while rejecting other actions',
+    () {
+      final answer = lesson.steps[2].answer!;
+      final canonical = Map<String, dynamic>.from(answer['value']);
+      expect(canonical['triangle'], 'hit');
+      expect(canonical['drum'], 'beat');
+      for (final triangle in ['hit', 'beat']) {
+        for (final drum in ['hit', 'beat']) {
+          expect(
+            matchesAnswer(answer, {
+              ...canonical,
+              'triangle': triangle,
+              'drum': drum,
+            }),
+            true,
+          );
+        }
+      }
+      for (final wrong in [
+        ('triangle', 'shake'),
+        ('drum', 'blow'),
+        ('trumpet', 'hit'),
+        ('sitar', 'beat'),
+        ('maracas', 'pluck'),
+      ]) {
+        expect(
+          matchesAnswer(answer, {...canonical, wrong.$1: wrong.$2}),
+          false,
+        );
+      }
+    },
+  );
+
+  testWidgets(
+    'Accepted percussion wording scores once and survives navigation',
+    (t) async {
+      size(t, const Size(1280, 950));
+      final store = start(2);
+      await helpers.mount(t, LessonPlayer(lesson: lesson), store);
+      for (final entry in [
+        ('triangle', 'beat'),
+        ('drum', 'hit'),
+        ('trumpet', 'blow'),
+        ('sitar', 'pluck'),
+        ('maracas', 'shake'),
+      ]) {
+        await place(t, entry.$1, entry.$2);
+      }
+      await helpers.tapVisible(t, find.text('Check my discovery'));
+      expect(current(store)['outcome'], 'firstTry');
+      expect(current(store)['mistakes'], 0);
+      expect(current(store)['placements'], lesson.steps[2].answer!['value']);
+      final completed = Map.from(current(store));
+      await tap(t, 'lessonPrevious');
+      await tap(t, 'lessonNext');
+      expect(current(store), completed);
+      expect(t.takeException(), isNull);
+    },
+  );
+
+  testWidgets(
+    'Band correction names only wrong actions and keeps accepted wording',
+    (t) async {
+      size(t, const Size(1280, 950));
+      final store = start(2);
+      await helpers.mount(t, LessonPlayer(lesson: lesson), store);
+      for (final entry in [
+        ('triangle', 'beat'),
+        ('drum', 'hit'),
+        ('trumpet', 'pluck'),
+        ('sitar', 'pluck'),
+        ('maracas', 'shake'),
+      ]) {
+        await place(t, entry.$1, entry.$2);
+      }
+      await helpers.tapVisible(t, find.text('Check my discovery'));
+      final feedback = t
+          .widget<Text>(find.byKey(const ValueKey('lesson-feedback')))
+          .data!;
+      expect(feedback.split('Look again:').last.trim(), 'Trumpet.');
+      expect(current(store)['reviewItems'], ['trumpet']);
+      expect(current(store)['mistakes'], 1);
+      await tap(t, 'lessonPrevious');
+      await tap(t, 'lessonNext');
+      expect(current(store)['placements']['triangle'], 'beat');
+      expect(current(store)['placements']['drum'], 'hit');
+      await helpers.tapVisible(t, find.text('Check my discovery'));
+      expect(current(store)['outcome'], 'explained');
+      expect(current(store)['needsCorrection'], true);
+      expect(current(store)['reviewItems'], ['trumpet']);
+      await place(t, 'trumpet', 'blow');
+      await helpers.tapVisible(t, find.text('Check my practice'));
+      expect(current(store)['needsCorrection'], false);
+      expect(current(store)['reviewItems'], isEmpty);
+      expect(current(store)['outcome'], 'explained');
+      expect(current(store)['mistakes'], 2);
+      expect(current(store)['placements']['triangle'], 'beat');
+      expect(current(store)['placements']['drum'], 'hit');
+      expect(t.takeException(), isNull);
+    },
+  );
+
   testWidgets(
     'A mismatched box prediction needs observation, survives restart and can replay',
     (t) async {
@@ -185,6 +338,133 @@ void main() {
       expect(current(store)['outcome'], isNull);
       expect(current(store)['mistakes'], 0);
       expect(find.byKey(const ValueKey('lessonNext')), findsOneWidget);
+      expect(t.takeException(), isNull);
+    },
+  );
+
+  for (final configuration in [
+    (const Size(1280, 800), 1.0),
+    (const Size(800, 360), 1.5),
+  ]) {
+    testWidgets(
+      'Wrong box observations give visible feedback at ${configuration.$1}',
+      (t) async {
+        size(t, configuration.$1);
+        final store = start(3);
+        final boundary = GlobalKey();
+        await helpers.mount(
+          t,
+          RepaintBoundary(
+            key: boundary,
+            child: LessonPlayer(lesson: lesson),
+          ),
+          store,
+          scale: configuration.$2,
+        );
+        final step = lesson.steps[3];
+        final observation = step.json['observationUi'];
+        String footer() =>
+            t.widget<Text>(find.byKey(const ValueKey('lesson-feedback'))).data!;
+        for (final box in [
+          ('stone_box', 'quiet', 'loud'),
+          ('feather_box', 'loud', 'quiet'),
+        ]) {
+          await tap(t, 'lab-choose-${box.$1}');
+          expect(footer(), step.json['labUi']['prediction']);
+          await tap(t, 'lab-guess-${box.$2}');
+          expect(footer(), contains(step.json['labUi']['afterPrediction']));
+          expect(footer(), isNot(contains(observation['retry'])));
+          await tap(t, 'lab-test');
+          expect(footer(), contains(observation['changed']));
+          expect(find.byKey(const ValueKey('lessonNext')), findsNothing);
+          await tap(t, 'lab-observe-${box.$2}');
+          expect(footer(), observation['retry']);
+          final feedbackRect = t.getRect(
+            find.byKey(const ValueKey('lesson-feedback')),
+          );
+          expect(feedbackRect.top, greaterThanOrEqualTo(0));
+          expect(
+            feedbackRect.bottom,
+            lessThanOrEqualTo(configuration.$1.height),
+          );
+          expect(find.byKey(const ValueKey('lessonNext')), findsNothing);
+          if (box.$1 == 'stone_box') {
+            await capture(
+              t,
+              boundary,
+              'box-retry-${configuration.$1.width.toInt()}',
+            );
+          }
+          await tap(t, 'lab-observe-${box.$3}');
+          expect(footer(), contains(observation['complete']));
+          expect(current(store)['lab']['guesses'][box.$1], box.$2);
+          expect(current(store)['lab']['observed'][box.$1], box.$3);
+          expect(current(store)['mistakes'], 0);
+          expect(current(store)['outcome'], isNull);
+        }
+        expect(find.byKey(const ValueKey('lessonNext')), findsOneWidget);
+        expect(t.takeException(), isNull);
+      },
+    );
+  }
+
+  testWidgets(
+    'Every wrong observation speaks again without cutting off the experiment',
+    (t) async {
+      size(t, const Size(1280, 800));
+      final spoken = <String>[];
+      final messages = <String>[];
+      final sounds = <String>[];
+      Map<String, dynamic> data = {};
+      var complete = false;
+      await t.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: SingleChildScrollView(
+              child: StatefulBuilder(
+                builder: (context, update) => SoundBoxLab(
+                  step: lesson.steps[3],
+                  data: data,
+                  onSpeak: spoken.add,
+                  onFeedback: messages.add,
+                  onSound: (name, volume) => sounds.add(name),
+                  onChange: (next, done) async {
+                    update(() {
+                      data = next;
+                      complete = done;
+                    });
+                  },
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+      await tap(t, 'lab-guess-quiet');
+      final beforeSound = spoken.length;
+      await tap(t, 'lab-test');
+      expect(sounds, ['stone']);
+      expect(
+        spoken.length,
+        beforeSound,
+        reason: 'Narration must not stop the stone rattle',
+      );
+      final retry = lesson.steps[3].json['observationUi']['retry'];
+      await tap(t, 'lab-observe-quiet');
+      await tap(t, 'lab-observe-quiet');
+      expect(spoken.where((text) => text == retry).length, 2);
+      expect(messages.where((text) => text == retry).length, 2);
+      expect(complete, false);
+      expect(data['guesses']['stone_box'], 'quiet');
+      expect(data['observed'], isNull);
+      await tap(t, 'lab-replay');
+      expect(sounds, ['stone', 'stone']);
+      await tap(t, 'lab-observe-loud');
+      expect(data['observed']['stone_box'], 'loud');
+      expect(
+        spoken.last,
+        contains(lesson.steps[3].json['observationUi']['complete']),
+      );
       expect(t.takeException(), isNull);
     },
   );
@@ -261,6 +541,40 @@ void main() {
   );
 
   testWidgets(
+    'Graded band listening replays one instrument without selecting or grading',
+    (t) async {
+      size(t, const Size(360, 760));
+      final store = start(2);
+      await helpers.mount(t, LessonPlayer(lesson: lesson), store, scale: 1.5);
+      final before = Map.from(current(store));
+      for (final id in ['triangle', 'maracas', 'triangle']) {
+        await tap(t, 'sound-listen-$id');
+        expect(current(store), before);
+        final playing = t
+            .widgetList<SoundDemonstration>(find.byType(SoundDemonstration))
+            .where((demo) => demo.play);
+        expect(playing.map((demo) => demo.art), [id]);
+        final listen = t.getRect(find.byKey(ValueKey('sound-listen-$id')));
+        expect(listen.height, greaterThanOrEqualTo(48));
+        expect(listen.left, greaterThanOrEqualTo(0));
+        expect(listen.right, lessThanOrEqualTo(360));
+      }
+      expect(audio.map((sound) => sound['name']), [
+        'triangle',
+        'maracas',
+        'triangle',
+      ]);
+      expect(current(store)['selected'] ?? [], isEmpty);
+      expect(current(store)['outcome'], isNull);
+      expect(find.byKey(const ValueKey('lessonNext')), findsNothing);
+      await choose(t, 'triangle');
+      expect(current(store)['selected'], ['triangle']);
+      expect(current(store)['outcome'], isNull);
+      expect(t.takeException(), isNull);
+    },
+  );
+
+  testWidgets(
     'Listener stays inside the scene at both ends on phone and tablet',
     (t) async {
       size(t, const Size(360, 760));
@@ -272,6 +586,7 @@ void main() {
           start(6),
           scale: 1.3,
         );
+        final positions = <double>[];
         for (final position in [0.0, 1.0]) {
           final slider = t.widget<Slider>(
             find.byKey(const ValueKey('sound-distance-slider')),
@@ -280,11 +595,19 @@ void main() {
           await t.pump(const Duration(milliseconds: 500));
           final scene = t.getRect(find.byType(SoundDistance));
           final child = t.getRect(find.byKey(const ValueKey('sound-listener')));
+          positions.add(child.center.dx);
+          final drum = t.getRect(
+            find.byKey(const ValueKey('lab-distance-drum')),
+          );
+          expect(child.overlaps(drum), false);
+          expect(child.width, greaterThanOrEqualTo(48));
+          expect(child.height, greaterThanOrEqualTo(48));
           expect(child.left, greaterThanOrEqualTo(scene.left));
           expect(child.right, lessThanOrEqualTo(scene.right));
           await tap(t, 'sound-distance-listen');
           expect(t.takeException(), isNull);
         }
+        expect(positions.last - positions.first, greaterThan(60));
         await t.pumpWidget(const SizedBox());
       }
     },

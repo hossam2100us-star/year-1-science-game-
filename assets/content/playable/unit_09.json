@@ -37,7 +37,7 @@
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "Explore our three neighbours. Listen to the Sun safety rule.",
+      "explanation": "Earth is our planet, and the Sun is a star. The Moon has no light of its own. Never look straight at the Sun, because it can hurt your eyes.",
       "source": {
         "pages": [
           24,
@@ -149,7 +149,7 @@
       "assessed": true,
       "objective": "u09.main.01",
       "hint": "Compare the round Earth and its large blue areas.",
-      "explanation": "a) ✗ b) ✓ c) ✓ d) ✓ e) ✗ — heat and light come from the Sun, not the Moon.",
+      "explanation": "Earth is round, and much of it is covered in water. We can live here. Our heat and light come from the Sun.",
       "source": {
         "pages": [
           24,
@@ -198,7 +198,7 @@
       "assessed": true,
       "objective": "u09.main.02",
       "hint": "Remember how the Sun is different from Earth.",
-      "explanation": "a star",
+      "explanation": "The Sun is a star that gives us heat and light.",
       "source": {
         "pages": [
           24,
@@ -260,7 +260,7 @@
       "assessed": true,
       "objective": "u09.main.03",
       "hint": "Think about what you feel and what helps you see on a sunny day.",
-      "explanation": "light and heat only. Not sound, air or water.",
+      "explanation": "The Sun gives us light and heat. Its light helps us see, and its heat keeps us warm.",
       "source": {
         "pages": [
           24,
@@ -338,7 +338,7 @@
       "assessed": true,
       "objective": "u09.main.04",
       "hint": "Remember the name and year in the Moon mission record.",
-      "explanation": "Neil Armstrong, in 1969.",
+      "explanation": "Neil Armstrong was the first person to walk on the Moon. He went there in 1969.",
       "source": {
         "pages": [
           24,
@@ -417,8 +417,8 @@
       },
       "assessed": true,
       "objective": "u09.main.05",
-      "hint": "Think about breathing, protecting the head and protecting the feet.",
-      "explanation": "Any two: visor — protects his eyes; oxygen pack — lets him breathe, because there is no air on the Moon; gloves — protect his hands; boots\n— protect his feet.",
+      "hint": "Think about which part protects each body part, and which part helps the astronaut breathe.",
+      "explanation": "The visor protects your eyes, gloves protect your hands, and boots protect your feet. The oxygen pack helps you breathe because there is no air on the Moon.",
       "source": {
         "pages": [
           24,
@@ -553,8 +553,8 @@
       },
       "assessed": true,
       "objective": "u09.main.08",
-      "hint": "Think about a sunny day: seeing things and feeling warm.",
-      "explanation": "Any two: it warms us, it gives us daylight, it dries the washing, it makes plants grow, it warms the sea.",
+      "hint": "Remember what sunshine does for plants and what helps you see in the daytime.",
+      "explanation": "The Sun gives us daylight and helps plants grow. Plants need its light to make their food.",
       "source": {
         "pages": [
           24,
@@ -583,7 +583,7 @@
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "Touch stars to join them into your own shape. Give it a name.",
+      "explanation": "The lines join the stars into your own picture. You can make a shape and give it a name.",
       "source": {
         "pages": [
           24,
@@ -676,7 +676,7 @@
       "assessed": true,
       "objective": "u09.choice.01",
       "hint": "Use the Earth model, Sun discoveries and astronaut suit to help.",
-      "explanation": "planet. star. blue. air. astronomer.",
+      "explanation": "Earth is a planet, and its water makes it look mostly blue. The Sun is a star. An astronomer studies stars. The Moon has no air to breathe.",
       "source": {
         "pages": [
           24,

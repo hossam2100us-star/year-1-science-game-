@@ -218,7 +218,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A giraffe is alive. It grows, breathes and needs food.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -265,7 +265,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A car is not alive. It can move, but it does not grow or make babies.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -312,7 +312,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A tree is alive. It grows and makes seeds.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -359,7 +359,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A chair is not alive. It does not grow or need food.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -406,7 +406,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A person is alive. People grow, breathe and need food.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -453,7 +453,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A mug is not alive. It does not grow or need food.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -500,7 +500,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A plant is alive. It grows and makes new leaves.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -547,7 +547,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A lizard is alive. It grows, breathes and needs food.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -594,7 +594,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A cat is alive. It grows, breathes and needs food.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -641,7 +641,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A worm is alive. It grows and needs food.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -688,7 +688,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A doll is not alive. Looking like a person does not make it alive.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -735,7 +735,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A fly is a living insect. It grows, breathes and needs food.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -829,7 +829,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "A wooden chair was once part of a living tree, but the chair itself is not alive.",
+      "explanation": "This chair is not alive. Its wood came from a living tree.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -876,7 +876,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "This egg has a baby chick growing inside.",
+      "explanation": "This egg has a living chick growing inside.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -915,7 +915,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A kitten grows into a bigger cat.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -955,7 +955,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "Cats need food to live and grow.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -995,7 +995,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "Adult cats can have kittens.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -1035,7 +1035,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "Plants grow taller and make new leaves.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -1075,7 +1075,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "Plants need food to grow. Their leaves make food using sunlight.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -1115,7 +1115,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "Plants can make seeds that grow into new plants.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -1155,7 +1155,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "A kettle does not grow, does not need food, and cannot make new kettles.",
+      "explanation": "A kettle does not grow. It stays the size it was made.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -1195,7 +1195,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "A kettle does not grow, does not need food, and cannot make new kettles.",
+      "explanation": "A kettle does not eat or need food.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -1235,7 +1235,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "A kettle does not grow, does not need food, and cannot make new kettles.",
+      "explanation": "People make kettles. A kettle cannot make baby kettles.",
       "scene": "garden",
       "section": "Explore",
       "source": {
@@ -1311,7 +1311,7 @@
       "assessed": true,
       "objective": "u01.main.01",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "The giraffe, tree, person, plant and lizard are alive. Living things grow and need food.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -1388,7 +1388,7 @@
       "assessed": true,
       "objective": "u01.main.02",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "The bird moves around its cage, eats when hungry and breathes air. A baby bird grows bigger.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -1429,7 +1429,7 @@
       "assessed": true,
       "objective": "u01.main.03",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A kettle is not alive. It does not grow or make baby kettles.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -1479,7 +1479,7 @@
       "assessed": true,
       "objective": "u01.main.04",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A dandelion grows and makes seeds. Those seeds can grow into new plants.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -1521,7 +1521,7 @@
       "assessed": true,
       "objective": "u01.main.05",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "Moving does not mean alive. A moving car does not grow or make babies.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -1641,7 +1641,7 @@
       "assessed": true,
       "objective": "u01.main.07",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "The cat eats, drinks and breathes. These are signs that it is alive.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -1691,7 +1691,7 @@
       "assessed": true,
       "objective": "u01.main.08",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A cloud moves but is not alive.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -1740,7 +1740,7 @@
       "assessed": true,
       "objective": "u01.main.08",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A worm is alive. It grows and needs food.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -1789,7 +1789,7 @@
       "assessed": true,
       "objective": "u01.main.08",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "Bread is not alive. It does not grow, breathe or make new living things.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -1838,7 +1838,7 @@
       "assessed": true,
       "objective": "u01.main.08",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A mint plant is alive. It grows and makes new leaves.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -1887,7 +1887,7 @@
       "assessed": true,
       "objective": "u01.main.08",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "The doll is not alive. People made it, and it cannot grow.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -1936,7 +1936,7 @@
       "assessed": true,
       "objective": "u01.main.08",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A fly is a living insect. It grows, breathes and needs food.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -1982,7 +1982,7 @@
       "assessed": true,
       "objective": "u01.choice.01",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "The tree is alive. It grows and needs water.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -2028,7 +2028,7 @@
       "assessed": true,
       "objective": "u01.choice.02",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "Living things need water as well as food.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -2074,7 +2074,7 @@
       "assessed": true,
       "objective": "u01.choice.03",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "Being made in a factory is not a sign of life.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -2120,7 +2120,7 @@
       "assessed": true,
       "objective": "u01.choice.04",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "A baby bird grows bigger as it gets older.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -2162,7 +2162,7 @@
       "assessed": true,
       "objective": "u01.choice.05",
       "hint": "Does it grow? Does it need food? Can it make babies?",
-      "explanation": "Living things grow, feed, breathe and make babies. Moving is not enough.",
+      "explanation": "The plant is alive. It grows and makes new leaves.",
       "scene": "garden",
       "section": "Challenge",
       "source": {
@@ -2284,11 +2284,11 @@
       "count": "Found",
       "drag": "Tap a basket, or drag the picture into it.",
       "dragAr": "اختار سلة، أو اسحب الصورة ليها",
-      "voiceUnavailable": "الصوت المحلي مش متاح في المتصفح ده؛ حركة الإيد بتوضح المطلوب.",
+      "voiceUnavailable": "Voice is unavailable here. Follow the hand to explore.",
       "tutorial": "Tap the cat.",
       "tutorialAr": "ابدأ بلمس القطة",
       "saved": "Your discoveries are saved.",
-      "saveError": "مش قادر أحفظ دلوقتي. جرّب تاني.",
+      "saveError": "Could not save yet. Tap to try again.",
       "sourceLabel": "Alive or Not Alive?",
       "goodName": "Great exploring, {name}!",
       "explained": "Let's learn this together.",
@@ -2447,11 +2447,11 @@
         "count": "Found",
         "drag": "Tap a basket, or drag the picture into it.",
         "dragAr": "اختار سلة، أو اسحب الصورة ليها",
-        "voiceUnavailable": "الصوت المحلي مش متاح في المتصفح ده؛ حركة الإيد بتوضح المطلوب.",
+        "voiceUnavailable": "Voice is unavailable here. Follow the hand to explore.",
         "tutorial": "Tap grandmother.",
         "tutorialAr": "ابدأ بلمس الجدة",
         "saved": "Your discoveries are saved.",
-        "saveError": "مش قادر أحفظ دلوقتي. جرّب تاني.",
+        "saveError": "Could not save yet. Tap to try again.",
         "sourceLabel": "Alive or Not Alive?",
         "goodName": "Great exploring, {name}!",
         "explained": "Let's learn this together.",
@@ -2665,11 +2665,11 @@
         "count": "Found",
         "drag": "Tap a basket, or drag the picture into it.",
         "dragAr": "اختار سلة، أو اسحب الصورة ليها",
-        "voiceUnavailable": "الصوت المحلي مش متاح في المتصفح ده؛ حركة الإيد بتوضح المطلوب.",
+        "voiceUnavailable": "Voice is unavailable here. Follow the hand to explore.",
         "tutorial": "Find something to investigate.",
         "tutorialAr": "دور على حاجة وافحصها",
         "saved": "Your discoveries are saved.",
-        "saveError": "مش قادر أحفظ دلوقتي. جرّب تاني.",
+        "saveError": "Could not save yet. Tap to try again.",
         "sourceLabel": "Alive or Not Alive?",
         "goodName": "Great exploring, {name}!",
         "explained": "Let's learn this together.",

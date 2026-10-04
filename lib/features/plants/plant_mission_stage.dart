@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 
 import '../../content/lesson.dart';
 import '../../core/touch_cue.dart';
+import '../biology/illustrated_art.dart';
 import 'plant_lab_game.dart';
+import 'plant_lab_stage.dart';
 import 'plant_workshop.dart';
 
 /// Illustrated choices keep each label attached to its own picture.
@@ -28,6 +30,31 @@ class PlantMissionStage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (step.kind == 'tap-choice' &&
+        step.options.length == 4 &&
+        step.options.every((p) => plantPartRegions.containsKey(p.id))) {
+      return PlantLabStage(
+        step: step,
+        selected: selected,
+        touched: const {},
+        placements: placements,
+        done: done,
+        assembled: const {},
+        onItem: onItem,
+        onPlace: onPlace,
+      );
+    }
+    if (step.isMapping && step.options.length > 8) {
+      return _FoodCollection(
+        key: ValueKey(step.id),
+        step: step,
+        selected: selected,
+        placements: placements,
+        done: done,
+        onItem: onItem,
+        onPlace: onPlace,
+      );
+    }
     final options = step.isOrder
         ? [
             ...selected.map((id) => step.options.firstWhere((o) => o.id == id)),
@@ -195,6 +222,206 @@ class PlantMissionStage extends StatelessWidget {
   );
 }
 
+/// Sort one food on the same workbench instead of displaying thirteen cards.
+/// All mappings remain in the lesson's original state and scoring engine.
+class _FoodCollection extends StatefulWidget {
+  const _FoodCollection({
+    super.key,
+    required this.step,
+    required this.selected,
+    required this.placements,
+    required this.done,
+    required this.onItem,
+    required this.onPlace,
+  });
+  final LessonStep step;
+  final Set<String> selected;
+  final Map<String, String> placements;
+  final bool done;
+  final ValueChanged<String> onItem;
+  final void Function(String, String) onPlace;
+  @override
+  State<_FoodCollection> createState() => _FoodCollectionState();
+}
+
+class _FoodCollectionState extends State<_FoodCollection> {
+  late int index;
+  PictureItem get food => widget.step.options[index];
+  @override
+  void initState() {
+    super.initState();
+    final selected = widget.step.options.indexWhere(
+      (p) => widget.selected.contains(p.id),
+    );
+    final missing = widget.step.options.indexWhere(
+      (p) => !widget.placements.containsKey(p.id),
+    );
+    index = selected >= 0
+        ? selected
+        : missing >= 0
+        ? missing
+        : 0;
+  }
+
+  void move(int next) {
+    setState(() => index = next);
+    if (!widget.done) widget.onItem(food.id);
+  }
+
+  @override
+  Widget build(BuildContext context) => Container(
+    width: double.infinity,
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(24),
+      color: const Color(0xFFE6F0D7),
+      image: const DecorationImage(
+        image: AssetImage('assets/images/greenhouse-v1.webp'),
+        fit: BoxFit.cover,
+        opacity: .15,
+      ),
+    ),
+    child: Column(
+      children: [
+        Row(
+          children: [
+            IconButton(
+              key: const ValueKey('plant-collection-previous'),
+              tooltip: 'Previous food',
+              onPressed: index == 0 ? null : () => move(index - 1),
+              icon: const Icon(Icons.arrow_back_rounded),
+            ),
+            Expanded(
+              child: Text(
+                'Food ${index + 1} / ${widget.step.options.length}',
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 20),
+              ),
+            ),
+            const SizedBox(width: 48),
+          ],
+        ),
+        const SizedBox(height: 8),
+        Draggable<String>(
+          data: food.id,
+          maxSimultaneousDrags: widget.done ? 0 : 1,
+          feedback: Material(
+            borderRadius: BorderRadius.circular(22),
+            child: SizedBox(
+              width: 150,
+              child: PlantMissionPicture(id: food.art, height: 100),
+            ),
+          ),
+          child: Material(
+            color: const Color(0xFFFFFCF4),
+            borderRadius: BorderRadius.circular(22),
+            child: InkWell(
+              key: ValueKey('mission-item-${food.id}'),
+              borderRadius: BorderRadius.circular(22),
+              onTap: widget.done ? null : () => widget.onItem(food.id),
+              child: SizedBox(
+                width: 250,
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Column(
+                    children: [
+                      PlantMissionPicture(id: food.art, height: 170),
+                      Text(
+                        food.label,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.symmetric(vertical: 14),
+          child: Text(
+            'Which part do we eat? Choose a basket.',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 22),
+          ),
+        ),
+        Wrap(
+          spacing: 10,
+          runSpacing: 10,
+          alignment: WrapAlignment.center,
+          children: [
+            for (final target in widget.step.targets)
+              DragTarget<String>(
+                onWillAcceptWithDetails: (details) =>
+                    !widget.done && details.data == food.id,
+                onAcceptWithDetails: (details) =>
+                    widget.onPlace(details.data, target.id),
+                builder: (context, hover, rejected) => Material(
+                  color:
+                      hover.isNotEmpty ||
+                          widget.placements[food.id] == target.id
+                      ? const Color(0xFFE0ECE5)
+                      : const Color(0xFFFFFCF4),
+                  borderRadius: BorderRadius.circular(20),
+                  child: InkWell(
+                    key: ValueKey('mission-target-${target.id}'),
+                    borderRadius: BorderRadius.circular(20),
+                    onTap: widget.done
+                        ? null
+                        : () => widget.onPlace(food.id, target.id),
+                    child: SizedBox(
+                      width: 130,
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Column(
+                          children: [
+                            PlantMissionPicture(id: target.art, height: 64),
+                            Text(
+                              target.label,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(fontSize: 22),
+                            ),
+                            if (widget.placements[food.id] == target.id)
+                              const Icon(
+                                Icons.radio_button_checked,
+                                color: Color(0xFF356D75),
+                              )
+                            else if (!widget.done)
+                              const TouchCue(),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
+        const SizedBox(height: 16),
+        if (index + 1 < widget.step.options.length)
+          FilledButton.icon(
+            key: const ValueKey('plant-collection-next'),
+            onPressed: !widget.placements.containsKey(food.id) && !widget.done
+                ? null
+                : () => move(index + 1),
+            icon: const Icon(Icons.arrow_forward_rounded),
+            label: const Text('Next food'),
+          )
+        else if (widget.placements.containsKey(food.id))
+          const Text(
+            'Check your food collection below.',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 20),
+          ),
+      ],
+    ),
+  );
+}
+
 class PlantMissionPicture extends StatelessWidget {
   const PlantMissionPicture({super.key, required this.id, this.height = 140});
   final String id;
@@ -220,10 +447,16 @@ class PlantMissionPicture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (const ['toys', 'paper', 'wind', 'dry_and_drooping'].contains(id)) {
+      final illustration = illustrationFor(id);
       return SizedBox(
         height: height,
         width: double.infinity,
-        child: CustomPaint(painter: WorkshopArt(id)),
+        child: illustration == null
+            ? CustomPaint(painter: WorkshopArt(id))
+            : IllustratedArt(
+                asset: illustration.asset,
+                crop: illustration.crop,
+              ),
       );
     }
     String asset = 'plant-foods-v1.webp';

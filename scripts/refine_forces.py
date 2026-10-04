@@ -27,14 +27,25 @@ def refine_forces(book):
                 'check':'Check my practice',
             }
         if number==1:
-            s['prompt']='Touch a hand. Watch how things move.'
+            s['title']='The movement garden'
+            s['prompt']='Explore the garden. Tap a hand to see what moves.'
             s['senseDescriptions']=descriptions
-            s['forceScene']['instruction']='Explore every movement. You can watch each one again.'
+            s['forceScene']['instruction']=''
+            s['forceScene'].update({
+                'gardenProgress':'Discoveries',
+                'gardenSpots':{'gate':'Gate', 'lawn':'Lawn', 'pond':'Pond'},
+                'gardenStories':{
+                    'gate':'Our garden visit begins at the gate. Try a push and a pull.',
+                    'lawn':'Our friends are playing on the lawn. Tap them to watch.',
+                    'pond':'Who is moving by the pond? Tap a friend to find out.',
+                },
+                'gardenPush':'Push', 'gardenPull':'Pull',
+            })
             s['motions']={k:k for k in descriptions}
         if number==2:
-            s['prompt']='Move the trolley. Compare two pushes on the ball.'
+            s['prompt']="Let's move one thing at a time."
             s['labUi'].update({
-                'you':'You', 'push':'Push away', 'pull':'Pull closer',
+                'you':'You',
                 'moveStage':'Move the trolley', 'compareStage':'Compare two pushes',
                 'instruction':'Drag the trolley away from you and back, or use the buttons.',
                 'compare':'Start the same ball in the same place. Try both pushes.',
@@ -43,6 +54,20 @@ def refine_forces(book):
                 'progress':'Moves explored', 'pushProgress':'Pushes compared',
                 'prediction':'Which push will send the ball further?',
                 'test':'Try this push',
+                'push':'Push the trolley', 'pull':'Pull the trolley',
+                'stepCount':'Step', 'previousStep':'Previous step', 'nextStep':'Next step',
+                'yourGuess':'Your guess', 'rollAgain':'Roll the ball again',
+                'pushDone':'You pushed it away. Now try a pull.',
+                'pullDone':'You pulled it back. Now try the ball.',
+                'gentleDone':'Watch where the ball stopped. Now try a bigger push.',
+                'guideInstructions':{
+                    'push':'Push the trolley to the flag.', 'pull':'Pull the trolley back to the flag.',
+                    'guess':'Which push will roll the ball farther?',
+                    'gentle':'Try a gentle push.', 'strong':'Try a bigger push.',
+                    'done':'The bigger push rolled the ball farther.',
+                },
+                'nextActions':{'push':'Now pull', 'pull':'Try the ball',
+                    'guess':'Try the pushes', 'gentle':'Try a bigger push'},
             })
         if number==3:
             s['title']='Trolley directions'
@@ -71,7 +96,17 @@ def refine_forces(book):
         if number==13:
             s['title']='Finish the movement trail'
             s['prompt']='Use your experiments to solve five discoveries.'
-            s['forceScene']['instruction']='Touch a discovery, then choose its answer.'
+            s['forceScene'].update({
+                'instruction':'Try one discovery at a time. Use the numbers to go back.',
+                'mission':'Discovery', 'yourAnswer':'Your choice', 'nextMission':'Next discovery',
+                'missions':{
+                    'a_push_sends_it':'Where does a push send an object?',
+                    'how_a_snake_moves':'How does a snake move?',
+                    'ring_a_doorbell':'Which force rings a doorbell?',
+                    'sinks_in_water':'Which object sinks in water?',
+                    'send_the_ball_further':'Which push sends the ball farther?',
+                },
+            })
             for o in s['options']:
                 if o['id']=='sinks_in_water': o['art']='tank_question'
             s['explanation']='A push sends an object away. A metal coin sinks. A snake slithers. A bigger push sends the ball further. Ringing a doorbell uses a push.'
@@ -84,6 +119,9 @@ def refine_forces(book):
                 'retry':'Look at the object in the water. Where did it stop?',
                 'complete':'You noticed what happened! Keep exploring.',
             }
+
+    from child_feedback import apply_child_feedback
+    apply_child_feedback(book)
 
 if __name__=='__main__':
     path=Path(__file__).resolve().parents[1]/'assets/content/playable/unit_05.json'

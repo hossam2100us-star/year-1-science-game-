@@ -1,11 +1,13 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 
 import '../../content/lesson.dart';
 import '../../core/touch_cue.dart';
 import 'force_picture.dart';
 import 'force_object.dart';
+import 'force_trolley_scene.dart';
+import 'force_discovery.dart';
+import 'force_motion.dart';
+export 'force_motion.dart';
 
 /// Scene positions and movement demonstrations never consult the answer key.
 class ForceStage extends StatefulWidget {
@@ -18,12 +20,14 @@ class ForceStage extends StatefulWidget {
     required this.onItem,
     required this.onPlace,
     this.reviewItems = const {},
+    this.onSpeak,
   });
   final LessonStep step;
   final Set<String> selected, reviewItems;
   final Map<String, String> placements;
   final bool done;
   final ValueChanged<String> onItem;
+  final ValueChanged<String>? onSpeak;
   final void Function(String, String) onPlace;
   @override
   State<ForceStage> createState() => _ForceStageState();
@@ -32,13 +36,25 @@ class ForceStage extends StatefulWidget {
 class _ForceStageState extends State<ForceStage> {
   int pulse = 0;
   String? movingItem;
+  String? focused;
   LessonStep get step => widget.step;
   Map get ui => step.json['forceScene'];
+  @override
+  void didUpdateWidget(covariant ForceStage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.step.id != widget.step.id) {
+      movingItem = null;
+      focused = null;
+      pulse = 0;
+    }
+  }
+
   void choose(String id) {
     if (widget.done) return;
     setState(() {
       pulse++;
       movingItem = id;
+      focused = id;
     });
     widget.onItem(id);
   }
@@ -78,6 +94,7 @@ class _ForceStageState extends State<ForceStage> {
             Container(
               height: size + 40,
               width: size + 55,
+              clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
                 color: Colors.transparent,
                 borderRadius: BorderRadius.circular(22),
@@ -134,69 +151,41 @@ class _ForceStageState extends State<ForceStage> {
     );
   }
 
-  Widget board() => LayoutBuilder(
+  Widget board({List<PictureItem>? items}) => LayoutBuilder(
     builder: (context, box) {
       final mode = ui['mode'];
-      final count = step.options.length;
-      final columns = count > 6
+      final pictures = items ?? step.options;
+      final count = pictures.length;
+      final available = box.maxWidth - 24;
+      final columns = available < 270
+          ? 1
+          : available < 540
+          ? 2
+          : count > 6
           ? 4
           : count > 2
           ? 3
           : 2;
-      final rows = (count / columns).ceil();
-      final cell = box.maxWidth / columns;
-      final size = (cell * .48).clamp(60.0, 118.0);
-      final height = rows * 210.0;
-      const movement = [
-        Offset(.02, .07),
-        Offset(.28, .71),
-        Offset(.52, .92),
-        Offset(.82, .78),
-        Offset(.02, .8),
-        Offset(.62, 0),
-        Offset(.29, .03),
-        Offset(.84, .07),
-      ];
-      const animals = [
-        Offset(.02, .76),
-        Offset(.48, .87),
-        Offset(.82, .7),
-        Offset(.8, 0),
-        Offset(.27, .02),
-      ];
-      final locations = mode == 'movement'
-          ? movement
-          : mode == 'animals'
-          ? animals
-          : null;
+      final cell = (available - (columns - 1) * 12) / columns;
+      // The old fixed three-column scene let pictures and hitboxes overlap on
+      // phones. Give every object its own flowing cell, including larger text.
+      final size = (cell - 55).clamp(44.0, 118.0);
       return ClipRRect(
         borderRadius: BorderRadius.circular(28),
-        child: SizedBox(
-          height: height,
-          width: box.maxWidth,
-          child: CustomPaint(
-            painter: _ForceBackdrop(mode),
-            child: Stack(
+        child: CustomPaint(
+          painter: _ForceBackdrop(mode),
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 12,
+              runSpacing: 20,
               children: [
-                for (var i = 0; i < count; i++)
-                  Positioned(
-                    left: locations == null
-                        ? (i % columns) * cell
-                        : locations[i].dx * (box.maxWidth - cell),
-                    top: locations == null
-                        ? (i ~/ columns) * 210.0 + 10
-                        : locations[i].dy * (height - 185),
+                for (final picture in pictures)
+                  SizedBox(
                     width: cell,
                     child: Center(
-                      child: object(
-                        step.options[i],
-                        size: size,
-                        label:
-                            mode == 'direction' ||
-                            (mode == 'movement' &&
-                                widget.selected.lastOrNull ==
-                                    step.options[i].id),
-                      ),
+                      child: object(picture, size: size, label: false),
                     ),
                   ),
               ],
@@ -206,6 +195,76 @@ class _ForceStageState extends State<ForceStage> {
       );
     },
   );
+  Widget trolley(PictureItem item, {bool label = true}) => InkWell(
+    key: ValueKey('science-item-${item.id}'),
+    onTap: widget.done ? null : () => choose(item.id),
+    borderRadius: BorderRadius.circular(24),
+    child: Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFFE2EFEA),
+        borderRadius: BorderRadius.circular(24),
+      ),
+      padding: const EdgeInsets.all(12),
+      child: Column(
+        children: [
+          ForceTrolleyScene(
+            key: ValueKey(
+              'trolley-${item.id}-${movingItem == item.id ? pulse : 0}',
+            ),
+            motion: step.json['motions'][item.id],
+            active: movingItem == item.id,
+            you: ui['you'],
+            showAction: !step.assessed,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (label)
+                Flexible(
+                  child: Text(
+                    item.label,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              if (!widget.done) ...[const SizedBox(width: 12), cue(item.id)],
+            ],
+          ),
+          if (step.isMapping)
+            SizedBox(
+              height: 52,
+              child: Text(
+                widget.placements.containsKey(item.id)
+                    ? step.label(widget.placements[item.id]!)
+                    : '',
+                style: const TextStyle(fontSize: 18),
+              ),
+            ),
+        ],
+      ),
+    ),
+  );
+  Widget trolleyBoard() => LayoutBuilder(
+    builder: (context, box) => Wrap(
+      spacing: 16,
+      runSpacing: 16,
+      children: [
+        for (final item in step.options.where(
+          (p) =>
+              step.json['motions']?[p.id] == 'push' ||
+              step.json['motions']?[p.id] == 'pull',
+        ))
+          SizedBox(
+            width: box.maxWidth >= 720 ? (box.maxWidth - 16) / 2 : box.maxWidth,
+            child: trolley(item),
+          ),
+      ],
+    ),
+  );
+
   Widget tankTarget(PictureItem target) => DragTarget<String>(
     onWillAcceptWithDetails: (d) =>
         !widget.done && step.options.any((p) => p.id == d.data),
@@ -261,7 +320,7 @@ class _ForceStageState extends State<ForceStage> {
       ),
     ),
   );
-  Widget targets() => Wrap(
+  Widget targets({String? item}) => Wrap(
     alignment: WrapAlignment.center,
     spacing: 12,
     runSpacing: 12,
@@ -271,9 +330,9 @@ class _ForceStageState extends State<ForceStage> {
           width: 180,
           child: FilledButton.tonal(
             key: ValueKey('science-target-${p.id}'),
-            onPressed: widget.done || widget.selected.isEmpty
+            onPressed: widget.done || (item == null && widget.selected.isEmpty)
                 ? null
-                : () => widget.onPlace(widget.selected.first, p.id),
+                : () => widget.onPlace(item ?? widget.selected.first, p.id),
             style: FilledButton.styleFrom(
               padding: const EdgeInsets.all(16),
               textStyle: const TextStyle(fontFamily: 'Nunito', fontSize: 22),
@@ -283,30 +342,125 @@ class _ForceStageState extends State<ForceStage> {
         ),
     ],
   );
+
+  Widget discoveries() {
+    final id = focused ?? widget.selected.firstOrNull ?? step.options.first.id;
+    final index = step.options.indexWhere((item) => item.id == id);
+    final question = step.options[index];
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF3E7D4),
+        borderRadius: BorderRadius.circular(28),
+      ),
+      child: Column(
+        children: [
+          Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (var i = 0; i < step.options.length; i++)
+                OutlinedButton(
+                  key: ValueKey('science-item-${step.options[i].id}'),
+                  onPressed: () => widget.done
+                      ? setState(() => focused = step.options[i].id)
+                      : choose(step.options[i].id),
+                  style: OutlinedButton.styleFrom(
+                    minimumSize: const Size(48, 52),
+                    backgroundColor: id == step.options[i].id
+                        ? const Color(0xFFDCE8E7)
+                        : const Color(0xFFFAF3E6),
+                  ),
+                  child: Text(
+                    '${i + 1}${widget.reviewItems.contains(step.options[i].id)
+                        ? ' ?'
+                        : widget.placements.containsKey(step.options[i].id)
+                        ? ' ✓'
+                        : ''}',
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                ),
+            ],
+          ),
+          const SizedBox(height: 14),
+          Text(
+            '${ui['mission']} ${index + 1} / ${step.options.length}',
+            style: const TextStyle(fontSize: 19),
+          ),
+          const SizedBox(height: 14),
+          if (question.art == 'tank_question')
+            const Icon(Icons.water_rounded, size: 100, color: Color(0xFF6B9DAC))
+          else
+            ForcePicture(
+              question.art == 'push' ? 'trolley' : question.art,
+              height: 150,
+            ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: Text(
+              ui['missions']?[id] ?? question.label,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+            ),
+          ),
+          if (widget.placements.containsKey(id))
+            Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: Text(
+                '${ui['yourAnswer']}: ${step.label(widget.placements[id]!)}',
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 19),
+              ),
+            ),
+          targets(item: id),
+          if (index < step.options.length - 1) ...[
+            const SizedBox(height: 12),
+            TextButton.icon(
+              key: const ValueKey('force-next-mission'),
+              onPressed: () => widget.done
+                  ? setState(() => focused = step.options[index + 1].id)
+                  : choose(step.options[index + 1].id),
+              icon: const Icon(Icons.arrow_forward_rounded),
+              label: Text(
+                ui['nextMission'],
+                style: const TextStyle(fontSize: 20),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final mode = ui['mode'];
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(12),
-          child: Text(
-            ui['instruction'],
-            textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 20),
-          ),
-        ),
-        if (mode == 'direction')
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Row(
-              children: [
-                const Icon(Icons.person_outline_rounded, size: 36),
-                Text(ui['you']),
-              ],
+        if (mode != 'movement')
+          Padding(
+            padding: const EdgeInsets.all(12),
+            child: Text(
+              ui['instruction'],
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 20),
             ),
           ),
-        if (mode == 'boat') ...[
+        if (mode == 'movement')
+          ForceDiscovery(
+            key: ValueKey(step.id),
+            step: step,
+            seen: widget.selected,
+            onItem: widget.onItem,
+            onSpeak: widget.onSpeak,
+          )
+        else if (mode == 'direction')
+          trolleyBoard()
+        else if (mode == 'discoveries')
+          discoveries()
+        else if (mode == 'boat') ...[
           Container(
             width: double.infinity,
             height: 220,
@@ -360,7 +514,7 @@ class _ForceStageState extends State<ForceStage> {
           ),
         ] else
           board(),
-        if (step.isMapping && mode != 'tank') ...[
+        if (step.isMapping && mode != 'tank' && mode != 'discoveries') ...[
           SizedBox(
             height: 72,
             child: Center(
@@ -389,49 +543,6 @@ class _ForceStageState extends State<ForceStage> {
       ],
     );
   }
-}
-
-class MovementSprite extends StatelessWidget {
-  const MovementSprite({
-    super.key,
-    required this.art,
-    required this.motion,
-    required this.active,
-    required this.size,
-  });
-  final String art;
-  final String? motion;
-  final bool active;
-  final double size;
-  @override
-  Widget build(BuildContext context) => TweenAnimationBuilder<double>(
-    tween: Tween(begin: 0, end: active ? 1 : 0),
-    duration: MediaQuery.disableAnimationsOf(context)
-        ? Duration.zero
-        : const Duration(milliseconds: 2400),
-    builder: (context, value, _) {
-      // Reduced motion shows the neutral pose; animation never hints an answer.
-      final t = active && !MediaQuery.disableAnimationsOf(context)
-          ? value
-          : 0.0;
-      final travel = Curves.easeInOutSine.transform(t);
-      final phase = t * math.pi * 6;
-      final hop = math.sin(t * math.pi * 3).abs();
-      final offset = switch (motion) {
-        'push' => Offset(36 * travel, 0),
-        'pull' => Offset(-36 * travel, 0),
-        'hop' => Offset(30 * travel, -27 * hop),
-        'fly' => Offset(34 * travel, -12 * math.sin(t * math.pi)),
-        'swim' => Offset(30 * travel, 3 * math.sin(phase)),
-        'crawl' || 'slither' || 'roll' => Offset(30 * travel, 0),
-        _ => Offset.zero,
-      };
-      return Transform.translate(
-        offset: offset,
-        child: ForcePicture(art, height: size, phase: phase),
-      );
-    },
-  );
 }
 
 class _ForceBackdrop extends CustomPainter {

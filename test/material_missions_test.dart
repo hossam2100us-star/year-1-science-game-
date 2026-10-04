@@ -12,6 +12,8 @@ import 'package:science_adventure/core/storage.dart';
 import 'package:science_adventure/features/biology/lesson_player.dart';
 import 'package:science_adventure/features/biology/session.dart';
 import 'package:science_adventure/features/science/science_lab.dart';
+import 'package:science_adventure/features/science/material_workshop.dart';
+import 'package:science_adventure/features/science/science_picture.dart';
 
 import 'setup_screen_test.dart' as helpers;
 
@@ -30,8 +32,8 @@ void main() {
       'MaterialIcons',
     )..addFont(rootBundle.load('fonts/MaterialIcons-Regular.otf'))).load();
     for (final file in [
-      'materials-atlas-v1.webp',
-      'science-details-v1.webp',
+      'materials-atlas-v2.png',
+      'science-details-v2.png',
       'physics-atlas-v1.webp',
     ]) {
       await Flame.images.load(file);
@@ -79,6 +81,75 @@ void main() {
             .writeAsBytes(bytes!.buffer.asUint8List());
         image.dispose();
       });
+
+  testWidgets(
+    'Object and material pairs show both examples named by the question',
+    (t) async {
+      size(t, const Size(1280, 1000));
+      final store = startAt(1), step = lesson.steps[1];
+      await helpers.mount(t, LessonPlayer(lesson: lesson), store);
+      final expected = [
+        ['spoon', 'chair'],
+        ['metal', 'wood'],
+      ];
+      for (var i = 0; i < step.options.length; i++) {
+        final pictures = find.descendant(
+          of: find.byKey(ValueKey('science-item-${step.options[i].id}')),
+          matching: find.byType(SciencePicture),
+        );
+        expect(
+          t.widgetList<SciencePicture>(pictures).map((p) => p.art),
+          expected[i],
+        );
+      }
+      expect(current(store)['placements'] as Map? ?? const {}, isEmpty);
+      expect(current(store)['outcome'], isNull);
+      expect(t.takeException(), isNull);
+    },
+  );
+
+  testWidgets(
+    'Every material room touch area stays separate and inside the phone scene',
+    (t) async {
+      size(t, const Size(360, 740));
+      for (final index in [0, 12]) {
+        await helpers.mount(
+          t,
+          LessonPlayer(lesson: lesson),
+          startAt(index),
+          scale: 1.5,
+        );
+        final scene = t.getRect(
+          find
+              .descendant(
+                of: find.byType(MaterialWorkshop),
+                matching: find.byType(ClipRRect),
+              )
+              .first,
+        );
+        final touchAreas = <Rect>[];
+        for (final item in lesson.steps[index].options) {
+          final area = t.getRect(
+            find.byKey(ValueKey('science-item-${item.id}')),
+          );
+          expect(area.width, greaterThanOrEqualTo(48));
+          expect(area.height, greaterThanOrEqualTo(48));
+          expect(scene.contains(area.topLeft), true, reason: item.id);
+          expect(
+            scene.contains(area.bottomRight - const Offset(.1, .1)),
+            true,
+            reason: item.id,
+          );
+          for (final other in touchAreas) {
+            expect(area.overlaps(other), false, reason: item.id);
+          }
+          touchAreas.add(area);
+        }
+        expect(t.takeException(), isNull);
+        await t.pumpWidget(const SizedBox());
+      }
+    },
+  );
 
   testWidgets(
     'Rain kit supports dragging, removal, restart and guided correction',

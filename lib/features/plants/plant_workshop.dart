@@ -352,33 +352,89 @@ class WorkshopArt extends CustomPainter {
           Paint()
             ..color = const Color(0xFF68A9C1)
             ..style = PaintingStyle.stroke
-            ..strokeWidth = 8
+            ..strokeWidth = 5
             ..strokeCap = StrokeCap.round,
         );
       }
+      // Leaves make the flowing air understandable without an answer arrow.
+      for (final leaf in [
+        const Rect.fromLTWH(102, 78, 31, 17),
+        const Rect.fromLTWH(138, 109, 25, 15),
+      ]) {
+        c.drawPath(
+          Path()
+            ..moveTo(leaf.left, leaf.bottom)
+            ..quadraticBezierTo(leaf.left, leaf.top, leaf.right, leaf.top)
+            ..quadraticBezierTo(leaf.right, leaf.bottom, leaf.left, leaf.bottom)
+            ..close(),
+          Paint()..color = const Color(0xFF82AA67),
+        );
+        line([leaf.bottomLeft, leaf.topRight], const Color(0xFF56844C), 1.5);
+      }
     } else if (id == 'dry_and_drooping') {
-      box(const Rect.fromLTWH(63, 98, 61, 33), const Color(0xFFCE8958));
-      line(
-        [
-          const Offset(94, 101),
-          const Offset(90, 49),
-          const Offset(113, 40),
-          const Offset(130, 59),
-        ],
-        const Color(0xFF927340),
-        7,
+      c.drawPath(
+        Path()
+          ..moveTo(56, 103)
+          ..lineTo(132, 103)
+          ..lineTo(123, 137)
+          ..lineTo(65, 137)
+          ..close(),
+        Paint()
+          ..shader = const LinearGradient(
+            colors: [Color(0xFFD7A078), Color(0xFFAF6443)],
+          ).createShader(const Rect.fromLTWH(56, 103, 76, 34)),
       );
-      oval(const Rect.fromLTWH(120, 52, 19, 36), const Color(0xFFAC8343));
+      oval(const Rect.fromLTWH(56, 95, 76, 17), const Color(0xFFC4835C));
+      oval(const Rect.fromLTWH(62, 97, 64, 10), const Color(0xFF765936));
       line(
-        [const Offset(91, 67), const Offset(65, 66), const Offset(54, 85)],
-        const Color(0xFF927340),
-        5,
+        [const Offset(73, 102), const Offset(81, 100), const Offset(85, 105)],
+        const Color(0xFFB89869),
+        1.5,
       );
-      oval(const Rect.fromLTWH(46, 79, 19, 33), const Color(0xFFAA7844));
+      c.drawPath(
+        Path()
+          ..moveTo(93, 101)
+          ..cubicTo(86, 74, 86, 32, 108, 28)
+          ..cubicTo(127, 23, 145, 47, 146, 67),
+        Paint()
+          ..color = const Color(0xFF8E814B)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 5
+          ..strokeCap = StrokeCap.round,
+      );
+      c.drawPath(
+        Path()
+          ..moveTo(146, 62)
+          ..cubicTo(160, 71, 156, 91, 144, 100)
+          ..cubicTo(136, 85, 134, 72, 146, 62)
+          ..close(),
+        Paint()..color = const Color(0xFFAE985B),
+      );
+      c.drawPath(
+        Path()
+          ..moveTo(90, 59)
+          ..cubicTo(65, 47, 52, 71, 54, 94)
+          ..cubicTo(74, 82, 84, 74, 90, 59)
+          ..close(),
+        Paint()..color = const Color(0xFFB5A46E),
+      );
+      c.drawPath(
+        Path()
+          ..moveTo(92, 77)
+          ..cubicTo(112, 66, 126, 87, 120, 109)
+          ..cubicTo(109, 98, 100, 91, 92, 77)
+          ..close(),
+        Paint()..color = const Color(0xFFB6A25C),
+      );
       line(
-        [const Offset(90, 84), const Offset(108, 85), const Offset(116, 97)],
-        const Color(0xFF927340),
-        4,
+        [const Offset(90, 59), const Offset(68, 73), const Offset(54, 94)],
+        const Color(0xFF907545),
+        1.5,
+      );
+      line(
+        [const Offset(92, 77), const Offset(109, 89), const Offset(120, 109)],
+        const Color(0xFF907545),
+        1.5,
       );
     } else if (id == 'stem') {
       // Stretch to join the assembled flower, leaves and roots.

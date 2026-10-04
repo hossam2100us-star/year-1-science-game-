@@ -6,6 +6,7 @@ import 'science_picture.dart';
 import 'material_workshop.dart';
 import 'force_stage.dart';
 import 'sound_stage.dart';
+import 'science_world_stage.dart';
 
 class ScienceStage extends StatelessWidget {
   const ScienceStage({
@@ -150,6 +151,7 @@ class ScienceStage extends StatelessWidget {
           reviewItems: reviewItems,
           onItem: onItem,
           onPlace: onPlace,
+          onSpeak: onSpeak,
         )
       : step.json['workshop'] != null
       ? MaterialWorkshop(
@@ -160,6 +162,22 @@ class ScienceStage extends StatelessWidget {
           reviewItems: reviewItems,
           onItem: onItem,
           onPlace: onPlace,
+        )
+      : ['unit_07', 'unit_08', 'unit_09'].contains(step.json['theme']) ||
+            step.json['quizContext'] != null
+      ? ScienceWorldStage(
+          key: ValueKey('world-${step.id}'),
+          step: step,
+          selected: selected,
+          placements: placements,
+          done: done,
+          reviewItems: reviewItems,
+          onItem: onItem,
+          onPlace: onPlace,
+          onSpeak: onSpeak,
+          onSound: onSound,
+          onOrder: onOrder,
+          onOrderPlacements: onOrderPlacements,
         )
       : Container(
           width: double.infinity,

@@ -486,7 +486,7 @@
       "assessed": true,
       "objective": "u03.main.03",
       "hint": "Find the hairs above the eye, the hairs along its edge, and the part that closes.",
-      "explanation": "The three parts are eyebrow, eyelash and eyelid.",
+      "explanation": "Your eyebrows, eyelashes and eyelids help protect your eyes.",
       "scene": "eye",
       "section": "Challenge",
       "source": {
@@ -600,7 +600,7 @@
       "assessed": true,
       "objective": "u03.main.01",
       "hint": "Think about the body part you use for each discovery.",
-      "explanation": "Sight: eyes. Hearing: ears. Smell: nose. Taste: tongue. Touch: skin.",
+      "explanation": "We see with our eyes and hear with our ears. We smell with our nose, taste with our tongue and feel with our skin.",
       "scene": "body",
       "section": "Challenge",
       "source": {
@@ -663,6 +663,33 @@
         ],
         "u03.choice.01": [
           "hearing"
+        ]
+      },
+      "discoveryChoices": {
+        "sight": [
+          "nose",
+          "eyes",
+          "ears"
+        ],
+        "smell": [
+          "tongue",
+          "eyes",
+          "nose"
+        ],
+        "touch": [
+          "ears",
+          "skin",
+          "tongue"
+        ],
+        "hearing": [
+          "skin",
+          "ears",
+          "eyes"
+        ],
+        "taste": [
+          "tongue",
+          "nose",
+          "skin"
         ]
       }
     },
@@ -798,7 +825,59 @@
         [
           "unit_03.step.042"
         ]
-      ]
+      ],
+      "discoveryChoices": {
+        "see_birds": [
+          "smell",
+          "hearing",
+          "sight"
+        ],
+        "soft_cat": [
+          "touch",
+          "sight",
+          "taste"
+        ],
+        "smell_flowers": [
+          "hearing",
+          "smell",
+          "touch"
+        ],
+        "example_26": [
+          "smell",
+          "taste",
+          "sight"
+        ],
+        "example_28": [
+          "hearing",
+          "smell",
+          "touch"
+        ],
+        "hear_music": [
+          "hearing",
+          "sight",
+          "smell"
+        ],
+        "sweet_honey": [
+          "sight",
+          "touch",
+          "taste"
+        ],
+        "example_25": [
+          "smell",
+          "taste",
+          "hearing"
+        ],
+        "example_27": [
+          "touch",
+          "hearing",
+          "taste"
+        ],
+        "example_29": [
+          "taste",
+          "touch",
+          "sight"
+        ]
+      }
     },
     {
       "id": "unit_03.step.030",
@@ -845,7 +924,7 @@
       "assessed": false,
       "objective": "",
       "hint": "The book names four senses together.",
-      "explanation": "Sight, smell, touch and taste all together!",
+      "explanation": "We can see, smell, touch and taste the watermelon.",
       "scene": "body",
       "section": "Explore",
       "source": {
@@ -1052,7 +1131,7 @@
       "assessed": true,
       "objective": "u03.main.02",
       "hint": "Think about how each sense helps: listening, looking, smelling, tasting or feeling.",
-      "explanation": "We have five senses. Taste buds are on the tongue. Smell and taste work together. Sweet, sour and salty are tastes.",
+      "explanation": "We have five senses. Taste buds on our tongue help us taste. Holding our nose makes food harder to taste. Sweet, sour and salty are tastes.",
       "scene": "body",
       "section": "Challenge",
       "source": {
@@ -1163,6 +1242,31 @@
         "u03.choice.03": [
           "count"
         ]
+      },
+      "questionWithoutArt": [
+        "count"
+      ],
+      "discoveryChoices": {
+        "count": [
+          "ten",
+          "ears",
+          "five"
+        ],
+        "apple_helper": [
+          "sweet",
+          "nose",
+          "ears"
+        ],
+        "tongue_job": [
+          "nose",
+          "taste_buds",
+          "ears"
+        ],
+        "taste_word": [
+          "loud",
+          "sweet",
+          "five"
+        ]
       }
     },
     {
@@ -1266,7 +1370,7 @@
       "assessed": true,
       "objective": "u03.main.07",
       "hint": "Think about the flavour of the apple and its smell.",
-      "explanation": "Taste and smell work together. If you hold your nose you can hardly taste the apple at all.",
+      "explanation": "Taste and smell work together. Holding your nose makes the apple harder to taste.",
       "scene": "body",
       "section": "Challenge",
       "source": {
@@ -1451,6 +1555,18 @@
         ],
         "u03.choice.05": [
           "arm_joint"
+        ]
+      },
+      "discoveryChoices": {
+        "dust_guard": [
+          "eyelash",
+          "nose",
+          "knee"
+        ],
+        "arm_joint": [
+          "knee",
+          "elbow",
+          "eyelash"
         ]
       }
     }

@@ -147,6 +147,9 @@ def refine_teacher_review(book):
         if s['id'] == 'quiz_02.step.005' and len(s['options']) == 2:
             s['options'].insert(1, {'id': 'hard_and_fluffy', 'label': 'Hard and fluffy', 'art': 'hard_and_fluffy'})
 
+    from child_feedback import apply_child_feedback
+    apply_child_feedback(book)
+
 if __name__ == '__main__':
     for path in (Path(__file__).resolve().parents[1] / 'assets/content/playable').glob('*.json'):
         book = json.loads(path.read_text(encoding='utf-8'))

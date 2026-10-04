@@ -47,7 +47,7 @@ class _PlantLabStageState extends State<PlantLabStage> {
   }
 
   void _sync() {
-    game.activePart = active;
+    game.activePart = widget.step.assessed ? null : active;
     game.assembling = puzzle || freeBuild;
     game.discovered = freeBuild
         ? widget.touched
@@ -75,7 +75,7 @@ class _PlantLabStageState extends State<PlantLabStage> {
           .firstOrNull;
       if (item == null) return;
       widget.onItem(item.id);
-      game.animatePart(part);
+      if (!widget.step.assessed) game.animatePart(part);
     }
   }
 

@@ -26,6 +26,21 @@ class MaterialWorkshop extends StatelessWidget {
   final ValueChanged<String> onItem;
   final void Function(String, String) onPlace;
   Map get ui => step.json['workshop'];
+  Widget picture(PictureItem item, double size) {
+    final examples = (ui['pairedExamples'] as Map?)?[item.id] as List?;
+    if (examples != null) {
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          for (final art in examples)
+            SciencePicture(art as String, height: size * .48),
+        ],
+      );
+    }
+    return SciencePicture(item.art, height: size);
+  }
+
   Widget cue(String id) => reviewItems.contains(id)
       ? Semantics(
           key: ValueKey('review-item-$id'),
@@ -62,30 +77,33 @@ class MaterialWorkshop extends StatelessWidget {
                     : null,
               ),
               child: item.art == 'stretch_mission'
-                  ? const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.back_hand_outlined,
-                          size: 34,
-                          color: Color(0xFF6B8E85),
-                        ),
-                        RotatedBox(
-                          quarterTurns: 1,
-                          child: Icon(
-                            Icons.unfold_more_rounded,
-                            size: 32,
+                  ? const FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.back_hand_outlined,
+                            size: 34,
                             color: Color(0xFF6B8E85),
                           ),
-                        ),
-                        Icon(
-                          Icons.back_hand_outlined,
-                          size: 34,
-                          color: Color(0xFF6B8E85),
-                        ),
-                      ],
+                          RotatedBox(
+                            quarterTurns: 1,
+                            child: Icon(
+                              Icons.unfold_more_rounded,
+                              size: 32,
+                              color: Color(0xFF6B8E85),
+                            ),
+                          ),
+                          Icon(
+                            Icons.back_hand_outlined,
+                            size: 34,
+                            color: Color(0xFF6B8E85),
+                          ),
+                        ],
+                      ),
                     )
-                  : SciencePicture(item.art, height: size),
+                  : picture(item, size),
             ),
             if (!done) Positioned(right: 0, bottom: 0, child: cue(item.id)),
           ],
@@ -115,10 +133,7 @@ class MaterialWorkshop extends StatelessWidget {
           ? 1
           : 0,
       onDragStarted: step.isMapping ? () => onItem(item.id) : null,
-      feedback: Material(
-        color: Colors.transparent,
-        child: SciencePicture(item.art, height: 110),
-      ),
+      feedback: Material(color: Colors.transparent, child: picture(item, 110)),
       child: InkWell(
         key: ValueKey('science-item-${item.id}'),
         onTap: done ? null : () => onItem(item.id),
@@ -159,7 +174,10 @@ class MaterialWorkshop extends StatelessWidget {
                       ],
                     ),
                   if (!objects) ...[
-                    SciencePicture(ui['focus'] ?? 'spoon', height: 175),
+                    if (ui['focus'] == 'window')
+                      const MaterialContext('window')
+                    else
+                      SciencePicture(ui['focus'] ?? 'spoon', height: 175),
                     const SizedBox(height: 18),
                     Wrap(
                       spacing: 12,
@@ -225,6 +243,17 @@ class MaterialWorkshop extends StatelessWidget {
       'paper': Offset(.48, .66),
     };
     final itemSize = (width * .13).clamp(65.0, 130.0);
+    final itemWidth = itemSize * 1.3;
+    final narrow = width < 560;
+    final narrowLocations = <String, Offset>{
+      'glass': const Offset(.02, .02),
+      'fabric': const Offset(.98, .02),
+      'metal': const Offset(.02, .25),
+      'plastic': const Offset(.98, .25),
+      'clay': const Offset(.98, .48),
+      'wood': const Offset(.02, .48),
+      'paper': const Offset(.50, .71),
+    };
     return ClipRRect(
       borderRadius: BorderRadius.circular(26),
       child: SizedBox(
@@ -236,8 +265,14 @@ class MaterialWorkshop extends StatelessWidget {
             children: [
               for (final item in step.options)
                 Positioned(
-                  left: width * locations[item.id]!.dx,
-                  top: 500 * locations[item.id]!.dy,
+                  left: narrow
+                      ? (width - itemWidth) * narrowLocations[item.id]!.dx
+                      : (width * locations[item.id]!.dx).clamp(
+                          0.0,
+                          width - itemWidth,
+                        ),
+                  top:
+                      500 * (narrow ? narrowLocations : locations)[item.id]!.dy,
                   child: object(item, size: itemSize, label: false),
                 ),
             ],
@@ -298,10 +333,11 @@ class MaterialWorkshop extends StatelessWidget {
                   for (final item in step.options.where(
                     (o) => placements[o.id] == target.id,
                   ))
-                    SciencePicture(item.art, height: 44),
+                    picture(item, 44),
                 ],
               ),
-              if (!done) const TouchCue(),
+              if (!done && (selected.isNotEmpty || candidates.isNotEmpty))
+                const TouchCue(),
             ],
           ),
         ),
@@ -492,6 +528,8 @@ class MaterialWorkshop extends StatelessWidget {
         Offset(.05, .47),
       ];
       final size = (box.maxWidth * .14).clamp(58.0, 110.0);
+      final itemWidth = size * 1.35;
+      final narrow = box.maxWidth < 560;
       return ClipRRect(
         borderRadius: BorderRadius.circular(26),
         child: SizedBox(
@@ -503,8 +541,13 @@ class MaterialWorkshop extends StatelessWidget {
               children: [
                 for (var i = 0; i < step.options.length; i++)
                   Positioned(
-                    left: box.maxWidth * locations[i].dx,
-                    top: 420 * locations[i].dy,
+                    left: narrow
+                        ? (box.maxWidth - itemWidth) * (i.isEven ? .04 : .96)
+                        : (box.maxWidth * locations[i].dx).clamp(
+                            0.0,
+                            box.maxWidth - itemWidth,
+                          ),
+                    top: narrow ? 18 + (i ~/ 2) * 132.0 : 420 * locations[i].dy,
                     child: SizedBox(
                       width: size * 1.35,
                       child: object(step.options[i], size: size, label: false),

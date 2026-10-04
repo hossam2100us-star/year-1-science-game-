@@ -17,10 +17,10 @@ This is a first implementation pass, not closure of every proposal in that repor
 
 ## Still open
 
-- Guided physical correction outside Materials. Materials now requires the learner to correct the answer after the second unsuccessful attempt; see the follow-up below.
+- Guided physical correction outside Materials, Forces and Sound. Those three units require the learner to correct the answer after the second unsuccessful attempt; see the follow-ups below.
 - Persistent per-item correction markers across all scene renderers, beyond the new named feedback.
 - A full distractor review, shorter text in every activity, and eliminating scrolling from every scene (the fixed action/feedback area does not make every scene fit in one viewport).
-- Shorter sessions in unit 1, scheduled/spaced daily review, and a finished parent dashboard with targeted home activities for each objective.
+- Review session length in the three active garden adventures (the legacy 46-step lesson is not the normal route), scheduled/spaced daily review, and a finished parent dashboard with targeted home activities for each objective. Existing reports already show book home activities.
 - Skills, certificate/export, remaining unit redesigns, cloud account/sync, and physical-tablet testing.
 
 ## Validation
@@ -88,6 +88,8 @@ After visual feedback, replaced the five simple creature silhouettes with detail
 
 Built-in image generation was tried again but still returned usage_limit_reached; no generated image was installed. This pass edits native illustrations, without raster background filtering. Analyzer clean and all six Forces interaction/render tests passed (`tmp/forces-art-tests.log`), including small landscape at enlarged text. Reviewed first screen, mid-flight pose and the full contact sheet in `tmp/forces-scenes/`. The 137-test full-suite result belongs to the preceding motion pass; the full suite was not repeated for this illustration-only pass. Tablet and user visual acceptance remain pending.
 
+Update, 3 October 2026: built-in image generation succeeded. Three transparent storybook sheets now replace all 22 Forces object/animal types and the child reference, matching Sound's style. Activity 1 separates forces from other movement within the same activity; the eight required touches and all 13 activity IDs/answers remain intact. Assessed direction artwork keeps the child neutral. See `docs/FORCES_ART_REDESIGN.md` for generation prompts, saved files and current validation. This supersedes the native-art implementation described above; user/device visual acceptance remains pending.
+
 ### Sound scenes — 1 October 2026
 Unit 06 retains twelve stable activity IDs and all original source objectives/answers. The band uses transparent instrument illustrations and replayable exploratory playing poses; the assessment does not demonstrate the action. Hearing uses a whole face with three neutral, non-overlapping touch markers. Box trials save predictions before shaking, support direct scene touch/replay, and require an ungraded observation check for mismatches. The sound walk saves a prediction first, then compares the same drum near/far; moving alone cannot complete it. Dragging and the slider save position after release, and either touching the drum or its alternative button plays it. Text reports the tested result for muted use. Original predictions remain unchanged and ungraded.
 
@@ -107,3 +109,16 @@ Replaced the Sound painter with two original transparent atlases generated throu
 All original activity/answer IDs, source/objective references and assessment flags remain stable. The refiner is idempotent. Twelve local original synthesized PCM sounds include footsteps, whisper, door and thunder; file checks confirm format, no clipping and the intended RMS ordering. These are illustrative effects, not instrument recordings. Sound effects interrupt narration and vice versa, respect saved settings and use multiplier 0.5 in unit 06.
 
 Final validation after the phone-layout fix: analyzer clean; **149 full-suite tests passed**, including **12 Sound tests** (`tmp/sound-review-v2-analyze.log`, `tmp/sound-review-v2-full-tests.log`). Content validation passes all 187 activities. Reviewed all twelve rendered screens plus enlarged-text reachability. Local web build succeeds, and the page/JavaScript/new atlases/audio serve with HTTP 200 after restarting the stopped preview server. Browser-control automation could not initialize its local sandbox; audible playback and physical-tablet acceptance remain unverified. Exact asset paths, prompts and detailed behavior are recorded in [Sound unit redesign](SOUND_UNIT_REDESIGN.md). Units 07–09, Quiz 3, deferred Forces artwork and the other product milestones remain open.
+
+### Sound: four feedback corrections — 3 October 2026
+
+- The feather-box file now contains silent PCM, and the laboratory's choice says No sound. The stone remains audible; an audio test checks both files rather than relying on labels.
+- Activity 8's second question now asks how many steps David took: 8. Content version 2 records the Chart Skills source on pages 27–28 in `chartQuestionSource`, retaining the original answer-key quotation as provenance. `legacySoundChart` preserves the question and result for completed historical Maris attempts. For unfinished old attempts, migration clears only the obsolete second chart choice and keeps the first answer and mistakes.
+- Activity 10 separates listening from placement: tapping a source plays it without changing the answer; dragging places it into any of four numbered slots. Sparse placements, swaps, removal and accessible Place buttons persist. Checking requires a full order; editing and replay do not rescore completed work.
+- Activity 12 presents each discovery's original two or three alternatives, including the exact choices for questions 2 and 3. The validator checks unique valid alternatives and the chart adaptation against its stated source.
+
+The twelve activity IDs, objectives and assessment flags remain stable. The changed David answer belongs to an explicit source-backed version, rather than silently reinterpreting stored Maris answers. Child-facing text remains English.
+
+Final validation: **22 focused tests passed** (13 scene, 8 progress and 1 audio). The generic science integration test was updated from tap-to-order to placement and its targeted run passed (`tmp/sound-feedback-assessed-tests.log`). Analyzer is clean (`tmp/sound-feedback-analyze.log`); **all 159 full-suite tests passed in 62 seconds** (`tmp/sound-feedback-full-tests.log`), and **187 activities pass content validation** (`tmp/sound-feedback-content.log`). The preceding 149-test result remains historical.
+
+The final local web build succeeded in **54.6 seconds** (`tmp/sound-feedback-preview.log`). After the server restart, the page, main JavaScript, unit-06 JSON and feather WAV returned HTTP 200; the served feather SHA-256 and built unit-06 JSON hash match their source files. Current review: `http://127.0.0.1:8765/review/sound-feedback-v3/?preview=biology-v1&lesson=unit_06&step=4`. Audible browser playback and physical-tablet acceptance remain unverified. No APK, deployment or commit is claimed.

@@ -13,8 +13,8 @@
     {
       "id": "unit_05.step.001",
       "kind": "explore",
-      "title": "Movement playground",
-      "prompt": "Touch a hand. Watch how things move.",
+      "title": "The movement garden",
+      "prompt": "Explore the garden. Tap a hand to see what moves.",
       "options": [
         {
           "id": "push",
@@ -62,7 +62,7 @@
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "Touch each movement to hear its name.",
+      "explanation": "Objects and living things can move in different ways.",
       "source": {
         "pages": [
           15,
@@ -80,9 +80,22 @@
       "minTouches": 8,
       "forceScene": {
         "mode": "movement",
-        "instruction": "Explore every movement. You can watch each one again.",
+        "instruction": "",
         "you": "You",
-        "progress": "Discoveries placed"
+        "progress": "Discoveries placed",
+        "gardenProgress": "Discoveries",
+        "gardenSpots": {
+          "gate": "Gate",
+          "lawn": "Lawn",
+          "pond": "Pond"
+        },
+        "gardenStories": {
+          "gate": "Our garden visit begins at the gate. Try a push and a pull.",
+          "lawn": "Our friends are playing on the lawn. Tap them to watch.",
+          "pond": "Who is moving by the pond? Tap a friend to find out."
+        },
+        "gardenPush": "Push",
+        "gardenPull": "Pull"
       },
       "senseDescriptions": {
         "push": "Push sends an object away from you.",
@@ -109,14 +122,14 @@
       "id": "unit_05.step.002",
       "kind": "science-lab",
       "title": "Push and pull playground",
-      "prompt": "Move the trolley. Compare two pushes on the ball.",
+      "prompt": "Let's move one thing at a time.",
       "options": [],
       "targets": [],
       "answer": null,
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "A push moves an object away. A pull brings it towards you.",
+      "explanation": "A push moves the trolley away from you. A pull brings it towards you. A bigger push can move the ball further.",
       "source": {
         "pages": [
           15,
@@ -136,8 +149,8 @@
         "left": "Pull towards you",
         "right": "Push away from you",
         "you": "You",
-        "push": "Push away",
-        "pull": "Pull closer",
+        "push": "Push the trolley",
+        "pull": "Pull the trolley",
         "instruction": "Drag the trolley away from you and back, or use the buttons.",
         "compare": "Start the same ball in the same place. Try both pushes.",
         "gentle": "Gentle push",
@@ -148,7 +161,29 @@
         "prediction": "Which push will send the ball further?",
         "test": "Try this push",
         "moveStage": "Move the trolley",
-        "compareStage": "Compare two pushes"
+        "compareStage": "Compare two pushes",
+        "stepCount": "Step",
+        "previousStep": "Previous step",
+        "nextStep": "Next step",
+        "yourGuess": "Your guess",
+        "rollAgain": "Roll the ball again",
+        "pushDone": "You pushed it away. Now try a pull.",
+        "pullDone": "You pulled it back. Now try the ball.",
+        "gentleDone": "Watch where the ball stopped. Now try a bigger push.",
+        "guideInstructions": {
+          "push": "Push the trolley to the flag.",
+          "pull": "Pull the trolley back to the flag.",
+          "guess": "Which push will roll the ball farther?",
+          "gentle": "Try a gentle push.",
+          "strong": "Try a bigger push.",
+          "done": "The bigger push rolled the ball farther."
+        },
+        "nextActions": {
+          "push": "Now pull",
+          "pull": "Try the ball",
+          "guess": "Try the pushes",
+          "gentle": "Try a bigger push"
+        }
       }
     },
     {
@@ -281,7 +316,7 @@
       "assessed": true,
       "objective": "u05.main.02",
       "hint": "Act out each movement with your hand. Which direction is the force?",
-      "explanation": "a) push b) pull c) both push and pull d) both push and pull",
+      "explanation": "You push a doorbell and pull a drawer. You can push or pull a swing and a trolley.",
       "source": {
         "pages": [
           15,
@@ -354,7 +389,7 @@
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "Predict for each object, then drop it into the tank.",
+      "explanation": "In our tank, the balloon, cork and plastic pot float. The stone, metal nail and glass marble sink.",
       "source": {
         "pages": [
           15,
@@ -562,7 +597,7 @@
       "assessed": true,
       "objective": "u05.main.04",
       "hint": "Picture the animal moving. Does it use legs, wings or its whole body?",
-      "explanation": "snake – slither | bird – fly | fish – swim | kangaroo – hop | baby – crawl",
+      "explanation": "Snakes slither. Birds fly. Fish swim. Kangaroos hop. Babies crawl.",
       "source": {
         "pages": [
           15,
@@ -657,7 +692,7 @@
       "assessed": true,
       "objective": "u05.main.05",
       "hint": "Remember how the wind met the sail and moved the boat.",
-      "explanation": "PUSH — the moving air pushes the sail.",
+      "explanation": "Moving air pushes the sail and makes the boat move.",
       "source": {
         "pages": [
           15,
@@ -728,7 +763,7 @@
       "assessed": true,
       "objective": "u05.main.06",
       "hint": "Imagine opening a drawer and pressing a switch. Compare your hand movements.",
-      "explanation": "Pull: a drawer, a door handle, a zip, a curtain. Push: a doorbell, a light switch, a button, a trolley.",
+      "explanation": "You pull a drawer open. You push a doorbell to ring it.",
       "source": {
         "pages": [
           15,
@@ -810,7 +845,7 @@
       "assessed": true,
       "objective": "u05.main.07",
       "hint": "Compare the four actions: which move something away, and which bring it towards you?",
-      "explanation": "Child's own answers. Pushes: pressing a switch, kicking a ball, closing a door, pushing a trolley. Pulls: opening a drawer, pulling a zip, pulling\non socks, opening the fridge.",
+      "explanation": "You push a switch and kick a ball. You pull the fridge door open and pull a zip closed.",
       "source": {
         "pages": [
           15,
@@ -863,7 +898,7 @@
       "assessed": false,
       "objective": "u05.main.08",
       "hint": "",
-      "explanation": "The orange floats with its peel and sinks without it. Tiny air pockets in the peel help it float.",
+      "explanation": "In our test, the orange floats with its peel and sinks without it. Air trapped in the peel helps it float.",
       "source": {
         "pages": [
           15,
@@ -974,7 +1009,7 @@
       "assessed": true,
       "objective": "u05.choice.01",
       "hint": "Use the drawer, water tank and sailboat discoveries to find each answer.",
-      "explanation": "A push sends an object away. A metal coin sinks. A snake slithers. A bigger push sends the ball further. Ringing a doorbell uses a push.",
+      "explanation": "A push sends an object away from you. A metal coin sinks. Snakes slither. A bigger push moves the ball further. You push a doorbell.",
       "source": {
         "pages": [
           15,
@@ -1066,9 +1101,19 @@
       },
       "forceScene": {
         "mode": "discoveries",
-        "instruction": "Touch a discovery, then choose its answer.",
+        "instruction": "Try one discovery at a time. Use the numbers to go back.",
         "you": "You",
-        "progress": "Discoveries placed"
+        "progress": "Discoveries placed",
+        "mission": "Discovery",
+        "yourAnswer": "Your choice",
+        "nextMission": "Next discovery",
+        "missions": {
+          "a_push_sends_it": "Where does a push send an object?",
+          "how_a_snake_moves": "How does a snake move?",
+          "ring_a_doorbell": "Which force rings a doorbell?",
+          "sinks_in_water": "Which object sinks in water?",
+          "send_the_ball_further": "Which push sends the ball farther?"
+        }
       },
       "correctionUi": {
         "review": "Look at this choice again",

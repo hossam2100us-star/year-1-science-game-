@@ -17,9 +17,9 @@ def add_garden(book):
  "finished":"You explored the whole garden!","finishedAr":"اكتشفت كل اللي في الجنينة!",
  "replay":"Play again","replayAr":"العب تاني","back":"My island","backAr":"ارجع للجزيرة",
  "count":"Found","drag":"Tap a basket, or drag the picture into it.","dragAr":"اختار سلة، أو اسحب الصورة ليها",
- "voiceUnavailable":"الصوت المحلي مش متاح في المتصفح ده؛ حركة الإيد بتوضح المطلوب.",
+ "voiceUnavailable":"Voice is unavailable here. Follow the hand to explore.",
  "tutorial":"Tap the cat.","tutorialAr":"ابدأ بلمس القطة",
- "saved":"Your discoveries are saved.","saveError":"مش قادر أحفظ دلوقتي. جرّب تاني.",
+ "saved":"Your discoveries are saved.","saveError":"Could not save yet. Tap to try again.",
  "sourceLabel":"Alive or Not Alive?","goodName":"Great exploring, {name}!"},
  "items":[{"id":i,"name":n,"nameAr":a,"alive":v,"hint":h,"explanation":e,"objective":q,
  "sourcePages":[4,5],"answerKeyPages":[35]} for i,n,a,v,h,e,q in items]}

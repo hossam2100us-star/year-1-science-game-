@@ -96,6 +96,39 @@ HINTS = {
  'Think about what the astronaut needs in order to breathe.'],
 }
 
+# Neutral question settings: no result, animation, correctness marker or supplied
+# option is selected by this data. Deliberately omit a focus for collection and
+# claim tasks where one sample could give away a required choice.
+QUIZ_CONTEXTS = {
+ 'quiz_02': [
+  ('workshop', 'chair'), ('workshop', None), ('workshop', 'window'),
+  ('rain', 'umbrella'), ('workshop', 'spoon'), ('workshop', 'dough'),
+  ('workshop', None), ('workshop', 'pot'), ('workshop', None),
+  ('workshop', None),
+ ],
+ 'quiz_03': [
+  ('workshop', 'drawer'), ('workshop', 'doorbell'), ('water', None),
+  ('sound', 'drum'), ('sound', 'drum'), ('sound', 'trumpet'),
+  ('sound', 'drum'), ('electric', 'magnet'), ('electric', 'magnet'),
+  ('electric', 'battery'),
+ ],
+ 'quiz_04': [
+  ('earth', 'earth'), ('water', None), ('earth', 'soil'),
+  ('earth', 'stone'), ('space', 'earth'), ('space', 'sun'),
+  ('space', 'sun'), ('space', 'moon'), ('space', 'astronaut'),
+  ('space', 'astronaut'),
+ ],
+}
+
+
+def refine_quiz_presentation(book):
+    contexts = QUIZ_CONTEXTS.get(book['id'])
+    if contexts is None:
+        return
+    assert len(contexts) == len(book['steps']), book['id']
+    for step, (setting, art) in zip(book['steps'], contexts):
+        step['quizContext'] = {'setting': setting, 'art': art}
+
 def refine_science_review(book):
     hints = HINTS[book['id']]
     assert len(hints) == len(book['steps']), book['id']
@@ -123,10 +156,28 @@ def refine_science_review(book):
 
     from refine_teacher_review import refine_teacher_review
     refine_teacher_review(book)
+    if book['id'] == 'unit_04':
+        for step in book['steps']:
+            if step['id'] == 'unit_04.step.002':
+                # The two labels name pairs: both examples must be pictured.
+                # This is presentation data, separate from the original options.
+                step['workshop']['pairedExamples'] = {
+                    'things_a_spoon_and_a_chair': ['spoon', 'chair'],
+                    'what_things_are_made_from_metal_and_wood': ['metal', 'wood'],
+                }
+    refine_quiz_presentation(book)
+    if book['id'] == 'unit_07':
+        # Mix the room collection without changing source option order or keys.
+        book['steps'][1]['choiceOrder'] = [
+            'lamp', 'vacuum_cleaner', 'book', 'chair',
+            'television', 'lantern', 'dishwasher',
+        ]
     from refine_forces import refine_forces
     refine_forces(book)
     from refine_sound import refine_sound
     refine_sound(book)
+    from child_feedback import apply_child_feedback
+    apply_child_feedback(book)
 
 if __name__ == '__main__':
     root = Path(__file__).resolve().parents[1] / 'assets/content/playable'

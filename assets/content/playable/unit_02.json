@@ -97,7 +97,7 @@
       "assessed": false,
       "objective": "",
       "hint": "Look at the shape and position of each part.",
-      "explanation": "They drink water from the soil and hold the plant down so the wind cannot blow it away.",
+      "explanation": "Roots take in water. The stem holds the plant up. Leaves make food in sunlight. Flowers make seeds.",
       "scene": "plant",
       "section": "Explore",
       "source": {
@@ -193,7 +193,8 @@
         "water": "Water and watch",
         "watch": "Watch it grow...",
         "continue": "Keep exploring",
-        "saveError": "الحفظ ماكملش. جرّب تاني."
+        "saveError": "Could not save yet. Please try again.",
+        "predict": "Make a guess, then water the bean."
       }
     },
     {
@@ -221,7 +222,7 @@
       "assessed": false,
       "objective": "",
       "hint": "",
-      "explanation": "Plants need light. The roots drink the water. The leaves make the food from sunlight.",
+      "explanation": "The plant in the dark becomes pale and floppy. Plants need light to grow well.",
       "scene": "plant",
       "section": "Explore",
       "source": {
@@ -263,7 +264,7 @@
         "waiting": "Time passes. Let us look on Day 9.",
         "kindComparison": "You made a prediction and looked carefully!",
         "continue": "Keep exploring",
-        "saveError": "الحفظ ماكملش. جرّب الزرار تاني؛ آخر خطوة محفوظة لسه موجودة."
+        "saveError": "Could not save yet. Tap to try again. Your last saved step is safe."
       }
     },
     {
@@ -386,7 +387,7 @@
       "assessed": true,
       "objective": "u02.main.08",
       "hint": "Think about the plant part we eat.",
-      "explanation": "Roots: carrot and radish. Stems: celery and sugar cane. Leaves: lettuce, mint and parsley. Flowers: cauliflower and broccoli. Seeds: beans, rice, lentils and peas.",
+      "explanation": "Carrots and radishes are roots. Celery and sugar cane are stems. Lettuce, mint and parsley are leaves. Cauliflower and broccoli are flowers. Beans, rice, lentils and peas are seeds.",
       "scene": "kitchen",
       "section": "Explore",
       "source": {
@@ -576,7 +577,7 @@
       "assessed": true,
       "objective": "u02.main.02",
       "hint": "Think back to the bean in the glass. Look for the root before the shoot.",
-      "explanation": "Day 1: nothing yet. Day 4: a root goes down. Day 7: a shoot goes up. Day 8: the first green leaves open.",
+      "explanation": "No root shows on day 1. The root grows down on day 4. A shoot grows up on day 7. Green leaves open on day 8.",
       "scene": "plant",
       "section": "Challenge",
       "source": {
@@ -697,7 +698,7 @@
       "assessed": true,
       "objective": "u02.main.04",
       "hint": "Compare the colour, strength and height of the two plants after nine days.",
-      "explanation": "The dark-cupboard plant is pale yellow, with a thin floppy stem, and is not healthy.",
+      "explanation": "Without light, the plant turns pale yellow. Its thin stem becomes floppy, and it is unhealthy.",
       "scene": "plant",
       "section": "Challenge",
       "source": {
@@ -956,7 +957,7 @@
       "assessed": true,
       "objective": "u02.main.07",
       "hint": "Think about how the bean changed when it had water. What if water stops?",
-      "explanation": "It would dry out: the leaves would droop and go brown, and in the end the plant would die.",
+      "explanation": "Without water, the plant dries out. Its leaves droop and turn brown. It can die.",
       "scene": "plant",
       "section": "Challenge",
       "source": {

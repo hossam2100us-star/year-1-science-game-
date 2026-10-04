@@ -84,6 +84,34 @@ class _SoundStageState extends State<SoundStage> {
       style: TextStyle(fontSize: size, fontWeight: FontWeight.w600),
     ),
   );
+  Widget reservedText(
+    String? value,
+    Iterable<String> possibleValues, {
+    double size = 21,
+  }) => LayoutBuilder(
+    builder: (context, constraints) {
+      final style = DefaultTextStyle.of(context).style
+          .merge(TextStyle(fontSize: size, fontWeight: FontWeight.w600));
+      var height = 0.0;
+      for (final label in possibleValues) {
+        final painter =
+            TextPainter(
+              text: TextSpan(text: label, style: style),
+              textDirection: Directionality.of(context),
+              textAlign: TextAlign.center,
+              textScaler: MediaQuery.textScalerOf(context),
+            )..layout(
+              maxWidth: (constraints.maxWidth - 20).clamp(0.0, double.infinity),
+            );
+        if (painter.height > height) height = painter.height;
+        painter.dispose();
+      }
+      return SizedBox(
+        height: height.ceilToDouble() + 20,
+        child: value == null ? null : text(value, size: size),
+      );
+    },
+  );
   Widget cue(String id) => widget.reviewItems.contains(id)
       ? Semantics(
           key: ValueKey('review-item-$id'),
@@ -158,7 +186,7 @@ class _SoundStageState extends State<SoundStage> {
                     : chosen
                     ? const Color(0xFF5C8291)
                     : const Color(0xFFD8C9AE),
-                width: chosen ? 2 : 1,
+                width: mode == 'band' || chosen ? 2 : 1,
               ),
             ),
             child: Column(
@@ -171,14 +199,30 @@ class _SoundStageState extends State<SoundStage> {
                       p.art,
                       height,
                       id: p.id,
-                      animate: step.isFree || mode == 'boxes',
+                      animate: step.isFree || mode == 'boxes' || mode == 'band',
                     ),
                     if (!widget.done)
                       Positioned(bottom: 0, right: 0, child: cue(p.id)),
                   ],
                 ),
                 text(p.label, size: 19),
-                if (step.isMapping && widget.placements.containsKey(p.id))
+                if (mode == 'band' && !step.isFree)
+                  Semantics(
+                    label: '${ui['listen']}: ${p.label}',
+                    child: replay(
+                      'sound-listen-${p.id}',
+                      () => play(p.art, id: p.id),
+                    ),
+                  ),
+                if (mode == 'band' && step.isMapping)
+                  reservedText(
+                    widget.placements.containsKey(p.id)
+                        ? step.label(widget.placements[p.id]!)
+                        : null,
+                    step.targets.map((target) => target.label),
+                    size: 18,
+                  )
+                else if (step.isMapping && widget.placements.containsKey(p.id))
                   text(step.label(widget.placements[p.id]!), size: 18),
                 if (step.isOrder && chosen)
                   Text(
@@ -248,6 +292,7 @@ class _SoundStageState extends State<SoundStage> {
       TextButton.icon(
         key: ValueKey(key),
         onPressed: action,
+        style: TextButton.styleFrom(minimumSize: const Size(48, 48)),
         icon: const Icon(Icons.volume_up_rounded),
         label: Text(
           label ?? ui['listen'],
@@ -262,7 +307,14 @@ class _SoundStageState extends State<SoundStage> {
   }).toList();
   Widget answerTray() => Column(
     children: [
-      if (widget.selected.isNotEmpty)
+      if (mode == 'band')
+        reservedText(
+          widget.selected.isNotEmpty
+              ? '${ui['answerFor']} ${step.label(widget.selected.first)}'
+              : null,
+          step.options.map((item) => '${ui['answerFor']} ${item.label}'),
+        )
+      else if (widget.selected.isNotEmpty)
         text('${ui['answerFor']} ${step.label(widget.selected.first)}'),
       Wrap(
         alignment: WrapAlignment.center,
@@ -281,18 +333,30 @@ class _SoundStageState extends State<SoundStage> {
   Widget band() => SoundStudio(
     child: Column(
       children: [
-        Wrap(
-          alignment: WrapAlignment.center,
-          spacing: 12,
-          runSpacing: 12,
-          children: [
-            for (final p in step.options)
-              object(
-                p,
-                height: step.isMapping ? 100 : 145,
-                width: step.isMapping ? 155 : 190,
-              ),
-          ],
+        LayoutBuilder(
+          builder: (context, box) {
+            final compact = box.maxWidth < 500;
+            final columns = compact && box.maxWidth >= 270 ? 2 : 1;
+            final width = compact
+                ? (box.maxWidth - 12 * (columns - 1)) / columns
+                : step.isMapping
+                ? 155.0
+                : 190.0;
+            final height = (width - 20) / 1.25;
+            return Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 12,
+              runSpacing: 12,
+              children: [
+                for (final p in step.options)
+                  object(
+                    p,
+                    height: height.clamp(60.0, step.isMapping ? 100.0 : 145.0),
+                    width: width,
+                  ),
+              ],
+            );
+          },
         ),
         if (step.isFree) ...[
           text(
@@ -395,99 +459,114 @@ class _SoundStageState extends State<SoundStage> {
   );
   Widget chart() => SoundSurface(
     outdoor: true,
-    child: Column(
-      children: [
-        choices(),
-        const SizedBox(height: 18),
-        const SoundPicture('drum', height: 65),
-        text(ui['walkStart'], size: 18),
-        for (final row in step.table)
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: Row(
-              children: [
-                SizedBox(
-                  width: 85,
-                  child: Text(
-                    row['name'],
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 56,
-                        child: LayoutBuilder(
-                          builder: (context, lane) {
-                            final distance =
-                                (lane.maxWidth - 50).clamp(0.0, 1500.0) *
-                                (row['value'] as int) /
-                                25;
-                            return Stack(
-                              children: [
-                                Positioned(
-                                  left: 0,
-                                  right: 0,
-                                  bottom: 5,
-                                  child: Container(
-                                    height: 8,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFFCAD5BA),
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  left: 0,
-                                  width: distance + 25,
-                                  bottom: 5,
-                                  child: Container(
-                                    height: 8,
-                                    color: const Color(0xFF7F9E98),
-                                  ),
-                                ),
-                                Positioned(
-                                  left: distance,
-                                  top: 0,
-                                  child: const SoundPicture(
-                                    'listener',
-                                    height: 40,
-                                  ),
-                                ),
-                              ],
-                            );
-                          },
+    child: LayoutBuilder(
+      builder: (context, box) {
+        final compact =
+            box.maxWidth < 520 ||
+            MediaQuery.textScalerOf(context).scale(1) >= 1.5;
+        return Column(
+          children: [
+            choices(),
+            const SizedBox(height: 18),
+            const SoundPicture('drum', height: 65),
+            text(ui['walkStart'], size: 18),
+            for (final row in step.table)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 85,
+                      child: Text(
+                        row['name'],
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
-                      Text(
-                        '${row['value']} ${ui['steps']}',
-                        style: const TextStyle(fontSize: 18),
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 56,
+                            child: LayoutBuilder(
+                              builder: (context, lane) {
+                                final distance =
+                                    (lane.maxWidth - 50).clamp(0.0, 1500.0) *
+                                    (row['value'] as int) /
+                                    25;
+                                return Stack(
+                                  children: [
+                                    Positioned(
+                                      left: 0,
+                                      right: 0,
+                                      bottom: 5,
+                                      child: Container(
+                                        height: 8,
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xFFCAD5BA),
+                                          borderRadius: BorderRadius.circular(
+                                            8,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      left: 0,
+                                      width: distance + 25,
+                                      bottom: 5,
+                                      child: Container(
+                                        height: 8,
+                                        color: const Color(0xFF7F9E98),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      left: distance,
+                                      top: 0,
+                                      child: const SoundPicture(
+                                        'listener',
+                                        height: 40,
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
+                          ),
+                          Text(
+                            '${row['value']} ${ui['steps']}',
+                            style: const TextStyle(fontSize: 18),
+                          ),
+                        ],
+                      ),
+                    ),
+                    if (!compact && widget.selected.isNotEmpty) ...[
+                      const SizedBox(width: 10),
+                      choice(
+                        targets.firstWhere(
+                          (p) => widget.selected.first == 'furthest_listener'
+                              ? p.id == row['name'].toString().toLowerCase()
+                              : p.id == '${row['value']}_steps',
+                        ),
+                        target: true,
+                        width: 105,
                       ),
                     ],
-                  ),
+                  ],
                 ),
-                if (widget.selected.isNotEmpty) ...[
-                  const SizedBox(width: 10),
-                  choice(
-                    targets.firstWhere(
-                      (p) => widget.selected.first == 'furthest_listener'
-                          ? p.id == row['name'].toString().toLowerCase()
-                          : p.id == '${row['value']}_steps',
-                    ),
-                    target: true,
-                    width: 105,
-                  ),
-                ],
-              ],
-            ),
-          ),
-        text('${ui['progress']}: ${widget.placements.length} / 2', size: 18),
-      ],
+              ),
+            if (compact && widget.selected.isNotEmpty)
+              answerTray()
+            else
+              text(
+                '${ui['progress']}: ${widget.placements.length} / 2',
+                size: 18,
+              ),
+          ],
+        );
+      },
     ),
   );
   Widget sticks() => Column(
