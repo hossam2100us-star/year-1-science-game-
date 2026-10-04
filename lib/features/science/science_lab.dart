@@ -17,6 +17,7 @@ import 'sound_distance.dart';
 import 'sound_box_lab.dart';
 import 'sound_ui.dart';
 import 'earth_collection.dart';
+import '../../core/diagnostics/app_log.dart';
 
 /// Ungraded experiments retain guesses before revealing any source-defined result.
 class ScienceLab extends StatefulWidget {
@@ -121,7 +122,8 @@ class _ScienceLabState extends State<ScienceLab> {
     try {
       await widget.onChange({...state, ...patch}, complete);
       return true;
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.error('lab', 'Saving the science lab failed', error, stack);
       if (mounted) widget.onSpeak("Saving needs help. Please try again.");
       return false;
     } finally {

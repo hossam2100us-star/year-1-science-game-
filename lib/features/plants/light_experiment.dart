@@ -6,6 +6,7 @@ import '../../content/lesson.dart';
 import '../../core/providers.dart';
 import 'light_game.dart';
 import 'light_model.dart';
+import '../../core/diagnostics/app_log.dart';
 
 class LightExperiment extends ConsumerStatefulWidget {
   const LightExperiment({
@@ -65,7 +66,8 @@ class _LightExperimentState extends ConsumerState<LightExperiment>
         saveFailed = false;
       });
       return true;
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.error('light', 'Saving the light experiment failed', error, stack);
       if (mounted) setState(() => saveFailed = true);
       return false;
     }
@@ -117,7 +119,8 @@ class _LightExperimentState extends ConsumerState<LightExperiment>
         game.doorTime = 0;
         speak();
       }
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.error('light', 'Saving the light experiment failed', error, stack);
       if (mounted) setState(() => saveFailed = true);
     } finally {
       if (mounted) setState(() => busy = false);

@@ -179,8 +179,8 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
       _sessionSeconds += now.difference(last).inSeconds;
       try {
         await ref.read(appProvider.notifier).usage(last, now);
-      } catch (_) {
-        if (mounted) showSaveError(context);
+      } catch (error, stack) {
+        if (mounted) showSaveError(context, error, stack, area: 'usage');
       }
     }
     if (mounted &&

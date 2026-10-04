@@ -95,8 +95,10 @@ class VoiceSettings extends ConsumerWidget {
                             ? data.settings.copyWith(girlVoice: () => id)
                             : data.settings.copyWith(boyVoice: () => id),
                       );
-                } catch (_) {
-                  if (context.mounted) showSaveError(context);
+                } catch (error, stack) {
+                  if (context.mounted) {
+                    showSaveError(context, error, stack, area: 'settings');
+                  }
                 }
               },
             ),

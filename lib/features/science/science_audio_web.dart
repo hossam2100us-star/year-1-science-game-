@@ -1,5 +1,7 @@
 import 'dart:js_interop';
 
+import '../../core/diagnostics/app_log.dart';
+
 @JS('Audio')
 extension type _Audio._(JSObject _) implements JSObject {
   external factory _Audio(String src);
@@ -17,8 +19,9 @@ class ScienceAudio {
     player = next;
     try {
       await next.play().toDart;
-    } catch (_) {
-      /* A browser may require another user gesture. */
+    } catch (error, stack) {
+      // A browser may require another user gesture before playing audio.
+      AppLog.warning('audio', 'Browser blocked scene sound', error, stack);
     }
   }
 

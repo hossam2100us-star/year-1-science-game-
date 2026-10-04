@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'diagnostics/app_log.dart';
+import 'diagnostics/failure.dart';
 import 'providers.dart';
 
-void showSaveError(BuildContext context) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    const SnackBar(
-      content: Text(
-        'Could not save. Free some space on this device and try again.',
-      ),
-    ),
-  );
+/// Logs a failed save and tells the user what actually went wrong.
+void showSaveError(
+  BuildContext context,
+  Object error,
+  StackTrace stack, {
+  String area = 'save',
+}) {
+  final kind = classifyFailure(error);
+  AppLog.error(area, 'Save failed (${kind.name})', error, stack);
+  ScaffoldMessenger.of(context)
+      .showSnackBar(SnackBar(content: Text(saveFailureMessage(kind))));
 }
 
 class StoryPanel extends ConsumerStatefulWidget {

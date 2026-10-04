@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/design.dart';
+import '../../core/diagnostics/app_log.dart';
 import '../../core/mascot.dart';
 import '../../core/models.dart';
 import '../../core/photo_service.dart';
@@ -78,7 +79,13 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
           _photo = photo ?? _photo;
           _step = 2;
         });
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.error(
+        'photo',
+        'Recovering a lost photo pick failed',
+        error,
+        stack,
+      );
       if (mounted)
         setState(() => _message = 'Please choose your picture again.');
     } finally {
@@ -104,7 +111,8 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
       if (!widget.newChild)
         await ref.read(appProvider.notifier).photoPending(false);
       if (mounted && photo != null) setState(() => _photo = photo);
-    } catch (error) {
+    } catch (error, stack) {
+      AppLog.warning('photo', 'A picked photo was rejected', error, stack);
       if (mounted)
         setState(
           () => _message =
@@ -127,8 +135,8 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
       }
       if ((widget.editing || widget.newChild) && mounted)
         Navigator.of(context).pop();
-    } catch (_) {
-      if (mounted) showSaveError(context);
+    } catch (error, stack) {
+      if (mounted) showSaveError(context, error, stack);
     } finally {
       if (mounted) setState(() => _busy = false);
     }

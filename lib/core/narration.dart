@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
+import 'diagnostics/app_log.dart';
 import 'models.dart';
 import 'preview_voice_stub.dart'
     if (dart.library.js_interop) 'preview_voice_web.dart'
@@ -36,7 +37,8 @@ class NarrationService extends ChangeNotifier {
         status = voices.isEmpty
             ? VoiceStatus.browserPreview
             : VoiceStatus.ready;
-      } catch (_) {
+      } catch (error, stack) {
+        AppLog.warning('narration', 'Browser voices unavailable', error, stack);
         status = VoiceStatus.browserPreview;
       }
       if (!_disposed) notifyListeners();
@@ -67,7 +69,13 @@ class NarrationService extends ChangeNotifier {
       status = voices.isEmpty ? VoiceStatus.unavailable : VoiceStatus.ready;
       await _tts.awaitSpeakCompletion(true);
       await _tts.setSpeechRate(.43);
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.warning(
+        'narration',
+        'Offline voices could not be loaded',
+        error,
+        stack,
+      );
       status = VoiceStatus.unavailable;
     }
     if (!_disposed) notifyListeners();
@@ -108,7 +116,8 @@ class NarrationService extends ChangeNotifier {
       await _tts.setVolume(_settings.volume);
       await _tts.setPitch(1.0);
       if (token == _generation && !_disposed) await _tts.speak(text);
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.warning('narration', 'Speaking failed', error, stack);
       status = VoiceStatus.unavailable;
       if (!_disposed) notifyListeners();
     }
@@ -121,7 +130,9 @@ class NarrationService extends ChangeNotifier {
         preview.stopLocal();
       else
         await _tts.stop();
-    } catch (_) {}
+    } catch (error, stack) {
+      AppLog.warning('narration', 'Stopping speech failed', error, stack);
+    }
   }
 
   @override

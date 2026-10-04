@@ -52,8 +52,8 @@ class _ChildChooserState extends ConsumerState<ChildChooser> {
       if (confirmed == true && mounted) {
         await ref.read(appProvider.notifier).removeChild(id);
       }
-    } catch (_) {
-      if (mounted) showSaveError(context);
+    } catch (error, stack) {
+      if (mounted) showSaveError(context, error, stack);
     } finally {
       widget.onParentChanged(false);
       if (mounted) setState(() => busy = false);
@@ -67,8 +67,8 @@ class _ChildChooserState extends ConsumerState<ChildChooser> {
       await ref.read(narrationProvider).stop();
       await ref.read(appProvider.notifier).selectChild(id);
       if (mounted) widget.onSelected();
-    } catch (_) {
-      if (mounted) showSaveError(context);
+    } catch (error, stack) {
+      if (mounted) showSaveError(context, error, stack);
     } finally {
       if (mounted) setState(() => busy = false);
     }

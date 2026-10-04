@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../core/diagnostics/app_log.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
 import '../core/widgets.dart';
@@ -26,8 +28,8 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
     Future<void> save(AppSettings value) async {
       try {
         await ref.read(appProvider.notifier).settings(value);
-      } catch (_) {
-        if (context.mounted) showSaveError(context);
+      } catch (error, stack) {
+        if (context.mounted) showSaveError(context, error, stack);
       }
     }
 
@@ -155,8 +157,9 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                                           palette: palette,
                                         ),
                                       );
-                                } catch (_) {
-                                  if (context.mounted) showSaveError(context);
+                                } catch (error, stack) {
+                                  if (context.mounted)
+                                    showSaveError(context, error, stack);
                                 }
                               },
                               icon: Icon(
@@ -344,8 +347,9 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                               await ref
                                   .read(appProvider.notifier)
                                   .resetProgress();
-                            } catch (_) {
-                              if (context.mounted) showSaveError(context);
+                            } catch (error, stack) {
+                              if (context.mounted)
+                                showSaveError(context, error, stack);
                             }
                           }
                         },
@@ -355,6 +359,36 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                             'Reset with confirmation',
                           ),
                         ),
+                      ),
+                    ],
+                  ),
+                if (_tab == 1)
+                  _Section(
+                    title: t('سجل الأعطال', 'Diagnostics'),
+                    children: [
+                      Text(
+                        t(
+                          'لو حصلت مشكلة في الحفظ أو الصوت، انسخ السجل وابعته للدعم بنفسك. السجل فيه نوع العطل ومكانه في الكود بس؛ مفيهوش اسم الطفل أو صورته، ومش بيتبعت لأي حد تلقائيًا.',
+                          'If saving or sound goes wrong, copy this log and send it to support yourself. It holds only error types and code locations — never the child\'s name or photo — and is never sent automatically.',
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      OutlinedButton.icon(
+                        key: const ValueKey('copy-diagnostics'),
+                        onPressed: () async {
+                          await Clipboard.setData(
+                            ClipboardData(text: AppLog.export()),
+                          );
+                          if (context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(t('اتنسخ السجل', 'Log copied')),
+                              ),
+                            );
+                          }
+                        },
+                        icon: const Icon(Icons.copy_rounded),
+                        label: Text(t('انسخ السجل', 'Copy log')),
                       ),
                     ],
                   ),

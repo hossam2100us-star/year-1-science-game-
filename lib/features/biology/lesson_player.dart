@@ -4,6 +4,7 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/answer_summary.dart';
+import '../../core/diagnostics/app_log.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
@@ -270,10 +271,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     final task = _writes.then(
       (_) => writer.saveJourney(widget.lesson.id, snapshot),
     );
-    _writes = task.catchError((Object error) {
+    _writes = task.catchError((Object error, StackTrace stack) {
       if (mounted) {
         setState(() => _saveFailed = true);
-        showSaveError(context);
+        showSaveError(context, error, stack, area: 'journey');
       }
     });
     return task;
@@ -282,7 +283,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   void _changed() {
     _syncGame();
     setState(() {});
-    _persist().catchError((Object _) {});
+    // Failures are logged and shown by the _writes handler in _persist.
+    _persist().ignore();
   }
 
   void _playSound(String name, [double loudness = 1]) {
@@ -293,7 +295,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       ScienceAudio.play(
         name,
         settings.volume * (widget.lesson.id == 'unit_06' ? .5 : .35) * loudness,
-      ).catchError((Object _) {});
+      ).catchError(
+        (Object error, StackTrace stack) =>
+            AppLog.warning('audio', 'Scene sound did not play', error, stack),
+      );
     }
   }
 
@@ -518,8 +523,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         setState(() {});
         _say(_feedback);
       }
-    } catch (_) {
-      if (mounted) showSaveError(context);
+    } catch (error, stack) {
+      if (mounted) showSaveError(context, error, stack, area: 'journey');
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -550,12 +555,12 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       }
       _game.pauseEngine();
       _prepare();
-    } catch (_) {
+    } catch (error, stack) {
       _session.index = previousIndex;
       _session.current = previousCurrent;
       _session.responses = previousResponses;
       if (mounted) {
-        showSaveError(context);
+        showSaveError(context, error, stack, area: 'journey');
         _prepare();
       }
     } finally {
@@ -604,13 +609,13 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         _game.pauseEngine();
         _prepare();
       }
-    } catch (_) {
+    } catch (error, stack) {
       // A failed boundary save leaves the previous completed step retryable.
       _session.index = previousIndex;
       _session.current = previousCurrent;
       _session.responses = previousResponses;
       if (mounted) {
-        showSaveError(context);
+        showSaveError(context, error, stack, area: 'journey');
         _prepare();
       }
     } finally {
@@ -635,8 +640,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     try {
       if (!_complete) await _persist();
       await _writes;
-    } catch (_) {
-      if (mounted) showSaveError(context);
+    } catch (error, stack) {
+      if (mounted) showSaveError(context, error, stack, area: 'journey');
       return;
     }
     await ref.read(narrationProvider).stop();
@@ -648,7 +653,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     if (state != AppLifecycleState.resumed) {
       if (!_complete) {
         _game.pauseEngine();
-        _persist().catchError((Object _) {});
+        // Failures are logged and shown by the _writes handler in _persist.
+        _persist().ignore();
       }
       ref.read(narrationProvider).stop();
     } else if (!_complete) {
@@ -658,7 +664,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   @override
   void dispose() {
-    ScienceAudio.stop().catchError((Object _) {});
+    ScienceAudio.stop().catchError(
+      (Object error, StackTrace stack) =>
+          AppLog.warning('audio', 'Stopping scene sound failed', error, stack),
+    );
     WidgetsBinding.instance.removeObserver(this);
     if (!_complete) _game.pauseEngine();
     _scroll.dispose();

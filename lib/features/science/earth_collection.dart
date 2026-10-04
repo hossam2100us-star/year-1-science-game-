@@ -4,6 +4,7 @@ import '../../content/lesson.dart';
 import '../../core/touch_cue.dart';
 import 'science_picture.dart';
 import 'science_world_stage.dart';
+import '../../core/diagnostics/app_log.dart';
 
 /// Open exploration and the child's own grouping rule have no answer key.
 class EarthCollection extends StatefulWidget {
@@ -88,7 +89,8 @@ class _EarthCollectionState extends State<EarthCollection> {
     try {
       await widget.onChange(next, complete);
       return true;
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.error('earth', 'Saving the earth collection failed', error, stack);
       feedback('Saving needs help. Please try again.');
       return false;
     } finally {
