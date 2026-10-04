@@ -1,0 +1,202 @@
+{
+  "@@locale": "en",
+  "parentAreaDeleteTheDamagedCopies": "Delete the damaged copies?",
+  "parentAreaMakeSureYouCopiedAnd": "Make sure you copied and kept the data first. This cannot be undone.",
+  "parentAreaCancel": "Cancel",
+  "parentAreaDelete": "Delete",
+  "parentAreaBackToChild": "Back to child",
+  "parentAreaGrownUps": "Grown-ups",
+  "parentAreaFollowLearningThroughPlayDecisions": "Follow learning through play decisions. Predictions and free play are not graded.",
+  "parentAreaResults": "Results",
+  "parentAreaSettings": "Settings",
+  "parentAreaGuide": "Guide",
+  "parentAreaChildAndAppearance": "Child and appearance",
+  "parentAreaScientistGuide": "Scientist guide: {guideName}",
+  "@parentAreaScientistGuide": {
+    "placeholders": {
+      "guideName": {}
+    }
+  },
+  "parentAreaEditNameGenderOrPicture": "Edit name, gender or picture",
+  "parentAreaAdventureColours": "Adventure colours",
+  "parentAreaAutomatic": "Automatic",
+  "parentAreaOcean": "Ocean",
+  "parentAreaBerry": "Berry",
+  "parentAreaForest": "Forest",
+  "parentAreaEditingThisProfileKeepsProgress": "Editing this profile keeps progress. The first name, photo and preferences stay on this device.",
+  "parentAreaUnitAssessment": "Unit assessment",
+  "parentAreaStarsRewardEffortAndCompletion": "Stars reward effort and completion. Understanding uses first decisions before hints. Predictions and free play are not graded.",
+  "parentAreaTimeOnTheChildScreens": "Time on the child screens",
+  "parentAreaNoTimeRecordedYet": "No time recorded yet",
+  "parentAreaMin": "min",
+  "parentAreaTimeOnChildScreensIs": "Time on child screens is not a learning score. Parent-area and background time are excluded.",
+  "parentAreaBreaksAndAudio": "Breaks and audio",
+  "parentAreaAGentleBreakEveryMinutes": "A gentle break every {breakMinutes} minutes",
+  "@parentAreaAGentleBreakEveryMinutes": {
+    "placeholders": {
+      "breakMinutes": {}
+    }
+  },
+  "parentAreaNarration": "Narration",
+  "parentAreaNarrationVolume": "Narration volume",
+  "parentAreaSoundEffectsWithTheGames": "Sound effects — with the games",
+  "parentAreaMusicComingLater": "Music — coming later",
+  "parentAreaHowToUseTheAdventure": "How to use the adventure",
+  "parentAreaBasedOnTheBookPage": "Based on the book, page 2.",
+  "parentAreaResetProgress": "Reset progress",
+  "parentAreaThisClearsResultsTimeAnd": "This clears results, time and stars, keeping the profile, photo and settings.",
+  "parentAreaClearAllProgress": "Clear all progress?",
+  "parentAreaThisCannotBeUndone": "This cannot be undone.",
+  "parentAreaClearProgress": "Clear progress",
+  "parentAreaResetWithConfirmation": "Reset with confirmation",
+  "parentAreaDataNeedingAttention": "Data needing attention",
+  "parentAreaDataCopied": "Data copied",
+  "parentAreaCopyTheData": "Copy the data",
+  "parentAreaDeleteDamagedCopies": "Delete damaged copies",
+  "parentAreaDiagnostics": "Diagnostics",
+  "parentAreaIfSavingOrSoundGoes": "If saving or sound goes wrong, copy this log and send it to support yourself. It holds only error types and code locations — never the child's name or photo — and is never sent automatically.",
+  "parentAreaLogCopied": "Log copied",
+  "parentAreaCopyLog": "Copy log",
+  "voiceSettingsEnglishVoiceOnThisDevice": "English voice on this device",
+  "voiceSettingsOfflineEnglishVoicesAvailable": "{length} offline English voices available.",
+  "@voiceSettingsOfflineEnglishVoicesAvailable": {
+    "placeholders": {
+      "length": {}
+    }
+  },
+  "voiceSettingsBrowserPreviewHasNoNarration": "Browser preview has no narration. Test voices in the Android APK.",
+  "voiceSettingsNoOfflineEnglishVoiceIs": "No offline English voice is available.",
+  "voiceSettingsAndroidDoesNotReliablyIdentify": "Android does not reliably identify voice gender. Listen and choose a suitable voice for Zizo or Zizi.",
+  "voiceSettingsVoiceForThisGuide": "Voice for this guide",
+  "voiceSettingsAutomaticDeviceDefault": "Automatic (device default)",
+  "voiceSettingsTryVoice": "Try voice",
+  "voiceSettingsCheckVoicesAgain": "Check voices again",
+  "voiceSettingsIfNoVoiceIsAvailable": "If no voice is available, use the tablet settings once:",
+  "voiceSettings1OpenDeviceSettings2": "1. Open device Settings.\n2. Search for Text-to-speech.\n3. Open the speech engine settings.\n4. Choose Install voice data.\n5. Download English.\n6. Return and tap Check voices again.",
+  "voiceSettingsMenuNamesVaryInstallingVoice": "Menu names vary. Installing voice data in system settings needs internet once; the game has no internet permission.",
+  "unitReportOpenUnitForPractice": "Open unit for practice",
+  "unitReportLearningSoFarUnitIn": "Learning so far — unit in progress:",
+  "unitReportIndependentThisTime": "Independent this time",
+  "unitReportPracticeNext": "Practice next",
+  "unitReportScenePracticeIsSeparateFrom": "Scene practice is separate from the full unit assessment.",
+  "unitReportActivityNotAvailableYet": "Activity not available yet",
+  "unitReportNoCompletedAttemptYetThis": "No completed attempt yet. This is not a learning score.",
+  "unitReportLatestAttempt": "Latest attempt: {completedAt}",
+  "@unitReportLatestAttempt": {
+    "placeholders": {
+      "completedAt": {}
+    }
+  },
+  "unitReportFirstTryOf": "First try: {firstTry} of {length}",
+  "@unitReportFirstTryOf": {
+    "placeholders": {
+      "firstTry": {},
+      "length": {}
+    }
+  },
+  "unitReportAfterAHintExplanationShown": "After a hint: {afterHint} • Explanation shown: {explained}",
+  "@unitReportAfterAHintExplanationShown": {
+    "placeholders": {
+      "afterHint": {},
+      "explained": {}
+    }
+  },
+  "unitReportEffortStarsOf3": "Effort stars: {effortStars} of 3",
+  "@unitReportEffortStarsOf3": {
+    "placeholders": {
+      "effortStars": {}
+    }
+  },
+  "unitReportBestAttemptOf": "Best attempt: {firstTry} of {length}",
+  "@unitReportBestAttemptOf": {
+    "placeholders": {
+      "firstTry": {},
+      "length": {}
+    }
+  },
+  "unitReportChangeFromPreviousAttempt": "Change from previous attempt: {firstTry}",
+  "@unitReportChangeFromPreviousAttempt": {
+    "placeholders": {
+      "firstTry": {}
+    }
+  },
+  "unitReportPracticeNext2": "Practice next:",
+  "unitReportReplayForPractice": "Replay for practice",
+  "unitReportBookActivityWithAGrown": "Book activity — with a grown-up:",
+  "unitReportDiscoveriesOf": "Discoveries: {length} of {length1}",
+  "@unitReportDiscoveriesOf": {
+    "placeholders": {
+      "length": {},
+      "length1": {}
+    }
+  },
+  "parentAreaName": "Name: {name}",
+  "@parentAreaName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "parentAreaNameNotEntered": "Not entered",
+  "parentAreaRecoveryAffected": "Some saved data could not be read and has not been deleted. Affected child records: {count}.",
+  "@parentAreaRecoveryAffected": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "parentAreaRecoveryRestored": "The game restored the last good copy.",
+  "parentAreaRecoveryAdvice": "Copy the data and keep it in a file; afterwards you can delete the damaged copies.",
+  "unitReportBeanStage": "Bean experiment: stage {stage} of 4. Predictions are not graded.",
+  "@unitReportBeanStage": {
+    "placeholders": {
+      "stage": {}
+    }
+  },
+  "unitReportInProgress": "In progress: {step} of {total} steps.",
+  "@unitReportInProgress": {
+    "placeholders": {
+      "step": {},
+      "total": {}
+    }
+  },
+  "unitReportPracticeFor": "Practice for: {objective}",
+  "@unitReportPracticeFor": {
+    "placeholders": {
+      "objective": {}
+    }
+  },
+  "unitReportGoalSourcePages": "Goal source pages: {pages}",
+  "@unitReportGoalSourcePages": {
+    "placeholders": {
+      "pages": {}
+    }
+  },
+  "unitReportSourcePages": "Source pages: {pages}",
+  "@unitReportSourcePages": {
+    "placeholders": {
+      "pages": {}
+    }
+  },
+  "unitReportOutcomeCounts": "First try: {firstTry} • After a hint: {afterHint} • Explanation needed: {explained}",
+  "@unitReportOutcomeCounts": {
+    "placeholders": {
+      "firstTry": {},
+      "afterHint": {},
+      "explained": {}
+    }
+  },
+  "unitReportPracticeItem": "Practice next: {name}",
+  "@unitReportPracticeItem": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "childChooserDeleteTitle": "Delete {name}'s profile?",
+  "@childChooserDeleteTitle": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "childChooserDeleteBody": "This deletes the child's name, picture, progress and settings from this device. It cannot be undone. Other children's profiles stay saved.",
+  "childChooserCancel": "Cancel",
+  "childChooserDeleteConfirm": "Delete profile"
+}

@@ -11,6 +11,7 @@ import 'voice_settings.dart';
 import '../features/onboarding/profile_editor.dart';
 import 'parent_gate.dart';
 import 'unit_report.dart';
+import '../l10n/parent_strings.dart';
 
 class ParentArea extends ConsumerStatefulWidget {
   const ParentArea({super.key});
@@ -28,10 +29,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
         store.hasUnreadableCopies;
   }
 
-  Future<void> _discardDamaged(
-    BuildContext context,
-    String Function(String, String) t,
-  ) async {
+  Future<void> _discardDamaged(BuildContext context, AppLocalizations l) async {
     if (!await parentGate(
           context,
           gender: ref.read(appProvider).profile?.gender,
@@ -42,21 +40,16 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (dialog) => AlertDialog(
-        title: Text(t('تمسح النسخ البايظة؟', 'Delete the damaged copies?')),
-        content: Text(
-          t(
-            'اتأكد إنك نسخت البيانات وحفظتها الأول. المسح نهائي.',
-            'Make sure you copied and kept the data first. This cannot be undone.',
-          ),
-        ),
+        title: Text(l.parentAreaDeleteTheDamagedCopies),
+        content: Text(l.parentAreaMakeSureYouCopiedAnd),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(dialog).pop(false),
-            child: Text(t('إلغاء', 'Cancel')),
+            child: Text(l.parentAreaCancel),
           ),
           FilledButton(
             onPressed: () => Navigator.of(dialog).pop(true),
-            child: Text(t('امسح', 'Delete')),
+            child: Text(l.parentAreaDelete),
           ),
         ],
       ),
@@ -78,7 +71,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
     final data = ref.watch(appProvider);
     final settings = data.settings;
     final ar = settings.arabic;
-    String t(String arabic, String english) => ar ? arabic : english;
+    final l = parentStrings(ar);
     Future<void> save(AppSettings value) async {
       try {
         await ref.read(appProvider.notifier).settings(value);
@@ -109,7 +102,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                     OutlinedButton.icon(
                       onPressed: () => Navigator.of(context).pop(),
                       icon: const Icon(Icons.arrow_back_rounded),
-                      label: Text(t('ارجع للطفل', 'Back to child')),
+                      label: Text(l.parentAreaBackToChild),
                     ),
                     OutlinedButton(
                       onPressed: () => save(settings.copyWith(arabic: !ar)),
@@ -119,16 +112,11 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                 ),
                 const SizedBox(height: 24),
                 Text(
-                  t('ركن الأهل', 'Grown-ups'),
+                  l.parentAreaGrownUps,
                   style: parentTheme.textTheme.headlineLarge,
                 ),
                 const SizedBox(height: 12),
-                Text(
-                  t(
-                    'تابع تقدم الطفل من قراراته أثناء اللعب. التوقعات واللعب الحر مش درجات.',
-                    'Follow learning through play decisions. Predictions and free play are not graded.',
-                  ),
-                ),
+                Text(l.parentAreaFollowLearningThroughPlayDecisions),
                 const SizedBox(height: 22),
                 Wrap(
                   spacing: 12,
@@ -144,9 +132,9 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                         ),
                         label: Text(
                           [
-                            t('النتائج', 'Results'),
-                            t('الإعدادات', 'Settings'),
-                            t('دليل الاستخدام', 'Guide'),
+                            l.parentAreaResults,
+                            l.parentAreaSettings,
+                            l.parentAreaGuide,
                           ][i],
                         ),
                       ),
@@ -156,23 +144,16 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
 
                 if (_tab == 1)
                   _Section(
-                    title: t(
-                      'بيانات الطفل وشكل اللعبة',
-                      'Child and appearance',
-                    ),
+                    title: l.parentAreaChildAndAppearance,
                     children: [
                       Text(
-                        t(
-                          'الاسم: ${data.profile!.name.isEmpty ? 'مش مكتوب' : data.profile!.name}',
-                          'Name: ${data.profile!.name.isEmpty ? 'Not entered' : data.profile!.name}',
+                        l.parentAreaName(
+                          data.profile!.name.isEmpty
+                              ? l.parentAreaNameNotEntered
+                              : data.profile!.name,
                         ),
                       ),
-                      Text(
-                        t(
-                          'الشخصية المرافقة: ${data.profile!.guideName}',
-                          'Scientist guide: ${data.profile!.guideName}',
-                        ),
-                      ),
+                      Text(l.parentAreaScientistGuide(data.profile!.guideName)),
                       const SizedBox(height: 12),
                       FilledButton.icon(
                         onPressed: () => Navigator.of(context).push(
@@ -181,15 +162,10 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                           ),
                         ),
                         icon: const Icon(Icons.edit_rounded),
-                        label: Text(
-                          t(
-                            'غيّر الاسم أو الجنس أو الصورة',
-                            'Edit name, gender or picture',
-                          ),
-                        ),
+                        label: Text(l.parentAreaEditNameGenderOrPicture),
                       ),
                       const SizedBox(height: 16),
-                      Text(t('ألوان اللعبة', 'Adventure colours')),
+                      Text(l.parentAreaAdventureColours),
                       const SizedBox(height: 8),
                       Wrap(
                         spacing: 10,
@@ -223,36 +199,24 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                                     : Icons.circle_outlined,
                               ),
                               label: Text(switch (palette) {
-                                PaletteChoice.automatic => t(
-                                  'حسب اختيار الطفل',
-                                  'Automatic',
-                                ),
-                                PaletteChoice.ocean => t('أزرق', 'Ocean'),
-                                PaletteChoice.berry => t('بنفسجي', 'Berry'),
-                                PaletteChoice.forest => t('أخضر', 'Forest'),
+                                PaletteChoice.automatic =>
+                                  l.parentAreaAutomatic,
+                                PaletteChoice.ocean => l.parentAreaOcean,
+                                PaletteChoice.berry => l.parentAreaBerry,
+                                PaletteChoice.forest => l.parentAreaForest,
                               }),
                             ),
                         ],
                       ),
                       const SizedBox(height: 12),
-                      Text(
-                        t(
-                          'تغيير البيانات مش بيمسح التقدم. الاسم الأول والصورة والاختيارات بتفضل على الجهاز بس.',
-                          'Editing this profile keeps progress. The first name, photo and preferences stay on this device.',
-                        ),
-                      ),
+                      Text(l.parentAreaEditingThisProfileKeepsProgress),
                     ],
                   ),
                 if (_tab == 0)
                   _Section(
-                    title: t('تقييم كل وحدة', 'Unit assessment'),
+                    title: l.parentAreaUnitAssessment,
                     children: [
-                      Text(
-                        t(
-                          'النجوم للمجهود والإكمال. تقييم الفهم بيتحسب من أول قرار قبل التلميح؛ التوقع واللعب الحر مش درجات.',
-                          'Stars reward effort and completion. Understanding uses first decisions before hints. Predictions and free play are not graded.',
-                        ),
-                      ),
+                      Text(l.parentAreaStarsRewardEffortAndCompletion),
                       const SizedBox(height: 12),
                       for (final level in ref.read(catalogProvider).levels)
                         UnitReport(level: level, arabic: ar),
@@ -260,33 +224,27 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                   ),
                 if (_tab == 0)
                   _Section(
-                    title: t('وقت الاستخدام', 'Time on the child screens'),
+                    title: l.parentAreaTimeOnTheChildScreens,
                     children: [
                       if (data.dailySeconds.isEmpty)
-                        Text(t('لسه مفيش وقت مسجل', 'No time recorded yet')),
+                        Text(l.parentAreaNoTimeRecordedYet),
                       for (final entry
                           in data.dailySeconds.entries.toList().reversed.take(
                             7,
                           ))
                         Text(
-                          '${entry.key} • ${(entry.value / 60).floor()} ${t('دقيقة', 'min')}',
+                          '${entry.key} • ${(entry.value / 60).floor()} ${l.parentAreaMin}',
                         ),
-                      Text(
-                        t(
-                          'الوقت ده وقت فتح شاشات الطفل، مش دليل على التعلم. وقت ركن الأهل والخلفية مش بيتحسب.',
-                          'Time on child screens is not a learning score. Parent-area and background time are excluded.',
-                        ),
-                      ),
+                      Text(l.parentAreaTimeOnChildScreensIs),
                     ],
                   ),
                 if (_tab == 1)
                   _Section(
-                    title: t('الراحة والصوت', 'Breaks and audio'),
+                    title: l.parentAreaBreaksAndAudio,
                     children: [
                       Text(
-                        t(
-                          'تذكير راحة كل ${settings.breakMinutes} دقيقة',
-                          'A gentle break every ${settings.breakMinutes} minutes',
+                        l.parentAreaAGentleBreakEveryMinutes(
+                          settings.breakMinutes,
                         ),
                       ),
                       Slider(
@@ -300,11 +258,11 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                       ),
                       SwitchListTile(
                         contentPadding: EdgeInsets.zero,
-                        title: Text(t('قراءة الكلام', 'Narration')),
+                        title: Text(l.parentAreaNarration),
                         value: settings.narration,
                         onChanged: (v) => save(settings.copyWith(narration: v)),
                       ),
-                      Text(t('مستوى صوت القراءة', 'Narration volume')),
+                      Text(l.parentAreaNarrationVolume),
                       Slider(
                         value: settings.volume,
                         min: 0,
@@ -314,20 +272,13 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                       ),
                       SwitchListTile(
                         contentPadding: EdgeInsets.zero,
-                        title: Text(
-                          t(
-                            'المؤثرات — هتتوفر مع الألعاب',
-                            'Sound effects — with the games',
-                          ),
-                        ),
+                        title: Text(l.parentAreaSoundEffectsWithTheGames),
                         value: settings.sound,
                         onChanged: (v) => save(settings.copyWith(sound: v)),
                       ),
                       SwitchListTile(
                         contentPadding: EdgeInsets.zero,
-                        title: Text(
-                          t('الموسيقى — هتتوفر لاحقًا', 'Music — coming later'),
-                        ),
+                        title: Text(l.parentAreaMusicComingLater),
                         value: settings.music,
                         onChanged: (v) => save(settings.copyWith(music: v)),
                       ),
@@ -336,31 +287,21 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                   ),
                 if (_tab == 2)
                   _Section(
-                    title: t('نستخدم اللعبة إزاي؟', 'How to use the adventure'),
+                    title: l.parentAreaHowToUseTheAdventure,
                     children: [
                       for (final rule in ref.read(catalogProvider).parentRules)
                         Padding(
                           padding: const EdgeInsets.only(bottom: 14),
                           child: Text(rule[ar ? 'ar' : 'en'] as String),
                         ),
-                      Text(
-                        t(
-                          'مبني على قواعد الكتاب، صفحة ٢.',
-                          'Based on the book, page 2.',
-                        ),
-                      ),
+                      Text(l.parentAreaBasedOnTheBookPage),
                     ],
                   ),
                 if (_tab == 1)
                   _Section(
-                    title: t('مسح التقدم', 'Reset progress'),
+                    title: l.parentAreaResetProgress,
                     children: [
-                      Text(
-                        t(
-                          'ده بيمسح النتائج والوقت والنجوم بس، وبيسيب اسم الطفل وصورته والإعدادات.',
-                          'This clears results, time and stars, keeping the profile, photo and settings.',
-                        ),
-                      ),
+                      Text(l.parentAreaThisClearsResultsTimeAnd),
                       const SizedBox(height: 12),
                       OutlinedButton(
                         onPressed: () async {
@@ -374,30 +315,18 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                           final confirmed = await showDialog<bool>(
                             context: context,
                             builder: (dialog) => AlertDialog(
-                              title: Text(
-                                t(
-                                  'متأكد من مسح التقدم؟',
-                                  'Clear all progress?',
-                                ),
-                              ),
-                              content: Text(
-                                t(
-                                  'المسح نهائي ومفيش رجوع.',
-                                  'This cannot be undone.',
-                                ),
-                              ),
+                              title: Text(l.parentAreaClearAllProgress),
+                              content: Text(l.parentAreaThisCannotBeUndone),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.of(dialog).pop(false),
-                                  child: Text(t('إلغاء', 'Cancel')),
+                                  child: Text(l.parentAreaCancel),
                                 ),
                                 FilledButton(
                                   onPressed: () =>
                                       Navigator.of(dialog).pop(true),
-                                  child: Text(
-                                    t('امسح التقدم', 'Clear progress'),
-                                  ),
+                                  child: Text(l.parentAreaClearProgress),
                                 ),
                               ],
                             ),
@@ -414,25 +343,25 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                             }
                           }
                         },
-                        child: Text(
-                          t(
-                            'مسح التقدم بعد التأكيد',
-                            'Reset with confirmation',
-                          ),
-                        ),
+                        child: Text(l.parentAreaResetWithConfirmation),
                       ),
                     ],
                   ),
                 if (_tab == 1 && _needsRecovery(data))
                   _Section(
-                    title: t('بيانات محتاجة مراجعة', 'Data needing attention'),
+                    title: l.parentAreaDataNeedingAttention,
                     children: [
                       Text(
                         key: const ValueKey('recovery-summary'),
-                        t(
-                          'في بيانات محفوظة ما قدرناش نقراها، وما اتمسحتش. عدد سجلات الأطفال المتأثرة: ${data.quarantinedChildren.length}.${ref.read(storeProvider).recovery == StorageRecovery.restoredFromBackup ? ' اللعبة رجعت لآخر نسخة سليمة.' : ''} انسخ البيانات واحفظها في ملف، وبعدين تقدر تمسح النسخ البايظة.',
-                          'Some saved data could not be read and has not been deleted. Affected child records: ${data.quarantinedChildren.length}.${ref.read(storeProvider).recovery == StorageRecovery.restoredFromBackup ? ' The game restored the last good copy.' : ''} Copy the data and keep it in a file; afterwards you can delete the damaged copies.',
-                        ),
+                        [
+                          l.parentAreaRecoveryAffected(
+                            data.quarantinedChildren.length,
+                          ),
+                          if (ref.read(storeProvider).recovery ==
+                              StorageRecovery.restoredFromBackup)
+                            l.parentAreaRecoveryRestored,
+                          l.parentAreaRecoveryAdvice,
+                        ].join(' '),
                       ),
                       const SizedBox(height: 12),
                       Wrap(
@@ -450,22 +379,18 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                               if (context.mounted) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content: Text(
-                                      t('اتنسخت البيانات', 'Data copied'),
-                                    ),
+                                    content: Text(l.parentAreaDataCopied),
                                   ),
                                 );
                               }
                             },
                             icon: const Icon(Icons.copy_rounded),
-                            label: Text(t('انسخ البيانات', 'Copy the data')),
+                            label: Text(l.parentAreaCopyTheData),
                           ),
                           OutlinedButton(
                             key: const ValueKey('discard-damaged'),
-                            onPressed: () => _discardDamaged(context, t),
-                            child: Text(
-                              t('امسح النسخ البايظة', 'Delete damaged copies'),
-                            ),
+                            onPressed: () => _discardDamaged(context, l),
+                            child: Text(l.parentAreaDeleteDamagedCopies),
                           ),
                         ],
                       ),
@@ -473,14 +398,9 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                   ),
                 if (_tab == 1)
                   _Section(
-                    title: t('سجل الأعطال', 'Diagnostics'),
+                    title: l.parentAreaDiagnostics,
                     children: [
-                      Text(
-                        t(
-                          'لو حصلت مشكلة في الحفظ أو الصوت، انسخ السجل وابعته للدعم بنفسك. السجل فيه نوع العطل ومكانه في الكود بس؛ مفيهوش اسم الطفل أو صورته، ومش بيتبعت لأي حد تلقائيًا.',
-                          'If saving or sound goes wrong, copy this log and send it to support yourself. It holds only error types and code locations — never the child\'s name or photo — and is never sent automatically.',
-                        ),
-                      ),
+                      Text(l.parentAreaIfSavingOrSoundGoes),
                       const SizedBox(height: 12),
                       OutlinedButton.icon(
                         key: const ValueKey('copy-diagnostics'),
@@ -490,14 +410,12 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                           );
                           if (context.mounted) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(t('اتنسخ السجل', 'Log copied')),
-                              ),
+                              SnackBar(content: Text(l.parentAreaLogCopied)),
                             );
                           }
                         },
                         icon: const Icon(Icons.copy_rounded),
-                        label: Text(t('انسخ السجل', 'Copy log')),
+                        label: Text(l.parentAreaCopyLog),
                       ),
                     ],
                   ),
