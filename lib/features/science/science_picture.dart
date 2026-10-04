@@ -238,7 +238,10 @@ const _forceCutouts = <String, (String, Rect)>{
   'balloon': ('forces-objects-v4.webp', Rect.fromLTWH(1003, 335, 181, 307)),
   'nail': ('forces-objects-v4.webp', Rect.fromLTWH(44, 654, 257, 241)),
   'orange': ('forces-objects-v4.webp', Rect.fromLTWH(42, 922, 280, 269)),
-  'peeled_orange': ('forces-objects-v4.webp', Rect.fromLTWH(364, 938, 269, 247)),
+  'peeled_orange': (
+    'forces-objects-v4.webp',
+    Rect.fromLTWH(364, 938, 269, 247),
+  ),
   'door': ('forces-objects-v4.webp', Rect.fromLTWH(1012, 900, 195, 310)),
   'fish': ('forces-characters-v4.webp', Rect.fromLTWH(946, 95, 290, 192)),
   'snake': ('forces-characters-v4.webp', Rect.fromLTWH(341, 448, 275, 152)),
