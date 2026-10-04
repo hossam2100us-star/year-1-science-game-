@@ -14,6 +14,10 @@ permissions:
 jobs:
   secrets:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # gitleaks-action lists the commits of a pull request.
+      pull-requests: read
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
