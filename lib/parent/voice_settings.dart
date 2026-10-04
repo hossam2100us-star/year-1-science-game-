@@ -10,6 +10,15 @@ import 'parent_gate.dart';
 class VoiceSettings extends ConsumerWidget {
   const VoiceSettings({super.key, this.arabic = true});
   final bool arabic;
+
+  /// Dropdown value meaning "no saved voice": narration uses the first
+  /// offline voice the device reports.
+  static const automaticVoice = '';
+
+  static String? chosenVoice(AppData data) =>
+      data.profile?.gender == ChildGender.girl
+      ? data.settings.girlVoice
+      : data.settings.boyVoice;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final voice = ref.read(narrationProvider);
@@ -52,38 +61,39 @@ class VoiceSettings extends ConsumerWidget {
             DropdownButtonFormField<String>(
               key: ValueKey('${data.profile?.gender}-${voice.voices.length}'),
               isExpanded: true,
-              initialValue:
-                  voice.voices.any(
-                    (v) =>
-                        v.id ==
-                        (data.profile?.gender == ChildGender.girl
-                            ? data.settings.girlVoice
-                            : data.settings.boyVoice),
-                  )
-                  ? (data.profile?.gender == ChildGender.girl
-                        ? data.settings.girlVoice
-                        : data.settings.boyVoice)
-                  : voice.voices.first.id,
+              initialValue: voice.voices.any((v) => v.id == chosenVoice(data))
+                  ? chosenVoice(data)
+                  : automaticVoice,
               decoration: InputDecoration(
                 labelText: t('صوت الشخصية الحالية', 'Voice for this guide'),
               ),
-              items: voice.voices
-                  .map(
-                    (v) => DropdownMenuItem(
-                      value: v.id,
-                      child: Text(v.name, overflow: TextOverflow.ellipsis),
+              items: [
+                DropdownMenuItem(
+                  value: automaticVoice,
+                  child: Text(
+                    t(
+                      'تلقائي (صوت الجهاز الافتراضي)',
+                      'Automatic (device default)',
                     ),
-                  )
-                  .toList(),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                for (final v in voice.voices)
+                  DropdownMenuItem(
+                    value: v.id,
+                    child: Text(v.name, overflow: TextOverflow.ellipsis),
+                  ),
+              ],
               onChanged: (value) async {
                 if (value == null) return;
+                final id = value == automaticVoice ? null : value;
                 try {
                   await ref
                       .read(appProvider.notifier)
                       .settings(
                         data.profile?.gender == ChildGender.girl
-                            ? data.settings.copyWith(girlVoice: value)
-                            : data.settings.copyWith(boyVoice: value),
+                            ? data.settings.copyWith(girlVoice: () => id)
+                            : data.settings.copyWith(boyVoice: () => id),
                       );
                 } catch (_) {
                   if (context.mounted) showSaveError(context);

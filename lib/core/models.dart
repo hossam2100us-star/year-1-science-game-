@@ -58,6 +58,9 @@ class AppSettings {
   final int breakMinutes;
   final double volume;
   final String? boyVoice, girlVoice;
+
+  /// Voices are passed as getters so a caller can reset one to the device
+  /// default: `copyWith(boyVoice: () => null)`. Omitting it keeps the value.
   AppSettings copyWith({
     bool? arabic,
     int? breakMinutes,
@@ -65,8 +68,8 @@ class AppSettings {
     bool? music,
     bool? narration,
     double? volume,
-    String? boyVoice,
-    String? girlVoice,
+    String? Function()? boyVoice,
+    String? Function()? girlVoice,
   }) => AppSettings(
     arabic: arabic ?? this.arabic,
     breakMinutes: breakMinutes ?? this.breakMinutes,
@@ -74,8 +77,8 @@ class AppSettings {
     music: music ?? this.music,
     narration: narration ?? this.narration,
     volume: volume ?? this.volume,
-    boyVoice: boyVoice ?? this.boyVoice,
-    girlVoice: girlVoice ?? this.girlVoice,
+    boyVoice: boyVoice == null ? this.boyVoice : boyVoice(),
+    girlVoice: girlVoice == null ? this.girlVoice : girlVoice(),
   );
   Map<String, dynamic> toJson() => {
     'arabic': arabic,
