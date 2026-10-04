@@ -1,0 +1,6 @@
+# Test tags used by CI (.github/workflows/ci-mobile.yml).
+tags:
+  # Pure-Dart / provider tests that must also pass under `--platform chrome`.
+  web:
+  # Pixel comparisons against checked-in baselines in test/goldens/.
+  golden:
