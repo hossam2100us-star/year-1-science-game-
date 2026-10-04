@@ -2,3 +2,5 @@
 tags:
   # Pixel comparisons against checked-in baselines in test/goldens/.
   golden:
+  # Host-machine storage timings (docs/TEST_REPORT.md); excluded in CI.
+  benchmark:

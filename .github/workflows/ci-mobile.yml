@@ -43,7 +43,7 @@ jobs:
       - name: Static analysis
         run: flutter analyze --fatal-infos
       - name: Unit and widget tests
-        run: flutter test --exclude-tags golden
+        run: flutter test --exclude-tags golden,benchmark
       - name: Repository stays clean after tests
         run: git diff --exit-code && test -z "$(git status --porcelain)"
 
