@@ -100,7 +100,7 @@ child UI should change, moving child strings to ARB as well.
 
 ## ADR-0005 — Local persistence target: Drift + SQLite (replaces the Hive blob)
 
-**Status:** accepted; implemented in M2.
+**Status:** implemented in M2 (Android; web follows in M4).
 
 **Context.** AUD-004 / AUD-021: the whole app state (all children, base64
 photos) is one Hive string rewritten on every interaction and every 10 s;
@@ -146,3 +146,45 @@ Text renders with the test font, so goldens capture layout and colour.
 original pixel size, produced by `tools/images/optimize.mjs`. Sizes are not
 reduced because scenes address atlas cells by absolute pixel rectangles.
 Masters remain in Git history.
+
+---
+
+## ADR-0009 — SQLite behind the existing ProgressStore, written as row diffs
+
+**Status:** accepted; implemented in M2.
+
+**Context.** The UI, `AppController` and 300+ tests work against the
+`AppData` view and the `ProgressStore` interface. Replacing that view
+with per-repository streams in one step would touch every screen.
+
+**Decision.** `DriftProgressStore` implements `ProgressStore`. It loads
+the database once at startup and, on each save, compares the new
+`AppData` with what it last stored and writes only the changed rows in one
+transaction. Repositories own all SQL; the sync engine (M4) will use the
+repositories and the outbox directly. The startup rule: once the Hive save
+was migrated, Hive is never played on again (a SQLite failure is reported
+instead of showing older progress); before that, a failed migration keeps
+playing on Hive and retries next launch. Photos live in their own table
+rather than in files, which works the same on Android and the web and is
+still never rewritten with other data.
+
+**Consequences.** No screen changed. A future step can move screens to
+watch repository streams one at a time.
+
+---
+
+## ADR-0010 — Curriculum namespace in storage instead of renaming lesson IDs
+
+**Status:** accepted; implemented in M2 (AUD-023).
+
+**Context.** The audit proposed renaming IDs to `y1.science.unit_01`
+before adding content, so a second year or subject cannot collide in
+progress records.
+
+**Decision.** Keep content IDs as they are and add a `curriculum` column
+(`y1.science`) to stored attempts and journeys, part of the journey key.
+The progress repository reads and writes only its own curriculum.
+
+**Consequences.** Same protection against collisions without rewriting
+content, saves, reports and tests. The catalog for a new year or subject
+must declare its own curriculum ID.

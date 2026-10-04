@@ -1,6 +1,8 @@
 # Local data migration plan (Hive blob → Drift/SQLite)
 
-Status: **designed in M1, implemented in M2.** Source:
+Status: **implemented in M2** (`lib/data/migration/hive_to_drift.dart`,
+`lib/startup/storage_bootstrap.dart`; tests in `test/data/`). Differences from
+the original design are marked *Implemented as*. Source:
 `Future_System_Architecture.pdf` §18 and the audit items AUD-004, AUD-006,
 AUD-007, AUD-021, AUD-023. The rule above everything else: **no silent data
 loss**, and the old data stays untouched until the new copy is verified.
@@ -45,8 +47,9 @@ seconds) · `other_subjects` (child_id, subject, raw JSON) ·
 `app_meta` (active child, migration status, schema version) · `outbox`,
 `sync_meta` (empty until a parent links an account).
 
-Photos move out of the database into files in the app's private support
-directory (`photos/<childId>.png`) on Android; on the web they stay as blobs.
+*Implemented as:* photos in their own `child_photos` table (same on Android
+and web), never rewritten with other data. Attempts and journeys carry a
+`curriculum` column (`y1.science`, AUD-023 / ADR-0010).
 
 ## 3. Pipeline
 
@@ -67,7 +70,10 @@ directory (`photos/<childId>.png`) on Android; on the web they stay as blobs.
 7. **Mark success** in `app_meta` (`migration.hive_v3 = completed`, time,
    counts). No telemetry.
 8. **Keep Hive untouched** for at least two releases as a backup. Removal is
-   a later, separate release with its own confirmation.
+   a later, separate release with its own confirmation. *Implemented as:* the
+   `data` key is never written; one marker key (`migration.sqlite`) freezes
+   the box so a later SQLite failure is reported instead of playing on the
+   older Hive copy.
 9. **Rescue export** stays available in the parent area (raw Hive plus the
    SQLite export) throughout.
 
@@ -102,5 +108,7 @@ from anonymised real saves of every historical schema:
 | Re-run after success | No-op (idempotent) |
 | Unreadable `data` with good `data.bak` | Migrates the backup; unreadable copy preserved |
 
-Performance target to measure (host and device): migration of 10 children
-with full progress in under 1 s on a mid-range tablet.
+Measured on the development PC (not a tablet): 10 children with 300 KB photos,
+200 attempts, 2,000 objectives, 130 journeys and 600 usage days migrate in
+**1.67-1.72 s**; a save afterwards takes **26 ms** instead of **115-118 ms**.
+The target on a mid-range tablet (< 1-2 s for this size) still needs a device.

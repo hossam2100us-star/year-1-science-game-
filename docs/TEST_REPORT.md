@@ -62,3 +62,31 @@ contrast, name batches, image budget, goldens.
 | Release AAB (obfuscated, all ABIs) | never built (audit) | 61,938,245 bytes (59.1 MB) | CI, throwaway key |
 | Release APK per ABI | never built | arm64 26.7 MB · armv7 24.3 MB · x86_64 28.2 MB (MiB) | CI `--split-per-abi` |
 | Startup time, memory on device | NOT MEASURED | NOT MEASURED | no device available |
+
+## Milestone M2 (branch `remediation/m2-data-layer`)
+
+### Local
+
+| Check | Command | Result |
+|---|---|---|
+| Static analysis | `flutter analyze --fatal-infos` | PASS, no issues |
+| Formatting | `dart format --set-exit-if-changed lib test` | PASS |
+| Unit and widget tests | `flutter test --exclude-tags golden,benchmark` | **340+ passed** (latest full run: 340 + 9 lesson tests) |
+| Golden tests | `flutter test --tags golden` | 5 / 5 passed |
+| Android debug build | `flutter build apk --debug` | PASS; `libsqlite3.so` packaged for arm64-v8a, armeabi-v7a, x86_64 |
+| Journey characterization | 4,134 saved states | identical restore results before and after the migration-registry refactor; a deliberate mutation is detected |
+| Typed journey round-trip | 8,000+ saved and migrated journeys | exact round-trip through `JourneyState` |
+| Hive → SQLite migration matrix | `test/data/hive_to_drift_test.dart` | 12 / 12 passed |
+| SQLite store | `test/data/drift_store_test.dart` | 7 / 7 passed (one changed journey = 1 write; unchanged save = 0) |
+| Startup storage choice | `test/data/storage_bootstrap_test.dart` | 7 / 7 passed |
+
+### Measurements (development PC, Windows; not a tablet)
+
+| Metric | Before (Hive blob) | After (SQLite) |
+|---|---|---|
+| One save, 10 children with photos (4.15 MB save) | 115-118 ms | 26 ms |
+| Statements written when one journey changes | whole blob | 1 |
+| Usage writes per hour of play | 360 | 60 |
+| One-time migration of that family | — | 1.67-1.72 s |
+
+Device startup time and memory: **NOT MEASURED** (no device).
