@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/diagnostics/app_log.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
+import '../core/storage.dart';
 import '../core/widgets.dart';
 import 'voice_settings.dart';
 import '../features/onboarding/profile_editor.dart';
@@ -19,6 +20,53 @@ class ParentArea extends ConsumerStatefulWidget {
 
 class _ParentAreaState extends ConsumerState<ParentArea> {
   int _tab = 0;
+
+  bool _needsRecovery(AppData data) {
+    final store = ref.read(storeProvider);
+    return data.quarantinedChildren.isNotEmpty ||
+        store.recovery == StorageRecovery.restoredFromBackup ||
+        store.hasUnreadableCopies;
+  }
+
+  Future<void> _discardDamaged(
+    BuildContext context,
+    String Function(String, String) t,
+  ) async {
+    if (!await parentGate(context) || !context.mounted) return;
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialog) => AlertDialog(
+        title: Text(t('تمسح النسخ البايظة؟', 'Delete the damaged copies?')),
+        content: Text(
+          t(
+            'اتأكد إنك نسخت البيانات وحفظتها الأول. المسح نهائي.',
+            'Make sure you copied and kept the data first. This cannot be undone.',
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialog).pop(false),
+            child: Text(t('إلغاء', 'Cancel')),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialog).pop(true),
+            child: Text(t('امسح', 'Delete')),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true) return;
+    try {
+      await ref.read(appProvider.notifier).discardQuarantine();
+      await ref.read(storeProvider).discardUnreadableCopies();
+      if (mounted) setState(() {});
+    } catch (error, stack) {
+      if (context.mounted) {
+        showSaveError(context, error, stack, area: 'recovery');
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final data = ref.watch(appProvider);
@@ -359,6 +407,54 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                             'Reset with confirmation',
                           ),
                         ),
+                      ),
+                    ],
+                  ),
+                if (_tab == 1 && _needsRecovery(data))
+                  _Section(
+                    title: t('بيانات محتاجة مراجعة', 'Data needing attention'),
+                    children: [
+                      Text(
+                        key: const ValueKey('recovery-summary'),
+                        t(
+                          'في بيانات محفوظة ما قدرناش نقراها، وما اتمسحتش. عدد سجلات الأطفال المتأثرة: ${data.quarantinedChildren.length}.${ref.read(storeProvider).recovery == StorageRecovery.restoredFromBackup ? ' اللعبة رجعت لآخر نسخة سليمة.' : ''} انسخ البيانات واحفظها في ملف، وبعدين تقدر تمسح النسخ البايظة.',
+                          'Some saved data could not be read and has not been deleted. Affected child records: ${data.quarantinedChildren.length}.${ref.read(storeProvider).recovery == StorageRecovery.restoredFromBackup ? ' The game restored the last good copy.' : ''} Copy the data and keep it in a file; afterwards you can delete the damaged copies.',
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      Wrap(
+                        spacing: 12,
+                        runSpacing: 12,
+                        children: [
+                          OutlinedButton.icon(
+                            key: const ValueKey('copy-rescue'),
+                            onPressed: () async {
+                              await Clipboard.setData(
+                                ClipboardData(
+                                  text: ref.read(storeProvider).rescueExport(),
+                                ),
+                              );
+                              if (context.mounted) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      t('اتنسخت البيانات', 'Data copied'),
+                                    ),
+                                  ),
+                                );
+                              }
+                            },
+                            icon: const Icon(Icons.copy_rounded),
+                            label: Text(t('انسخ البيانات', 'Copy the data')),
+                          ),
+                          OutlinedButton(
+                            key: const ValueKey('discard-damaged'),
+                            onPressed: () => _discardDamaged(context, t),
+                            child: Text(
+                              t('امسح النسخ البايظة', 'Delete damaged copies'),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

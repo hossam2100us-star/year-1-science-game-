@@ -121,4 +121,9 @@ class AppController extends Notifier<AppData> {
     ),
   );
   Future<void> resetProgress() => _childCommit((s) => s.resetProgress());
+
+  /// Deletes child records that could not be read. Only called after a
+  /// parent exported them and confirmed behind the parent gate (AUD-006).
+  Future<void> discardQuarantine() =>
+      _commit((s) => s.copyWith(quarantinedChildren: const {}));
 }

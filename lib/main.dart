@@ -12,6 +12,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'content/catalog.dart';
 import 'core/design.dart';
+import 'core/diagnostics/app_log.dart';
 import 'core/models.dart';
 import 'core/providers.dart';
 import 'core/storage.dart';
@@ -23,6 +24,7 @@ import 'features/biology/lesson_player.dart';
 import 'features/plants/bean_experiment.dart';
 import 'features/plants/plant_lab_preview.dart';
 import 'parent/parent_gate.dart';
+import 'startup/startup_problem.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,43 +36,44 @@ Future<void> main() async {
 }
 
 Future<void> _launch() async {
+  final HiveProgressStore store;
   try {
-    final store = await HiveProgressStore.open();
-    store.read(); // Validate the saved data before entering the child UI.
-    final catalog = await Catalog.load();
+    store = await HiveProgressStore.open();
+  } catch (error, stack) {
+    AppLog.error('startup', 'Opening storage failed', error, stack);
     runApp(
-      ProviderScope(
-        overrides: [
-          storeProvider.overrideWithValue(store),
-          catalogProvider.overrideWithValue(catalog),
-        ],
-        child: const ScienceAdventureApp(),
-      ),
+      StartupProblemApp(problem: startupProblemFor(error), onRetry: _launch),
     );
-  } catch (_) {
-    runApp(
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: adventureTheme(null),
-        home: const Scaffold(
-          body: AdventurePage(
-            maxWidth: 650,
-            child: Column(
-              children: [
-                Text(
-                  'We could not open your saved data. Restart the game and check the free space on this device. Your saved data has not been deleted.',
-                  textDirection: TextDirection.rtl,
-                  style: TextStyle(fontFamily: 'Cairo', fontSize: 24),
-                ),
-                SizedBox(height: 24),
-                FilledButton(onPressed: _launch, child: Text('Retry')),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
+    return;
   }
+  try {
+    store.read(); // Validate (and if needed recover) before the child UI.
+  } on SaveDataUnreadable {
+    runApp(SaveRecoveryApp(store: store, onRetry: _launch));
+    return;
+  }
+  final Catalog catalog;
+  try {
+    catalog = await Catalog.load();
+  } catch (error, stack) {
+    AppLog.error('startup', 'Loading the lesson catalog failed', error, stack);
+    runApp(
+      const StartupProblemApp(
+        problem: StartupProblem.contentMissing,
+        onRetry: _launch,
+      ),
+    );
+    return;
+  }
+  runApp(
+    ProviderScope(
+      overrides: [
+        storeProvider.overrideWithValue(store),
+        catalogProvider.overrideWithValue(catalog),
+      ],
+      child: const ScienceAdventureApp(),
+    ),
+  );
 }
 
 class ScienceAdventureApp extends ConsumerWidget {

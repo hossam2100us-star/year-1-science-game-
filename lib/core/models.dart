@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'adventure_progress.dart';
+import 'ids.dart';
 
 enum ChildGender { boy, girl }
 
@@ -172,6 +173,7 @@ class AppData {
     this.otherSubjects = const {},
     this.activeChildId = 'local-child',
     this.savedChildren = const {},
+    this.quarantinedChildren = const {},
   });
   final ChildProfile? profile;
   final AppSettings settings;
@@ -184,6 +186,12 @@ class AppData {
   final Map<String, Map<String, dynamic>> otherSubjects;
   final String activeChildId;
   final Map<String, Map<String, dynamic>> savedChildren;
+
+  /// Child records that could not be read, kept verbatim (AUD-006).
+  ///
+  /// They are not selectable, are written back unchanged on every save so
+  /// nothing is lost, and are offered to parents as a rescue export.
+  final Map<String, Object?> quarantinedChildren;
   Map<String, Map<String, dynamic>> get childRecords => {
     ...savedChildren,
     activeChildId: _childJson(),
@@ -193,8 +201,11 @@ class AppData {
     final records = childRecords;
     final child = records.remove(id);
     if (child == null) throw StateError('Unknown child');
-    return AppData.fromJson(child)
-        .copyWith(activeChildId: id, savedChildren: records);
+    return AppData.fromJson(child).copyWith(
+      activeChildId: id,
+      savedChildren: records,
+      quarantinedChildren: quarantinedChildren,
+    );
   }
 
   AppData addChild(String id, ChildProfile child) {
@@ -207,6 +218,7 @@ class AppData {
         for (final entry in childRecords.entries)
           if (entry.value['profile'] != null) entry.key: entry.value,
       },
+      quarantinedChildren: quarantinedChildren,
     );
   }
 
@@ -218,11 +230,19 @@ class AppData {
       return copyWith(savedChildren: records);
     }
     records.removeWhere((_, value) => value['profile'] == null);
-    if (records.isEmpty) return AppData(activeChildId: emptyId);
+    if (records.isEmpty) {
+      return AppData(
+        activeChildId: emptyId,
+        quarantinedChildren: quarantinedChildren,
+      );
+    }
     final nextId = records.keys.first;
     final next = records.remove(nextId)!;
-    return AppData.fromJson(next)
-        .copyWith(activeChildId: nextId, savedChildren: records);
+    return AppData.fromJson(next).copyWith(
+      activeChildId: nextId,
+      savedChildren: records,
+      quarantinedChildren: quarantinedChildren,
+    );
   }
 
   AppData changeChild(String id, AppData Function(AppData) change) {
@@ -243,6 +263,7 @@ class AppData {
     Map<String, Map<String, dynamic>>? otherSubjects,
     String? activeChildId,
     Map<String, Map<String, dynamic>>? savedChildren,
+    Map<String, Object?>? quarantinedChildren,
   }) => AppData(
     profile: profile ?? this.profile,
     settings: settings ?? this.settings,
@@ -253,12 +274,14 @@ class AppData {
     otherSubjects: otherSubjects ?? this.otherSubjects,
     activeChildId: activeChildId ?? this.activeChildId,
     savedChildren: savedChildren ?? this.savedChildren,
+    quarantinedChildren: quarantinedChildren ?? this.quarantinedChildren,
   );
   AppData resetProgress() => AppData(
     profile: profile,
     settings: settings,
     activeChildId: activeChildId,
     savedChildren: savedChildren,
+    quarantinedChildren: quarantinedChildren,
   );
   bool isComplete(String id) =>
       attempts.any((a) => a.unitId == id && a.completed);
@@ -286,6 +309,7 @@ class AppData {
     'schemaVersion': 3,
     'activeChildId': activeChildId,
     'children': childRecords,
+    if (quarantinedChildren.isNotEmpty) 'quarantine': quarantinedChildren,
   };
   Map<String, dynamic> _childJson() => {
     'schemaVersion': 2,
@@ -302,17 +326,7 @@ class AppData {
     },
   };
   factory AppData.fromJson(Map<String, dynamic> j) {
-    if (j['schemaVersion'] == 3) {
-      final id = j['activeChildId'] as String;
-      final records = (j['children'] as Map).map(
-        (k, v) => MapEntry(k as String, Map<String, dynamic>.from(v)),
-      );
-      final active = records.remove(id);
-      if (active == null || !const [1, 2].contains(active['schemaVersion']))
-        throw const FormatException('Invalid child record');
-      return AppData.fromJson(active)
-          .copyWith(activeChildId: id, savedChildren: records);
-    }
+    if (j['schemaVersion'] == 3) return AppData._fromFamily(j);
     if (j['schemaVersion'] != 1 && j['schemaVersion'] != 2)
       throw const FormatException('Unsupported save version');
     final subjects = Map<String, dynamic>.from(j['subjects'] ?? {});
@@ -323,11 +337,13 @@ class AppData {
       profile: j['profile'] == null
           ? null
           : ChildProfile.fromJson(Map<String, dynamic>.from(j['profile'])),
-      settings: AppSettings.fromJson(Map<String, dynamic>.from(j['settings'])),
+      settings: j['settings'] == null
+          ? const AppSettings()
+          : AppSettings.fromJson(Map<String, dynamic>.from(j['settings'])),
       attempts: (science['attempts'] as List? ?? [])
           .map((a) => UnitAttempt.fromJson(Map<String, dynamic>.from(a)))
           .toList(),
-      dailySeconds: Map<String, int>.from(j['dailySeconds']),
+      dailySeconds: Map<String, int>.from(j['dailySeconds'] ?? const {}),
       pendingPhoto: j['pendingPhoto'] as bool? ?? false,
       journeys: (science['journeys'] as Map? ?? {}).map(
         (k, v) => MapEntry(k as String, Map<String, dynamic>.from(v)),
@@ -338,6 +354,55 @@ class AppData {
             entry.key: Map<String, dynamic>.from(entry.value),
       },
     );
+  }
+
+  /// Reads a schema-3 family save one child at a time, so a single damaged
+  /// record no longer makes every child's progress unreadable (AUD-006).
+  static AppData _fromFamily(Map<String, dynamic> j) {
+    final children = j['children'];
+    if (children is! Map) throw const FormatException('Invalid child list');
+    final quarantine = <String, Object?>{
+      ...?(j['quarantine'] as Map?)?.map((k, v) => MapEntry('$k', v)),
+    };
+    final readable = <String, Map<String, dynamic>>{};
+    for (final entry in children.entries) {
+      final id = '${entry.key}';
+      final record = entry.value;
+      if (_readableChild(record)) {
+        readable[id] = Map<String, dynamic>.from(record as Map);
+      } else {
+        quarantine[id] = record;
+      }
+    }
+    final saved = j['activeChildId'];
+    final id = saved is String && readable.containsKey(saved)
+        ? saved
+        : readable.keys.firstOrNull;
+    if (id == null) {
+      // Every record is damaged: start empty under a fresh ID while the
+      // damaged records stay in quarantine.
+      return AppData(
+        activeChildId: Ids.uuidV7(),
+        quarantinedChildren: quarantine,
+      );
+    }
+    final active = readable.remove(id)!;
+    return AppData.fromJson(active).copyWith(
+      activeChildId: id,
+      savedChildren: readable,
+      quarantinedChildren: quarantine,
+    );
+  }
+
+  static bool _readableChild(Object? record) {
+    if (record is! Map) return false;
+    if (!const [1, 2].contains(record['schemaVersion'])) return false;
+    try {
+      AppData.fromJson(Map<String, dynamic>.from(record));
+      return true;
+    } on Object {
+      return false;
+    }
   }
 }
 
