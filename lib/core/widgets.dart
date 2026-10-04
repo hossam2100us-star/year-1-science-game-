@@ -18,6 +18,29 @@ void showSaveError(
       .showSnackBar(SnackBar(content: Text(saveFailureMessage(kind))));
 }
 
+/// A heading that never wraps mid-word on a narrow screen: it ends with an
+/// ellipsis and the full text is available on long-press and to screen
+/// readers (AUD-018).
+class FittedTitle extends StatelessWidget {
+  const FittedTitle(this.text, {super.key, this.style, this.maxLines = 1});
+  final String text;
+  final TextStyle? style;
+  final int maxLines;
+
+  @override
+  Widget build(BuildContext context) => Tooltip(
+    message: text,
+    excludeFromSemantics: true,
+    child: Text(
+      text,
+      style: style,
+      maxLines: maxLines,
+      overflow: TextOverflow.ellipsis,
+      softWrap: maxLines > 1,
+    ),
+  );
+}
+
 class StoryPanel extends ConsumerStatefulWidget {
   const StoryPanel({
     super.key,

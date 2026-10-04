@@ -94,7 +94,7 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                     ChildAvatar(profile: profile, size: 56),
                     const SizedBox(width: 12),
                     Expanded(
-                      child: Text(
+                      child: FittedTitle(
                         profile.greeting,
                         style: Theme.of(context).textTheme.titleLarge,
                       ),

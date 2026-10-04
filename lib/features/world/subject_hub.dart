@@ -30,7 +30,7 @@ class SubjectHub extends ConsumerWidget {
                 ChildAvatar(profile: profile, size: 64),
                 const SizedBox(width: 16),
                 Expanded(
-                  child: Text(
+                  child: FittedTitle(
                     profile.greeting,
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
@@ -89,8 +89,6 @@ class SubjectHub extends ConsumerWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headlineLarge,
             ),
-            const SizedBox(height: 8),
-            const Text('Choose your adventure', textAlign: TextAlign.center),
             const SizedBox(height: 24),
             Center(
               child: ConstrainedBox(

@@ -756,17 +756,24 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                 child: LayoutBuilder(
                   builder: (context, constraints) {
                     final compact = constraints.maxWidth < 600;
-                    final title = Text(
-                      step.title == step.section || _plantLab
-                          ? step.title
-                          : '${step.title} • ${step.section}',
-                      key: const ValueKey('lesson-title'),
-                      maxLines: compact ? 2 : null,
-                      overflow: compact ? TextOverflow.ellipsis : null,
-                      style: compact
-                          ? Theme.of(context).textTheme.titleLarge
-                                ?.copyWith(fontSize: 20)
-                          : Theme.of(context).textTheme.titleLarge,
+                    final titleText = step.title == step.section || _plantLab
+                        ? step.title
+                        : '${step.title} • ${step.section}';
+                    // A shortened phone title keeps its full text on
+                    // long-press (AUD-018).
+                    final title = Tooltip(
+                      message: titleText,
+                      excludeFromSemantics: true,
+                      child: Text(
+                        titleText,
+                        key: const ValueKey('lesson-title'),
+                        maxLines: compact ? 2 : null,
+                        overflow: compact ? TextOverflow.ellipsis : null,
+                        style: compact
+                            ? Theme.of(context).textTheme.titleLarge
+                                  ?.copyWith(fontSize: 20)
+                            : Theme.of(context).textTheme.titleLarge,
+                      ),
                     );
                     final controls = Row(
                       children: [
@@ -805,7 +812,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                   },
                 ),
               ),
-              Expanded(
+              // Loose: short challenges keep "Check" right under the content
+              // instead of across an empty tablet screen; long ones still
+              // scroll with the controls pinned below (AUD-018).
+              Flexible(
                 child: SingleChildScrollView(
                   controller: _scroll,
                   padding: const EdgeInsets.symmetric(

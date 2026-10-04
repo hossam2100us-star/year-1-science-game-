@@ -5,6 +5,9 @@ import 'models.dart';
 const cream = Color(0xFFFFF8EC);
 const navy = Color(0xFF174F7F);
 const ink = Color(0xFF223D50);
+const disabledFill = Color(0xFFE2DBCF);
+const disabledInk = Color(0xFF4E5B66);
+const disabledEdge = Color(0xFF7A838C);
 Color profileColor(ChildProfile? profile) {
   final choice = profile?.palette ?? PaletteChoice.automatic;
   return switch (choice) {
@@ -55,11 +58,24 @@ ThemeData adventureTheme(ChildProfile? profile) {
       labelLarge: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
     ),
     filledButtonTheme: FilledButtonThemeData(
-      style: FilledButton.styleFrom(
-        minimumSize: const Size(64, 64),
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
-      ),
+      style:
+          FilledButton.styleFrom(
+            minimumSize: const Size(64, 64),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(22),
+            ),
+            // Material's default disabled text is about 2:1 on cream; keep a
+            // "not yet" button readable (AUD-018): 5:1 text, visible edge.
+            disabledBackgroundColor: disabledFill,
+            disabledForegroundColor: disabledInk,
+          ).copyWith(
+            side: WidgetStateProperty.resolveWith(
+              (states) => states.contains(WidgetState.disabled)
+                  ? const BorderSide(color: disabledEdge, width: 2)
+                  : null,
+            ),
+          ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(

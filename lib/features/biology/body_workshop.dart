@@ -88,26 +88,24 @@ class BodyWorkshop extends StatelessWidget {
       ),
     ),
   );
-  Widget _tray() => Wrap(
-    spacing: 8,
-    runSpacing: 8,
-    children: [
-      for (final p in step.options)
-        Draggable<String>(
-          data: p.id,
-          maxSimultaneousDrags: done ? 0 : 1,
-          onDragStarted: () => onItem(p.id),
-          feedback: Material(
-            borderRadius: BorderRadius.circular(18),
-            child: Padding(
-              padding: const EdgeInsets.all(18),
-              child: Text(p.label, style: const TextStyle(fontSize: 24)),
-            ),
-          ),
-          childWhenDragging: Opacity(opacity: .4, child: _piece(p)),
-          child: _piece(p),
+  Widget _tray() => NameBatches(
+    key: ValueKey('name-batches-${step.id}'),
+    options: step.options,
+    placements: placements,
+    builder: (p) => Draggable<String>(
+      data: p.id,
+      maxSimultaneousDrags: done ? 0 : 1,
+      onDragStarted: () => onItem(p.id),
+      feedback: Material(
+        borderRadius: BorderRadius.circular(18),
+        child: Padding(
+          padding: const EdgeInsets.all(18),
+          child: Text(p.label, style: const TextStyle(fontSize: 24)),
         ),
-    ],
+      ),
+      childWhenDragging: Opacity(opacity: .4, child: _piece(p)),
+      child: _piece(p),
+    ),
   );
   Widget _scene() => LayoutBuilder(
     builder: (context, box) {
@@ -281,6 +279,118 @@ class BodyWorkshop extends StatelessWidget {
         ),
     ],
   );
+}
+
+/// Shows the name labels a few at a time (AUD-018): thirteen labels at once
+/// overloaded young children. Every body spot stays visible and active, and
+/// placements are stored exactly as before, so objectives and scoring are
+/// unchanged. When every name in a batch is placed, the next batch with an
+/// unplaced name opens by itself.
+class NameBatches extends StatefulWidget {
+  const NameBatches({
+    super.key,
+    required this.options,
+    required this.placements,
+    required this.builder,
+  });
+  static const batchSize = 5;
+  final List<PictureItem> options;
+  final Map<String, String> placements;
+  final Widget Function(PictureItem) builder;
+
+  @override
+  State<NameBatches> createState() => _NameBatchesState();
+}
+
+class _NameBatchesState extends State<NameBatches> {
+  late int _page = _firstOpenPage();
+
+  int get _pages => (widget.options.length / NameBatches.batchSize).ceil();
+
+  List<PictureItem> _batch(int page) => widget.options
+      .skip(page * NameBatches.batchSize)
+      .take(NameBatches.batchSize)
+      .toList();
+
+  bool _complete(int page) =>
+      _batch(page).every((p) => widget.placements.containsKey(p.id));
+
+  int _firstOpenPage() {
+    for (var page = 0; page < _pages; page++) {
+      if (!_complete(page)) return page;
+    }
+    return 0;
+  }
+
+  // The lesson keeps one placements map and updates it in place, so the
+  // count is remembered here rather than read from the old widget.
+  late int _placed = widget.placements.length;
+
+  @override
+  void didUpdateWidget(NameBatches oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    final placed = widget.placements.length;
+    if (placed > _placed && _complete(_page)) {
+      final next = _firstOpenPage();
+      if (!_complete(next)) _page = next;
+    }
+    _placed = placed;
+    if (_page >= _pages) _page = 0;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_pages <= 1) {
+      return Wrap(
+        spacing: 8,
+        runSpacing: 8,
+        children: [for (final p in widget.options) widget.builder(p)],
+      );
+    }
+    final first = _page * NameBatches.batchSize + 1;
+    final last = first + _batch(_page).length - 1;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: [for (final p in _batch(_page)) widget.builder(p)],
+        ),
+        const SizedBox(height: 10),
+        Row(
+          children: [
+            IconButton.outlined(
+              key: const ValueKey('names-previous'),
+              tooltip: 'Previous names',
+              iconSize: 30,
+              constraints: const BoxConstraints(minWidth: 64, minHeight: 64),
+              onPressed: _page == 0 ? null : () => setState(() => _page--),
+              icon: const Icon(Icons.chevron_left_rounded),
+            ),
+            Expanded(
+              child: Text(
+                '$first–$last / ${widget.options.length}',
+                key: const ValueKey('names-range'),
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 20),
+              ),
+            ),
+            IconButton.outlined(
+              key: const ValueKey('names-next'),
+              tooltip: 'More names',
+              iconSize: 30,
+              constraints: const BoxConstraints(minWidth: 64, minHeight: 64),
+              onPressed: _page + 1 >= _pages
+                  ? null
+                  : () => setState(() => _page++),
+              icon: const Icon(Icons.chevron_right_rounded),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
 }
 
 class _BodyLeaders extends CustomPainter {
