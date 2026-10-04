@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:science_adventure/content/lesson.dart';
-import 'package:science_adventure/features/biology/session.dart';
+import 'package:science_adventure/features/lesson/session.dart';
 import 'package:science_adventure/features/plants/plant_lab_stage.dart';
 
 import 'support/review_images.dart';

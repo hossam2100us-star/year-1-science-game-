@@ -5,7 +5,7 @@ import 'package:science_adventure/core/models.dart';
 import 'package:science_adventure/core/storage.dart';
 import 'package:science_adventure/content/lesson.dart';
 import 'package:science_adventure/features/garden/garden_model.dart';
-import 'package:science_adventure/features/biology/lesson_player.dart';
+import 'package:science_adventure/features/lesson/lesson_player.dart';
 import 'package:science_adventure/features/world/world_map.dart';
 
 import 'setup_screen_test.dart' as helpers;

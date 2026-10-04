@@ -6,8 +6,8 @@ import 'package:science_adventure/content/lesson.dart';
 import 'package:science_adventure/core/models.dart';
 import 'package:science_adventure/core/providers.dart';
 import 'package:science_adventure/core/storage.dart';
-import 'package:science_adventure/features/biology/lesson_player.dart';
-import 'package:science_adventure/features/biology/session.dart';
+import 'package:science_adventure/features/lesson/lesson_player.dart';
+import 'package:science_adventure/features/lesson/session.dart';
 import 'package:science_adventure/games/question_engine.dart';
 
 import 'setup_screen_test.dart' as helpers;

@@ -7,7 +7,6 @@ import '../../core/diagnostics/app_log.dart';
 import '../../core/image_budget.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lottie/lottie.dart';
 
 import '../../content/lesson.dart';
 import '../../core/models.dart';
@@ -16,11 +15,13 @@ import '../../core/providers.dart';
 import '../../core/widgets.dart';
 import '../../games/discovery_game.dart';
 import '../../games/question_engine.dart';
+import 'lesson_completion.dart';
+import 'lesson_header.dart';
 import 'session.dart';
-import '../lesson/scene_kind.dart';
-import '../lesson/scene_renderers.dart';
-import '../lesson/step_rules.dart';
-import 'shoe_measure.dart';
+import 'scene_kind.dart';
+import 'scene_renderers.dart';
+import 'step_rules.dart';
+import '../biology/shoe_measure.dart';
 import '../science/force_guided_lab.dart';
 import '../science/force_discovery.dart';
 import '../science/science_audio.dart';
@@ -795,66 +796,13 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         body: SafeArea(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    final compact = constraints.maxWidth < 600;
-                    final titleText = step.title == step.section || _plantLab
-                        ? step.title
-                        : '${step.title} â€¢ ${step.section}';
-                    // A shortened phone title keeps its full text on
-                    // long-press (AUD-018).
-                    final title = Tooltip(
-                      message: titleText,
-                      excludeFromSemantics: true,
-                      child: Text(
-                        titleText,
-                        key: const ValueKey('lesson-title'),
-                        maxLines: compact ? 2 : null,
-                        overflow: compact ? TextOverflow.ellipsis : null,
-                        style: compact
-                            ? Theme.of(context).textTheme.titleLarge
-                                  ?.copyWith(fontSize: 20)
-                            : Theme.of(context).textTheme.titleLarge,
-                      ),
-                    );
-                    final controls = Row(
-                      children: [
-                        IconButton(
-                          key: const ValueKey('lessonPrevious'),
-                          tooltip: 'Previous screen',
-                          onPressed: _busy || _session.index == 0
-                              ? null
-                              : _previous,
-                          icon: const Icon(Icons.arrow_back_rounded),
-                        ),
-                        IconButton(
-                          onPressed: _leave,
-                          tooltip: 'Save and return to map',
-                          icon: const Icon(Icons.home_rounded),
-                        ),
-                        if (compact) const Spacer() else Expanded(child: title),
-                        Text(
-                          '${_session.index + 1}/${widget.lesson.steps.length}',
-                          style: const TextStyle(fontSize: 22),
-                        ),
-                      ],
-                    );
-                    return compact
-                        ? Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              controls,
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 8),
-                                child: title,
-                              ),
-                            ],
-                          )
-                        : controls;
-                  },
-                ),
+              LessonHeader(
+                title: step.title == step.section || _plantLab
+                    ? step.title
+                    : '${step.title} • ${step.section}',
+                position: position,
+                onPrevious: previous,
+                onHome: _leave,
               ),
               // Loose: short challenges keep "Check" right under the content
               // instead of across an empty tablet screen; long ones still
@@ -1194,75 +1142,19 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     _say(_feedback);
   }
 
-  Widget _completion(BuildContext context) => Scaffold(
-    body: AdventurePage(
-      maxWidth: 900,
-      child: Column(
-        children: [
-          if (!MediaQuery.disableAnimationsOf(context))
-            Lottie.asset(
-              'assets/animations/celebrate.json',
-              height: 100,
-              repeat: false,
-            ),
-          ScientistOwl(
-            gender: ref.read(appProvider).profile!.gender,
-            mood: OwlMood.cheering,
-            size: 160,
-          ),
-          StoryPanel(text: _resultText),
-          const SizedBox(height: 18),
-          Wrap(
-            spacing: 8,
-            children: [
-              for (var i = 0; i < (widget.lesson.quiz ? 10 : 3); i++)
-                Icon(
-                  !widget.lesson.quiz || i < _session.result().firstTry
-                      ? Icons.star_rounded
-                      : Icons.star_outline_rounded,
-                  color: const Color(0xFF9E6D0F),
-                  size: 40,
-                ),
-            ],
-          ),
-          if (widget.lesson.stickers.isNotEmpty)
-            Text(
-              'New word stickers: ${widget.lesson.stickers.map((s) => s['word']).join(', ')}',
-            ),
-          const SizedBox(height: 20),
-          Wrap(
-            spacing: 16,
-            runSpacing: 12,
-            children: [
-              FilledButton(
-                onPressed: _leave,
-                child: const Text('Back to my island'),
-              ),
-              if (widget.lesson.quiz && _session.result().firstTry < 10)
-                OutlinedButton(
-                  onPressed: () => Navigator.of(context).pushReplacement(
-                    MaterialPageRoute<void>(
-                      builder: (_) => LessonRoute(id: _practiceUnit),
-                    ),
-                  ),
-                  child: const Text('Play the tricky games again'),
-                ),
-            ],
-          ),
-        ],
+  Widget _completion(BuildContext context) => LessonCompletion(
+    lesson: widget.lesson,
+    gender: ref.read(appProvider).profile!.gender,
+    message: _resultText,
+    firstTry: _session.result().firstTry,
+    onBack: _leave,
+    onPractice: () => Navigator.of(context).pushReplacement(
+      MaterialPageRoute<void>(
+        builder: (_) =>
+            LessonRoute(id: practiceUnitFor(_session.result().objectives)),
       ),
     ),
   );
-  String get _practiceUnit {
-    final results = _session.result().objectives;
-    for (final id in ['quiz01.01', 'quiz01.02', 'quiz01.08']) {
-      if (results[id] != DecisionOutcome.firstTry) return 'unit_01';
-    }
-    for (final id in ['quiz01.03', 'quiz01.04', 'quiz01.05']) {
-      if (results[id] != DecisionOutcome.firstTry) return 'unit_02';
-    }
-    return 'unit_03';
-  }
 }
 
 int mathMax(int a, int b) => a > b ? a : b;
