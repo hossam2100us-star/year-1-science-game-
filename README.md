@@ -1,6 +1,8 @@
 # Science Adventure
 
-لعبة علوم أوفلاين للأطفال على موبايل وتابلت أندرويد. **المرحلة ١ جاهزة للتجربة: [تحميل APK](output/apk/ScienceAdventure-phase1-debug.apk)، حوالي 183 ميجابايت.** دي نسخة تأسيس، وألعاب المنهج هتبدأ في المرحلة ٢ بعد موافقة ولي الأمر.
+لعبة علوم أوفلاين للأطفال على موبايل وتابلت أندرويد.
+
+**تنزيل النسخة:** ملفات APK وAAB الموقّعة بتتنشر في صفحة [GitHub Releases](../../releases) للمستودع، ومش بتتحفظ جوه Git. تقدر كمان تبنيها بنفسك من الكود بالخطوات في [docs/RELEASE.md](docs/RELEASE.md). كل تعديل بيتفحص تلقائيًا في GitHub Actions (تحليل الكود، الاختبارات، بناء أندرويد، فحص الأمان).
 
 أول مرة: اسم الطفل، ولد أو بنت، ثم ثعلب أو أرنب أو قطة، أو صورة يختارها ولي الأمر من الجهاز. زيزو للولد وزيزي للبنت. الألوان بتتغير تلقائيًا، وممكن تغييرها من ركن الأهل. الصورة والبيانات بتفضل على الجهاز بس.
 
@@ -25,7 +27,7 @@ APK هو ملف تثبيت التطبيق على أندرويد. تجربة ال
 1. وصّل التابلت بالكمبيوتر بكابل USB.
 2. اختار «نقل الملفات / File transfer» من إشعار USB على التابلت.
 3. افتح مجلد Downloads الخاص بالتابلت من الكمبيوتر.
-4. انسخ ملف ScienceAdventure-phase1-debug.apk للمجلد ده الموجود في رابط التحميل فوق.
+4. انسخ ملف APK اللي نزّلته من صفحة Releases (أو اللي بنيته بنفسك) للمجلد ده.
 5. افتح تطبيق «الملفات / Files» على التابلت.
 6. افتح Downloads.
 7. اضغط ملف APK.
@@ -122,7 +124,7 @@ flutter run --no-hot
 
 ## English project notes
 
-Phase 1 foundation is implemented. The debug APK is output/apk/ScienceAdventure-phase1-debug.apk (182,531,874 bytes; minSdk 24; ARM32, ARM64, x86_64). It uses the same debug certificate as Phase 0, so it can update the earlier preview. Physical-device testing remains pending.
+Install files (APK/AAB) are published as GitHub Release assets and are never committed; build them from source with the steps in docs/RELEASE.md. CI (.github/workflows) runs analysis, tests, Android builds and security scans on every push. Physical-device testing remains pending.
 
 Implemented: first-name onboarding, boy/girl selection, three original cartoon avatars or an optional local photo, matching Zizo/Zizi guide, gender-based default palette with parent override, responsive islands, local Fredoka/Nunito/Cairo fonts, Riverpod, Hive, offline English flutter_tts, parent gate, Arabic RTL/English parent settings, foreground usage tracking, and gentle breaks. Android TTS does not reliably identify voice gender; parents can audition and choose installed voices. All visible curriculum levels are explicitly marked as future activities. No test scores are fabricated. Flame mini-games begin in Phase 2.
 
