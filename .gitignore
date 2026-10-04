@@ -25,3 +25,6 @@ output/apk/
 
 # Golden test diff output
 test/goldens/failures/
+
+# Node tooling
+node_modules/
