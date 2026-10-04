@@ -1227,6 +1227,17 @@ class $UnitAttemptsTable extends UnitAttempts
       'REFERENCES children (id) ON DELETE CASCADE',
     ),
   );
+  static const VerificationMeta _curriculumMeta = const VerificationMeta(
+    'curriculum',
+  );
+  @override
+  late final GeneratedColumn<String> curriculum = GeneratedColumn<String>(
+    'curriculum',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
   static const VerificationMeta _clientAttemptIdMeta = const VerificationMeta(
     'clientAttemptId',
   );
@@ -1309,6 +1320,7 @@ class $UnitAttemptsTable extends UnitAttempts
   List<GeneratedColumn> get $columns => [
     id,
     childId,
+    curriculum,
     clientAttemptId,
     unitId,
     contentVersion,
@@ -1341,6 +1353,14 @@ class $UnitAttemptsTable extends UnitAttempts
       );
     } else if (isInserting) {
       context.missing(_childIdMeta);
+    }
+    if (data.containsKey('curriculum')) {
+      context.handle(
+        _curriculumMeta,
+        curriculum.isAcceptableOrUnknown(data['curriculum']!, _curriculumMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_curriculumMeta);
     }
     if (data.containsKey('client_attempt_id')) {
       context.handle(
@@ -1427,6 +1447,10 @@ class $UnitAttemptsTable extends UnitAttempts
         DriftSqlType.string,
         data['${effectivePrefix}child_id'],
       )!,
+      curriculum: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}curriculum'],
+      )!,
       clientAttemptId: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}client_attempt_id'],
@@ -1469,6 +1493,10 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
   final String id;
   final String childId;
 
+  /// Year and subject the unit belongs to, e.g. `y1.science` (AUD-023):
+  /// unit IDs like `unit_01` only need to be unique inside a curriculum.
+  final String curriculum;
+
   /// The attempt ID the app uses for de-duplication (`{lesson}-{micros}`),
   /// kept exactly as saved; empty for very old attempts.
   final String clientAttemptId;
@@ -1483,6 +1511,7 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
   const AttemptRow({
     required this.id,
     required this.childId,
+    required this.curriculum,
     required this.clientAttemptId,
     required this.unitId,
     required this.contentVersion,
@@ -1496,6 +1525,7 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
     final map = <String, Expression>{};
     map['id'] = Variable<String>(id);
     map['child_id'] = Variable<String>(childId);
+    map['curriculum'] = Variable<String>(curriculum);
     map['client_attempt_id'] = Variable<String>(clientAttemptId);
     map['unit_id'] = Variable<String>(unitId);
     map['content_version'] = Variable<int>(contentVersion);
@@ -1510,6 +1540,7 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
     return UnitAttemptsCompanion(
       id: Value(id),
       childId: Value(childId),
+      curriculum: Value(curriculum),
       clientAttemptId: Value(clientAttemptId),
       unitId: Value(unitId),
       contentVersion: Value(contentVersion),
@@ -1528,6 +1559,7 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
     return AttemptRow(
       id: serializer.fromJson<String>(json['id']),
       childId: serializer.fromJson<String>(json['childId']),
+      curriculum: serializer.fromJson<String>(json['curriculum']),
       clientAttemptId: serializer.fromJson<String>(json['clientAttemptId']),
       unitId: serializer.fromJson<String>(json['unitId']),
       contentVersion: serializer.fromJson<int>(json['contentVersion']),
@@ -1543,6 +1575,7 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
     return <String, dynamic>{
       'id': serializer.toJson<String>(id),
       'childId': serializer.toJson<String>(childId),
+      'curriculum': serializer.toJson<String>(curriculum),
       'clientAttemptId': serializer.toJson<String>(clientAttemptId),
       'unitId': serializer.toJson<String>(unitId),
       'contentVersion': serializer.toJson<int>(contentVersion),
@@ -1556,6 +1589,7 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
   AttemptRow copyWith({
     String? id,
     String? childId,
+    String? curriculum,
     String? clientAttemptId,
     String? unitId,
     int? contentVersion,
@@ -1566,6 +1600,7 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
   }) => AttemptRow(
     id: id ?? this.id,
     childId: childId ?? this.childId,
+    curriculum: curriculum ?? this.curriculum,
     clientAttemptId: clientAttemptId ?? this.clientAttemptId,
     unitId: unitId ?? this.unitId,
     contentVersion: contentVersion ?? this.contentVersion,
@@ -1578,6 +1613,9 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
     return AttemptRow(
       id: data.id.present ? data.id.value : this.id,
       childId: data.childId.present ? data.childId.value : this.childId,
+      curriculum: data.curriculum.present
+          ? data.curriculum.value
+          : this.curriculum,
       clientAttemptId: data.clientAttemptId.present
           ? data.clientAttemptId.value
           : this.clientAttemptId,
@@ -1601,6 +1639,7 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
     return (StringBuffer('AttemptRow(')
           ..write('id: $id, ')
           ..write('childId: $childId, ')
+          ..write('curriculum: $curriculum, ')
           ..write('clientAttemptId: $clientAttemptId, ')
           ..write('unitId: $unitId, ')
           ..write('contentVersion: $contentVersion, ')
@@ -1616,6 +1655,7 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
   int get hashCode => Object.hash(
     id,
     childId,
+    curriculum,
     clientAttemptId,
     unitId,
     contentVersion,
@@ -1630,6 +1670,7 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
       (other is AttemptRow &&
           other.id == this.id &&
           other.childId == this.childId &&
+          other.curriculum == this.curriculum &&
           other.clientAttemptId == this.clientAttemptId &&
           other.unitId == this.unitId &&
           other.contentVersion == this.contentVersion &&
@@ -1642,6 +1683,7 @@ class AttemptRow extends DataClass implements Insertable<AttemptRow> {
 class UnitAttemptsCompanion extends UpdateCompanion<AttemptRow> {
   final Value<String> id;
   final Value<String> childId;
+  final Value<String> curriculum;
   final Value<String> clientAttemptId;
   final Value<String> unitId;
   final Value<int> contentVersion;
@@ -1653,6 +1695,7 @@ class UnitAttemptsCompanion extends UpdateCompanion<AttemptRow> {
   const UnitAttemptsCompanion({
     this.id = const Value.absent(),
     this.childId = const Value.absent(),
+    this.curriculum = const Value.absent(),
     this.clientAttemptId = const Value.absent(),
     this.unitId = const Value.absent(),
     this.contentVersion = const Value.absent(),
@@ -1665,6 +1708,7 @@ class UnitAttemptsCompanion extends UpdateCompanion<AttemptRow> {
   UnitAttemptsCompanion.insert({
     required String id,
     required String childId,
+    required String curriculum,
     required String clientAttemptId,
     required String unitId,
     required int contentVersion,
@@ -1675,6 +1719,7 @@ class UnitAttemptsCompanion extends UpdateCompanion<AttemptRow> {
     this.rowid = const Value.absent(),
   }) : id = Value(id),
        childId = Value(childId),
+       curriculum = Value(curriculum),
        clientAttemptId = Value(clientAttemptId),
        unitId = Value(unitId),
        contentVersion = Value(contentVersion),
@@ -1685,6 +1730,7 @@ class UnitAttemptsCompanion extends UpdateCompanion<AttemptRow> {
   static Insertable<AttemptRow> custom({
     Expression<String>? id,
     Expression<String>? childId,
+    Expression<String>? curriculum,
     Expression<String>? clientAttemptId,
     Expression<String>? unitId,
     Expression<int>? contentVersion,
@@ -1697,6 +1743,7 @@ class UnitAttemptsCompanion extends UpdateCompanion<AttemptRow> {
     return RawValuesInsertable({
       if (id != null) 'id': id,
       if (childId != null) 'child_id': childId,
+      if (curriculum != null) 'curriculum': curriculum,
       if (clientAttemptId != null) 'client_attempt_id': clientAttemptId,
       if (unitId != null) 'unit_id': unitId,
       if (contentVersion != null) 'content_version': contentVersion,
@@ -1711,6 +1758,7 @@ class UnitAttemptsCompanion extends UpdateCompanion<AttemptRow> {
   UnitAttemptsCompanion copyWith({
     Value<String>? id,
     Value<String>? childId,
+    Value<String>? curriculum,
     Value<String>? clientAttemptId,
     Value<String>? unitId,
     Value<int>? contentVersion,
@@ -1723,6 +1771,7 @@ class UnitAttemptsCompanion extends UpdateCompanion<AttemptRow> {
     return UnitAttemptsCompanion(
       id: id ?? this.id,
       childId: childId ?? this.childId,
+      curriculum: curriculum ?? this.curriculum,
       clientAttemptId: clientAttemptId ?? this.clientAttemptId,
       unitId: unitId ?? this.unitId,
       contentVersion: contentVersion ?? this.contentVersion,
@@ -1742,6 +1791,9 @@ class UnitAttemptsCompanion extends UpdateCompanion<AttemptRow> {
     }
     if (childId.present) {
       map['child_id'] = Variable<String>(childId.value);
+    }
+    if (curriculum.present) {
+      map['curriculum'] = Variable<String>(curriculum.value);
     }
     if (clientAttemptId.present) {
       map['client_attempt_id'] = Variable<String>(clientAttemptId.value);
@@ -1775,6 +1827,7 @@ class UnitAttemptsCompanion extends UpdateCompanion<AttemptRow> {
     return (StringBuffer('UnitAttemptsCompanion(')
           ..write('id: $id, ')
           ..write('childId: $childId, ')
+          ..write('curriculum: $curriculum, ')
           ..write('clientAttemptId: $clientAttemptId, ')
           ..write('unitId: $unitId, ')
           ..write('contentVersion: $contentVersion, ')
@@ -2085,6 +2138,17 @@ class $JourneysTable extends Journeys
       'REFERENCES children (id) ON DELETE CASCADE',
     ),
   );
+  static const VerificationMeta _curriculumMeta = const VerificationMeta(
+    'curriculum',
+  );
+  @override
+  late final GeneratedColumn<String> curriculum = GeneratedColumn<String>(
+    'curriculum',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
   static const VerificationMeta _journeyKeyMeta = const VerificationMeta(
     'journeyKey',
   );
@@ -2131,6 +2195,7 @@ class $JourneysTable extends Journeys
   @override
   List<GeneratedColumn> get $columns => [
     childId,
+    curriculum,
     journeyKey,
     json,
     version,
@@ -2155,6 +2220,14 @@ class $JourneysTable extends Journeys
       );
     } else if (isInserting) {
       context.missing(_childIdMeta);
+    }
+    if (data.containsKey('curriculum')) {
+      context.handle(
+        _curriculumMeta,
+        curriculum.isAcceptableOrUnknown(data['curriculum']!, _curriculumMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_curriculumMeta);
     }
     if (data.containsKey('journey_key')) {
       context.handle(
@@ -2190,7 +2263,7 @@ class $JourneysTable extends Journeys
   }
 
   @override
-  Set<GeneratedColumn> get $primaryKey => {childId, journeyKey};
+  Set<GeneratedColumn> get $primaryKey => {childId, curriculum, journeyKey};
   @override
   JourneyRow map(Map<String, dynamic> data, {String? tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
@@ -2198,6 +2271,10 @@ class $JourneysTable extends Journeys
       childId: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}child_id'],
+      )!,
+      curriculum: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}curriculum'],
       )!,
       journeyKey: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
@@ -2226,12 +2303,14 @@ class $JourneysTable extends Journeys
 
 class JourneyRow extends DataClass implements Insertable<JourneyRow> {
   final String childId;
+  final String curriculum;
   final String journeyKey;
   final String json;
   final int version;
   final DateTime updatedAt;
   const JourneyRow({
     required this.childId,
+    required this.curriculum,
     required this.journeyKey,
     required this.json,
     required this.version,
@@ -2241,6 +2320,7 @@ class JourneyRow extends DataClass implements Insertable<JourneyRow> {
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
     map['child_id'] = Variable<String>(childId);
+    map['curriculum'] = Variable<String>(curriculum);
     map['journey_key'] = Variable<String>(journeyKey);
     map['json'] = Variable<String>(json);
     map['version'] = Variable<int>(version);
@@ -2251,6 +2331,7 @@ class JourneyRow extends DataClass implements Insertable<JourneyRow> {
   JourneysCompanion toCompanion(bool nullToAbsent) {
     return JourneysCompanion(
       childId: Value(childId),
+      curriculum: Value(curriculum),
       journeyKey: Value(journeyKey),
       json: Value(json),
       version: Value(version),
@@ -2265,6 +2346,7 @@ class JourneyRow extends DataClass implements Insertable<JourneyRow> {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return JourneyRow(
       childId: serializer.fromJson<String>(json['childId']),
+      curriculum: serializer.fromJson<String>(json['curriculum']),
       journeyKey: serializer.fromJson<String>(json['journeyKey']),
       json: serializer.fromJson<String>(json['json']),
       version: serializer.fromJson<int>(json['version']),
@@ -2276,6 +2358,7 @@ class JourneyRow extends DataClass implements Insertable<JourneyRow> {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return <String, dynamic>{
       'childId': serializer.toJson<String>(childId),
+      'curriculum': serializer.toJson<String>(curriculum),
       'journeyKey': serializer.toJson<String>(journeyKey),
       'json': serializer.toJson<String>(json),
       'version': serializer.toJson<int>(version),
@@ -2285,12 +2368,14 @@ class JourneyRow extends DataClass implements Insertable<JourneyRow> {
 
   JourneyRow copyWith({
     String? childId,
+    String? curriculum,
     String? journeyKey,
     String? json,
     int? version,
     DateTime? updatedAt,
   }) => JourneyRow(
     childId: childId ?? this.childId,
+    curriculum: curriculum ?? this.curriculum,
     journeyKey: journeyKey ?? this.journeyKey,
     json: json ?? this.json,
     version: version ?? this.version,
@@ -2299,6 +2384,9 @@ class JourneyRow extends DataClass implements Insertable<JourneyRow> {
   JourneyRow copyWithCompanion(JourneysCompanion data) {
     return JourneyRow(
       childId: data.childId.present ? data.childId.value : this.childId,
+      curriculum: data.curriculum.present
+          ? data.curriculum.value
+          : this.curriculum,
       journeyKey: data.journeyKey.present
           ? data.journeyKey.value
           : this.journeyKey,
@@ -2312,6 +2400,7 @@ class JourneyRow extends DataClass implements Insertable<JourneyRow> {
   String toString() {
     return (StringBuffer('JourneyRow(')
           ..write('childId: $childId, ')
+          ..write('curriculum: $curriculum, ')
           ..write('journeyKey: $journeyKey, ')
           ..write('json: $json, ')
           ..write('version: $version, ')
@@ -2322,12 +2411,13 @@ class JourneyRow extends DataClass implements Insertable<JourneyRow> {
 
   @override
   int get hashCode =>
-      Object.hash(childId, journeyKey, json, version, updatedAt);
+      Object.hash(childId, curriculum, journeyKey, json, version, updatedAt);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       (other is JourneyRow &&
           other.childId == this.childId &&
+          other.curriculum == this.curriculum &&
           other.journeyKey == this.journeyKey &&
           other.json == this.json &&
           other.version == this.version &&
@@ -2336,6 +2426,7 @@ class JourneyRow extends DataClass implements Insertable<JourneyRow> {
 
 class JourneysCompanion extends UpdateCompanion<JourneyRow> {
   final Value<String> childId;
+  final Value<String> curriculum;
   final Value<String> journeyKey;
   final Value<String> json;
   final Value<int> version;
@@ -2343,6 +2434,7 @@ class JourneysCompanion extends UpdateCompanion<JourneyRow> {
   final Value<int> rowid;
   const JourneysCompanion({
     this.childId = const Value.absent(),
+    this.curriculum = const Value.absent(),
     this.journeyKey = const Value.absent(),
     this.json = const Value.absent(),
     this.version = const Value.absent(),
@@ -2351,17 +2443,20 @@ class JourneysCompanion extends UpdateCompanion<JourneyRow> {
   });
   JourneysCompanion.insert({
     required String childId,
+    required String curriculum,
     required String journeyKey,
     required String json,
     this.version = const Value.absent(),
     required DateTime updatedAt,
     this.rowid = const Value.absent(),
   }) : childId = Value(childId),
+       curriculum = Value(curriculum),
        journeyKey = Value(journeyKey),
        json = Value(json),
        updatedAt = Value(updatedAt);
   static Insertable<JourneyRow> custom({
     Expression<String>? childId,
+    Expression<String>? curriculum,
     Expression<String>? journeyKey,
     Expression<String>? json,
     Expression<int>? version,
@@ -2370,6 +2465,7 @@ class JourneysCompanion extends UpdateCompanion<JourneyRow> {
   }) {
     return RawValuesInsertable({
       if (childId != null) 'child_id': childId,
+      if (curriculum != null) 'curriculum': curriculum,
       if (journeyKey != null) 'journey_key': journeyKey,
       if (json != null) 'json': json,
       if (version != null) 'version': version,
@@ -2380,6 +2476,7 @@ class JourneysCompanion extends UpdateCompanion<JourneyRow> {
 
   JourneysCompanion copyWith({
     Value<String>? childId,
+    Value<String>? curriculum,
     Value<String>? journeyKey,
     Value<String>? json,
     Value<int>? version,
@@ -2388,6 +2485,7 @@ class JourneysCompanion extends UpdateCompanion<JourneyRow> {
   }) {
     return JourneysCompanion(
       childId: childId ?? this.childId,
+      curriculum: curriculum ?? this.curriculum,
       journeyKey: journeyKey ?? this.journeyKey,
       json: json ?? this.json,
       version: version ?? this.version,
@@ -2401,6 +2499,9 @@ class JourneysCompanion extends UpdateCompanion<JourneyRow> {
     final map = <String, Expression>{};
     if (childId.present) {
       map['child_id'] = Variable<String>(childId.value);
+    }
+    if (curriculum.present) {
+      map['curriculum'] = Variable<String>(curriculum.value);
     }
     if (journeyKey.present) {
       map['journey_key'] = Variable<String>(journeyKey.value);
@@ -2424,6 +2525,7 @@ class JourneysCompanion extends UpdateCompanion<JourneyRow> {
   String toString() {
     return (StringBuffer('JourneysCompanion(')
           ..write('childId: $childId, ')
+          ..write('curriculum: $curriculum, ')
           ..write('journeyKey: $journeyKey, ')
           ..write('json: $json, ')
           ..write('version: $version, ')
@@ -5772,6 +5874,7 @@ typedef $$UnitAttemptsTableCreateCompanionBuilder =
     UnitAttemptsCompanion Function({
       required String id,
       required String childId,
+      required String curriculum,
       required String clientAttemptId,
       required String unitId,
       required int contentVersion,
@@ -5785,6 +5888,7 @@ typedef $$UnitAttemptsTableUpdateCompanionBuilder =
     UnitAttemptsCompanion Function({
       Value<String> id,
       Value<String> childId,
+      Value<String> curriculum,
       Value<String> clientAttemptId,
       Value<String> unitId,
       Value<int> contentVersion,
@@ -5849,6 +5953,11 @@ class $$UnitAttemptsTableFilterComposer
   });
   ColumnFilters<String> get id => $composableBuilder(
     column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get curriculum => $composableBuilder(
+    column: $table.curriculum,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -5950,6 +6059,11 @@ class $$UnitAttemptsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get curriculum => $composableBuilder(
+    column: $table.curriculum,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<String> get clientAttemptId => $composableBuilder(
     column: $table.clientAttemptId,
     builder: (column) => ColumnOrderings(column),
@@ -6020,6 +6134,11 @@ class $$UnitAttemptsTableAnnotationComposer
   });
   GeneratedColumn<String> get id =>
       $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get curriculum => $composableBuilder(
+    column: $table.curriculum,
+    builder: (column) => column,
+  );
 
   GeneratedColumn<String> get clientAttemptId => $composableBuilder(
     column: $table.clientAttemptId,
@@ -6130,6 +6249,7 @@ class $$UnitAttemptsTableTableManager
               ({
                 Value<String> id = const Value.absent(),
                 Value<String> childId = const Value.absent(),
+                Value<String> curriculum = const Value.absent(),
                 Value<String> clientAttemptId = const Value.absent(),
                 Value<String> unitId = const Value.absent(),
                 Value<int> contentVersion = const Value.absent(),
@@ -6141,6 +6261,7 @@ class $$UnitAttemptsTableTableManager
               }) => UnitAttemptsCompanion(
                 id: id,
                 childId: childId,
+                curriculum: curriculum,
                 clientAttemptId: clientAttemptId,
                 unitId: unitId,
                 contentVersion: contentVersion,
@@ -6154,6 +6275,7 @@ class $$UnitAttemptsTableTableManager
               ({
                 required String id,
                 required String childId,
+                required String curriculum,
                 required String clientAttemptId,
                 required String unitId,
                 required int contentVersion,
@@ -6165,6 +6287,7 @@ class $$UnitAttemptsTableTableManager
               }) => UnitAttemptsCompanion.insert(
                 id: id,
                 childId: childId,
+                curriculum: curriculum,
                 clientAttemptId: clientAttemptId,
                 unitId: unitId,
                 contentVersion: contentVersion,
@@ -6555,6 +6678,7 @@ typedef $$AttemptObjectivesTableProcessedTableManager =
     >;
 typedef $$JourneysTableCreateCompanionBuilder = JourneysCompanion Function({
   required String childId,
+  required String curriculum,
   required String journeyKey,
   required String json,
   Value<int> version,
@@ -6563,6 +6687,7 @@ typedef $$JourneysTableCreateCompanionBuilder = JourneysCompanion Function({
 });
 typedef $$JourneysTableUpdateCompanionBuilder = JourneysCompanion Function({
   Value<String> childId,
+  Value<String> curriculum,
   Value<String> journeyKey,
   Value<String> json,
   Value<int> version,
@@ -6601,6 +6726,11 @@ class $$JourneysTableFilterComposer
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
+  ColumnFilters<String> get curriculum => $composableBuilder(
+    column: $table.curriculum,
+    builder: (column) => ColumnFilters(column),
+  );
+
   ColumnFilters<String> get journeyKey => $composableBuilder(
     column: $table.journeyKey,
     builder: (column) => ColumnFilters(column),
@@ -6654,6 +6784,11 @@ class $$JourneysTableOrderingComposer
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
+  ColumnOrderings<String> get curriculum => $composableBuilder(
+    column: $table.curriculum,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<String> get journeyKey => $composableBuilder(
     column: $table.journeyKey,
     builder: (column) => ColumnOrderings(column),
@@ -6707,6 +6842,11 @@ class $$JourneysTableAnnotationComposer
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
+  GeneratedColumn<String> get curriculum => $composableBuilder(
+    column: $table.curriculum,
+    builder: (column) => column,
+  );
+
   GeneratedColumn<String> get journeyKey => $composableBuilder(
     column: $table.journeyKey,
     builder: (column) => column,
@@ -6774,6 +6914,7 @@ class $$JourneysTableTableManager
           updateCompanionCallback:
               ({
                 Value<String> childId = const Value.absent(),
+                Value<String> curriculum = const Value.absent(),
                 Value<String> journeyKey = const Value.absent(),
                 Value<String> json = const Value.absent(),
                 Value<int> version = const Value.absent(),
@@ -6781,6 +6922,7 @@ class $$JourneysTableTableManager
                 Value<int> rowid = const Value.absent(),
               }) => JourneysCompanion(
                 childId: childId,
+                curriculum: curriculum,
                 journeyKey: journeyKey,
                 json: json,
                 version: version,
@@ -6790,6 +6932,7 @@ class $$JourneysTableTableManager
           createCompanionCallback:
               ({
                 required String childId,
+                required String curriculum,
                 required String journeyKey,
                 required String json,
                 Value<int> version = const Value.absent(),
@@ -6797,6 +6940,7 @@ class $$JourneysTableTableManager
                 Value<int> rowid = const Value.absent(),
               }) => JourneysCompanion.insert(
                 childId: childId,
+                curriculum: curriculum,
                 journeyKey: journeyKey,
                 json: json,
                 version: version,

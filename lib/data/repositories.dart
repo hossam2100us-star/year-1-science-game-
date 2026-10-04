@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:drift/drift.dart';
 
+import '../content/curriculum.dart';
 import '../core/ids.dart';
 import '../core/models.dart';
 import 'db/app_database.dart';
@@ -87,8 +88,11 @@ class SettingsRepository {
 
 /// Attempts, journeys, usage and other-subject records.
 class ProgressRepository {
-  ProgressRepository(this.db);
+  ProgressRepository(this.db, {this.curriculum = currentCurriculum});
   final AppDatabase db;
+
+  /// Attempts and journeys of other curricula are never read or changed.
+  final String curriculum;
 
   /// Attempts are append-only in normal play; a progress reset replaces the
   /// child's list. Rows keep the app's own attempt ID for de-duplication.
@@ -96,9 +100,10 @@ class ProgressRepository {
     String childId,
     List<UnitAttempt> attempts,
   ) async {
-    await (db.delete(
-      db.unitAttempts,
-    )..where((t) => t.childId.equals(childId))).go();
+    await (db.delete(db.unitAttempts)..where(
+          (t) => t.childId.equals(childId) & t.curriculum.equals(curriculum),
+        ))
+        .go();
     for (var i = 0; i < attempts.length; i++) {
       final a = attempts[i];
       final id = Ids.uuidV7();
@@ -108,6 +113,7 @@ class ProgressRepository {
             UnitAttemptsCompanion.insert(
               id: id,
               childId: childId,
+              curriculum: curriculum,
               clientAttemptId: a.attemptId,
               unitId: a.unitId,
               contentVersion: a.contentVersion,
@@ -134,7 +140,10 @@ class ProgressRepository {
   Future<List<UnitAttempt>> attempts(String childId) async {
     final rows =
         await (db.select(db.unitAttempts)
-              ..where((t) => t.childId.equals(childId))
+              ..where(
+                (t) =>
+                    t.childId.equals(childId) & t.curriculum.equals(curriculum),
+              )
               ..orderBy([(t) => OrderingTerm(expression: t.sortOrder)]))
             .get();
     final result = <UnitAttempt>[];
@@ -169,20 +178,29 @@ class ProgressRepository {
       .insertOnConflictUpdate(
         JourneysCompanion.insert(
           childId: childId,
+          curriculum: curriculum,
           journeyKey: key,
           json: jsonEncode(json),
           updatedAt: DateTime.now().toUtc(),
         ),
       );
 
-  Future<void> deleteJourney(String childId, String key) => (db.delete(
-    db.journeys,
-  )..where((t) => t.childId.equals(childId) & t.journeyKey.equals(key))).go();
+  Future<void> deleteJourney(String childId, String key) =>
+      (db.delete(db.journeys)..where(
+            (t) =>
+                t.childId.equals(childId) &
+                t.curriculum.equals(curriculum) &
+                t.journeyKey.equals(key),
+          ))
+          .go();
 
   Future<Map<String, Map<String, dynamic>>> journeys(String childId) async {
-    final rows = await (db.select(
-      db.journeys,
-    )..where((t) => t.childId.equals(childId))).get();
+    final rows =
+        await (db.select(db.journeys)..where(
+              (t) =>
+                  t.childId.equals(childId) & t.curriculum.equals(curriculum),
+            ))
+            .get();
     return {
       for (final r in rows)
         r.journeyKey: Map<String, dynamic>.from(jsonDecode(r.json) as Map),

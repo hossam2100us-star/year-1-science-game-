@@ -200,6 +200,7 @@ void main() {
             UnitAttemptsCompanion.insert(
               id: Ids.uuidV7(),
               childId: child,
+              curriculum: 'y1.science',
               clientAttemptId: 'x',
               unitId: 'unit_01',
               contentVersion: 1,
@@ -217,6 +218,7 @@ void main() {
           .insert(
             JourneysCompanion.insert(
               childId: 'missing',
+              curriculum: 'y1.science',
               journeyKey: 'k',
               json: '{}',
               updatedAt: DateTime(2026),
@@ -225,5 +227,28 @@ void main() {
       throwsA(isA<SqliteException>()),
       reason: 'foreign keys are enforced',
     );
+  });
+  test('records of another curriculum are kept apart (AUD-023)', () async {
+    final store = await DriftProgressStore.open(db);
+    final data = family();
+    await store.write(data);
+    final id = data.activeChildId;
+    // A future Year 2 lesson that happens to reuse the ID "unit_03".
+    await db
+        .into(db.journeys)
+        .insert(
+          JourneysCompanion.insert(
+            childId: id,
+            curriculum: 'y2.science',
+            journeyKey: 'unit_03',
+            json: '{"year": 2}',
+            updatedAt: DateTime(2026),
+          ),
+        );
+    await store.write(data.copyWith(journeys: const {}));
+    final left = await db.select(db.journeys).get();
+    expect(left.single.curriculum, 'y2.science');
+    final reopened = await DriftProgressStore.open(db);
+    expect(reopened.read().journeys, isEmpty);
   });
 }

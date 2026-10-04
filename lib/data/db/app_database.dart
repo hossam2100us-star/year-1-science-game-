@@ -71,6 +71,10 @@ class UnitAttempts extends Table {
   TextColumn get childId =>
       text().references(Children, #id, onDelete: KeyAction.cascade)();
 
+  /// Year and subject the unit belongs to, e.g. `y1.science` (AUD-023):
+  /// unit IDs like `unit_01` only need to be unique inside a curriculum.
+  TextColumn get curriculum => text()();
+
   /// The attempt ID the app uses for de-duplication (`{lesson}-{micros}`),
   /// kept exactly as saved; empty for very old attempts.
   TextColumn get clientAttemptId => text()();
@@ -114,13 +118,14 @@ class AttemptObjectives extends Table {
 class Journeys extends Table {
   TextColumn get childId =>
       text().references(Children, #id, onDelete: KeyAction.cascade)();
+  TextColumn get curriculum => text()();
   TextColumn get journeyKey => text()();
   TextColumn get json => text()();
   IntColumn get version => integer().withDefault(const Constant(0))();
   DateTimeColumn get updatedAt => dateTime()();
 
   @override
-  Set<Column<Object>> get primaryKey => {childId, journeyKey};
+  Set<Column<Object>> get primaryKey => {childId, curriculum, journeyKey};
 }
 
 @DataClassName('UsageRow')
