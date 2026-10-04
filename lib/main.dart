@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'content/catalog.dart';
 import 'core/design.dart';
 import 'core/diagnostics/app_log.dart';
+import 'core/image_budget.dart';
 import 'core/models.dart';
 import 'core/providers.dart';
 import 'core/storage.dart';
@@ -26,6 +27,7 @@ Future<void> launchScienceAdventure({
   Widget app = const ScienceAdventureApp(),
 }) async {
   WidgetsFlutterBinding.ensureInitialized();
+  ImageBudget.configure();
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,

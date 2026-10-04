@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/answer_summary.dart';
 import '../../core/diagnostics/app_log.dart';
+import '../../core/image_budget.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
@@ -38,9 +39,11 @@ class LessonRoute extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) => ref
       .watch(lessonLibraryProvider)
       .when(
-        data: (library) => id == 'unit_01'
-            ? AliveAdventures(lesson: library.lessons[id]!)
-            : LessonPlayer(lesson: library.lessons[id]!),
+        data: (library) => UnitImageScope(
+          child: id == 'unit_01'
+              ? AliveAdventures(lesson: library.lessons[id]!)
+              : LessonPlayer(lesson: library.lessons[id]!),
+        ),
         loading: () =>
             const Scaffold(body: Center(child: CircularProgressIndicator())),
         error: (error, stack) => Scaffold(
