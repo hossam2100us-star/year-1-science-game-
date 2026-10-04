@@ -30,7 +30,7 @@ Push-Location -LiteralPath $previewRoot
 try {
     & flutter pub get --enforce-lockfile
     if ($LASTEXITCODE -ne 0) { throw 'Dependency resolution failed.' }
-    & flutter build web --no-web-resources-cdn --no-wasm-dry-run
+    & flutter build web -t lib/main_preview.dart --no-web-resources-cdn --no-wasm-dry-run
     if ($LASTEXITCODE -ne 0) { throw 'Browser preview build failed.' }
 } finally { Pop-Location }
 Write-Output "Serve $previewRoot/build/web on 127.0.0.1 only. Browser narration uses installed local English voices only."

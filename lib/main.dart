@@ -1,9 +1,4 @@
-import 'content/lesson.dart';
-import 'features/science/science_review_menu.dart';
-
 import 'dart:async';
-
-import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,36 +15,40 @@ import 'core/widgets.dart';
 import 'features/onboarding/profile_editor.dart';
 import 'features/world/subject_hub.dart';
 import 'features/onboarding/child_chooser.dart';
-import 'features/biology/lesson_player.dart';
-import 'features/plants/bean_experiment.dart';
-import 'features/plants/plant_lab_preview.dart';
 import 'parent/parent_gate.dart';
 import 'startup/startup_problem.dart';
 
-Future<void> main() async {
+Future<void> main() => launchScienceAdventure();
+
+/// Starts the game. [app] lets the review build add its preview routes; the
+/// production entry point always uses the plain [ScienceAdventureApp].
+Future<void> launchScienceAdventure({
+  Widget app = const ScienceAdventureApp(),
+}) async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,
   ]);
-  await _launch();
+  await _launch(app);
 }
 
-Future<void> _launch() async {
+Future<void> _launch(Widget app) async {
+  void onRetry() => unawaited(_launch(app));
   final HiveProgressStore store;
   try {
     store = await HiveProgressStore.open();
   } catch (error, stack) {
     AppLog.error('startup', 'Opening storage failed', error, stack);
     runApp(
-      StartupProblemApp(problem: startupProblemFor(error), onRetry: _launch),
+      StartupProblemApp(problem: startupProblemFor(error), onRetry: onRetry),
     );
     return;
   }
   try {
     store.read(); // Validate (and if needed recover) before the child UI.
   } on SaveDataUnreadable {
-    runApp(SaveRecoveryApp(store: store, onRetry: _launch));
+    runApp(SaveRecoveryApp(store: store, onRetry: onRetry));
     return;
   }
   final Catalog catalog;
@@ -58,9 +57,9 @@ Future<void> _launch() async {
   } catch (error, stack) {
     AppLog.error('startup', 'Loading the lesson catalog failed', error, stack);
     runApp(
-      const StartupProblemApp(
+      StartupProblemApp(
         problem: StartupProblem.contentMissing,
-        onRetry: _launch,
+        onRetry: onRetry,
       ),
     );
     return;
@@ -71,13 +70,21 @@ Future<void> _launch() async {
         storeProvider.overrideWithValue(store),
         catalogProvider.overrideWithValue(catalog),
       ],
-      child: const ScienceAdventureApp(),
+      child: app,
     ),
   );
 }
 
 class ScienceAdventureApp extends ConsumerStatefulWidget {
-  const ScienceAdventureApp({super.key});
+  const ScienceAdventureApp({
+    super.key,
+    this.initialRoute,
+    this.routes = const {},
+  });
+
+  /// Only the review build (lib/main_preview.dart) passes these.
+  final String? initialRoute;
+  final Map<String, WidgetBuilder> routes;
   @override
   ConsumerState<ScienceAdventureApp> createState() =>
       _ScienceAdventureAppState();
@@ -110,48 +117,9 @@ class _ScienceAdventureAppState extends ConsumerState<ScienceAdventureApp> {
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       supportedLocales: const [Locale('en'), Locale('ar')],
       home: const AdventureHome(),
-      initialRoute:
-          kIsWeb &&
-              const [
-                'garden-v2',
-                'alive-three',
-              ].contains(Uri.base.queryParameters['preview'])
-          ? '/garden-preview'
-          : kIsWeb && Uri.base.queryParameters['preview'] == 'bean-v1'
-          ? '/bean-preview'
-          : kIsWeb && Uri.base.queryParameters['preview'] == 'plants-v2'
-          ? '/plants-preview'
-          : kIsWeb && Uri.base.queryParameters['preview'] == 'plants-v3'
-          ? '/plants-review'
-          : kIsWeb && Uri.base.queryParameters['preview'] == 'light-v1'
-          ? '/light-review'
-          : kIsWeb && Uri.base.queryParameters['preview'] == 'science-v1'
-          ? '/science-review'
-          : kIsWeb && Uri.base.queryParameters['preview'] == 'biology-v1'
-          ? '/biology-review'
-          : '/',
-      routes: {
-        '/science-review': (_) => const ScienceReviewMenu(),
-        '/biology-review': (_) => PlantLabPreview(
-          lessonId:
-              LessonLibrary.availableIds.contains(
-                Uri.base.queryParameters['lesson'],
-              )
-              ? Uri.base.queryParameters['lesson']!
-              : 'unit_03',
-          initialStep:
-              (int.tryParse(Uri.base.queryParameters['step'] ?? '') ?? 1) - 1,
-        ),
-        '/garden-preview': (_) => const LessonRoute(id: 'unit_01'),
-        '/light-review': (_) => const PlantLabPreview(initialStep: 3),
-        '/plants-review': (_) => PlantLabPreview(
-          initialStep:
-              ((int.tryParse(Uri.base.queryParameters['step'] ?? '') ?? 1) - 1)
-                  .clamp(0, 13),
-        ),
-        '/plants-preview': (_) => const LessonRoute(id: 'unit_02'),
-        '/bean-preview': (_) => const BeanPreview(),
-      },
+      // Production has no preview routes (AUD-014); see lib/main_preview.dart.
+      initialRoute: widget.initialRoute,
+      routes: widget.routes,
     );
   }
 }
