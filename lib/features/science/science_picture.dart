@@ -198,14 +198,15 @@ class SciencePicture extends StatelessWidget {
     }
     for (final a in scienceAtlases.entries) {
       final i = a.value.indexOf(art);
-      if (i >= 0)
+      if (i >= 0) {
         return SizedBox(
           height: height,
           width: height * 1.25,
           child: IllustratedArt(asset: a.key, crop: scienceAtlasCrop(a.key, i)),
         );
+      }
     }
-    if (scienceSymbols.containsKey(art))
+    if (scienceSymbols.containsKey(art)) {
       return SizedBox(
         height: height,
         width: height,
@@ -215,11 +216,13 @@ class SciencePicture extends StatelessWidget {
           color: const Color(0xFF437A95),
         ),
       );
-    if (illustrationFor(art) != null || ['leaf', 'bird', 'cat'].contains(art))
+    }
+    if (illustrationFor(art) != null || ['leaf', 'bird', 'cat'].contains(art)) {
       return SizedBox(
         width: height * 1.25,
         child: BiologyPicture(art: art, height: height),
       );
+    }
     return const SizedBox.shrink();
   }
 }

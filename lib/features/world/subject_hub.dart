@@ -66,8 +66,9 @@ class SubjectHub extends ConsumerWidget {
                           context,
                           gender: ref.read(appProvider).profile?.gender,
                         ) ||
-                        !context.mounted)
+                        !context.mounted) {
                       return;
+                    }
                     onParentChanged(true);
                     try {
                       await Navigator.of(context).push(

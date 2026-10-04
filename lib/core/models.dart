@@ -327,8 +327,9 @@ class AppData {
   };
   factory AppData.fromJson(Map<String, dynamic> j) {
     if (j['schemaVersion'] == 3) return AppData._fromFamily(j);
-    if (j['schemaVersion'] != 1 && j['schemaVersion'] != 2)
+    if (j['schemaVersion'] != 1 && j['schemaVersion'] != 2) {
       throw const FormatException('Unsupported save version');
+    }
     final subjects = Map<String, dynamic>.from(j['subjects'] ?? {});
     final science = j['schemaVersion'] == 1
         ? j

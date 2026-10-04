@@ -19,7 +19,7 @@ class BiologyPicture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final illustration = illustrationFor(art, girl: girl);
-    if (illustration != null)
+    if (illustration != null) {
       return SizedBox(
         height: height,
         width: double.infinity,
@@ -28,6 +28,7 @@ class BiologyPicture extends StatelessWidget {
           crop: illustration.crop,
         ),
       );
+    }
     return SizedBox(
       height: height,
       width: double.infinity,
@@ -180,7 +181,7 @@ class BiologyArt extends CustomPainter {
         const Color(0xFFCD6F80),
         3,
       );
-      if (id == 'taste_buds')
+      if (id == 'taste_buds') {
         for (var i = 0; i < 12; i++) {
           oval(
             Rect.fromCircle(
@@ -190,10 +191,12 @@ class BiologyArt extends CustomPainter {
             const Color(0xFFB75171),
           );
         }
+      }
     } else if (id == 'skin') {
       box(const Rect.fromLTWH(76, 64, 84, 78), skin, 22);
-      for (var i = 0; i < 4; i++)
+      for (var i = 0; i < 4; i++) {
         box(Rect.fromLTWH(78 + i * 20, 16 + (i % 3) * 6, 16, 73), skin, 8);
+      }
       line(const Offset(77, 101), const Offset(54, 64), skin, 17);
       line(
         const Offset(95, 100),
@@ -219,7 +222,7 @@ class BiologyArt extends CustomPainter {
         textDirection: TextDirection.ltr,
       )..layout();
       text.paint(c, Offset(120 - text.width / 2, 0));
-      for (var i = 0; i < count; i++)
+      for (var i = 0; i < count; i++) {
         oval(
           Rect.fromCircle(
             center: Offset(50 + (i % 5) * 35, 105 + (i ~/ 5) * 27),
@@ -227,6 +230,7 @@ class BiologyArt extends CustomPainter {
           ),
           blue,
         );
+      }
     } else if (id == 'bread') {
       box(const Rect.fromLTWH(37, 80, 166, 59), blue, 18);
       box(const Rect.fromLTWH(58, 47, 123, 49), const Color(0xFF9F6435), 16);
@@ -235,7 +239,7 @@ class BiologyArt extends CustomPainter {
         Rect.fromCircle(center: const Offset(180, 109), radius: 9),
         const Color(0xFFE8D9B1),
       );
-      for (var i = 0; i < 3; i++)
+      for (var i = 0; i < 3; i++) {
         path(
           Path()
             ..moveTo(88 + i * 30, 39)
@@ -243,6 +247,7 @@ class BiologyArt extends CustomPainter {
           const Color(0xFF9BABA8),
           width: 5,
         );
+      }
     } else if (id == 'lemon') {
       oval(const Rect.fromLTWH(31, 54, 104, 64), const Color(0xFFEBC946));
       oval(const Rect.fromLTWH(116, 34, 91, 92), const Color(0xFFFFDB55));
@@ -268,7 +273,7 @@ class BiologyArt extends CustomPainter {
       box(const Rect.fromLTWH(65, 53, 97, 83), blue, 14);
       oval(const Rect.fromLTWH(65, 44, 97, 25), const Color(0xFFE5EDE3));
       oval(const Rect.fromLTWH(75, 48, 77, 17), const Color(0xFF9F6F40));
-      for (var i = 0; i < 3; i++)
+      for (var i = 0; i < 3; i++) {
         path(
           Path()
             ..moveTo(83 + i * 28, 36)
@@ -276,10 +281,11 @@ class BiologyArt extends CustomPainter {
           const Color(0xFF9CAFAA),
           width: 4,
         );
+      }
     } else if (id == 'traffic') {
       box(const Rect.fromLTWH(105, 6, 44, 124), ink, 13);
       line(const Offset(127, 127), const Offset(127, 156), ink, 10);
-      for (var i = 0; i < 3; i++)
+      for (var i = 0; i < 3; i++) {
         oval(
           Rect.fromCircle(center: Offset(127, 29 + i * 39), radius: 14),
           [
@@ -288,6 +294,7 @@ class BiologyArt extends CustomPainter {
             const Color(0xFF72C973),
           ][i],
         );
+      }
     } else if (id == 'watermelon') {
       path(
         Path()
@@ -315,8 +322,9 @@ class BiologyArt extends CustomPainter {
         const Offset(119, 72),
         const Offset(156, 64),
         const Offset(119, 101),
-      ])
+      ]) {
         oval(Rect.fromCenter(center: p, width: 5, height: 9), ink);
+      }
     } else if (id == 'apple') {
       oval(const Rect.fromLTWH(53, 52, 86, 89), const Color(0xFFD86C62));
       oval(const Rect.fromLTWH(111, 52, 76, 89), const Color(0xFFE98171));
@@ -373,7 +381,7 @@ class BiologyArt extends CustomPainter {
         const Color(0xFF694933),
       );
     } else if (id == 'dust') {
-      for (var i = 0; i < 20; i++)
+      for (var i = 0; i < 20; i++) {
         oval(
           Rect.fromCircle(
             center: Offset(42 + (i * 41) % 165, 30 + (i * 31) % 104),
@@ -381,6 +389,7 @@ class BiologyArt extends CustomPainter {
           ),
           const Color(0xFFA98D65),
         );
+      }
     } else if (id == 'breathe') {
       oval(const Rect.fromLTWH(44, 22, 80, 107), skin);
       oval(const Rect.fromLTWH(105, 70, 24, 20), skin);
@@ -405,12 +414,13 @@ class BiologyArt extends CustomPainter {
         blue,
       );
       box(const Rect.fromLTWH(48, 20, 21, 58), ink, 3);
-      for (var i = 0; i < 4; i++)
+      for (var i = 0; i < 4; i++) {
         box(
           Rect.fromLTWH(51 + i * 38, 103, 22, 23),
           const Color(0xFFFFDC85),
           3,
         );
+      }
     } else if (id == 'spoon') {
       line(
         const Offset(112, 68),
@@ -421,14 +431,16 @@ class BiologyArt extends CustomPainter {
       oval(const Rect.fromLTWH(75, 7, 59, 77), const Color(0xFFA7C1C8));
       oval(const Rect.fromLTWH(85, 17, 38, 52), const Color(0xFFDCE9EA));
     } else if (id == 'table') {
-      for (final x in [55.0, 173.0])
+      for (final x in [55.0, 173.0]) {
         line(Offset(x, 71), Offset(x, 142), const Color(0xFF9C704B), 13);
+      }
       box(const Rect.fromLTWH(30, 44, 180, 40), const Color(0xFFC29360), 8);
     } else if (id == 'baby') {
       oval(const Rect.fromLTWH(63, 74, 117, 76), const Color(0xFFF2C879));
       oval(const Rect.fromLTWH(85, 14, 72, 74), skin);
-      for (final x in [107.0, 136.0])
+      for (final x in [107.0, 136.0]) {
         oval(Rect.fromCircle(center: Offset(x, 49), radius: 4), ink);
+      }
       path(
         Path()
           ..moveTo(111, 68)

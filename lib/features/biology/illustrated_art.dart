@@ -83,26 +83,30 @@ const illustratedEyeAnchors = <String, Offset>{
   final id = raw.toLowerCase().replaceAll(' ', '_');
   // Reuse only subjects that actually exist in the accepted painted assets.
   // Music is represented by a musical instrument, not an unrelated symbol.
-  if (const ['music', 'hear_music', 'sound', 'loud'].contains(id))
+  if (const ['music', 'hear_music', 'sound', 'loud'].contains(id)) {
     return (
       asset: 'sound-atlas-v2.png',
       crop: const Rect.fromLTWH(.25, 0, .25, .35),
     );
-  if (const ['flower', 'flowers', 'smell_flowers'].contains(id))
+  }
+  if (const ['flower', 'flowers', 'smell_flowers'].contains(id)) {
     return (
       asset: 'plant-lab-v1.webp',
       crop: const Rect.fromLTWH(.34, .005, .29, .37),
     );
-  if (id == 'car')
+  }
+  if (id == 'car') {
     return (
       asset: 'garden-v2.webp',
       crop: const Rect.fromLTWH(.609, .355, .24, .274),
     );
-  if (id == 'paper')
+  }
+  if (id == 'paper') {
     return (
       asset: 'science-details-v2.png',
       crop: const Rect.fromLTWH(643 / 1269, 366 / 1240, 307 / 1269, 264 / 1240),
     );
+  }
   const senses = {
     'sight': 0,
     'eyes': 0,
@@ -119,11 +123,12 @@ const illustratedEyeAnchors = <String, Offset>{
     'big_hand': 4,
     'small_hand': 4,
   };
-  if (senses.containsKey(id))
+  if (senses.containsKey(id)) {
     return (
       asset: 'five-senses-v2.webp',
       crop: Rect.fromLTWH(senses[id]! * .2 + .006, .04, .188, .91),
     );
+  }
   const objects = {
     'apple': 0,
     'lemon': 1,
@@ -162,10 +167,11 @@ const illustratedEyeAnchors = <String, Offset>{
     );
   }
   final point = illustratedBodyAnchors[id];
-  if (point != null)
+  if (point != null) {
     return (
       asset: girl ? 'explorer-girl-v2.webp' : 'explorer-boy-v2.webp',
       crop: Rect.fromCenter(center: point, width: .20, height: .14),
     );
+  }
   return null;
 }

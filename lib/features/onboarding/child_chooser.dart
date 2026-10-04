@@ -33,8 +33,9 @@ class _ChildChooserState extends ConsumerState<ChildChooser> {
             context,
             gender: ref.read(appProvider).profile?.gender,
           ) ||
-          !mounted)
+          !mounted) {
         return;
+      }
       final confirmed = await showDialog<bool>(
         context: context,
         builder: (dialog) => AlertDialog(
@@ -88,8 +89,9 @@ class _ChildChooserState extends ConsumerState<ChildChooser> {
           context,
           gender: ref.read(appProvider).profile?.gender,
         ) ||
-        !mounted)
+        !mounted) {
       return;
+    }
     widget.onParentChanged(true);
     try {
       await Navigator.of(context).push(

@@ -45,8 +45,9 @@ class LessonSession {
       }.entries) {
         final id = 'unit_02.step.${entry.key.toString().padLeft(3, '0')}';
         if (responses[id]?['completed'] == true ||
-            (oldId == id && current['done'] == true))
+            (oldId == id && current['done'] == true)) {
           built.add(entry.value);
+        }
       }
       if (built.length == 4) {
         responses['unit_02.step.006'] = {
@@ -104,8 +105,9 @@ class LessonSession {
     for (final step in lesson.steps) {
       final merged = List<String>.from(step.json['legacyMergedFrom'] ?? []);
       if (merged.isEmpty ||
-          !merged.every((id) => responses[id]?['completed'] == true))
+          !merged.every((id) => responses[id]?['completed'] == true)) {
         continue;
+      }
       final outcomes = merged.map((id) => responses[id]?['outcome']).toList();
       final result = outcomes.contains('explained')
           ? 'explained'
@@ -168,7 +170,7 @@ class LessonSession {
   }
 
   Map<String, dynamic> _migrateSoundChartState(
-    Map state, {
+    Map<dynamic, dynamic> state, {
     bool completed = false,
   }) {
     final migrated = Map<String, dynamic>.from(state);
@@ -241,8 +243,9 @@ class LessonSession {
         final contributors = ids.where(
           (id) => legacyObjectives[id] == objective,
         );
-        if (!contributors.every((id) => responses[id]?['completed'] == true))
+        if (!contributors.every((id) => responses[id]?['completed'] == true)) {
           evidence.remove(objective);
+        }
       }
       final objectiveItems = next.json['objectiveItems'];
       if (objectiveItems is Map) {

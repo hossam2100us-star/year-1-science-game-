@@ -62,12 +62,13 @@ class SeaRoutePainter extends CustomPainter {
       ..strokeWidth = 4;
     for (var j = 0; j < points.length - 1; j++) {
       final a = points[j], b = points[j + 1], length = (b - a).distance;
-      for (double d = 0; d < length; d += 13)
+      for (double d = 0; d < length; d += 13) {
         c.drawLine(
           Offset.lerp(a, b, d / length)!,
           Offset.lerp(a, b, ((d + 5) / length).clamp(0, 1))!,
           p,
         );
+      }
     }
   }
 

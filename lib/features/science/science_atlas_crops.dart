@@ -86,13 +86,14 @@ const scienceAtlasBounds = <String, List<Rect>>{
 
 Rect scienceAtlasCrop(String asset, int index) {
   final size = scienceAtlasSizes[asset];
-  if (size == null)
+  if (size == null) {
     return Rect.fromLTWH(
       (index % 4) / 4 + .006,
       (index ~/ 4) / 4 + .006,
       .238,
       .238,
     );
+  }
   final rect = scienceAtlasBounds[asset]![index];
   return Rect.fromLTWH(
     rect.left / size.width,

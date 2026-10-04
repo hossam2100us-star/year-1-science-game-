@@ -36,8 +36,9 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
           context,
           gender: ref.read(appProvider).profile?.gender,
         ) ||
-        !context.mounted)
+        !context.mounted) {
       return;
+    }
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (dialog) => AlertDialog(
@@ -211,8 +212,9 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                                         ),
                                       );
                                 } catch (error, stack) {
-                                  if (context.mounted)
+                                  if (context.mounted) {
                                     showSaveError(context, error, stack);
+                                  }
                                 }
                               },
                               icon: Icon(
@@ -366,8 +368,9 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                                 context,
                                 gender: ref.read(appProvider).profile?.gender,
                               ) ||
-                              !context.mounted)
+                              !context.mounted) {
                             return;
+                          }
                           final confirmed = await showDialog<bool>(
                             context: context,
                             builder: (dialog) => AlertDialog(
@@ -405,8 +408,9 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                                   .read(appProvider.notifier)
                                   .resetProgress();
                             } catch (error, stack) {
-                              if (context.mounted)
+                              if (context.mounted) {
                                 showSaveError(context, error, stack);
+                              }
                             }
                           }
                         },

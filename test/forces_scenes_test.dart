@@ -53,7 +53,7 @@ void main() {
     );
   }
 
-  Map current(MemoryProgressStore store) =>
+  Map<dynamic, dynamic> current(MemoryProgressStore store) =>
       store.data.journeys[lesson.id]!['current'];
   Future<void> choose(WidgetTester t, String id) async {
     final item = find.byKey(ValueKey('science-item-$id'));

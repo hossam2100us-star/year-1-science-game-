@@ -172,8 +172,9 @@ void main() {
               }
             }
           }
-          if (s.isMapping || s.isMulti || s.isOrder)
+          if (s.isMapping || s.isMulti || s.isOrder) {
             await helpers.tapVisible(t, find.text('Check my discovery'));
+          }
           expect(
             store.data.journeys[id]!['current']['outcome'],
             'firstTry',
@@ -246,8 +247,9 @@ void main() {
         final mode = s.json['lab'];
         if (mode == null ||
             s.json['results'] != null ||
-            ['force', 'distance', 'sailboat', 'stars'].contains(mode))
+            ['force', 'distance', 'sailboat', 'stars'].contains(mode)) {
           continue;
+        }
         final store = storeFor(b, i);
         await helpers.mount(t, LessonPlayer(lesson: b), store);
         final keys = <String>[];
@@ -267,10 +269,12 @@ void main() {
             ]);
           }
         }
-        if (mode == 'soil' || mode == 'cleanup')
+        if (mode == 'soil' || mode == 'cleanup') {
           keys.addAll(s.options.map((p) => 'lab-find-${p.id}'));
-        if (mode == 'rock-sort')
+        }
+        if (mode == 'rock-sort') {
           keys.addAll(s.options.map((p) => 'lab-group-${p.id}-My first group'));
+        }
         if (mode == 'day-night') keys.addAll(List.filled(4, 'lab-turn'));
         if (mode == 'earth-paint') keys.addAll(['lab-water', 'lab-land']);
         for (final k in keys) {

@@ -32,12 +32,13 @@ class _WorldMapState extends ConsumerState<WorldMap> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted)
+      if (mounted) {
         ref
             .read(narrationProvider)
             .speak(
               'Welcome to our science islands. Tap Biology Island to explore.',
             );
+      }
     });
   }
 
@@ -48,8 +49,9 @@ class _WorldMapState extends ConsumerState<WorldMap> {
           context,
           gender: ref.read(appProvider).profile?.gender,
         ) ||
-        !mounted)
+        !mounted) {
       return;
+    }
     widget.onParentChanged(true);
     await Navigator.of(context)
         .push(MaterialPageRoute<void>(builder: (_) => const ParentArea()));

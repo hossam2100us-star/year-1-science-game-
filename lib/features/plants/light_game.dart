@@ -45,12 +45,12 @@ class LightGame extends FlameGame {
   }
 
   @override
-  void render(Canvas c) {
-    super.render(c);
+  void render(Canvas canvas) {
+    super.render(canvas);
     if (room == null || plants == null) return;
     final w = size.x, h = size.y;
     final paint = Paint()..filterQuality = FilterQuality.medium;
-    c.drawImageRect(
+    canvas.drawImageRect(
       room!,
       Rect.fromLTWH(0, 0, room!.width.toDouble(), room!.height.toDouble()),
       Rect.fromLTWH(0, 0, w, h),
@@ -76,7 +76,7 @@ class LightGame extends FlameGame {
         width,
         height,
       );
-      c.drawImageRect(plants!, source, target, paint);
+      canvas.drawImageRect(plants!, source, target, paint);
       if (waterTime > 0 && watering == place) {
         for (var i = 0; i < 12; i++) {
           final t = reducedMotion
@@ -84,7 +84,7 @@ class LightGame extends FlameGame {
               : ((1.1 - waterTime) * 1.2 + i * .06) % 1;
           final x = target.center.dx + math.sin(i * 3.2) * width * .13;
           final y = target.bottom - height * .4 + t * height * .34;
-          c.drawOval(
+          canvas.drawOval(
             Rect.fromCenter(center: Offset(x, y), width: 5, height: 9),
             Paint()..color = const Color(0xFF56B4EC),
           );
@@ -93,21 +93,21 @@ class LightGame extends FlameGame {
     }
     if (doorTime > 0) {
       final r = Rect.fromLTWH(w * .535, h * .14, w * .38, h * .6);
-      c.drawRRect(
+      canvas.drawRRect(
         RRect.fromRectAndRadius(r, const Radius.circular(8)),
         Paint()
           ..shader = const LinearGradient(
             colors: [Color(0xFFAF7140), Color(0xFF754321)],
           ).createShader(r),
       );
-      c.drawRRect(
+      canvas.drawRRect(
         RRect.fromRectAndRadius(r.deflate(12), const Radius.circular(6)),
         Paint()
           ..color = const Color(0xFFC59362)
           ..style = PaintingStyle.stroke
           ..strokeWidth = 4,
       );
-      c.drawCircle(
+      canvas.drawCircle(
         Offset(r.right - 15, r.center.dy),
         5,
         Paint()..color = const Color(0xFFFFDB85),

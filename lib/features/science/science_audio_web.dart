@@ -11,12 +11,12 @@ extension type _Audio._(JSObject _) implements JSObject {
 }
 
 class ScienceAudio {
-  static _Audio? player;
+  static _Audio? _player;
   static Future<void> play(String name, double volume) async {
-    player?.pause();
+    _player?.pause();
     final next = _Audio('assets/assets/audio/$name.wav')
       ..volume = volume.clamp(0.0, .5);
-    player = next;
+    _player = next;
     try {
       await next.play().toDart;
     } catch (error, stack) {
@@ -26,7 +26,7 @@ class ScienceAudio {
   }
 
   static Future<void> stop() async {
-    player?.pause();
-    player = null;
+    _player?.pause();
+    _player = null;
   }
 }

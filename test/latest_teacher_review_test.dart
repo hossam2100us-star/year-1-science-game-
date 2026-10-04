@@ -105,7 +105,7 @@ void main() {
     );
   }
 
-  Map current(MemoryProgressStore store, String id) =>
+  Map<dynamic, dynamic> current(MemoryProgressStore store, String id) =>
       store.data.journeys[id]!['current'];
   Future<void> capture(WidgetTester t, GlobalKey key, String name) =>
       t.runAsync(() async {
@@ -135,8 +135,9 @@ void main() {
       }
     }
     for (final step in library.lessons['unit_07']!.steps) {
-      for (final book in step.options.where((p) => p.id == 'book'))
+      for (final book in step.options.where((p) => p.id == 'book')) {
         expect(book.art, 'book');
+      }
     }
   });
 
@@ -337,8 +338,9 @@ void main() {
                 expect(bounds.contains(rect.topLeft), true);
                 expect(bounds.contains(rect.bottomRight), true);
               }
-              for (final previous in rects)
+              for (final previous in rects) {
                 expect(rect.overlaps(previous), false);
+              }
               rects.add(rect);
               await tap(t, 'science-item-${item.id}');
             }
@@ -347,11 +349,12 @@ void main() {
               step.options.map((o) => o.id).toSet(),
             );
             expect(find.byKey(const ValueKey('lessonNext')), findsOneWidget);
-            if (id == 'unit_09')
+            if (id == 'unit_09') {
               expect(
                 find.text('Model: sizes and distances are not to scale.'),
                 findsOneWidget,
               );
+            }
           }
           expect(t.takeException(), isNull);
           await t.pumpWidget(const SizedBox());

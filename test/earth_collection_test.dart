@@ -55,7 +55,7 @@ void main() {
     );
   }
 
-  Map current(MemoryProgressStore store) =>
+  Map<dynamic, dynamic> current(MemoryProgressStore store) =>
       store.data.journeys[lesson.id]!['current'];
   Future<void> tap(WidgetTester t, String key) =>
       helpers.tapVisible(t, find.byKey(ValueKey(key)));

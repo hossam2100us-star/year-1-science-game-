@@ -42,8 +42,9 @@ class StickerAlbum extends ConsumerWidget {
                     for (final lesson in library.lessons.values) {
                       for (final sticker in lesson.stickers) {
                         words[sticker['id']] = sticker;
-                        if (data.isComplete(lesson.id))
+                        if (data.isComplete(lesson.id)) {
                           earned.add(sticker['id']);
+                        }
                       }
                     }
                     return Wrap(

@@ -10,8 +10,9 @@ Future<void> removeTemporaryPhoto(String path) async {
     final file = File(path);
     final canonical = await file.resolveSymbolicLinks();
     // Never delete the parent's original gallery image or anything outside app cache.
-    if (canonical.startsWith('$cache${Platform.pathSeparator}'))
+    if (canonical.startsWith('$cache${Platform.pathSeparator}')) {
       await file.delete();
+    }
   } catch (error, stack) {
     // A missing cache file must not discard a successfully imported avatar.
     AppLog.warning(

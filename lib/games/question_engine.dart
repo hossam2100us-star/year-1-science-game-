@@ -14,15 +14,17 @@ bool matchesAnswer(Map<String, dynamic> answer, dynamic value) {
           value.toSet().length == value.length &&
           value.every((v) => expected.contains(v));
     case 'sequence':
-      if (value is! List || value.length != (expected as List).length)
+      if (value is! List || value.length != (expected as List).length) {
         return false;
+      }
       for (var i = 0; i < value.length; i++) {
         if (value[i] != expected[i]) return false;
       }
       return true;
     case 'mapping':
-      if (value is! Map || value.length != (expected as Map).length)
+      if (value is! Map || value.length != (expected as Map).length) {
         return false;
+      }
       return expected.entries.every(
         (e) => canonical(value[e.key]) == canonical(e.value),
       );
@@ -92,8 +94,9 @@ Map<String, DecisionOutcome> objectiveResults(
     if (response is! Map || response['outcome'] == null) continue;
     final value = DecisionOutcome.values.byName(response['outcome']);
     final previous = results[step.objective];
-    if (previous == null || value.index > previous.index)
+    if (previous == null || value.index > previous.index) {
       results[step.objective] = value;
+    }
   }
   return results;
 }

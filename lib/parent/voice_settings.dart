@@ -171,8 +171,9 @@ class VoiceHelpButton extends ConsumerWidget {
                     context,
                     gender: ref.read(appProvider).profile?.gender,
                   ) ||
-                  !context.mounted)
+                  !context.mounted) {
                 return;
+              }
               await showDialog<void>(
                 context: context,
                 builder: (dialog) => AlertDialog(

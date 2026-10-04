@@ -227,8 +227,9 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
         await parentGate(
           context,
           gender: ref.read(appProvider).profile?.gender,
-        ))
+        )) {
       await SystemNavigator.pop();
+    }
     _exitOpen = false;
   }
 

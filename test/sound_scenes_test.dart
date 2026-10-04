@@ -23,7 +23,7 @@ import 'setup_screen_test.dart' as helpers;
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   late Lesson lesson;
-  final audio = <Map>[];
+  final audio = <Map<dynamic, dynamic>>[];
   const channel = MethodChannel('science_adventure/sounds');
   setUpAll(() async {
     lesson = (await LessonLibrary.load()).lessons['unit_06']!;
@@ -67,7 +67,7 @@ void main() {
     );
   }
 
-  Map current(MemoryProgressStore store) =>
+  Map<dynamic, dynamic> current(MemoryProgressStore store) =>
       store.data.journeys[lesson.id]!['current'];
   void size(WidgetTester t, Size value) {
     t.view.physicalSize = value;

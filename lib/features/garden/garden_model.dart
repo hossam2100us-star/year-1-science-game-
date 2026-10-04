@@ -138,11 +138,12 @@ class GardenRound {
     'history': history.map((h) => Map<String, dynamic>.from(h)).toList(),
   };
   factory GardenRound.restore(Map<String, dynamic> j, GardenContent content) {
-    if (j['version'] != content.version)
+    if (j['version'] != content.version) {
       return GardenRound(
         version: content.version,
         requiredIds: content.items.map((i) => i.id).toSet(),
       );
+    }
     final results = Map<String, String>.from(j['results'] ?? {})
       ..removeWhere(
         (id, v) =>

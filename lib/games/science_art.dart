@@ -159,7 +159,7 @@ void drawPicture(
       const Offset(55, 24),
       const Offset(70, 40),
       const Offset(39, 49),
-    ])
+    ]) {
       oval(
         pt.dx - 18,
         pt.dy - 18,
@@ -167,6 +167,7 @@ void drawPicture(
         38,
         id == 'broccoli' ? green : const Color(0xFFF3E8BC),
       );
+    }
   } else if ([
     'bean_1',
     'seed',
@@ -196,7 +197,7 @@ void drawPicture(
     'mosquito',
   ].contains(id)) {
     if (id == 'worm') {
-      for (var i = 0; i < 6; i++)
+      for (var i = 0; i < 6; i++) {
         oval(
           5 + i * 12,
           45 + math.sin(i + motion) * 8,
@@ -204,6 +205,7 @@ void drawPicture(
           25,
           const Color(0xFFC58B72),
         );
+      }
       oval(77, 45, 4, 4, ink);
     } else if (id == 'fly' || id == 'mosquito') {
       oval(8, 12, 40, 40, const Color(0xFFB4DCE7));
@@ -227,13 +229,16 @@ void drawPicture(
       box(22, 50, 47, 25, const Color(0xFFE3B152));
       box(60, 16, 14, 47, const Color(0xFFE3B152));
       oval(55, 9, 33, 22, const Color(0xFFE3B152));
-      for (final x in [27.0, 61.0]) line(x, 70, x, 93, brown, 6);
+      for (final x in [27.0, 61.0]) {
+        line(x, 70, x, 93, brown, 6);
+      }
       for (final pt in [
         const Offset(36, 57),
         const Offset(54, 60),
         const Offset(66, 35),
-      ])
+      ]) {
         oval(pt.dx, pt.dy, 8, 8, brown);
+      }
       oval(76, 16, 4, 4, ink);
     } else {
       final fur = id == 'lizard' ? green : const Color(0xFFC99061);
@@ -301,7 +306,9 @@ void drawPicture(
     oval(34, 30, 32, 38, blue);
     oval(43, 38, 14, 22, ink);
     line(15, 18, 83, 14, brown, 7);
-    for (var i = 0; i < 5; i++) line(20 + i * 15, 28, 16 + i * 15, 18, ink, 3);
+    for (var i = 0; i < 5; i++) {
+      line(20 + i * 15, 28, 16 + i * 15, 18, ink, 3);
+    }
     if (id == 'eyelid') box(12, 29, 76, 18, const Color(0xFFE9B899), 9);
     if (id == 'checks_eyes_and_gives_glasses') {
       canvas.drawCircle(
@@ -338,7 +345,7 @@ void drawPicture(
   } else if (['tongue', 'taste', 'taste_buds', 'sweet', 'sweet_honey'].contains(id)) {
     oval(11, 26, 78, 48, ink);
     oval(28, 36, 44, 52, const Color(0xFFD78791));
-    for (var i = 0; i < 8; i++)
+    for (var i = 0; i < 8; i++) {
       oval(
         34 + (i % 3) * 10,
         42 + (i ~/ 3) * 11,
@@ -346,10 +353,12 @@ void drawPicture(
         4,
         const Color(0xFF994C67),
       );
+    }
   } else if (['skin', 'touch', 'handful'].contains(id)) {
     oval(22, 39, 53, 45, const Color(0xFFE8B390));
-    for (var i = 0; i < 4; i++)
+    for (var i = 0; i < 4; i++) {
       box(23 + i * 13, 12 + (i == 0 ? 10 : 0), 11, 45, const Color(0xFFE8B390));
+    }
     box(66, 42, 26, 12, const Color(0xFFE8B390));
   } else if (['car', 'traffic', 'moves'].contains(id)) {
     box(7, 42, 85, 34, blue, 12);
@@ -389,26 +398,28 @@ void drawPicture(
           ..strokeWidth = 8
           ..color = const Color(0xFFE9BA68),
       );
-      if (id == 'kettle')
+      if (id == 'kettle') {
         path([
           const Offset(22, 45),
           const Offset(4, 27),
           const Offset(8, 62),
           const Offset(27, 70),
         ], const Color(0xFFE9BA68));
+      }
     }
   } else if (['cloud', 'air', 'wind', 'breathe', 'breathes'].contains(id)) {
     for (final r in [
       const Rect.fromLTWH(7, 42, 45, 32),
       const Rect.fromLTWH(28, 20, 43, 53),
       const Rect.fromLTWH(56, 39, 37, 36),
-    ])
+    ]) {
       canvas.drawOval(
         r,
         p
           ..style = PaintingStyle.fill
           ..color = const Color(0xFFE9F2F8),
       );
+    }
     if (id != 'cloud') line(20, 82, 79, 82, blue, 3);
   } else if (['egg_with_a_growing_chick', 'egg'].contains(id)) {
     oval(22, 4, 57, 86, const Color(0xFFEBDBB9));
@@ -417,9 +428,9 @@ void drawPicture(
     oval(46, 32, 25, 24, const Color(0xFFF3CB67));
     oval(61, 39, 4, 4, ink);
   } else if (['bread', 'apple', 'lemon', 'watermelon', 'food', 'eats', 'eating'].contains(id)) {
-    if (id == 'bread')
+    if (id == 'bread') {
       box(17, 22, 65, 61, const Color(0xFFDCAA67), 23);
-    else if (id == 'watermelon') {
+    } else if (id == 'watermelon') {
       oval(8, 22, 84, 61, green);
       oval(14, 28, 72, 48, const Color(0xFFD88983));
     } else {
@@ -587,7 +598,7 @@ void drawBody(Canvas canvas, Rect rect, {bool girl = false}) {
       ..strokeWidth = 7
       ..color = const Color(0xFF755037),
   );
-  for (final x in [44.0, 56.0])
+  for (final x in [44.0, 56.0]) {
     canvas.drawCircle(
       Offset(x, 12),
       1.7,
@@ -595,6 +606,7 @@ void drawBody(Canvas canvas, Rect rect, {bool girl = false}) {
         ..style = PaintingStyle.fill
         ..color = ink,
     );
+  }
   canvas.drawArc(
     const Rect.fromLTWH(44, 14, 12, 7),
     0,

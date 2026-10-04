@@ -47,7 +47,7 @@ class NarrationService extends ChangeNotifier {
     try {
       final raw = await _tts.getVoices;
       voices = (raw as List)
-          .whereType<Map>()
+          .whereType<Map<dynamic, dynamic>>()
           .where((v) {
             final locale = (v['locale'] ?? '').toString().toLowerCase();
             final network = v['network_required'];
@@ -98,8 +98,9 @@ class NarrationService extends ChangeNotifier {
     if (_disposed ||
         token != _generation ||
         !_settings.narration ||
-        status != VoiceStatus.ready)
+        status != VoiceStatus.ready) {
       return;
+    }
     try {
       if (!kIsWeb) await _tts.stop();
       final chosen = _gender == ChildGender.girl
@@ -108,8 +109,9 @@ class NarrationService extends ChangeNotifier {
       final voice =
           voices.where((v) => v.id == chosen).firstOrNull ?? voices.first;
       if (kIsWeb) {
-        if (token == _generation && !_disposed)
+        if (token == _generation && !_disposed) {
           preview.speakLocal(text, voice.name, voice.locale, _settings.volume);
+        }
         return;
       }
       await _tts.setVoice({'name': voice.name, 'locale': voice.locale});
@@ -126,10 +128,11 @@ class NarrationService extends ChangeNotifier {
   Future<void> stop() async {
     _generation++;
     try {
-      if (kIsWeb)
+      if (kIsWeb) {
         preview.stopLocal();
-      else
+      } else {
         await _tts.stop();
+      }
     } catch (error, stack) {
       AppLog.warning('narration', 'Stopping speech failed', error, stack);
     }

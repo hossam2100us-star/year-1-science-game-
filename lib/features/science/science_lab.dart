@@ -566,8 +566,9 @@ class _ScienceLabState extends State<ScienceLab> {
 
   Future<void> test(String active, List<String> tested) async {
     if (tested.contains(active) ||
-        !(state['guesses'] as Map? ?? {}).containsKey(active))
+        !(state['guesses'] as Map? ?? {}).containsKey(active)) {
       return;
+    }
     final next = {...tested, active}.toList();
     final complete = ScienceLab.experimentComplete(widget.step, {
       ...state,
@@ -618,8 +619,9 @@ class _ScienceLabState extends State<ScienceLab> {
 
   Future<void> observe(String active, String choice) async {
     if (busy ||
-        !ScienceLab.pendingObservations(widget.step, state).contains(active))
+        !ScienceLab.pendingObservations(widget.step, state).contains(active)) {
       return;
+    }
     final observation = widget.step.json['observationUi'] as Map;
     if (choice != widget.step.json['results'][active]) {
       setState(() => observationRetry = active);
@@ -1073,10 +1075,11 @@ class _ScienceLabState extends State<ScienceLab> {
                     dist = x;
                   }
                 }
-                if (dist < 48 && !points.contains(nearest))
+                if (dist < 48 && !points.contains(nearest)) {
                   save({
                     'points': [...points, nearest],
                   });
+                }
               },
               child: CustomPaint(
                 size: Size(c.maxWidth, 320),

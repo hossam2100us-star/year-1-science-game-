@@ -31,10 +31,12 @@ Future<List<Map<String, String>>> localVoices() async {
         .toDart
         .where((v) => v.localService && v.lang.toLowerCase().startsWith('en'))
         .toList();
-    if (voices.isNotEmpty)
+    if (voices.isNotEmpty) {
       return voices.map((v) => {'name': v.name, 'locale': v.lang}).toList();
-    if (attempt < 2)
+    }
+    if (attempt < 2) {
       await Future<void>.delayed(const Duration(milliseconds: 200));
+    }
   }
   return [];
 }

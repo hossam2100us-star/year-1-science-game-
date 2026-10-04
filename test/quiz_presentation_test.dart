@@ -58,7 +58,7 @@ void main() {
         for (final step in library.lessons[lessonId]!.steps) {
           final selections = <String>[], placements = <(String, String)>[];
           await mount(t, step, selections, placements);
-          expect(step.json['quizContext'], isA<Map>());
+          expect(step.json['quizContext'], isA<Map<dynamic, dynamic>>());
           expect(selections, isEmpty, reason: step.id);
           expect(placements, isEmpty, reason: step.id);
           for (final option

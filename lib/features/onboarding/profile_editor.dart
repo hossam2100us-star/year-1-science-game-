@@ -63,8 +63,9 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
               context,
               gender: ref.read(appProvider).profile?.gender,
             ) &&
-            mounted)
+            mounted) {
           await _recover();
+        }
       }
     });
   }
@@ -101,11 +102,12 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
     try {
       final photo = await _photos.recover();
       await ref.read(appProvider.notifier).photoPending(false);
-      if (mounted)
+      if (mounted) {
         setState(() {
           _photo = photo ?? _photo;
           _step = 2;
         });
+      }
     } catch (error, stack) {
       AppLog.error(
         'photo',
@@ -113,8 +115,9 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
         error,
         stack,
       );
-      if (mounted)
+      if (mounted) {
         setState(() => _message = 'Please choose your picture again.');
+      }
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -129,29 +132,33 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
         !await parentGate(
           context,
           gender: ref.read(appProvider).profile?.gender,
-        ))
+        )) {
       return;
+    }
     if (!mounted) return;
     setState(() {
       _busy = true;
       _message = null;
     });
     try {
-      if (!widget.newChild)
+      if (!widget.newChild) {
         await ref.read(appProvider.notifier).photoPending(true);
+      }
       final photo = await _photos.pick();
-      if (!widget.newChild)
+      if (!widget.newChild) {
         await ref.read(appProvider.notifier).photoPending(false);
+      }
       if (mounted && photo != null) setState(() => _photo = photo);
     } catch (error, stack) {
       AppLog.warning('photo', 'A picked photo was rejected', error, stack);
-      if (mounted)
+      if (mounted) {
         setState(
           () => _message =
               error is FormatException && error.message == 'Image too large'
               ? 'Picture too large. Choose a smaller picture (under 20 MB).\nالصورة كبيرة جدًا. اختار صورة أصغر من 20 ميجابايت.'
               : 'Could not open this picture. Try a JPG or PNG picture.\nالصورة ما اتفتحتش. جرّب صورة بصيغة JPG أو PNG.',
         );
+      }
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -165,8 +172,9 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
       } else {
         await ref.read(appProvider.notifier).saveProfile(_profile);
       }
-      if ((widget.editing || widget.newChild) && mounted)
+      if ((widget.editing || widget.newChild) && mounted) {
         Navigator.of(context).pop();
+      }
     } catch (error, stack) {
       if (mounted) showSaveError(context, error, stack);
     } finally {

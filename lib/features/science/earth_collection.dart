@@ -103,8 +103,9 @@ class _EarthCollectionState extends State<EarthCollection> {
     if (!visited.contains(item.id) &&
         !await save({
           'visited': {...visited, item.id}.toList(),
-        }))
+        })) {
       return;
+    }
     if (!mounted) return;
     setState(() => discovered = item.id);
     feedback(item.label);
@@ -113,16 +114,18 @@ class _EarthCollectionState extends State<EarthCollection> {
   Future<void> placeRock(String id, String group) async {
     if (busy ||
         !groups.contains(group) ||
-        !options.any((item) => item.id == id))
+        !options.any((item) => item.id == id)) {
       return;
+    }
     final item = options.firstWhere((item) => item.id == id);
     final assignments = {...widget.data, id: group};
     if (!await save({
           id: group,
           'visited': {...visited, id}.toList(),
         }) ||
-        !mounted)
+        !mounted) {
       return;
+    }
     feedback('${item.label} is in ${groupName(group)}. Your rule is welcome.');
     final next = options.indexWhere(
       (item) => !groups.contains(assignments[item.id]),

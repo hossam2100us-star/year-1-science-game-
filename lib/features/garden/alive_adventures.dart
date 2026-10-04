@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -75,10 +77,13 @@ class _AliveAdventuresState extends ConsumerState<AliveAdventures> {
                               builder: (_) => GardenAdventure(content: scene),
                             ),
                           );
-                          if (mounted)
-                            ref
-                                .read(narrationProvider)
-                                .speak(scene.text('menu'));
+                          if (mounted) {
+                            unawaited(
+                              ref
+                                  .read(narrationProvider)
+                                  .speak(scene.text('menu')),
+                            );
+                          }
                         },
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,

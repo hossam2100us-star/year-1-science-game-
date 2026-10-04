@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -91,8 +93,9 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
     final voice = ref.read(narrationProvider);
     if (voice.status == VoiceStatus.browserPreview) await voice.refresh();
     await voice.speak(text);
-    if (mounted)
+    if (mounted) {
       setState(() => voiceUnavailable = voice.status != VoiceStatus.ready);
+    }
   }
 
   Future<void> persist() {
@@ -135,13 +138,17 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   }
 
   void answer(bool alive) {
-    if (selected == null || busy || (round.feedback && !round.needsCorrection))
+    if (selected == null ||
+        busy ||
+        (round.feedback && !round.needsCorrection)) {
       return;
+    }
     final correcting = round.needsCorrection;
     final outcome = round.answer(selected!, alive);
     if ((outcome != null && outcome != DecisionOutcome.explained) ||
-        (correcting && !round.needsCorrection))
+        (correcting && !round.needsCorrection)) {
       scene.celebration = 1.2;
+    }
     changed();
     _speak(prompt);
   }
@@ -163,7 +170,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
       await persist();
       if (mounted) {
         setState(() {});
-        _speak(prompt);
+        unawaited(_speak(prompt));
       }
     } catch (_) {
       // Already logged by persist(); show the retry banner.
@@ -182,7 +189,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
       sync();
       if (mounted) {
         setState(() {});
-        _speak(prompt);
+        unawaited(_speak(prompt));
       }
     } catch (_) {
       // Already logged by persist(); show the retry banner.
@@ -210,9 +217,9 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed)
+    if (state == AppLifecycleState.resumed) {
       scene.resumeEngine();
-    else {
+    } else {
       scene.pauseEngine();
       persist().ignore(); // Logged and shown by persist().
       ref.read(narrationProvider).stop();

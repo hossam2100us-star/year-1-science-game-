@@ -58,8 +58,8 @@ class PlantLabGame extends FlameGame {
   }
 
   @override
-  void render(Canvas c) {
-    super.render(c);
+  void render(Canvas canvas) {
+    super.render(canvas);
     final image = illustration;
     if (image == null) return;
     final bounds = Rect.fromLTWH(0, 0, size.x, size.y);
@@ -70,7 +70,7 @@ class PlantLabGame extends FlameGame {
       image.height.toDouble(),
     );
     final p = Paint()..filterQuality = FilterQuality.medium;
-    c.drawImageRect(image, source, bounds, p);
+    canvas.drawImageRect(image, source, bounds, p);
     if (assembling) {
       for (final entry in [
         ...plantPartRegions.entries,
@@ -78,11 +78,11 @@ class PlantLabGame extends FlameGame {
       ]) {
         if (discovered.contains(plantPartId(entry.key))) continue;
         final r = plantPartRect(entry.key, Size(size.x, size.y));
-        c.drawRRect(
+        canvas.drawRRect(
           RRect.fromRectAndRadius(r.inflate(3), const Radius.circular(18)),
           Paint()..color = const Color(0xBDFFF8EC),
         );
-        c.drawRRect(
+        canvas.drawRRect(
           RRect.fromRectAndRadius(r.inflate(3), const Radius.circular(18)),
           Paint()
             ..color = const Color(0xFF66825B)
@@ -94,7 +94,7 @@ class PlantLabGame extends FlameGame {
     final active = activePart;
     if (active == null || !plantPartRegions.containsKey(active)) return;
     final focus = plantPartRect(active, Size(size.x, size.y)).inflate(6);
-    c.drawRRect(
+    canvas.drawRRect(
       RRect.fromRectAndRadius(focus, const Radius.circular(24)),
       Paint()
         ..color = const Color(0xFFFFEE83)
@@ -110,8 +110,12 @@ class PlantLabGame extends FlameGame {
         final position = active == 'stem'
             ? Offset.lerp(pt(.49, .61), pt(.49, .37), progress)!
             : Offset.lerp(pt(.35 + i * .072, .88), pt(.49, .63), progress)!;
-        c.drawCircle(position, 5, Paint()..color = const Color(0xFF188ACA));
-        c.drawCircle(
+        canvas.drawCircle(
+          position,
+          5,
+          Paint()..color = const Color(0xFF188ACA),
+        );
+        canvas.drawCircle(
           position.translate(-1, -1),
           2,
           Paint()..color = Colors.white,
@@ -124,7 +128,11 @@ class PlantLabGame extends FlameGame {
           pt(.34 + i * .027, .46),
           (t + i * .2) % 1,
         )!;
-        c.drawCircle(position, 5, Paint()..color = const Color(0xFFFFED78));
+        canvas.drawCircle(
+          position,
+          5,
+          Paint()..color = const Color(0xFFFFED78),
+        );
       }
     } else if (active == 'flower') {
       for (var i = 0; i < 7; i++) {
@@ -133,7 +141,7 @@ class PlantLabGame extends FlameGame {
           .49 + math.cos(angle) * .045,
           .20 + math.sin(angle) * .055,
         );
-        c.drawOval(
+        canvas.drawOval(
           Rect.fromCenter(center: position, width: 7, height: 10),
           Paint()..color = const Color(0xFFFFD278),
         );

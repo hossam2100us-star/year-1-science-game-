@@ -216,15 +216,17 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     if (_science && step.json['lab'] == 'force') {
       return step.json['labUi']['guideInstructions'][forceGuideStage(_lab)];
     }
-    if (_ourselves || _science)
+    if (_ourselves || _science) {
       return '${step.json['safety'] ?? ''} ${step.json['spokenPrompt'] ?? step.prompt}';
-    if (_plantLab)
+    }
+    if (_plantLab) {
       return '$_displayPrompt ${step.json['playInstruction'] ?? ''}';
+    }
     final names = step.options.map((v) => v.label).join('. ');
     final places = step.kind == 'label-diagram'
         ? List.generate(step.targets.length, (i) => 'Place ${i + 1}').join('. ')
         : step.targets.map((v) => v.label).join('. ');
-    return '${step.prompt} $names. ${places.isEmpty ? '' : places + '.'}';
+    return '${step.prompt} $names. ${places.isEmpty ? '' : '$places.'}';
   }
 
   void _say(String text) {
@@ -309,7 +311,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     }
     if (_busy || _answerLocked || _freeDone || _frame > 0) return;
     _reviewItems.remove(id);
-    if (!(_science && step.json['band'] == true && step.isFree))
+    if (!(_science && step.json['band'] == true && step.isFree)) {
       _say(
         _plantLab && step.kind == 'story'
             ? step.prompt
@@ -317,6 +319,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
             ? step.json['partDescriptions'][id] ?? step.label(id)
             : step.json['senseDescriptions']?[id] ?? step.label(id),
       );
+    }
     if (['explore', 'story', 'free-plant'].contains(step.kind)) {
       if (step.json['senseDescriptions'] is Map) {
         _feedback = step.json['senseDescriptions'][id] ?? '';
@@ -337,8 +340,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       _selected = {id};
     }
     _changed();
-    if (!step.isFree && !step.isMulti && !step.isOrder && !step.isMapping)
+    if (!step.isFree && !step.isMulti && !step.isOrder && !step.isMapping) {
       _check();
+    }
   }
 
   void _place(String item, String target) {
@@ -414,12 +418,13 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         final correct = (entry.value as List).every(
           (id) => _mappingItemMatches(id),
         );
-        if (correct)
+        if (correct) {
           _objectiveEvidence[entry.key] = previousMistakes == 0
               ? 'firstTry'
               : 'afterHint';
-        else if (_engine.done)
+        } else if (_engine.done) {
           _objectiveEvidence[entry.key] = 'explained';
+        }
       }
     }
     _feedback = _assessmentFeedback();
@@ -472,12 +477,15 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   bool get _canContinue {
     if (_needsCorrection) return false;
     if (_session.responses[step.id]?['completed'] == true) return true;
-    if (_science && step.json['lab'] == 'distance')
+    if (_science && step.json['lab'] == 'distance') {
       return ScienceLab.distanceComplete(_lab);
-    if (_science && step.json['lab'] == 'force')
+    }
+    if (_science && step.json['lab'] == 'force') {
       return ScienceLab.forceComplete(_lab);
-    if (_science && step.json['lab'] == 'sailboat')
+    }
+    if (_science && step.json['lab'] == 'sailboat') {
       return ScienceLab.boatComplete(_lab);
+    }
     if (_science && step.json['shapeResults'] != null) {
       return ScienceLab.shapeComplete(step, _lab);
     }
@@ -485,8 +493,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       return ScienceLab.experimentComplete(step, _lab);
     }
     if (_science && step.json['lab'] != null) return _freeDone;
-    if (_science && step.kind == 'explore')
+    if (_science && step.kind == 'explore') {
       return step.options.every((o) => _touched.contains(o.id));
+    }
     if (_ourselves && (step.kind == 'explore' || step.kind == 'story')) {
       return step.options.every((o) => _touched.contains(o.id));
     }
@@ -495,8 +504,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       return step.options.every((item) => _touched.contains(item.id));
     }
     if (_engine.done || _freeDone || step.kind == 'story') return true;
-    if (step.kind == 'explore' || step.kind == 'free-plant')
+    if (step.kind == 'explore' || step.kind == 'free-plant') {
       return _touched.length >= (step.json['minTouches'] ?? 3);
+    }
     return false;
   }
 
@@ -625,8 +635,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   String get _resultText {
     final name = ref.read(appProvider).profile?.name ?? '';
-    if (!widget.lesson.quiz)
+    if (!widget.lesson.quiz) {
       return 'Great effort${name.isEmpty ? '' : ', $name'}! You explored the whole unit and earned three stars.';
+    }
     final score = _session.result().firstTry;
     return score >= 8
         ? 'Excellent! $score out of ten.'
@@ -710,7 +721,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         onLeave: _leave,
       );
     }
-    if (step.json['experiment'] == 'bean')
+    if (step.json['experiment'] == 'bean') {
       return BeanExperiment(
         key: ValueKey(step.id),
         step: step,
@@ -728,6 +739,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
           await _next();
         },
       );
+    }
 
     _game.reducedMotion = MediaQuery.disableAnimationsOf(context);
     return PopScope(
@@ -966,23 +978,26 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                     onOrder: (items) {
                                       if (_busy ||
                                           _answerLocked ||
-                                          !step.isOrder)
+                                          !step.isOrder) {
                                         return;
+                                      }
                                       final ids = step.options
                                           .map((p) => p.id)
                                           .toSet();
                                       if (items.toSet().length !=
                                               items.length ||
-                                          !ids.containsAll(items))
+                                          !ids.containsAll(items)) {
                                         return;
+                                      }
                                       _selected = items.toSet();
                                       _changed();
                                     },
                                     onOrderPlacements: (slots) {
                                       if (_busy ||
                                           _answerLocked ||
-                                          !step.isOrder)
+                                          !step.isOrder) {
                                         return;
+                                      }
                                       final ids = step.options
                                           .map((p) => p.id)
                                           .toSet();
@@ -997,8 +1012,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                       if (!validSlots.containsAll(slots.keys) ||
                                           !ids.containsAll(slots.values) ||
                                           slots.values.toSet().length !=
-                                              slots.length)
+                                              slots.length) {
                                         return;
+                                      }
                                       _placements = Map.from(slots);
                                       _selected = {
                                         for (
@@ -1324,20 +1340,22 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                   IconButton(
                     tooltip: 'Smaller number',
                     onPressed: () => setState(() {
-                      if (person == 0)
+                      if (person == 0) {
                         _shoeA = (_shoeA - 1).clamp(1, 60);
-                      else
+                      } else {
                         _shoeB = (_shoeB - 1).clamp(1, 60);
+                      }
                     }),
                     icon: const Icon(Icons.remove_circle_outline),
                   ),
                   IconButton(
                     tooltip: 'Bigger number',
                     onPressed: () => setState(() {
-                      if (person == 0)
+                      if (person == 0) {
                         _shoeA = (_shoeA + 1).clamp(1, 60);
-                      else
+                      } else {
                         _shoeB = (_shoeB + 1).clamp(1, 60);
+                      }
                     }),
                     icon: const Icon(Icons.add_circle_outline),
                   ),
@@ -1430,10 +1448,12 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   );
   String get _practiceUnit {
     final results = _session.result().objectives;
-    for (final id in ['quiz01.01', 'quiz01.02', 'quiz01.08'])
+    for (final id in ['quiz01.01', 'quiz01.02', 'quiz01.08']) {
       if (results[id] != DecisionOutcome.firstTry) return 'unit_01';
-    for (final id in ['quiz01.03', 'quiz01.04', 'quiz01.05'])
+    }
+    for (final id in ['quiz01.03', 'quiz01.04', 'quiz01.05']) {
       if (results[id] != DecisionOutcome.firstTry) return 'unit_02';
+    }
     return 'unit_03';
   }
 }

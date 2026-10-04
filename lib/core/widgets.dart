@@ -37,19 +37,21 @@ class _StoryPanelState extends ConsumerState<StoryPanel> {
   @override
   void initState() {
     super.initState();
-    if (widget.autoSpeak)
+    if (widget.autoSpeak) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) _speak();
       });
+    }
   }
 
   @override
   void didUpdateWidget(covariant StoryPanel old) {
     super.didUpdateWidget(old);
-    if (old.text != widget.text && widget.autoSpeak)
+    if (old.text != widget.text && widget.autoSpeak) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) _speak();
       });
+    }
   }
 
   @override

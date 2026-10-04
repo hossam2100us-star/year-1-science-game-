@@ -38,8 +38,9 @@ class PhotoService {
 
 /// Decode a bounded image and persist pixels only, never metadata or a source URI.
 Future<Uint8List> sanitizePhoto(XFile file) async {
-  if (await file.length() > 20 * 1024 * 1024)
+  if (await file.length() > 20 * 1024 * 1024) {
     throw const FormatException('Image too large');
+  }
   final buffer = await ui.ImmutableBuffer.fromUint8List(
     await file.readAsBytes(),
   );
@@ -50,8 +51,9 @@ Future<Uint8List> sanitizePhoto(XFile file) async {
     codec = await ui.instantiateImageCodecWithSize(
       buffer,
       getTargetSize: (width, height) {
-        if (width * height > 60000000)
+        if (width * height > 60000000) {
           throw const FormatException('Image too large');
+        }
         final scale = math.min(1.0, 512 / math.max(width, height));
         return ui.TargetImageSize(
           width: math.max(1, (width * scale).round()),
@@ -62,8 +64,9 @@ Future<Uint8List> sanitizePhoto(XFile file) async {
     final frame = await codec.getNextFrame();
     try {
       final data = await frame.image.toByteData(format: ui.ImageByteFormat.png);
-      if (data == null || data.lengthInBytes > 3 * 1024 * 1024)
+      if (data == null || data.lengthInBytes > 3 * 1024 * 1024) {
         throw const FormatException('Unsupported image');
+      }
       return data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
     } finally {
       frame.image.dispose();

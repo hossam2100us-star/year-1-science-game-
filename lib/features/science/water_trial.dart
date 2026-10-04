@@ -125,8 +125,9 @@ class _WaterPainter extends CustomPainter {
       ..strokeWidth = 1;
     for (double x = -140; x < 150; x += 14) {
       canvas.drawLine(Offset(x, 15), Offset(x + 25, 142), p);
-      if (material.contains('cloth'))
+      if (material.contains('cloth')) {
         canvas.drawLine(Offset(-140, x + 140), Offset(140, x + 140), p);
+      }
     }
     canvas.restore();
     p
@@ -160,7 +161,7 @@ class _WaterPainter extends CustomPainter {
             p,
           );
         }
-        if (umbrella)
+        if (umbrella) {
           canvas.drawOval(
             Rect.fromCenter(
               center: const Offset(0, 269),
@@ -169,6 +170,7 @@ class _WaterPainter extends CustomPainter {
             ),
             p,
           );
+        }
       } else if (umbrella) {
         for (final x in [-135.0, 135.0]) {
           canvas.drawOval(

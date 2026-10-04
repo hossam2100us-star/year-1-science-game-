@@ -35,9 +35,9 @@ class GameImageState extends State<GameImage> {
   }
 
   @override
-  void didUpdateWidget(GameImage old) {
-    super.didUpdateWidget(old);
-    if (old.asset != widget.asset) _resolve();
+  void didUpdateWidget(GameImage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.asset != widget.asset) _resolve();
   }
 
   void _resolve() => _image = Flame.images.load(widget.asset);

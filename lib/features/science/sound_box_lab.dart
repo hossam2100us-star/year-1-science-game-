@@ -33,10 +33,10 @@ class _SoundBoxLabState extends State<SoundBoxLab> {
   String? playing;
   String? retryChoice;
   Map<String, dynamic> get data => widget.data;
-  Map get ui => widget.step.json['labUi'];
-  Map get observation => widget.step.json['observationUi'];
+  Map<dynamic, dynamic> get ui => widget.step.json['labUi'];
+  Map<dynamic, dynamic> get observation => widget.step.json['observationUi'];
   String get active => data['active'] ?? widget.step.options.first.id;
-  Map get guesses => data['guesses'] ?? {};
+  Map<dynamic, dynamic> get guesses => data['guesses'] ?? {};
   Set<String> get tested => Set<String>.from(data['tested'] ?? []);
   void feedback(String text, {bool speak = true}) {
     if (!mounted) return;
@@ -258,8 +258,9 @@ class _SoundBoxLabState extends State<SoundBoxLab> {
                           ...Map.from(data['observed'] ?? {}),
                           active: id,
                         };
-                        if (!await save({'observed': observed}) || !mounted)
+                        if (!await save({'observed': observed}) || !mounted) {
                           return;
+                        }
                         setState(() {
                           retry = false;
                           retryChoice = null;
