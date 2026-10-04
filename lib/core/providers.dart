@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../domain/canonical_json.dart';
+import '../domain/journey/journey_state.dart';
 import 'ids.dart';
 import 'models.dart';
 import 'storage.dart';
@@ -62,20 +64,31 @@ class AppController extends Notifier<AppData> {
   Future<void> usage(DateTime start, DateTime end) => _childCommit(
     (s) => s.copyWith(dailySeconds: addUsage(s.dailySeconds, start, end)),
   );
-  Future<void> saveJourney(String id, Map<String, dynamic> journey) =>
-      _childCommit((s) {
-        var next = s.copyWith(journeys: {...s.journeys, id: journey});
-        final library = ref.read(lessonLibraryProvider).value;
-        if (id.startsWith('unit_01.') && library != null) {
-          next = next.copyWith(
-            journeys: {
-              ...next.journeys,
-              SpacedReview.storageKey: SpacedReview.schedule(next, library),
-            },
-          );
-        }
-        return next;
-      });
+  Future<void> saveJourney(String id, Map<String, dynamic> journey) {
+    if (LessonLibrary.availableIds.contains(id)) {
+      // Lesson journeys must match the typed contract before they are
+      // stored (AUD-003); a malformed one fails here, visibly.
+      final typed = JourneyState.fromJson(journey);
+      assert(
+        canonicalJson(typed.toJson()) == canonicalJson(journey),
+        'Journey for $id does not round-trip through JourneyState',
+      );
+    }
+    return _childCommit((s) {
+      var next = s.copyWith(journeys: {...s.journeys, id: journey});
+      final library = ref.read(lessonLibraryProvider).value;
+      if (id.startsWith('unit_01.') && library != null) {
+        next = next.copyWith(
+          journeys: {
+            ...next.journeys,
+            SpacedReview.storageKey: SpacedReview.schedule(next, library),
+          },
+        );
+      }
+      return next;
+    });
+  }
+
   Future<void> completeJourney(UnitAttempt attempt) => _childCommit((s) {
     final journeys = Map<String, Map<String, dynamic>>.from(s.journeys)
       ..remove(attempt.unitId);

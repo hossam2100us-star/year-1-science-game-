@@ -73,7 +73,16 @@ void main() {
       addTearDown(container.dispose);
       final controller = container.read(appProvider.notifier);
       final switching = controller.selectChild('second');
-      final oldSave = controller.saveJourney('unit_01', {'owner': 'Nour'});
+      // A minimal valid journey; 'owner' rides along as an unknown key.
+      Map<String, dynamic> journey(String owner) => {
+        'version': 1,
+        'attemptId': 'a',
+        'index': 0,
+        'responses': <String, dynamic>{},
+        'current': <String, dynamic>{},
+        'owner': owner,
+      };
+      final oldSave = controller.saveJourney('unit_01', journey('Nour'));
       await Future.wait([switching, oldSave]);
       expect(store.data.activeChildId, 'second');
       expect(store.data.journeys['unit_01'], isNull);
@@ -81,7 +90,7 @@ void main() {
         store.data.selectChild('local-child').journeys['unit_01']!['owner'],
         'Nour',
       );
-      await controller.saveJourney('unit_01', {'owner': 'Adam'});
+      await controller.saveJourney('unit_01', journey('Adam'));
       expect(store.data.journeys['unit_01']!['owner'], 'Adam');
     },
   );
