@@ -14,6 +14,7 @@ import 'core/image_budget.dart';
 import 'core/models.dart';
 import 'core/providers.dart';
 import 'core/storage.dart';
+import 'core/usage_buffer.dart';
 import 'core/widgets.dart';
 import 'data/db/app_database.dart';
 import 'features/onboarding/profile_editor.dart';
@@ -150,12 +151,33 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    _controller = ref.read(appProvider.notifier);
     ref.read(narrationProvider).initialize();
     _timer = Timer.periodic(const Duration(seconds: 10), (_) => _tick());
   }
 
+  late final AppController _controller;
+
+  // Play time is buffered and written as one span every minute or when play
+  // stops, instead of a save every 10 s (AUD-004).
+  late final UsageBuffer _usage = UsageBuffer(_controller.usageFor);
+
+  Future<void> _report(Future<void>? write) async {
+    try {
+      await write;
+    } catch (error, stack) {
+      if (mounted) showSaveError(context, error, stack, area: 'usage');
+    }
+  }
+
+  void _bufferUsage(DateTime from, DateTime to, String owner) =>
+      unawaited(_report(_usage.add(from, to, owner)));
+
+  Future<void> _flushUsage() => _report(_usage.flush());
+
   void _parentChanged(bool value) {
     _tick();
+    unawaited(_flushUsage());
     _parent = value;
     _last = null;
   }
@@ -170,17 +192,14 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
         ref.read(appProvider).profile != null;
     if (!active) {
       _last = null;
+      await _flushUsage();
       return;
     }
     final last = _last;
     _last = now;
     if (last != null) {
       _sessionSeconds += now.difference(last).inSeconds;
-      try {
-        await ref.read(appProvider.notifier).usage(last, now);
-      } catch (error, stack) {
-        if (mounted) showSaveError(context, error, stack, area: 'usage');
-      }
+      _bufferUsage(last, now, ref.read(appProvider).activeChildId);
     }
     if (mounted &&
         _sessionSeconds >= ref.read(appProvider).settings.breakMinutes * 60 &&
@@ -215,6 +234,7 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state != AppLifecycleState.resumed) {
       _tick();
+      unawaited(_flushUsage()); // Never keep play time only in memory.
       ref.read(narrationProvider).stop();
     }
     _resumed = state == AppLifecycleState.resumed;
@@ -224,6 +244,7 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
   @override
   void dispose() {
     _timer?.cancel();
+    unawaited(_flushUsage());
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }

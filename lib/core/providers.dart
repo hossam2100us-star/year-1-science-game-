@@ -64,6 +64,19 @@ class AppController extends Notifier<AppData> {
   Future<void> usage(DateTime start, DateTime end) => _childCommit(
     (s) => s.copyWith(dailySeconds: addUsage(s.dailySeconds, start, end)),
   );
+
+  /// Adds buffered play time to the child it was recorded for, even if
+  /// another child is active by the time it is written. Time of a child that
+  /// was deleted meanwhile is dropped with the child.
+  Future<void> usageFor(String owner, DateTime start, DateTime end) => _commit(
+    (s) => s.childRecords.containsKey(owner)
+        ? s.changeChild(
+            owner,
+            (c) =>
+                c.copyWith(dailySeconds: addUsage(c.dailySeconds, start, end)),
+          )
+        : s,
+  );
   Future<void> saveJourney(String id, Map<String, dynamic> journey) {
     if (LessonLibrary.availableIds.contains(id)) {
       // Lesson journeys must match the typed contract before they are
