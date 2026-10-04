@@ -192,6 +192,26 @@ class HiveProgressStore implements ProgressStore {
     _recovery = StorageRecovery.none;
   }
 
+  /// Set once the save has been copied into SQLite. From then on this box is
+  /// a frozen backup and must not be used for play (its data is older).
+  static const migratedKey = 'migration.sqlite';
+
+  bool get migratedToDatabase => box.get(migratedKey) == 'completed';
+
+  Future<void> markMigratedToDatabase() async {
+    await box.put(migratedKey, 'completed');
+    await box.flush();
+  }
+
+  /// Raw unreadable copies kept for rescue, by key (verbatim strings).
+  Map<String, String> rawUnreadableCopies() => {
+    for (final key in [unreadableKey, unreadableBackupKey])
+      if (box.get(key) case final String raw) key: raw,
+    if (_unreadable case final String pending
+        when box.get(unreadableKey) == null)
+      unreadableKey: pending,
+  };
+
   @override
   bool get hasUnreadableCopies =>
       _unreadable != null ||

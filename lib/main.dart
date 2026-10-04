@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:drift_flutter/drift_flutter.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -13,11 +15,13 @@ import 'core/models.dart';
 import 'core/providers.dart';
 import 'core/storage.dart';
 import 'core/widgets.dart';
+import 'data/db/app_database.dart';
 import 'features/onboarding/profile_editor.dart';
 import 'features/world/subject_hub.dart';
 import 'features/onboarding/child_chooser.dart';
 import 'parent/parent_gate.dart';
 import 'startup/startup_problem.dart';
+import 'startup/storage_bootstrap.dart';
 
 Future<void> main() => launchScienceAdventure();
 
@@ -37,21 +41,24 @@ Future<void> launchScienceAdventure({
 
 Future<void> _launch(Widget app) async {
   void onRetry() => unawaited(_launch(app));
-  final HiveProgressStore store;
-  try {
-    store = await HiveProgressStore.open();
-  } catch (error, stack) {
-    AppLog.error('startup', 'Opening storage failed', error, stack);
-    runApp(
-      StartupProblemApp(problem: startupProblemFor(error), onRetry: onRetry),
-    );
-    return;
-  }
-  try {
-    store.read(); // Validate (and if needed recover) before the child UI.
-  } on SaveDataUnreadable {
-    runApp(SaveRecoveryApp(store: store, onRetry: onRetry));
-    return;
+  final ProgressStore store;
+  switch (await openProgressStore(
+    openHive: HiveProgressStore.open,
+    // The web build keeps the Hive store until the web database ships (M4).
+    openDatabase: kIsWeb
+        ? null
+        : () => AppDatabase(driftDatabase(name: 'science_adventure')),
+  )) {
+    case StorageReady(store: final ready):
+      store = ready;
+    case StorageUnreadable(:final hive):
+      runApp(SaveRecoveryApp(store: hive, onRetry: onRetry));
+      return;
+    case StorageFailed(:final error):
+      runApp(
+        StartupProblemApp(problem: startupProblemFor(error), onRetry: onRetry),
+      );
+      return;
   }
   final Catalog catalog;
   try {
