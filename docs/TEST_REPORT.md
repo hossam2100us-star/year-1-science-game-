@@ -89,4 +89,27 @@ contrast, name batches, image budget, goldens.
 | Usage writes per hour of play | 360 | 60 |
 | One-time migration of that family | — | 1.67-1.72 s |
 
-Device startup time and memory: **NOT MEASURED** (no device).
+Real-device startup time and memory: **NOT MEASURED** yet (no phone or
+tablet connected); emulator figures below.
+
+### Android emulator (2026-10-05)
+
+Emulator: Android 14 (API 34, x86_64 Google APIs image), AVD
+`low_ram_tablet` — 2 GB RAM, 4 cores, 1280×800. The host GPU driver
+crashed the emulator twice (an emulator/graphics-driver fault, not the
+app), so the later checks ran with software rendering
+(`-gpu swiftshader_indirect`). The host CPU is much faster than a cheap
+tablet, so timings are optimistic. Debug builds only.
+
+| Check | How | Result |
+|---|---|---|
+| Upgrade keeps saved progress (AUD-004, AUD-006) | Installed the old `main` build (`2089a97`); created two children through the UI; played 3 of 7 discoveries in unit 1 "Garden explorers"; copied the Hive file off the device (34,722 bytes); installed the M2 build **over it** with `adb install -r` | **PASS.** First launch created `science_adventure.sqlite`; both children shown; the unit resumed at 3 / 7 with the same three discoveries starred; the grown-ups area shows "3 of 7, 3 first time". The Hive file is still there (34,762 bytes: unchanged data plus the 40-byte migration marker). |
+| Saving after the move | Played one more discovery, force-stopped the app (and the emulator itself crashed once), relaunched | **PASS.** Resumed at 4 / 7; the grown-ups area shows 4 of 7. |
+| Child order on the chooser | Compared before and after | Same as the old build: the child who played last is listed last (existing behaviour, unchanged). |
+| Scene sounds (AUD-020) | Unit 6 "Music studio": tapped all five instruments, then 12 rapid taps alternating two instruments | **PASS.** All five counted ("5 / 5"); Android's audio service lists the app's player as `state:started` while a sound plays; each new tap replaces the previous player; no ANR, crash or frozen screen in `logcat`. |
+| Home during a sound | Tapped an instrument, pressed Home after 0.3 s, reopened | **PASS.** Sound stopped (no started player left); same process resumed at the same screen. |
+| Cold start | `adb shell am start -W` after `force-stop`, three runs | 3.6 / 3.9 / 4.0 s (debug build, software rendering). First launch after the upgrade, including the migration: 6.8 s (host GPU). The old build's first launch was 9.6 s (debug). |
+| Memory (AUD-008) | `dumpsys meminfo`: in unit 6, back on the grown-ups area, then after opening and leaving four units three times | Total PSS 281 → 286 → 293 → 296 → 295 MB: it levels off instead of growing with each unit (debug build, which is much larger than release). |
+
+Not yet run on a real phone or tablet, and not yet with a release build on
+a device.

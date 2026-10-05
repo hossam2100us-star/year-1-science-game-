@@ -60,7 +60,7 @@ round-trip exactly; malformed types rejected)
 Commit: `0d58615`
 
 ### AUD-004 — Full Hive blob rewritten on every interaction
-Status: **VERIFIED** on the host and in CI (device run: NOT TESTED)
+Status: **VERIFIED** on the host, in CI and on the Android emulator (real device: NOT TESTED)
 Done: Drift/SQLite with normalised tables, foreign keys and CHECK
 constraints; repositories; `DriftProgressStore` writes only changed rows
 in one transaction (one changed journey = 1 statement; unchanged save = 0);
@@ -75,6 +75,10 @@ cascade delete, other-device usage, constraints, curriculum isolation),
 `test/data/hive_to_drift_test.dart` (12-case migration matrix),
 `test/data/storage_bootstrap_test.dart`, `test/web/usage_buffer_test.dart`,
 `test/data/storage_benchmark_test.dart` (tagged `benchmark`)
+Emulator: the old `main` build with two children and a unit in progress
+was upgraded in place to the M2 build; both children and the exact
+in-progress state survived, later saves persisted across a force-stop, and
+the Hive file was left in place (see `docs/TEST_REPORT.md`).
 Commits: `569783c`, `cfe524c`, `c08e13e`, `313d264`
 
 ### AUD-005 — Web delete-child failure
@@ -113,7 +117,8 @@ Tests: `test/migrations/journey_characterization_test.dart`,
 Commits: `b43f04e`, `181e2d8`
 
 ### AUD-008 — Heavy images, unbounded cache
-Status: **VERIFIED** (memory on a real low-RAM device: NOT MEASURED)
+Status: **VERIFIED** (2 GB emulator: memory levels off after repeated
+unit visits; real low-RAM device: NOT MEASURED)
 Files: `lib/core/image_budget.dart`, `lib/features/biology/lesson_player.dart`,
 `lib/main.dart`, `tools/images/`, `assets/images/*`, `pubspec.yaml`
 Tests: `test/image_budget_test.dart`; full suite and goldens after re-encode
@@ -199,7 +204,10 @@ Tests: `test/web/settings_test.dart`
 Commit: `16c575b`
 
 ### AUD-020 — MediaPlayer.prepare on the main thread
-Status: **FIXED** (compiles in the debug APK; playback on a device: NOT TESTED, no device)
+Status: **VERIFIED** on the Android 14 emulator (real device: NOT TESTED)
+Emulator: every unit 6 instrument plays (Android lists the player as
+started), rapid taps replace the previous sound, Home stops it, and
+`logcat` shows no ANR or crash.
 Files: `android/app/src/main/kotlin/com/scienceadventure/app/MainActivity.kt`
 Commit: `aadaef5`
 

@@ -45,7 +45,7 @@ Detailed evidence per item lives in `docs/REMEDIATION_PROGRESS.md`.
 | AUD-017 | Plaintext local PII (mitigated) | LOW | Yes — base64 photo inside Hive blob | `storage.dart` | Threat model; keep sandbox storage; tokens only in Keystore (M4); photos as files (M2) | — | VERIFIED |
 | AUD-018 | UI polish defects | LOW | To re-check per item | hub, map, gate, lesson screens | Duplicate subtitle, ellipsis + tooltip, wrap rules, disabled contrast ≥ 3:1, gender-aware owl, layout scaling, body-parts batches of 4-6 (same objectives/scoring) | widget tests | VERIFIED |
 | AUD-019 | `copyWith` cannot reset voice | LOW | Yes — `models.dart:77-78` | `lib/core/models.dart` | Sentinel-based `copyWith` | unit test | VERIFIED |
-| AUD-020 | `MediaPlayer.prepare()` on main thread | LOW | Yes — `MainActivity.kt:33` | `android/.../MainActivity.kt` | `prepareAsync()` + `onPrepared` | build + manual | FIXED |
+| AUD-020 | `MediaPlayer.prepare()` on main thread | LOW | Yes — `MainActivity.kt:33` | `android/.../MainActivity.kt` | `prepareAsync()` + `onPrepared` | build + emulator | VERIFIED (emulator) |
 | AUD-021 | Hive upstream maintenance | INFO | Yes — `hive 2.2.3` | `pubspec.yaml` | Replaced by Drift in M2 (no interim fork) | — | PARTIALLY FIXED (M2) |
 | AUD-022 | README links untracked APK | INFO | Yes — `README.md:3` | `README.md` | Remove link, document GitHub Releases + build commands | — | VERIFIED |
 | AUD-023 | Lesson IDs not namespaced by year/subject | HIGH (expansion) | Yes | catalog, saves | Namespaced IDs + save migration | migration tests | FIXED (M2) |
