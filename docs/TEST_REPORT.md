@@ -138,3 +138,12 @@ rejected valid responses (`allOf` with `additionalProperties: false`); a
 Windows test database created as WIN1252 that rejected an Arabic name
 (now refused by the first migration); invalid JSON reported as a generic
 400.
+
+First CI run on the pull request found two more problems, fixed in a follow-up
+commit: `backend/src/common/secrets.ts` had not been committed (the root
+`.gitignore` protects every `secrets.*` file; the module, which holds no
+secrets, was renamed `hashing.ts` instead of weakening that rule), and
+osv-scanner reported `deepmerge-ts` 7.1.5 (GHSA-ggr8-5vv4-36mx) and `mysql2`
+3.15.3 (GHSA-3f6p-5ww8-9rcr, GHSA-rgwj-5xj2-c3m3), both pulled in by the Prisma
+CLI 7.10.0. npm `overrides` pin the fixed versions (8.0.2, 3.24.5); unit 37/37,
+end-to-end 68/68 and the build pass with them.

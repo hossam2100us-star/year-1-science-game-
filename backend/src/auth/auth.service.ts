@@ -3,7 +3,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { AuditService } from '../audit/audit.service';
 import { uuidv7 } from '../common/ids';
 import { Problem } from '../common/problem';
-import { randomToken, sha256, sha256Hex } from '../common/secrets';
+import { randomToken, sha256, sha256Hex } from '../common/hashing';
 import { APP_CONFIG, type AppConfig } from '../config/config';
 import { EmailService } from '../email/email.service';
 import { type User } from '../generated/prisma/client';

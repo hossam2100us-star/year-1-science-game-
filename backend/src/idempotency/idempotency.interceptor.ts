@@ -10,7 +10,7 @@ import type { Response } from 'express';
 import { from, mergeMap, type Observable, of } from 'rxjs';
 import { type AuthedRequest } from '../auth/decorators';
 import { Problem } from '../common/problem';
-import { sha256Hex } from '../common/secrets';
+import { sha256Hex } from '../common/hashing';
 import { type Prisma } from '../generated/prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
 
