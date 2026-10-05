@@ -1,0 +1,10 @@
+node_modules
+dist
+coverage
+src/generated
+.local-db
+.local-db.secret
+.env
+.env.*
+test
+*.log

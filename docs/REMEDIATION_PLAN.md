@@ -71,5 +71,5 @@ Detailed evidence per item lives in `docs/REMEDIATION_PROGRESS.md`.
 | REC-02 | Offline-first, accounts optional | — | Local DB is source of truth; local-only mode makes zero network calls | TODO (M4) |
 | REC-03 | No child photo sync by default | — | Photos excluded from sync payloads | TODO (M4) |
 | REC-04 | Release AAB with obfuscation, device test | No device available | CI release build with ephemeral key; device test is a manual owner action | TODO / BLOCKED (device) |
-| REC-05 | Generate Dart API client from OpenAPI | — | `packages/api_client` via openapi-generator | TODO (M3) |
+| REC-05 | Generate Dart API client from OpenAPI | — | Hand-written client checked against `api/openapi.yaml` (generator rejected, ADR-0014) | TODO (M4) |
 | REC-06 | CI gate for content validation | Python not on PATH locally | `validate_playable.py` in CI | VERIFIED |

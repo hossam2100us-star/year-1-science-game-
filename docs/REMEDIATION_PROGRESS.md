@@ -7,8 +7,8 @@ original finding can no longer be reproduced. **FIXED** means the change is
 done and tested locally but one of those checks (usually a CI or device run)
 is still pending. **PARTIALLY FIXED** means the main risk is removed but part
 of the recommendation remains, as described. M1 items are on branch
-`remediation/m1-audit-fixes` (PR #1); M2 items on `remediation/m2-data-layer`.
-Neither is merged into `main` yet.
+`remediation/m1-audit-fixes` (PR #1); M2 items on `remediation/m2-data-layer`;
+M3 on `remediation/m3-backend`. None is merged into `main` yet.
 
 Common verification for every M1 item: `flutter analyze --fatal-infos`
 clean; `flutter test` 286/286 + goldens 5/5; `flutter build apk --debug`
@@ -239,6 +239,24 @@ the seam); per-year content packs (lossy WebP already cut assets by 86%).
 
 ---
 
+## M3 — server, contract and accounts (branch `remediation/m3-backend`)
+
+Built against `Future_System_Architecture.pdf` §5-§12 and the owner's goal
+of a private trial on a Synology NAS. Decisions that refine the
+architecture: ADR-0011 to ADR-0016.
+
+| Item | Status | Evidence |
+|---|---|---|
+| OpenAPI 3.1 contract (`api/openapi.yaml`): every §11 endpoint, problem+json, cursor pagination, Idempotency-Key | **VERIFIED** | Redocly lint clean; every response in the 68 end-to-end tests is validated against it (the check found and fixed two real contract bugs) |
+| NestJS service (`backend/`): config, problem filter, redacted logging, request ids, helmet, body limits, rate limits, health probes | **VERIFIED** | unit + end-to-end tests; built server smoke-run against local PostgreSQL |
+| PostgreSQL schema with constraints, change sequence, tombstones, processed mutations, audit log | **VERIFIED** | migration applies to an empty database; `prisma migrate diff` reports no drift; owner and UTF-8 guards tested |
+| Parent auth: register/verify/resend, login, refresh rotation + reuse detection, logout/all, forgot/reset, change password, delete with grace, export | **VERIFIED** | `auth.e2e-spec.ts` (19), `account.e2e-spec.ts` (5) |
+| BOLA/IDOR protection (§10) | **VERIFIED** | `bola.e2e-spec.ts`: every REST resource and every sync mutation as another family → 404 / `child_not_found`, data unchanged |
+| Sync push/pull with per-entity merge rules (§12, §14) | **VERIFIED (server)** | `sync.e2e-spec.ts` (17) and `merge.spec.ts` (12, incl. 2,000 randomised merges); device side in M4 |
+| Docker image, CI (`ci-backend.yml`: lint, types, tests on PostgreSQL 17, drift check, image build, Trivy, non-root check) | **FIXED** | runs on the pull request; Docker is not installed on this PC, so the image was not built locally |
+| Dart API client (REC-05) | **Changed** (ADR-0014) | generator output was unusable for the sync unions; a hand-written, contract-tested client comes with M4 |
+| NAS deployment (web + API + database behind the NAS reverse proxy) | TODO (M4) | needs the web build |
+
 ## Security findings
 
 | ID | Status | Where |
@@ -248,7 +266,7 @@ the seam); per-year content packs (lossy WebP already cut assets by 86%).
 | SEC-03 | **VERIFIED** | AUD-015 |
 | SEC-04 | **VERIFIED** | AUD-009 |
 | SEC-05 | **VERIFIED** — `lib/core/validation.dart`, `test/web/child_name_test.dart` (`28cc9cd`) | |
-| SEC-06 | **BLOCKED (owner)** — creating and backing up the upload key; procedure in `docs/RELEASE.md` | |
+| SEC-06 | **FIXED** — upload key created 2026-10-05 outside the repository (`scripts/create_upload_key.ps1`), local obfuscated release APKs signed with it; the two offline backups are the owner's step (**BLOCKED (owner)**) | |
 
 ## Recommendations
 
@@ -257,6 +275,6 @@ the seam); per-year content packs (lossy WebP already cut assets by 86%).
 | REC-01 | Owner decided (ADR-0002); legal and consent text **BLOCKED (owner)** |
 | REC-02 | Design accepted (ADR-0002); implementation M4 |
 | REC-03 | Accepted (no photo sync by default); implementation M4 |
-| REC-04 | Release build in CI; physical device test **BLOCKED (no device)** |
-| REC-05 | M3 |
+| REC-04 | Release build in CI and locally with the upload key; Android 14 emulator run passed (upgrade, sounds, memory); real-device test pending |
+| REC-05 | Changed: hand-written client checked against the contract instead of generated code (ADR-0014); M4 |
 | REC-06 | **VERIFIED** — content-validation job passes in CI |

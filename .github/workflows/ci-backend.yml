@@ -1,0 +1,84 @@
+name: ci-backend
+
+on:
+  push:
+    branches: [main, 'remediation/**']
+    paths: ['backend/**', 'api/**', 'infrastructure/**', '.github/workflows/ci-backend.yml']
+  pull_request:
+    paths: ['backend/**', 'api/**', 'infrastructure/**', '.github/workflows/ci-backend.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-backend-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: backend
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: ci
+          POSTGRES_PASSWORD: ci-only-not-a-secret
+          POSTGRES_DB: ci
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U ci" --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      TEST_DATABASE_URL: postgresql://ci:ci-only-not-a-secret@localhost:5432/ci
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+      - name: Install (lockfile only)
+        run: npm ci --no-audit --no-fund
+      - name: Generate the Prisma client
+        run: npm run db:generate
+      - name: Format
+        run: npm run format:check
+      - name: Lint
+        run: npm run lint
+      - name: Type check
+        run: npm run typecheck
+      - name: OpenAPI contract lint
+        run: npm run openapi:lint
+      - name: Unit tests
+        run: npm test -- --ci
+      - name: Migrations apply to an empty database
+        env:
+          DATABASE_URL: ${{ env.TEST_DATABASE_URL }}
+        run: npx prisma migrate deploy
+      - name: Schema and migrations agree (no drift)
+        env:
+          DATABASE_URL: ${{ env.TEST_DATABASE_URL }}
+        run: npx prisma migrate diff --from-config-datasource --to-schema prisma/schema.prisma --exit-code
+      - name: End-to-end, contract, auth and BOLA tests (real PostgreSQL 17)
+        run: npm run test:e2e -- --ci
+      - name: Build
+        run: npm run build
+
+  image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the API image
+        run: docker build -t science-adventure-api:ci backend
+      - name: Image vulnerability scan (Trivy)
+        run: |
+          docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest \
+            image --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed --no-progress science-adventure-api:ci
+      - name: Image runs as a non-root user
+        run: test "$(docker image inspect -f '{{.Config.User}}' science-adventure-api:ci)" = "node"

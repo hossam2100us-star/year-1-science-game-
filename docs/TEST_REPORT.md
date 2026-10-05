@@ -113,3 +113,37 @@ tablet, so timings are optimistic. Debug builds only.
 
 Not yet run on a real phone or tablet, and not yet with a release build on
 a device.
+## Milestone M3 (branch `remediation/m3-backend`)
+
+Server in `backend/` (NestJS 11, Prisma 7, PostgreSQL 17); contract in
+`api/openapi.yaml`. Locally the tests start an embedded PostgreSQL 17.10
+(UTF-8); CI uses a `postgres:17` service container.
+
+| Check | Command | Result |
+|---|---|---|
+| Contract lint | `npm run openapi:lint` (Redocly, recommended rules) | PASS (2 documented ignores: health probes have no 4xx) |
+| Format | `npm run format:check` | PASS |
+| Lint | `npm run lint` (typescript-eslint, type-checked rules) | PASS |
+| Types | `npm run typecheck` (strict, `noUncheckedIndexedAccess`) | PASS |
+| Unit tests | `npm test` | **37 / 37** (merge rules incl. 2,000 randomised merges, JWT, config, log redaction, sign-in limiter) |
+| End-to-end tests | `npm run test:e2e` | **68 / 68** in ≈ 23 s: auth 19, children 9, BOLA 12, sync 17, account 5, platform 6 — every response validated against the OpenAPI contract |
+| Migrations | `prisma migrate deploy` on an empty database, then `prisma migrate diff --exit-code` | PASS, no drift |
+| Build | `npm run build` | PASS |
+| Smoke run | built `dist/src/main.js` against local PostgreSQL | health/ready OK, register 202, login 200, pull before verification 403; the server log contained no password, email or token |
+| Docker image + Trivy | `ci-backend.yml` | **NOT RUN locally** (no Docker on this PC); runs in CI |
+
+Bugs the tests found and that were fixed before commit: a trigger
+condition PostgreSQL does not short-circuit; two contract schemas that
+rejected valid responses (`allOf` with `additionalProperties: false`); a
+Windows test database created as WIN1252 that rejected an Arabic name
+(now refused by the first migration); invalid JSON reported as a generic
+400.
+
+First CI run on the pull request found two more problems, fixed in a follow-up
+commit: `backend/src/common/secrets.ts` had not been committed (the root
+`.gitignore` protects every `secrets.*` file; the module, which holds no
+secrets, was renamed `hashing.ts` instead of weakening that rule), and
+osv-scanner reported `deepmerge-ts` 7.1.5 (GHSA-ggr8-5vv4-36mx) and `mysql2`
+3.15.3 (GHSA-3f6p-5ww8-9rcr, GHSA-rgwj-5xj2-c3m3), both pulled in by the Prisma
+CLI 7.10.0. npm `overrides` pin the fixed versions (8.0.2, 3.24.5); unit 37/37,
+end-to-end 68/68 and the build pass with them.

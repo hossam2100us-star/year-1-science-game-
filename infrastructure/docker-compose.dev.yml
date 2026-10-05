@@ -1,0 +1,30 @@
+# Development services for machines with Docker (this repository's Windows
+# PC uses backend/scripts/local-postgres.mjs instead).
+#
+#   docker compose -f infrastructure/docker-compose.dev.yml up -d
+#
+# PostgreSQL 17 on localhost:5432 and Mailpit (catches every email) with its
+# web page at http://localhost:8025. Synthetic data only.
+name: science-adventure-dev
+
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: science
+      POSTGRES_PASSWORD: dev-only-not-a-secret
+      POSTGRES_DB: science_adventure
+      POSTGRES_INITDB_ARGS: --encoding=UTF8 --locale=C.UTF-8
+    ports: ['127.0.0.1:5432:5432']
+    volumes: ['dev-db:/var/lib/postgresql/data']
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U science']
+      interval: 5s
+      retries: 20
+
+  mail:
+    image: axllent/mailpit:latest
+    ports: ['127.0.0.1:1025:1025', '127.0.0.1:8025:8025']
+
+volumes:
+  dev-db:
