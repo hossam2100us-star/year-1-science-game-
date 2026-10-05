@@ -1,5 +1,7 @@
 import 'dart:js_interop';
 
+import '../../core/diagnostics/app_log.dart';
+
 @JS('Audio')
 extension type _Audio._(JSObject _) implements JSObject {
   external factory _Audio(String src);
@@ -9,21 +11,22 @@ extension type _Audio._(JSObject _) implements JSObject {
 }
 
 class ScienceAudio {
-  static _Audio? player;
+  static _Audio? _player;
   static Future<void> play(String name, double volume) async {
-    player?.pause();
+    _player?.pause();
     final next = _Audio('assets/assets/audio/$name.wav')
       ..volume = volume.clamp(0.0, .5);
-    player = next;
+    _player = next;
     try {
       await next.play().toDart;
-    } catch (_) {
-      /* A browser may require another user gesture. */
+    } catch (error, stack) {
+      // A browser may require another user gesture before playing audio.
+      AppLog.warning('audio', 'Browser blocked scene sound', error, stack);
     }
   }
 
   static Future<void> stop() async {
-    player?.pause();
-    player = null;
+    _player?.pause();
+    _player = null;
   }
 }

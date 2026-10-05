@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flame/flame.dart';
@@ -15,6 +14,7 @@ import 'package:science_adventure/features/science/earth_collection.dart';
 import 'package:science_adventure/features/science/science_picture.dart';
 
 import 'setup_screen_test.dart' as helpers;
+import 'support/review_images.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -55,7 +55,7 @@ void main() {
     );
   }
 
-  Map current(MemoryProgressStore store) =>
+  Map<dynamic, dynamic> current(MemoryProgressStore store) =>
       store.data.journeys[lesson.id]!['current'];
   Future<void> tap(WidgetTester t, String key) =>
       helpers.tapVisible(t, find.byKey(ValueKey(key)));
@@ -90,9 +90,7 @@ void main() {
             key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
         final picture = await boundary.toImage();
         final bytes = await picture.toByteData(format: ui.ImageByteFormat.png);
-        await Directory('tmp/earth-collections').create(recursive: true);
-        await File('tmp/earth-collections/$name.png')
-            .writeAsBytes(bytes!.buffer.asUint8List());
+        await saveReviewImage('earth-collections/$name.png', bytes);
         picture.dispose();
       });
 

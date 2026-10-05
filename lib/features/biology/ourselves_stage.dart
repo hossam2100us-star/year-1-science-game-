@@ -26,7 +26,7 @@ class OurselvesStage extends StatelessWidget {
   Widget build(BuildContext context) {
     if (step.json['activityView'] == 'sense-story') return _senseStory(context);
     if (step.json['activityView'] == 'park') return _park(context);
-    if (body)
+    if (body) {
       return BodyWorkshop(
         step: step,
         selected: selected,
@@ -36,6 +36,7 @@ class OurselvesStage extends StatelessWidget {
         onItem: onItem,
         onPlace: onPlace,
       );
+    }
     if (step.isMapping && step.table.isEmpty) {
       return _DiscoveryQuestions(
         key: ValueKey(step.id),
@@ -49,7 +50,7 @@ class OurselvesStage extends StatelessWidget {
       );
     }
     if (step.kind == 'free-measure') return const SizedBox.shrink();
-    if (step.table.isNotEmpty)
+    if (step.table.isNotEmpty) {
       return Column(
         children: [
           if (step.isMapping)
@@ -77,6 +78,7 @@ class OurselvesStage extends StatelessWidget {
           _marbles(context),
         ],
       );
+    }
     return Container(
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(

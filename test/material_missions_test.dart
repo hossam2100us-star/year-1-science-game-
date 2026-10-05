@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flame/flame.dart';
@@ -16,6 +15,7 @@ import 'package:science_adventure/features/science/material_workshop.dart';
 import 'package:science_adventure/features/science/science_picture.dart';
 
 import 'setup_screen_test.dart' as helpers;
+import 'support/review_images.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -32,8 +32,8 @@ void main() {
       'MaterialIcons',
     )..addFont(rootBundle.load('fonts/MaterialIcons-Regular.otf'))).load();
     for (final file in [
-      'materials-atlas-v2.png',
-      'science-details-v2.png',
+      'materials-atlas-v2.webp',
+      'science-details-v2.webp',
       'physics-atlas-v1.webp',
     ]) {
       await Flame.images.load(file);
@@ -52,7 +52,7 @@ void main() {
     );
   }
 
-  Map current(MemoryProgressStore store) =>
+  Map<dynamic, dynamic> current(MemoryProgressStore store) =>
       store.data.journeys[lesson.id]!['current'];
   Future<void> choose(WidgetTester t, String id) =>
       helpers.tapVisible(t, find.byKey(ValueKey('science-item-$id')));
@@ -76,9 +76,7 @@ void main() {
             key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
         final image = await boundary.toImage();
         final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
-        await Directory('tmp/material-missions').create(recursive: true);
-        await File('tmp/material-missions/$name.png')
-            .writeAsBytes(bytes!.buffer.asUint8List());
+        await saveReviewImage('material-missions/$name.png', bytes);
         image.dispose();
       });
 

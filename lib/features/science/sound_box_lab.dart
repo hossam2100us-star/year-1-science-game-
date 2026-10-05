@@ -5,6 +5,7 @@ import '../../core/touch_cue.dart';
 import 'science_lab.dart';
 import 'sound_picture.dart';
 import 'sound_ui.dart';
+import '../../core/diagnostics/app_log.dart';
 
 class SoundBoxLab extends StatefulWidget {
   const SoundBoxLab({
@@ -32,10 +33,10 @@ class _SoundBoxLabState extends State<SoundBoxLab> {
   String? playing;
   String? retryChoice;
   Map<String, dynamic> get data => widget.data;
-  Map get ui => widget.step.json['labUi'];
-  Map get observation => widget.step.json['observationUi'];
+  Map<dynamic, dynamic> get ui => widget.step.json['labUi'];
+  Map<dynamic, dynamic> get observation => widget.step.json['observationUi'];
   String get active => data['active'] ?? widget.step.options.first.id;
-  Map get guesses => data['guesses'] ?? {};
+  Map<dynamic, dynamic> get guesses => data['guesses'] ?? {};
   Set<String> get tested => Set<String>.from(data['tested'] ?? []);
   void feedback(String text, {bool speak = true}) {
     if (!mounted) return;
@@ -63,7 +64,8 @@ class _SoundBoxLabState extends State<SoundBoxLab> {
         ScienceLab.experimentComplete(widget.step, next),
       );
       return true;
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.error('sound', 'Saving the sound box lab failed', error, stack);
       feedback('Saving needs help. Please try again.');
       return false;
     } finally {
@@ -256,8 +258,9 @@ class _SoundBoxLabState extends State<SoundBoxLab> {
                           ...Map.from(data['observed'] ?? {}),
                           active: id,
                         };
-                        if (!await save({'observed': observed}) || !mounted)
+                        if (!await save({'observed': observed}) || !mounted) {
                           return;
+                        }
                         setState(() {
                           retry = false;
                           retryChoice = null;

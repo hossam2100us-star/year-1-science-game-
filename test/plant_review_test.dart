@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flame/flame.dart';
@@ -14,6 +13,7 @@ import 'package:science_adventure/features/plants/plant_mission_stage.dart';
 import 'package:science_adventure/features/plants/plant_workshop.dart';
 
 import 'setup_screen_test.dart' as helpers;
+import 'support/review_images.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +21,7 @@ void main() {
   setUpAll(() async {
     helpers.testCatalog = await helpers.loadTestCatalog();
     lesson = (await LessonLibrary.load()).lessons['unit_02']!;
-    await Flame.images.load('science-details-v2.png');
+    await Flame.images.load('science-details-v2.webp');
   });
   test('Fridge neighbours belong to different food groups', () {
     final step = lesson.steps[4];
@@ -156,9 +156,7 @@ void main() {
       await t.runAsync(() async {
         final picture = await boundary.toImage();
         final bytes = await picture.toByteData(format: ui.ImageByteFormat.png);
-        await Directory('tmp').create(recursive: true);
-        await File('tmp/plant-review.png')
-            .writeAsBytes(bytes!.buffer.asUint8List());
+        await saveReviewImage('plant-review.png', bytes);
         picture.dispose();
       });
     },

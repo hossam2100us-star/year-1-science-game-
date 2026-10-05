@@ -65,7 +65,7 @@ class DiscoveryWorld extends StatelessWidget {
           height: 290,
           width: double.infinity,
           child: IllustratedArt(
-            asset: 'electric-safety-v1.png',
+            asset: 'electric-safety-v1.webp',
             crop: const [
               Rect.fromLTWH(0, 0, .304, 1),
               Rect.fromLTWH(.306, 0, .369, 1),
@@ -93,7 +93,7 @@ class DiscoveryWorld extends StatelessWidget {
             builder: (context, box) => Stack(
               children: [
                 const Positioned.fill(
-                  child: IllustratedArt(asset: 'water-world-v1.png'),
+                  child: IllustratedArt(asset: 'water-world-v1.webp'),
                 ),
                 for (final item in step.options)
                   Positioned(

@@ -4,6 +4,8 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/answer_summary.dart';
+import '../../core/diagnostics/app_log.dart';
+import '../../core/image_budget.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
@@ -37,9 +39,11 @@ class LessonRoute extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) => ref
       .watch(lessonLibraryProvider)
       .when(
-        data: (library) => id == 'unit_01'
-            ? AliveAdventures(lesson: library.lessons[id]!)
-            : LessonPlayer(lesson: library.lessons[id]!),
+        data: (library) => UnitImageScope(
+          child: id == 'unit_01'
+              ? AliveAdventures(lesson: library.lessons[id]!)
+              : LessonPlayer(lesson: library.lessons[id]!),
+        ),
         loading: () =>
             const Scaffold(body: Center(child: CircularProgressIndicator())),
         error: (error, stack) => Scaffold(
@@ -215,15 +219,17 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     if (_science && step.json['lab'] == 'force') {
       return step.json['labUi']['guideInstructions'][forceGuideStage(_lab)];
     }
-    if (_ourselves || _science)
+    if (_ourselves || _science) {
       return '${step.json['safety'] ?? ''} ${step.json['spokenPrompt'] ?? step.prompt}';
-    if (_plantLab)
+    }
+    if (_plantLab) {
       return '$_displayPrompt ${step.json['playInstruction'] ?? ''}';
+    }
     final names = step.options.map((v) => v.label).join('. ');
     final places = step.kind == 'label-diagram'
         ? List.generate(step.targets.length, (i) => 'Place ${i + 1}').join('. ')
         : step.targets.map((v) => v.label).join('. ');
-    return '${step.prompt} $names. ${places.isEmpty ? '' : places + '.'}';
+    return '${step.prompt} $names. ${places.isEmpty ? '' : '$places.'}';
   }
 
   void _say(String text) {
@@ -270,10 +276,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     final task = _writes.then(
       (_) => writer.saveJourney(widget.lesson.id, snapshot),
     );
-    _writes = task.catchError((Object error) {
+    _writes = task.catchError((Object error, StackTrace stack) {
       if (mounted) {
         setState(() => _saveFailed = true);
-        showSaveError(context);
+        showSaveError(context, error, stack, area: 'journey');
       }
     });
     return task;
@@ -282,7 +288,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   void _changed() {
     _syncGame();
     setState(() {});
-    _persist().catchError((Object _) {});
+    // Failures are logged and shown by the _writes handler in _persist.
+    _persist().ignore();
   }
 
   void _playSound(String name, [double loudness = 1]) {
@@ -293,7 +300,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       ScienceAudio.play(
         name,
         settings.volume * (widget.lesson.id == 'unit_06' ? .5 : .35) * loudness,
-      ).catchError((Object _) {});
+      ).catchError(
+        (Object error, StackTrace stack) =>
+            AppLog.warning('audio', 'Scene sound did not play', error, stack),
+      );
     }
   }
 
@@ -304,7 +314,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     }
     if (_busy || _answerLocked || _freeDone || _frame > 0) return;
     _reviewItems.remove(id);
-    if (!(_science && step.json['band'] == true && step.isFree))
+    if (!(_science && step.json['band'] == true && step.isFree)) {
       _say(
         _plantLab && step.kind == 'story'
             ? step.prompt
@@ -312,6 +322,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
             ? step.json['partDescriptions'][id] ?? step.label(id)
             : step.json['senseDescriptions']?[id] ?? step.label(id),
       );
+    }
     if (['explore', 'story', 'free-plant'].contains(step.kind)) {
       if (step.json['senseDescriptions'] is Map) {
         _feedback = step.json['senseDescriptions'][id] ?? '';
@@ -332,8 +343,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       _selected = {id};
     }
     _changed();
-    if (!step.isFree && !step.isMulti && !step.isOrder && !step.isMapping)
+    if (!step.isFree && !step.isMulti && !step.isOrder && !step.isMapping) {
       _check();
+    }
   }
 
   void _place(String item, String target) {
@@ -409,12 +421,13 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         final correct = (entry.value as List).every(
           (id) => _mappingItemMatches(id),
         );
-        if (correct)
+        if (correct) {
           _objectiveEvidence[entry.key] = previousMistakes == 0
               ? 'firstTry'
               : 'afterHint';
-        else if (_engine.done)
+        } else if (_engine.done) {
           _objectiveEvidence[entry.key] = 'explained';
+        }
       }
     }
     _feedback = _assessmentFeedback();
@@ -467,12 +480,15 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   bool get _canContinue {
     if (_needsCorrection) return false;
     if (_session.responses[step.id]?['completed'] == true) return true;
-    if (_science && step.json['lab'] == 'distance')
+    if (_science && step.json['lab'] == 'distance') {
       return ScienceLab.distanceComplete(_lab);
-    if (_science && step.json['lab'] == 'force')
+    }
+    if (_science && step.json['lab'] == 'force') {
       return ScienceLab.forceComplete(_lab);
-    if (_science && step.json['lab'] == 'sailboat')
+    }
+    if (_science && step.json['lab'] == 'sailboat') {
       return ScienceLab.boatComplete(_lab);
+    }
     if (_science && step.json['shapeResults'] != null) {
       return ScienceLab.shapeComplete(step, _lab);
     }
@@ -480,8 +496,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       return ScienceLab.experimentComplete(step, _lab);
     }
     if (_science && step.json['lab'] != null) return _freeDone;
-    if (_science && step.kind == 'explore')
+    if (_science && step.kind == 'explore') {
       return step.options.every((o) => _touched.contains(o.id));
+    }
     if (_ourselves && (step.kind == 'explore' || step.kind == 'story')) {
       return step.options.every((o) => _touched.contains(o.id));
     }
@@ -490,8 +507,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       return step.options.every((item) => _touched.contains(item.id));
     }
     if (_engine.done || _freeDone || step.kind == 'story') return true;
-    if (step.kind == 'explore' || step.kind == 'free-plant')
+    if (step.kind == 'explore' || step.kind == 'free-plant') {
       return _touched.length >= (step.json['minTouches'] ?? 3);
+    }
     return false;
   }
 
@@ -518,8 +536,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         setState(() {});
         _say(_feedback);
       }
-    } catch (_) {
-      if (mounted) showSaveError(context);
+    } catch (error, stack) {
+      if (mounted) showSaveError(context, error, stack, area: 'journey');
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -550,12 +568,12 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       }
       _game.pauseEngine();
       _prepare();
-    } catch (_) {
+    } catch (error, stack) {
       _session.index = previousIndex;
       _session.current = previousCurrent;
       _session.responses = previousResponses;
       if (mounted) {
-        showSaveError(context);
+        showSaveError(context, error, stack, area: 'journey');
         _prepare();
       }
     } finally {
@@ -604,13 +622,13 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         _game.pauseEngine();
         _prepare();
       }
-    } catch (_) {
+    } catch (error, stack) {
       // A failed boundary save leaves the previous completed step retryable.
       _session.index = previousIndex;
       _session.current = previousCurrent;
       _session.responses = previousResponses;
       if (mounted) {
-        showSaveError(context);
+        showSaveError(context, error, stack, area: 'journey');
         _prepare();
       }
     } finally {
@@ -620,8 +638,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   String get _resultText {
     final name = ref.read(appProvider).profile?.name ?? '';
-    if (!widget.lesson.quiz)
+    if (!widget.lesson.quiz) {
       return 'Great effort${name.isEmpty ? '' : ', $name'}! You explored the whole unit and earned three stars.';
+    }
     final score = _session.result().firstTry;
     return score >= 8
         ? 'Excellent! $score out of ten.'
@@ -635,8 +654,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     try {
       if (!_complete) await _persist();
       await _writes;
-    } catch (_) {
-      if (mounted) showSaveError(context);
+    } catch (error, stack) {
+      if (mounted) showSaveError(context, error, stack, area: 'journey');
       return;
     }
     await ref.read(narrationProvider).stop();
@@ -648,7 +667,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     if (state != AppLifecycleState.resumed) {
       if (!_complete) {
         _game.pauseEngine();
-        _persist().catchError((Object _) {});
+        // Failures are logged and shown by the _writes handler in _persist.
+        _persist().ignore();
       }
       ref.read(narrationProvider).stop();
     } else if (!_complete) {
@@ -658,7 +678,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
 
   @override
   void dispose() {
-    ScienceAudio.stop().catchError((Object _) {});
+    ScienceAudio.stop().catchError(
+      (Object error, StackTrace stack) =>
+          AppLog.warning('audio', 'Stopping scene sound failed', error, stack),
+    );
     WidgetsBinding.instance.removeObserver(this);
     if (!_complete) _game.pauseEngine();
     _scroll.dispose();
@@ -701,7 +724,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         onLeave: _leave,
       );
     }
-    if (step.json['experiment'] == 'bean')
+    if (step.json['experiment'] == 'bean') {
       return BeanExperiment(
         key: ValueKey(step.id),
         step: step,
@@ -719,6 +742,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
           await _next();
         },
       );
+    }
 
     _game.reducedMotion = MediaQuery.disableAnimationsOf(context);
     return PopScope(
@@ -735,17 +759,24 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                 child: LayoutBuilder(
                   builder: (context, constraints) {
                     final compact = constraints.maxWidth < 600;
-                    final title = Text(
-                      step.title == step.section || _plantLab
-                          ? step.title
-                          : '${step.title} • ${step.section}',
-                      key: const ValueKey('lesson-title'),
-                      maxLines: compact ? 2 : null,
-                      overflow: compact ? TextOverflow.ellipsis : null,
-                      style: compact
-                          ? Theme.of(context).textTheme.titleLarge
-                                ?.copyWith(fontSize: 20)
-                          : Theme.of(context).textTheme.titleLarge,
+                    final titleText = step.title == step.section || _plantLab
+                        ? step.title
+                        : '${step.title} • ${step.section}';
+                    // A shortened phone title keeps its full text on
+                    // long-press (AUD-018).
+                    final title = Tooltip(
+                      message: titleText,
+                      excludeFromSemantics: true,
+                      child: Text(
+                        titleText,
+                        key: const ValueKey('lesson-title'),
+                        maxLines: compact ? 2 : null,
+                        overflow: compact ? TextOverflow.ellipsis : null,
+                        style: compact
+                            ? Theme.of(context).textTheme.titleLarge
+                                  ?.copyWith(fontSize: 20)
+                            : Theme.of(context).textTheme.titleLarge,
+                      ),
                     );
                     final controls = Row(
                       children: [
@@ -784,7 +815,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                   },
                 ),
               ),
-              Expanded(
+              // Loose: short challenges keep "Check" right under the content
+              // instead of across an empty tablet screen; long ones still
+              // scroll with the controls pinned below (AUD-018).
+              Flexible(
                 child: SingleChildScrollView(
                   controller: _scroll,
                   padding: const EdgeInsets.symmetric(
@@ -957,23 +991,26 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                     onOrder: (items) {
                                       if (_busy ||
                                           _answerLocked ||
-                                          !step.isOrder)
+                                          !step.isOrder) {
                                         return;
+                                      }
                                       final ids = step.options
                                           .map((p) => p.id)
                                           .toSet();
                                       if (items.toSet().length !=
                                               items.length ||
-                                          !ids.containsAll(items))
+                                          !ids.containsAll(items)) {
                                         return;
+                                      }
                                       _selected = items.toSet();
                                       _changed();
                                     },
                                     onOrderPlacements: (slots) {
                                       if (_busy ||
                                           _answerLocked ||
-                                          !step.isOrder)
+                                          !step.isOrder) {
                                         return;
+                                      }
                                       final ids = step.options
                                           .map((p) => p.id)
                                           .toSet();
@@ -988,8 +1025,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                                       if (!validSlots.containsAll(slots.keys) ||
                                           !ids.containsAll(slots.values) ||
                                           slots.values.toSet().length !=
-                                              slots.length)
+                                              slots.length) {
                                         return;
+                                      }
                                       _placements = Map.from(slots);
                                       _selected = {
                                         for (
@@ -1315,20 +1353,22 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                   IconButton(
                     tooltip: 'Smaller number',
                     onPressed: () => setState(() {
-                      if (person == 0)
+                      if (person == 0) {
                         _shoeA = (_shoeA - 1).clamp(1, 60);
-                      else
+                      } else {
                         _shoeB = (_shoeB - 1).clamp(1, 60);
+                      }
                     }),
                     icon: const Icon(Icons.remove_circle_outline),
                   ),
                   IconButton(
                     tooltip: 'Bigger number',
                     onPressed: () => setState(() {
-                      if (person == 0)
+                      if (person == 0) {
                         _shoeA = (_shoeA + 1).clamp(1, 60);
-                      else
+                      } else {
                         _shoeB = (_shoeB + 1).clamp(1, 60);
+                      }
                     }),
                     icon: const Icon(Icons.add_circle_outline),
                   ),
@@ -1421,10 +1461,12 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   );
   String get _practiceUnit {
     final results = _session.result().objectives;
-    for (final id in ['quiz01.01', 'quiz01.02', 'quiz01.08'])
+    for (final id in ['quiz01.01', 'quiz01.02', 'quiz01.08']) {
       if (results[id] != DecisionOutcome.firstTry) return 'unit_01';
-    for (final id in ['quiz01.03', 'quiz01.04', 'quiz01.05'])
+    }
+    for (final id in ['quiz01.03', 'quiz01.04', 'quiz01.05']) {
       if (results[id] != DecisionOutcome.firstTry) return 'unit_02';
+    }
     return 'unit_03';
   }
 }

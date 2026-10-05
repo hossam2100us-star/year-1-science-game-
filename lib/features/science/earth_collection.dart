@@ -4,6 +4,7 @@ import '../../content/lesson.dart';
 import '../../core/touch_cue.dart';
 import 'science_picture.dart';
 import 'science_world_stage.dart';
+import '../../core/diagnostics/app_log.dart';
 
 /// Open exploration and the child's own grouping rule have no answer key.
 class EarthCollection extends StatefulWidget {
@@ -88,7 +89,8 @@ class _EarthCollectionState extends State<EarthCollection> {
     try {
       await widget.onChange(next, complete);
       return true;
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.error('earth', 'Saving the earth collection failed', error, stack);
       feedback('Saving needs help. Please try again.');
       return false;
     } finally {
@@ -101,8 +103,9 @@ class _EarthCollectionState extends State<EarthCollection> {
     if (!visited.contains(item.id) &&
         !await save({
           'visited': {...visited, item.id}.toList(),
-        }))
+        })) {
       return;
+    }
     if (!mounted) return;
     setState(() => discovered = item.id);
     feedback(item.label);
@@ -111,16 +114,18 @@ class _EarthCollectionState extends State<EarthCollection> {
   Future<void> placeRock(String id, String group) async {
     if (busy ||
         !groups.contains(group) ||
-        !options.any((item) => item.id == id))
+        !options.any((item) => item.id == id)) {
       return;
+    }
     final item = options.firstWhere((item) => item.id == id);
     final assignments = {...widget.data, id: group};
     if (!await save({
           id: group,
           'visited': {...visited, id}.toList(),
         }) ||
-        !mounted)
+        !mounted) {
       return;
+    }
     feedback('${item.label} is in ${groupName(group)}. Your rule is welcome.');
     final next = options.indexWhere(
       (item) => !groups.contains(assignments[item.id]),

@@ -1,9 +1,4 @@
-import 'content/lesson.dart';
-import 'features/science/science_review_menu.dart';
-
 import 'dart:async';
-
-import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,6 +7,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'content/catalog.dart';
 import 'core/design.dart';
+import 'core/diagnostics/app_log.dart';
+import 'core/image_budget.dart';
 import 'core/models.dart';
 import 'core/providers.dart';
 import 'core/storage.dart';
@@ -19,68 +16,102 @@ import 'core/widgets.dart';
 import 'features/onboarding/profile_editor.dart';
 import 'features/world/subject_hub.dart';
 import 'features/onboarding/child_chooser.dart';
-import 'features/biology/lesson_player.dart';
-import 'features/plants/bean_experiment.dart';
-import 'features/plants/plant_lab_preview.dart';
 import 'parent/parent_gate.dart';
+import 'startup/startup_problem.dart';
 
-Future<void> main() async {
+Future<void> main() => launchScienceAdventure();
+
+/// Starts the game. [app] lets the review build add its preview routes; the
+/// production entry point always uses the plain [ScienceAdventureApp].
+Future<void> launchScienceAdventure({
+  Widget app = const ScienceAdventureApp(),
+}) async {
   WidgetsFlutterBinding.ensureInitialized();
+  ImageBudget.configure();
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,
   ]);
-  await _launch();
+  await _launch(app);
 }
 
-Future<void> _launch() async {
+Future<void> _launch(Widget app) async {
+  void onRetry() => unawaited(_launch(app));
+  final HiveProgressStore store;
   try {
-    final store = await HiveProgressStore.open();
-    store.read(); // Validate the saved data before entering the child UI.
-    final catalog = await Catalog.load();
+    store = await HiveProgressStore.open();
+  } catch (error, stack) {
+    AppLog.error('startup', 'Opening storage failed', error, stack);
     runApp(
-      ProviderScope(
-        overrides: [
-          storeProvider.overrideWithValue(store),
-          catalogProvider.overrideWithValue(catalog),
-        ],
-        child: const ScienceAdventureApp(),
-      ),
+      StartupProblemApp(problem: startupProblemFor(error), onRetry: onRetry),
     );
-  } catch (_) {
-    runApp(
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: adventureTheme(null),
-        home: const Scaffold(
-          body: AdventurePage(
-            maxWidth: 650,
-            child: Column(
-              children: [
-                Text(
-                  'We could not open your saved data. Restart the game and check the free space on this device. Your saved data has not been deleted.',
-                  textDirection: TextDirection.rtl,
-                  style: TextStyle(fontFamily: 'Cairo', fontSize: 24),
-                ),
-                SizedBox(height: 24),
-                FilledButton(onPressed: _launch, child: Text('Retry')),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
+    return;
   }
+  try {
+    store.read(); // Validate (and if needed recover) before the child UI.
+  } on SaveDataUnreadable {
+    runApp(SaveRecoveryApp(store: store, onRetry: onRetry));
+    return;
+  }
+  final Catalog catalog;
+  try {
+    catalog = await Catalog.load();
+  } catch (error, stack) {
+    AppLog.error('startup', 'Loading the lesson catalog failed', error, stack);
+    runApp(
+      StartupProblemApp(
+        problem: StartupProblem.contentMissing,
+        onRetry: onRetry,
+      ),
+    );
+    return;
+  }
+  runApp(
+    ProviderScope(
+      overrides: [
+        storeProvider.overrideWithValue(store),
+        catalogProvider.overrideWithValue(catalog),
+      ],
+      child: app,
+    ),
+  );
 }
 
-class ScienceAdventureApp extends ConsumerWidget {
-  const ScienceAdventureApp({super.key});
+class ScienceAdventureApp extends ConsumerStatefulWidget {
+  const ScienceAdventureApp({
+    super.key,
+    this.initialRoute,
+    this.routes = const {},
+  });
+
+  /// Only the review build (lib/main_preview.dart) passes these.
+  final String? initialRoute;
+  final Map<String, WidgetBuilder> routes;
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ScienceAdventureApp> createState() =>
+      _ScienceAdventureAppState();
+}
+
+class _ScienceAdventureAppState extends ConsumerState<ScienceAdventureApp> {
+  void _configureVoice(AppData data) => ref
+      .read(narrationProvider)
+      .configure(data.settings, data.profile?.gender ?? ChildGender.boy);
+
+  @override
+  void initState() {
+    super.initState();
+    _configureVoice(ref.read(appProvider));
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final data = ref.watch(appProvider);
-    ref
-        .read(narrationProvider)
-        .configure(data.settings, data.profile?.gender ?? ChildGender.boy);
+    // Narration follows settings and the active child; configured on change,
+    // not on every rebuild (AUD-016).
+    ref.listen(
+      appProvider.select((d) => (d.settings, d.profile?.gender)),
+      (_, _) => _configureVoice(ref.read(appProvider)),
+    );
     return MaterialApp(
       title: 'Science Adventure',
       debugShowCheckedModeBanner: false,
@@ -88,48 +119,9 @@ class ScienceAdventureApp extends ConsumerWidget {
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       supportedLocales: const [Locale('en'), Locale('ar')],
       home: const AdventureHome(),
-      initialRoute:
-          kIsWeb &&
-              const [
-                'garden-v2',
-                'alive-three',
-              ].contains(Uri.base.queryParameters['preview'])
-          ? '/garden-preview'
-          : kIsWeb && Uri.base.queryParameters['preview'] == 'bean-v1'
-          ? '/bean-preview'
-          : kIsWeb && Uri.base.queryParameters['preview'] == 'plants-v2'
-          ? '/plants-preview'
-          : kIsWeb && Uri.base.queryParameters['preview'] == 'plants-v3'
-          ? '/plants-review'
-          : kIsWeb && Uri.base.queryParameters['preview'] == 'light-v1'
-          ? '/light-review'
-          : kIsWeb && Uri.base.queryParameters['preview'] == 'science-v1'
-          ? '/science-review'
-          : kIsWeb && Uri.base.queryParameters['preview'] == 'biology-v1'
-          ? '/biology-review'
-          : '/',
-      routes: {
-        '/science-review': (_) => const ScienceReviewMenu(),
-        '/biology-review': (_) => PlantLabPreview(
-          lessonId:
-              LessonLibrary.availableIds.contains(
-                Uri.base.queryParameters['lesson'],
-              )
-              ? Uri.base.queryParameters['lesson']!
-              : 'unit_03',
-          initialStep:
-              (int.tryParse(Uri.base.queryParameters['step'] ?? '') ?? 1) - 1,
-        ),
-        '/garden-preview': (_) => const LessonRoute(id: 'unit_01'),
-        '/light-review': (_) => const PlantLabPreview(initialStep: 3),
-        '/plants-review': (_) => PlantLabPreview(
-          initialStep:
-              ((int.tryParse(Uri.base.queryParameters['step'] ?? '') ?? 1) - 1)
-                  .clamp(0, 13),
-        ),
-        '/plants-preview': (_) => const LessonRoute(id: 'unit_02'),
-        '/bean-preview': (_) => const BeanPreview(),
-      },
+      // Production has no preview routes (AUD-014); see lib/main_preview.dart.
+      initialRoute: widget.initialRoute,
+      routes: widget.routes,
     );
   }
 }
@@ -179,8 +171,8 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
       _sessionSeconds += now.difference(last).inSeconds;
       try {
         await ref.read(appProvider.notifier).usage(last, now);
-      } catch (_) {
-        if (mounted) showSaveError(context);
+      } catch (error, stack) {
+        if (mounted) showSaveError(context, error, stack, area: 'usage');
       }
     }
     if (mounted &&
@@ -233,7 +225,13 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
     if (_exitOpen) return;
     _exitOpen = true;
     await ref.read(narrationProvider).stop();
-    if (mounted && await parentGate(context)) await SystemNavigator.pop();
+    if (mounted &&
+        await parentGate(
+          context,
+          gender: ref.read(appProvider).profile?.gender,
+        )) {
+      await SystemNavigator.pop();
+    }
     _exitOpen = false;
   }
 

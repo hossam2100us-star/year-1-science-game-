@@ -35,7 +35,7 @@ class SoundPicture extends StatelessWidget {
                   ? math.sin(phase) * .045
                   : 0,
               child: IllustratedArt(
-                asset: 'sound-atlas-v2.png',
+                asset: 'sound-atlas-v2.webp',
                 crop: Rect.fromLTWH(
                   (soundSpriteCells[art]! % 4) / 4,
                   const [0.0, .35, .635][soundSpriteCells[art]! ~/ 4],
@@ -47,7 +47,7 @@ class SoundPicture extends StatelessWidget {
           )
         : soundDetailCells.containsKey(art)
         ? IllustratedArt(
-            asset: 'sound-details-v2.png',
+            asset: 'sound-details-v2.webp',
             crop: Rect.fromLTWH(
               (soundDetailCells[art]! % 3) / 3,
               (soundDetailCells[art]! ~/ 3) / 2,

@@ -25,7 +25,7 @@ class MaterialWorkshop extends StatelessWidget {
   final bool done;
   final ValueChanged<String> onItem;
   final void Function(String, String) onPlace;
-  Map get ui => step.json['workshop'];
+  Map<dynamic, dynamic> get ui => step.json['workshop'];
   Widget picture(PictureItem item, double size) {
     final examples = (ui['pairedExamples'] as Map?)?[item.id] as List?;
     if (examples != null) {
@@ -617,8 +617,15 @@ class MaterialWorkshop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (['pack', 'squash', 'window', 'pencil', 'missions'].contains(ui['mode']))
+    if ([
+      'pack',
+      'squash',
+      'window',
+      'pencil',
+      'missions',
+    ].contains(ui['mode'])) {
       return mission();
+    }
     final last = selected.isEmpty ? null : selected.last;
     return Column(
       children: [

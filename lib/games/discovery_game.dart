@@ -55,8 +55,9 @@ class DiscoveryGame extends FlameGame with TapCallbacks, DragCallbacks {
         side,
       );
     }
-    if (step.kind == 'label-diagram')
+    if (step.kind == 'label-diagram') {
       return {options.first.id: Rect.fromLTWH(8, size.y * .33, 80, 80)};
+    }
     return result;
   }
 
@@ -65,22 +66,24 @@ class DiscoveryGame extends FlameGame with TapCallbacks, DragCallbacks {
     final result = <String, Rect>{};
     if (step.kind == 'label-diagram') {
       final n = step.targets.length;
-      for (var i = 0; i < n; i++)
+      for (var i = 0; i < n; i++) {
         result[step.targets[i].id] = Rect.fromLTWH(
           size.x - 90,
           (size.y - 68 * n) / (n + 1) * (i + 1) + 68 * i,
           76,
           64,
         );
+      }
     } else {
       final width = size.x / step.targets.length;
-      for (var i = 0; i < step.targets.length; i++)
+      for (var i = 0; i < step.targets.length; i++) {
         result[step.targets[i].id] = Rect.fromLTWH(
           i * width + 5,
           size.y - 77,
           width - 10,
           70,
         );
+      }
     }
     return result;
   }
@@ -152,11 +155,11 @@ class DiscoveryGame extends FlameGame with TapCallbacks, DragCallbacks {
   }
 
   @override
-  void render(Canvas c) {
-    super.render(c);
+  void render(Canvas canvas) {
+    super.render(canvas);
     final p = Paint();
     final w = size.x, h = size.y;
-    c.drawRect(
+    canvas.drawRect(
       Rect.fromLTWH(0, 0, w, h),
       p
         ..color = step.scene == 'garden'
@@ -164,33 +167,37 @@ class DiscoveryGame extends FlameGame with TapCallbacks, DragCallbacks {
             : const Color(0xFFF1EBDD),
     );
     if (step.scene == 'garden') {
-      c.drawRect(
+      canvas.drawRect(
         Rect.fromLTWH(0, h * .52, w, h * .48),
         p..color = const Color(0xFFCCE5BC),
       );
-      c.drawOval(
+      canvas.drawOval(
         Rect.fromLTWH(w * .35, h * .55, w * .5, h * .6),
         p..color = const Color(0xFFEBDCBE),
       );
-      c.drawCircle(Offset(w - 35, 29), 18, p..color = const Color(0xFFF3D88E));
+      canvas.drawCircle(
+        Offset(w - 35, 29),
+        18,
+        p..color = const Color(0xFFF3D88E),
+      );
     } else {
-      c.drawRect(
+      canvas.drawRect(
         Rect.fromLTWH(0, h * .72, w, h * .28),
         p..color = const Color(0xFFD9C5A6),
       );
     }
     if (step.kind == 'label-diagram') {
       final rect = Rect.fromLTWH(w * .32, 8, w * .32, h - 20);
-      if (step.scene == 'eye')
-        drawPicture(c, rect, 'eye');
-      else if (step.scene == 'plant') {
+      if (step.scene == 'eye') {
+        drawPicture(canvas, rect, 'eye');
+      } else if (step.scene == 'plant') {
         drawPicture(
-          c,
+          canvas,
           Rect.fromLTWH(rect.left, rect.top, rect.width, rect.height * .72),
           'plant',
         );
         drawPicture(
-          c,
+          canvas,
           Rect.fromLTWH(
             rect.left + rect.width * .25,
             rect.top + rect.height * .65,
@@ -199,8 +206,9 @@ class DiscoveryGame extends FlameGame with TapCallbacks, DragCallbacks {
           ),
           'roots',
         );
-      } else
-        drawBody(c, rect, girl: girl);
+      } else {
+        drawBody(canvas, rect, girl: girl);
+      }
       for (final entry in targetRects.entries) {
         final point = step.scene == 'plant'
             ? switch (entry.key) {
@@ -210,7 +218,7 @@ class DiscoveryGame extends FlameGame with TapCallbacks, DragCallbacks {
                 _ => const Offset(.5, .17),
               }
             : bodyAnchor(entry.key);
-        c.drawLine(
+        canvas.drawLine(
           entry.value.center,
           Offset(
             rect.left + point.dx * rect.width,
@@ -222,72 +230,95 @@ class DiscoveryGame extends FlameGame with TapCallbacks, DragCallbacks {
         );
       }
     }
-    if (step.focus != null)
+    if (step.focus != null) {
       drawPicture(
-        c,
+        canvas,
         Rect.fromLTWH(w * .43, 4, 70, 70),
         step.focus!,
         girl: girl,
       );
+    }
     if (step.kind == 'predict-then-reveal' && frame > 0) {
       if (step.json['experiment'] == 'light') {
-        drawPicture(c, Rect.fromLTWH(w * .15, 18, w * .25, h * .68), 'plant');
         drawPicture(
-          c,
+          canvas,
+          Rect.fromLTWH(w * .15, 18, w * .25, h * .68),
+          'plant',
+        );
+        drawPicture(
+          canvas,
           Rect.fromLTWH(w * .60, 18, w * .25, h * .68),
           frame >= step.frames.length ? 'pale_and_floppy' : 'plant',
         );
-        label(c, step.json['sceneLabels'][0], Offset(w * .12, h - 42), w * .32);
-        label(c, step.json['sceneLabels'][1], Offset(w * .56, h - 42), w * .35);
-      } else
+        label(
+          canvas,
+          step.json['sceneLabels'][0],
+          Offset(w * .12, h - 42),
+          w * .32,
+        );
+        label(
+          canvas,
+          step.json['sceneLabels'][1],
+          Offset(w * .56, h - 42),
+          w * .35,
+        );
+      } else {
         drawPicture(
-          c,
+          canvas,
           Rect.fromLTWH(w * .35, 10, w * .3, h - 25),
           step.frames[(frame - 1).clamp(0, step.frames.length - 1)]['art'],
         );
+      }
       return;
     }
     for (final entry in itemRects.entries) {
       final item = step.options.firstWhere((o) => o.id == entry.key),
           rect = entry.value;
       final active = selected.contains(item.id);
-      if (active)
-        c.drawRRect(
+      if (active) {
+        canvas.drawRRect(
           RRect.fromRectAndRadius(rect.inflate(4), const Radius.circular(18)),
           p
             ..style = PaintingStyle.fill
             ..color = const Color(0xFFEECF79),
         );
-      if (placements.containsKey(item.id))
-        c.drawCircle(rect.topRight, 12, p..color = const Color(0xFF2170B5));
+      }
+      if (placements.containsKey(item.id)) {
+        canvas.drawCircle(
+          rect.topRight,
+          12,
+          p..color = const Color(0xFF2170B5),
+        );
+      }
       final dy = reducedMotion
           ? 0.0
           : math.sin(clock * 2 + step.options.indexOf(item)) *
                 (active ? 3 : 1.2);
       final dx = wobble > 0 && !reducedMotion ? math.sin(clock * 28) * 3 : 0.0;
       drawPicture(
-        c,
+        canvas,
         rect.translate(dx, dy),
         item.art,
         motion: clock,
         girl: girl,
       );
-      if (step.isOrder && active)
+      if (step.isOrder && active) {
         label(
-          c,
+          canvas,
           '${selected.toList().indexOf(item.id) + 1}',
           rect.topLeft,
           32,
           background: true,
         );
+      }
     }
     for (final entry in targetRects.entries) {
       final index = step.targets.indexWhere((v) => v.id == entry.key);
-      c.drawRRect(
+      canvas.drawRRect(
         RRect.fromRectAndRadius(entry.value, const Radius.circular(16)),
         p..color = Colors.white.withValues(alpha: .95),
       );
-      c.drawRRect(
+      canvas.drawRRect(
         RRect.fromRectAndRadius(entry.value, const Radius.circular(16)),
         p
           ..style = PaintingStyle.stroke
@@ -296,7 +327,7 @@ class DiscoveryGame extends FlameGame with TapCallbacks, DragCallbacks {
       );
       p.style = PaintingStyle.fill;
       label(
-        c,
+        canvas,
         step.kind == 'label-diagram' && !reveal
             ? '${index + 1}'
             : step.label(entry.key),
@@ -307,7 +338,7 @@ class DiscoveryGame extends FlameGame with TapCallbacks, DragCallbacks {
     if (dragging != null && dragPoint != null) {
       final item = step.options.firstWhere((e) => e.id == dragging);
       drawPicture(
-        c,
+        canvas,
         Rect.fromCenter(center: dragPoint!, width: 88, height: 88),
         item.art,
       );
@@ -315,7 +346,7 @@ class DiscoveryGame extends FlameGame with TapCallbacks, DragCallbacks {
     if (celebration > 0) {
       for (var i = 0; i < 14; i++) {
         final a = i * math.pi / 7, r = (1.2 - celebration) * 90;
-        c.drawCircle(
+        canvas.drawCircle(
           Offset(w / 2 + r * math.cos(a), h / 2 + r * math.sin(a)),
           4,
           p
@@ -334,12 +365,13 @@ class DiscoveryGame extends FlameGame with TapCallbacks, DragCallbacks {
     double width, {
     bool background = false,
   }) {
-    if (background)
+    if (background) {
       c.drawCircle(
         at + const Offset(15, 14),
         16,
         Paint()..color = Colors.white,
       );
+    }
     final painter = TextPainter(
       text: TextSpan(
         text: text,

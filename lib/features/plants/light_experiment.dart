@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -6,6 +8,7 @@ import '../../content/lesson.dart';
 import '../../core/providers.dart';
 import 'light_game.dart';
 import 'light_model.dart';
+import '../../core/diagnostics/app_log.dart';
 
 class LightExperiment extends ConsumerStatefulWidget {
   const LightExperiment({
@@ -65,7 +68,8 @@ class _LightExperimentState extends ConsumerState<LightExperiment>
         saveFailed = false;
       });
       return true;
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.error('light', 'Saving the light experiment failed', error, stack);
       if (mounted) setState(() => saveFailed = true);
       return false;
     }
@@ -75,11 +79,13 @@ class _LightExperimentState extends ConsumerState<LightExperiment>
     if (busy || progress.watered.isNotEmpty || progress.revealed) return;
     setState(() => busy = true);
     if (await save(progress.predict(id))) {
-      ref
-          .read(narrationProvider)
-          .speak(
-            '${ui('predicted')} ${widget.step.label(id)}. ${ui('waterInstruction')}',
-          );
+      unawaited(
+        ref
+            .read(narrationProvider)
+            .speak(
+              '${ui('predicted')} ${widget.step.label(id)}. ${ui('waterInstruction')}',
+            ),
+      );
     }
     if (mounted) setState(() => busy = false);
   }
@@ -89,14 +95,17 @@ class _LightExperimentState extends ConsumerState<LightExperiment>
         !ready ||
         progress.prediction == null ||
         progress.revealed ||
-        progress.watered.contains(place))
+        progress.watered.contains(place)) {
       return;
+    }
     setState(() => busy = true);
     if (await save(progress.water(place))) {
       game.pour(place);
-      ref
-          .read(narrationProvider)
-          .speak(ui(progress.readyToCompare ? 'bothWatered' : 'oneWatered'));
+      unawaited(
+        ref
+            .read(narrationProvider)
+            .speak(ui(progress.readyToCompare ? 'bothWatered' : 'oneWatered')),
+      );
     }
     if (mounted) setState(() => busy = false);
   }
@@ -108,7 +117,7 @@ class _LightExperimentState extends ConsumerState<LightExperiment>
       // Confirm the saved prediction and equal watering before revealing the result.
       await widget.onSave(progress.toJson());
       game.doorTime = 1.2;
-      ref.read(narrationProvider).speak(ui('waiting'));
+      unawaited(ref.read(narrationProvider).speak(ui('waiting')));
       await Future<void>.delayed(
         Duration(milliseconds: game.reducedMotion ? 100 : 1200),
       );
@@ -117,7 +126,8 @@ class _LightExperimentState extends ConsumerState<LightExperiment>
         game.doorTime = 0;
         speak();
       }
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.error('light', 'Saving the light experiment failed', error, stack);
       if (mounted) setState(() => saveFailed = true);
     } finally {
       if (mounted) setState(() => busy = false);

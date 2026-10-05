@@ -13,7 +13,7 @@ void main() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(channel, (call) async {
           calls.add(call);
-          if (call.method == 'getVoices')
+          if (call.method == 'getVoices') {
             return [
               {
                 'name': 'English local',
@@ -40,6 +40,7 @@ void main() {
                 'network_required': '0',
               },
             ];
+          }
           return 1;
         });
   });

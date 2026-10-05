@@ -121,7 +121,7 @@ class ShoePainter extends CustomPainter {
       ),
       Paint()..color = Colors.white,
     );
-    for (var i = 0; i < 3; i++)
+    for (var i = 0; i < 3; i++) {
       c.drawLine(
         Offset(125 + i * 14, 51 + i * 7),
         Offset(111 + i * 14, 68 + i * 7),
@@ -130,6 +130,7 @@ class ShoePainter extends CustomPainter {
           ..strokeWidth = 6
           ..strokeCap = StrokeCap.round,
       );
+    }
     c.restore();
   }
 

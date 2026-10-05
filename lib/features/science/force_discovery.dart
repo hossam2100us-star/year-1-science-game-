@@ -38,7 +38,7 @@ class _ForceDiscoveryState extends State<ForceDiscovery> {
   String? watching;
   String cartMotion = 'push';
   int replay = 0;
-  Map get ui => widget.step.json['forceScene'];
+  Map<dynamic, dynamic> get ui => widget.step.json['forceScene'];
   String story(String place) => ui['gardenStories'][place];
 
   @override

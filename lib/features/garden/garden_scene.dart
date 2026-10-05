@@ -39,12 +39,13 @@ Map<String, Rect> gardenRects(
       r.width * canvas.width,
       r.height * canvas.height,
     );
-    if (touch)
+    if (touch) {
       rect = Rect.fromCenter(
         center: rect.center,
         width: math.max(64, rect.width),
         height: math.max(64, rect.height),
       );
+    }
     return MapEntry(id, rect);
   });
 }
@@ -82,11 +83,11 @@ class GardenScene extends FlameGame {
   }
 
   @override
-  void render(Canvas c) {
-    super.render(c);
+  void render(Canvas canvas) {
+    super.render(canvas);
     final s = size.toSize(), area = gardenCanvas(s), p = Paint();
     if (artwork == null) return;
-    c.drawImageRect(
+    canvas.drawImageRect(
       artwork!,
       Rect.fromLTWH(
         0,
@@ -100,9 +101,9 @@ class GardenScene extends FlameGame {
     final rects = gardenRects(s, bounds: bounds);
     for (final id in found) {
       final at = rects[id]!.topRight + const Offset(-8, 12);
-      c.drawCircle(at, 18, p..color = const Color(0xFFFFF8E7));
+      canvas.drawCircle(at, 18, p..color = const Color(0xFFFFF8E7));
       _icon(
-        c,
+        canvas,
         explained.contains(id) ? Icons.menu_book_rounded : Icons.star_rounded,
         at - const Offset(14, 14),
         28,
@@ -120,7 +121,7 @@ class GardenScene extends FlameGame {
       final at =
           cat.center +
           Offset(cat.width * .23, cat.height * .10 + math.sin(time * 3) * 6);
-      c.drawCircle(
+      canvas.drawCircle(
         cat.center,
         math.min(cat.width, cat.height) * .56 + (math.sin(time * 3) + 1) * 3,
         p
@@ -129,17 +130,17 @@ class GardenScene extends FlameGame {
           ..strokeWidth = 3,
       );
       p.style = PaintingStyle.fill;
-      c.drawCircle(
+      canvas.drawCircle(
         at + const Offset(24, 24),
         27,
         p..color = gardenInk.withValues(alpha: .8),
       );
-      _icon(c, Icons.touch_app_rounded, at, 48, Colors.white);
+      _icon(canvas, Icons.touch_app_rounded, at, 48, Colors.white);
     }
     if (celebration > 0 && !reducedMotion) {
       for (var i = 0; i < 20; i++) {
         final angle = i * math.pi / 10, distance = (1.2 - celebration) * 160;
-        c.drawCircle(
+        canvas.drawCircle(
           Offset(
             s.width * .5 + math.cos(angle) * distance,
             s.height * .55 + math.sin(angle) * distance,
@@ -250,7 +251,7 @@ class BasketPicture extends CustomPainter {
         ..style = PaintingStyle.fill
         ..color = (alive ? const Color(0xFFBFDCCA) : const Color(0xFFCDDFEC)),
     );
-    for (var y = body.top + 10; y < body.bottom; y += 14)
+    for (var y = body.top + 10; y < body.bottom; y += 14) {
       c.drawLine(
         Offset(body.left + 4, y),
         Offset(body.right - 4, y),
@@ -258,6 +259,7 @@ class BasketPicture extends CustomPainter {
           ..color = Colors.white.withValues(alpha: .4)
           ..strokeWidth = 2,
       );
+    }
     final badge = Rect.fromCenter(
       center: body.center,
       width: s.height * .44,
@@ -275,7 +277,7 @@ class BasketPicture extends CustomPainter {
       badge.width,
       alive ? const Color(0xFF468C66) : const Color(0xFF537C9D),
     );
-    if (highlight)
+    if (highlight) {
       _icon(
         c,
         Icons.star_rounded,
@@ -283,6 +285,7 @@ class BasketPicture extends CustomPainter {
         30,
         const Color(0xFFAF7A18),
       );
+    }
   }
 
   @override

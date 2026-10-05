@@ -1,15 +1,15 @@
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 
-import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 
 import '../../content/lesson.dart';
 import '../../core/touch_cue.dart';
 import 'force_motion.dart';
 import 'force_trolley_scene.dart';
+import '../../core/game_image.dart';
 
-const forceGardenAsset = 'forces-garden-v6.png';
+const forceGardenAsset = 'forces-garden-v6.webp';
 
 /// Stable hitboxes sit in real habitats; only the last touched subject moves.
 class ForceGardenScene extends StatelessWidget {
@@ -172,14 +172,14 @@ class _GardenBackground extends StatelessWidget {
   const _GardenBackground(this.spot);
   final String spot;
   @override
-  Widget build(BuildContext context) => FutureBuilder<ui.Image>(
-    future: Flame.images.load(forceGardenAsset),
-    builder: (context, snapshot) => snapshot.hasData
-        ? CustomPaint(painter: _GardenPainter(snapshot.data!, spot))
-        : const ColoredBox(
-            color: Color(0xFFE2EFE0),
-            child: Center(child: CircularProgressIndicator()),
-          ),
+  Widget build(BuildContext context) => GameImage(
+    asset: forceGardenAsset,
+    builder: (context, image) =>
+        CustomPaint(painter: _GardenPainter(image, spot)),
+    placeholder: const ColoredBox(
+      color: Color(0xFFE2EFE0),
+      child: Center(child: CircularProgressIndicator()),
+    ),
   );
 }
 

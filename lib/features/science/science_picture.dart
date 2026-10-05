@@ -7,7 +7,7 @@ import 'science_atlas_crops.dart';
 import 'magnet_picture.dart';
 
 const scienceAtlases = <String, List<String>>{
-  'science-details-v2.png': [
+  'science-details-v2.webp': [
     'plastic_pot',
     'glass_marble',
     'paper_straw',
@@ -25,7 +25,7 @@ const scienceAtlases = <String, List<String>>{
     'gloves',
     'boots',
   ],
-  'materials-atlas-v2.png': [
+  'materials-atlas-v2.webp': [
     'spoon',
     'chair',
     'window',
@@ -61,7 +61,7 @@ const scienceAtlases = <String, List<String>>{
     'magnet',
     'key',
   ],
-  'earth-atlas-v2.png': [
+  'earth-atlas-v2.webp': [
     'pond',
     'stream',
     'river',
@@ -79,7 +79,7 @@ const scienceAtlases = <String, List<String>>{
     'moon',
     'astronaut',
   ],
-  'electric-atlas-v2.png': [
+  'electric-atlas-v2.webp': [
     'tv',
     'vacuum',
     'lantern',
@@ -169,7 +169,7 @@ class SciencePicture extends StatelessWidget {
       return SizedBox(
         height: height,
         width: height * 1.25,
-        child: const IllustratedArt(asset: 'book-v1.png'),
+        child: const IllustratedArt(asset: 'book-v1.webp'),
       );
     }
     if (art == 'magnet') return MagnetPicture(height: height);
@@ -198,14 +198,15 @@ class SciencePicture extends StatelessWidget {
     }
     for (final a in scienceAtlases.entries) {
       final i = a.value.indexOf(art);
-      if (i >= 0)
+      if (i >= 0) {
         return SizedBox(
           height: height,
           width: height * 1.25,
           child: IllustratedArt(asset: a.key, crop: scienceAtlasCrop(a.key, i)),
         );
+      }
     }
-    if (scienceSymbols.containsKey(art))
+    if (scienceSymbols.containsKey(art)) {
       return SizedBox(
         height: height,
         width: height,
@@ -215,31 +216,36 @@ class SciencePicture extends StatelessWidget {
           color: const Color(0xFF437A95),
         ),
       );
-    if (illustrationFor(art) != null || ['leaf', 'bird', 'cat'].contains(art))
+    }
+    if (illustrationFor(art) != null || ['leaf', 'bird', 'cat'].contains(art)) {
       return SizedBox(
         width: height * 1.25,
         child: BiologyPicture(art: art, height: height),
       );
+    }
     return const SizedBox.shrink();
   }
 }
 
 const _forceCutouts = <String, (String, Rect)>{
-  'trolley': ('forces-objects-v4.png', Rect.fromLTWH(28, 52, 306, 272)),
-  'ball': ('forces-objects-v4.png', Rect.fromLTWH(369, 61, 253, 251)),
-  'doorbell': ('forces-objects-v4.png', Rect.fromLTWH(714, 69, 159, 244)),
-  'drawer': ('forces-objects-v4.png', Rect.fromLTWH(955, 58, 264, 265)),
-  'swing': ('forces-objects-v4.png', Rect.fromLTWH(40, 334, 279, 290)),
-  'sailboat': ('forces-objects-v4.png', Rect.fromLTWH(364, 332, 277, 298)),
-  'cork': ('forces-objects-v4.png', Rect.fromLTWH(690, 366, 212, 252)),
-  'balloon': ('forces-objects-v4.png', Rect.fromLTWH(1003, 335, 181, 307)),
-  'nail': ('forces-objects-v4.png', Rect.fromLTWH(44, 654, 257, 241)),
-  'orange': ('forces-objects-v4.png', Rect.fromLTWH(42, 922, 280, 269)),
-  'peeled_orange': ('forces-objects-v4.png', Rect.fromLTWH(364, 938, 269, 247)),
-  'door': ('forces-objects-v4.png', Rect.fromLTWH(1012, 900, 195, 310)),
-  'fish': ('forces-characters-v4.png', Rect.fromLTWH(946, 95, 290, 192)),
-  'snake': ('forces-characters-v4.png', Rect.fromLTWH(341, 448, 275, 152)),
-  'bird': ('forces-characters-v4.png', Rect.fromLTWH(965, 414, 263, 200)),
-  'kangaroo': ('forces-characters-v4.png', Rect.fromLTWH(327, 632, 281, 303)),
-  'baby': ('forces-characters-v4.png', Rect.fromLTWH(952, 704, 265, 219)),
+  'trolley': ('forces-objects-v4.webp', Rect.fromLTWH(28, 52, 306, 272)),
+  'ball': ('forces-objects-v4.webp', Rect.fromLTWH(369, 61, 253, 251)),
+  'doorbell': ('forces-objects-v4.webp', Rect.fromLTWH(714, 69, 159, 244)),
+  'drawer': ('forces-objects-v4.webp', Rect.fromLTWH(955, 58, 264, 265)),
+  'swing': ('forces-objects-v4.webp', Rect.fromLTWH(40, 334, 279, 290)),
+  'sailboat': ('forces-objects-v4.webp', Rect.fromLTWH(364, 332, 277, 298)),
+  'cork': ('forces-objects-v4.webp', Rect.fromLTWH(690, 366, 212, 252)),
+  'balloon': ('forces-objects-v4.webp', Rect.fromLTWH(1003, 335, 181, 307)),
+  'nail': ('forces-objects-v4.webp', Rect.fromLTWH(44, 654, 257, 241)),
+  'orange': ('forces-objects-v4.webp', Rect.fromLTWH(42, 922, 280, 269)),
+  'peeled_orange': (
+    'forces-objects-v4.webp',
+    Rect.fromLTWH(364, 938, 269, 247),
+  ),
+  'door': ('forces-objects-v4.webp', Rect.fromLTWH(1012, 900, 195, 310)),
+  'fish': ('forces-characters-v4.webp', Rect.fromLTWH(946, 95, 290, 192)),
+  'snake': ('forces-characters-v4.webp', Rect.fromLTWH(341, 448, 275, 152)),
+  'bird': ('forces-characters-v4.webp', Rect.fromLTWH(965, 414, 263, 200)),
+  'kangaroo': ('forces-characters-v4.webp', Rect.fromLTWH(327, 632, 281, 303)),
+  'baby': ('forces-characters-v4.webp', Rect.fromLTWH(952, 704, 265, 219)),
 };

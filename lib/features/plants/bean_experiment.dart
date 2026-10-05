@@ -11,6 +11,7 @@ import '../../core/mascot.dart';
 import '../../games/science_art.dart';
 import 'bean_game.dart';
 import 'bean_model.dart';
+import '../../core/diagnostics/app_log.dart';
 
 class BeanPreview extends ConsumerWidget {
   const BeanPreview({super.key});
@@ -98,13 +99,16 @@ class _BeanExperimentState extends ConsumerState<BeanExperiment>
           progress = next;
           saveFailed = false;
         });
-        ref
-            .read(narrationProvider)
-            .speak(
-              '${ui('predicted')} ${widget.step.label(id)}. ${ui('water')}',
-            );
+        unawaited(
+          ref
+              .read(narrationProvider)
+              .speak(
+                '${ui('predicted')} ${widget.step.label(id)}. ${ui('water')}',
+              ),
+        );
       }
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.error('bean', 'Saving the bean experiment failed', error, stack);
       if (mounted) setState(() => saveFailed = true);
     } finally {
       if (mounted) setState(() => busy = false);
@@ -112,8 +116,9 @@ class _BeanExperimentState extends ConsumerState<BeanExperiment>
   }
 
   Future<void> water() async {
-    if (!ready || busy || progress.prediction == null || progress.finished)
+    if (!ready || busy || progress.prediction == null || progress.finished) {
       return;
+    }
     setState(() => busy = true);
     try {
       // Persist the guess before starting the experiment, even after a resumed save.
@@ -133,7 +138,8 @@ class _BeanExperimentState extends ConsumerState<BeanExperiment>
         });
         speak();
       }
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.error('bean', 'Saving the bean experiment failed', error, stack);
       if (mounted) setState(() => saveFailed = true);
     } finally {
       if (mounted) setState(() => busy = false);
@@ -149,9 +155,9 @@ class _BeanExperimentState extends ConsumerState<BeanExperiment>
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     active = state == AppLifecycleState.resumed;
-    if (active)
+    if (active) {
       game.resumeEngine();
-    else {
+    } else {
       game.pauseEngine();
       ref.read(narrationProvider).stop();
     }

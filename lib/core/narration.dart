@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
+import 'diagnostics/app_log.dart';
 import 'models.dart';
 import 'preview_voice_stub.dart'
     if (dart.library.js_interop) 'preview_voice_web.dart'
@@ -36,7 +37,8 @@ class NarrationService extends ChangeNotifier {
         status = voices.isEmpty
             ? VoiceStatus.browserPreview
             : VoiceStatus.ready;
-      } catch (_) {
+      } catch (error, stack) {
+        AppLog.warning('narration', 'Browser voices unavailable', error, stack);
         status = VoiceStatus.browserPreview;
       }
       if (!_disposed) notifyListeners();
@@ -45,7 +47,7 @@ class NarrationService extends ChangeNotifier {
     try {
       final raw = await _tts.getVoices;
       voices = (raw as List)
-          .whereType<Map>()
+          .whereType<Map<dynamic, dynamic>>()
           .where((v) {
             final locale = (v['locale'] ?? '').toString().toLowerCase();
             final network = v['network_required'];
@@ -67,7 +69,13 @@ class NarrationService extends ChangeNotifier {
       status = voices.isEmpty ? VoiceStatus.unavailable : VoiceStatus.ready;
       await _tts.awaitSpeakCompletion(true);
       await _tts.setSpeechRate(.43);
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.warning(
+        'narration',
+        'Offline voices could not be loaded',
+        error,
+        stack,
+      );
       status = VoiceStatus.unavailable;
     }
     if (!_disposed) notifyListeners();
@@ -90,8 +98,9 @@ class NarrationService extends ChangeNotifier {
     if (_disposed ||
         token != _generation ||
         !_settings.narration ||
-        status != VoiceStatus.ready)
+        status != VoiceStatus.ready) {
       return;
+    }
     try {
       if (!kIsWeb) await _tts.stop();
       final chosen = _gender == ChildGender.girl
@@ -100,15 +109,17 @@ class NarrationService extends ChangeNotifier {
       final voice =
           voices.where((v) => v.id == chosen).firstOrNull ?? voices.first;
       if (kIsWeb) {
-        if (token == _generation && !_disposed)
+        if (token == _generation && !_disposed) {
           preview.speakLocal(text, voice.name, voice.locale, _settings.volume);
+        }
         return;
       }
       await _tts.setVoice({'name': voice.name, 'locale': voice.locale});
       await _tts.setVolume(_settings.volume);
       await _tts.setPitch(1.0);
       if (token == _generation && !_disposed) await _tts.speak(text);
-    } catch (_) {
+    } catch (error, stack) {
+      AppLog.warning('narration', 'Speaking failed', error, stack);
       status = VoiceStatus.unavailable;
       if (!_disposed) notifyListeners();
     }
@@ -117,11 +128,14 @@ class NarrationService extends ChangeNotifier {
   Future<void> stop() async {
     _generation++;
     try {
-      if (kIsWeb)
+      if (kIsWeb) {
         preview.stopLocal();
-      else
+      } else {
         await _tts.stop();
-    } catch (_) {}
+      }
+    } catch (error, stack) {
+      AppLog.warning('narration', 'Stopping speech failed', error, stack);
+    }
   }
 
   @override

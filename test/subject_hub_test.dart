@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flutter/rendering.dart';
@@ -12,6 +11,7 @@ import 'package:science_adventure/features/world/subject_hub.dart';
 import 'package:science_adventure/features/world/world_map.dart';
 
 import 'setup_screen_test.dart' as helpers;
+import 'support/review_images.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -106,9 +106,7 @@ void main() {
                     as RenderRepaintBoundary)
                 .toImage();
         final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
-        await Directory('tmp').create(recursive: true);
-        await File('tmp/subject-hub.png')
-            .writeAsBytes(bytes!.buffer.asUint8List());
+        await saveReviewImage('subject-hub.png', bytes);
         image.dispose();
       });
       expect(find.byKey(const ValueKey('subject-science')), findsOneWidget);

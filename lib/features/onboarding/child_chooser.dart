@@ -7,6 +7,7 @@ import '../../core/mascot.dart';
 import '../../core/widgets.dart';
 import '../../parent/parent_gate.dart';
 import 'profile_editor.dart';
+import '../../l10n/parent_strings.dart';
 
 class ChildChooser extends ConsumerStatefulWidget {
   const ChildChooser({
@@ -28,32 +29,44 @@ class _ChildChooserState extends ConsumerState<ChildChooser> {
     widget.onParentChanged(true);
     try {
       await ref.read(narrationProvider).stop();
-      if (!mounted || !await parentGate(context) || !mounted) return;
+      if (!mounted ||
+          !await parentGate(
+            context,
+            gender: ref.read(appProvider).profile?.gender,
+          ) ||
+          !mounted) {
+        return;
+      }
+      // Follows the parent's language setting instead of always Arabic
+      // (AUD-011).
+      final arabic = ref.read(appProvider).settings.arabic;
+      final l = parentStrings(arabic);
       final confirmed = await showDialog<bool>(
         context: context,
-        builder: (dialog) => AlertDialog(
-          title: Text('حذف ملف $name؟'),
-          content: const Text(
-            'سيتم حذف اسم الطفل وصورته وتقدمه وإعداداته من هذا الجهاز. لا يمكن التراجع عن الحذف. ملفات الأطفال الآخرين ستبقى محفوظة.',
+        builder: (dialog) => Directionality(
+          textDirection: arabic ? TextDirection.rtl : TextDirection.ltr,
+          child: AlertDialog(
+            title: Text(l.childChooserDeleteTitle(name)),
+            content: Text(l.childChooserDeleteBody),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(dialog, false),
+                child: Text(l.childChooserCancel),
+              ),
+              FilledButton(
+                key: const ValueKey('confirm-delete-child'),
+                onPressed: () => Navigator.pop(dialog, true),
+                child: Text(l.childChooserDeleteConfirm),
+              ),
+            ],
           ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(dialog, false),
-              child: const Text('إلغاء'),
-            ),
-            FilledButton(
-              key: const ValueKey('confirm-delete-child'),
-              onPressed: () => Navigator.pop(dialog, true),
-              child: const Text('حذف الملف'),
-            ),
-          ],
         ),
       );
       if (confirmed == true && mounted) {
         await ref.read(appProvider.notifier).removeChild(id);
       }
-    } catch (_) {
-      if (mounted) showSaveError(context);
+    } catch (error, stack) {
+      if (mounted) showSaveError(context, error, stack);
     } finally {
       widget.onParentChanged(false);
       if (mounted) setState(() => busy = false);
@@ -67,8 +80,8 @@ class _ChildChooserState extends ConsumerState<ChildChooser> {
       await ref.read(narrationProvider).stop();
       await ref.read(appProvider.notifier).selectChild(id);
       if (mounted) widget.onSelected();
-    } catch (_) {
-      if (mounted) showSaveError(context);
+    } catch (error, stack) {
+      if (mounted) showSaveError(context, error, stack);
     } finally {
       if (mounted) setState(() => busy = false);
     }
@@ -77,7 +90,14 @@ class _ChildChooserState extends ConsumerState<ChildChooser> {
   Future<void> add() async {
     if (busy) return;
     await ref.read(narrationProvider).stop();
-    if (!mounted || !await parentGate(context) || !mounted) return;
+    if (!mounted ||
+        !await parentGate(
+          context,
+          gender: ref.read(appProvider).profile?.gender,
+        ) ||
+        !mounted) {
+      return;
+    }
     widget.onParentChanged(true);
     try {
       await Navigator.of(context).push(

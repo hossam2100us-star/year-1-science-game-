@@ -27,10 +27,13 @@ class SpacedReview {
   static DateTime dateOnly(DateTime date) =>
       DateTime(date.year, date.month, date.day);
 
-  static String _cardKey(Map entry) =>
+  static String _cardKey(Map<dynamic, dynamic> entry) =>
       '${entry['lessonId']}:${entry['gardenScene'] ?? ''}:${entry['stepId']}';
 
-  static Set<String> _completedCards(Map saved, String today) {
+  static Set<String> _completedCards(
+    Map<dynamic, dynamic> saved,
+    String today,
+  ) {
     if (saved['completedDay'] != today) return {};
     // Old journals counted goals; several goals can share one discovery card.
     final entries = saved['entries'] as Map;
@@ -144,7 +147,7 @@ class SpacedReview {
           lesson.json['garden'],
           ...List<dynamic>.from(lesson.json['aliveScenes'] ?? []),
         ];
-        final exists = scenes.whereType<Map>().any(
+        final exists = scenes.whereType<Map<dynamic, dynamic>>().any(
           (scene) =>
               (scene['id'] ?? 'garden') == item['gardenScene'] &&
               (scene['items'] as List? ?? []).any(
@@ -157,8 +160,9 @@ class SpacedReview {
           date.isAfter(dateOnly(now)) ||
           lesson == null ||
           (item['gardenScene'] == null &&
-              !lesson.steps.any((s) => s.id == item['stepId'])))
+              !lesson.steps.any((s) => s.id == item['stepId']))) {
         continue;
+      }
       final task = ReviewTask(
         lesson.id,
         item['objective'],
@@ -203,8 +207,9 @@ class SpacedReview {
       saved['completedDay'] == today ? saved['completed'] ?? [] : [],
     );
     final completedCards = _completedCards(saved, today);
-    if (completedCards.contains(task.cardKey))
+    if (completedCards.contains(task.cardKey)) {
       return saved; // Boundary saves are idempotent.
+    }
     final independent = outcome == DecisionOutcome.firstTry;
     final covered = entries.entries
         .where(

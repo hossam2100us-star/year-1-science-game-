@@ -3,10 +3,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/design.dart';
+import '../../core/diagnostics/app_log.dart';
 import '../../core/mascot.dart';
 import '../../core/models.dart';
+import '../../core/narration.dart';
 import '../../core/photo_service.dart';
 import '../../core/providers.dart';
+import '../../core/validation.dart';
 import '../../core/widgets.dart';
 import '../../parent/parent_gate.dart';
 import '../../parent/voice_settings.dart';
@@ -28,10 +31,25 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
   Uint8List? _photo;
   bool _busy = false;
   String? _message;
+  late final NarrationService _narration;
+  late AppSettings _latestSettings;
+
+  /// The guide's voice follows the gender being chosen, before it is saved.
+  void _configureVoice() => _narration.configure(_latestSettings, _gender);
+
+  void _chooseGender(ChildGender gender) {
+    setState(() => _gender = gender);
+    _configureVoice();
+  }
+
   @override
   void initState() {
     super.initState();
-    final p = widget.newChild ? null : ref.read(appProvider).profile;
+    final data = ref.read(appProvider);
+    _narration = ref.read(narrationProvider);
+    _latestSettings = data.settings;
+    _savedGender = data.profile?.gender ?? ChildGender.boy;
+    final p = widget.newChild ? null : data.profile;
     if (p != null) {
       _name.text = p.name;
       _gender = p.gender;
@@ -39,19 +57,31 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
       _avatar = p.avatar;
       _photo = p.photo;
     }
+    _configureVoice();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (!widget.newChild && ref.read(appProvider).pendingPhoto && mounted) {
-        if (await parentGate(context) && mounted) await _recover();
+        if (await parentGate(
+              context,
+              gender: ref.read(appProvider).profile?.gender,
+            ) &&
+            mounted) {
+          await _recover();
+        }
       }
     });
   }
 
   @override
   void dispose() {
+    // Hand the voice back to the saved child: the editor may have previewed
+    // the other guide's voice without saving.
+    _narration.configure(_latestSettings, _savedGender);
     _name.dispose();
     _scroll.dispose();
     super.dispose();
   }
+
+  ChildGender _savedGender = ChildGender.boy;
 
   void _changeStep(int step) {
     FocusScope.of(context).unfocus();
@@ -73,14 +103,22 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
     try {
       final photo = await _photos.recover();
       await ref.read(appProvider.notifier).photoPending(false);
-      if (mounted)
+      if (mounted) {
         setState(() {
           _photo = photo ?? _photo;
           _step = 2;
         });
-    } catch (_) {
-      if (mounted)
+      }
+    } catch (error, stack) {
+      AppLog.error(
+        'photo',
+        'Recovering a lost photo pick failed',
+        error,
+        stack,
+      );
+      if (mounted) {
         setState(() => _message = 'Please choose your picture again.');
+      }
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -90,28 +128,38 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
     if (_busy) return;
     await ref.read(narrationProvider).stop();
     if (!mounted) return;
-    if (!widget.editing && !widget.newChild && !await parentGate(context))
+    if (!widget.editing &&
+        !widget.newChild &&
+        !await parentGate(
+          context,
+          gender: ref.read(appProvider).profile?.gender,
+        )) {
       return;
+    }
     if (!mounted) return;
     setState(() {
       _busy = true;
       _message = null;
     });
     try {
-      if (!widget.newChild)
+      if (!widget.newChild) {
         await ref.read(appProvider.notifier).photoPending(true);
+      }
       final photo = await _photos.pick();
-      if (!widget.newChild)
+      if (!widget.newChild) {
         await ref.read(appProvider.notifier).photoPending(false);
+      }
       if (mounted && photo != null) setState(() => _photo = photo);
-    } catch (error) {
-      if (mounted)
+    } catch (error, stack) {
+      AppLog.warning('photo', 'A picked photo was rejected', error, stack);
+      if (mounted) {
         setState(
           () => _message =
               error is FormatException && error.message == 'Image too large'
               ? 'Picture too large. Choose a smaller picture (under 20 MB).\nالصورة كبيرة جدًا. اختار صورة أصغر من 20 ميجابايت.'
               : 'Could not open this picture. Try a JPG or PNG picture.\nالصورة ما اتفتحتش. جرّب صورة بصيغة JPG أو PNG.',
         );
+      }
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -125,10 +173,11 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
       } else {
         await ref.read(appProvider.notifier).saveProfile(_profile);
       }
-      if ((widget.editing || widget.newChild) && mounted)
+      if ((widget.editing || widget.newChild) && mounted) {
         Navigator.of(context).pop();
-    } catch (_) {
-      if (mounted) showSaveError(context);
+      }
+    } catch (error, stack) {
+      if (mounted) showSaveError(context, error, stack);
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -142,9 +191,15 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
       1 => 'Choose boy or girl. Your scientist friend and colours will change with you.',
       _ => 'Choose your picture. Fox, Bunny, or Cat. A grown-up can help you choose your own photo. Then tap Start exploring.',
     };
-    ref
-        .read(narrationProvider)
-        .configure(ref.watch(appProvider).settings, _gender);
+    // Keep narration current without configuring it inside build().
+    ref.listen(appProvider.select((d) => (d.settings, d.profile?.gender)), (
+      _,
+      next,
+    ) {
+      _latestSettings = next.$1;
+      _savedGender = next.$2 ?? ChildGender.boy;
+      _configureVoice();
+    });
     return Theme(
       data: adventureTheme(profile),
       child: Builder(
@@ -206,12 +261,8 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
                             TextField(
                               key: const ValueKey('childName'),
                               controller: _name,
-                              maxLength: 24,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.deny(
-                                  RegExp(r'[\n\r\t]'),
-                                ),
-                              ],
+                              maxLength: ChildName.maxLength,
+                              inputFormatters: ChildName.inputFormatters,
                               textCapitalization: TextCapitalization.words,
                               autocorrect: false,
                               decoration: const InputDecoration(
@@ -241,8 +292,7 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
                                         ? 'Boy'
                                         : 'Girl',
                                     selected: _gender == gender,
-                                    onTap: () =>
-                                        setState(() => _gender = gender),
+                                    onTap: () => _chooseGender(gender),
                                     child: ScientistOwl(
                                       gender: gender,
                                       size: 90,

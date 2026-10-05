@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -5,6 +7,7 @@ import '../../content/lesson.dart';
 import '../../core/providers.dart';
 import 'garden_adventure.dart';
 import 'garden_model.dart';
+import '../../core/widgets.dart';
 
 List<GardenContent> aliveScenes(Lesson lesson) => [
   GardenContent(lesson.json['garden']),
@@ -33,7 +36,7 @@ class _AliveAdventuresState extends ConsumerState<AliveAdventures> {
     final data = ref.watch(appProvider);
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.lesson.title),
+        title: FittedTitle(widget.lesson.title),
         actions: [
           IconButton(
             tooltip: 'Listen again',
@@ -75,10 +78,13 @@ class _AliveAdventuresState extends ConsumerState<AliveAdventures> {
                               builder: (_) => GardenAdventure(content: scene),
                             ),
                           );
-                          if (mounted)
-                            ref
-                                .read(narrationProvider)
-                                .speak(scene.text('menu'));
+                          if (mounted) {
+                            unawaited(
+                              ref
+                                  .read(narrationProvider)
+                                  .speak(scene.text('menu')),
+                            );
+                          }
                         },
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,

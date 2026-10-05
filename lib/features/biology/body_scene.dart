@@ -51,16 +51,20 @@ class BodyScene extends StatelessWidget {
   List<PictureItem> get spots => diagram ? step.targets : step.options;
   Rect get camera {
     if (eye) return const Rect.fromLTWH(0, 0, 1, 1);
-    if (step.kind == 'story' && step.options.length > 1)
+    if (step.kind == 'story' && step.options.length > 1) {
       return const Rect.fromLTWH(.30, .10, .40, .18);
+    }
     if (!diagram && !step.isOrder) return const Rect.fromLTWH(0, 0, 1, 1);
     final id = diagram ? step.options.first.id : 'arm';
-    if (['head', 'neck', 'chin'].contains(id))
+    if (['head', 'neck', 'chin'].contains(id)) {
       return const Rect.fromLTWH(.23, 0, .54, .33);
-    if (['shoulder', 'arm', 'elbow'].contains(id) || step.isOrder)
+    }
+    if (['shoulder', 'arm', 'elbow'].contains(id) || step.isOrder) {
       return const Rect.fromLTWH(.015, .27, .49, .45);
-    if (['wrist', 'hand', 'fingers'].contains(id))
+    }
+    if (['wrist', 'hand', 'fingers'].contains(id)) {
       return const Rect.fromLTWH(.02, .50, .35, .23);
+    }
     return const Rect.fromLTWH(.22, .59, .55, .41);
   }
 
@@ -375,7 +379,9 @@ void drawExplorer(Canvas c, {bool girl = false}) {
       ).createShader(const Rect.fromLTWH(130, 187, 140, 165)),
   );
   oval(const Rect.fromLTWH(182, 233, 36, 36), const Color(0x55FFFFFF));
-  for (final x in [139.0, 246.0]) oval(Rect.fromLTWH(x, 89, 20, 36), skin);
+  for (final x in [139.0, 246.0]) {
+    oval(Rect.fromLTWH(x, 89, 20, 36), skin);
+  }
   oval(const Rect.fromLTWH(143, 42, 115, 108), skin);
   c.drawPath(
     Path()

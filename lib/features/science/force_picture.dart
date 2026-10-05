@@ -1,17 +1,17 @@
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 
-import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 
 import 'force_object.dart';
 import 'science_picture.dart';
+import '../../core/game_image.dart';
 
 const forceArtAssets = [
-  'forces-objects-v4.png',
-  'forces-characters-v4.png',
-  'forces-details-v4.png',
-  'forces-garden-v6.png',
+  'forces-objects-v4.webp',
+  'forces-characters-v4.webp',
+  'forces-details-v4.webp',
+  'forces-garden-v6.webp',
 ];
 
 const _objects = {
@@ -133,19 +133,17 @@ class ForcePicture extends StatelessWidget {
             math.max(rects[base].height, rects[base + 1].height),
           )
         : rects[base].size;
-    final picture = FutureBuilder<ui.Image>(
-      future: Flame.images.load(forceArtAssets[character ? 1 : 0]),
-      builder: (context, snapshot) => snapshot.hasData
-          ? CustomPaint(
-              painter: _ForcePainter(snapshot.data!, rects[cell], natural),
-            )
-          : const Center(
-              child: SizedBox(
-                width: 28,
-                height: 28,
-                child: CircularProgressIndicator(strokeWidth: 2),
-              ),
-            ),
+    final picture = GameImage(
+      asset: forceArtAssets[character ? 1 : 0],
+      builder: (context, image) =>
+          CustomPaint(painter: _ForcePainter(image, rects[cell], natural)),
+      placeholder: const Center(
+        child: SizedBox(
+          width: 28,
+          height: 28,
+          child: CircularProgressIndicator(strokeWidth: 2),
+        ),
+      ),
     );
     return SizedBox(
       width: height * 1.25,

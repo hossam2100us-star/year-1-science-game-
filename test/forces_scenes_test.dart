@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flame/flame.dart';
@@ -17,6 +16,7 @@ import 'package:science_adventure/features/science/force_stage.dart';
 import 'package:science_adventure/features/science/force_trolley_scene.dart';
 
 import 'setup_screen_test.dart' as helpers;
+import 'support/review_images.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -53,7 +53,7 @@ void main() {
     );
   }
 
-  Map current(MemoryProgressStore store) =>
+  Map<dynamic, dynamic> current(MemoryProgressStore store) =>
       store.data.journeys[lesson.id]!['current'];
   Future<void> choose(WidgetTester t, String id) async {
     final item = find.byKey(ValueKey('science-item-$id'));
@@ -96,9 +96,7 @@ void main() {
             key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
         final image = await boundary.toImage();
         final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
-        await Directory('tmp/forces-scenes').create(recursive: true);
-        await File('tmp/forces-scenes/$name.png')
-            .writeAsBytes(bytes!.buffer.asUint8List());
+        await saveReviewImage('forces-scenes/$name.png', bytes);
         image.dispose();
       });
 

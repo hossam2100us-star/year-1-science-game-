@@ -4,6 +4,7 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/diagnostics/app_log.dart';
 import '../../core/mascot.dart';
 import '../../core/models.dart';
 import '../../core/providers.dart';
@@ -92,8 +93,9 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
     final voice = ref.read(narrationProvider);
     if (voice.status == VoiceStatus.browserPreview) await voice.refresh();
     await voice.speak(text);
-    if (mounted)
+    if (mounted) {
       setState(() => voiceUnavailable = voice.status != VoiceStatus.ready);
+    }
   }
 
   Future<void> persist() {
@@ -106,7 +108,13 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
         .then((_) {
           if (mounted && saveError) setState(() => saveError = false);
         })
-        .catchError((Object e) {
+        .catchError((Object error, StackTrace stack) {
+          AppLog.error(
+            'garden',
+            'Saving the garden journey failed',
+            error,
+            stack,
+          );
           if (mounted) setState(() => saveError = true);
         });
     return task;
@@ -115,7 +123,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   void changed() {
     sync();
     setState(() {});
-    unawaited(persist().catchError((Object _) {}));
+    persist().ignore(); // Logged and shown by persist().
   }
 
   void pick(String id) {
@@ -130,13 +138,17 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
   }
 
   void answer(bool alive) {
-    if (selected == null || busy || (round.feedback && !round.needsCorrection))
+    if (selected == null ||
+        busy ||
+        (round.feedback && !round.needsCorrection)) {
       return;
+    }
     final correcting = round.needsCorrection;
     final outcome = round.answer(selected!, alive);
     if ((outcome != null && outcome != DecisionOutcome.explained) ||
-        (correcting && !round.needsCorrection))
+        (correcting && !round.needsCorrection)) {
       scene.celebration = 1.2;
+    }
     changed();
     _speak(prompt);
   }
@@ -158,9 +170,10 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
       await persist();
       if (mounted) {
         setState(() {});
-        _speak(prompt);
+        unawaited(_speak(prompt));
       }
     } catch (_) {
+      // Already logged by persist(); show the retry banner.
       if (mounted) setState(() => saveError = true);
     } finally {
       if (mounted) setState(() => busy = false);
@@ -176,9 +189,10 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
       sync();
       if (mounted) {
         setState(() {});
-        _speak(prompt);
+        unawaited(_speak(prompt));
       }
     } catch (_) {
+      // Already logged by persist(); show the retry banner.
       if (mounted) setState(() => saveError = true);
     } finally {
       if (mounted) setState(() => busy = false);
@@ -194,6 +208,7 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
       await ref.read(narrationProvider).stop();
       if (mounted) Navigator.of(context).pop();
     } catch (_) {
+      // Already logged by persist(); show the retry banner.
       if (mounted) setState(() => saveError = true);
     } finally {
       if (mounted) setState(() => busy = false);
@@ -202,11 +217,11 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed)
+    if (state == AppLifecycleState.resumed) {
       scene.resumeEngine();
-    else {
+    } else {
       scene.pauseEngine();
-      unawaited(persist().catchError((Object _) {}));
+      persist().ignore(); // Logged and shown by persist().
       ref.read(narrationProvider).stop();
     }
   }
@@ -463,7 +478,8 @@ class _GardenAdventureState extends ConsumerState<GardenAdventure>
                       child: Material(
                         color: const Color(0xFFFFE9C7),
                         child: TextButton(
-                          onPressed: () => persist().catchError((Object _) {}),
+                          onPressed: () =>
+                              persist().ignore(), // Logged by persist().
                           child: Text(
                             t('saveError'),
                             textDirection: TextDirection.ltr,

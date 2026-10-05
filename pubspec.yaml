@@ -18,18 +18,22 @@ dependencies:
   path_provider: 2.1.6
   lottie: 3.6.1
   flame: 1.38.2
+  logging: 1.3.0
+  intl: 0.20.3
 dev_dependencies:
+  flutter_lints: 6.0.0
   flutter_test:
     sdk: flutter
 flutter:
+  generate: true
   uses-material-design: true
   assets:
     - assets/content/catalog.json
     - assets/content/playable/
     - assets/animations/celebrate.json
     - assets/images/bean-stages-v1.webp
-    - assets/images/earth-atlas-v2.png
-    - assets/images/electric-atlas-v2.png
+    - assets/images/earth-atlas-v2.webp
+    - assets/images/electric-atlas-v2.webp
     - assets/images/explorer-boy-v2.webp
     - assets/images/explorer-girl-v2.webp
     - assets/images/five-senses-v2.webp
@@ -39,23 +43,23 @@ flutter:
     - assets/images/islands-v2.webp
     - assets/images/light-plants-v1.webp
     - assets/images/light-room-v1.webp
-    - assets/images/materials-atlas-v2.png
+    - assets/images/materials-atlas-v2.webp
     - assets/images/physics-atlas-v1.webp
     - assets/images/plant-foods-v1.webp
     - assets/images/plant-lab-v1.webp
     - assets/images/river-hunt-v1.webp
-    - assets/images/science-details-v2.png
+    - assets/images/science-details-v2.webp
     - assets/images/science-extras-v1.webp
     - assets/images/sense-objects-v2.webp
-    - assets/images/sound-atlas-v2.png
-    - assets/images/sound-details-v2.png
-    - assets/images/forces-objects-v4.png
-    - assets/images/forces-characters-v4.png
-    - assets/images/forces-details-v4.png
-    - assets/images/forces-garden-v6.png
-    - assets/images/book-v1.png
-    - assets/images/electric-safety-v1.png
-    - assets/images/water-world-v1.png
+    - assets/images/sound-atlas-v2.webp
+    - assets/images/sound-details-v2.webp
+    - assets/images/forces-objects-v4.webp
+    - assets/images/forces-characters-v4.webp
+    - assets/images/forces-details-v4.webp
+    - assets/images/forces-garden-v6.webp
+    - assets/images/book-v1.webp
+    - assets/images/electric-safety-v1.webp
+    - assets/images/water-world-v1.webp
     - assets/audio/
   fonts:
     - family: Fredoka

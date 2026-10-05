@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flame/flame.dart';
@@ -16,6 +15,7 @@ import 'package:science_adventure/features/science/force_picture.dart';
 import 'package:science_adventure/games/question_engine.dart';
 
 import 'setup_screen_test.dart' as helpers;
+import 'support/review_images.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -48,7 +48,7 @@ void main() {
     for (final atlas in ['five-senses-v2.webp', 'sense-objects-v2.webp']) {
       await Flame.images.load(atlas);
     }
-    for (final atlas in ['sound-atlas-v2.png', 'sound-details-v2.png']) {
+    for (final atlas in ['sound-atlas-v2.webp', 'sound-details-v2.webp']) {
       await Flame.images.load(atlas);
     }
     for (final atlas in forceArtAssets) {
@@ -172,8 +172,9 @@ void main() {
               }
             }
           }
-          if (s.isMapping || s.isMulti || s.isOrder)
+          if (s.isMapping || s.isMulti || s.isOrder) {
             await helpers.tapVisible(t, find.text('Check my discovery'));
+          }
           expect(
             store.data.journeys[id]!['current']['outcome'],
             'firstTry',
@@ -246,8 +247,9 @@ void main() {
         final mode = s.json['lab'];
         if (mode == null ||
             s.json['results'] != null ||
-            ['force', 'distance', 'sailboat', 'stars'].contains(mode))
+            ['force', 'distance', 'sailboat', 'stars'].contains(mode)) {
           continue;
+        }
         final store = storeFor(b, i);
         await helpers.mount(t, LessonPlayer(lesson: b), store);
         final keys = <String>[];
@@ -267,10 +269,12 @@ void main() {
             ]);
           }
         }
-        if (mode == 'soil' || mode == 'cleanup')
+        if (mode == 'soil' || mode == 'cleanup') {
           keys.addAll(s.options.map((p) => 'lab-find-${p.id}'));
-        if (mode == 'rock-sort')
+        }
+        if (mode == 'rock-sort') {
           keys.addAll(s.options.map((p) => 'lab-group-${p.id}-My first group'));
+        }
         if (mode == 'day-night') keys.addAll(List.filled(4, 'lab-turn'));
         if (mode == 'earth-paint') keys.addAll(['lab-water', 'lab-land']);
         for (final k in keys) {
@@ -423,9 +427,7 @@ void main() {
         await t.runAsync(() async {
           final image = await boundary.toImage();
           final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
-          await Directory('tmp').create(recursive: true);
-          await File('tmp/${entry.key}-${i + 1}.png')
-              .writeAsBytes(bytes!.buffer.asUint8List());
+          await saveReviewImage('${entry.key}-${i + 1}.png', bytes);
           image.dispose();
         });
         await t.pumpWidget(const SizedBox());

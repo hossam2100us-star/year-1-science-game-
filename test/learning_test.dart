@@ -178,8 +178,9 @@ void main() {
         );
         await tester.pump(const Duration(milliseconds: 100));
         expect(find.byKey(const ValueKey('lessonNext')), findsNothing);
-        for (final label in ['Tree', 'Cat', 'Car'])
+        for (final label in ['Tree', 'Cat', 'Car']) {
           await helpers.tapVisible(tester, find.text(label));
+        }
         await helpers.tapVisible(
           tester,
           find.byKey(const ValueKey('lessonNext')),

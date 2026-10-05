@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flame/flame.dart';
@@ -19,11 +18,12 @@ import 'package:science_adventure/features/science/sound_box_lab.dart';
 import 'package:science_adventure/games/question_engine.dart';
 
 import 'setup_screen_test.dart' as helpers;
+import 'support/review_images.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   late Lesson lesson;
-  final audio = <Map>[];
+  final audio = <Map<dynamic, dynamic>>[];
   const channel = MethodChannel('science_adventure/sounds');
   setUpAll(() async {
     lesson = (await LessonLibrary.load()).lessons['unit_06']!;
@@ -39,8 +39,8 @@ void main() {
     for (final atlas in scienceAtlases.keys) {
       await Flame.images.load(atlas);
     }
-    await Flame.images.load('sound-atlas-v2.png');
-    await Flame.images.load('sound-details-v2.png');
+    await Flame.images.load('sound-atlas-v2.webp');
+    await Flame.images.load('sound-details-v2.webp');
   });
   setUp(() {
     audio.clear();
@@ -67,7 +67,7 @@ void main() {
     );
   }
 
-  Map current(MemoryProgressStore store) =>
+  Map<dynamic, dynamic> current(MemoryProgressStore store) =>
       store.data.journeys[lesson.id]!['current'];
   void size(WidgetTester t, Size value) {
     t.view.physicalSize = value;
@@ -120,9 +120,7 @@ void main() {
             key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
         final image = await boundary.toImage();
         final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
-        await Directory('tmp/sound-scenes').create(recursive: true);
-        await File('tmp/sound-scenes/$name.png')
-            .writeAsBytes(bytes!.buffer.asUint8List());
+        await saveReviewImage('sound-scenes/$name.png', bytes);
         image.dispose();
       });
 

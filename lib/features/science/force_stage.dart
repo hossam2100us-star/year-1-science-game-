@@ -38,7 +38,7 @@ class _ForceStageState extends State<ForceStage> {
   String? movingItem;
   String? focused;
   LessonStep get step => widget.step;
-  Map get ui => step.json['forceScene'];
+  Map<dynamic, dynamic> get ui => step.json['forceScene'];
   @override
   void didUpdateWidget(covariant ForceStage oldWidget) {
     super.didUpdateWidget(oldWidget);

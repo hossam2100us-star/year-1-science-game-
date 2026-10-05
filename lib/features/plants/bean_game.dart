@@ -35,8 +35,8 @@ class BeanGame extends FlameGame {
   }
 
   @override
-  void render(Canvas c) {
-    super.render(c);
+  void render(Canvas canvas) {
+    super.render(canvas);
     if (atlas == null || background == null) return;
     final w = size.x,
         h = size.y,
@@ -55,7 +55,7 @@ class BeanGame extends FlameGame {
         background!.height.toDouble(),
       ),
     );
-    c.drawImageRect(background!, src, Rect.fromLTWH(0, 0, w, h), p);
+    canvas.drawImageRect(background!, src, Rect.fromLTWH(0, 0, w, h), p);
     // The atlas always shows the exact day chosen from content. No future state is drawn.
     final crop = Rect.fromLTWH(
       frame.isEven ? 0 : .5,
@@ -77,7 +77,7 @@ class BeanGame extends FlameGame {
       width,
       height,
     );
-    c.drawOval(
+    canvas.drawOval(
       Rect.fromCenter(
         center: target.bottomCenter,
         width: width * .74,
@@ -86,13 +86,13 @@ class BeanGame extends FlameGame {
       p..color = const Color(0x245F4930),
     );
     p.color = Colors.white;
-    c.drawImageRect(atlas!, source, target, p);
+    canvas.drawImageRect(atlas!, source, target, p);
     if (pour > 0) {
       for (var i = 0; i < 14; i++) {
         final phase = ((1 - pour) * 1.8 + i * .075) % 1;
         final x = target.center.dx - 18 + math.sin(i * 2) * 17,
             y = target.top - 45 + phase * height * .6;
-        c.drawOval(
+        canvas.drawOval(
           Rect.fromCenter(center: Offset(x, y), width: 5, height: 9),
           p..color = const Color(0xFF72BEE9),
         );

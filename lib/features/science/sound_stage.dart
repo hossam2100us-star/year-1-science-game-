@@ -43,7 +43,7 @@ class _SoundStageState extends State<SoundStage> {
   double listenerPosition = .85;
   String? orderFocus;
   LessonStep get step => widget.step;
-  Map get ui => step.json['soundScene'];
+  Map<dynamic, dynamic> get ui => step.json['soundScene'];
   String get mode => ui['mode'];
   @override
   void didUpdateWidget(covariant SoundStage oldWidget) {
@@ -60,11 +60,12 @@ class _SoundStageState extends State<SoundStage> {
   void choose(String id) {
     if (widget.done && !step.isFree) return;
     focused = id;
-    if (step.isFree)
+    if (step.isFree) {
       setState(() {
         played = id;
         pulse++;
       });
+    }
     widget.onItem(id);
   }
 
@@ -129,7 +130,7 @@ class _SoundStageState extends State<SoundStage> {
     String? id,
     bool animate = false,
   }) {
-    if (art == 'band_question')
+    if (art == 'band_question') {
       return SizedBox(
         height: height,
         width: height * 1.25,
@@ -140,7 +141,8 @@ class _SoundStageState extends State<SoundStage> {
           ],
         ),
       );
-    if (art == 'music')
+    }
+    if (art == 'music') {
       return SizedBox(
         height: height,
         width: height * 1.25,
@@ -150,6 +152,7 @@ class _SoundStageState extends State<SoundStage> {
           color: Color(0xFF648B9F),
         ),
       );
+    }
     return SoundDemonstration(
       art,
       height: height,
@@ -665,8 +668,11 @@ class _SoundStageState extends State<SoundStage> {
   void reorder(int i, int direction) {
     final slots = orderSlots;
     final target = i + direction;
-    if (target < 0 || target >= step.options.length || !slots.containsKey('$i'))
+    if (target < 0 ||
+        target >= step.options.length ||
+        !slots.containsKey('$i')) {
       return;
+    }
     final source = slots.remove('$i')!;
     final displaced = slots.remove('$target');
     slots['$target'] = source;

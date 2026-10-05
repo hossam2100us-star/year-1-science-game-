@@ -1,0 +1,4 @@
+# Test tags used by CI (.github/workflows/ci-mobile.yml).
+tags:
+  # Pixel comparisons against checked-in baselines in test/goldens/.
+  golden:

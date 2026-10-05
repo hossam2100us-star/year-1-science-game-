@@ -1,14 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'diagnostics/app_log.dart';
+import 'diagnostics/failure.dart';
 import 'providers.dart';
 
-void showSaveError(BuildContext context) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    const SnackBar(
-      content: Text(
-        'Could not save. Free some space on this device and try again.',
-      ),
+/// Logs a failed save and tells the user what actually went wrong.
+void showSaveError(
+  BuildContext context,
+  Object error,
+  StackTrace stack, {
+  String area = 'save',
+}) {
+  final kind = classifyFailure(error);
+  AppLog.error(area, 'Save failed (${kind.name})', error, stack);
+  ScaffoldMessenger.of(context)
+      .showSnackBar(SnackBar(content: Text(saveFailureMessage(kind))));
+}
+
+/// A heading that never wraps mid-word on a narrow screen: it ends with an
+/// ellipsis and the full text is available on long-press and to screen
+/// readers (AUD-018).
+class FittedTitle extends StatelessWidget {
+  const FittedTitle(this.text, {super.key, this.style, this.maxLines = 1});
+  final String text;
+  final TextStyle? style;
+  final int maxLines;
+
+  @override
+  Widget build(BuildContext context) => Tooltip(
+    message: text,
+    excludeFromSemantics: true,
+    child: Text(
+      text,
+      style: style,
+      maxLines: maxLines,
+      overflow: TextOverflow.ellipsis,
+      softWrap: maxLines > 1,
     ),
   );
 }
@@ -32,19 +60,21 @@ class _StoryPanelState extends ConsumerState<StoryPanel> {
   @override
   void initState() {
     super.initState();
-    if (widget.autoSpeak)
+    if (widget.autoSpeak) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) _speak();
       });
+    }
   }
 
   @override
   void didUpdateWidget(covariant StoryPanel old) {
     super.didUpdateWidget(old);
-    if (old.text != widget.text && widget.autoSpeak)
+    if (old.text != widget.text && widget.autoSpeak) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) _speak();
       });
+    }
   }
 
   @override

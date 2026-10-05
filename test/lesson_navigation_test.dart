@@ -56,7 +56,7 @@ void main() {
     (t) async {
       final store = MemoryProgressStore(progress());
       final lesson = library.lessons['unit_04']!;
-    const previous = ValueKey('lessonPrevious');
+      const previous = ValueKey('lessonPrevious');
       await helpers.mount(t, LessonPlayer(lesson: lesson), store);
       await helpers.tapVisible(t, find.byKey(previous));
       expect(store.data.journeys[lesson.id]!['index'], 1);
