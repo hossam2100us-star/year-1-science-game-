@@ -15,6 +15,15 @@ COPY src ./src
 RUN npm run build && npm prune --omit=dev --no-audit --no-fund
 
 FROM ${NODE_IMAGE} AS runtime
+# Debian security updates, and no package managers at run time: npm,
+# corepack and yarn are only needed to build (they also carry their own
+# dependency advisories that the server never uses).
+RUN apt-get update \
+ && apt-get upgrade -y --no-install-recommends \
+ && rm -rf /var/lib/apt/lists/* \
+ && rm -rf /usr/local/lib/node_modules/npm /usr/local/lib/node_modules/corepack \
+           /usr/local/bin/npm /usr/local/bin/npx /usr/local/bin/corepack \
+           /usr/local/bin/yarn /usr/local/bin/yarnpkg /opt/yarn-*
 ENV NODE_ENV=production \
     PORT=3000 \
     NODE_OPTIONS=--enable-source-maps \
