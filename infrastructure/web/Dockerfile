@@ -3,6 +3,9 @@
 #   flutter build web --release --no-web-resources-cdn --no-wasm-dry-run)
 # served by unprivileged nginx on port 8080. Build context: repository root.
 FROM nginxinc/nginx-unprivileged:1.29-alpine
+# Alpine security updates (the base image can lag behind fixed packages).
+USER root
+RUN apk upgrade --no-cache
 COPY --chown=nginx:nginx infrastructure/web/nginx.conf /etc/nginx/nginx.conf
 COPY --chown=nginx:nginx build/web /usr/share/nginx/html
 USER nginx

@@ -18,9 +18,10 @@ on:
 permissions:
   contents: read
 
+# A manual promote run has its own group and is never cancelled by a push.
 concurrency:
-  group: images-${{ github.ref }}
-  cancel-in-progress: true
+  group: images-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: ${{ github.event_name != 'workflow_dispatch' }}
 
 env:
   FLUTTER_VERSION: 3.47.5
