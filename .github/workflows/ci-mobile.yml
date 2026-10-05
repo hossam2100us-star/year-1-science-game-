@@ -162,7 +162,7 @@ jobs:
       - if: steps.web.outputs.present == 'true'
         run: flutter pub get --enforce-lockfile
       - if: steps.web.outputs.present == 'true'
-        run: flutter build web --release
+        run: flutter build web --release --no-web-resources-cdn --no-wasm-dry-run
       - name: Web bundle size
         if: steps.web.outputs.present == 'true'
         run: du -sh build/web | tee -a "$GITHUB_STEP_SUMMARY"
