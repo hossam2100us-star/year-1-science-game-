@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../content/lesson.dart';
 import '../../core/providers.dart';
 import '../../core/spaced_review.dart';
-import '../biology/lesson_player.dart';
+import '../lesson/lesson_player.dart';
 import '../garden/alive_adventures.dart';
 import '../garden/garden_adventure.dart';
 import '../garden/garden_model.dart';

@@ -5,7 +5,7 @@ import '../content/catalog.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
 import '../games/question_engine.dart';
-import '../features/biology/lesson_player.dart';
+import '../features/lesson/lesson_player.dart';
 import '../features/garden/alive_adventures.dart';
 import '../features/garden/garden_model.dart';
 import '../l10n/parent_strings.dart';

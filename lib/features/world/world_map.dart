@@ -8,7 +8,7 @@ import '../../core/providers.dart';
 import '../../core/widgets.dart';
 import '../../parent/parent_gate.dart';
 import '../../parent/parent_area.dart';
-import '../biology/lesson_player.dart';
+import '../lesson/lesson_player.dart';
 import '../biology/sticker_album.dart';
 import 'island_art.dart';
 import 'todays_challenge.dart';

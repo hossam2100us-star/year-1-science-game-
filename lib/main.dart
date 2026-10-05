@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:drift_flutter/drift_flutter.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -12,12 +14,15 @@ import 'core/image_budget.dart';
 import 'core/models.dart';
 import 'core/providers.dart';
 import 'core/storage.dart';
+import 'core/usage_buffer.dart';
 import 'core/widgets.dart';
+import 'data/db/app_database.dart';
 import 'features/onboarding/profile_editor.dart';
 import 'features/world/subject_hub.dart';
 import 'features/onboarding/child_chooser.dart';
 import 'parent/parent_gate.dart';
 import 'startup/startup_problem.dart';
+import 'startup/storage_bootstrap.dart';
 
 Future<void> main() => launchScienceAdventure();
 
@@ -37,21 +42,24 @@ Future<void> launchScienceAdventure({
 
 Future<void> _launch(Widget app) async {
   void onRetry() => unawaited(_launch(app));
-  final HiveProgressStore store;
-  try {
-    store = await HiveProgressStore.open();
-  } catch (error, stack) {
-    AppLog.error('startup', 'Opening storage failed', error, stack);
-    runApp(
-      StartupProblemApp(problem: startupProblemFor(error), onRetry: onRetry),
-    );
-    return;
-  }
-  try {
-    store.read(); // Validate (and if needed recover) before the child UI.
-  } on SaveDataUnreadable {
-    runApp(SaveRecoveryApp(store: store, onRetry: onRetry));
-    return;
+  final ProgressStore store;
+  switch (await openProgressStore(
+    openHive: HiveProgressStore.open,
+    // The web build keeps the Hive store until the web database ships (M4).
+    openDatabase: kIsWeb
+        ? null
+        : () => AppDatabase(driftDatabase(name: 'science_adventure')),
+  )) {
+    case StorageReady(store: final ready):
+      store = ready;
+    case StorageUnreadable(:final hive):
+      runApp(SaveRecoveryApp(store: hive, onRetry: onRetry));
+      return;
+    case StorageFailed(:final error):
+      runApp(
+        StartupProblemApp(problem: startupProblemFor(error), onRetry: onRetry),
+      );
+      return;
   }
   final Catalog catalog;
   try {
@@ -143,12 +151,33 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    _controller = ref.read(appProvider.notifier);
     ref.read(narrationProvider).initialize();
     _timer = Timer.periodic(const Duration(seconds: 10), (_) => _tick());
   }
 
+  late final AppController _controller;
+
+  // Play time is buffered and written as one span every minute or when play
+  // stops, instead of a save every 10 s (AUD-004).
+  late final UsageBuffer _usage = UsageBuffer(_controller.usageFor);
+
+  Future<void> _report(Future<void>? write) async {
+    try {
+      await write;
+    } catch (error, stack) {
+      if (mounted) showSaveError(context, error, stack, area: 'usage');
+    }
+  }
+
+  void _bufferUsage(DateTime from, DateTime to, String owner) =>
+      unawaited(_report(_usage.add(from, to, owner)));
+
+  Future<void> _flushUsage() => _report(_usage.flush());
+
   void _parentChanged(bool value) {
     _tick();
+    unawaited(_flushUsage());
     _parent = value;
     _last = null;
   }
@@ -163,17 +192,14 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
         ref.read(appProvider).profile != null;
     if (!active) {
       _last = null;
+      await _flushUsage();
       return;
     }
     final last = _last;
     _last = now;
     if (last != null) {
       _sessionSeconds += now.difference(last).inSeconds;
-      try {
-        await ref.read(appProvider.notifier).usage(last, now);
-      } catch (error, stack) {
-        if (mounted) showSaveError(context, error, stack, area: 'usage');
-      }
+      _bufferUsage(last, now, ref.read(appProvider).activeChildId);
     }
     if (mounted &&
         _sessionSeconds >= ref.read(appProvider).settings.breakMinutes * 60 &&
@@ -208,6 +234,7 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state != AppLifecycleState.resumed) {
       _tick();
+      unawaited(_flushUsage()); // Never keep play time only in memory.
       ref.read(narrationProvider).stop();
     }
     _resumed = state == AppLifecycleState.resumed;
@@ -217,6 +244,7 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
   @override
   void dispose() {
     _timer?.cancel();
+    unawaited(_flushUsage());
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }

@@ -62,3 +62,54 @@ contrast, name batches, image budget, goldens.
 | Release AAB (obfuscated, all ABIs) | never built (audit) | 61,938,245 bytes (59.1 MB) | CI, throwaway key |
 | Release APK per ABI | never built | arm64 26.7 MB · armv7 24.3 MB · x86_64 28.2 MB (MiB) | CI `--split-per-abi` |
 | Startup time, memory on device | NOT MEASURED | NOT MEASURED | no device available |
+
+## Milestone M2 (branch `remediation/m2-data-layer`)
+
+### Local
+
+| Check | Command | Result |
+|---|---|---|
+| Static analysis | `flutter analyze --fatal-infos` | PASS, no issues |
+| Formatting | `dart format --set-exit-if-changed lib test` | PASS |
+| Unit and widget tests | `flutter test --exclude-tags golden,benchmark` | **340+ passed** (latest full run: 340 + 9 lesson tests) |
+| Golden tests | `flutter test --tags golden` | 5 / 5 passed |
+| Android debug build | `flutter build apk --debug` | PASS; `libsqlite3.so` packaged for arm64-v8a, armeabi-v7a, x86_64 |
+| Journey characterization | 4,134 saved states | identical restore results before and after the migration-registry refactor; a deliberate mutation is detected |
+| Typed journey round-trip | 8,000+ saved and migrated journeys | exact round-trip through `JourneyState` |
+| Hive → SQLite migration matrix | `test/data/hive_to_drift_test.dart` | 12 / 12 passed |
+| SQLite store | `test/data/drift_store_test.dart` | 7 / 7 passed (one changed journey = 1 write; unchanged save = 0) |
+| Startup storage choice | `test/data/storage_bootstrap_test.dart` | 7 / 7 passed |
+
+### Measurements (development PC, Windows; not a tablet)
+
+| Metric | Before (Hive blob) | After (SQLite) |
+|---|---|---|
+| One save, 10 children with photos (4.15 MB save) | 115-118 ms | 26 ms |
+| Statements written when one journey changes | whole blob | 1 |
+| Usage writes per hour of play | 360 | 60 |
+| One-time migration of that family | — | 1.67-1.72 s |
+
+Real-device startup time and memory: **NOT MEASURED** yet (no phone or
+tablet connected); emulator figures below.
+
+### Android emulator (2026-10-05)
+
+Emulator: Android 14 (API 34, x86_64 Google APIs image), AVD
+`low_ram_tablet` — 2 GB RAM, 4 cores, 1280×800. The host GPU driver
+crashed the emulator twice (an emulator/graphics-driver fault, not the
+app), so the later checks ran with software rendering
+(`-gpu swiftshader_indirect`). The host CPU is much faster than a cheap
+tablet, so timings are optimistic. Debug builds only.
+
+| Check | How | Result |
+|---|---|---|
+| Upgrade keeps saved progress (AUD-004, AUD-006) | Installed the old `main` build (`2089a97`); created two children through the UI; played 3 of 7 discoveries in unit 1 "Garden explorers"; copied the Hive file off the device (34,722 bytes); installed the M2 build **over it** with `adb install -r` | **PASS.** First launch created `science_adventure.sqlite`; both children shown; the unit resumed at 3 / 7 with the same three discoveries starred; the grown-ups area shows "3 of 7, 3 first time". The Hive file is still there (34,762 bytes: unchanged data plus the 40-byte migration marker). |
+| Saving after the move | Played one more discovery, force-stopped the app (and the emulator itself crashed once), relaunched | **PASS.** Resumed at 4 / 7; the grown-ups area shows 4 of 7. |
+| Child order on the chooser | Compared before and after | Same as the old build: the child who played last is listed last (existing behaviour, unchanged). |
+| Scene sounds (AUD-020) | Unit 6 "Music studio": tapped all five instruments, then 12 rapid taps alternating two instruments | **PASS.** All five counted ("5 / 5"); Android's audio service lists the app's player as `state:started` while a sound plays; each new tap replaces the previous player; no ANR, crash or frozen screen in `logcat`. |
+| Home during a sound | Tapped an instrument, pressed Home after 0.3 s, reopened | **PASS.** Sound stopped (no started player left); same process resumed at the same screen. |
+| Cold start | `adb shell am start -W` after `force-stop`, three runs | 3.6 / 3.9 / 4.0 s (debug build, software rendering). First launch after the upgrade, including the migration: 6.8 s (host GPU). The old build's first launch was 9.6 s (debug). |
+| Memory (AUD-008) | `dumpsys meminfo`: in unit 6, back on the grown-ups area, then after opening and leaving four units three times | Total PSS 281 → 286 → 293 → 296 → 295 MB: it levels off instead of growing with each unit (debug build, which is much larger than release). |
+
+Not yet run on a real phone or tablet, and not yet with a release build on
+a device.

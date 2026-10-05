@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 
 import 'content/lesson.dart';
-import 'features/biology/lesson_player.dart';
+import 'features/lesson/lesson_player.dart';
 import 'features/plants/bean_experiment.dart';
 import 'features/plants/plant_lab_preview.dart';
 import 'features/science/science_review_menu.dart';

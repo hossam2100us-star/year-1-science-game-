@@ -5,8 +5,10 @@ Maps the work back to the audit IDs. Status rules (from the task):
 updated and pass, static analysis passes, the app still builds, and the
 original finding can no longer be reproduced. **FIXED** means the change is
 done and tested locally but one of those checks (usually a CI or device run)
-is still pending. Everything below is on branch
-`remediation/m1-audit-fixes` (milestone M1), not yet merged into `main`.
+is still pending. **PARTIALLY FIXED** means the main risk is removed but part
+of the recommendation remains, as described. M1 items are on branch
+`remediation/m1-audit-fixes` (PR #1); M2 items on `remediation/m2-data-layer`.
+Neither is merged into `main` yet.
 
 Common verification for every M1 item: `flutter analyze --fatal-infos`
 clean; `flutter test` 286/286 + goldens 5/5; `flutter build apk --debug`
@@ -24,13 +26,60 @@ permission check; gitleaks + osv-scanner. Toolchain and signing documented.
 Commits: `bdea700`, `2d330d8`, `5c5d73d`, `8e43c26`
 
 ### AUD-002 — LessonPlayer god class
-Status: **TODO (M2)** — characterization tests first, then controller + renderer registry.
+Status: **PARTIALLY FIXED** (M2)
+Done: scene selection is `SceneKind.of(step)`; one renderer per scene in
+`SceneRenderer.registry` behind the `LessonSceneHost` interface (the
+~250-line branch in `build()` is a lookup and the player imports no scene
+widget); pure `StepRules` for assessment/progression; header and completion
+are widgets; the player moved to `lib/features/lesson` with the session.
+`lesson_player.dart` 1,423 → 1,161 lines.
+Remaining: interaction state and save orchestration still live in the
+widget state. Extracting a `LessonController` is the next step; the
+registry and rules are the seams it needs.
+Tests: all 340 behaviour tests unchanged and passing;
+`test/lesson/scene_kind_test.dart` (every content step → same scene as the
+old branch order; registry covers every kind; rules),
+`test/lesson/lesson_completion_test.dart`
+Commits: `07ec617`, `a381e08`
 
 ### AUD-003 — Untyped Map state
-Status: **TODO (M2)** — `avoid_dynamic_calls` (355 hits) enabled together with typed models.
+Status: **PARTIALLY FIXED** (M2)
+Done: `JourneyState`/`StepState` type the saved lesson journey with
+strict field types (a wrong type is a `FormatException` at the storage
+boundary), validated outcomes, unknown keys and scene state kept verbatim.
+`AppController.saveJourney` validates every lesson journey and asserts an
+exact round-trip in debug builds, so all widget tests exercise real save
+shapes. `SceneKind` types the scene choice.
+Remaining: scene configuration inside lesson JSON (`labUi`,
+`forceScene`, `soundScene`…) is still read as maps; the content is
+schema-validated at build time. `avoid_dynamic_calls` stays off: 351
+hits (≈ 120 in `lib/`, mostly science lab/sound/force scenes; the rest in
+tests reading saved maps).
+Tests: `test/migrations/journey_state_test.dart` (8,000+ journeys
+round-trip exactly; malformed types rejected)
+Commit: `0d58615`
 
 ### AUD-004 — Full Hive blob rewritten on every interaction
-Status: **TODO (M2)** — design in `docs/MIGRATION_PLAN.md`.
+Status: **VERIFIED** on the host, in CI and on the Android emulator (real device: NOT TESTED)
+Done: Drift/SQLite with normalised tables, foreign keys and CHECK
+constraints; repositories; `DriftProgressStore` writes only changed rows
+in one transaction (one changed journey = 1 statement; unchanged save = 0);
+photos in their own table; per-device usage counters; outbox table ready;
+one-time verified migration from Hive (see AUD-006/`docs/MIGRATION_PLAN.md`);
+play time buffered and written once a minute or when play stops.
+Measured (host, 10 children with photos, 4.15 MB save): Hive save 115-118
+ms → SQLite save 26 ms; migration 1.67-1.72 s. Release APKs now bundle
+`libsqlite3.so` per ABI.
+Tests: `test/data/drift_store_test.dart` (round-trip, write counts,
+cascade delete, other-device usage, constraints, curriculum isolation),
+`test/data/hive_to_drift_test.dart` (12-case migration matrix),
+`test/data/storage_bootstrap_test.dart`, `test/web/usage_buffer_test.dart`,
+`test/data/storage_benchmark_test.dart` (tagged `benchmark`)
+Emulator: the old `main` build with two children and a unit in progress
+was upgraded in place to the M2 build; both children and the exact
+in-progress state survived, later saves persisted across a force-stop, and
+the Hive file was left in place (see `docs/TEST_REPORT.md`).
+Commits: `569783c`, `cfe524c`, `c08e13e`, `313d264`
 
 ### AUD-005 — Web delete-child failure
 Status: **VERIFIED**
@@ -57,10 +106,19 @@ rewriting the value.
 Commit: `e0876ec`
 
 ### AUD-007 — Migrations hard-coded in session/UI
-Status: **TODO (M2)**
+Status: **VERIFIED** (M2)
+Done: `JourneyMigrations` registry keyed by (lesson, saved version, bundled
+version) with pure functions outside widgets; unknown versions are refused.
+`LessonSession.restore` is a call into it.
+Verification: 4,134 saved states characterized before the move restore to
+identical results afterwards; a deliberate mutation is detected.
+Tests: `test/migrations/journey_characterization_test.dart`,
+`test/migrations/journey_migrations_test.dart`
+Commits: `b43f04e`, `181e2d8`
 
 ### AUD-008 — Heavy images, unbounded cache
-Status: **VERIFIED** (memory on a real low-RAM device: NOT MEASURED)
+Status: **VERIFIED** (2 GB emulator: memory levels off after repeated
+unit visits; real low-RAM device: NOT MEASURED)
 Files: `lib/core/image_budget.dart`, `lib/features/biology/lesson_player.dart`,
 `lib/main.dart`, `tools/images/`, `assets/images/*`, `pubspec.yaml`
 Tests: `test/image_budget_test.dart`; full suite and goldens after re-encode
@@ -103,7 +161,7 @@ Not done: rewriting Git history to shrink the pack (destructive; owner decision)
 Commit: `1a052f2`
 
 ### AUD-013 — Minimal lint rules
-Status: **VERIFIED** (with `avoid_dynamic_calls` deferred to M2)
+Status: **VERIFIED** (`avoid_dynamic_calls` still off; see AUD-003)
 Files: `analysis_options.yaml` (flutter_lints 6.0.0 + async/type-safety rules), 61 files
 Verification: `flutter analyze --fatal-infos` clean; no `// ignore` added.
 Commit: `1fbd2fa`
@@ -146,20 +204,38 @@ Tests: `test/web/settings_test.dart`
 Commit: `16c575b`
 
 ### AUD-020 — MediaPlayer.prepare on the main thread
-Status: **FIXED** (compiles in the debug APK; playback on a device: NOT TESTED, no device)
+Status: **VERIFIED** on the Android 14 emulator (real device: NOT TESTED)
+Emulator: every unit 6 instrument plays (Android lists the player as
+started), rapid taps replace the previous sound, Home stops it, and
+`logcat` shows no ANR or crash.
 Files: `android/app/src/main/kotlin/com/scienceadventure/app/MainActivity.kt`
 Commit: `aadaef5`
 
 ### AUD-021 — hive upstream maintenance
-Status: **TODO (M2)** — replaced by Drift (ADR-0005).
+Status: **PARTIALLY FIXED** (M2)
+Android plays on SQLite after the one-time migration; Hive is read only to
+migrate and is kept frozen as a backup (ADR-0005). The `hive` dependency
+remains until the web build gets its database (M4) and the backup period
+(two releases) ends.
 
 ### AUD-022 — README links an untracked APK
 Status: **VERIFIED**
 Files: `README.md`, `docs/RELEASE.md`
 Commit: `e1a0447`
 
-### AUD-023 / 024 / 025 / 026 — Curriculum scalability (addendum)
-Status: AUD-023 **TODO (M2)** with the migration; 024-026 documented as future work (catalog-of-catalogs, activity library, content packs).
+### AUD-023 — Lesson IDs not namespaced
+Status: **FIXED** (M2) — by a different route than suggested (ADR-0010)
+Stored attempts and journeys carry a `curriculum` column (`y1.science`)
+that is part of the key; the progress repository reads and writes only its
+own curriculum. A second year or subject can reuse `unit_01` without
+colliding; bundled content and saves keep their IDs, so nothing had to be
+renamed. Test: curriculum isolation in `test/data/drift_store_test.dart`.
+Commit: `952f088`
+
+### AUD-024 / 025 / 026 — Curriculum scalability (addendum)
+Status: documented as future work: a catalog of catalogs per year and
+subject; a reusable activity library (the renderer registry of AUD-002 is
+the seam); per-year content packs (lossy WebP already cut assets by 86%).
 
 ---
 

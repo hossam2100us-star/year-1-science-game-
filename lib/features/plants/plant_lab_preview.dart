@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/models.dart';
 import '../../core/providers.dart';
 import '../../core/storage.dart';
-import '../biology/lesson_player.dart';
-import '../biology/session.dart';
+import '../lesson/lesson_player.dart';
+import '../lesson/session.dart';
 import '../world/world_map.dart';
 
 /// A web review starts at the revised scene without replacing the child's journey.
