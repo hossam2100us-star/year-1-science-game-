@@ -1,0 +1,92 @@
+# Science Adventure on a Synology NAS (Container Manager → Project).
+# Guide (Arabic): README_AR.md in this folder.
+#
+# Only the web container has a port, and only on the NAS itself
+# (127.0.0.1:8480); the Synology reverse proxy adds HTTPS in front of it.
+# The database has no network route outside the NAS.
+name: science-adventure
+
+x-hardening: &hardening
+  restart: unless-stopped
+  security_opt: ['no-new-privileges:true']
+  logging:
+    driver: json-file
+    options: { max-size: '10m', max-file: '3' }
+
+services:
+  db:
+    <<: *hardening
+    image: postgres:17
+    env_file: db.env
+    environment:
+      POSTGRES_INITDB_ARGS: --encoding=UTF8 --locale=C.UTF-8
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    networks: [backend]
+    mem_limit: 512m
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U "$$POSTGRES_USER" -d "$$POSTGRES_DB"']
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  api:
+    <<: *hardening
+    image: ghcr.io/hossam2100us-star/science-adventure-api:trial
+    env_file: api.env
+    environment:
+      NODE_ENV: production
+      PORT: '3000'
+    depends_on:
+      db: { condition: service_healthy }
+    read_only: true
+    tmpfs: [/tmp]
+    networks: [backend, frontend]
+    mem_limit: 384m
+
+  web:
+    <<: *hardening
+    image: ghcr.io/hossam2100us-star/science-adventure-web:trial
+    depends_on:
+      api: { condition: service_healthy }
+    ports:
+      - '127.0.0.1:8480:8080'
+    volumes:
+      - ./downloads:/downloads:ro
+    read_only: true
+    tmpfs: [/tmp]
+    networks: [frontend]
+    mem_limit: 64m
+
+  backup:
+    <<: *hardening
+    image: postgres:17
+    env_file: db.env
+    environment:
+      KEEP_DAYS: '14'
+    depends_on:
+      db: { condition: service_healthy }
+    volumes:
+      - ./backups:/backups
+    networks: [backend]
+    mem_limit: 128m
+    entrypoint: ['/bin/sh', '-c']
+    # One compressed dump a day, kept for KEEP_DAYS days. A dump is written to
+    # a temporary name first so a half-written file never looks complete.
+    command:
+      - >-
+        export PGHOST=db PGUSER="$$POSTGRES_USER" PGPASSWORD="$$POSTGRES_PASSWORD" PGDATABASE="$$POSTGRES_DB";
+        while true; do
+          f="/backups/science-$$(date +%Y%m%d-%H%M).dump";
+          if pg_dump -Fc -f "$$f.part"; then mv "$$f.part" "$$f"; echo "backup written: $$f"; else rm -f "$$f.part"; echo "backup FAILED"; fi;
+          find /backups -name 'science-*.dump' -mtime +"$$KEEP_DAYS" -delete;
+          sleep 86400;
+        done
+
+networks:
+  # No route to the internet: only the API reaches the database.
+  backend:
+    internal: true
+  # The API needs the internet for email, Google sign-in keys and the
+  # breached-password check; the web container needs the API.
+  frontend: {}

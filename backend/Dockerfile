@@ -17,7 +17,11 @@ RUN npm run build && npm prune --omit=dev --no-audit --no-fund
 FROM ${NODE_IMAGE} AS runtime
 ENV NODE_ENV=production \
     PORT=3000 \
-    NODE_OPTIONS=--enable-source-maps
+    NODE_OPTIONS=--enable-source-maps \
+    CHECKPOINT_DISABLE=1 \
+    PRISMA_HIDE_UPDATE_MESSAGE=1 \
+    HOME=/tmp \
+    XDG_CACHE_HOME=/tmp
 WORKDIR /app
 # The generated Prisma client is compiled into dist/; prisma/ and the CLI are
 # kept so the container can apply migrations on start (`migrate deploy`).
