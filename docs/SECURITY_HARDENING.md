@@ -75,3 +75,29 @@ for the later milestones.
    grace period).
 8. Never logged: passwords, tokens, Authorization/Cookie headers, child
    names, photos, plaintext emails.
+
+## 6. Server controls implemented in M3
+
+Each requirement from section 5, where it lives, and the test that checks it
+(`backend/`; tests run against a real PostgreSQL 17).
+
+| # | Control | Where | Test |
+|---|---|---|---|
+| 1 | Parent accounts only; email verification; sync blocked until verified | `auth.service.ts`, `sync.controller.ts` | `auth.e2e-spec.ts` (verify flow, `email_not_verified`) |
+| 2 | Argon2id m=19 MiB t=2 p=1, PHC strings, rehash on sign-in; 12-128 code points after NFKC; HIBP k-anonymity check (fails open, logged) | `password.service.ts`, `contract/schemas.ts` | hash format, short password, no plaintext stored |
+| 3 | EdDSA access JWT 15 min with `kid`, no PII; opaque 256-bit refresh token, SHA-256 hash stored, rotation, reuse revokes the family + email alert; 30-day sliding / 90-day absolute | `jwt.ts`, `token.service.ts`, `auth.service.ts` | `jwt.spec.ts` (tamper, alg confusion, expiry), rotation/reuse/race tests |
+| 3b | Session checked on every request: sign-out, password change and deletion take effect at once | `jwt.guard.ts` | "signs out at once" |
+| 4 | Web refresh token only in `HttpOnly; SameSite=Strict; Path=/api/v1/auth` cookie, CSRF header required | `auth.controller.ts` | web cookie test |
+| 5 | Owner from the token only; repositories always take `userId`; `:childId` resolved with owner and not deleted, else 404; database trigger rejects a row whose owner differs from its child's | `child.repository.ts`, `child-ownership.guard.ts`, migration | `bola.e2e-spec.ts` (every REST resource and every sync mutation as another family) |
+| 6 | Generic sign-in and sign-up answers; rate limits per IP (all routes, tighter on auth) and per account+IP for failed sign-ins with growing delay | `auth.service.ts`, `attempt-limiter.ts`, `app.module.ts` | lockout test, rate-limit test, `attempt-limiter.spec.ts` |
+| 7 | No photo fields in the API at all; export (3/hour) and deletion with a 14-day grace period, erased by the maintenance job; sign-in during the grace period cancels it | `users.service.ts`, `maintenance.service.ts` | `account.e2e-spec.ts` |
+| 8 | Logs never contain bodies; redaction of auth headers, cookies, passwords, tokens, emails, child names; IPs truncated (/24, /48); audit log holds no emails or names | `common/logging.ts`, `audit.service.ts` | `logging.spec.ts`; audit checked after erasure; smoke run checked the real log |
+| 9 | RFC 9457 errors without stack traces; helmet (CSP `default-src 'none'`, nosniff, no `x-powered-by`); 64 KB body limit (1 MB for sync push) | `problem.filter.ts`, `app.factory.ts` | `platform.e2e-spec.ts` |
+| 10 | Configuration validated at boot, no secret defaults, `*_FILE` secrets, refuses rate limits off or the test mailer in production, errors name variables but never values | `config/config.ts` | `config.spec.ts` |
+| 11 | Database refuses non-UTF-8 encodings (Arabic names) | first migration | "refuses to install on a database that cannot store Arabic names" |
+| 12 | Container runs as `node` (non-root), health check, migrations on start; image scanned by Trivy in CI | `backend/Dockerfile` | `ci-backend.yml` |
+
+Known limits (trial scale): rate-limit and failed-sign-in counters are in
+memory (one API container); emails are sent after the response without a
+retry queue; the breached-password check fails open when the service is
+unreachable.

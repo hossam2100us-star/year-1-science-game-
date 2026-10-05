@@ -188,3 +188,136 @@ The progress repository reads and writes only its own curriculum.
 **Consequences.** Same protection against collisions without rewriting
 content, saves, reports and tests. The catalog for a new year or subject
 must declare its own curriculum ID.
+---
+
+## ADR-0011 — Server stack: NestJS 11, TypeScript 5.9, Prisma 7, PostgreSQL 17, Node 22
+
+**Status:** accepted; implemented in M3.
+
+**Context.** The architecture chose NestJS + PostgreSQL + Prisma. On
+2026-10-05 NestJS 12 (released 2026-08-27) is ESM-only, which breaks the
+Jest/ts-jest test setup; NestJS 11 still receives releases (11.2.7 on
+2026-09-30). TypeScript 7 (the native compiler) is not yet supported by
+ts-jest or typescript-eslint.
+
+**Decision.** NestJS 11.2.7, TypeScript 5.9.3, Prisma 7.10.0 with the
+`pg` driver adapter, PostgreSQL 17, Node 22 LTS in the image. Every
+version is pinned exactly; `npm ci` uses the lockfile. Constraints Prisma
+cannot express (CHECKs, the change-number trigger, a UTF-8 guard) live in
+the SQL migration; CI applies the migrations to an empty database and
+fails if the schema and the migrations drift.
+
+**Consequences.** Moving to NestJS 12 later is a separate, testable step
+(ESM plus a test-runner change). Prisma's CLI ships in the image so the
+container applies migrations on start.
+
+---
+
+## ADR-0012 — Sync details refined from the architecture
+
+**Status:** accepted; implemented in M3 (server) — the device side is M4.
+
+**Decisions.**
+1. *Change numbers.* A trigger on every synced table takes a per-account
+   transaction lock and only then draws the next `change_seq`, so one
+   account's changes become visible in number order and a pull can never
+   skip a change that commits later (§6 "commit-order edge cases"). The
+   same trigger rejects a row whose owner differs from its child's owner.
+2. *Field-level merge needs the base.* A patch carries the values the
+   device last synced for the changed fields (`base`), so the server can
+   apply edits to different fields from two devices and detect real
+   conflicts (§14). Name and gender conflicts keep the server value and
+   return both; avatar, colours and settings: the later change wins and the
+   old value goes to the audit log.
+3. *Journeys merge on the device.* The progress-monotonic journey merge
+   needs the lesson model, which lives in Dart. The server does optimistic
+   concurrency only and returns its copy on a stale version; the device
+   merges with its typed `JourneyState` and pushes again. Deleting a
+   journey (lesson finished, or progress reset) always wins.
+4. *Deleting a child erases at once.* The child's settings, attempts,
+   journeys and play time are deleted in the same transaction; only a
+   tombstone with the ID remains so other devices learn of it.
+5. *Pull sessions.* Within one pull session (until `hasMore` is false) a
+   record can arrive before its child's own change (the child was edited
+   later). The device applies the whole session in one transaction.
+6. *Usage.* Each device writes only its own counter; the server keeps the
+   larger value, so replays and reordering are harmless.
+
+---
+
+## ADR-0013 — Access tokens signed with node:crypto, not a JWT library
+
+**Status:** accepted; implemented in M3.
+
+**Context.** `jose` 6 is ESM-only and cannot be loaded by the test runner
+on Node 22. The token format needed is narrow: EdDSA (Ed25519) only.
+
+**Decision.** A 90-line module signs and verifies with `node:crypto`. It
+accepts exactly `{"alg":"EdDSA","kid":<known>}`, so `alg: none` and
+HS256-with-the-public-key confusion cannot apply; it checks `iss`, `aud`,
+`iat`, `exp` with 5 s leeway. Unit tests cover tampering, unknown keys,
+algorithm confusion, expiry and malformed input.
+
+**Consequences.** One dependency fewer; key rotation works through `kid`
+and `JWT_PREVIOUS_PUBLIC_KEYS`.
+
+---
+
+## ADR-0014 — The Dart API client is written by hand and contract-tested
+
+**Status:** accepted (client lands in M4).
+
+**Context.** The plan said to generate `packages/api_client` with
+openapi-generator. Tried on 2026-10-05 with generator 7.25.0 (`dart-dio`,
+json_serializable): OpenAPI 3.1 support is marked beta and the `Mutation`
+and `Change` unions were flattened into one class with every variant's
+fields required, which cannot represent a push or a pull correctly. It
+also pulls in dio, build_runner and three more packages.
+
+**Decision.** A small hand-written client in the app (`lib/data/remote/`)
+using `package:http`, with request and response shapes checked in tests
+against the same `api/openapi.yaml` (example messages validated by the
+backend's schema validator and parsed by the Dart tests).
+
+**Consequences.** No generated code to keep in sync; the contract stays
+the single source of truth through tests instead of generation.
+
+---
+
+## ADR-0015 — Private-trial controls on the server
+
+**Status:** accepted; implemented in M3.
+
+**Context.** The first deployment is a private trial on the owner's
+Synology NAS reachable from the internet, before any publishing.
+
+**Decision.**
+- `SIGNUP_ALLOWED_EMAILS` limits who can create an account; others get the
+  same 202 answer and no email (no enumeration).
+- `CONSENT_VERSION`: sign-up must name the consent text version the parent
+  accepted; it is stored with the account. The trial text is the draft in
+  `docs/legal/` and must be reviewed before any public release.
+- Rate limits and the failed-sign-in limiter are in memory, which is
+  correct for one API container (the trial). Several containers need a
+  shared store first.
+- Production refuses to start with rate limits off or with the in-memory
+  mailer; every secret can come from a `*_FILE`.
+
+---
+
+## ADR-0016 — Server validation follows the app where the architecture differed
+
+**Status:** accepted; implemented in M3.
+
+**Decisions.**
+- *Child name:* 0–24 characters, letters, marks, spaces, hyphens and
+  apostrophes — the app's own rule (the name is optional on the device;
+  the architecture said 1–24).
+- *Journey state:* the server checks shape (a JSON object) and size
+  (≤ 64 KB) only; the typed lesson model in the app validates content.
+- *Attempt time:* `completedAt` is kept exactly as the device recorded it
+  (local time without an offset) instead of being converted to UTC, which
+  would need an offset the old saves never stored.
+- *The database must be UTF-8:* the first migration refuses any other
+  encoding (found when a Windows test database defaulted to WIN1252 and
+  rejected an Arabic name).
