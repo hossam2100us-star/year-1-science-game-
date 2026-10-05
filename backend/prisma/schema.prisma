@@ -1,0 +1,249 @@
+// Central database (Future System Architecture §6). Constraints that Prisma
+// cannot express (CHECKs, the change_seq trigger) live in the SQL
+// migrations; `npm run db:check` confirms this file and the migrations agree.
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "cjs"
+  importFileExtension = ""
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id                  String    @id @db.Uuid
+  email               String    @unique @db.Citext
+  passwordHash        String    @map("password_hash")
+  emailVerifiedAt     DateTime? @map("email_verified_at") @db.Timestamptz(3)
+  /// active | pending_deletion
+  status              String    @default("active")
+  consentVersion      String    @map("consent_version")
+  consentedAt         DateTime  @map("consented_at") @db.Timestamptz(3)
+  deletionScheduledAt DateTime? @map("deletion_scheduled_at") @db.Timestamptz(3)
+  createdAt           DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt           DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  refreshTokens RefreshToken[]
+  emailTokens   EmailToken[]
+  devices       Device[]
+  children      ChildProfile[]
+
+  @@map("users")
+}
+
+model RefreshToken {
+  id              String    @id @db.Uuid
+  userId          String    @map("user_id") @db.Uuid
+  familyId        String    @map("family_id") @db.Uuid
+  tokenHash       Bytes     @unique @map("token_hash")
+  deviceId        String    @map("device_id") @db.Uuid
+  platform        String
+  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  expiresAt       DateTime  @map("expires_at") @db.Timestamptz(3)
+  familyExpiresAt DateTime  @map("family_expires_at") @db.Timestamptz(3)
+  revokedAt       DateTime? @map("revoked_at") @db.Timestamptz(3)
+  replacedAt      DateTime? @map("replaced_at") @db.Timestamptz(3)
+  replacedById    String?   @map("replaced_by_id") @db.Uuid
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([familyId])
+  @@map("refresh_tokens")
+}
+
+model EmailToken {
+  id        String    @id @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  /// verify_email | reset_password
+  purpose   String
+  tokenHash Bytes     @unique @map("token_hash")
+  expiresAt DateTime  @map("expires_at") @db.Timestamptz(3)
+  usedAt    DateTime? @map("used_at") @db.Timestamptz(3)
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, purpose])
+  @@map("email_tokens")
+}
+
+model Device {
+  userId     String   @map("user_id") @db.Uuid
+  id         String   @db.Uuid
+  platform   String
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  lastSeenAt DateTime @default(now()) @map("last_seen_at") @db.Timestamptz(3)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, id])
+  @@map("devices")
+}
+
+model ChildProfile {
+  id          String    @id @db.Uuid
+  userId      String    @map("user_id") @db.Uuid
+  /// Null only on a tombstone (the child was deleted; its data is erased).
+  displayName String?   @map("display_name")
+  gender      String?
+  avatar      Int?
+  palette     String?
+  version     Int       @default(1)
+  changeSeq   BigInt    @default(0) @map("change_seq")
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt   DateTime  @updatedAt @map("server_updated_at") @db.Timestamptz(3)
+  deletedAt   DateTime? @map("deleted_at") @db.Timestamptz(3)
+
+  user     User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  settings ChildSettings?
+  attempts UnitAttempt[]
+  journeys Journey[]
+  usage    UsageDaily[]
+
+  @@index([userId, changeSeq])
+  @@map("child_profiles")
+}
+
+model ChildSettings {
+  childId      String   @id @map("child_id") @db.Uuid
+  userId       String   @map("user_id") @db.Uuid
+  arabic       Boolean
+  breakMinutes Int      @map("break_minutes")
+  sound        Boolean
+  music        Boolean
+  narration    Boolean
+  volume       Float
+  boyVoice     String?  @map("boy_voice")
+  girlVoice    String?  @map("girl_voice")
+  version      Int      @default(1)
+  changeSeq    BigInt   @default(0) @map("change_seq")
+  updatedAt    DateTime @updatedAt @map("server_updated_at") @db.Timestamptz(3)
+
+  child ChildProfile @relation(fields: [childId], references: [id], onDelete: Cascade)
+
+  @@index([userId, changeSeq])
+  @@map("child_settings")
+}
+
+model UnitAttempt {
+  id              String    @id @db.Uuid
+  childId         String    @map("child_id") @db.Uuid
+  userId          String    @map("user_id") @db.Uuid
+  curriculum      String
+  unitId          String    @map("unit_id")
+  contentVersion  Int       @map("content_version")
+  completed       Boolean
+  effortStars     Int       @map("effort_stars")
+  /// Device wall-clock time exactly as recorded (usually without an offset).
+  completedAt     String    @map("completed_at")
+  clientAttemptId String    @map("legacy_attempt_id")
+  changeSeq       BigInt    @default(0) @map("change_seq")
+  receivedAt      DateTime  @default(now()) @map("received_at") @db.Timestamptz(3)
+  updatedAt       DateTime  @updatedAt @map("server_updated_at") @db.Timestamptz(3)
+  deletedAt       DateTime? @map("deleted_at") @db.Timestamptz(3)
+
+  child      ChildProfile       @relation(fields: [childId], references: [id], onDelete: Cascade)
+  objectives AttemptObjective[]
+
+  @@index([childId, unitId, completedAt(sort: Desc)])
+  @@index([userId, changeSeq])
+  @@map("unit_attempts")
+}
+
+model AttemptObjective {
+  attemptId   String @map("attempt_id") @db.Uuid
+  objectiveId String @map("objective_id")
+  outcome     String
+
+  attempt UnitAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+
+  @@id([attemptId, objectiveId])
+  @@map("attempt_objectives")
+}
+
+model Journey {
+  childId        String    @map("child_id") @db.Uuid
+  userId         String    @map("user_id") @db.Uuid
+  curriculum     String
+  journeyKey     String    @map("journey_key")
+  /// Null only on a tombstone.
+  state          Json?
+  contentVersion Int?      @map("content_version")
+  version        Int       @default(1)
+  changeSeq      BigInt    @default(0) @map("change_seq")
+  updatedAt      DateTime  @updatedAt @map("server_updated_at") @db.Timestamptz(3)
+  deletedAt      DateTime? @map("deleted_at") @db.Timestamptz(3)
+
+  child ChildProfile @relation(fields: [childId], references: [id], onDelete: Cascade)
+
+  @@id([childId, curriculum, journeyKey])
+  @@index([userId, changeSeq])
+  @@map("journeys")
+}
+
+model UsageDaily {
+  childId   String   @map("child_id") @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  deviceId  String   @map("device_id") @db.Uuid
+  day       String
+  seconds   Int
+  changeSeq BigInt   @default(0) @map("change_seq")
+  updatedAt DateTime @updatedAt @map("server_updated_at") @db.Timestamptz(3)
+
+  child ChildProfile @relation(fields: [childId], references: [id], onDelete: Cascade)
+
+  @@id([childId, deviceId, day])
+  @@index([userId, changeSeq])
+  @@map("usage_daily")
+}
+
+model ProcessedMutation {
+  userId     String   @map("user_id") @db.Uuid
+  mutationId String   @map("mutation_id") @db.Uuid
+  result     Json
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@id([userId, mutationId])
+  @@index([createdAt])
+  @@map("processed_mutations")
+}
+
+model IdempotencyKey {
+  userId      String   @map("user_id") @db.Uuid
+  key         String
+  method      String
+  path        String
+  requestHash String   @map("request_hash")
+  status      Int
+  body        Json?
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@id([userId, key])
+  @@index([createdAt])
+  @@map("idempotency_keys")
+}
+
+/// Security and account events. Never holds emails, names, tokens or passwords.
+model AuditLog {
+  id        BigInt   @id @default(autoincrement())
+  userId    String?  @map("user_id") @db.Uuid
+  action    String
+  meta      Json     @default("{}")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@index([userId, createdAt])
+  @@index([createdAt])
+  @@map("audit_log")
+}
+
+/// Server bookkeeping, e.g. the tombstone horizon for sync cursors.
+model ServerMeta {
+  key   String @id
+  value String
+
+  @@map("server_meta")
+}
