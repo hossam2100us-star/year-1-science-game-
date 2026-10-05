@@ -134,7 +134,8 @@
    cd /volume1/docker/science-adventure
    sudo docker compose pull
    sudo docker compose up -d
-   ```
+   ```  
+   (لو `docker compose` طلع خطأ، اكتب `docker-compose` بشَرطة بدل المسافة.)
 3. اقفل SSH.
 
 البيانات **ما بتتمسحش** مع التحديث، لأنها في فولدر `data` اللي على الـNAS.
