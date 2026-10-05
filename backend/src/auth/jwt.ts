@@ -37,6 +37,20 @@ function decodeJson(part: string): Record<string, unknown> {
   }
 }
 
+/** Splits a compact JWS and decodes its JSON parts (no signature check). */
+export function splitJwt(token: string) {
+  if (token.length > 4096) throw new JwtError('malformed');
+  const parts = token.split('.');
+  if (parts.length !== 3 || !B64URL.test(parts[2]!)) throw new JwtError('malformed');
+  const [head, body, signature] = parts as [string, string, string];
+  return {
+    header: decodeJson(head),
+    payload: decodeJson(body),
+    signingInput: Buffer.from(`${head}.${body}`),
+    signature: Buffer.from(signature, 'base64url'),
+  };
+}
+
 export function signJwt(claims: JwtClaims, privateKey: KeyObject, kid: string): string {
   const head = b64({ alg: 'EdDSA', kid, typ: 'JWT' });
   const body = b64(claims);

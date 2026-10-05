@@ -321,3 +321,34 @@ Synology NAS reachable from the internet, before any publishing.
 - *The database must be UTF-8:* the first migration refuses any other
   encoding (found when a Windows test database defaulted to WIN1252 and
   rejected an Arabic name).
+---
+
+## ADR-0017 — Sign in with Google, alongside email and password
+
+**Status:** accepted (owner request, 2026-10-05); server implemented in M4.
+
+**Context.** The owner wants parents to create accounts with their Google
+account. The architecture lists Google/Microsoft OIDC as a future option.
+
+**Decision.**
+- `POST /api/v1/auth/google` takes a Google ID token obtained on the device
+  (Sign in with Google). The server verifies it with `node:crypto`: RS256
+  only, a key from Google's published set (cached, refreshed at most once a
+  minute for an unknown key ID), issuer Google, audience one of
+  `GOOGLE_CLIENT_IDS`, not expired, email verified by Google.
+- Only Google's stable subject ID is stored (`user_identities`); no name,
+  picture or Google tokens. Accounts are matched by subject, then by email.
+- A new account needs the consent version, like password sign-up.
+- *Pre-hijack protection:* linking Google to an existing account whose
+  email was never verified removes that account's password and ends its
+  sessions (someone else may have registered the address first).
+- Google-only accounts have no password: password sign-in fails, password
+  change answers `no_password`, "forgot password" can add one, and account
+  deletion accepts a Google sign-in from the last 10 minutes instead.
+
+**Consequences.** Needs a Google Cloud project with a web OAuth client
+(origin = the NAS HTTPS address) and an Android client (package name +
+SHA-1 of the signing key); works only once the NAS has its HTTPS name. The
+app gains the `google_sign_in` SDK, used only when a parent taps the
+button; review it against Google Play's Families SDK rules before any
+public release.

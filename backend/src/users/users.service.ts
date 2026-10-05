@@ -21,7 +21,12 @@ export class UsersService {
   ) {}
 
   async me(userId: string) {
-    return publicUser(await this.prisma.user.findUniqueOrThrow({ where: { id: userId } }));
+    return publicUser(
+      await this.prisma.user.findUniqueOrThrow({
+        where: { id: userId },
+        include: { identities: { select: { provider: true } } },
+      }),
+    );
   }
 
   /**
@@ -29,8 +34,8 @@ export class UsersService {
    * every child's data are erased by the maintenance job afterwards.
    * Signing in again before then cancels it.
    */
-  async scheduleDeletion(userId: string, password: string) {
-    const user = await this.auth.confirmPassword(userId, password);
+  async scheduleDeletion(userId: string, proof: { password: string } | { googleIdToken: string }) {
+    const user = await this.auth.confirmIdentity(userId, proof);
     const when = new Date(Date.now() + this.config.accountDeletionGraceDays * DAY);
     await this.prisma.$transaction(async (tx) => {
       await tx.user.update({
@@ -54,6 +59,7 @@ export class UsersService {
       where: { id: userId },
       include: {
         devices: true,
+        identities: { select: { provider: true, createdAt: true } },
         children: {
           where: { deletedAt: null },
           include: {

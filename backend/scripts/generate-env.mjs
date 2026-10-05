@@ -89,4 +89,6 @@ const api = [
 mkdirSync(dir, { recursive: true });
 writeFileSync(dbFile, db.join('\n'), { mode: 0o600, flag: 'wx' });
 writeFileSync(apiFile, api.join('\n'), { mode: 0o600, flag: 'wx' });
-console.log(`Created ${dbFile} and ${apiFile}. Fill in SMTP_URL, EMAIL_FROM and GOOGLE_CLIENT_IDS in api.env.`);
+console.log(
+  `Created ${dbFile} and ${apiFile}. Fill in SMTP_URL, EMAIL_FROM and GOOGLE_CLIENT_IDS in api.env.`,
+);

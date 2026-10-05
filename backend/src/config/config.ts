@@ -45,6 +45,10 @@ const schema = z
     TOMBSTONE_RETENTION_DAYS: z.coerce.number().int().min(30).max(3650).default(180),
     MAINTENANCE: booleanFlag.default(true),
     RATE_LIMIT: booleanFlag.default(true),
+    GOOGLE_CLIENT_IDS: z.string().optional(),
+    GOOGLE_JWKS_URL: z
+      .url({ protocol: /^https?$/ })
+      .default('https://www.googleapis.com/oauth2/v3/certs'),
   })
   .superRefine((env, ctx) => {
     if (env.EMAIL_TRANSPORT === 'smtp' && !env.SMTP_URL) {
@@ -53,6 +57,12 @@ const schema = z
         path: ['SMTP_URL'],
         message: 'required when EMAIL_TRANSPORT=smtp',
       });
+    }
+    if (
+      env.NODE_ENV === 'production' &&
+      env.GOOGLE_JWKS_URL !== 'https://www.googleapis.com/oauth2/v3/certs'
+    ) {
+      ctx.addIssue({ code: 'custom', path: ['GOOGLE_JWKS_URL'], message: 'only for tests' });
     }
     if (env.NODE_ENV === 'production' && !env.RATE_LIMIT) {
       ctx.addIssue({
@@ -96,6 +106,7 @@ export interface AppConfig {
   tombstoneRetentionDays: number;
   maintenance: boolean;
   rateLimit: boolean;
+  google: { clientIds: string[]; jwksUrl: string };
 }
 
 export const APP_CONFIG = Symbol('APP_CONFIG');
@@ -167,5 +178,12 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
     tombstoneRetentionDays: e.TOMBSTONE_RETENTION_DAYS,
     maintenance: e.MAINTENANCE,
     rateLimit: e.RATE_LIMIT,
+    google: {
+      clientIds: (e.GOOGLE_CLIENT_IDS ?? '')
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean),
+      jwksUrl: e.GOOGLE_JWKS_URL,
+    },
   };
 }

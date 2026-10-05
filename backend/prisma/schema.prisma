@@ -16,7 +16,8 @@ datasource db {
 model User {
   id                  String    @id @db.Uuid
   email               String    @unique @db.Citext
-  passwordHash        String    @map("password_hash")
+  /// Null for accounts that only sign in with Google.
+  passwordHash        String?   @map("password_hash")
   emailVerifiedAt     DateTime? @map("email_verified_at") @db.Timestamptz(3)
   /// active | pending_deletion
   status              String    @default("active")
@@ -30,8 +31,25 @@ model User {
   emailTokens   EmailToken[]
   devices       Device[]
   children      ChildProfile[]
+  identities    UserIdentity[]
 
   @@map("users")
+}
+
+/// External sign-in identities (Google). Only the provider's stable subject
+/// ID is kept; never profile data or tokens.
+model UserIdentity {
+  provider  String
+  subject   String
+  userId    String   @map("user_id") @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, subject])
+  @@unique([userId, provider], map: "user_identities_user_provider_key")
+  @@index([userId])
+  @@map("user_identities")
 }
 
 model RefreshToken {

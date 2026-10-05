@@ -172,6 +172,23 @@ export const LoginRequest = z.strictObject({
   deviceId: Uuid,
   platform: Platform,
 });
+/** A Google ID token is a JWT: three base64url parts. */
+export const GoogleIdToken = z
+  .string()
+  .min(20)
+  .max(4096)
+  .regex(/^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/);
+export const GoogleLoginRequest = z.strictObject({
+  idToken: GoogleIdToken,
+  deviceId: Uuid,
+  platform: Platform,
+  consentVersion: z.string().min(1).max(40).optional(),
+});
+/** Account deletion: the password, or a fresh Google sign-in for Google-only accounts. */
+export const DeleteAccountRequest = z.union([
+  z.strictObject({ password: AnyPassword }),
+  z.strictObject({ googleIdToken: GoogleIdToken }),
+]);
 export const RefreshRequest = z.strictObject({ refreshToken: OpaqueToken.optional() });
 export const LogoutRequest = z.strictObject({ all: z.boolean().optional() });
 export const ResetPasswordRequest = z.strictObject({ token: OpaqueToken, newPassword: Password });

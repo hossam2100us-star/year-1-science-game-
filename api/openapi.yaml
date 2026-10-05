@@ -120,6 +120,42 @@ paths:
         '400': { $ref: '#/components/responses/BadRequest' }
         '401': { $ref: '#/components/responses/Unauthorized' }
         '429': { $ref: '#/components/responses/TooManyRequests' }
+  /api/v1/auth/google:
+    post:
+      tags: [auth]
+      operationId: googleLogin
+      summary: Sign in or sign up with a Google account.
+      description: |
+        The device obtains a Google ID token (Sign in with Google) whose
+        audience is this service's web client ID. The account is the one for
+        the email address Google verified; a new account needs
+        `consentVersion` (otherwise 422 `consent_required`). Linking Google to
+        an existing account whose email was never verified removes that
+        account's password and ends its sessions. Same session rules as
+        `login` (refresh token in the body on Android, cookie on the web).
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/GoogleLoginRequest' }
+      responses:
+        '200':
+          description: Session started.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Session' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '422': { $ref: '#/components/responses/Unprocessable' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503':
+          description: Google's signing keys could not be loaded.
+          content:
+            application/problem+json:
+              schema: { $ref: '#/components/schemas/Problem' }
   /api/v1/auth/refresh:
     post:
       tags: [auth]
@@ -239,7 +275,7 @@ paths:
         required: true
         content:
           application/json:
-            schema: { $ref: '#/components/schemas/PasswordRequest' }
+            schema: { $ref: '#/components/schemas/DeleteAccountRequest' }
       responses:
         '202':
           description: Deletion scheduled.
@@ -715,6 +751,33 @@ components:
       required: [password]
       properties:
         password: { type: string, minLength: 1, maxLength: 128 }
+    GoogleIdToken:
+      type: string
+      minLength: 20
+      maxLength: 4096
+      pattern: '^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$'
+    GoogleLoginRequest:
+      type: object
+      additionalProperties: false
+      required: [idToken, deviceId, platform]
+      properties:
+        idToken: { $ref: '#/components/schemas/GoogleIdToken' }
+        deviceId: { $ref: '#/components/schemas/Uuid' }
+        platform: { $ref: '#/components/schemas/Platform' }
+        consentVersion:
+          type: string
+          minLength: 1
+          maxLength: 40
+          description: Required when the Google account has no Science Adventure account yet.
+    DeleteAccountRequest:
+      description: The password, or a Google sign-in from the last 10 minutes for accounts without a password.
+      oneOf:
+        - $ref: '#/components/schemas/PasswordRequest'
+        - type: object
+          additionalProperties: false
+          required: [googleIdToken]
+          properties:
+            googleIdToken: { $ref: '#/components/schemas/GoogleIdToken' }
     LoginRequest:
       type: object
       additionalProperties: false
@@ -764,11 +827,15 @@ components:
         user: { $ref: '#/components/schemas/User' }
     User:
       type: object
-      required: [id, email, emailVerified, createdAt]
+      required: [id, email, emailVerified, signInMethods, createdAt]
       properties:
         id: { $ref: '#/components/schemas/Uuid' }
         email: { $ref: '#/components/schemas/Email' }
         emailVerified: { type: boolean }
+        signInMethods:
+          type: array
+          description: How this parent can sign in; a Google-only account has no password.
+          items: { type: string, enum: [password, google] }
         createdAt: { type: string, format: date-time }
     DeletionScheduled:
       type: object

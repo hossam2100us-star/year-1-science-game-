@@ -4,7 +4,7 @@ import { type z } from 'zod';
 import { AuthService } from '../auth/auth.service';
 import { type AuthContext, CurrentUser } from '../auth/decorators';
 import { ZodPipe } from '../common/zod.pipe';
-import { DeviceRequest, PasswordRequest } from '../contract/schemas';
+import { DeleteAccountRequest, DeviceRequest } from '../contract/schemas';
 import { Idempotent } from '../idempotency/idempotency.interceptor';
 import { PrismaService } from '../prisma/prisma.service';
 import { UsersService } from './users.service';
@@ -23,9 +23,9 @@ export class UsersController {
   @Throttle({ default: { limit: 5, ttl: 15 * 60_000 } })
   remove(
     @CurrentUser() user: AuthContext,
-    @Body(new ZodPipe(PasswordRequest)) body: z.output<typeof PasswordRequest>,
+    @Body(new ZodPipe(DeleteAccountRequest)) body: z.output<typeof DeleteAccountRequest>,
   ) {
-    return this.users.scheduleDeletion(user.userId, body.password);
+    return this.users.scheduleDeletion(user.userId, body);
   }
 
   @Get('me/export')
