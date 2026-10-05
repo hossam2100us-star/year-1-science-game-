@@ -79,6 +79,7 @@
    - `docker-compose.yml` (من الفولدر ده في المشروع)
    - `db.env` و`api.env` (أنا هجهّزهم بعد ما تبعتلي الاسم، **ودول سريين**)
    - فولدر `downloads` (فيه `index.html`، وأنا هحط جنبه `science-adventure.apk`)
+   - واعمل جوه `science-adventure` فولدرين فاضيين: `backups`، و`data` وجواه `postgres` (Container Manager مش بيعملهم لوحده، والتشغيل بيفشل من غيرهم)
 3. افتح `api.env` بـ **Text Editor** وكمّل:
    - `SMTP_URL=smtps://hossam2100us%40gmail.com:XXXXXXXXXXXXXXXX@smtp.gmail.com:465`
      (الـ16 حرف من الخطوة 3 **من غير مسافات**، وعلامة @ اللي في الإيميل بتتكتب `%40`)

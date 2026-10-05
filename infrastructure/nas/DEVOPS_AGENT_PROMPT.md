@@ -163,6 +163,9 @@ He copies it somewhere safe, just for the next phase.
    - `db.env`
    - `api.env`
    - the `downloads` folder
+3. Also create the empty folders `backups` and `data/postgres` inside it.
+   Container Manager does not create bind-mount folders, and the first start
+   fails without them.
 
 ## Phase 7: Start the project
 

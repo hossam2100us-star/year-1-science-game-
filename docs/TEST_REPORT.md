@@ -147,3 +147,26 @@ osv-scanner reported `deepmerge-ts` 7.1.5 (GHSA-ggr8-5vv4-36mx) and `mysql2`
 3.15.3 (GHSA-3f6p-5ww8-9rcr, GHSA-rgwj-5xj2-c3m3), both pulled in by the Prisma
 CLI 7.10.0. npm `overrides` pin the fixed versions (8.0.2, 3.24.5); unit 37/37,
 end-to-end 68/68 and the build pass with them.
+
+## Synology trial deployment (2026-10-05, done by a DevOps agent session)
+
+| Item | Result |
+|---|---|
+| NAS | DS920+ (x86_64), DSM 7.4.1; project `science-adventure` in Container Manager |
+| Address | `https://school.hmsfamily.synology.me` via the existing `hmsfamily.synology.me` DDNS, wildcard Let's Encrypt certificate and port 443; reverse proxy → `localhost:8480` |
+| Containers | db, api (healthy), web, backup all running; first daily dump written |
+| From outside the house | `/` 200, `/download/` 200, `/healthz` 200; the APK link 404s until the file is added |
+| Network | not carrier-grade NAT; 443 reachable from outside |
+
+Findings and what changed in the package afterwards:
+- Container Manager does not create bind-mount folders: `data/postgres` and
+  `backups` are now a documented setup step.
+- The `json-file` log driver hid logs in Container Manager: the compose file
+  now leaves logging to Synology's default driver.
+- Two HSTS headers (DSM and nginx): nginx no longer sends one.
+- Fonts were sent uncompressed (`.ttf` had no MIME type): nginx now knows
+  `font/ttf`/`font/otf`, and the image pre-compresses all static files with
+  `gzip -9` (`gzip_static`).
+- Still open: Container Manager shows environment variables (including the
+  database URL) in its General tab to NAS administrators; moving secrets to
+  `*_FILE` mounts is a later hardening step.

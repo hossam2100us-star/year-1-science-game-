@@ -1,17 +1,18 @@
 # Science Adventure on a Synology NAS (Container Manager → Project).
 # Guide (Arabic): README_AR.md in this folder.
+# Before the first start create the folders data/postgres and backups here:
+# Container Manager does not create bind-mount folders by itself.
 #
 # Only the web container has a port, and only on the NAS itself
 # (127.0.0.1:8480); the Synology reverse proxy adds HTTPS in front of it.
 # The database has no network route outside the NAS.
 name: science-adventure
 
+# Logging is left to the host's default driver so Container Manager's Log tab
+# works (Synology manages log size itself).
 x-hardening: &hardening
   restart: unless-stopped
   security_opt: ['no-new-privileges:true']
-  logging:
-    driver: json-file
-    options: { max-size: '10m', max-file: '3' }
 
 services:
   db:
