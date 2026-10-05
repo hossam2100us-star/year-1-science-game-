@@ -55,11 +55,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      # Runs in a scratch copy outside the workspace: the database container
+      # creates root-owned folders, and the settings files hold test secrets.
+      - name: Copy the Synology package to a scratch folder
+        run: mkdir -p "$RUNNER_TEMP/nas" && cp -r infrastructure/nas/. "$RUNNER_TEMP/nas"
       - name: Synology package end to end (docker compose)
-        working-directory: infrastructure/nas
+        working-directory: ${{ runner.temp }}/nas
         run: |
           set -eu
-          node ../../backend/scripts/generate-env.mjs --out-dir . --public-url https://nas.example.test
+          node "$GITHUB_WORKSPACE/backend/scripts/generate-env.mjs" --out-dir . --public-url https://nas.example.test
           # No mail server in CI: sending fails after the response and is only logged.
           sed -i 's|^SMTP_URL=.*|SMTP_URL=smtp://127.0.0.1:2525|; s|^EMAIL_FROM=.*|EMAIL_FROM=CI <ci@example.test>|' api.env
           docker compose up -d --wait --wait-timeout 180
@@ -83,11 +87,11 @@ jobs:
           docker compose ps
       - name: Logs (on failure)
         if: failure()
-        working-directory: infrastructure/nas
+        working-directory: ${{ runner.temp }}/nas
         run: docker compose logs --no-color | tail -n 200
       - name: Stop the package
         if: always()
-        working-directory: infrastructure/nas
+        working-directory: ${{ runner.temp }}/nas
         run: docker compose down -v || true
       - name: Image vulnerability scan (Trivy)
         run: |
