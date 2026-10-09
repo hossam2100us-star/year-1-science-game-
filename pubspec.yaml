@@ -1,7 +1,7 @@
 name: science_adventure
 description: An offline science adventure for children and their parents.
 publish_to: none
-version: 0.5.0+5
+version: 0.5.1+6
 environment:
   sdk: '>=3.13.4 <4.0.0'
   flutter: '>=3.47.5'

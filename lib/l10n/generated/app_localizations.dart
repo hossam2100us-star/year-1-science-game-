@@ -675,6 +675,36 @@ abstract class AppLocalizations {
   /// **'Editing this profile keeps progress. The first name and preferences are also saved in your parent account; the photo stays on this device.'**
   String get parentAreaEditingLinkedProfile;
 
+  /// No description provided for @choiceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome! Before we start'**
+  String get choiceTitle;
+
+  /// No description provided for @choiceBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A grown-up chooses how the game keeps the children\'s progress. You can change this later in the parent area.'**
+  String get choiceBody;
+
+  /// No description provided for @choiceDeviceButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Play on this device only'**
+  String get choiceDeviceButton;
+
+  /// No description provided for @choiceContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue to the game'**
+  String get choiceContinue;
+
+  /// No description provided for @accountNotNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get accountNotNow;
+
   /// No description provided for @accountDeviceOnlyTitle.
   ///
   /// In en, this message translates to:

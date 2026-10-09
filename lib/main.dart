@@ -21,9 +21,11 @@ import 'data/account/account_controller.dart';
 import 'data/db/app_database.dart';
 import 'data/drift_progress_store.dart';
 import 'data/sync/sync_controller.dart';
+import 'data/sync/sync_store.dart';
 import 'features/onboarding/profile_editor.dart';
 import 'features/world/subject_hub.dart';
 import 'features/onboarding/child_chooser.dart';
+import 'parent/account_choice.dart';
 import 'parent/parent_gate.dart';
 import 'startup/startup_problem.dart';
 import 'startup/storage_bootstrap.dart';
@@ -284,6 +286,52 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
     _exitOpen = false;
   }
 
+  /// The children with a profile, as one comparable value (no child JSON).
+  static String _childIds(AppData d) => ([
+    ...d.savedChildren.keys,
+    if (d.profile != null) d.activeChildId,
+  ]..sort()).join(',');
+
+  /// A child was just created while a parent is signed in: offer to save
+  /// it in the account (children are saved one by one, ADR-0018).
+  Future<void> _offerToSave(Set<String> ids) async {
+    final store = ref.read(storeProvider);
+    final account = ref.read(accountProvider);
+    if (store is! DriftProgressStore ||
+        account.mode != AccountMode.account ||
+        !account.signedIn) {
+      return;
+    }
+    for (final id in ids) {
+      final data = ref.read(appProvider);
+      final record = data.savedChildren[id]?['profile'];
+      final child = id == data.activeChildId
+          ? data.profile
+          : record == null
+          ? null
+          : ChildProfile.fromJson(Map<String, dynamic>.from(record as Map));
+      if (!mounted ||
+          child == null ||
+          store.linkedChildren.contains(id) ||
+          !SyncStore.nameSyncable(child.name)) {
+        continue;
+      }
+      if (!await offerToSaveChild(
+        context,
+        arabic: data.settings.arabic,
+        name: child.name,
+        gender: child.gender,
+      )) {
+        continue;
+      }
+      try {
+        await ref.read(syncProvider.notifier).link(id);
+      } catch (error, stack) {
+        if (mounted) showSaveError(context, error, stack, area: 'sync');
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     ref.listen(appProvider.select((data) => data.activeChildId), (
@@ -293,12 +341,28 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
       _last = null;
       _sessionSeconds = 0;
     });
+    ref.listen(appProvider.select(_childIds), (previous, next) {
+      if (previous == null) return;
+      final added = next.split(',').toSet()
+        ..removeAll(previous.split(','))
+        ..remove('');
+      if (added.isEmpty) return;
+      WidgetsBinding.instance.addPostFrameCallback(
+        (_) => unawaited(_offerToSave(added)),
+      );
+    });
+    // Asked once on builds with accounts, before anything else (ADR-0002).
+    final askChoice =
+        ref.watch(accountProvider.select((a) => a.available && !a.chosen)) &&
+        ref.watch(syncProvider.select((s) => s.supported));
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, result) {
         if (!didPop) _exit();
       },
-      child: ref.watch(appProvider).profile == null
+      child: askChoice
+          ? const AccountChoice()
+          : ref.watch(appProvider).profile == null
           ? const ProfileEditor()
           : !_childChosen
           ? ChildChooser(

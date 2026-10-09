@@ -368,6 +368,22 @@ class AppLocalizationsEn extends AppLocalizations {
       'Editing this profile keeps progress. The first name and preferences are also saved in your parent account; the photo stays on this device.';
 
   @override
+  String get choiceTitle => 'Welcome! Before we start';
+
+  @override
+  String get choiceBody =>
+      'A grown-up chooses how the game keeps the children\'s progress. You can change this later in the parent area.';
+
+  @override
+  String get choiceDeviceButton => 'Play on this device only';
+
+  @override
+  String get choiceContinue => 'Continue to the game';
+
+  @override
+  String get accountNotNow => 'Not now';
+
+  @override
   String get accountDeviceOnlyTitle => 'This device only';
 
   @override

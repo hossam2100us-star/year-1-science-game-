@@ -213,3 +213,18 @@ Findings and what changed in the package afterwards:
 - The same code built for x86_64 upgraded 0.4.0 in place on the Android 14 emulator with the child and progress kept (see M4 above).
 - Symbols kept outside the repository with the 0.4.0 ones; the 0.4.0 APK kept aside for a rollback.
 - Not yet done: a first account on the trial server (needs a real email address) and a real phone.
+
+### First-run question (2026-10-09, owner request)
+
+- Builds with a server now ask once, before onboarding: "play on this device only" or "parent account".
+- Tests: `test/parent/account_choice_test.dart` (4):
+  - device only: no gate and no request;
+  - not asked again;
+  - the account branch needs the gate and the consent, then signing in brings the account's children;
+  - a child created while signed in is offered to the account behind the gate.
+- Also `test/account/account_controller_test.dart`: the choice survives a restart.
+- Emulator (fresh install, debug build):
+  - the question shows in Arabic;
+  - the account branch passes the gate and the consent to the sign-in page;
+  - "Continue to the game" opens onboarding;
+  - after a force-stop and relaunch the question is not asked again.

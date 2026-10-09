@@ -106,7 +106,12 @@ class _AccountPanelState extends ConsumerState<AccountPanel> {
             onPressed: _busy
                 ? null
                 : () async {
-                    if (!await _consent(context)) return;
+                    if (!await askAccountConsent(
+                      context,
+                      arabic: widget.arabic,
+                    )) {
+                      return;
+                    }
                     await _run(
                       () => ref.read(accountProvider.notifier).useAccount(),
                     );
@@ -118,59 +123,6 @@ class _AccountPanelState extends ConsumerState<AccountPanel> {
       ),
     ],
   );
-
-  /// The parent confirms each point; nothing is pre-ticked.
-  Future<bool> _consent(BuildContext context) async {
-    final ticks = [false, false, false];
-    final points = [
-      l.accountConsentParent,
-      l.accountConsentData,
-      l.accountConsentDelete,
-    ];
-    final agreed = await showDialog<bool>(
-      context: context,
-      builder: (dialog) => Directionality(
-        textDirection: widget.arabic ? TextDirection.rtl : TextDirection.ltr,
-        child: StatefulBuilder(
-          builder: (context, setLocal) => AlertDialog(
-            scrollable: true,
-            title: Text(l.accountConsentTitle),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(l.accountConsentTrial),
-                const SizedBox(height: 8),
-                for (var i = 0; i < points.length; i++)
-                  CheckboxListTile(
-                    key: ValueKey('consent-$i'),
-                    contentPadding: EdgeInsets.zero,
-                    controlAffinity: ListTileControlAffinity.leading,
-                    value: ticks[i],
-                    title: Text(points[i]),
-                    onChanged: (v) => setLocal(() => ticks[i] = v ?? false),
-                  ),
-              ],
-            ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.of(dialog).pop(false),
-                child: Text(l.accountCancel),
-              ),
-              FilledButton(
-                key: const ValueKey('consent-continue'),
-                onPressed: ticks.every((t) => t)
-                    ? () => Navigator.of(dialog).pop(true)
-                    : null,
-                child: Text(l.accountContinue),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-    return agreed ?? false;
-  }
 
   // ---- signing in ------------------------------------------------------------
 
@@ -680,6 +632,65 @@ class _AccountPanelState extends ConsumerState<AccountPanel> {
       password.dispose();
     }
   }
+}
+
+/// What a parent agrees to before using an account; each point must be
+/// ticked (nothing is pre-ticked). Shared by the first-run question and the
+/// parent area.
+Future<bool> askAccountConsent(
+  BuildContext context, {
+  required bool arabic,
+}) async {
+  final l = parentStrings(arabic);
+  final ticks = [false, false, false];
+  final points = [
+    l.accountConsentParent,
+    l.accountConsentData,
+    l.accountConsentDelete,
+  ];
+  final agreed = await showDialog<bool>(
+    context: context,
+    builder: (dialog) => Directionality(
+      textDirection: arabic ? TextDirection.rtl : TextDirection.ltr,
+      child: StatefulBuilder(
+        builder: (context, setLocal) => AlertDialog(
+          scrollable: true,
+          title: Text(l.accountConsentTitle),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(l.accountConsentTrial),
+              const SizedBox(height: 8),
+              for (var i = 0; i < points.length; i++)
+                CheckboxListTile(
+                  key: ValueKey('consent-$i'),
+                  contentPadding: EdgeInsets.zero,
+                  controlAffinity: ListTileControlAffinity.leading,
+                  value: ticks[i],
+                  title: Text(points[i]),
+                  onChanged: (v) => setLocal(() => ticks[i] = v ?? false),
+                ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(dialog).pop(false),
+              child: Text(l.accountCancel),
+            ),
+            FilledButton(
+              key: const ValueKey('consent-continue'),
+              onPressed: ticks.every((t) => t)
+                  ? () => Navigator.of(dialog).pop(true)
+                  : null,
+              child: Text(l.accountContinue),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+  return agreed ?? false;
 }
 
 class _Message extends StatelessWidget {

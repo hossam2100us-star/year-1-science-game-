@@ -361,6 +361,7 @@ children without ever blocking play, losing progress, or uploading
 children the parent did not choose (ADR-0002, REC-02, REC-03).
 
 **Decision.**
+- *First run.* Builds with a server ask once, before anything else: "play on this device only" (no gate: it changes nothing) or a parent account (parent gate, then consent, then sign-in; the account's children then arrive on this device). A child created later while signed in is offered to the account, confirmed behind the gate. Both choices can be changed in the parent area.
 - *Modes.* Device-only is the default and has no API client object at all.
   A parent account needs the parent's choice, three unticked consent points
   (draft wording for the private trial) and a sign-in. Children are saved in

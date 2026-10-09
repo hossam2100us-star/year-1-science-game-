@@ -82,6 +82,30 @@ class FakeSyncServer {
 
   int _next() => ++_seq;
 
+  /// A child the account already has (saved from another device).
+  void seedChild(String id, String name) {
+    children[id] = {
+      'displayName': name,
+      'gender': 'girl',
+      'avatar': 1,
+      'palette': 'automatic',
+      'version': 1,
+      'changeSeq': _next(),
+    };
+    settings[id] = {
+      'arabic': false,
+      'breakMinutes': 12,
+      'sound': true,
+      'music': true,
+      'narration': true,
+      'volume': 0.85,
+      'boyVoice': null,
+      'girlVoice': null,
+      'version': 1,
+      'changeSeq': _next(),
+    };
+  }
+
   Map<String, dynamic> _apply(String device, Map<String, dynamic> m) {
     final id = m['mutationId'] as String;
     final done = _processed[id];

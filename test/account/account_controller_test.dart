@@ -163,6 +163,17 @@ void main() {
     },
   );
 
+  test('the first-run choice is remembered across restarts', () async {
+    final c = container();
+    expect(c.read(accountProvider).chosen, isFalse);
+    expect((await AccountSetup.load(prefs, 'device-1')).initialChosen, isFalse);
+    await c.read(accountProvider.notifier).chooseDeviceOnly();
+    expect(c.read(accountProvider).chosen, isTrue);
+    expect(c.read(accountProvider).mode, AccountMode.deviceOnly);
+    expect(requests, isEmpty);
+    expect((await AccountSetup.load(prefs, 'device-1')).initialChosen, isTrue);
+  });
+
   test('a build without a server address has no accounts', () async {
     final c = ProviderContainer();
     addTearDown(c.dispose);

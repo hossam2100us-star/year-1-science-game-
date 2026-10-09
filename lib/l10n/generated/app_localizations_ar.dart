@@ -367,6 +367,22 @@ class AppLocalizationsAr extends AppLocalizations {
       'تغيير البيانات مش بيمسح التقدم. الاسم الأول والاختيارات بيتحفظوا كمان في حساب ولي الأمر، والصورة بتفضل على الجهاز ده بس.';
 
   @override
+  String get choiceTitle => 'أهلاً بيك! قبل ما نبدأ';
+
+  @override
+  String get choiceBody =>
+      'ولي الأمر يختار اللعبة تحفظ تقدّم الأطفال فين. تقدر تغيّر الاختيار بعدين من ركن الأهل.';
+
+  @override
+  String get choiceDeviceButton => 'العب على الجهاز ده بس';
+
+  @override
+  String get choiceContinue => 'كمّل للعبة';
+
+  @override
+  String get accountNotNow => 'مش دلوقتي';
+
+  @override
   String get accountDeviceOnlyTitle => 'على الجهاز ده بس';
 
   @override

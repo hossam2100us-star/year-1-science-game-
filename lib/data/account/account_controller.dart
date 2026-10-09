@@ -22,6 +22,7 @@ class AccountState {
     this.mode = AccountMode.deviceOnly,
     this.user,
     this.restoring = false,
+    this.chosen = false,
   });
 
   /// This build knows a server address (otherwise there is no account UI).
@@ -34,17 +35,23 @@ class AccountState {
   /// The saved session is being resumed in the background at start-up.
   final bool restoring;
 
+  /// A parent already chose between this device only and an account (the
+  /// first-run question is asked once).
+  final bool chosen;
+
   bool get signedIn => user != null;
 
   AccountState copyWith({
     AccountMode? mode,
     AccountUser? Function()? user,
     bool? restoring,
+    bool? chosen,
   }) => AccountState(
     available: available,
     mode: mode ?? this.mode,
     user: user == null ? this.user : user(),
     restoring: restoring ?? this.restoring,
+    chosen: chosen ?? this.chosen,
   );
 }
 
@@ -83,6 +90,7 @@ class AccountSetup {
     required this.deviceId,
     required this.initialMode,
     this.initialUser,
+    this.initialChosen = false,
     this.clientFactory,
     this.baseUri,
   });
@@ -90,6 +98,7 @@ class AccountSetup {
   final String deviceId;
   final AccountMode initialMode;
   final AccountUser? initialUser;
+  final bool initialChosen;
 
   /// Tests replace the HTTP client; the app uses the real one.
   final ApiClient Function(Uri base, String deviceId)? clientFactory;
@@ -101,6 +110,7 @@ class AccountSetup {
 
   static const modeKey = 'account.mode';
   static const userKey = 'account.user';
+  static const choiceKey = 'account.choice';
 
   static Future<AccountSetup> load(AccountPrefs prefs, String deviceId) async {
     final mode = await prefs.get(modeKey) == 'account'
@@ -122,6 +132,8 @@ class AccountSetup {
       deviceId: deviceId,
       initialMode: mode,
       initialUser: user,
+      initialChosen:
+          mode == AccountMode.account || await prefs.get(choiceKey) != null,
     );
   }
 }
@@ -164,6 +176,7 @@ class AccountController extends Notifier<AccountState> {
       mode: mode,
       user: mode == AccountMode.account ? _setup.initialUser : null,
       restoring: mode == AccountMode.account,
+      chosen: _setup.initialChosen || mode == AccountMode.account,
     );
   }
 
@@ -212,7 +225,14 @@ class AccountController extends Notifier<AccountState> {
     if (!state.available) throw StateError('No server in this build');
     _client ??= _newClient();
     await _setup.prefs.set(AccountSetup.modeKey, 'account');
-    state = state.copyWith(mode: AccountMode.account);
+    await _setup.prefs.set(AccountSetup.choiceKey, 'account');
+    state = state.copyWith(mode: AccountMode.account, chosen: true);
+  }
+
+  /// The first-run answer "this device only": nothing else changes.
+  Future<void> chooseDeviceOnly() async {
+    await _setup.prefs.set(AccountSetup.choiceKey, 'device');
+    state = state.copyWith(chosen: true);
   }
 
   /// Back to "this device only": signs out, keeps every child on the device.
@@ -220,7 +240,12 @@ class AccountController extends Notifier<AccountState> {
     if (state.signedIn) await signOut();
     _client = null;
     await _setup.prefs.set(AccountSetup.modeKey, null);
-    state = state.copyWith(mode: AccountMode.deviceOnly, user: () => null);
+    await _setup.prefs.set(AccountSetup.choiceKey, 'device');
+    state = state.copyWith(
+      mode: AccountMode.deviceOnly,
+      user: () => null,
+      chosen: true,
+    );
   }
 
   ApiClient get _api {
