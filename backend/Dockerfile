@@ -1,4 +1,3 @@
-# syntax=docker/dockerfile:1.7
 # Science Adventure API — multi-stage image (Future System Architecture §15):
 # non-root user, no build tools or dev dependencies in the final image,
 # health check, read-only friendly (writes nothing to its filesystem).

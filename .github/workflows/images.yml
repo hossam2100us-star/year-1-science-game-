@@ -26,6 +26,10 @@ concurrency:
 env:
   FLUTTER_VERSION: 3.47.5
   REGISTRY: ghcr.io/hossam2100us-star
+  # Docker Hub's anonymous pull limit is shared by GitHub's runners, so CI
+  # pulls the same images (same digests) from Google's Docker Hub mirror.
+  # The images and the NAS package still name Docker Hub.
+  MIRROR: mirror.gcr.io
 
 jobs:
   build-test-push:
@@ -48,8 +52,10 @@ jobs:
           du -sh build/web | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Build images
         run: |
-          docker build -t "$REGISTRY/science-adventure-api:trial" backend
-          docker build -f infrastructure/web/Dockerfile -t "$REGISTRY/science-adventure-web:trial" .
+          docker build --build-arg NODE_IMAGE="$MIRROR/library/node:22-bookworm-slim" \
+            -t "$REGISTRY/science-adventure-api:trial" backend
+          docker build --build-arg NGINX_IMAGE="$MIRROR/nginxinc/nginx-unprivileged:1.29-alpine" \
+            -f infrastructure/web/Dockerfile -t "$REGISTRY/science-adventure-web:trial" .
       - name: nginx configuration is valid
         run: docker run --rm "$REGISTRY/science-adventure-web:trial" nginx -t
       - uses: actions/setup-node@v4
@@ -59,6 +65,10 @@ jobs:
       # creates root-owned folders, and the settings files hold test secrets.
       - name: Copy the Synology package to a scratch folder
         run: mkdir -p "$RUNNER_TEMP/nas" && cp -r infrastructure/nas/. "$RUNNER_TEMP/nas"
+      - name: Database image from the mirror (the package names postgres:17)
+        run: |
+          docker pull "$MIRROR/library/postgres:17"
+          docker tag "$MIRROR/library/postgres:17" postgres:17
       - name: Synology package end to end (docker compose)
         working-directory: ${{ runner.temp }}/nas
         run: |
@@ -96,7 +106,7 @@ jobs:
       - name: Image vulnerability scan (Trivy)
         run: |
           for image in api web; do
-            docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest \
+            docker run --rm -v /var/run/docker.sock:/var/run/docker.sock "$MIRROR/aquasec/trivy:latest" \
               image --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed --no-progress \
               "$REGISTRY/science-adventure-$image:trial"
           done

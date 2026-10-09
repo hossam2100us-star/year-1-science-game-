@@ -24,7 +24,10 @@ jobs:
         working-directory: backend
     services:
       postgres:
-        image: postgres:17
+        # Docker Hub's anonymous pull limit is shared by GitHub's runners, so
+        # CI pulls the same images (same digests) from Google's Docker Hub
+        # mirror. The NAS still pulls from Docker Hub.
+        image: mirror.gcr.io/library/postgres:17
         env:
           POSTGRES_USER: ci
           POSTGRES_PASSWORD: ci-only-not-a-secret
@@ -75,10 +78,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build the API image
-        run: docker build -t science-adventure-api:ci backend
+        run: |
+          docker build --build-arg NODE_IMAGE=mirror.gcr.io/library/node:22-bookworm-slim \
+            -t science-adventure-api:ci backend
       - name: Image vulnerability scan (Trivy)
         run: |
-          docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest \
+          docker run --rm -v /var/run/docker.sock:/var/run/docker.sock mirror.gcr.io/aquasec/trivy:latest \
             image --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed --no-progress science-adventure-api:ci
       - name: Image runs as a non-root user
         run: test "$(docker image inspect -f '{{.Config.User}}' science-adventure-api:ci)" = "node"
