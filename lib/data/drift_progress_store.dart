@@ -8,6 +8,7 @@ import '../core/storage.dart';
 import '../domain/canonical_json.dart';
 import 'db/app_database.dart';
 import 'repositories.dart';
+import 'sync/outbox.dart';
 
 /// [ProgressStore] on SQLite (AUD-004).
 ///
@@ -16,12 +17,16 @@ import 'repositories.dart';
 /// journey, one usage day, ...) inside a single transaction, instead of
 /// re-encoding every child and photo. Data is loaded once when the store
 /// opens, so [read] stays synchronous.
+///
+/// For a child linked to a parent account, the same transaction also queues
+/// each change in the [outbox] for sync; other children never produce one.
 class DriftProgressStore implements ProgressStore {
   DriftProgressStore._(this.db, this.deviceId)
     : children = ChildRepository(db),
       settings = SettingsRepository(db),
       progress = ProgressRepository(db),
-      quarantine = QuarantineRepository(db);
+      quarantine = QuarantineRepository(db),
+      outbox = SyncOutbox(db);
 
   final AppDatabase db;
 
@@ -31,12 +36,17 @@ class DriftProgressStore implements ProgressStore {
   final SettingsRepository settings;
   final ProgressRepository progress;
   final QuarantineRepository quarantine;
+  final SyncOutbox outbox;
 
   AppData _data = const AppData();
   Map<String, _ChildSnapshot> _snapshots = {};
   Map<String, Map<String, dynamic>> _savedRaw = {};
   Set<String> _quarantineIds = {};
   bool _activeStored = false;
+  Set<String> _linked = {};
+
+  /// Children whose changes are synced with the parent account.
+  Set<String> get linkedChildren => Set.unmodifiable(_linked);
 
   /// Usage recorded by other devices (after sync), per child and day.
   Map<String, Map<String, int>> _otherUsage = {};
@@ -79,6 +89,10 @@ class DriftProgressStore implements ProgressStore {
             if (damaged.isNotEmpty) 'quarantine': damaged,
           });
     _activeStored = active != null && active == _data.activeChildId;
+    _linked = {
+      for (final r in rows)
+        if (r.syncStatus == 'linked') r.id,
+    };
     _savedRaw = Map.of(_data.savedChildren);
     _quarantineIds = _data.quarantinedChildren.keys.toSet();
     final order = [for (final r in rows) r.id];
@@ -143,7 +157,9 @@ class DriftProgressStore implements ProgressStore {
     final nextRaw = <String, Map<String, dynamic>>{};
     await db.transaction(() async {
       for (final id in _snapshots.keys) {
-        if (!records.containsKey(id)) await children.delete(id);
+        if (records.containsKey(id)) continue;
+        await children.delete(id);
+        if (_linked.contains(id)) await outbox.childDelete(id);
       }
       var order = 0;
       for (final entry in records.entries) {
@@ -172,6 +188,7 @@ class DriftProgressStore implements ProgressStore {
     });
     // Publish only after the transaction committed.
     _activeStored = true;
+    _linked = _linked.intersection(records.keys.toSet());
     _snapshots = next;
     _savedRaw = nextRaw;
     _data = data;
@@ -183,6 +200,8 @@ class DriftProgressStore implements ProgressStore {
     _ChildSnapshot? before,
     _ChildSnapshot after,
   ) async {
+    // A linked child always existed before this save (linking is explicit).
+    final sync = before != null && _linked.contains(id) ? outbox : null;
     if (before == null ||
         before.profileKey != after.profileKey ||
         before.sortOrder != order) {
@@ -192,6 +211,20 @@ class DriftProgressStore implements ProgressStore {
         pendingPhoto: after.pendingPhoto,
         sortOrder: order,
       );
+      final (from, to) = (before?.profile, after.profile);
+      if (sync != null && from != null && to != null) {
+        final old = SyncOutbox.childFields(from);
+        final now = SyncOutbox.childFields(to);
+        await sync.childPatch(
+          id,
+          changed: {
+            for (final k in now.keys)
+              if (now[k] != old[k]) k: now[k],
+          },
+          before: old,
+          baseVersion: (await children.row(id))!.version,
+        );
+      }
     }
     after.sortOrder = order;
     if (before == null || !_samePhoto(before.photo, after.photo)) {
@@ -199,26 +232,72 @@ class DriftProgressStore implements ProgressStore {
     }
     if (before == null || before.settings != after.settings) {
       await settings.put(id, after.settingsJson);
+      if (sync != null && before != null) {
+        final old = before.settingsJson;
+        final now = after.settingsJson;
+        await sync.settingsPatch(
+          id,
+          changed: {
+            for (final k in now.keys)
+              if (now[k] != old[k]) k: now[k],
+          },
+          before: old,
+          baseVersion: await settings.version(id),
+        );
+      }
     }
     if (before == null || before.attempts != after.attempts) {
-      await progress.replaceAttempts(id, after.attemptList);
+      final change = await progress.replaceAttempts(id, after.attemptList);
+      if (sync != null) {
+        for (final (id: attemptId, :attempt) in change.added) {
+          await sync.attemptCreate(
+            id,
+            attemptId,
+            SyncOutbox.attemptPayload(
+              progress.curriculum,
+              unitId: attempt.unitId,
+              contentVersion: attempt.contentVersion,
+              completed: attempt.completed,
+              effortStars: attempt.effortStars,
+              completedAt: attempt.completedAt.toIso8601String(),
+              clientAttemptId: attempt.attemptId,
+              objectives: {
+                for (final o in attempt.objectives.entries) o.key: o.value.name,
+              },
+            ),
+          );
+        }
+        for (final removed in change.removed) {
+          await sync.attemptDelete(id, removed);
+        }
+      }
     }
     for (final key in {...?before?.journeys.keys, ...after.journeys.keys}) {
       final value = after.journeys[key];
       if (value == null) {
         await progress.deleteJourney(id, key);
+        await sync?.journeyDelete(id, progress.curriculum, key);
       } else if (before?.journeys[key] != value) {
         await progress.putJourney(id, key, after.journeyJson[key]!);
+        await sync?.journeyPut(
+          id,
+          progress.curriculum,
+          key,
+          after.journeyJson[key]!,
+          baseVersion: await progress.journeyVersion(id, key),
+        );
       }
     }
     final others = _otherUsage[id] ?? const {};
     for (final day in {...?before?.usage.keys, ...after.usage.keys}) {
       final total = after.usage[day];
       if (total == null) {
+        // Play time already on the server stays there (a grow-only counter).
         await progress.deleteUsage(id, deviceId, day);
       } else if (before?.usage[day] != total) {
         final local = total - (others[day] ?? 0);
         await progress.putUsage(id, deviceId, day, local < 0 ? 0 : local);
+        await sync?.usagePut(id, day, local < 0 ? 0 : local);
       }
     }
     for (final key in {...?before?.subjects.keys, ...after.subjects.keys}) {

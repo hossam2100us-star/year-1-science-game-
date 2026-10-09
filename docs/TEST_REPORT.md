@@ -147,3 +147,93 @@ osv-scanner reported `deepmerge-ts` 7.1.5 (GHSA-ggr8-5vv4-36mx) and `mysql2`
 3.15.3 (GHSA-3f6p-5ww8-9rcr, GHSA-rgwj-5xj2-c3m3), both pulled in by the Prisma
 CLI 7.10.0. npm `overrides` pin the fixed versions (8.0.2, 3.24.5); unit 37/37,
 end-to-end 68/68 and the build pass with them.
+
+## Synology trial deployment (2026-10-05, done by a DevOps agent session)
+
+| Item | Result |
+|---|---|
+| NAS | DS920+ (x86_64), DSM 7.4.1; project `science-adventure` in Container Manager |
+| Address | `https://school.hmsfamily.synology.me` via the existing `hmsfamily.synology.me` DDNS, wildcard Let's Encrypt certificate and port 443; reverse proxy → `localhost:8480` |
+| Containers | db, api (healthy), web, backup all running; first daily dump written |
+| From outside the house | `/` 200, `/download/` 200, `/healthz` 200; the APK link 404s until the file is added |
+| Network | not carrier-grade NAT; 443 reachable from outside |
+
+Findings and what changed in the package afterwards:
+- Container Manager does not create bind-mount folders: `data/postgres` and
+  `backups` are now a documented setup step.
+- The `json-file` log driver hid logs in Container Manager: the compose file
+  now leaves logging to Synology's default driver.
+- Two HSTS headers (DSM and nginx): nginx no longer sends one.
+- Fonts were sent uncompressed (`.ttf` had no MIME type): nginx now knows
+  `font/ttf`/`font/otf`, and the image pre-compresses all static files with
+  `gzip -9` (`gzip_static`).
+- Still open: Container Manager shows environment variables (including the
+  database URL) in its General tab to NAS administrators; moving secrets to
+  `*_FILE` mounts is a later hardening step.
+## Trial release 0.4.0 (versionCode 4), 2026-10-09
+
+- `flutter build apk --release --obfuscate --split-debug-info=… --target-platform android-arm,android-arm64`: 46.7 MB; signed with the upload key (certificate SHA-256 `a8:03:33:…:74:12:79`, the key created on 2026-10-05); no permissions besides Android's internal receiver permission.
+- Smoke test of the same code built for x86_64 on the Android 14 emulator (release, obfuscated):
+  - cold start 2.6-6.4 s;
+  - a child was added through onboarding;
+  - a discovery in unit 1 was answered;
+  - after a force-stop and relaunch the unit resumed at 1 / 7 with that discovery starred;
+  - no crash, ANR or plugin error in `logcat`.
+- Obfuscation symbols kept outside the repository for decoding crash reports.
+## Milestone M4 — accounts and sync on the device (branch `remediation/m4-app-sync`)
+
+### Local (2026-10-09)
+
+- `flutter analyze --fatal-infos`: no issues; `dart format --set-exit-if-changed`: clean.
+- `flutter test`: all tests pass (394 before the account tab, plus the panel tests).
+- New suites: API client 11, account mode 7, attempt IDs 4, journey merge 8 (incl. 2,000 randomised merges), outbox 11, schema 1 → 2 migration 1, two devices 11 (in-memory server with the backend's rules), account tab 3.
+- **Against the real backend** (NestJS + PostgreSQL 17 embedded, `REQUIRE_VERIFIED_EMAIL_FOR_SYNC=false`, memory mailer): `SYNC_LIVE_URL=http://localhost:3999 flutter test test/sync/live_backend_test.dart` → 6/6 (link, progress from two devices, name conflict, settings from both, journey merge, removal); no change refused by the server.
+
+### Android emulator (2026-10-09, Android 14, x86_64)
+
+- **Upgrade 0.4.0 → 0.5.0 in place** (release, obfuscated, same upload key, `adb install -r`): the child and the unit 1 progress (3 of 7 discoveries) were still there; the database moved from schema 1 to 2.
+- The parent area shows the new "Parent account" tab, device-only by default, in Arabic (right to left).
+- **Account flow against a local backend** (debug build, `API_BASE_URL=http://10.0.2.2:3999`):
+  - consent dialog (continue disabled until the three points are ticked);
+  - account created and signed in from the app;
+  - the session survived reinstalling and restarting the app (refresh token in the Keystore-backed store);
+  - the child was added to the account after the confirmation, sync reported "everything is saved", and the server listed the child and its settings.
+- Found and fixed on the way:
+  - the bold "في" in the link button rendered with a clipped tail (button reworded);
+  - two cards had the same title;
+  - dates followed the device language instead of the parent's.
+- Not tested on the emulator against the trial server: creating an account there would send a real verification email; that is part of the owner's trial.
+
+## Trial release 0.5.0 (versionCode 5), 2026-10-09
+
+- Built from `ffd5a4a` (parent accounts and sync on Android; the later web-only change does not affect Android):
+  `flutter build apk --release --obfuscate --split-debug-info=… --target-platform android-arm,android-arm64 --dart-define=API_BASE_URL=https://school.hmsfamily.synology.me` → 48.1 MB.
+- Signed with the upload key (certificate SHA-256 `a8:03:33:…:74:12:79`, same as 0.4.0, so it installs over it). Permissions: `INTERNET` and Android's internal receiver permission only.
+- Obfuscation checked in the packaged `libapp.so` (arm64 and arm): no `.debug_*` sections, no class names of the app.
+- The same code built for x86_64 upgraded 0.4.0 in place on the Android 14 emulator with the child and progress kept (see M4 above).
+- Symbols kept outside the repository with the 0.4.0 ones; the 0.4.0 APK kept aside for a rollback.
+- Not yet done: a first account on the trial server (needs a real email address) and a real phone.
+
+### First-run question (2026-10-09, owner request)
+
+- Builds with a server now ask once, before onboarding: "play on this device only" or "parent account".
+- Tests: `test/parent/account_choice_test.dart` (4):
+  - device only: no gate and no request;
+  - not asked again;
+  - the account branch needs the gate and the consent, then signing in brings the account's children;
+  - a child created while signed in is offered to the account behind the gate.
+- Also `test/account/account_controller_test.dart`: the choice survives a restart.
+- Emulator (fresh install, debug build):
+  - the question shows in Arabic;
+  - the account branch passes the gate and the consent to the sign-in page;
+  - "Continue to the game" opens onboarding;
+  - after a force-stop and relaunch the question is not asked again.
+
+## Trial release 0.5.1 (versionCode 6), 2026-10-09 — replaces 0.5.0 before distribution
+
+- Built from `79aa417` (adds the first-run question), same command and checks as 0.5.0:
+  - 48.2 MB;
+  - upload key `a8:03:33:…:74:12:79`;
+  - permissions `INTERNET` and the internal receiver permission only;
+  - no `.debug_*` sections or app class names in either packaged `libapp.so`.
+- 0.5.0 and 0.4.0 APKs and all symbol files kept outside the repository.

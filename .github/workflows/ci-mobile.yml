@@ -130,11 +130,13 @@ jobs:
         run: flutter build appbundle --release --obfuscate --split-debug-info=build/symbols
       - name: Release APK (obfuscated, per-ABI)
         run: flutter build apk --release --split-per-abi --obfuscate --split-debug-info=build/symbols
-      - name: No platform permissions in the release APK
+      # Internet is the only permission (parent accounts and sync, ADR-0002);
+      # the device-only mode makes no network requests at all.
+      - name: Only the internet permission in the release APK
         run: |
           AAPT2=$(ls "$ANDROID_HOME"/build-tools/*/aapt2 | sort -V | tail -n 1)
           for apk in build/app/outputs/flutter-apk/app-*-release.apk; do
-            perms=$("$AAPT2" dump permissions "$apk" | grep -E '^uses-permission' | grep -v 'DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION' || true)
+            perms=$("$AAPT2" dump permissions "$apk" | grep -E '^uses-permission' | grep -v 'DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION' | grep -v "name='android.permission.INTERNET'" || true)
             if [ -n "$perms" ]; then echo "Unexpected permissions in $apk:"; echo "$perms"; exit 1; fi
           done
       - name: Build sizes
@@ -162,7 +164,7 @@ jobs:
       - if: steps.web.outputs.present == 'true'
         run: flutter pub get --enforce-lockfile
       - if: steps.web.outputs.present == 'true'
-        run: flutter build web --release
+        run: flutter build web --release --no-web-resources-cdn --no-wasm-dry-run
       - name: Web bundle size
         if: steps.web.outputs.present == 'true'
         run: du -sh build/web | tee -a "$GITHUB_STEP_SUMMARY"

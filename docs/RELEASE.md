@@ -63,6 +63,10 @@ flutter build apk --release --split-per-abi --obfuscate --split-debug-info=build
   traces into `build/symbols/`. Keep them **privately** with the release
   (for example attached to a private release record, never to a public one);
   they are git-ignored (`debug-info/`, `build/`).
+* The build prints "The generated ELF library contains unobfuscated DWARF
+  debugging information". That is the intermediate library: the Android
+  build strips it before packaging. Checked for 0.5.0: `libapp.so` inside
+  the APK has no `.debug_*` sections and none of the app's class names.
 * R8 minification and resource shrinking are already on for release.
 * Upload the `.aab` to Google Play; attach per-ABI `.apk` files to a GitHub
   Release only if sideloading is needed. Never commit APK/AAB files.

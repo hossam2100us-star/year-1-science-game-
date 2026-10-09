@@ -11,6 +11,7 @@ import {
   PwnedPasswordsChecker,
 } from './password.service';
 import { TokenService } from './token.service';
+import { GoogleVerifier } from './google';
 
 @Module({
   controllers: [AuthController],
@@ -18,6 +19,7 @@ import { TokenService } from './token.service';
     AuthService,
     PasswordService,
     TokenService,
+    GoogleVerifier,
     AuditService,
     { provide: AttemptLimiter, useFactory: () => new AttemptLimiter() },
     {
@@ -28,6 +30,6 @@ import { TokenService } from './token.service';
     },
   ],
   // The global JwtAuthGuard is registered in AppModule (after the rate limiter).
-  exports: [AuthService, TokenService, PasswordService, AuditService],
+  exports: [AuthService, TokenService, PasswordService, AuditService, GoogleVerifier],
 })
 export class AuthModule {}

@@ -7,9 +7,13 @@ import '../core/models.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/widgets.dart';
+import '../data/account/account_controller.dart';
+import '../data/sync/sync_controller.dart';
+import 'account_panel.dart';
 import 'voice_settings.dart';
 import '../features/onboarding/profile_editor.dart';
 import 'parent_gate.dart';
+import 'parent_section.dart';
 import 'unit_report.dart';
 import '../l10n/parent_strings.dart';
 
@@ -80,6 +84,18 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
       }
     }
 
+    // The account tab exists only in builds that know a server, on installs
+    // that can sync (not the web build yet: it has its own parent pages).
+    final accounts =
+        ref.watch(accountProvider.select((a) => a.available)) &&
+        ref.watch(syncProvider.select((s) => s.supported));
+    final tabs = [
+      l.parentAreaResults,
+      l.parentAreaSettings,
+      l.parentAreaGuide,
+      if (accounts) l.parentAreaAccount,
+    ];
+    final linked = ref.watch(syncProvider).linked.contains(data.activeChildId);
     final parentTheme = Theme.of(context).copyWith(
       textTheme: Theme.of(context).textTheme
           .apply(fontFamily: ar ? 'Cairo' : 'Nunito'),
@@ -122,7 +138,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                   spacing: 12,
                   runSpacing: 12,
                   children: [
-                    for (var i = 0; i < 3; i++)
+                    for (var i = 0; i < tabs.length; i++)
                       OutlinedButton.icon(
                         onPressed: () => setState(() => _tab = i),
                         icon: Icon(
@@ -130,20 +146,14 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                               ? Icons.check_circle_rounded
                               : Icons.circle_outlined,
                         ),
-                        label: Text(
-                          [
-                            l.parentAreaResults,
-                            l.parentAreaSettings,
-                            l.parentAreaGuide,
-                          ][i],
-                        ),
+                        label: Text(tabs[i]),
                       ),
                   ],
                 ),
                 const SizedBox(height: 22),
 
                 if (_tab == 1)
-                  _Section(
+                  ParentSection(
                     title: l.parentAreaChildAndAppearance,
                     children: [
                       Text(
@@ -209,11 +219,15 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                         ],
                       ),
                       const SizedBox(height: 12),
-                      Text(l.parentAreaEditingThisProfileKeepsProgress),
+                      Text(
+                        linked
+                            ? l.parentAreaEditingLinkedProfile
+                            : l.parentAreaEditingThisProfileKeepsProgress,
+                      ),
                     ],
                   ),
                 if (_tab == 0)
-                  _Section(
+                  ParentSection(
                     title: l.parentAreaUnitAssessment,
                     children: [
                       Text(l.parentAreaStarsRewardEffortAndCompletion),
@@ -223,7 +237,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                     ],
                   ),
                 if (_tab == 0)
-                  _Section(
+                  ParentSection(
                     title: l.parentAreaTimeOnTheChildScreens,
                     children: [
                       if (data.dailySeconds.isEmpty)
@@ -239,7 +253,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                     ],
                   ),
                 if (_tab == 1)
-                  _Section(
+                  ParentSection(
                     title: l.parentAreaBreaksAndAudio,
                     children: [
                       Text(
@@ -285,8 +299,9 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                       VoiceSettings(arabic: ar),
                     ],
                   ),
+                if (_tab == 3 && accounts) AccountPanel(arabic: ar),
                 if (_tab == 2)
-                  _Section(
+                  ParentSection(
                     title: l.parentAreaHowToUseTheAdventure,
                     children: [
                       for (final rule in ref.read(catalogProvider).parentRules)
@@ -298,7 +313,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                     ],
                   ),
                 if (_tab == 1)
-                  _Section(
+                  ParentSection(
                     title: l.parentAreaResetProgress,
                     children: [
                       Text(l.parentAreaThisClearsResultsTimeAnd),
@@ -348,7 +363,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                     ],
                   ),
                 if (_tab == 1 && _needsRecovery(data))
-                  _Section(
+                  ParentSection(
                     title: l.parentAreaDataNeedingAttention,
                     children: [
                       Text(
@@ -397,7 +412,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                     ],
                   ),
                 if (_tab == 1)
-                  _Section(
+                  ParentSection(
                     title: l.parentAreaDiagnostics,
                     children: [
                       Text(l.parentAreaIfSavingOrSoundGoes),
@@ -426,29 +441,4 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
       ),
     );
   }
-}
-
-class _Section extends StatelessWidget {
-  const _Section({required this.title, required this.children});
-  final String title;
-  final List<Widget> children;
-  @override
-  Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.only(bottom: 22),
-    child: Material(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(26),
-      child: Padding(
-        padding: const EdgeInsets.all(22),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(title, style: Theme.of(context).textTheme.headlineMedium),
-            const SizedBox(height: 16),
-            ...children,
-          ],
-        ),
-      ),
-    ),
-  );
 }

@@ -1,0 +1,16 @@
+# Accepted dependency advisories for backend/package-lock.json, read by the
+# osv-scanner step of .github/workflows/security-scan.yml. Every entry has a
+# reason and an expiry date; after it the scan fails again and the entry
+# must be re-checked.
+
+[[IgnoredVulns]]
+id = "GHSA-hp3w-g68c-fv3c"
+ignoreUntil = 2027-01-09
+reason = """
+sprintf-js: every version up to 1.1.3 throws on an oversized precision in a
+format string (denial of service only when an attacker controls the format
+string). No fixed version exists. It is a development dependency only
+(ts-jest -> babel-plugin-istanbul -> @istanbuljs/load-nyc-config ->
+js-yaml 3 -> argparse 1), used with fixed format strings while tests run;
+it is not installed in the API image.
+"""

@@ -7,6 +7,7 @@ export type AuditAction =
   | 'register'
   | 'register_blocked'
   | 'email_verified'
+  | 'google_linked'
   | 'login_success'
   | 'login_failed'
   | 'logout'

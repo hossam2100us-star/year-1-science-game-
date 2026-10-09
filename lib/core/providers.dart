@@ -32,15 +32,34 @@ class AppController extends Notifier<AppData> {
   @override
   AppData build() => ref.read(storeProvider).read();
 
-  Future<void> _commit(AppData Function(AppData) change) {
-    final task = _tail.then((_) async {
-      final next = change(state);
-      await ref.read(storeProvider).write(next);
-      state = next;
-    });
-    _tail = task.catchError((Object _) {});
+  Future<void> _commit(AppData Function(AppData) change) => exclusive(() async {
+    final next = change(state);
+    await ref.read(storeProvider).write(next);
+    state = next;
+  });
+
+  /// Runs [action] between saves, never during one.
+  Future<T> exclusive<T>(Future<T> Function() action) {
+    final task = _tail.then((_) => action());
+    _tail = task.then<void>((_) {}, onError: (Object _) {});
     return task;
   }
+
+  /// For changes written to the store directly (sync applying what another
+  /// device changed): [apply] runs between saves, and when it reports a
+  /// change the store is [reload]ed and the app shows the new data. Saves
+  /// queued meanwhile then build on that data instead of overwriting it.
+  Future<bool> applyExternal(
+    Future<bool> Function() apply, {
+    required Future<void> Function() reload,
+  }) => exclusive(() async {
+    final changed = await apply();
+    if (changed) {
+      await reload();
+      state = ref.read(storeProvider).read();
+    }
+    return changed;
+  });
 
   Future<void> _childCommit(AppData Function(AppData) change) {
     final owner = state.activeChildId;
@@ -55,6 +74,21 @@ class AppController extends Notifier<AppData> {
 
   Future<void> saveProfile(ChildProfile profile) =>
       _childCommit((s) => s.copyWith(profile: profile));
+
+  /// Changes the profile of [childId], active or not (a parent choosing
+  /// which name to keep after a sync conflict).
+  Future<void> changeProfileOf(
+    String childId,
+    ChildProfile Function(ChildProfile) change,
+  ) => _commit(
+    (s) => s.childRecords.containsKey(childId)
+        ? s.changeChild(
+            childId,
+            (c) =>
+                c.profile == null ? c : c.copyWith(profile: change(c.profile!)),
+          )
+        : s,
+  );
   Future<void> settings(AppSettings settings) =>
       _childCommit((s) => s.copyWith(settings: settings));
   Future<void> photoPending(bool value) =>

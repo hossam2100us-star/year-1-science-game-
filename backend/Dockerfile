@@ -1,4 +1,3 @@
-# syntax=docker/dockerfile:1.7
 # Science Adventure API — multi-stage image (Future System Architecture §15):
 # non-root user, no build tools or dev dependencies in the final image,
 # health check, read-only friendly (writes nothing to its filesystem).
@@ -26,7 +25,11 @@ RUN apt-get update \
            /usr/local/bin/yarn /usr/local/bin/yarnpkg /opt/yarn-*
 ENV NODE_ENV=production \
     PORT=3000 \
-    NODE_OPTIONS=--enable-source-maps
+    NODE_OPTIONS=--enable-source-maps \
+    CHECKPOINT_DISABLE=1 \
+    PRISMA_HIDE_UPDATE_MESSAGE=1 \
+    HOME=/tmp \
+    XDG_CACHE_HOME=/tmp
 WORKDIR /app
 # The generated Prisma client is compiled into dist/; prisma/ and the CLI are
 # kept so the container can apply migrations on start (`migrate deploy`).

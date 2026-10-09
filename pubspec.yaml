@@ -1,7 +1,7 @@
 name: science_adventure
 description: An offline science adventure for children and their parents.
 publish_to: none
-version: 0.3.0+3
+version: 0.5.1+6
 environment:
   sdk: '>=3.13.4 <4.0.0'
   flutter: '>=3.47.5'
@@ -23,6 +23,8 @@ dependencies:
   drift: 2.35.1
   drift_flutter: 0.3.1
   sqlite3: 3.7.0
+  http: 1.6.0
+  flutter_secure_storage: 11.2.0
 dev_dependencies:
   build_runner: 2.16.1
   drift_dev: 2.35.1

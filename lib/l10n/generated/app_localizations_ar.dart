@@ -354,4 +354,305 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get childChooserDeleteConfirm => 'حذف الملف';
+
+  @override
+  String get childChooserDeleteLinked =>
+      'الطفل ده محفوظ في حساب ولي الأمر، فبياناته وتقدّمه هيتمسحوا كمان من الحساب ومن أجهزتك التانية.';
+
+  @override
+  String get parentAreaAccount => 'حساب ولي الأمر';
+
+  @override
+  String get parentAreaEditingLinkedProfile =>
+      'تغيير البيانات مش بيمسح التقدم. الاسم الأول والاختيارات بيتحفظوا كمان في حساب ولي الأمر، والصورة بتفضل على الجهاز ده بس.';
+
+  @override
+  String get choiceTitle => 'أهلاً بيك! قبل ما نبدأ';
+
+  @override
+  String get choiceBody =>
+      'ولي الأمر يختار اللعبة تحفظ تقدّم الأطفال فين. تقدر تغيّر الاختيار بعدين من ركن الأهل.';
+
+  @override
+  String get choiceDeviceButton => 'العب على الجهاز ده بس';
+
+  @override
+  String get choiceContinue => 'كمّل للعبة';
+
+  @override
+  String get accountNotNow => 'مش دلوقتي';
+
+  @override
+  String get accountDeviceOnlyTitle => 'على الجهاز ده بس';
+
+  @override
+  String get accountDeviceOnlyBody =>
+      'الأطفال وتقدّمهم محفوظين على الجهاز ده بس، واللعبة مش بتتصل بالإنترنت.';
+
+  @override
+  String get accountWhyTitle => 'حساب ولي الأمر';
+
+  @override
+  String get accountWhyBody =>
+      'بحساب ولي الأمر، الأطفال اللي تختارهم بيظهروا بتقدّمهم على أجهزتك التانية وعلى الموقع. تقدر توقف في أي وقت، ومفيش حاجة بتتمسح من الجهاز ده.';
+
+  @override
+  String get accountUseAccount => 'جهّز حساب ولي الأمر';
+
+  @override
+  String get accountConsentTitle => 'قبل ما تبدأ';
+
+  @override
+  String get accountConsentTrial =>
+      'تجربة خاصة: الكلام ده مسودة لتجربة الأهل والأصحاب.';
+
+  @override
+  String get accountConsentParent =>
+      'أنا ولي أمر الأطفال اللي هحفظهم في الحساب.';
+
+  @override
+  String get accountConsentData =>
+      'موافق إن لكل طفل أحفظه في الحساب، يتحفظ على سيرفر العيلة: الاسم الأول والجنس والشخصية والألوان والإعدادات وتقدّم الدروس ووقت اللعب. الصور عمرها ما بتخرج من الجهاز ده.';
+
+  @override
+  String get accountConsentDelete =>
+      'عارف إني أقدر أمسح الحساب وكل اللي محفوظ فيه في أي وقت.';
+
+  @override
+  String get accountContinue => 'كمّل';
+
+  @override
+  String get accountCancel => 'إلغاء';
+
+  @override
+  String get accountSignInTitle => 'تسجيل الدخول';
+
+  @override
+  String get accountEmail => 'الإيميل';
+
+  @override
+  String get accountPassword => 'كلمة السر';
+
+  @override
+  String get accountSignIn => 'ادخل';
+
+  @override
+  String get accountCreate => 'اعمل حساب جديد';
+
+  @override
+  String get accountCreateTitle => 'حساب ولي أمر جديد';
+
+  @override
+  String get accountPasswordRule =>
+      '١٢ حرف على الأقل. جملة قصيرة بتبقى أسهل في الحفظ.';
+
+  @override
+  String get accountPasswordRepeat => 'اكتب كلمة السر تاني';
+
+  @override
+  String get accountPasswordsDiffer => 'كلمتين السر مش زي بعض.';
+
+  @override
+  String get accountPasswordShort => 'استخدم ١٢ حرف على الأقل.';
+
+  @override
+  String get accountEmailInvalid => 'اكتب إيميل صحيح.';
+
+  @override
+  String get accountHaveAccount => 'عندي حساب بالفعل';
+
+  @override
+  String get accountForgot => 'نسيت كلمة السر؟';
+
+  @override
+  String get accountForgotSend => 'ابعت لينك التغيير';
+
+  @override
+  String get accountForgotSent =>
+      'لو الإيميل ده عليه حساب، هيوصله لينك تختار بيه كلمة سر جديدة.';
+
+  @override
+  String get accountBackToDevice => 'خليها على الجهاز ده بس';
+
+  @override
+  String get accountErrorCredentials => 'الإيميل أو كلمة السر مش صح.';
+
+  @override
+  String get accountErrorOffline =>
+      'مفيش اتصال بالسيرفر. اتأكد من النت وجرّب تاني.';
+
+  @override
+  String get accountErrorBusy => 'محاولات كتير. استنى شوية وجرّب تاني.';
+
+  @override
+  String get accountErrorBreached =>
+      'اختار كلمة سر تانية: دي ظهرت في تسريبات بيانات معروفة.';
+
+  @override
+  String get accountErrorClosed => 'عمل حسابات جديدة مقفول دلوقتي.';
+
+  @override
+  String get accountErrorGeneric => 'حصلت مشكلة. جرّب تاني بعد شوية.';
+
+  @override
+  String get accountCreatedCheckEmail =>
+      'بعتنالك إيميل عشان تأكد العنوان. لو كان عندك حساب قبل كده، ادخل بكلمة السر بتاعته.';
+
+  @override
+  String accountSignedInAs(Object email) {
+    return 'داخل بحساب $email';
+  }
+
+  @override
+  String accountConfirmEmail(Object email) {
+    return 'أكّد الإيميل عشان المزامنة تبدأ: افتح اللينك اللي بعتناه على $email.';
+  }
+
+  @override
+  String get accountResend => 'ابعت الإيميل تاني';
+
+  @override
+  String get accountResent => 'اتبعت. بص في الوارد وفي الـSpam.';
+
+  @override
+  String get accountConfirmed => 'أكدته';
+
+  @override
+  String get accountChildrenTitle => 'الأطفال على الجهاز ده';
+
+  @override
+  String get accountChildrenBody =>
+      'الأطفال اللي تحفظهم في الحساب بس هم اللي بيتزامنوا، والباقي بيفضل على الجهاز ده بس.';
+
+  @override
+  String get accountLinked => 'محفوظ في الحساب';
+
+  @override
+  String get accountNotLinked => 'على الجهاز ده بس';
+
+  @override
+  String get accountLink => 'ضيفه للحساب';
+
+  @override
+  String get accountLinkName =>
+      'عدّل الاسم الأول: لحد ٢٤ حرف من غير أرقام أو رموز.';
+
+  @override
+  String accountLinkConfirmTitle(Object name) {
+    return 'تحفظ $name في الحساب؟';
+  }
+
+  @override
+  String get accountLinkConfirmBody =>
+      'الاسم الأول والجنس والشخصية والألوان والإعدادات وتقدّم الدروس ووقت اللعب هيتحفظوا في حساب ولي الأمر ويظهروا على أجهزتك التانية. الصورة بتفضل هنا.';
+
+  @override
+  String get accountSyncTitle => 'المزامنة';
+
+  @override
+  String get accountConfirmTitle => 'أكّد الإيميل';
+
+  @override
+  String get accountSyncNow => 'زامن دلوقتي';
+
+  @override
+  String get accountSyncRunning => 'بيزامن…';
+
+  @override
+  String accountSyncLast(Object time) {
+    return 'آخر مزامنة: $time';
+  }
+
+  @override
+  String get accountSyncNever => 'لسه ما اتزامنش.';
+
+  @override
+  String accountSyncWaiting(int count) {
+    return 'تغييرات مستنية تتبعت: $count';
+  }
+
+  @override
+  String get accountSyncAllSent => 'كل حاجة محفوظة في الحساب.';
+
+  @override
+  String get accountSyncOffline =>
+      'مفيش اتصال. التغييرات مستنية على الجهاز وهتتبعت بعدين.';
+
+  @override
+  String get accountSyncUnavailable =>
+      'السيرفر مشغول. المزامنة هتحاول تاني بعدين.';
+
+  @override
+  String get accountSyncUnexpected =>
+      'المزامنة واجهت مشكلة وهتحاول تاني. التفاصيل في سجل التشخيص.';
+
+  @override
+  String get accountSyncSignedOut =>
+      'ادخل تاني عشان المزامنة تكمّل. مفيش حاجة اتغيرت على الجهاز.';
+
+  @override
+  String accountSyncRefused(int count) {
+    return 'تغييرات الحساب رفضها ومحفوظة على الجهاز: $count';
+  }
+
+  @override
+  String get accountSyncRetry => 'ابعتهم تاني';
+
+  @override
+  String accountIssueName(Object child, Object theirs, Object mine) {
+    return '$child: الاسم اتغير على جهاز تاني لـ«$theirs»، والجهاز ده كان عليه «$mine».';
+  }
+
+  @override
+  String accountIssueGender(Object child) {
+    return '$child: الجنس اتغير على جهاز تاني.';
+  }
+
+  @override
+  String get accountIssueKeep => 'سيبه كده';
+
+  @override
+  String get accountIssueUseMine => 'استخدم اللي على الجهاز ده';
+
+  @override
+  String accountIssueRemoved(Object child) {
+    return '$child اتمسح من الحساب على جهاز تاني، فاتمسح هنا كمان.';
+  }
+
+  @override
+  String accountIssueUnavailable(Object child) {
+    return '$child ما اتحفظش في الحساب لأنه كان اتمسح منه قبل كده، وهيفضل على الجهاز ده بس.';
+  }
+
+  @override
+  String get accountIssueOk => 'تمام';
+
+  @override
+  String get accountManageTitle => 'الحساب';
+
+  @override
+  String get accountSignOut => 'اخرج من الحساب';
+
+  @override
+  String get accountSignOutBody =>
+      'الأطفال والتقدم بيفضلوا على الجهاز. المزامنة بتقف لحد ما تدخل تاني.';
+
+  @override
+  String get accountLeave => 'بطّل استخدام الحساب على الجهاز ده';
+
+  @override
+  String get accountLeaveBody =>
+      'كل الأطفال بيفضلوا على الجهاز بكل تقدّمهم، على الجهاز ده بس. والحساب بيحتفظ بنسخته.';
+
+  @override
+  String get accountDelete => 'امسح الحساب';
+
+  @override
+  String get accountDeleteBody =>
+      'ده بيمسح حساب ولي الأمر وكل اللي محفوظ فيه. الأطفال وتقدّمهم بيفضلوا على الجهاز ده. اكتب كلمة السر للتأكيد.';
+
+  @override
+  String accountDeleteScheduled(Object date) {
+    return 'الحساب هيتمسح يوم $date.';
+  }
 }

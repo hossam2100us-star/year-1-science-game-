@@ -321,3 +321,80 @@ Synology NAS reachable from the internet, before any publishing.
 - *The database must be UTF-8:* the first migration refuses any other
   encoding (found when a Windows test database defaulted to WIN1252 and
   rejected an Arabic name).
+---
+
+## ADR-0017 — Sign in with Google, alongside email and password
+
+**Status:** accepted (owner request, 2026-10-05); server implemented in M4.
+
+**Context.** The owner wants parents to create accounts with their Google
+account. The architecture lists Google/Microsoft OIDC as a future option.
+
+**Decision.**
+- `POST /api/v1/auth/google` takes a Google ID token obtained on the device
+  (Sign in with Google). The server verifies it with `node:crypto`: RS256
+  only, a key from Google's published set (cached, refreshed at most once a
+  minute for an unknown key ID), issuer Google, audience one of
+  `GOOGLE_CLIENT_IDS`, not expired, email verified by Google.
+- Only Google's stable subject ID is stored (`user_identities`); no name,
+  picture or Google tokens. Accounts are matched by subject, then by email.
+- A new account needs the consent version, like password sign-up.
+- *Pre-hijack protection:* linking Google to an existing account whose
+  email was never verified removes that account's password and ends its
+  sessions (someone else may have registered the address first).
+- Google-only accounts have no password: password sign-in fails, password
+  change answers `no_password`, "forgot password" can add one, and account
+  deletion accepts a Google sign-in from the last 10 minutes instead.
+
+**Consequences.** Needs a Google Cloud project with a web OAuth client
+(origin = the NAS HTTPS address) and an Android client (package name +
+SHA-1 of the signing key); works only once the NAS has its HTTPS name. The
+app gains the `google_sign_in` SDK, used only when a parent taps the
+button; review it against Google Play's Families SDK rules before any
+public release.
+## ADR-0018 — Accounts and sync on the device
+
+**Status:** accepted; implemented in M4 (Android).
+
+**Context.** The server side of sync exists (M3). The app must sync linked
+children without ever blocking play, losing progress, or uploading
+children the parent did not choose (ADR-0002, REC-02, REC-03).
+
+**Decision.**
+- *First run.* Builds with a server ask once, before anything else: "play on this device only" (no gate: it changes nothing) or a parent account (parent gate, then consent, then sign-in; the account's children then arrive on this device). A child created later while signed in is offered to the account, confirmed behind the gate. Both choices can be changed in the parent area.
+- *Modes.* Device-only is the default and has no API client object at all.
+  A parent account needs the parent's choice, three unticked consent points
+  (draft wording for the private trial) and a sign-in. Children are saved in
+  the account one by one, after a confirmation that lists what is stored;
+  photos are never part of a change.
+- *Outbox.* A save of a linked child writes its changes to the outbox in the
+  same SQLite transaction (profile and settings as field patches with the
+  values the server last had, attempts by their stable row ID, journeys,
+  this device's daily play time). Entries are coalesced only while they were
+  never sent; an entry sent without an answer keeps its mutation ID and is
+  sent again unchanged.
+- *Applying server data.* Push results and pulled changes are written
+  between the app's saves (`AppController.exclusive` / `applyExternal`),
+  then the store reloads, so a queued save builds on the new data instead
+  of overwriting it. A pull is applied in one transaction with its cursor.
+- *Conflicts are never dropped.* A name or gender the account kept is taken
+  and the device's value is shown to the parent with a choice; journeys
+  are merged so progress never goes backwards (`lib/domain/merge`);
+  refused changes stay in the outbox, visible, until the parent retries.
+  A journey is always sent against the version it was merged with.
+- *Deletions.* A child removed from the account elsewhere is removed here
+  and the parent is told. A child never synced under the current link, or
+  missing from a complete resync, is *not* deleted: it becomes device-only.
+  Signing in to another account turns every linked child back into a
+  device-only child; "stop using the account" does the same. Nothing is
+  deleted from the device by leaving an account.
+- *When.* At start-up and sign-in, on resume and pause, a few seconds after
+  a change (at most once a minute), every 15 minutes while open, and on
+  request; failures back off up to 15 minutes. Play never waits for it.
+
+**Consequences.** Database schema 2 (outbox `put`). Two devices playing the
+same lesson at the same moment: completed attempts are never lost, but the
+in-progress state of that lesson follows the later save while the lesson
+stays open on both. The web build keeps its own storage and has no sync
+yet. Tests run the two-device scenarios against an in-memory server and,
+locally, against the real backend (`test/sync/live_backend_test.dart`).

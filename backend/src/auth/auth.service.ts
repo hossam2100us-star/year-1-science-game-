@@ -9,6 +9,7 @@ import { EmailService } from '../email/email.service';
 import { type User } from '../generated/prisma/client';
 import { PrismaService, type Tx } from '../prisma/prisma.service';
 import { AttemptLimiter } from './attempt-limiter';
+import { GoogleVerifier } from './google';
 import { PasswordService } from './password.service';
 import { TokenService } from './token.service';
 
@@ -31,20 +32,28 @@ export interface IssuedSession {
   user: PublicUser;
 }
 
+export type SignInMethod = 'password' | 'google';
+
 export interface PublicUser {
   id: string;
   email: string;
   emailVerified: boolean;
+  signInMethods: SignInMethod[];
   createdAt: string;
 }
 
 export function publicUser(
-  user: Pick<User, 'id' | 'email' | 'emailVerifiedAt' | 'createdAt'>,
+  user: Pick<User, 'id' | 'email' | 'emailVerifiedAt' | 'createdAt' | 'passwordHash'> & {
+    identities: { provider: string }[];
+  },
 ): PublicUser {
+  const methods: SignInMethod[] = user.passwordHash ? ['password'] : [];
+  if (user.identities.some((i) => i.provider === 'google')) methods.push('google');
   return {
     id: user.id,
     email: user.email,
     emailVerified: user.emailVerifiedAt !== null,
+    signInMethods: methods,
     createdAt: user.createdAt.toISOString(),
   };
 }
@@ -58,6 +67,7 @@ export class AuthService {
     private readonly email: EmailService,
     private readonly audit: AuditService,
     private readonly limiter: AttemptLimiter,
+    private readonly google: GoogleVerifier,
     @Inject(APP_CONFIG) private readonly config: AppConfig,
   ) {}
 
@@ -182,36 +192,121 @@ export class AuthService {
     if (delay > 0) await sleep(delay);
 
     const user = await this.prisma.user.findUnique({ where: { email } });
-    const ok = user ? await this.passwords.verify(user.passwordHash, password) : false;
-    if (!user) await this.passwords.burnTime(password);
+    const ok = user?.passwordHash
+      ? await this.passwords.verify(user.passwordHash, password)
+      : false;
+    if (!user?.passwordHash) await this.passwords.burnTime(password);
     if (!user || !ok) {
       this.limiter.fail(accountKey, ip);
       if (user) await this.audit.record('login_failed', user.id);
       throw Problem.unauthorized('invalid_credentials', 'The email or password is not correct.');
     }
     this.limiter.succeed(accountKey, ip);
+    if (user.passwordHash && this.passwords.needsRehash(user.passwordHash)) {
+      await this.prisma.user.update({
+        where: { id: user.id },
+        data: { passwordHash: await this.passwords.hash(password) },
+      });
+    }
+    return this.startSession(user, deviceId, platform, 'password');
+  }
 
-    let current = user;
+  /**
+   * "Sign in with Google" (§9 future option, requested by the owner): the
+   * same account as the email address Google verified. A new account needs
+   * the consent version, like sign-up with a password.
+   */
+  async googleLogin(
+    idToken: string,
+    deviceId: string,
+    platform: Platform,
+    consentVersion: string | undefined,
+  ): Promise<IssuedSession> {
+    if (!this.google.enabled) {
+      throw new Problem(
+        404,
+        'google_sign_in_disabled',
+        'Not available',
+        'Google sign-in is not set up.',
+      );
+    }
+    const google = await this.google.verify(idToken);
+    const linked = await this.prisma.userIdentity.findUnique({
+      where: { provider_subject: { provider: 'google', subject: google.subject } },
+      include: { user: true },
+    });
+    if (linked) return this.startSession(linked.user, deviceId, platform, 'google');
+
+    const now = new Date();
+    const existing = await this.prisma.user.findUnique({ where: { email: google.email } });
+    if (existing) {
+      await this.prisma.$transaction(async (tx) => {
+        await tx.userIdentity.create({
+          data: { provider: 'google', subject: google.subject, userId: existing.id },
+        });
+        if (!existing.emailVerifiedAt) {
+          // The password was set before anyone proved owning this address, so
+          // it may belong to someone else: it is removed and its sessions end.
+          await tx.user.update({
+            where: { id: existing.id },
+            data: { emailVerifiedAt: now, passwordHash: null },
+          });
+          await this.revokeFamilies({ userId: existing.id }, tx);
+        }
+      });
+      await this.audit.record('google_linked', existing.id, {
+        passwordRemoved: !existing.emailVerifiedAt,
+      });
+      const fresh = await this.prisma.user.findUniqueOrThrow({ where: { id: existing.id } });
+      return this.startSession(fresh, deviceId, platform, 'google');
+    }
+
+    if (consentVersion !== this.config.consentVersion) {
+      throw Problem.unprocessable(
+        'consent_required',
+        'Please read and accept the consent text first.',
+      );
+    }
+    const allowed = this.config.signupAllowedEmails;
+    if (allowed && !allowed.has(google.email)) {
+      throw Problem.forbidden('registration_closed', 'Sign-up is limited to invited parents.');
+    }
+    const user = await this.prisma.user.create({
+      data: {
+        id: uuidv7(),
+        email: google.email,
+        passwordHash: null,
+        emailVerifiedAt: now,
+        consentVersion,
+        consentedAt: now,
+        identities: { create: { provider: 'google', subject: google.subject } },
+      },
+    });
+    await this.audit.record('register', user.id, { consentVersion, method: 'google' });
+    return this.startSession(user, deviceId, platform, 'google');
+  }
+
+  /** After a successful sign-in by any method. */
+  private async startSession(
+    user: User,
+    deviceId: string,
+    platform: Platform,
+    method: SignInMethod,
+  ) {
     if (user.status === 'pending_deletion') {
-      current = await this.prisma.user.update({
+      await this.prisma.user.update({
         where: { id: user.id },
         data: { status: 'active', deletionScheduledAt: null },
       });
       await this.audit.record('account_deletion_cancelled', user.id);
       this.email.deletionCancelled(user.email);
     }
-    if (this.passwords.needsRehash(user.passwordHash)) {
-      current = await this.prisma.user.update({
-        where: { id: user.id },
-        data: { passwordHash: await this.passwords.hash(password) },
-      });
-    }
     const session = await this.prisma.$transaction(async (tx) => {
       await this.touchDevice(tx, user.id, deviceId, platform);
       return this.createFamily(tx, user.id, deviceId, platform);
     });
-    await this.audit.record('login_success', user.id, { platform });
-    return this.issue(current, session.familyId, session.refreshToken, platform);
+    await this.audit.record('login_success', user.id, { platform, method });
+    return this.issue(user.id, session.familyId, session.refreshToken, platform);
   }
 
   async refresh(refreshToken: string): Promise<IssuedSession> {
@@ -266,7 +361,7 @@ export class AuthService {
       });
       await this.touchDevice(tx, row.userId, row.deviceId, row.platform as Platform);
     });
-    return this.issue(row.user, row.familyId, next, row.platform as Platform);
+    return this.issue(row.userId, row.familyId, next, row.platform as Platform);
   }
 
   async logout(userId: string, sessionId: string, all: boolean): Promise<void> {
@@ -338,6 +433,7 @@ export class AuthService {
     newPassword: string,
   ): Promise<void> {
     const user = await this.prisma.user.findUniqueOrThrow({ where: { id: userId } });
+    if (!user.passwordHash) throw noPassword();
     if (!(await this.passwords.verify(user.passwordHash, currentPassword))) {
       throw Problem.unauthorized('invalid_credentials', 'The current password is not correct.');
     }
@@ -359,11 +455,30 @@ export class AuthService {
     this.email.passwordChanged(user.email);
   }
 
-  /** Confirms the password for sensitive actions (account deletion). */
-  async confirmPassword(userId: string, password: string): Promise<User> {
+  /**
+   * Confirms it is really the parent before a sensitive action (account
+   * deletion): the password, or a Google sign-in made in the last 10 minutes
+   * with the Google account linked to this parent.
+   */
+  async confirmIdentity(
+    userId: string,
+    proof: { password: string } | { googleIdToken: string },
+  ): Promise<User> {
     const user = await this.prisma.user.findUniqueOrThrow({ where: { id: userId } });
-    if (!(await this.passwords.verify(user.passwordHash, password))) {
-      throw Problem.unauthorized('invalid_credentials', 'The password is not correct.');
+    if ('password' in proof) {
+      if (!user.passwordHash) throw noPassword();
+      if (!(await this.passwords.verify(user.passwordHash, proof.password))) {
+        throw Problem.unauthorized('invalid_credentials', 'The password is not correct.');
+      }
+      return user;
+    }
+    const google = await this.google.verify(proof.googleIdToken);
+    const linked = await this.prisma.userIdentity.findUnique({
+      where: { provider_subject: { provider: 'google', subject: google.subject } },
+    });
+    const recent = Date.now() / 1000 - google.issuedAt < 10 * 60;
+    if (linked?.userId !== userId || !recent) {
+      throw Problem.unauthorized('invalid_credentials', 'Please sign in with Google again.');
     }
     return user;
   }
@@ -405,13 +520,17 @@ export class AuthService {
   }
 
   private async issue(
-    user: User,
+    userId: string,
     familyId: string,
     refreshToken: string,
     platform: Platform,
   ): Promise<IssuedSession> {
+    const user = await this.prisma.user.findUniqueOrThrow({
+      where: { id: userId },
+      include: { identities: { select: { provider: true } } },
+    });
     return {
-      accessToken: await this.tokens.signAccess({ userId: user.id, sessionId: familyId }),
+      accessToken: await this.tokens.signAccess({ userId, sessionId: familyId }),
       tokenType: 'Bearer',
       expiresIn: this.tokens.accessTtlSeconds,
       refreshToken,
@@ -419,4 +538,11 @@ export class AuthService {
       user: publicUser(user),
     };
   }
+}
+
+function noPassword(): Problem {
+  return Problem.unprocessable(
+    'no_password',
+    'This account signs in with Google. Use "Forgot password" to add a password.',
+  );
 }

@@ -8,6 +8,7 @@ import { APP_CONFIG, type AppConfig } from '../config/config';
 import {
   ChangePasswordRequest,
   EmailRequest,
+  GoogleLoginRequest,
   LoginRequest,
   LogoutRequest,
   RefreshRequest,
@@ -68,6 +69,23 @@ export class AuthController {
       body.deviceId,
       body.platform,
       req.ip ?? '',
+    );
+    return this.respond(session, res);
+  }
+
+  @Public()
+  @Post('google')
+  @HttpCode(200)
+  @Throttle({ default: { limit: 20, ttl: MINUTE } })
+  async google(
+    @Body(new ZodPipe(GoogleLoginRequest)) body: z.output<typeof GoogleLoginRequest>,
+    @Res({ passthrough: true }) res: Response,
+  ) {
+    const session = await this.auth.googleLogin(
+      body.idToken,
+      body.deviceId,
+      body.platform,
+      body.consentVersion,
     );
     return this.respond(session, res);
   }

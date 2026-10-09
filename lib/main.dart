@@ -10,16 +10,22 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'content/catalog.dart';
 import 'core/design.dart';
 import 'core/diagnostics/app_log.dart';
+import 'core/ids.dart';
 import 'core/image_budget.dart';
 import 'core/models.dart';
 import 'core/providers.dart';
 import 'core/storage.dart';
 import 'core/usage_buffer.dart';
 import 'core/widgets.dart';
+import 'data/account/account_controller.dart';
 import 'data/db/app_database.dart';
+import 'data/drift_progress_store.dart';
+import 'data/sync/sync_controller.dart';
+import 'data/sync/sync_store.dart';
 import 'features/onboarding/profile_editor.dart';
 import 'features/world/subject_hub.dart';
 import 'features/onboarding/child_chooser.dart';
+import 'parent/account_choice.dart';
 import 'parent/parent_gate.dart';
 import 'startup/startup_problem.dart';
 import 'startup/storage_bootstrap.dart';
@@ -74,11 +80,19 @@ Future<void> _launch(Widget app) async {
     );
     return;
   }
+  final AccountSetup account;
+  if (store case DriftProgressStore(:final db, :final deviceId)) {
+    account = await AccountSetup.load(DatabaseAccountPrefs(db), deviceId);
+  } else {
+    // Web (and the Hive fallback): the browser cookie is the session.
+    account = await AccountSetup.load(MemoryAccountPrefs(), Ids.uuidV7());
+  }
   runApp(
     ProviderScope(
       overrides: [
         storeProvider.overrideWithValue(store),
         catalogProvider.overrideWithValue(catalog),
+        accountSetupProvider.overrideWithValue(account),
       ],
       child: app,
     ),
@@ -120,6 +134,9 @@ class _ScienceAdventureAppState extends ConsumerState<ScienceAdventureApp> {
       appProvider.select((d) => (d.settings, d.profile?.gender)),
       (_, _) => _configureVoice(ref.read(appProvider)),
     );
+    // The account session and sync live as long as the app; they run in the
+    // background and never block play (device-only: they do nothing).
+    ref.listen(syncProvider, (_, _) {});
     return MaterialApp(
       title: 'Science Adventure',
       debugShowCheckedModeBanner: false,
@@ -237,6 +254,12 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
       unawaited(_flushUsage()); // Never keep play time only in memory.
       ref.read(narrationProvider).stop();
     }
+    if (state == AppLifecycleState.resumed ||
+        state == AppLifecycleState.paused) {
+      ref
+          .read(syncProvider.notifier)
+          .lifecycle(foreground: state == AppLifecycleState.resumed);
+    }
     _resumed = state == AppLifecycleState.resumed;
     _last = null;
   }
@@ -263,6 +286,52 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
     _exitOpen = false;
   }
 
+  /// The children with a profile, as one comparable value (no child JSON).
+  static String _childIds(AppData d) => ([
+    ...d.savedChildren.keys,
+    if (d.profile != null) d.activeChildId,
+  ]..sort()).join(',');
+
+  /// A child was just created while a parent is signed in: offer to save
+  /// it in the account (children are saved one by one, ADR-0018).
+  Future<void> _offerToSave(Set<String> ids) async {
+    final store = ref.read(storeProvider);
+    final account = ref.read(accountProvider);
+    if (store is! DriftProgressStore ||
+        account.mode != AccountMode.account ||
+        !account.signedIn) {
+      return;
+    }
+    for (final id in ids) {
+      final data = ref.read(appProvider);
+      final record = data.savedChildren[id]?['profile'];
+      final child = id == data.activeChildId
+          ? data.profile
+          : record == null
+          ? null
+          : ChildProfile.fromJson(Map<String, dynamic>.from(record as Map));
+      if (!mounted ||
+          child == null ||
+          store.linkedChildren.contains(id) ||
+          !SyncStore.nameSyncable(child.name)) {
+        continue;
+      }
+      if (!await offerToSaveChild(
+        context,
+        arabic: data.settings.arabic,
+        name: child.name,
+        gender: child.gender,
+      )) {
+        continue;
+      }
+      try {
+        await ref.read(syncProvider.notifier).link(id);
+      } catch (error, stack) {
+        if (mounted) showSaveError(context, error, stack, area: 'sync');
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     ref.listen(appProvider.select((data) => data.activeChildId), (
@@ -272,12 +341,28 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
       _last = null;
       _sessionSeconds = 0;
     });
+    ref.listen(appProvider.select(_childIds), (previous, next) {
+      if (previous == null) return;
+      final added = next.split(',').toSet()
+        ..removeAll(previous.split(','))
+        ..remove('');
+      if (added.isEmpty) return;
+      WidgetsBinding.instance.addPostFrameCallback(
+        (_) => unawaited(_offerToSave(added)),
+      );
+    });
+    // Asked once on builds with accounts, before anything else (ADR-0002).
+    final askChoice =
+        ref.watch(accountProvider.select((a) => a.available && !a.chosen)) &&
+        ref.watch(syncProvider.select((s) => s.supported));
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, result) {
         if (!didPop) _exit();
       },
-      child: ref.watch(appProvider).profile == null
+      child: askChoice
+          ? const AccountChoice()
+          : ref.watch(appProvider).profile == null
           ? const ProfileEditor()
           : !_childChosen
           ? ChildChooser(

@@ -198,5 +198,151 @@
   },
   "childChooserDeleteBody": "This deletes the child's name, picture, progress and settings from this device. It cannot be undone. Other children's profiles stay saved.",
   "childChooserCancel": "Cancel",
-  "childChooserDeleteConfirm": "Delete profile"
+  "childChooserDeleteConfirm": "Delete profile",
+  "childChooserDeleteLinked": "This child is saved in your parent account, so the profile and progress are also removed from the account and from your other devices.",
+  "parentAreaAccount": "Parent account",
+  "parentAreaEditingLinkedProfile": "Editing this profile keeps progress. The first name and preferences are also saved in your parent account; the photo stays on this device.",
+  "choiceTitle": "Welcome! Before we start",
+  "choiceBody": "A grown-up chooses how the game keeps the children's progress. You can change this later in the parent area.",
+  "choiceDeviceButton": "Play on this device only",
+  "choiceContinue": "Continue to the game",
+  "accountNotNow": "Not now",
+  "accountDeviceOnlyTitle": "This device only",
+  "accountDeviceOnlyBody": "Children and their progress are saved on this device only. The app does not connect to the Internet.",
+  "accountWhyTitle": "A parent account",
+  "accountWhyBody": "With a parent account, the children you choose appear with their progress on your other devices and on the website. You can stop at any time; nothing is deleted from this device.",
+  "accountUseAccount": "Set up a parent account",
+  "accountConsentTitle": "Before you start",
+  "accountConsentTrial": "Private trial: this wording is a draft for the trial with family and friends.",
+  "accountConsentParent": "I am the parent or guardian of the children I will save in the account.",
+  "accountConsentData": "For each child I save in the account, I agree that the first name, gender, avatar, colours, settings, lesson progress and play time are stored on the family server. Photos never leave this device.",
+  "accountConsentDelete": "I know I can delete the account and everything stored in it at any time.",
+  "accountContinue": "Continue",
+  "accountCancel": "Cancel",
+  "accountSignInTitle": "Sign in",
+  "accountEmail": "Email",
+  "accountPassword": "Password",
+  "accountSignIn": "Sign in",
+  "accountCreate": "Create an account",
+  "accountCreateTitle": "Create a parent account",
+  "accountPasswordRule": "At least 12 characters. A short sentence is easy to remember.",
+  "accountPasswordRepeat": "Repeat the password",
+  "accountPasswordsDiffer": "The two passwords are different.",
+  "accountPasswordShort": "Use at least 12 characters.",
+  "accountEmailInvalid": "Enter an email address.",
+  "accountHaveAccount": "I already have an account",
+  "accountForgot": "Forgot the password?",
+  "accountForgotSend": "Send a reset link",
+  "accountForgotSent": "If this email has an account, a link to choose a new password is on its way.",
+  "accountBackToDevice": "Keep it on this device only",
+  "accountErrorCredentials": "The email or password is not right.",
+  "accountErrorOffline": "No connection to the server. Check the Internet and try again.",
+  "accountErrorBusy": "Too many tries. Wait a little and try again.",
+  "accountErrorBreached": "Choose another password: this one appears in known data breaches.",
+  "accountErrorClosed": "Creating accounts is closed right now.",
+  "accountErrorGeneric": "Something went wrong. Try again later.",
+  "accountCreatedCheckEmail": "We sent an email to confirm the address. If you already had an account, sign in with its password.",
+  "accountSignedInAs": "Signed in as {email}",
+  "@accountSignedInAs": {
+    "placeholders": {
+      "email": {}
+    }
+  },
+  "accountConfirmEmail": "Confirm your email address to start syncing: open the link we sent to {email}.",
+  "@accountConfirmEmail": {
+    "placeholders": {
+      "email": {}
+    }
+  },
+  "accountResend": "Send the email again",
+  "accountResent": "Sent. Check the inbox and the spam folder.",
+  "accountConfirmed": "I confirmed it",
+  "accountChildrenTitle": "Children on this device",
+  "accountChildrenBody": "Only the children you save in the account are synced. The others stay on this device only.",
+  "accountLinked": "Saved in the account",
+  "accountNotLinked": "This device only",
+  "accountLink": "Add to the account",
+  "accountLinkName": "Edit the name first: up to 24 letters, without numbers or symbols.",
+  "accountLinkConfirmTitle": "Save {name} in the account?",
+  "@accountLinkConfirmTitle": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "accountLinkConfirmBody": "The first name, gender, avatar, colours, settings, lesson progress and play time will be stored in your parent account and will appear on your other devices. The photo stays here.",
+  "accountSyncTitle": "Sync",
+  "accountConfirmTitle": "Confirm your email",
+  "accountSyncNow": "Sync now",
+  "accountSyncRunning": "Syncing…",
+  "accountSyncLast": "Last synced: {time}",
+  "@accountSyncLast": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "accountSyncNever": "Not synced yet.",
+  "accountSyncWaiting": "Changes waiting to be sent: {count}",
+  "@accountSyncWaiting": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "accountSyncAllSent": "Everything is saved in the account.",
+  "accountSyncOffline": "No connection. Changes wait on this device and are sent later.",
+  "accountSyncUnavailable": "The server is busy. Sync will try again later.",
+  "accountSyncUnexpected": "Sync ran into a problem and will try again. The diagnostics log has details.",
+  "accountSyncSignedOut": "Sign in again to continue syncing. Nothing on this device changed.",
+  "accountSyncRefused": "Changes the account refused, kept on this device: {count}",
+  "@accountSyncRefused": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "accountSyncRetry": "Send them again",
+  "accountIssueName": "{child}: the name was changed on another device to “{theirs}”. This device had “{mine}”.",
+  "@accountIssueName": {
+    "placeholders": {
+      "child": {},
+      "theirs": {},
+      "mine": {}
+    }
+  },
+  "accountIssueGender": "{child}: the gender was changed on another device.",
+  "@accountIssueGender": {
+    "placeholders": {
+      "child": {}
+    }
+  },
+  "accountIssueKeep": "Keep it",
+  "accountIssueUseMine": "Use this device's",
+  "accountIssueRemoved": "{child} was removed from the account on another device, so it was removed here too.",
+  "@accountIssueRemoved": {
+    "placeholders": {
+      "child": {}
+    }
+  },
+  "accountIssueUnavailable": "{child} could not be saved in the account because it was deleted from the account before. It stays on this device only.",
+  "@accountIssueUnavailable": {
+    "placeholders": {
+      "child": {}
+    }
+  },
+  "accountIssueOk": "OK",
+  "accountManageTitle": "Account",
+  "accountSignOut": "Sign out",
+  "accountSignOutBody": "Children and progress stay on this device. Sync stops until you sign in again.",
+  "accountLeave": "Stop using the account on this device",
+  "accountLeaveBody": "Every child stays on this device with all progress, as a device-only child. The account keeps its own copy.",
+  "accountDelete": "Delete the account",
+  "accountDeleteBody": "This deletes the parent account and everything stored in it. The children and their progress stay on this device. Enter the password to confirm.",
+  "accountDeleteScheduled": "The account will be deleted on {date}.",
+  "@accountDeleteScheduled": {
+    "placeholders": {
+      "date": {}
+    }
+  }
 }

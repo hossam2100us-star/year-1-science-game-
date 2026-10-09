@@ -58,6 +58,9 @@ class ChildRepository {
     db.children,
   )..orderBy([(t) => OrderingTerm(expression: t.sortOrder)])).get();
 
+  Future<ChildRow?> row(String id) =>
+      (db.select(db.children)..where((t) => t.id.equals(id))).getSingleOrNull();
+
   Future<Uint8List?> photo(String id) async => (await (db.select(
     db.childPhotos,
   )..where((t) => t.childId.equals(id))).getSingleOrNull())?.bytes;
@@ -84,6 +87,13 @@ class SettingsRepository {
         ? null
         : Map<String, dynamic>.from(jsonDecode(row.json) as Map);
   }
+
+  /// The server version these settings are based on (0: never synced).
+  Future<int> version(String childId) async =>
+      (await (db.select(
+        db.childSettings,
+      )..where((t) => t.childId.equals(childId))).getSingleOrNull())?.version ??
+      0;
 }
 
 /// Attempts, journeys, usage and other-subject records.
@@ -94,19 +104,36 @@ class ProgressRepository {
   /// Attempts and journeys of other curricula are never read or changed.
   final String curriculum;
 
-  /// Attempts are append-only in normal play; a progress reset replaces the
-  /// child's list. Rows keep the app's own attempt ID for de-duplication.
-  Future<void> replaceAttempts(
-    String childId,
-    List<UnitAttempt> attempts,
-  ) async {
-    await (db.delete(db.unitAttempts)..where(
-          (t) => t.childId.equals(childId) & t.curriculum.equals(curriculum),
-        ))
-        .go();
+  /// Brings the child's stored attempts in line with [attempts] while keeping
+  /// every existing row's ID (sync identifies an attempt by that ID, so an
+  /// attempt must never get a new one). Attempts are append-only in normal
+  /// play; a progress reset removes them. Returns the rows added (with their
+  /// new IDs) and the IDs of rows removed.
+  Future<
+    ({List<({String id, UnitAttempt attempt})> added, List<String> removed})
+  >
+  replaceAttempts(String childId, List<UnitAttempt> attempts) async {
+    final rows = await attemptRows(childId);
+    final pool = <String, List<AttemptRow>>{};
+    for (final row in rows) {
+      pool.putIfAbsent(_rowKey(row.row, row.objectives), () => []).add(row.row);
+    }
+    final kept = <String>{};
+    final added = <({String id, UnitAttempt attempt})>[];
     for (var i = 0; i < attempts.length; i++) {
       final a = attempts[i];
+      final match = pool[attemptKey(a)];
+      if (match != null && match.isNotEmpty) {
+        final row = match.removeAt(0);
+        kept.add(row.id);
+        if (row.sortOrder != i) {
+          await (db.update(db.unitAttempts)..where((t) => t.id.equals(row.id)))
+              .write(UnitAttemptsCompanion(sortOrder: Value(i)));
+        }
+        continue;
+      }
       final id = Ids.uuidV7();
+      added.add((id: id, attempt: a));
       await db
           .into(db.unitAttempts)
           .insert(
@@ -135,6 +162,47 @@ class ProgressRepository {
             );
       }
     }
+    final removed = [
+      for (final r in rows)
+        if (!kept.contains(r.row.id)) r.row.id,
+    ];
+    for (final id in removed) {
+      await (db.delete(db.unitAttempts)..where((t) => t.id.equals(id))).go();
+    }
+    return (added: added, removed: removed);
+  }
+
+  /// Identity of an attempt: the app's own attempt ID when it has one,
+  /// otherwise everything recorded about it (very old saves had no ID).
+  static String attemptKey(UnitAttempt a) => a.attemptId.isNotEmpty
+      ? 'id:${a.attemptId}'
+      : 'v:${jsonEncode([a.unitId, a.completedAt.toIso8601String(), a.completed, a.effortStars, a.contentVersion, (a.objectives.entries.map((e) => '${e.key}=${e.value.name}').toList()..sort())])}';
+
+  static String _rowKey(AttemptRow row, List<ObjectiveRow> objectives) =>
+      row.clientAttemptId.isNotEmpty
+      ? 'id:${row.clientAttemptId}'
+      : 'v:${jsonEncode([row.unitId, DateTime.parse(row.completedAt).toIso8601String(), row.completed, row.effortStars, row.contentVersion, (objectives.map((o) => '${o.objectiveId}=${o.outcome}').toList()..sort())])}';
+
+  Future<List<({AttemptRow row, List<ObjectiveRow> objectives})>> attemptRows(
+    String childId,
+  ) async {
+    final rows =
+        await (db.select(db.unitAttempts)
+              ..where(
+                (t) =>
+                    t.childId.equals(childId) & t.curriculum.equals(curriculum),
+              )
+              ..orderBy([(t) => OrderingTerm(expression: t.sortOrder)]))
+            .get();
+    return [
+      for (final row in rows)
+        (
+          row: row,
+          objectives: await (db.select(
+            db.attemptObjectives,
+          )..where((t) => t.attemptId.equals(row.id))).get(),
+        ),
+    ];
   }
 
   Future<List<UnitAttempt>> attempts(String childId) async {
@@ -193,6 +261,18 @@ class ProgressRepository {
                 t.journeyKey.equals(key),
           ))
           .go();
+
+  /// The server version the stored journey is based on (0: never synced).
+  Future<int> journeyVersion(String childId, String key) async =>
+      (await (db.select(db.journeys)..where(
+                (t) =>
+                    t.childId.equals(childId) &
+                    t.curriculum.equals(curriculum) &
+                    t.journeyKey.equals(key),
+              ))
+              .getSingleOrNull())
+          ?.version ??
+      0;
 
   Future<Map<String, Map<String, dynamic>>> journeys(String childId) async {
     final rows =

@@ -8,6 +8,7 @@ import '../../core/widgets.dart';
 import '../../parent/parent_gate.dart';
 import 'profile_editor.dart';
 import '../../l10n/parent_strings.dart';
+import '../../data/sync/sync_controller.dart';
 
 class ChildChooser extends ConsumerStatefulWidget {
   const ChildChooser({
@@ -47,7 +48,11 @@ class _ChildChooserState extends ConsumerState<ChildChooser> {
           textDirection: arabic ? TextDirection.rtl : TextDirection.ltr,
           child: AlertDialog(
             title: Text(l.childChooserDeleteTitle(name)),
-            content: Text(l.childChooserDeleteBody),
+            content: Text(
+              ref.read(syncProvider).linked.contains(id)
+                  ? '${l.childChooserDeleteBody}\n\n${l.childChooserDeleteLinked}'
+                  : l.childChooserDeleteBody,
+            ),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(dialog, false),

@@ -3976,6 +3976,9 @@ class OutboxRow extends DataClass implements Insertable<OutboxRow> {
   final String mutationId;
   final String entity;
   final String op;
+
+  /// What the mutation changes (`child:<id>`, `journey:<child>:<curriculum>:<key>`,
+  /// ...); pending changes to the same thing are coalesced.
   final String entityId;
   final int? baseVersion;
   final String payloadJson;

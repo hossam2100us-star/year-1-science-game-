@@ -1,0 +1,127 @@
+name: images
+
+# Builds the API and web images, runs the whole Synology compose package
+# end to end, scans the images, and pushes them to GitHub Container
+# Registry (private, like the repository). The NAS runs the "trial" tag,
+# which only moves when a run is started by hand with "promote".
+on:
+  push:
+    branches: [main, remediation/m4-app-sync]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      promote:
+        description: 'Also tag these images "trial" (what the NAS runs)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+# A manual promote run has its own group and is never cancelled by a push.
+concurrency:
+  group: images-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: ${{ github.event_name != 'workflow_dispatch' }}
+
+env:
+  FLUTTER_VERSION: 3.47.5
+  REGISTRY: ghcr.io/hossam2100us-star
+  # Docker Hub's anonymous pull limit is shared by GitHub's runners, so CI
+  # pulls the same images (same digests) from Google's Docker Hub mirror.
+  # The images and the NAS package still name Docker Hub.
+  MIRROR: mirror.gcr.io
+
+jobs:
+  build-test-push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+      - name: Build the web app
+        run: |
+          flutter pub get --enforce-lockfile
+          flutter build web --release --no-web-resources-cdn --no-wasm-dry-run
+          du -sh build/web | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Build images
+        run: |
+          docker build --build-arg NODE_IMAGE="$MIRROR/library/node:22-bookworm-slim" \
+            -t "$REGISTRY/science-adventure-api:trial" backend
+          docker build --build-arg NGINX_IMAGE="$MIRROR/nginxinc/nginx-unprivileged:1.29-alpine" \
+            -f infrastructure/web/Dockerfile -t "$REGISTRY/science-adventure-web:trial" .
+      - name: nginx configuration is valid
+        run: docker run --rm "$REGISTRY/science-adventure-web:trial" nginx -t
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # Runs in a scratch copy outside the workspace: the database container
+      # creates root-owned folders, and the settings files hold test secrets.
+      - name: Copy the Synology package to a scratch folder
+        run: mkdir -p "$RUNNER_TEMP/nas" && cp -r infrastructure/nas/. "$RUNNER_TEMP/nas"
+      - name: Database image from the mirror (the package names postgres:17)
+        run: |
+          docker pull "$MIRROR/library/postgres:17"
+          docker tag "$MIRROR/library/postgres:17" postgres:17
+      - name: Synology package end to end (docker compose)
+        working-directory: ${{ runner.temp }}/nas
+        run: |
+          set -eu
+          node "$GITHUB_WORKSPACE/backend/scripts/generate-env.mjs" --out-dir . --public-url https://nas.example.test
+          # No mail server in CI: sending fails after the response and is only logged.
+          sed -i 's|^SMTP_URL=.*|SMTP_URL=smtp://127.0.0.1:2525|; s|^EMAIL_FROM=.*|EMAIL_FROM=CI <ci@example.test>|' api.env
+          docker compose up -d --wait --wait-timeout 180
+          curl -fsS http://127.0.0.1:8480/healthz
+          curl -fsS http://127.0.0.1:8480/ | grep -q 'Science Adventure'
+          curl -fsS http://127.0.0.1:8480/download/ | grep -q 'science-adventure.apk'
+          headers="$(curl -fsSI http://127.0.0.1:8480/)"
+          echo "$headers" | grep -qi "content-security-policy: default-src 'self'"
+          echo "$headers" | grep -qi 'x-content-type-options: nosniff'
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8480/health/ready)" = 404
+          code="$(curl -s -o /dev/null -w '%{http_code}' -X POST http://127.0.0.1:8480/api/v1/auth/register \
+            -H 'Content-Type: application/json' \
+            -d '{"email":"ci@example.test","password":"a long ci password 123","consentVersion":"trial-2026-10"}')"
+          test "$code" = 202
+          code="$(curl -s -o /dev/null -w '%{http_code}' -X POST http://127.0.0.1:8480/api/v1/auth/login \
+            -H 'Content-Type: application/json' \
+            -d '{"email":"ci@example.test","password":"a long ci password 123","deviceId":"0192f0a0-0000-7000-8000-000000000001","platform":"android"}')"
+          test "$code" = 200
+          sleep 5
+          ls backups/science-*.dump
+          docker compose ps
+      - name: Logs (on failure)
+        if: failure()
+        working-directory: ${{ runner.temp }}/nas
+        run: docker compose logs --no-color | tail -n 200
+      - name: Stop the package
+        if: always()
+        working-directory: ${{ runner.temp }}/nas
+        run: docker compose down -v || true
+      - name: Image vulnerability scan (Trivy)
+        run: |
+          for image in api web; do
+            docker run --rm -v /var/run/docker.sock:/var/run/docker.sock "$MIRROR/aquasec/trivy:latest" \
+              image --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed --no-progress \
+              "$REGISTRY/science-adventure-$image:trial"
+          done
+      - name: Push to GitHub Container Registry
+        if: github.event_name != 'pull_request'
+        env:
+          PROMOTE: ${{ inputs.promote }}
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          sha="sha-${GITHUB_SHA::7}"
+          for image in api web; do
+            docker tag "$REGISTRY/science-adventure-$image:trial" "$REGISTRY/science-adventure-$image:$sha"
+            docker push "$REGISTRY/science-adventure-$image:$sha"
+            if [ "${PROMOTE:-false}" = "true" ]; then
+              docker push "$REGISTRY/science-adventure-$image:trial"
+            fi
+          done
+          echo "Pushed $sha (trial: ${PROMOTE:-false})" >> "$GITHUB_STEP_SUMMARY"
