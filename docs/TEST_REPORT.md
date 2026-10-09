@@ -180,3 +180,26 @@ Findings and what changed in the package afterwards:
   - after a force-stop and relaunch the unit resumed at 1 / 7 with that discovery starred;
   - no crash, ANR or plugin error in `logcat`.
 - Obfuscation symbols kept outside the repository for decoding crash reports.
+## Milestone M4 — accounts and sync on the device (branch `remediation/m4-app-sync`)
+
+### Local (2026-10-09)
+
+- `flutter analyze --fatal-infos`: no issues; `dart format --set-exit-if-changed`: clean.
+- `flutter test`: all tests pass (394 before the account tab, plus the panel tests).
+- New suites: API client 11, account mode 7, attempt IDs 4, journey merge 8 (incl. 2,000 randomised merges), outbox 11, schema 1 → 2 migration 1, two devices 11 (in-memory server with the backend's rules), account tab 3.
+- **Against the real backend** (NestJS + PostgreSQL 17 embedded, `REQUIRE_VERIFIED_EMAIL_FOR_SYNC=false`, memory mailer): `SYNC_LIVE_URL=http://localhost:3999 flutter test test/sync/live_backend_test.dart` → 6/6 (link, progress from two devices, name conflict, settings from both, journey merge, removal); no change refused by the server.
+
+### Android emulator (2026-10-09, Android 14, x86_64)
+
+- **Upgrade 0.4.0 → 0.5.0 in place** (release, obfuscated, same upload key, `adb install -r`): the child and the unit 1 progress (3 of 7 discoveries) were still there; the database moved from schema 1 to 2.
+- The parent area shows the new "Parent account" tab, device-only by default, in Arabic (right to left).
+- **Account flow against a local backend** (debug build, `API_BASE_URL=http://10.0.2.2:3999`):
+  - consent dialog (continue disabled until the three points are ticked);
+  - account created and signed in from the app;
+  - the session survived reinstalling and restarting the app (refresh token in the Keystore-backed store);
+  - the child was added to the account after the confirmation, sync reported "everything is saved", and the server listed the child and its settings.
+- Found and fixed on the way:
+  - the bold "في" in the link button rendered with a clipped tail (button reworded);
+  - two cards had the same title;
+  - dates followed the device language instead of the parent's.
+- Not tested on the emulator against the trial server: creating an account there would send a real verification email; that is part of the owner's trial.

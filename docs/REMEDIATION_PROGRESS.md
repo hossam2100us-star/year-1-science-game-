@@ -255,7 +255,27 @@ architecture: ADR-0011 to ADR-0016.
 | Sync push/pull with per-entity merge rules (§12, §14) | **VERIFIED (server)** | `sync.e2e-spec.ts` (17) and `merge.spec.ts` (12, incl. 2,000 randomised merges); device side in M4 |
 | Docker image, CI (`ci-backend.yml`: lint, types, tests on PostgreSQL 17, drift check, image build, Trivy, non-root check) | **FIXED** | runs on the pull request; Docker is not installed on this PC, so the image was not built locally |
 | Dart API client (REC-05) | **Changed** (ADR-0014) | generator output was unusable for the sync unions; a hand-written, contract-tested client comes with M4 |
-| NAS deployment (web + API + database behind the NAS reverse proxy) | TODO (M4) | needs the web build |
+| NAS deployment (web + API + database behind the NAS reverse proxy) | **VERIFIED** (M4) | live at the trial address; see `docs/TEST_REPORT.md` |
+
+## M4 — app accounts and sync (branch `remediation/m4-app-sync`)
+
+Device side of `Future_System_Architecture.pdf` §8-§14. Decision: ADR-0018
+(accounts and sync on the device); Google sign-in (ADR-0017) is ready on the server.
+
+| Item | Status | Evidence |
+|---|---|---|
+| Typed API client, refresh token in the Keystore, access token in memory | **VERIFIED** | `test/remote/api_client_test.dart` (11); session survives an app restart on the emulator |
+| Device-only by default, no network object at all in that mode | **VERIFIED** | `test/account/account_controller_test.dart`; `test/parent/account_panel_test.dart` (no request before sign-in) |
+| Stable attempt IDs across saves (sync identity) | **VERIFIED** | `test/data/attempt_ids_test.dart` |
+| Outbox written in the save transaction, linked children only, coalesced | **VERIFIED** | `test/sync/outbox_test.dart` (11) |
+| Database schema 2 (outbox `put`), rows kept | **VERIFIED** | `test/data/schema_migration_test.dart`; 0.4.0 → 0.5.0 upgrade on the emulator kept the child and its progress |
+| Sync engine: batches, pull pages in one transaction, applied between saves | **VERIFIED** | `test/sync/two_devices_test.dart` (11) against an in-memory server with the backend's rules |
+| Same scenarios against the real backend | **VERIFIED (local)** | `test/sync/live_backend_test.dart`: 6/6 against NestJS + PostgreSQL 17, no refused change |
+| Merge rules on the device (§14): progress never goes backwards, conflicts kept for the parent | **VERIFIED** | `test/domain/journey_merge_test.dart` (8, incl. 2,000 randomised merges); name conflict scenario |
+| Parent account tab: consent, sign in / create / reset, link child by child, sync status, sign out, leave, delete | **VERIFIED** | widget tests; full flow on the emulator against a local backend (account created, child linked, server received it) |
+| Google sign-in button | TODO | needs the OAuth client IDs (owner step) |
+| Web parent pages | TODO | |
+| Release APK for the trial with the server address | TODO | after the web pages |
 
 ## Security findings
 
@@ -273,8 +293,8 @@ architecture: ADR-0011 to ADR-0016.
 | ID | Status |
 |---|---|
 | REC-01 | Owner decided (ADR-0002); legal and consent text **BLOCKED (owner)** |
-| REC-02 | Design accepted (ADR-0002); implementation M4 |
-| REC-03 | Accepted (no photo sync by default); implementation M4 |
+| REC-02 | **VERIFIED** on Android (M4): device-only by default, accounts opt-in, children linked one by one |
+| REC-03 | **VERIFIED**: photos are never part of a mutation (`SyncOutbox.childFields`); the consent and link texts say so |
 | REC-04 | Release build in CI and locally with the upload key; Android 14 emulator run passed (upgrade, sounds, memory); real-device test pending |
-| REC-05 | Changed: hand-written client checked against the contract instead of generated code (ADR-0014); M4 |
+| REC-05 | Changed: hand-written client checked against the contract instead of generated code (ADR-0014); in use since M4 and checked against the real backend |
 | REC-06 | **VERIFIED** — content-validation job passes in CI |

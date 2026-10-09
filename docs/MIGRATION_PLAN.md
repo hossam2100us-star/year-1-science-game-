@@ -112,3 +112,12 @@ Measured on the development PC (not a tablet): 10 children with 300 KB photos,
 200 attempts, 2,000 objectives, 130 journeys and 600 usage days migrate in
 **1.67-1.72 s**; a save afterwards takes **26 ms** instead of **115-118 ms**.
 The target on a mid-range tablet (< 1-2 s for this size) still needs a device.
+
+## 5. Schema 2 (M4, 2026-10-09)
+
+The outbox's `op` check gains `put` (journeys and play time). SQLite cannot
+change a check in place, so drift copies the outbox table inside the
+migration transaction (`TableMigration`); every row is kept and nothing
+else changes. Trial installs of 0.4.0 had an empty outbox. Tested by
+`test/data/schema_migration_test.dart` (a schema-1 database with rows) and
+by upgrading 0.4.0 → 0.5.0 in place on the emulator.
