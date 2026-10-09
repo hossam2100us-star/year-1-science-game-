@@ -355,4 +355,286 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get childChooserDeleteConfirm => 'Delete profile';
+
+  @override
+  String get childChooserDeleteLinked =>
+      'This child is saved in your parent account, so the profile and progress are also removed from the account and from your other devices.';
+
+  @override
+  String get parentAreaAccount => 'Parent account';
+
+  @override
+  String get parentAreaEditingLinkedProfile =>
+      'Editing this profile keeps progress. The first name and preferences are also saved in your parent account; the photo stays on this device.';
+
+  @override
+  String get accountDeviceOnlyTitle => 'This device only';
+
+  @override
+  String get accountDeviceOnlyBody =>
+      'Children and their progress are saved on this device only. The app does not connect to the Internet.';
+
+  @override
+  String get accountWhyTitle => 'A parent account';
+
+  @override
+  String get accountWhyBody =>
+      'With a parent account, the children you choose appear with their progress on your other devices and on the website. You can stop at any time; nothing is deleted from this device.';
+
+  @override
+  String get accountUseAccount => 'Set up a parent account';
+
+  @override
+  String get accountConsentTitle => 'Before you start';
+
+  @override
+  String get accountConsentTrial =>
+      'Private trial: this wording is a draft for the trial with family and friends.';
+
+  @override
+  String get accountConsentParent =>
+      'I am the parent or guardian of the children I will save in the account.';
+
+  @override
+  String get accountConsentData =>
+      'For each child I save in the account, I agree that the first name, gender, avatar, colours, settings, lesson progress and play time are stored on the family server. Photos never leave this device.';
+
+  @override
+  String get accountConsentDelete =>
+      'I know I can delete the account and everything stored in it at any time.';
+
+  @override
+  String get accountContinue => 'Continue';
+
+  @override
+  String get accountCancel => 'Cancel';
+
+  @override
+  String get accountSignInTitle => 'Sign in';
+
+  @override
+  String get accountEmail => 'Email';
+
+  @override
+  String get accountPassword => 'Password';
+
+  @override
+  String get accountSignIn => 'Sign in';
+
+  @override
+  String get accountCreate => 'Create an account';
+
+  @override
+  String get accountCreateTitle => 'Create a parent account';
+
+  @override
+  String get accountPasswordRule =>
+      'At least 12 characters. A short sentence is easy to remember.';
+
+  @override
+  String get accountPasswordRepeat => 'Repeat the password';
+
+  @override
+  String get accountPasswordsDiffer => 'The two passwords are different.';
+
+  @override
+  String get accountPasswordShort => 'Use at least 12 characters.';
+
+  @override
+  String get accountEmailInvalid => 'Enter an email address.';
+
+  @override
+  String get accountHaveAccount => 'I already have an account';
+
+  @override
+  String get accountForgot => 'Forgot the password?';
+
+  @override
+  String get accountForgotSend => 'Send a reset link';
+
+  @override
+  String get accountForgotSent =>
+      'If this email has an account, a link to choose a new password is on its way.';
+
+  @override
+  String get accountBackToDevice => 'Keep it on this device only';
+
+  @override
+  String get accountErrorCredentials => 'The email or password is not right.';
+
+  @override
+  String get accountErrorOffline =>
+      'No connection to the server. Check the Internet and try again.';
+
+  @override
+  String get accountErrorBusy => 'Too many tries. Wait a little and try again.';
+
+  @override
+  String get accountErrorBreached =>
+      'Choose another password: this one appears in known data breaches.';
+
+  @override
+  String get accountErrorClosed => 'Creating accounts is closed right now.';
+
+  @override
+  String get accountErrorGeneric => 'Something went wrong. Try again later.';
+
+  @override
+  String get accountCreatedCheckEmail =>
+      'We sent an email to confirm the address. If you already had an account, sign in with its password.';
+
+  @override
+  String accountSignedInAs(Object email) {
+    return 'Signed in as $email';
+  }
+
+  @override
+  String accountConfirmEmail(Object email) {
+    return 'Confirm your email address to start syncing: open the link we sent to $email.';
+  }
+
+  @override
+  String get accountResend => 'Send the email again';
+
+  @override
+  String get accountResent => 'Sent. Check the inbox and the spam folder.';
+
+  @override
+  String get accountConfirmed => 'I confirmed it';
+
+  @override
+  String get accountChildrenTitle => 'Children on this device';
+
+  @override
+  String get accountChildrenBody =>
+      'Only the children you save in the account are synced. The others stay on this device only.';
+
+  @override
+  String get accountLinked => 'Saved in the account';
+
+  @override
+  String get accountNotLinked => 'This device only';
+
+  @override
+  String get accountLink => 'Save in the account';
+
+  @override
+  String get accountLinkName =>
+      'Edit the name first: up to 24 letters, without numbers or symbols.';
+
+  @override
+  String accountLinkConfirmTitle(Object name) {
+    return 'Save $name in the account?';
+  }
+
+  @override
+  String get accountLinkConfirmBody =>
+      'The first name, gender, avatar, colours, settings, lesson progress and play time will be stored in your parent account and will appear on your other devices. The photo stays here.';
+
+  @override
+  String get accountSyncTitle => 'Sync';
+
+  @override
+  String get accountSyncNow => 'Sync now';
+
+  @override
+  String get accountSyncRunning => 'Syncing…';
+
+  @override
+  String accountSyncLast(Object time) {
+    return 'Last synced: $time';
+  }
+
+  @override
+  String get accountSyncNever => 'Not synced yet.';
+
+  @override
+  String accountSyncWaiting(int count) {
+    return 'Changes waiting to be sent: $count';
+  }
+
+  @override
+  String get accountSyncAllSent => 'Everything is saved in the account.';
+
+  @override
+  String get accountSyncOffline =>
+      'No connection. Changes wait on this device and are sent later.';
+
+  @override
+  String get accountSyncUnavailable =>
+      'The server is busy. Sync will try again later.';
+
+  @override
+  String get accountSyncUnexpected =>
+      'Sync ran into a problem and will try again. The diagnostics log has details.';
+
+  @override
+  String get accountSyncSignedOut =>
+      'Sign in again to continue syncing. Nothing on this device changed.';
+
+  @override
+  String accountSyncRefused(int count) {
+    return 'Changes the account refused, kept on this device: $count';
+  }
+
+  @override
+  String get accountSyncRetry => 'Send them again';
+
+  @override
+  String accountIssueName(Object child, Object theirs, Object mine) {
+    return '$child: the name was changed on another device to “$theirs”. This device had “$mine”.';
+  }
+
+  @override
+  String accountIssueGender(Object child) {
+    return '$child: the gender was changed on another device.';
+  }
+
+  @override
+  String get accountIssueKeep => 'Keep it';
+
+  @override
+  String get accountIssueUseMine => 'Use this device\'s';
+
+  @override
+  String accountIssueRemoved(Object child) {
+    return '$child was removed from the account on another device, so it was removed here too.';
+  }
+
+  @override
+  String accountIssueUnavailable(Object child) {
+    return '$child could not be saved in the account because it was deleted from the account before. It stays on this device only.';
+  }
+
+  @override
+  String get accountIssueOk => 'OK';
+
+  @override
+  String get accountManageTitle => 'Account';
+
+  @override
+  String get accountSignOut => 'Sign out';
+
+  @override
+  String get accountSignOutBody =>
+      'Children and progress stay on this device. Sync stops until you sign in again.';
+
+  @override
+  String get accountLeave => 'Stop using the account on this device';
+
+  @override
+  String get accountLeaveBody =>
+      'Every child stays on this device with all progress, as a device-only child. The account keeps its own copy.';
+
+  @override
+  String get accountDelete => 'Delete the account';
+
+  @override
+  String get accountDeleteBody =>
+      'This deletes the parent account and everything stored in it. The children and their progress stay on this device. Enter the password to confirm.';
+
+  @override
+  String accountDeleteScheduled(Object date) {
+    return 'The account will be deleted on $date.';
+  }
 }

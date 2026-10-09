@@ -656,6 +656,480 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Delete profile'**
   String get childChooserDeleteConfirm;
+
+  /// No description provided for @childChooserDeleteLinked.
+  ///
+  /// In en, this message translates to:
+  /// **'This child is saved in your parent account, so the profile and progress are also removed from the account and from your other devices.'**
+  String get childChooserDeleteLinked;
+
+  /// No description provided for @parentAreaAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent account'**
+  String get parentAreaAccount;
+
+  /// No description provided for @parentAreaEditingLinkedProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Editing this profile keeps progress. The first name and preferences are also saved in your parent account; the photo stays on this device.'**
+  String get parentAreaEditingLinkedProfile;
+
+  /// No description provided for @accountDeviceOnlyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'This device only'**
+  String get accountDeviceOnlyTitle;
+
+  /// No description provided for @accountDeviceOnlyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Children and their progress are saved on this device only. The app does not connect to the Internet.'**
+  String get accountDeviceOnlyBody;
+
+  /// No description provided for @accountWhyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'A parent account'**
+  String get accountWhyTitle;
+
+  /// No description provided for @accountWhyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'With a parent account, the children you choose appear with their progress on your other devices and on the website. You can stop at any time; nothing is deleted from this device.'**
+  String get accountWhyBody;
+
+  /// No description provided for @accountUseAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Set up a parent account'**
+  String get accountUseAccount;
+
+  /// No description provided for @accountConsentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Before you start'**
+  String get accountConsentTitle;
+
+  /// No description provided for @accountConsentTrial.
+  ///
+  /// In en, this message translates to:
+  /// **'Private trial: this wording is a draft for the trial with family and friends.'**
+  String get accountConsentTrial;
+
+  /// No description provided for @accountConsentParent.
+  ///
+  /// In en, this message translates to:
+  /// **'I am the parent or guardian of the children I will save in the account.'**
+  String get accountConsentParent;
+
+  /// No description provided for @accountConsentData.
+  ///
+  /// In en, this message translates to:
+  /// **'For each child I save in the account, I agree that the first name, gender, avatar, colours, settings, lesson progress and play time are stored on the family server. Photos never leave this device.'**
+  String get accountConsentData;
+
+  /// No description provided for @accountConsentDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'I know I can delete the account and everything stored in it at any time.'**
+  String get accountConsentDelete;
+
+  /// No description provided for @accountContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get accountContinue;
+
+  /// No description provided for @accountCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get accountCancel;
+
+  /// No description provided for @accountSignInTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get accountSignInTitle;
+
+  /// No description provided for @accountEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get accountEmail;
+
+  /// No description provided for @accountPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get accountPassword;
+
+  /// No description provided for @accountSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get accountSignIn;
+
+  /// No description provided for @accountCreate.
+  ///
+  /// In en, this message translates to:
+  /// **'Create an account'**
+  String get accountCreate;
+
+  /// No description provided for @accountCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a parent account'**
+  String get accountCreateTitle;
+
+  /// No description provided for @accountPasswordRule.
+  ///
+  /// In en, this message translates to:
+  /// **'At least 12 characters. A short sentence is easy to remember.'**
+  String get accountPasswordRule;
+
+  /// No description provided for @accountPasswordRepeat.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat the password'**
+  String get accountPasswordRepeat;
+
+  /// No description provided for @accountPasswordsDiffer.
+  ///
+  /// In en, this message translates to:
+  /// **'The two passwords are different.'**
+  String get accountPasswordsDiffer;
+
+  /// No description provided for @accountPasswordShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Use at least 12 characters.'**
+  String get accountPasswordShort;
+
+  /// No description provided for @accountEmailInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter an email address.'**
+  String get accountEmailInvalid;
+
+  /// No description provided for @accountHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'I already have an account'**
+  String get accountHaveAccount;
+
+  /// No description provided for @accountForgot.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot the password?'**
+  String get accountForgot;
+
+  /// No description provided for @accountForgotSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send a reset link'**
+  String get accountForgotSend;
+
+  /// No description provided for @accountForgotSent.
+  ///
+  /// In en, this message translates to:
+  /// **'If this email has an account, a link to choose a new password is on its way.'**
+  String get accountForgotSent;
+
+  /// No description provided for @accountBackToDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep it on this device only'**
+  String get accountBackToDevice;
+
+  /// No description provided for @accountErrorCredentials.
+  ///
+  /// In en, this message translates to:
+  /// **'The email or password is not right.'**
+  String get accountErrorCredentials;
+
+  /// No description provided for @accountErrorOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'No connection to the server. Check the Internet and try again.'**
+  String get accountErrorOffline;
+
+  /// No description provided for @accountErrorBusy.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many tries. Wait a little and try again.'**
+  String get accountErrorBusy;
+
+  /// No description provided for @accountErrorBreached.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose another password: this one appears in known data breaches.'**
+  String get accountErrorBreached;
+
+  /// No description provided for @accountErrorClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Creating accounts is closed right now.'**
+  String get accountErrorClosed;
+
+  /// No description provided for @accountErrorGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Try again later.'**
+  String get accountErrorGeneric;
+
+  /// No description provided for @accountCreatedCheckEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'We sent an email to confirm the address. If you already had an account, sign in with its password.'**
+  String get accountCreatedCheckEmail;
+
+  /// No description provided for @accountSignedInAs.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed in as {email}'**
+  String accountSignedInAs(Object email);
+
+  /// No description provided for @accountConfirmEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm your email address to start syncing: open the link we sent to {email}.'**
+  String accountConfirmEmail(Object email);
+
+  /// No description provided for @accountResend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send the email again'**
+  String get accountResend;
+
+  /// No description provided for @accountResent.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent. Check the inbox and the spam folder.'**
+  String get accountResent;
+
+  /// No description provided for @accountConfirmed.
+  ///
+  /// In en, this message translates to:
+  /// **'I confirmed it'**
+  String get accountConfirmed;
+
+  /// No description provided for @accountChildrenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Children on this device'**
+  String get accountChildrenTitle;
+
+  /// No description provided for @accountChildrenBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Only the children you save in the account are synced. The others stay on this device only.'**
+  String get accountChildrenBody;
+
+  /// No description provided for @accountLinked.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved in the account'**
+  String get accountLinked;
+
+  /// No description provided for @accountNotLinked.
+  ///
+  /// In en, this message translates to:
+  /// **'This device only'**
+  String get accountNotLinked;
+
+  /// No description provided for @accountLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Save in the account'**
+  String get accountLink;
+
+  /// No description provided for @accountLinkName.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit the name first: up to 24 letters, without numbers or symbols.'**
+  String get accountLinkName;
+
+  /// No description provided for @accountLinkConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Save {name} in the account?'**
+  String accountLinkConfirmTitle(Object name);
+
+  /// No description provided for @accountLinkConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The first name, gender, avatar, colours, settings, lesson progress and play time will be stored in your parent account and will appear on your other devices. The photo stays here.'**
+  String get accountLinkConfirmBody;
+
+  /// No description provided for @accountSyncTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync'**
+  String get accountSyncTitle;
+
+  /// No description provided for @accountSyncNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync now'**
+  String get accountSyncNow;
+
+  /// No description provided for @accountSyncRunning.
+  ///
+  /// In en, this message translates to:
+  /// **'Syncing…'**
+  String get accountSyncRunning;
+
+  /// No description provided for @accountSyncLast.
+  ///
+  /// In en, this message translates to:
+  /// **'Last synced: {time}'**
+  String accountSyncLast(Object time);
+
+  /// No description provided for @accountSyncNever.
+  ///
+  /// In en, this message translates to:
+  /// **'Not synced yet.'**
+  String get accountSyncNever;
+
+  /// No description provided for @accountSyncWaiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Changes waiting to be sent: {count}'**
+  String accountSyncWaiting(int count);
+
+  /// No description provided for @accountSyncAllSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything is saved in the account.'**
+  String get accountSyncAllSent;
+
+  /// No description provided for @accountSyncOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'No connection. Changes wait on this device and are sent later.'**
+  String get accountSyncOffline;
+
+  /// No description provided for @accountSyncUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'The server is busy. Sync will try again later.'**
+  String get accountSyncUnavailable;
+
+  /// No description provided for @accountSyncUnexpected.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync ran into a problem and will try again. The diagnostics log has details.'**
+  String get accountSyncUnexpected;
+
+  /// No description provided for @accountSyncSignedOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in again to continue syncing. Nothing on this device changed.'**
+  String get accountSyncSignedOut;
+
+  /// No description provided for @accountSyncRefused.
+  ///
+  /// In en, this message translates to:
+  /// **'Changes the account refused, kept on this device: {count}'**
+  String accountSyncRefused(int count);
+
+  /// No description provided for @accountSyncRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Send them again'**
+  String get accountSyncRetry;
+
+  /// No description provided for @accountIssueName.
+  ///
+  /// In en, this message translates to:
+  /// **'{child}: the name was changed on another device to “{theirs}”. This device had “{mine}”.'**
+  String accountIssueName(Object child, Object theirs, Object mine);
+
+  /// No description provided for @accountIssueGender.
+  ///
+  /// In en, this message translates to:
+  /// **'{child}: the gender was changed on another device.'**
+  String accountIssueGender(Object child);
+
+  /// No description provided for @accountIssueKeep.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep it'**
+  String get accountIssueKeep;
+
+  /// No description provided for @accountIssueUseMine.
+  ///
+  /// In en, this message translates to:
+  /// **'Use this device\'s'**
+  String get accountIssueUseMine;
+
+  /// No description provided for @accountIssueRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'{child} was removed from the account on another device, so it was removed here too.'**
+  String accountIssueRemoved(Object child);
+
+  /// No description provided for @accountIssueUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'{child} could not be saved in the account because it was deleted from the account before. It stays on this device only.'**
+  String accountIssueUnavailable(Object child);
+
+  /// No description provided for @accountIssueOk.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get accountIssueOk;
+
+  /// No description provided for @accountManageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get accountManageTitle;
+
+  /// No description provided for @accountSignOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get accountSignOut;
+
+  /// No description provided for @accountSignOutBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Children and progress stay on this device. Sync stops until you sign in again.'**
+  String get accountSignOutBody;
+
+  /// No description provided for @accountLeave.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop using the account on this device'**
+  String get accountLeave;
+
+  /// No description provided for @accountLeaveBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Every child stays on this device with all progress, as a device-only child. The account keeps its own copy.'**
+  String get accountLeaveBody;
+
+  /// No description provided for @accountDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete the account'**
+  String get accountDelete;
+
+  /// No description provided for @accountDeleteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This deletes the parent account and everything stored in it. The children and their progress stay on this device. Enter the password to confirm.'**
+  String get accountDeleteBody;
+
+  /// No description provided for @accountDeleteScheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'The account will be deleted on {date}.'**
+  String accountDeleteScheduled(Object date);
 }
 
 class _AppLocalizationsDelegate
