@@ -10,13 +10,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'content/catalog.dart';
 import 'core/design.dart';
 import 'core/diagnostics/app_log.dart';
+import 'core/ids.dart';
 import 'core/image_budget.dart';
 import 'core/models.dart';
 import 'core/providers.dart';
 import 'core/storage.dart';
 import 'core/usage_buffer.dart';
 import 'core/widgets.dart';
+import 'data/account/account_controller.dart';
 import 'data/db/app_database.dart';
+import 'data/drift_progress_store.dart';
 import 'features/onboarding/profile_editor.dart';
 import 'features/world/subject_hub.dart';
 import 'features/onboarding/child_chooser.dart';
@@ -74,11 +77,19 @@ Future<void> _launch(Widget app) async {
     );
     return;
   }
+  final AccountSetup account;
+  if (store case DriftProgressStore(:final db, :final deviceId)) {
+    account = await AccountSetup.load(DatabaseAccountPrefs(db), deviceId);
+  } else {
+    // Web (and the Hive fallback): the browser cookie is the session.
+    account = await AccountSetup.load(MemoryAccountPrefs(), Ids.uuidV7());
+  }
   runApp(
     ProviderScope(
       overrides: [
         storeProvider.overrideWithValue(store),
         catalogProvider.overrideWithValue(catalog),
+        accountSetupProvider.overrideWithValue(account),
       ],
       child: app,
     ),
