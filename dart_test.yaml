@@ -4,3 +4,6 @@ tags:
   golden:
   # Host-machine storage timings (docs/TEST_REPORT.md); excluded in CI.
   benchmark:
+  # Sync scenarios against a running backend (test/sync/live_backend_test.dart);
+  # skipped unless SYNC_LIVE_URL is set.
+  live:
