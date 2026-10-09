@@ -269,6 +269,10 @@ class AccountController extends Notifier<AccountState> {
     }
   }
 
+  /// The server no longer accepts the session (it expired or was revoked):
+  /// the parent signs in again; nothing on the device changes.
+  Future<void> sessionEnded() => _remember(null);
+
   Future<void> signOut({bool everywhere = false}) async {
     await _client?.logout(all: everywhere);
     await _remember(null);

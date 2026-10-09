@@ -20,6 +20,7 @@ import 'core/widgets.dart';
 import 'data/account/account_controller.dart';
 import 'data/db/app_database.dart';
 import 'data/drift_progress_store.dart';
+import 'data/sync/sync_controller.dart';
 import 'features/onboarding/profile_editor.dart';
 import 'features/world/subject_hub.dart';
 import 'features/onboarding/child_chooser.dart';
@@ -131,6 +132,9 @@ class _ScienceAdventureAppState extends ConsumerState<ScienceAdventureApp> {
       appProvider.select((d) => (d.settings, d.profile?.gender)),
       (_, _) => _configureVoice(ref.read(appProvider)),
     );
+    // The account session and sync live as long as the app; they run in the
+    // background and never block play (device-only: they do nothing).
+    ref.listen(syncProvider, (_, _) {});
     return MaterialApp(
       title: 'Science Adventure',
       debugShowCheckedModeBanner: false,
@@ -247,6 +251,12 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
       _tick();
       unawaited(_flushUsage()); // Never keep play time only in memory.
       ref.read(narrationProvider).stop();
+    }
+    if (state == AppLifecycleState.resumed ||
+        state == AppLifecycleState.paused) {
+      ref
+          .read(syncProvider.notifier)
+          .lifecycle(foreground: state == AppLifecycleState.resumed);
     }
     _resumed = state == AppLifecycleState.resumed;
     _last = null;

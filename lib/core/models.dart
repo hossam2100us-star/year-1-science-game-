@@ -23,6 +23,13 @@ class ChildProfile {
   final int avatar;
   final Uint8List? photo;
   final PaletteChoice palette;
+  ChildProfile copyWith({String? name, ChildGender? gender}) => ChildProfile(
+    name: name ?? this.name,
+    gender: gender ?? this.gender,
+    avatar: avatar,
+    photo: photo,
+    palette: palette,
+  );
   String get guideName => gender == ChildGender.girl ? 'Zizi' : 'Zizo';
   String get greeting =>
       name.trim().isEmpty ? 'Hello, scientist!' : 'Hello, ${name.trim()}!';
