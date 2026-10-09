@@ -6,6 +6,7 @@ import 'package:http/testing.dart';
 import 'package:science_adventure/content/catalog.dart';
 import 'package:science_adventure/core/models.dart';
 import 'package:science_adventure/core/providers.dart';
+import 'package:science_adventure/core/storage.dart';
 import 'package:science_adventure/data/account/account_controller.dart';
 import 'package:science_adventure/data/db/app_database.dart';
 import 'package:science_adventure/data/drift_progress_store.dart';
@@ -98,6 +99,41 @@ void main() {
     await mount(tester, withServer: false);
     expect(find.text('Parent account'), findsNothing);
     await unmount(tester);
+  });
+
+  testWidgets('storage without sync (the web build) has no account tab', (
+    tester,
+  ) async {
+    await tester.binding.setSurfaceSize(const Size(1280, 2400));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          storeProvider.overrideWithValue(
+            MemoryProgressStore(
+              const AppData(
+                profile: ChildProfile(name: 'Laila'),
+                settings: AppSettings(arabic: false),
+              ),
+            ),
+          ),
+          catalogProvider.overrideWithValue(catalog),
+          narrationProvider.overrideWith((ref) => SilentNarration()),
+          accountSetupProvider.overrideWithValue(
+            AccountSetup(
+              prefs: MemoryAccountPrefs(),
+              deviceId: 'web',
+              initialMode: AccountMode.deviceOnly,
+              baseUri: Uri.parse('https://school.example.test'),
+            ),
+          ),
+        ],
+        child: const MaterialApp(home: ParentArea()),
+      ),
+    );
+    await tester.pump();
+    expect(find.text('Results'), findsOneWidget);
+    expect(find.text('Parent account'), findsNothing);
   });
 
   testWidgets('device-only by default; an account needs every consent point', (

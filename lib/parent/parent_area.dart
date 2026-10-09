@@ -84,8 +84,11 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
       }
     }
 
-    // The account tab exists only in builds that know a server.
-    final accounts = ref.watch(accountProvider.select((a) => a.available));
+    // The account tab exists only in builds that know a server, on installs
+    // that can sync (not the web build yet: it has its own parent pages).
+    final accounts =
+        ref.watch(accountProvider.select((a) => a.available)) &&
+        ref.watch(syncProvider.select((s) => s.supported));
     final tabs = [
       l.parentAreaResults,
       l.parentAreaSettings,

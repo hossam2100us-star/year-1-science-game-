@@ -203,3 +203,13 @@ Findings and what changed in the package afterwards:
   - two cards had the same title;
   - dates followed the device language instead of the parent's.
 - Not tested on the emulator against the trial server: creating an account there would send a real verification email; that is part of the owner's trial.
+
+## Trial release 0.5.0 (versionCode 5), 2026-10-09
+
+- Built from `ffd5a4a` (parent accounts and sync on Android; the later web-only change does not affect Android):
+  `flutter build apk --release --obfuscate --split-debug-info=… --target-platform android-arm,android-arm64 --dart-define=API_BASE_URL=https://school.hmsfamily.synology.me` → 48.1 MB.
+- Signed with the upload key (certificate SHA-256 `a8:03:33:…:74:12:79`, same as 0.4.0, so it installs over it). Permissions: `INTERNET` and Android's internal receiver permission only.
+- Obfuscation checked in the packaged `libapp.so` (arm64 and arm): no `.debug_*` sections, no class names of the app.
+- The same code built for x86_64 upgraded 0.4.0 in place on the Android 14 emulator with the child and progress kept (see M4 above).
+- Symbols kept outside the repository with the 0.4.0 ones; the 0.4.0 APK kept aside for a rollback.
+- Not yet done: a first account on the trial server (needs a real email address) and a real phone.
