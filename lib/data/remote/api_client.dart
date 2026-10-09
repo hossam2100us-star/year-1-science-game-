@@ -83,12 +83,11 @@ class ApiClient {
   ApiClient({
     required this.base,
     required http.Client httpClient,
-    required RefreshTokenStore tokens,
+    required this._tokens,
     required this.deviceId,
     String? platform,
     this.timeout = const Duration(seconds: 20),
   }) : _http = httpClient,
-       _tokens = tokens,
        platform = platform ?? (kIsWeb ? 'web' : 'android');
 
   final Uri base;

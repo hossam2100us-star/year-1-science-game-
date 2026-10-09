@@ -97,8 +97,9 @@ void main() {
 
   test('signs in, keeps the refresh token in the secure store and the access token in memory', () async {
     final api = client((r) async {
-      if (r.url.path == '/api/v1/auth/login')
+      if (r.url.path == '/api/v1/auth/login') {
         return json(session('A1', refresh: 'R' * 43));
+      }
       if (r.url.path == '/api/v1/users/me') {
         expect(r.headers['Authorization'], 'Bearer A1');
         return json(user);
