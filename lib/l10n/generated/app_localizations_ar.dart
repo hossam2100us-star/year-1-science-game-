@@ -515,7 +515,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get accountNotLinked => 'على الجهاز ده بس';
 
   @override
-  String get accountLink => 'احفظه في الحساب';
+  String get accountLink => 'ضيفه للحساب';
 
   @override
   String get accountLinkName =>
@@ -532,6 +532,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get accountSyncTitle => 'المزامنة';
+
+  @override
+  String get accountConfirmTitle => 'أكّد الإيميل';
 
   @override
   String get accountSyncNow => 'زامن دلوقتي';

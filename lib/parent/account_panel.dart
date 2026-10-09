@@ -71,8 +71,15 @@ class _AccountPanelState extends ConsumerState<AccountPanel> {
     _ => l.accountErrorGeneric,
   };
 
+  /// Dates and Material texts follow the parent's language, not the device's.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => Localizations.override(
+    context: context,
+    locale: Locale(widget.arabic ? 'ar' : 'en'),
+    child: Builder(builder: _content),
+  );
+
+  Widget _content(BuildContext context) {
     final account = ref.watch(accountProvider);
     if (account.mode == AccountMode.deviceOnly) return _deviceOnly(context);
     final user = account.user;
@@ -368,7 +375,7 @@ class _AccountPanelState extends ConsumerState<AccountPanel> {
       children: [
         if (!user.emailVerified)
           ParentSection(
-            title: l.accountSyncTitle,
+            title: l.accountConfirmTitle,
             children: [
               Text(l.accountConfirmEmail(user.email)),
               const SizedBox(height: 12),

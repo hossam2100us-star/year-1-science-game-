@@ -256,7 +256,7 @@
   "accountChildrenBody": "Only the children you save in the account are synced. The others stay on this device only.",
   "accountLinked": "Saved in the account",
   "accountNotLinked": "This device only",
-  "accountLink": "Save in the account",
+  "accountLink": "Add to the account",
   "accountLinkName": "Edit the name first: up to 24 letters, without numbers or symbols.",
   "accountLinkConfirmTitle": "Save {name} in the account?",
   "@accountLinkConfirmTitle": {
@@ -266,6 +266,7 @@
   },
   "accountLinkConfirmBody": "The first name, gender, avatar, colours, settings, lesson progress and play time will be stored in your parent account and will appear on your other devices. The photo stays here.",
   "accountSyncTitle": "Sync",
+  "accountConfirmTitle": "Confirm your email",
   "accountSyncNow": "Sync now",
   "accountSyncRunning": "Syncing…",
   "accountSyncLast": "Last synced: {time}",

@@ -942,7 +942,7 @@ abstract class AppLocalizations {
   /// No description provided for @accountLink.
   ///
   /// In en, this message translates to:
-  /// **'Save in the account'**
+  /// **'Add to the account'**
   String get accountLink;
 
   /// No description provided for @accountLinkName.
@@ -968,6 +968,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sync'**
   String get accountSyncTitle;
+
+  /// No description provided for @accountConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm your email'**
+  String get accountConfirmTitle;
 
   /// No description provided for @accountSyncNow.
   ///

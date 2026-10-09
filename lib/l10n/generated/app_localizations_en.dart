@@ -516,7 +516,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get accountNotLinked => 'This device only';
 
   @override
-  String get accountLink => 'Save in the account';
+  String get accountLink => 'Add to the account';
 
   @override
   String get accountLinkName =>
@@ -533,6 +533,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get accountSyncTitle => 'Sync';
+
+  @override
+  String get accountConfirmTitle => 'Confirm your email';
 
   @override
   String get accountSyncNow => 'Sync now';
