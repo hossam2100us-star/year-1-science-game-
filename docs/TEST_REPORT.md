@@ -228,3 +228,12 @@ Findings and what changed in the package afterwards:
   - the account branch passes the gate and the consent to the sign-in page;
   - "Continue to the game" opens onboarding;
   - after a force-stop and relaunch the question is not asked again.
+
+## Trial release 0.5.1 (versionCode 6), 2026-10-09 — replaces 0.5.0 before distribution
+
+- Built from `79aa417` (adds the first-run question), same command and checks as 0.5.0:
+  - 48.2 MB;
+  - upload key `a8:03:33:…:74:12:79`;
+  - permissions `INTERNET` and the internal receiver permission only;
+  - no `.debug_*` sections or app class names in either packaged `libapp.so`.
+- 0.5.0 and 0.4.0 APKs and all symbol files kept outside the repository.
