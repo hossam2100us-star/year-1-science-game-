@@ -170,3 +170,13 @@ Findings and what changed in the package afterwards:
 - Still open: Container Manager shows environment variables (including the
   database URL) in its General tab to NAS administrators; moving secrets to
   `*_FILE` mounts is a later hardening step.
+## Trial release 0.4.0 (versionCode 4), 2026-10-09
+
+- `flutter build apk --release --obfuscate --split-debug-info=… --target-platform android-arm,android-arm64`: 46.7 MB; signed with the upload key (certificate SHA-256 `a8:03:33:…:74:12:79`, the key created on 2026-10-05); no permissions besides Android's internal receiver permission.
+- Smoke test of the same code built for x86_64 on the Android 14 emulator (release, obfuscated):
+  - cold start 2.6-6.4 s;
+  - a child was added through onboarding;
+  - a discovery in unit 1 was answered;
+  - after a force-stop and relaunch the unit resumed at 1 / 7 with that discovery starred;
+  - no crash, ANR or plugin error in `logcat`.
+- Obfuscation symbols kept outside the repository for decoding crash reports.
