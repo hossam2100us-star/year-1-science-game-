@@ -187,6 +187,9 @@ class Outbox extends Table {
   TextColumn get mutationId => text().unique()();
   TextColumn get entity => text()();
   TextColumn get op => text()();
+
+  /// What the mutation changes (`child:<id>`, `journey:<child>:<curriculum>:<key>`,
+  /// ...); pending changes to the same thing are coalesced.
   TextColumn get entityId => text()();
   IntColumn get baseVersion => integer().nullable()();
   TextColumn get payloadJson => text()();
@@ -197,7 +200,8 @@ class Outbox extends Table {
 
   @override
   List<String> get customConstraints => [
-    "CHECK (op IN ('create', 'patch', 'delete'))",
+    // `put` (journeys and usage) was added in schema 2.
+    "CHECK (op IN ('create', 'patch', 'put', 'delete'))",
     "CHECK (status IN ('pending', 'inflight', 'failed', 'quarantined'))",
   ];
 }
@@ -221,11 +225,19 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase(super.e);
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onCreate: (m) => m.createAll(),
+    onUpgrade: (m, from, to) async {
+      if (from < 2) {
+        // The outbox only changes its CHECK constraint. SQLite cannot alter
+        // a constraint in place, so drift copies the table: every row is
+        // kept, inside the migration's transaction.
+        await m.alterTable(TableMigration(outbox));
+      }
+    },
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');
     },
