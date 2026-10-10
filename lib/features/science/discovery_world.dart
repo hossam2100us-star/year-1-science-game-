@@ -8,6 +8,11 @@ import '../biology/illustrated_art.dart';
 import 'science_picture.dart';
 
 /// Shared exploration models. Taps discover; changing focus alone never does.
+///
+/// Teacher review 4: a tap anywhere on the picture discovers (children tap
+/// the picture, not the small marker), the marker sits on the picture, a
+/// visited item shows a check, and each scene fits a 1280×800 tablet
+/// together with its name and the Next button.
 class DiscoveryWorld extends StatelessWidget {
   const DiscoveryWorld({
     super.key,
@@ -15,11 +20,20 @@ class DiscoveryWorld extends StatelessWidget {
     required this.index,
     required this.onFocus,
     required this.onDiscover,
+    this.discovered = const {},
   });
   final LessonStep step;
   final int index;
   final ValueChanged<int> onFocus;
   final ValueChanged<String> onDiscover;
+  final Set<String> discovered;
+
+  /// Picture height that leaves room for the rest of the activity (the
+  /// safety rules also show the rule chips above the picture).
+  static double sceneHeight(BuildContext context) =>
+      (MediaQuery.sizeOf(context).height * .27).clamp(150.0, 290.0);
+  static double waterHeight(BuildContext context) =>
+      (MediaQuery.sizeOf(context).height * .38).clamp(150.0, 400.0);
 
   static bool supports(LessonStep step) => const [
     'unit_07.step.001',
@@ -34,15 +48,29 @@ class DiscoveryWorld extends StatelessWidget {
       key: ValueKey('science-item-${item.id}'),
       onTap: () => onDiscover(item.id),
       borderRadius: BorderRadius.circular(24),
-      child: const SizedBox(
+      child: SizedBox(
         width: 48,
         height: 48,
-        child: Center(child: TouchCue()),
+        child: Center(
+          child: discovered.contains(item.id)
+              ? const DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Color(0xE6FFFFFF),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.check_circle_outline,
+                    size: 40,
+                    color: Color(0xFF437A69),
+                  ),
+                )
+              : const TouchCue(),
+        ),
       ),
     ),
   );
 
-  Widget safety() {
+  Widget safety(BuildContext context) {
     final current = step.options[index];
     return Column(
       children: [
@@ -60,51 +88,109 @@ class DiscoveryWorld extends StatelessWidget {
               ),
           ],
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: 8),
+        // The rule's name sits beside the picture (the panel is narrow), so
+        // the picture, the name and Next fit a tablet screen together.
         SizedBox(
-          height: 290,
-          width: double.infinity,
-          child: IllustratedArt(
-            asset: 'electric-safety-v1.webp',
-            crop: const [
-              Rect.fromLTWH(0, 0, .304, 1),
-              Rect.fromLTWH(.306, 0, .369, 1),
-              Rect.fromLTWH(.68, 0, .32, 1),
-            ][index],
+          height: sceneHeight(context),
+          child: Row(
+            children: [
+              Expanded(
+                flex: 3,
+                child: GestureDetector(
+                  key: const ValueKey('safety-picture'),
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () => onDiscover(current.id),
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: IllustratedArt(
+                          asset: 'electric-safety-v1.webp',
+                          crop: const [
+                            Rect.fromLTWH(0, 0, .304, 1),
+                            Rect.fromLTWH(.306, 0, .369, 1),
+                            Rect.fromLTWH(.68, 0, .32, 1),
+                          ][index],
+                        ),
+                      ),
+                      Positioned(
+                        left: 0,
+                        right: 0,
+                        bottom: 4,
+                        child: Center(child: touch(current)),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                flex: 2,
+                child: Text(
+                  current.label,
+                  key: const ValueKey('safety-rule-name'),
+                  style: const TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
-        Text(
-          current.label,
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-        ),
-        touch(current),
       ],
     );
   }
 
-  Widget water() => Column(
+  /// The place nearest to a tap on the water picture.
+  String _nearestPlace(Offset tap, Size size) {
+    String? best;
+    var bestDistance = double.infinity;
+    for (final item in step.options) {
+      final p = _waterPositions[item.id]!;
+      final d = (Offset(p.dx * size.width, p.dy * size.height) - tap).distance;
+      if (d < bestDistance) {
+        bestDistance = d;
+        best = item.id;
+      }
+    }
+    return best!;
+  }
+
+  Widget water(BuildContext context) => Column(
     children: [
-      ClipRRect(
-        borderRadius: BorderRadius.circular(24),
-        child: AspectRatio(
-          aspectRatio: 2,
-          child: LayoutBuilder(
-            builder: (context, box) => Stack(
-              children: [
-                const Positioned.fill(
-                  child: IllustratedArt(asset: 'water-world-v1.webp'),
-                ),
-                for (final item in step.options)
-                  Positioned(
-                    left: box.maxWidth * _waterPositions[item.id]!.dx - 24,
-                    top: box.maxHeight * _waterPositions[item.id]!.dy - 24,
-                    child: touch(item),
+      LayoutBuilder(
+        builder: (context, outer) {
+          final width = math.min(outer.maxWidth, waterHeight(context) * 2);
+          final size = Size(width, width / 2);
+          return Center(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(24),
+              child: SizedBox.fromSize(
+                size: size,
+                child: GestureDetector(
+                  key: const ValueKey('water-picture'),
+                  behavior: HitTestBehavior.opaque,
+                  onTapUp: (details) =>
+                      onDiscover(_nearestPlace(details.localPosition, size)),
+                  child: Stack(
+                    children: [
+                      const Positioned.fill(
+                        child: IllustratedArt(asset: 'water-world-v1.webp'),
+                      ),
+                      for (final item in step.options)
+                        Positioned(
+                          left: size.width * _waterPositions[item.id]!.dx - 24,
+                          top: size.height * _waterPositions[item.id]!.dy - 24,
+                          child: touch(item),
+                        ),
+                    ],
                   ),
-              ],
+                ),
+              ),
             ),
-          ),
-        ),
+          );
+        },
       ),
       const SizedBox(height: 8),
       Text(
@@ -267,9 +353,9 @@ class DiscoveryWorld extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => step.id.startsWith('unit_07')
-      ? safety()
+      ? safety(context)
       : step.id.startsWith('unit_08')
-      ? water()
+      ? water(context)
       : space();
 }
 

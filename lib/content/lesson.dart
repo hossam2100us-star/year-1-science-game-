@@ -55,6 +55,20 @@ class LessonStep {
   String label(String id) =>
       [...options, ...targets].where((e) => e.id == id).firstOrNull?.label ??
       id.replaceAll('_', ' ');
+
+  /// What a discovery says and shows: the name first (it is the word being
+  /// taught), then the description, unless the description already names it
+  /// ("Ocean. The biggest water of all, and salty."; teacher review 4).
+  String discoveryText(String id) {
+    final name = label(id);
+    final description = json['senseDescriptions']?[id];
+    if (description is! String || description.isEmpty) return name;
+    final named = RegExp(
+      '\\b${RegExp.escape(name)}\\b',
+      caseSensitive: false,
+    ).hasMatch(description);
+    return named ? description : '$name. $description';
+  }
 }
 
 class Lesson {

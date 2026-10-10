@@ -124,8 +124,7 @@ class _ScienceWorldStageState extends State<ScienceWorldStage> {
     widget.onSpeak?.call(discovering ? discoverySpeech : current.label);
   }
 
-  String get discoverySpeech =>
-      step.json['senseDescriptions']?[current.id] as String? ?? current.label;
+  String get discoverySpeech => step.discoveryText(current.id);
   void discover() {
     if (!widget.done && !widget.selected.contains(current.id)) {
       widget.onItem(current.id);
@@ -353,6 +352,7 @@ class _ScienceWorldStageState extends State<ScienceWorldStage> {
         DiscoveryWorld(
           step: step,
           index: index,
+          discovered: widget.selected,
           onFocus: move,
           onDiscover: (id) {
             setState(

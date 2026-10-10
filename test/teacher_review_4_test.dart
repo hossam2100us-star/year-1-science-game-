@@ -1,0 +1,209 @@
+import 'dart:ui' as ui;
+
+import 'package:flame/flame.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:science_adventure/content/lesson.dart';
+import 'package:science_adventure/core/models.dart';
+import 'package:science_adventure/core/storage.dart';
+import 'package:science_adventure/features/biology/illustrated_art.dart';
+import 'package:science_adventure/features/lesson/lesson_player.dart';
+import 'package:science_adventure/features/lesson/session.dart';
+import 'package:science_adventure/features/science/force_picture.dart';
+import 'package:science_adventure/features/science/science_picture.dart';
+
+import 'setup_screen_test.dart' as helpers;
+import 'support/review_images.dart';
+
+/// Teacher review 4 (docs/TEACHER_REVIEW_2026_10_09.md), checked at the
+/// tablet size the teacher used: 1280×800 landscape.
+void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+  late LessonLibrary library;
+  setUpAll(() async {
+    library = await LessonLibrary.load();
+    helpers.testCatalog = await helpers.loadTestCatalog();
+    for (final font in ['Nunito', 'Fredoka', 'Cairo']) {
+      await (FontLoader(
+        font,
+      )..addFont(rootBundle.load('assets/fonts/$font.ttf'))).load();
+    }
+    await (FontLoader(
+      'MaterialIcons',
+    )..addFont(rootBundle.load('fonts/MaterialIcons-Regular.otf'))).load();
+    for (final atlas in scienceAtlases.keys) {
+      await Flame.images.load(atlas);
+    }
+    for (final atlas in forceArtAssets) {
+      await Flame.images.load(atlas);
+    }
+  });
+
+  void tablet(WidgetTester t) {
+    t.view.physicalSize = const Size(1280, 800);
+    t.view.devicePixelRatio = 1;
+    addTearDown(t.view.resetPhysicalSize);
+    addTearDown(t.view.resetDevicePixelRatio);
+  }
+
+  Future<MemoryProgressStore> open(WidgetTester t, String stepId) async {
+    final lesson = library.lessons[stepId.split('.').first]!;
+    final index = lesson.steps.indexWhere((s) => s.id == stepId);
+    final store = MemoryProgressStore(
+      AppData(
+        profile: const ChildProfile(name: 'Nour'),
+        journeys: {
+          lesson.id: (LessonSession.fresh(lesson)..index = index).toJson(),
+        },
+      ),
+    );
+    await helpers.mount(t, LessonPlayer(lesson: lesson), store);
+    return store;
+  }
+
+  /// Visible without scrolling: inside the screen and above the fixed strip.
+  void expectVisible(WidgetTester t, Finder finder, String what) {
+    final rect = t.getRect(finder);
+    final strip = t.getRect(find.byKey(const ValueKey('lesson-controls')));
+    expect(
+      rect.bottom,
+      lessThanOrEqualTo(strip.top + 0.5),
+      reason: '$what at $rect, strip starts at ${strip.top}',
+    );
+    expect(rect.top, greaterThanOrEqualTo(0), reason: what);
+  }
+
+  String discoveries(WidgetTester t) => t
+      .widgetList<Text>(find.byType(Text))
+      .map((w) => w.data ?? '')
+      .firstWhere((s) => s.startsWith('Discoveries'));
+
+  for (final stepId in ['unit_07.step.001', 'unit_08.step.001']) {
+    testWidgets('$stepId: marker, name and Next fit at 1280×800', (t) async {
+      tablet(t);
+      await open(t, stepId);
+      final lesson = library.lessons[stepId.split('.').first]!;
+      final step = lesson.steps.firstWhere((s) => s.id == stepId);
+      final first = step.options.first.id;
+      expectVisible(t, find.byKey(ValueKey('science-item-$first')), 'marker');
+      expectVisible(
+        t,
+        find.byKey(const ValueKey('science-world-next')),
+        'Next',
+      );
+      await t.pumpWidget(const SizedBox());
+    });
+  }
+
+  testWidgets('a tap on the safety picture itself is a discovery', (t) async {
+    tablet(t);
+    await open(t, 'unit_07.step.001');
+    expect(discoveries(t), 'Discoveries 0 / 3');
+    await t.tap(find.byType(IllustratedArt));
+    await t.pump(const Duration(milliseconds: 300));
+    expect(discoveries(t), 'Discoveries 1 / 3');
+    await t.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('Water world names the place first and marks visits', (t) async {
+    tablet(t);
+    await open(t, 'unit_08.step.001');
+    // A tap on the open sea, near the ocean's marker but not on it.
+    final picture = t.getRect(find.byKey(const ValueKey('water-picture')));
+    await t.tapAt(
+      Offset(
+        picture.left + picture.width * .80,
+        picture.top + picture.height * .45,
+      ),
+    );
+    await t.pump(const Duration(milliseconds: 300));
+    expect(discoveries(t), 'Discoveries 1 / 5');
+    final feedback = t.widget<Text>(
+      find.byKey(const ValueKey('lesson-feedback')),
+    );
+    expect(feedback.data, startsWith('Ocean. '));
+    expect(
+      find.descendant(
+        of: find.byKey(const ValueKey('science-item-ocean')),
+        matching: find.byIcon(Icons.check_circle_outline),
+      ),
+      findsOneWidget,
+    );
+    expect(
+      find.descendant(
+        of: find.byKey(const ValueKey('science-item-pond')),
+        matching: find.byIcon(Icons.check_circle_outline),
+      ),
+      findsNothing,
+    );
+    await t.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('the action strip has the same place on every activity', (
+    t,
+  ) async {
+    tablet(t);
+    for (final id in ['unit_07', 'unit_08', 'quiz_03']) {
+      final lesson = library.lessons[id]!;
+      Rect? first;
+      for (final step in lesson.steps) {
+        await open(t, step.id);
+        final strip = t.getRect(find.byKey(const ValueKey('lesson-controls')));
+        first ??= strip;
+        expect(strip, first, reason: step.id);
+        await t.pumpWidget(const SizedBox());
+      }
+    }
+  });
+
+  /// Opt-in screenshots for review: --dart-define=REVIEW_IMAGES=true.
+  testWidgets('review images at 1280×800', (t) async {
+    if (!writeReviewImages) return;
+    tablet(t);
+    Future<void> shot(String stepId, String name, [Offset? tap]) async {
+      final lesson = library.lessons[stepId.split('.').first]!;
+      final index = lesson.steps.indexWhere((s) => s.id == stepId);
+      final key = GlobalKey();
+      await helpers.mount(
+        t,
+        RepaintBoundary(
+          key: key,
+          child: LessonPlayer(lesson: lesson),
+        ),
+        MemoryProgressStore(
+          AppData(
+            profile: const ChildProfile(name: 'Nour'),
+            journeys: {
+              lesson.id: (LessonSession.fresh(lesson)..index = index).toJson(),
+            },
+          ),
+        ),
+      );
+      if (tap != null) {
+        await t.tapAt(tap);
+        await t.pump(const Duration(milliseconds: 400));
+      }
+      await t.runAsync(() async {
+        final image =
+            await (key.currentContext!.findRenderObject()!
+                    as RenderRepaintBoundary)
+                .toImage();
+        final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
+        await saveReviewImage('teacher-review-4/$name.png', bytes);
+        image.dispose();
+      });
+      await t.pumpWidget(const SizedBox());
+    }
+
+    await shot('unit_07.step.001', 'electricity-safety');
+    await shot(
+      'unit_07.step.001',
+      'electricity-safety-tapped',
+      const Offset(400, 520),
+    );
+    await shot('unit_08.step.001', 'water-world-ocean', const Offset(860, 330));
+    await shot('quiz_03.step.001', 'quiz-3-first');
+  });
+}
