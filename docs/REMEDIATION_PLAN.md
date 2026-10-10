@@ -44,6 +44,13 @@ re-checked against `main` @ `2e81558` on 2026-10-10; "Checked" says what was fou
 | X-1 | Found while checking: the "Saving…" label in the lesson strip is mis-encoded (`Savingâ€¦`) | Confirmed; only occurrence in tracked text files | Fix the character; a test that no source or content file contains mis-encoded UTF-8 | — |
 | X-2 | README says the app has no INTERNET permission and keeps all data on the device (the review's "not reviewed" note) | Confirmed: true before M4, not since | Rewrite for parents: device-only by default, what is sent only after choosing an account and saving a child, photos never | — |
 
+**Status 2026-10-10:**
+- **FIXED** with tests in `test/teacher_review_4_test.dart`, `test/text_encoding_test.dart` and `test/forces_scenes_test.dart`:
+  - T4-2, T4-3, T4-4 and X-1 in `9c50975`;
+  - T4-5a, T4-5b, T4-5c and X-2 in `1def1de`.
+- Review screenshots at 1280×800 were checked by eye.
+- **Waiting for the owner:** T4-1 (picture), T4-5d (quiz 3), T4-5e (Arabic home activities).
+
 Verification for M5a: tests above, goldens regenerated and compared by eye, emulator run at
 1280×800 (Electricity safety, Water world, Space, a lesson with long and short steps), then
 a release APK and a request for teacher review 5.
