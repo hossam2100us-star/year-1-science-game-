@@ -43,11 +43,17 @@ void main() {
     }
   });
 
+  /// A 1280×800 Android tablet: the status bar (24) and the navigation bar
+  /// (60) leave the app about 716 of the 800 (seen on the emulator).
   void tablet(WidgetTester t) {
     t.view.physicalSize = const Size(1280, 800);
     t.view.devicePixelRatio = 1;
+    t.view.padding = const FakeViewPadding(top: 24, bottom: 60);
+    t.view.viewPadding = const FakeViewPadding(top: 24, bottom: 60);
     addTearDown(t.view.resetPhysicalSize);
     addTearDown(t.view.resetDevicePixelRatio);
+    addTearDown(t.view.resetPadding);
+    addTearDown(t.view.resetViewPadding);
   }
 
   Future<MemoryProgressStore> open(WidgetTester t, String stepId) async {
@@ -74,7 +80,7 @@ void main() {
       lessThanOrEqualTo(strip.top + 0.5),
       reason: '$what at $rect, strip starts at ${strip.top}',
     );
-    expect(rect.top, greaterThanOrEqualTo(0), reason: what);
+    expect(rect.top, greaterThanOrEqualTo(24), reason: what);
   }
 
   String discoveries(WidgetTester t) => t

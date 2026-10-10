@@ -28,12 +28,22 @@ class DiscoveryWorld extends StatelessWidget {
   final ValueChanged<String> onDiscover;
   final Set<String> discovered;
 
+  /// The height the app really has: the screen without the status and
+  /// navigation bars (a 1280×800 tablet leaves about 716).
+  /// Read from the window, not MediaQuery: the lesson page sits in a
+  /// SafeArea, which hides the bars from MediaQuery below it.
+  static double usableHeight(BuildContext context) {
+    final view = View.of(context);
+    return (view.physicalSize.height - view.padding.top - view.padding.bottom) /
+        view.devicePixelRatio;
+  }
+
   /// Picture height that leaves room for the rest of the activity (the
   /// safety rules also show the rule chips above the picture).
   static double sceneHeight(BuildContext context) =>
-      (MediaQuery.sizeOf(context).height * .27).clamp(150.0, 290.0);
+      (usableHeight(context) * .25).clamp(150.0, 290.0);
   static double waterHeight(BuildContext context) =>
-      (MediaQuery.sizeOf(context).height * .38).clamp(150.0, 400.0);
+      (usableHeight(context) * .36).clamp(150.0, 400.0);
 
   static bool supports(LessonStep step) => const [
     'unit_07.step.001',
@@ -356,10 +366,7 @@ class DiscoveryWorld extends StatelessWidget {
       // Short enough that the caption and Next fit under it on a tablet.
       final h = math.max(
         200.0,
-        math.min(
-          math.min(360.0, w * .48),
-          MediaQuery.sizeOf(context).height * .34,
-        ),
+        math.min(math.min(360.0, w * .48), usableHeight(context) * .32),
       );
       final sun = h * 1.5;
       final visibleSun = sun * .45;

@@ -23,6 +23,7 @@ import 'scene_kind.dart';
 import 'scene_renderers.dart';
 import 'step_rules.dart';
 import '../biology/shoe_measure.dart';
+import '../science/discovery_world.dart';
 import '../science/force_guided_lab.dart';
 import '../science/force_discovery.dart';
 import '../science/science_audio.dart';
@@ -825,8 +826,16 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                             LayoutBuilder(
                               builder: (context, constraints) {
                                 final compact = constraints.maxWidth < 600;
+                                // A smaller owl on short screens (a tablet
+                                // without its system bars) keeps Next visible.
+                                final short =
+                                    DiscoveryWorld.usableHeight(context) < 760;
                                 final owl = ScientistOwl(
-                                  size: compact ? 44 : 70,
+                                  size: compact
+                                      ? 44
+                                      : short
+                                      ? 56
+                                      : 70,
                                   gender: profile?.gender ?? ChildGender.boy,
                                   mood: _engine.done
                                       ? (_engine.outcome ==
@@ -985,7 +994,8 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   /// One height on every activity, so the buttons never move; longer
   /// feedback scrolls inside it.
   double get _stripHeight {
-    final base = (MediaQuery.sizeOf(context).height * .12).clamp(72.0, 104.0);
+    final usable = DiscoveryWorld.usableHeight(context);
+    final base = (usable * .10).clamp(72.0, 96.0);
     final button = MediaQuery.textScalerOf(context).scale(18) + 20;
     return math.max(base, button + 16);
   }

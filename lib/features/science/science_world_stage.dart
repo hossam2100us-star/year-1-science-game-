@@ -179,14 +179,14 @@ class _ScienceWorldStageState extends State<ScienceWorldStage> {
   );
 
   Widget navigation() => Padding(
-    padding: const EdgeInsets.only(top: 12),
+    padding: const EdgeInsets.only(top: 8),
     child: Row(
       children: [
         IconButton(
           key: const ValueKey('science-world-previous'),
           tooltip: discovering ? 'Previous place' : 'Previous discovery',
           onPressed: index == 0 ? null : () => move(index - 1),
-          style: IconButton.styleFrom(minimumSize: const Size(48, 52)),
+          style: IconButton.styleFrom(minimumSize: const Size(48, 48)),
           icon: const Icon(Icons.arrow_back_rounded),
         ),
         Expanded(
@@ -198,8 +198,8 @@ class _ScienceWorldStageState extends State<ScienceWorldStage> {
                 ? null
                 : () => move(index + 1),
             style: TextButton.styleFrom(
-              minimumSize: const Size(48, 52),
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+              minimumSize: const Size(48, 48),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               backgroundColor: const Color(0xFFE8EEE3),
             ),
             child: text(nextLabel, size: 18),
@@ -343,11 +343,39 @@ class _ScienceWorldStageState extends State<ScienceWorldStage> {
     ],
   );
 
+  /// Count, instruction and Listen on one line on tablets, so the scene and
+  /// Next fit without scrolling (teacher review 4); two lines on phones.
+  Widget explorationHeader() => LayoutBuilder(
+    builder: (context, box) => box.maxWidth < 600
+        ? Column(
+            children: [guideHeader(), text(discoveryInstruction, size: 18)],
+          )
+        : oneLineHeader(),
+  );
+
+  Widget oneLineHeader() => Row(
+    children: [
+      Text(
+        'Discoveries ${widget.selected.intersection(step.options.map((item) => item.id).toSet()).length} / ${step.options.length}',
+        style: const TextStyle(fontSize: 17),
+      ),
+      const SizedBox(width: 12),
+      Expanded(child: text(discoveryInstruction, size: 18)),
+      IconButton(
+        key: const ValueKey('science-world-listen'),
+        tooltip: 'Listen again',
+        onPressed: widget.onSpeak == null
+            ? null
+            : () => widget.onSpeak!(discoverySpeech),
+        icon: const Icon(Icons.volume_up_rounded),
+      ),
+    ],
+  );
+
   Widget exploration() => Column(
     children: [
-      guideHeader(),
-      text(discoveryInstruction, size: 18),
-      const SizedBox(height: 10),
+      explorationHeader(),
+      const SizedBox(height: 4),
       if (DiscoveryWorld.supports(step))
         DiscoveryWorld(
           step: step,
