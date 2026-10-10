@@ -104,14 +104,20 @@ class DiscoveryWorld extends StatelessWidget {
                   child: Stack(
                     children: [
                       Positioned.fill(
-                        child: IllustratedArt(
-                          asset: 'electric-safety-v1.webp',
-                          crop: const [
-                            Rect.fromLTWH(0, 0, .304, 1),
-                            Rect.fromLTWH(.306, 0, .369, 1),
-                            Rect.fromLTWH(.68, 0, .32, 1),
-                          ][index],
-                        ),
+                        // The socket rule has its own picture: no hand is
+                        // near the socket (teacher review 4). The other two
+                        // rules are panels of the shared picture.
+                        child: index == 0
+                            ? const IllustratedArt(
+                                asset: 'electric-safety-socket-v2.webp',
+                              )
+                            : IllustratedArt(
+                                asset: 'electric-safety-v1.webp',
+                                crop: const [
+                                  Rect.fromLTWH(.306, 0, .369, 1),
+                                  Rect.fromLTWH(.68, 0, .32, 1),
+                                ][index - 1],
+                              ),
                       ),
                       Positioned(
                         left: 0,
