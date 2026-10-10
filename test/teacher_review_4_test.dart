@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:ui' as ui;
 
 import 'package:flame/flame.dart';
@@ -13,6 +14,7 @@ import 'package:science_adventure/features/lesson/lesson_player.dart';
 import 'package:science_adventure/features/lesson/session.dart';
 import 'package:science_adventure/features/science/force_picture.dart';
 import 'package:science_adventure/features/science/science_picture.dart';
+import 'package:science_adventure/parent/parent_area.dart';
 
 import 'setup_screen_test.dart' as helpers;
 import 'support/review_images.dart';
@@ -197,6 +199,78 @@ void main() {
     final note = library.lessons['unit_09']!.json['parentNote'] as Map;
     expect(note['en'], contains('not to scale'));
     expect(note['ar'], isNotEmpty);
+    await t.pumpWidget(const SizedBox());
+  });
+
+  test(
+    'every parent activity has Arabic and no translation is stale',
+    () async {
+      final arabic = jsonDecode(
+        await rootBundle.loadString('assets/content/parent_ar.json'),
+      ) as Map<String, dynamic>;
+      var goals = 0, homes = 0;
+      final safety = <String>{};
+      for (final lesson in library.lessons.values) {
+        for (final a in [
+          ...?(lesson.json['goalActivities'] as List?),
+          ...lesson.homeActivities,
+        ]) {
+          final activity = a as Map;
+          final what = '${lesson.id} ${activity['objective'] ?? 'home'}';
+          expect(activity['textAr'], isA<String>(), reason: what);
+          expect(
+            (activity['textAr'] as String).trim(),
+            isNotEmpty,
+            reason: what,
+          );
+          expect(activity['safetyAr'], isA<String>(), reason: what);
+          activity.containsKey('objective') ? goals++ : homes++;
+          safety.add(activity['safety'] as String);
+        }
+      }
+      expect((arabic['goal'] as Map).length, goals);
+      expect((arabic['home'] as Map).length, homes);
+      expect((arabic['safety'] as Map).keys.toSet(), safety);
+    },
+  );
+
+  testWidgets('the Arabic parent area shows activities in Arabic', (t) async {
+    tablet(t);
+    await helpers.mount(
+      t,
+      const ParentArea(),
+      MemoryProgressStore(
+        AppData(
+          profile: const ChildProfile(name: 'Nour'),
+          settings: const AppSettings(arabic: true),
+          // A goal that needed an explanation brings its home activity.
+          attempts: [
+            UnitAttempt(
+              unitId: 'unit_02',
+              completedAt: DateTime(2026, 10, 9, 10),
+              objectives: const {'u02.main.01': DecisionOutcome.explained},
+              completed: true,
+              effortStars: 2,
+              attemptId: 'unit_02-1',
+            ),
+          ],
+        ),
+      ),
+    );
+    await t.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 300)),
+    );
+    await t.pump();
+    final lesson = library.lessons['unit_02']!;
+    final goal = (lesson.json['goalActivities'] as List)
+        .cast<Map<String, dynamic>>()
+        .firstWhere((a) => a['objective'] == 'u02.main.01');
+    for (final activity in [goal, lesson.homeActivities.first]) {
+      final shown = find.text(activity['textAr'] as String);
+      expect(shown, findsOneWidget);
+      expect(t.widget<Text>(shown).textDirection, TextDirection.rtl);
+      expect(find.text(activity['text'] as String), findsNothing);
+    }
     await t.pumpWidget(const SizedBox());
   });
 
