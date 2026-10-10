@@ -80,7 +80,11 @@ void main() {
       .map((w) => w.data ?? '')
       .firstWhere((s) => s.startsWith('Discoveries'));
 
-  for (final stepId in ['unit_07.step.001', 'unit_08.step.001']) {
+  for (final stepId in [
+    'unit_07.step.001',
+    'unit_08.step.001',
+    'unit_09.step.001',
+  ]) {
     testWidgets('$stepId: marker, name and Next fit at 1280×800', (t) async {
       tablet(t);
       await open(t, stepId);
@@ -158,6 +162,39 @@ void main() {
     }
   });
 
+  testWidgets('Space: a very large Sun partly outside the model', (t) async {
+    tablet(t);
+    await open(t, 'unit_09.step.001');
+    final model = t.getRect(
+      find.byKey(const ValueKey('space-discovery-model')),
+    );
+    final sun = t.getRect(find.byKey(const ValueKey('space-body-sun')));
+    final earth = t.getRect(find.byKey(const ValueKey('space-body-earth')));
+    expect(sun.height, greaterThan(earth.height * 4));
+    expect(sun.left, lessThan(model.left));
+    expect(find.textContaining('not to scale'), findsNothing);
+    // A tap on the visible part of the Sun discovers it.
+    await t.tapAt(Offset(model.left + 40, model.center.dy - 60));
+    await t.pump(const Duration(milliseconds: 300));
+    expect(discoveries(t), 'Discoveries 1 / 3');
+    expect(
+      find.descendant(
+        of: find.byKey(const ValueKey('science-item-sun')),
+        matching: find.byIcon(Icons.check_circle_outline),
+      ),
+      findsOneWidget,
+    );
+    // The unit report matches this type to show the note.
+    expect(
+      library.lessons['unit_09']!.json['parentNote'],
+      isA<Map<String, dynamic>>(),
+    );
+    final note = library.lessons['unit_09']!.json['parentNote'] as Map;
+    expect(note['en'], contains('not to scale'));
+    expect(note['ar'], isNotEmpty);
+    await t.pumpWidget(const SizedBox());
+  });
+
   /// Opt-in screenshots for review: --dart-define=REVIEW_IMAGES=true.
   testWidgets('review images at 1280×800', (t) async {
     if (!writeReviewImages) return;
@@ -205,5 +242,6 @@ void main() {
     );
     await shot('unit_08.step.001', 'water-world-ocean', const Offset(860, 330));
     await shot('quiz_03.step.001', 'quiz-3-first');
+    await shot('unit_09.step.001', 'space-model');
   });
 }

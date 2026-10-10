@@ -350,8 +350,9 @@ void main() {
             expect(find.byKey(const ValueKey('lessonNext')), findsOneWidget);
             if (id == 'unit_09') {
               expect(
+                // Moved to the parent report (teacher review 4).
                 find.text('Model: sizes and distances are not to scale.'),
-                findsOneWidget,
+                findsNothing,
               );
             }
           }

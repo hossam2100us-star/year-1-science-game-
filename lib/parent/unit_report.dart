@@ -161,6 +161,17 @@ class UnitReport extends ConsumerWidget {
               ),
             ],
           ],
+          // Facts for grown-ups that would confuse a child on the screen
+          // ("the space model is not to scale"; teacher review 4).
+          if (lesson?.json['parentNote']
+              case final Map<String, dynamic> note) ...[
+            const SizedBox(height: 8),
+            Text(
+              '${note[arabic ? 'ar' : 'en'] ?? note['en']}',
+              key: ValueKey('parent-note-${level.id}'),
+              style: const TextStyle(fontStyle: FontStyle.italic),
+            ),
+          ],
           if (lesson != null) ...[
             for (final activity
                 in List<Map<String, dynamic>>.from(

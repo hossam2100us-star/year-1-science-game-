@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 
 import 'force_picture.dart';
 
-/// Push maintains hand contact; pull maintains a visible rope connection.
-/// Assessment scenes retain their neutral reference and resting poses.
+/// Push: the child's hands stay on the trolley while pushing, then the
+/// child lets go and the trolley rolls on alone, so the gap grows ("a push
+/// sends an object away from you"; teacher review 4). Pull keeps a visible
+/// rope connection. Assessment scenes retain their neutral resting poses.
 class ForceTrolleyScene extends StatelessWidget {
   const ForceTrolleyScene({
     super.key,
@@ -19,6 +21,18 @@ class ForceTrolleyScene extends StatelessWidget {
   final bool active;
   final bool showAction;
   final bool showGround;
+
+  /// Share of the animation spent pushing, and of the travel done by then.
+  static const release = .3;
+  static const _pushedShare = .25;
+
+  /// Where the trolley is (0-1 of the travel) at time [t] of a push.
+  static double pushed(double t) => t <= release
+      ? _pushedShare * Curves.easeIn.transform(t / release)
+      : _pushedShare +
+            (1 - _pushedShare) *
+                Curves.easeOutCubic.transform((t - release) / (1 - release));
+
   @override
   Widget build(BuildContext context) => LayoutBuilder(
     builder: (context, box) {
@@ -28,14 +42,21 @@ class ForceTrolleyScene extends StatelessWidget {
       final animation = TweenAnimationBuilder<double>(
         tween: Tween(begin: 0, end: active ? 1 : 0),
         duration: reduced ? Duration.zero : const Duration(milliseconds: 2200),
-        curve: Curves.easeInOutSine,
+        curve: motion == 'push' ? Curves.linear : Curves.easeInOutSine,
         builder: (context, t, _) {
           // Reduced motion keeps the neutral pose, never reveals a direction.
           final playing = active && !reduced;
-          final distance = playing ? (motion == 'pull' ? 1 - t : t) : .35;
+          final pushing = playing && motion == 'push';
+          final letGo = pushing && t > release;
+          final distance = !playing
+              ? .35
+              : motion == 'pull'
+              ? 1 - t
+              : pushed(t);
           final cartLeft = 130 + travel * distance;
-          final childLeft = playing && showAction && motion == 'push'
-              ? cartLeft - 144
+          // After letting go the child stays where the push ended.
+          final childLeft = pushing && showAction
+              ? 130 + travel * pushed(math.min(t, release)) - 144
               : 0.0;
           return SizedBox(
             height: 225,
@@ -68,7 +89,9 @@ class ForceTrolleyScene extends StatelessWidget {
                   left: childLeft,
                   bottom: 45,
                   child: ForcePicture(
-                    playing && showAction ? 'explorer_$motion' : 'explorer',
+                    playing && showAction && !letGo
+                        ? 'explorer_$motion'
+                        : 'explorer',
                     height: 180,
                   ),
                 ),
