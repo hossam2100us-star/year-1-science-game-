@@ -251,3 +251,22 @@ Findings and what changed in the package afterwards:
   - the action strip stays at the bottom;
   - the Arabic home activity, its safety note and the Space "not to scale" note show right to left in the parent report.
 - Found on the emulator: the first layout fitted 1280×800 but not the 716 dp the app really gets between the system bars. The lesson page's SafeArea hides the bars from MediaQuery, so scene sizes now come from the window (`View`). The test now includes the bars.
+
+## Trial release 0.5.2 (versionCode 7), 2026-10-10
+
+- Built from `7d449d2`, with all of teacher review 4 M5a:
+  - new socket picture;
+  - discoveries on the whole picture;
+  - fixed action strip;
+  - names first;
+  - push, Space, hint;
+  - quiz 3 third choices;
+  - Arabic parent activities.
+- Same release command and checks as 0.5.1:
+  - 48.3 MB;
+  - upload key `a8:03:33:…:74:12:79`;
+  - `INTERNET` only;
+  - no debug sections or app class names in either packaged library;
+  - `parent_ar.json` and the new picture are packaged.
+- Local checks: `flutter analyze --fatal-infos` clean, 416 tests pass.
+- GitHub Actions did not run for these commits: the account's Actions spending limit or payment stopped the jobs before they started (annotation "recent account payments have failed or your spending limit needs to be increased"). The content validation script (Python) therefore has not run on the quiz 3 change.
