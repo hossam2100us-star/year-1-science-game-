@@ -280,6 +280,30 @@ void main() {
     await t.pumpWidget(const SizedBox());
   });
 
+  test('quiz 3: approved third choices; answers and goals unchanged', () {
+    final quiz = library.lessons['quiz_03']!;
+    LessonStep step(String n) =>
+        quiz.steps.firstWhere((s) => s.id == 'quiz_03.step.$n');
+    expect(step('004').options.map((o) => o.id), [
+      'ears',
+      'source_of_sound',
+      'sink_of_sound',
+    ]);
+    expect(step('004').answer!['value'], 'source_of_sound');
+    expect(step('004').json['objective'], 'quiz03.04');
+    expect(step('005').options.map((o) => o.id), [
+      'louder',
+      'fainter_and_quieter',
+      'stays_the_same',
+    ]);
+    expect(step('005').answer!['value'], 'fainter_and_quieter');
+    expect(step('005').json['objective'], 'quiz03.05');
+    // Push/pull and the book's true-or-false question stay two-way.
+    for (final n in ['001', '002', '009']) {
+      expect(step(n).options, hasLength(2), reason: n);
+    }
+  });
+
   /// Opt-in screenshots for review: --dart-define=REVIEW_IMAGES=true.
   testWidgets('review images at 1280×800', (t) async {
     if (!writeReviewImages) return;

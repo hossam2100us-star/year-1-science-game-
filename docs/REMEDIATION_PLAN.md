@@ -50,7 +50,9 @@ re-checked against `main` @ `2e81558` on 2026-10-10; "Checked" says what was fou
   - T4-5a, T4-5b, T4-5c and X-2 in `1def1de`.
 - Review screenshots at 1280×800 were checked by eye.
 - **FIXED:** T4-1, a new picture from the owner (Gemini) placed by the developer and approved by the owner on a before/after comparison (see `CREDITS.md`).
-- **Waiting for the owner:** T4-5d (quiz 3), T4-5e (Arabic home activities).
+- **FIXED** (approved by the owner on 2026-10-10):
+  - T4-5d: quiz 3 questions 4 and 5 gain a third choice ("Ears", "It stays the same"); 1, 2 and 9 stay as in the book (an optional magnet test before 9 was not done);
+  - T4-5e: Arabic for every home activity, goal activity and safety note.
 
 Verification for M5a: tests above, goldens regenerated and compared by eye, emulator run at
 1280×800 (Electricity safety, Water world, Space, a lesson with long and short steps), then
