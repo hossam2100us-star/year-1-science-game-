@@ -47,6 +47,40 @@ flutter test --platform chrome test/web
 picks up a new dependency version. Dependency changes are made deliberately
 with `flutter pub get` and reviewed in the pull request.
 
+### What CI runs, and runner minutes
+
+The repository is private, so GitHub Actions minutes are limited: 2,000 a
+month on GitHub Free for all of the owner's private repositories together,
+with Windows minutes counted double. In October 2026 they ran out on the 10th
+and every job stopped before starting. Since then the workflows run as
+follows:
+
+| Event | ci-mobile | security-scan | ci-backend | images |
+|---|---|---|---|---|
+| Push to a pull request | everything except the Windows goldens, the debug APK and the App Bundle; skipped when the pull request only changes `docs/`, `reports/` or `*.md` | yes | when `backend/`, `api/` or `infrastructure/` change | when the server, the package or `web/` change |
+| Push to `main` (a merge) | everything (same docs-only skip) | yes, and weekly | when those paths change | yes |
+| Manual run (Actions → Run workflow) | everything | yes | yes | yes, plus "promote" |
+
+Branches have no separate push run (it duplicated the pull request run), and
+a new push cancels the unfinished run of the same pull request.
+
+Working rules:
+
+- Before every pull request, run the goldens locally on Windows (the same OS
+  as the baselines): `flutter test --tags golden`.
+- Before merging, start ci-mobile by hand on the branch once
+  (`gh workflow run ci-mobile --ref <branch>`), so the goldens, the debug APK
+  and the App Bundle are checked before `main` changes.
+- A commit that only changes documentation gets `[skip ci]` in its message
+  when it is pushed on its own to a pull request that also changes code
+  (otherwise the whole pull request would be checked again).
+- When jobs stop with "recent account payments have failed or your spending
+  limit needs to be increased", the month's minutes are used up: the owner
+  either waits for the monthly reset or sets an Actions budget in
+  Settings → Billing. The same checks can be run locally meanwhile (above,
+  plus `python scripts/validate_playable.py` with
+  `scripts/requirements-content.txt`).
+
 ## 3. Release builds
 
 Release builds refuse to run without `android/key.properties`
@@ -107,7 +141,8 @@ never be updated again under the same package name.
    logs; never `echo` them.
 
 `.gitignore` already excludes `android/key.properties`, `*.jks`, `*.keystore`
-and `secrets.*`, and the `security-scan` workflow runs gitleaks on every push.
+and `secrets.*`, and the `security-scan` workflow runs gitleaks on every pull
+request push, every push to `main` and weekly.
 
 Note: builds signed with the debug key cannot be updated in place by builds
 signed with the upload key; testers must uninstall the preview first (their

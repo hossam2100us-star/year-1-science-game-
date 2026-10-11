@@ -74,6 +74,7 @@ touches or points at the socket. Landscape panel, about 1:1.
 | "Sign in with Google" button in the app | **Owner:** Google Cloud OAuth client IDs (prompt phase 12) |
 | Test on a real phone | **Owner:** a phone |
 | `docs/FINAL_REMEDIATION_REPORT.md` | — |
+| CI minutes: GitHub Free's 2,000 private minutes ran out on 2026-10-10; pull requests now run each check once, without the Windows goldens or the extra Android builds, which run on `main` and by hand before merging (`docs/RELEASE.md` §2) | Done, approved by the owner on 2026-10-11. **Owner:** wait for the monthly reset or set an Actions budget |
 
 ## Audit issues
 

@@ -29,7 +29,7 @@ fixed for the account and sync work (M3/M4). Findings are from
 | Markup / control characters in names reach a future web page or email | Input filtered to letters, marks, space, `-`, `'`, ≤ 24 (SEC-05); output must still be encoded on the server | Low |
 | Reverse engineering of release code | Release builds use `--obfuscate --split-debug-info`; R8 + resource shrinking (SEC-02) | Accepted |
 | Loss of the signing key | Custody procedure in `docs/RELEASE.md` | **Owner action** (SEC-06) |
-| Vulnerable dependencies / leaked secrets | `security-scan` workflow: gitleaks on full history + osv-scanner on every push and weekly | Low |
+| Vulnerable dependencies / leaked secrets | `security-scan` workflow: gitleaks on full history + osv-scanner on every pull request push, every push to `main` and weekly | Low |
 
 ## 3. Decisions
 
