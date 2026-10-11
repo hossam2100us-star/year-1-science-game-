@@ -269,4 +269,5 @@ Findings and what changed in the package afterwards:
   - no debug sections or app class names in either packaged library;
   - `parent_ar.json` and the new picture are packaged.
 - Local checks: `flutter analyze --fatal-infos` clean, 416 tests pass.
-- GitHub Actions did not run for these commits: the account's Actions spending limit or payment stopped the jobs before they started (annotation "recent account payments have failed or your spending limit needs to be increased"). The content validation script (Python) therefore has not run on the quiz 3 change.
+- GitHub Actions did not run for these commits: the account's Actions spending limit or payment stopped the jobs before they started (annotation "recent account payments have failed or your spending limit needs to be increased"). A re-run on 2026-10-11 was stopped the same way.
+- The content validation therefore ran locally instead, with the CI's pinned `scripts/requirements-content.txt` in a temporary virtual environment (Python 3.13 rather than the CI's 3.12): `validate_playable.py` PASS for all 13 files, 187 steps (schema, IDs, answer references, prediction exclusion, source objectives). The other CI-only jobs (Chrome tests, goldens, the Android and web builds, the security scans, the images) have not run on M5.
