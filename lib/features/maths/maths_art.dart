@@ -1,9 +1,11 @@
+import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
 import '../../core/game_image.dart';
 import '../biology/illustrated_art.dart';
+import '../science/discovery_world.dart';
 
 const mathsObjectAsset = 'maths-objects-v2.webp';
 const mathsBackdropAsset = 'maths-backdrops-v2.webp';
@@ -115,6 +117,15 @@ String mathsSceneForTheme(String? theme) {
   if (theme == 'math_quiz_03') return 'harbour';
   return 'orchard';
 }
+
+/// Height of a setting's decorative strip [width] wide: its painted 3.4:1
+/// shape when the screen is tall enough, otherwise about an eighth of the
+/// height left between the system bars (on a 1280×800 tablet, 86 instead
+/// of about 310), so the question's diagram and answers come first.
+double mathsBannerHeight(BuildContext context, double width) => math.min(
+  width / 3.4,
+  math.max(72.0, DiscoveryWorld.usableHeight(context) * .12),
+);
 
 class MathsBackdrop extends StatelessWidget {
   const MathsBackdrop({

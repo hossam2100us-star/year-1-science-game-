@@ -407,11 +407,16 @@ class _MathsWorkshopState extends State<MathsWorkshop> {
                 _choices(),
               ],
             ] else ...[
-              ClipRRect(
-                borderRadius: BorderRadius.circular(18),
-                child: AspectRatio(
-                  aspectRatio: 3.4,
-                  child: MathsBackdrop(scene: widget.config['scene'] as String),
+              LayoutBuilder(
+                builder: (context, box) => ClipRRect(
+                  borderRadius: BorderRadius.circular(18),
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: mathsBannerHeight(context, box.maxWidth),
+                    child: MathsBackdrop(
+                      scene: widget.config['scene'] as String,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 12),

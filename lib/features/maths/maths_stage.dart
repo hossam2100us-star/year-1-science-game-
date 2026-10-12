@@ -1,6 +1,9 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../../content/lesson.dart';
+import '../science/discovery_world.dart';
 import 'maths_art.dart';
 import 'maths_visual.dart';
 
@@ -82,15 +85,23 @@ class MathsStage extends StatelessWidget {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(18),
-          child: AspectRatio(
-            aspectRatio: 3.4,
-            child: MathsBackdrop(
-              scene: mathsSceneForTheme(step.json['theme'] as String?),
+        // The setting is decoration: on a short screen (a tablet between its
+        // system bars) it is a strip, so the diagram and every answer fit
+        // without scrolling more often, and a chart leaves no room for it.
+        if (!((step.json['mathVisual'] as Map?)?['type'] == 'chart' &&
+            DiscoveryWorld.usableHeight(context) < 760))
+          LayoutBuilder(
+            builder: (context, box) => ClipRRect(
+              borderRadius: BorderRadius.circular(18),
+              child: SizedBox(
+                width: double.infinity,
+                height: mathsBannerHeight(context, box.maxWidth),
+                child: MathsBackdrop(
+                  scene: mathsSceneForTheme(step.json['theme'] as String?),
+                ),
+              ),
             ),
           ),
-        ),
         const SizedBox(height: 16),
         if (step.json['mathVisual']
             case final Map<String, dynamic> diagram) ...[
@@ -123,7 +134,23 @@ class MathsStage extends StatelessWidget {
         LayoutBuilder(
           builder: (context, box) {
             final large = MediaQuery.textScalerOf(context).scale(1) >= 1.5;
-            final columns = box.maxWidth < (large ? 650 : 450) ? 1 : 2;
+            final pictures = (step.json['options'] as List).any(
+              (o) => (o as Map)['visual'] is Map,
+            );
+            // Short answers share one row on a tablet; answers with a
+            // picture need more room each.
+            final columns = math.min(
+              step.options.length,
+              large
+                  ? (box.maxWidth < 650 ? 1 : 2)
+                  : box.maxWidth < 450
+                  ? 1
+                  : box.maxWidth < 900
+                  ? 2
+                  : pictures
+                  ? 3
+                  : 4,
+            );
             final width = (box.maxWidth - (columns - 1) * 12) / columns;
             return Wrap(
               spacing: 12,
