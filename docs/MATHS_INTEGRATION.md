@@ -182,11 +182,11 @@ and fixed them on the same branch (PR #6):
 | --- | --- | --- |
 | Counting touches were lost: each touch locked the objects while it was saved. On the emulator seven quick touches counted three and numbered the apples out of order | A touch shows at once; saves run in touch order; a failed save returns to the last saved state as before | Widget test with slow saves; emulator: ten quick "Add one" touches gave ten |
 | On the tablet the workshop answers and next button were below the screen; 90 of 255 questions had answers below the action strip | The workshop scrolls to new answers and buttons; the painted setting is a strip on short screens and left out above charts; short answers share one row | Test over every question with the tablet bars: 251 fit, 4 are 8–36 points from it; emulator |
-| All 280 parent activities had one generic Arabic sentence | `assets/content/maths_parent_ar.json` (draft for the owner) with Arabic for each activity; the build reads it and the validator checks it | Validators, repeat build |
+| All 280 parent activities had one generic Arabic sentence | `assets/content/maths_parent_ar.json` (approved by the owner) with Arabic for each activity; the build reads it and the validator checks it | Validators, repeat build |
 | `drift_progress_store.dart` unformatted; parent retry labels outside the ARB files; scene-kind test skipped Maths; Maths validator not in CI | Formatted; ARB keys; a Maths scene test; CI content job runs the validator | Format, analyzer, tests |
 
-Not changed yet: the three illustration atlases are lossless WebP (5.9 MB);
-re-encoded like the Science art they are about 1.0 MB, waiting for the
-owner to approve a side-by-side comparison. Step titles shown to the child
+The three illustration atlases were lossless WebP (5.9 MB); after the owner
+approved a side-by-side comparison they are re-encoded like the Science art
+(1.0 MB, same size and transparency). Not changed yet: step titles shown to the child
 are generic ("Maths discovery 2"), every Maths sticker shows the same icon,
 and the old-content migration (v1 to v2) covers data that never shipped.

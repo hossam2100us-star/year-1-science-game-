@@ -1,8 +1,11 @@
 # Maths art revision — 12 October 2026
 
 Mode: built-in `image_gen`, three generated illustrations using existing Science
-art as style references. No CLI/API fallback. Runtime assets are pixel-identical
-lossless WebP encodings of the selected PNGs; transparency is preserved.
+art as style references. No CLI/API fallback. The runtime assets were first
+pixel-identical lossless WebP encodings of the selected PNGs (5.9 MB). On
+12 October they were re-encoded like the Science art (WebP quality 80, alpha
+90; same size, transparency preserved), 1.0 MB in all, after the owner
+approved a side-by-side comparison; the lossless files remain in Git history.
 
 ## Saved assets and prompt set
 
