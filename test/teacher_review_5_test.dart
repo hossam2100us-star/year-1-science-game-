@@ -406,4 +406,131 @@ void main() {
     expect(t.takeException(), isNull);
     await t.pumpWidget(const SizedBox());
   });
+
+  // Section 2: questions did not use what the practice taught.
+  Future<MemoryProgressStore> play(
+    WidgetTester t,
+    String stepId, {
+    MemoryProgressStore? store,
+  }) async {
+    t.view.physicalSize = const Size(1280, 1000);
+    t.view.devicePixelRatio = 1;
+    addTearDown(t.view.resetPhysicalSize);
+    addTearDown(t.view.resetDevicePixelRatio);
+    await t.runAsync(() async {
+      for (final asset in [mathsObjectAsset, mathsBackdropAsset]) {
+        await Flame.images.load(asset);
+      }
+    });
+    final lesson = maths.lessons[stepId.split('.').first]!;
+    final session = LessonSession.fresh(lesson)
+      ..index = lesson.steps.indexWhere((step) => step.id == stepId);
+    final saved =
+        store ??
+        MemoryProgressStore(
+          const AppData(profile: ChildProfile(name: 'Nour'))
+              .withSubjectProgress(
+                'maths',
+                journeys: {lesson.id: session.toJson()},
+              ),
+        );
+    await t.pumpWidget(const SizedBox());
+    await t.pumpWidget(
+      ProviderScope(
+        overrides: [
+          storeProvider.overrideWithValue(saved),
+          catalogProvider.overrideWithValue(science),
+          lessonLibraryProvider.overrideWith((ref) async => maths),
+          narrationProvider.overrideWith((ref) => helpers.SilentNarration()),
+        ],
+        child: MaterialApp(home: LessonPlayer(lesson: lesson)),
+      ),
+    );
+    await t.pump();
+    return saved;
+  }
+
+  Map<String, dynamic> currentOf(MemoryProgressStore store, String lessonId) =>
+      Map<String, dynamic>.from(
+        store.data.progressForSubject('maths').journeys[lessonId]!['current']
+            as Map,
+      );
+
+  testWidgets('the apples of a counting question are counted by touch', (
+    t,
+  ) async {
+    final store = await play(t, 'math_unit_01.step.002');
+    for (var i = 0; i < 8; i++) {
+      await t.tap(find.byKey(ValueKey('maths-tap-count-$i')));
+      await t.pump(const Duration(milliseconds: 40));
+    }
+    await t.pump(const Duration(milliseconds: 300));
+    expect(find.text('8 counted'), findsOneWidget);
+    for (var i = 0; i < 8; i++) {
+      expect(
+        find.descendant(
+          of: find.byKey(ValueKey('maths-tap-count-$i')),
+          matching: find.text('${i + 1}'),
+        ),
+        findsOneWidget,
+      );
+    }
+    var current = currentOf(store, 'math_unit_01');
+    expect(current['lab']['counted'], List.generate(8, (i) => i));
+    expect(current['mistakes'] ?? 0, 0, reason: 'counting is not answering');
+    expect(current['outcome'], isNull);
+    expect(current['selected'] ?? [], isEmpty);
+    // The marks come back after a restart.
+    await play(t, 'math_unit_01.step.002', store: store);
+    expect(find.text('8 counted'), findsOneWidget);
+    await helpers.tapVisible(
+      t,
+      find.byKey(const ValueKey('maths-tap-count-reset')),
+    );
+    expect(find.text('0 counted'), findsOneWidget);
+    current = currentOf(store, 'math_unit_01');
+    expect(current['lab']['counted'], isEmpty);
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('number line questions are solved by jumping', (t) async {
+    final store = await play(t, 'math_unit_02.step.003');
+    expect(find.text('Start on 5'), findsOneWidget);
+    for (var i = 0; i < 3; i++) {
+      await helpers.tapVisible(
+        t,
+        find.byKey(const ValueKey('maths-jump-forward')),
+      );
+    }
+    expect(find.text('3 jumps: on 8'), findsOneWidget);
+    await helpers.tapVisible(t, find.byKey(const ValueKey('maths-jump-back')));
+    expect(find.text('4 jumps: on 7'), findsOneWidget);
+    var current = currentOf(store, 'math_unit_02');
+    expect(current['lab']['hops'], [1, 1, 1, -1]);
+    expect(current['outcome'], isNull, reason: 'jumping is not answering');
+    await helpers.tapVisible(t, find.byKey(const ValueKey('maths-jump-reset')));
+    expect(find.text('Start on 5'), findsOneWidget);
+    final step = maths.lessons['math_unit_02']!.steps.firstWhere(
+      (s) => s.id == 'math_unit_02.step.003',
+    );
+    final eight = step.options.firstWhere((o) => o.label == '8');
+    await helpers.tapVisible(
+      t,
+      find.byKey(ValueKey('maths-option-${eight.id}')),
+    );
+    await helpers.tapVisible(t, find.byKey(const ValueKey('lessonCheck')));
+    current = currentOf(store, 'math_unit_02');
+    expect(current['outcome'], 'firstTry');
+    // The explanation draws the three jumps from 5 to 8.
+    expect(find.byKey(const ValueKey('maths-jumps-explained')), findsOneWidget);
+    expect(find.byKey(const ValueKey('maths-jump-forward')), findsNothing);
+    final line = t
+        .widgetList<MathsVisual>(find.byType(MathsVisual))
+        .firstWhere((v) => v.data['type'] == 'numberLine');
+    expect(line.data['shown'], [1, 1, 1]);
+    await t.pump(const Duration(seconds: 2));
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+  });
 }

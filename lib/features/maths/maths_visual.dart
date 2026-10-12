@@ -675,6 +675,60 @@ class _MathsPainter extends CustomPainter {
         canvas.drawCircle(Offset(x, y), 6, _paint(blue));
       }
     }
+    // Jumps from a start (teacher review 5): the child's own (blue forward,
+    // orange back), or the explanation's, shown one after another in green.
+    final from = data['from'] as num?;
+    if (from == null) return;
+    double xOf(num n) => 14 + (n - start) / range * span;
+    void arc(num a, num b, Color colour) {
+      final x1 = xOf(a), x2 = xOf(b);
+      final h = math.min((x2 - x1).abs() * .6, 34.0);
+      final control = Offset((x1 + x2) / 2, y - h * 2);
+      final tip = Offset(x2, y);
+      canvas.drawPath(
+        Path()
+          ..moveTo(x1, y)
+          ..quadraticBezierTo(control.dx, control.dy, tip.dx, tip.dy),
+        _paint(colour, stroke: true)..strokeWidth = 3,
+      );
+      final way = tip - control;
+      final dir = way / way.distance, side = Offset(-dir.dy, dir.dx);
+      final back = tip - dir * 10;
+      canvas.drawPath(
+        Path()
+          ..moveTo(tip.dx, tip.dy)
+          ..lineTo((back + side * 5).dx, (back + side * 5).dy)
+          ..lineTo((back - side * 5).dx, (back - side * 5).dy)
+          ..close(),
+        _paint(colour),
+      );
+    }
+
+    canvas.drawCircle(Offset(xOf(from), y), 9, _paint(const Color(0xFF3E9B5A)));
+    canvas.drawCircle(Offset(xOf(from), y), 4, _paint(Colors.white));
+    var at = from;
+    final shown = (data['shown'] as List?)?.cast<num>();
+    if (shown != null) {
+      final progress = (data['progress'] as num? ?? 1).toDouble();
+      final visible = (progress * shown.length).ceil();
+      for (final step in shown.take(visible)) {
+        arc(at, at + step, const Color(0xFF3E9B5A));
+        at += step;
+      }
+      if (visible > 0) {
+        canvas.drawCircle(
+          Offset(xOf(at), y),
+          7,
+          _paint(const Color(0xFF3E9B5A)),
+        );
+      }
+      return;
+    }
+    for (final hop in (data['hops'] as List? ?? const []).cast<num>()) {
+      arc(at, at + hop, hop > 0 ? blue : const Color(0xFFE88A2E));
+      at += hop;
+    }
+    if (at != from) canvas.drawCircle(Offset(xOf(at), y), 7, _paint(blue));
   }
 
   /// A small five-pointed star.

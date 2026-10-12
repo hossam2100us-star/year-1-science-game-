@@ -318,6 +318,15 @@ def audit(check_idempotence=False,pdf_path=None):
                 assert set(visual['routes'])==set(labels.values()),(step['id'],'robot routes')
                 reach={label for label,route in visual['routes'].items() if robot_end(visual,route)==visual['star']}
                 assert reach=={labels[i] for i in step['answer']['value']},(step['id'],'robot answer')
+            if visual.get('type')=='numberLine' and 'from' in visual:
+                # Jumps stay on the line; where they land (or how far they go)
+                # is the correct answer.
+                at=visual['from']; assert visual['start']<=at<=visual['end']
+                for move in visual['jumps']:
+                    at+=move; assert visual['start']<=at<=visual['end'],(step['id'],'jump off the line')
+                expected=at if visual['ask']=='landing' else abs(at-visual['from'])
+                labels={o['id']:o['label'] for o in step['options']}
+                assert labels[step['answer']['value']]==str(expected),(step['id'],'number line answer')
             if visual.get('type')=='carroll':
                 assert visual['columns']==[t['label'] for t in step['targets']],(step['id'],'carroll')
     assert len(question_ids)==273 and free_ids==FREE_QUESTIONS and assessed==258 and total_steps==292

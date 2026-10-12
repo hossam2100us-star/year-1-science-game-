@@ -174,6 +174,15 @@ def line(start=0,end=20,**kwargs):
     return {'type':'numberLine','start':start,'end':end,**kwargs}
 
 
+def jumps(start,end,origin,moves,ask='landing'):
+    """A number line the child jumps along from origin (teacher review 5).
+
+    moves are the jumps the explanation shows: +3 is three forward jumps.
+    ask says whether the answer is where they land or how far they went.
+    """
+    return {**line(start,end),'from':origin,'jumps':moves,'ask':ask}
+
+
 def single(prompt,correct,choices,visual=None,explanation=None,hint=None,option_visuals=None):
     return {'type':'single','prompt':prompt,'correct':str(correct),'choices':[str(c) for c in choices],
             'visual':visual,'explanation':explanation,'hint':hint,'optionVisuals':option_visuals or {}}
@@ -432,8 +441,8 @@ def unit_specs():
     ],
     2:[
         mapping('Find one more and one less.', [('1 more than 6','7'),('1 less than 10','9')],[7,9],line(0,10),'One more moves forward; one less moves back.'),
-        number('Start at 5 and count on 3. Where do you land?',8,line(0,10),'Three forward jumps from 5 land on 8.'),
-        number('Start at 9 and count back 4. Where do you land?',5,line(0,10),'Four backward jumps from 9 land on 5.'),
+        number('Start at 5 and count on 3. Where do you land?',8,jumps(0,10,5,[3]),'Three forward jumps from 5 land on 8.'),
+        number('Start at 9 and count back 4. Where do you land?',5,jumps(0,10,9,[-4]),'Four backward jumps from 9 land on 5.'),
         single('Choose the addition sentence for the two groups.','4 + 3 = 7',['4 + 3 = 7','4 - 3 = 1','3 + 3 = 6'],groups({**count(4),'color':'blue'},{**count(3),'color':'orange'}),'Adding 4 blue dots and 3 orange dots makes 7.'),
         number('There are 8 cubes. Take away 3. How many remain?',5,count(8,'cube'),'Taking 3 cubes from 8 leaves 5 cubes.'),
         mapping('Match the words to the number sentence.', [('4 add 3 equals 7','4 + 3 = 7'),('7 take away 2 is 5','7 - 2 = 5')],['4 + 3 = 7','7 - 2 = 5'],explanation='Plus adds, minus takes away and equals means the same as.'),
@@ -467,8 +476,8 @@ def unit_specs():
         mapping('Choose the smaller number in each pair.', [('13 or 10','10'),('6 or 16','6')],[10,6],line(0,20),'The smaller number comes first on the number track.'),
         number('The fruit bowl is empty. How many apples are there?',0,count(0,'apple'),'Zero means there are no apples.'),
         number('Make a guess aloud first. Then count the dots. How many are there?',12,count(12,arrangement='scattered'),'An estimate is a guess. Counting checks it: there are 12.',hint='Your guess does not have to match. Count each dot once.'),
-        number('Start at 7 and count on 4. Where do you land?',11,line(0,20),'Four forward jumps from 7 land on 11.'),
-        number('Start at 15 and count back 3. Where do you land?',12,line(0,20),'Three backward jumps from 15 land on 12.'),
+        number('Start at 7 and count on 4. Where do you land?',11,jumps(0,20,7,[4]),'Four forward jumps from 7 land on 11.'),
+        number('Start at 15 and count back 3. Where do you land?',12,jumps(0,20,15,[-3]),'Three backward jumps from 15 land on 12.'),
     ],
     6:[
         single('When do you usually eat breakfast?','morning',['morning','night'],explanation='We usually eat breakfast in the morning.'),
@@ -495,7 +504,7 @@ def unit_specs():
         single('What comes next in this pattern?','triangle',['triangle','circle','square'],{'type':'pattern','items':[shape('triangle',color='yellow'),shape('triangle',color='yellow'),shape('circle',color='green')]*2},'Two triangles and a circle repeat. The next shape is a triangle.',option_visuals={s:shape(s) for s in ['triangle','circle','square']}),
         mapping('Fill the next two gaps: red, blue, blue, red, blue, blue, __, __.', [('first gap','red'),('second gap','blue')],['red','blue'],explanation='The repeating part is red, blue, blue.'),
         free('Make your own repeating pattern with two shapes on paper. Repeat the part at least twice.'),
-        number('Walk 3 steps forwards and 1 backwards. How many steps from the start?',2,line(0,4),'Three forwards and one backwards leaves 2 steps forwards.'),
+        number('Walk 3 steps forwards and 1 backwards. How many steps from the start?',2,jumps(0,4,0,[3,-1]),'Three forwards and one backwards leaves 2 steps forwards.'),
         tf('A cube is a flat 2D shape.',False,'A cube is solid, so it is a 3D shape.',shape('cube')),
         mapping('Compare a square and a rectangle.', [('They each have 4 sides and 4 corners.','same'),('Only the square must have 4 equal sides.','different')],['same','different'],groups(shape('square'),shape('rectangle')),'Both have 4 sides. A square has all 4 sides equal.'),
         mapping('Sort the shapes by their corners.', [('circle','0 corners'),('triangle','3 corners'),('square','4 corners'),('rectangle','4 corners')],['0 corners','3 corners','4 corners'],explanation='Circle: 0 corners. Triangle: 3. Square and rectangle: 4.'),
@@ -524,9 +533,9 @@ def unit_specs():
         mapping('Fill the partners that make 10.', [('6 + __ = 10','4'),('2 + __ = 10','8'),('__ + 5 = 10','5')],[4,8,5],explanation='The partners are 6 and 4, 2 and 8, 5 and 5.'),
         number('7 + __ = 10. How many empty spaces?',3,count(7,arrangement='tenFrame'),'Seven filled spaces leave 3 empty spaces in a ten frame.'),
         mapping('Find each total.', [('3 + 2','5'),('4 + 1','5')],[4,5,6],explanation='Both addition sentences have the same total: 5.'),
-        number('Use the number line: 12 + 3 = ?',15,line(10,20),'Three forward jumps from 12 land on 15.'),
+        number('Use the number line: 12 + 3 = ?',15,jumps(10,20,12,[3]),'Three forward jumps from 12 land on 15.'),
         number('There are 16 cubes. Take away 4. How many remain?',12,count(16,'cube'),'Taking 4 from 16 leaves 12.'),
-        number('What is the difference between 5 and 9?',4,line(0,10),'Count 4 jumps from 5 to 9.'),
+        number('What is the difference between 5 and 9?',4,jumps(0,10,5,[4],ask='distance'),'Count 4 jumps from 5 to 9.'),
         single('Sam says 6 + 3 = 19. Choose the sensible total.','9',['19','9','3'],explanation='Six and three are small groups. Together they make 9.'),
         number('There are 10 beans. You see 6. How many are hiding?',4,count(6,'bean'),'Six visible beans and 4 hidden beans make 10.'),
     ],
@@ -553,11 +562,11 @@ def unit_specs():
     14:[
         mapping('Find the doubles.', [('double 2','4'),('double 5','10')],[4,10],explanation='Double means the same number added again.'),
         mapping('Find these doubles.', [('double 7','14'),('double 10','20')],[14,20],explanation='7 + 7 = 14, and 10 + 10 = 20.'),
-        number('Start with the bigger number and find 3 + 8.',11,line(0,20),'Start at 8 and count on 3 to reach 11.'),
-        number('Start with the bigger number and find 5 + 12.',17,line(0,20),'Start at 12 and count on 5 to reach 17.'),
+        number('Start with the bigger number and find 3 + 8.',11,jumps(0,20,8,[3]),'Start at 8 and count on 3 to reach 11.'),
+        number('Start with the bigger number and find 5 + 12.',17,jumps(0,20,12,[5]),'Start at 12 and count on 5 to reach 17.'),
         number('8 birds are in a tree. 4 more come. How many now?',12,groups(count(8,'bird'),count(4,'bird')),'Adding 4 birds to 8 gives 12 birds.'),
-        number('Count back: 15 - 3 = ?',12,line(10,20),'Count back three jumps from 15: 14, 13, 12.'),
-        number('What is the difference between 13 and 17?',4,line(10,20),'There are 4 jumps from 13 to 17.'),
+        number('Count back: 15 - 3 = ?',12,jumps(10,20,15,[-3]),'Count back three jumps from 15: 14, 13, 12.'),
+        number('What is the difference between 13 and 17?',4,jumps(10,20,13,[4],ask='distance'),'There are 4 jumps from 13 to 17.'),
         free('Tell an adult your own number story for 6 + 4 = 10. Act it out with safe objects.'),
     ],
     15:[

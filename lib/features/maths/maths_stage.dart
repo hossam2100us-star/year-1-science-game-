@@ -6,6 +6,8 @@ import '../../content/lesson.dart';
 import '../science/discovery_world.dart';
 import 'maths_art.dart';
 import 'maths_visual.dart';
+import 'number_line_jumps.dart';
+import 'tap_counter.dart';
 
 /// Maths supplies its own diagrams; navigation, feedback, marking and saved
 /// attempts still belong to the same player used by the Science adventures.
@@ -20,6 +22,10 @@ class MathsStage extends StatelessWidget {
     required this.locked,
     required this.onItem,
     required this.onPlace,
+    this.lab = const {},
+    this.onSaveLab,
+    this.onSay,
+    this.revealed = false,
   });
 
   final LessonStep step;
@@ -28,6 +34,16 @@ class MathsStage extends StatelessWidget {
   final bool locked;
   final ValueChanged<String> onItem;
   final void Function(String item, String target) onPlace;
+
+  /// Counting marks and number line jumps: learning aids saved with the
+  /// step, never part of the answer.
+  final Map<String, dynamic> lab;
+  final Future<void> Function(Map<String, dynamic> lab, bool complete)?
+  onSaveLab;
+  final ValueChanged<String>? onSay;
+
+  /// The question is answered: the number line shows the explanation.
+  final bool revealed;
 
   Widget _visual(Map<String, dynamic> data) => MathsVisual(data: data);
 
@@ -41,11 +57,33 @@ class MathsStage extends StatelessWidget {
   bool get _carroll => _diagram?['type'] == 'carroll';
 
   /// A robot draws the routes the child has chosen (teacher review 5).
-  Widget _picture(Map<String, dynamic> diagram) => _visual({
-    ...diagram,
-    if (diagram['type'] == 'robot')
-      'show': [for (final id in selected) step.label(id)],
-  });
+  Widget _picture(Map<String, dynamic> diagram) {
+    final save = onSaveLab, say = onSay;
+    if (save != null && say != null && TapCounter.countable(diagram)) {
+      return TapCounter(
+        data: diagram,
+        initial: List<int>.from(lab['counted'] ?? const []),
+        onSave: (counted) => save({...lab, 'counted': counted}, false),
+        onSay: say,
+        locked: locked,
+      );
+    }
+    if (save != null && say != null && NumberLineJumps.jumpable(diagram)) {
+      return NumberLineJumps(
+        data: diagram,
+        initial: List<int>.from(lab['hops'] ?? const []),
+        onSave: (hops) => save({...lab, 'hops': hops}, false),
+        onSay: say,
+        locked: locked,
+        revealed: revealed,
+      );
+    }
+    return _visual({
+      ...diagram,
+      if (diagram['type'] == 'robot')
+        'show': [for (final id in selected) step.label(id)],
+    });
+  }
 
   Widget _carrollTable() => CarrollTable(
     data: _diagram!,

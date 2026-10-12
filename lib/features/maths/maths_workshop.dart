@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/widgets.dart';
 import 'maths_art.dart';
 import 'maths_visual.dart';
+import 'ordered_saves.dart';
 
 /// Ungraded, guided practice. A completed action is saved through the same
 /// lesson lab state as the Science experiments, never as an assessment result.
@@ -37,18 +38,8 @@ class MathsWorkshop extends StatefulWidget {
 class _MathsWorkshopState extends State<MathsWorkshop> {
   late Map<String, dynamic> _data;
 
-  /// The last state the lesson stored. A failed save returns to it.
-  late Map<String, dynamic> _saved;
-
-  /// Saves run one at a time, in the order of the touches. A touch is shown
-  /// at once and never waits for the save before it: a child counting
-  /// quickly must not lose an object (each lost touch also renumbered the
-  /// objects counted after it).
-  Future<void> _queue = Future.value();
-
-  /// Bumped when a save fails, so the touches queued after it are dropped
-  /// with it instead of being stored on top of the state that was undone.
-  int _generation = 0;
+  /// Touches are shown at once and saved in order (see [OrderedSaves]).
+  late final OrderedSaves<Map<String, dynamic>> _saves;
   final _top = GlobalKey(), _end = GlobalKey();
   List<Map<String, dynamic>> get _tasks =>
       (widget.config['tasks'] as List).cast<Map<String, dynamic>>();
@@ -67,7 +58,7 @@ class _MathsWorkshopState extends State<MathsWorkshop> {
   void initState() {
     super.initState();
     _data = Map<String, dynamic>.from(widget.initial);
-    _saved = _data;
+    _saves = OrderedSaves(_data);
     // Back at a workshop that already shows answers, feedback or the next
     // button (resumed, or reached with Back): show them too (teacher review
     // 5). This runs after the lesson's own scroll to the top.
@@ -91,24 +82,19 @@ class _MathsWorkshopState extends State<MathsWorkshop> {
         (_) => _show(_end, ScrollPositionAlignmentPolicy.keepVisibleAtEnd),
       );
     }
-    final generation = _generation;
-    _queue = _queue.then((_) async {
-      if (generation != _generation) return;
-      try {
-        await widget.onSave(
-          next,
-          MathsWorkshop.isComplete(widget.config, next),
-        );
-        _saved = next;
+    _saves.add(
+      next,
+      (value) =>
+          widget.onSave(value, MathsWorkshop.isComplete(widget.config, value)),
+      onSaved: () {
         if (mounted && say != null) widget.onSay(say);
-      } catch (error, stack) {
-        _generation++;
-        if (mounted) {
-          setState(() => _data = _saved);
-          showSaveError(context, error, stack);
-        }
-      }
-    });
+      },
+      onFailed: (saved, error, stack) {
+        if (!mounted) return;
+        setState(() => _data = saved);
+        showSaveError(context, error, stack);
+      },
+    );
   }
 
   /// Whether [next] shows something below what the child was looking at:

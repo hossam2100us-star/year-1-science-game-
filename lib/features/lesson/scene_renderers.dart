@@ -111,6 +111,10 @@ class _MathsRenderer extends SceneRenderer {
           locked: host.answerLocked || host.freeDone || host.busy,
           onItem: host.item,
           onPlace: host.place,
+          lab: host.lab,
+          onSaveLab: host.saveLab,
+          onSay: host.say,
+          revealed: host.answerLocked,
         );
 }
 

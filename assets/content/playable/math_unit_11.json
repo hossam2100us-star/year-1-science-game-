@@ -369,7 +369,12 @@
       "mathVisual": {
         "type": "numberLine",
         "start": 10,
-        "end": 20
+        "end": 20,
+        "from": 12,
+        "jumps": [
+          3
+        ],
+        "ask": "landing"
       }
     },
     {
@@ -482,7 +487,12 @@
       "mathVisual": {
         "type": "numberLine",
         "start": 0,
-        "end": 10
+        "end": 10,
+        "from": 5,
+        "jumps": [
+          4
+        ],
+        "ask": "distance"
       }
     },
     {
