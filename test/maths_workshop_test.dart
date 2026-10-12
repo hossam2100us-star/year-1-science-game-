@@ -280,6 +280,61 @@ void main() {
     },
   );
 
+  testWidgets('back at a workshop, its answered idea and next button show', (
+    t,
+  ) async {
+    // Teacher review 5: after returning to a workshop step, "Try the next
+    // idea" stayed below the screen (the scroll only followed new touches).
+    t.view.physicalSize = const Size(1280, 800);
+    t.view.devicePixelRatio = 1;
+    t.view.padding = const FakeViewPadding(top: 24, bottom: 60);
+    t.view.viewPadding = const FakeViewPadding(top: 24, bottom: 60);
+    addTearDown(t.view.resetPhysicalSize);
+    addTearDown(t.view.resetDevicePixelRatio);
+    addTearDown(t.view.resetPadding);
+    addTearDown(t.view.resetViewPadding);
+    final lesson = maths.lessons['math_unit_01']!;
+    final task = tasks(workshop(lesson)).first;
+    final session = LessonSession.fresh(lesson)
+      ..current = {
+        'lab': {
+          'taskIndex': 0,
+          'counted': List.generate(task['count'] as int, (i) => i),
+          'passed': true,
+          'message': task['feedback'],
+        },
+        'freeDone': false,
+      };
+    final store = MemoryProgressStore(
+      const AppData(
+        profile: ChildProfile(name: 'Nour'),
+      ).withSubjectProgress('maths', journeys: {lesson.id: session.toJson()}),
+    );
+    await preloadImages(t);
+    await t.pumpWidget(
+      ProviderScope(
+        overrides: [
+          storeProvider.overrideWithValue(store),
+          catalogProvider.overrideWithValue(science),
+          lessonLibraryProvider.overrideWith((ref) async => maths),
+          narrationProvider.overrideWith((ref) => helpers.SilentNarration()),
+        ],
+        child: MaterialApp(
+          theme: adventureTheme(store.data.profile),
+          home: LessonPlayer(lesson: lesson),
+        ),
+      ),
+    );
+    await settle(t);
+    final strip = t.getRect(find.byKey(const ValueKey('lesson-controls')));
+    final next = t.getRect(find.byKey(const ValueKey('maths-workshop-next')));
+    expect(next.top, greaterThanOrEqualTo(0));
+    expect(next.bottom, lessThanOrEqualTo(strip.top));
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+    await t.pump();
+  });
+
   testWidgets('a wrong answer gives a hint without completing practice', (
     t,
   ) async {

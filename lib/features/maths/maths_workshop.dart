@@ -68,6 +68,14 @@ class _MathsWorkshopState extends State<MathsWorkshop> {
     super.initState();
     _data = Map<String, dynamic>.from(widget.initial);
     _saved = _data;
+    // Back at a workshop that already shows answers, feedback or the next
+    // button (resumed, or reached with Back): show them too (teacher review
+    // 5). This runs after the lesson's own scroll to the top.
+    if (_reveals(const {}, _data)) {
+      WidgetsBinding.instance.addPostFrameCallback(
+        (_) => _show(_end, ScrollPositionAlignmentPolicy.keepVisibleAtEnd),
+      );
+    }
   }
 
   void _save(Map<String, dynamic> next, {String? say}) {
