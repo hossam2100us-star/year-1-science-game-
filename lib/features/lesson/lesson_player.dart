@@ -75,6 +75,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   late DiscoveryGame _game;
   final _scroll = ScrollController();
   Set<String> _selected = {};
+
+  /// The answer last sent with Check. Check stays off until the child
+  /// changes it, so a double tap on Check is never a second mistake.
+  String? _checked;
   Map<String, String> _placements = {};
   Set<String> _touched = {};
   Set<String> _reviewItems = {};
@@ -150,6 +154,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       current['light'] ?? LightProgress.fromLegacy(current).toJson(),
     );
     _selected = Set<String>.from(current['selected'] ?? []);
+    _checked = current['checked'] as String?;
     _placements = Map<String, String>.from(current['placements'] ?? {});
     _touched = Set<String>.from(current['touched'] ?? []);
     _reviewItems = Set<String>.from(current['reviewItems'] ?? []);
@@ -257,6 +262,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     'lab': Map<String, dynamic>.from(_lab),
     'light': Map<String, dynamic>.from(_light),
     'selected': _selected.toList(),
+    if (_checked != null) 'checked': _checked,
     'placements': Map<String, String>.from(_placements),
     'touched': _touched.toList(),
     'reviewItems': _reviewItems.toList(),
@@ -351,10 +357,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     } else {
       _selected = {id};
     }
+    // A tap only chooses; Check sends the answer, so an accidental tap is
+    // never a mistake in the parent report (teacher review 5, both subjects).
     _changed();
-    if (!step.isFree && !step.isMulti && !step.isOrder && !step.isMapping) {
-      _check();
-    }
   }
 
   void _place(String item, String target) {
@@ -373,7 +378,6 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
           : step.label(target),
     );
     _changed();
-    if (step.options.length == 1) _check();
   }
 
   Object? get _selection => StepRules.selection(step, _selected, _placements);
@@ -382,8 +386,28 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   String _assessmentFeedback() =>
       StepRules.assessmentFeedback(step, _engine, _selected, _placements);
 
+  /// The current answer, comparable with [_checked]. Order matters only
+  /// for ordering questions.
+  String get _answerKey => [
+    if (step.isOrder) ..._selected else ...(_selected.toList()..sort()),
+    '|',
+    ...(_placements.entries.map((e) => '${e.key}=${e.value}').toList()..sort()),
+  ].join(',');
+
+  bool get _canCheck =>
+      !_busy &&
+      _answerKey != _checked &&
+      (step.isMapping
+          ? _placements.length == step.options.length
+          : _selected.isNotEmpty &&
+                !(_science &&
+                    widget.lesson.id == 'unit_06' &&
+                    step.isOrder &&
+                    _selected.length != step.options.length));
+
   void _check() {
-    if (_busy || _answerLocked) return;
+    if (_busy || _answerLocked || !_canCheck) return;
+    _checked = _answerKey;
     if (_needsCorrection) {
       // This is practice after explanation. Never submit to the scoring engine.
       final corrected = matchesAnswer(step.answer!, _selection);
@@ -1052,26 +1076,15 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
             icon: const Icon(Icons.volume_up_rounded),
           ),
         const SizedBox(width: 8),
-        if (!step.isFree &&
-            !_answerLocked &&
-            (step.isMulti || step.isOrder || step.isMapping))
+        if (!step.isFree && !_answerLocked && step.answer != null)
           FilledButton(
             style: FilledButton.styleFrom(
               minimumSize: const Size(64, 56),
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
               textStyle: const TextStyle(fontFamily: 'Nunito', fontSize: 18),
             ),
-            onPressed:
-                _busy ||
-                    (step.isMapping
-                        ? _placements.length != step.options.length
-                        : _selected.isEmpty ||
-                              (_science &&
-                                  widget.lesson.id == 'unit_06' &&
-                                  step.isOrder &&
-                                  _selected.length != step.options.length))
-                ? null
-                : _check,
+            key: const ValueKey('lessonCheck'),
+            onPressed: _canCheck ? _check : null,
             child: Text(
               _compactMathsControls
                   ? 'Check'

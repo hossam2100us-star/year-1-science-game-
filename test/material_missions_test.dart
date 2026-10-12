@@ -170,11 +170,14 @@ void main() {
       await choose(t, 'paper');
       await choose(t, 'aluminium_foil');
       await helpers.tapVisible(t, find.text('Check my discovery'));
+      // A second try needs a different answer (teacher review 5).
+      await choose(t, 'cotton_cloth');
       await helpers.tapVisible(t, find.text('Check my discovery'));
       expect(current(store)['needsCorrection'], true);
       await t.pumpWidget(const SizedBox());
       await helpers.mount(t, LessonPlayer(lesson: lesson), store);
       await tap(t, 'unpack-paper');
+      await tap(t, 'unpack-cotton_cloth');
       await choose(t, 'plastic');
       await helpers.tapVisible(t, find.text('Check my practice'));
       expect(current(store)['outcome'], 'explained');

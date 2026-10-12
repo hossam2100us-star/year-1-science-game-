@@ -364,7 +364,9 @@ void main() {
   }
 
   for (final example in [
-    ('unit_02', 9, 'mission'),
+    // Two-option questions cannot reach 'explained' any more: after one wrong
+    // answer the only other choice is right (teacher review 5).
+    ('unit_02', 11, 'mission'),
     ('unit_03', 9, 'biology'),
     ('unit_07', 6, 'science'),
     ('unit_08', 1, 'science'),
@@ -377,19 +379,24 @@ void main() {
         final lesson = library.lessons[example.$1]!,
             step = lesson.steps[example.$2];
         final store = start(lesson.id, example.$2);
-        final wrong = step.options.firstWhere(
-          (o) => o.id != step.answer!['value'],
-        );
+        final wrong = [
+          for (final o in step.options)
+            if (o.id != step.answer!['value']) o,
+        ];
         final right = step.answer!['value'];
         await mount(t, LessonPlayer(lesson: lesson), store);
-        await tap(t, '${example.$3}-item-${wrong.id}');
-        await tap(t, '${example.$3}-item-${wrong.id}');
+        // A tap only chooses; Check sends it. Two different wrong answers.
+        for (final choice in wrong.take(2)) {
+          await tap(t, '${example.$3}-item-${choice.id}');
+          await tap(t, 'lessonCheck');
+        }
         expect(current(store, lesson.id)['needsCorrection'], true);
         expect(find.byKey(const ValueKey('lessonNext')), findsNothing);
         await t.pumpWidget(const SizedBox());
         await mount(t, LessonPlayer(lesson: lesson), store);
         expect(current(store, lesson.id)['needsCorrection'], true);
         await tap(t, '${example.$3}-item-$right');
+        await tap(t, 'lessonCheck');
         expect(current(store, lesson.id)['needsCorrection'], false);
         expect(current(store, lesson.id)['outcome'], 'explained');
         expect(current(store, lesson.id)['mistakes'], 2);
@@ -461,6 +468,7 @@ void main() {
       final task = SpacedReview.due(store.data, library, DateTime.now()).single;
       await tap(t, 'review-${task.key}');
       await tap(t, 'science-item-${step.answer!['value']}');
+      await tap(t, 'lessonCheck');
       await tap(t, 'lessonNext');
       expect(
         find.text('All done for today. See you on the islands!'),

@@ -172,9 +172,11 @@ void main() {
               }
             }
           }
-          if (s.isMapping || s.isMulti || s.isOrder) {
-            await helpers.tapVisible(t, find.text('Check my discovery'));
-          }
+          // Every answer is sent with Check, single choices too.
+          await helpers.tapVisible(
+            t,
+            find.byKey(const ValueKey('lessonCheck')),
+          );
           expect(
             store.data.journeys[id]!['current']['outcome'],
             'firstTry',

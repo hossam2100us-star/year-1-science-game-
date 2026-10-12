@@ -278,6 +278,7 @@ void main() {
     await helpers.tapVisible(t, find.text('Continue my Maths challenge'));
     final answer = quiz.steps.last.answer!['value'] as String;
     await helpers.tapVisible(t, find.byKey(ValueKey('maths-option-$answer')));
+    await helpers.tapVisible(t, find.byKey(const ValueKey('lessonCheck')));
     await helpers.tapVisible(t, find.byKey(const ValueKey('lessonNext')));
     final mathsProgress = store.data.progressForSubject('maths');
     expect(mathsProgress.latest(quiz.id)!.firstTry, 9);

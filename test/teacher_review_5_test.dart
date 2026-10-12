@@ -221,4 +221,90 @@ void main() {
     expect(t.takeException(), isNull);
     await t.pumpWidget(const SizedBox());
   });
+
+  // Section 3: one tap was graded at once, so an accidental tap became a
+  // mistake in the parent report. Owner decision: both subjects.
+  for (final (subject, lessonId, index, prefix) in [
+    ('Maths', 'math_unit_01', 1, 'maths-option-'),
+    ('Science', 'unit_04', 9, 'science-item-'),
+  ]) {
+    testWidgets('$subject: a tap chooses and only Check sends the answer', (
+      t,
+    ) async {
+      final library = subject == 'Maths'
+          ? maths
+          : await t.runAsync(LessonLibrary.load);
+      final lesson = library!.lessons[lessonId]!, step = lesson.steps[index];
+      final right = step.answer!['value'] as String;
+      final wrong = step.options.firstWhere((o) => o.id != right).id;
+      final session = LessonSession.fresh(lesson)..index = index;
+      final store = MemoryProgressStore(
+        subject == 'Maths'
+            ? const AppData(profile: ChildProfile(name: 'Nour'))
+                  .withSubjectProgress(
+                    'maths',
+                    journeys: {lesson.id: session.toJson()},
+                  )
+            : AppData(
+                profile: const ChildProfile(name: 'Nour'),
+                journeys: {lesson.id: session.toJson()},
+              ),
+      );
+      Map<String, dynamic> current() => Map<String, dynamic>.from(
+        store.data
+                .progressForSubject(lesson.subject)
+                .journeys[lesson.id]!['current']
+            as Map,
+      );
+      Future<void> mount() async {
+        await t.pumpWidget(
+          ProviderScope(
+            overrides: [
+              storeProvider.overrideWithValue(store),
+              catalogProvider.overrideWithValue(science),
+              lessonLibraryProvider.overrideWith((ref) async => library),
+              narrationProvider.overrideWith(
+                (ref) => helpers.SilentNarration(),
+              ),
+            ],
+            child: MaterialApp(home: LessonPlayer(lesson: lesson)),
+          ),
+        );
+        await t.pump();
+      }
+
+      Future<void> tap(String key) =>
+          helpers.tapVisible(t, find.byKey(ValueKey(key)));
+      FilledButton check() =>
+          t.widget<FilledButton>(find.byKey(const ValueKey('lessonCheck')));
+
+      t.view.physicalSize = const Size(1280, 1000);
+      t.view.devicePixelRatio = 1;
+      addTearDown(t.view.resetPhysicalSize);
+      addTearDown(t.view.resetDevicePixelRatio);
+      await mount();
+      expect(check().onPressed, isNull, reason: 'nothing chosen yet');
+      await tap('$prefix$wrong');
+      expect(current()['mistakes'] ?? 0, 0, reason: 'a tap only chooses');
+      expect(current()['outcome'], isNull);
+      expect(current()['selected'], [wrong]);
+      // A choice saved before Check comes back as a choice, not an answer.
+      await t.pumpWidget(const SizedBox());
+      await mount();
+      expect(current()['selected'], [wrong]);
+      expect(current()['mistakes'] ?? 0, 0);
+      expect(check().onPressed, isNotNull);
+      await tap('lessonCheck');
+      expect(current()['mistakes'], 1);
+      expect(check().onPressed, isNull, reason: 'the same answer again');
+      await tap('lessonCheck');
+      expect(current()['mistakes'], 1);
+      await tap('$prefix$right');
+      await tap('lessonCheck');
+      expect(current()['outcome'], 'afterHint');
+      expect(find.byKey(const ValueKey('lessonNext')), findsOneWidget);
+      expect(t.takeException(), isNull);
+      await t.pumpWidget(const SizedBox());
+    });
+  }
 }
