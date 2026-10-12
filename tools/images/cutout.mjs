@@ -1,7 +1,10 @@
 // Cuts out a picture drawn on a flat magenta (#FF00FF) background and saves
 // it as a transparent WebP with the same settings as optimize.mjs.
 //
-//   node cutout.mjs <input.png|jpg> <output.webp> [maxSize=1024]
+//   node cutout.mjs <input.png|jpg> <output.webp|png> [maxSize=1024]
+//
+// A .png output is lossless, for pictures that are edited further before
+// their one WebP encoding.
 //
 // Magenta is far from every colour used in the art (the lilac sweater has
 // much more green), so a pixel's "magenta-ness" decides its transparency.
@@ -44,8 +47,9 @@ for (let i = 0, o = 0; i < data.length; i += 3, o += 4) {
 }
 const cut = sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } });
 const trimmed = await sharp(await cut.png().toBuffer()).trim({ threshold: 1 }).png().toBuffer();
-const result = await sharp(trimmed)
-  .resize({ width: maxSize, height: maxSize, fit: 'inside', withoutEnlargement: true })
-  .webp({ quality: 80, alphaQuality: 90, effort: 6, smartSubsample: true })
-  .toFile(output);
+const resized = sharp(trimmed).resize({ width: maxSize, height: maxSize, fit: 'inside', withoutEnlargement: true });
+const result = await (output.endsWith('.png')
+  ? resized.png()
+  : resized.webp({ quality: 80, alphaQuality: 90, effort: 6, smartSubsample: true })
+).toFile(output);
 console.log(`${output}: ${result.width}x${result.height}, ${(result.size / 1024).toFixed(0)} KB`);

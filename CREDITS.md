@@ -118,3 +118,14 @@ with a safety cover, no hand near it). Its flat magenta background was
 removed with tools/images/cutout.mjs, then encoded as WebP (quality 80,
 alpha 90) at 1024×921. No third-party or book artwork was used. The other
 two panels of electric-safety-v1.webp are unchanged.
+
+## Socket safety picture — 12 October 2026 (teacher review 5)
+
+assets/images/electric-safety-socket-v3.webp replaces electric-safety-socket-v2.webp
+(in Git history): the teacher asked for the child to stand farther from the
+socket. The owner generated it with Google Gemini by editing v2 with the prompt
+written for this change (same mother and boy, the boy moved next to the mother,
+the socket untouched). The magenta background was removed with
+tools/images/cutout.mjs (lossless), part of the empty space between the boy and
+the wall was cut so the gap is about the boy's width, and the result was
+encoded once as WebP (quality 80, alpha 90) at 1024×708, 83 KB.

@@ -72,8 +72,8 @@ flutter:
     - assets/images/forces-garden-v6.webp
     - assets/images/book-v1.webp
     - assets/images/electric-safety-v1.webp
-    # Socket rule without a hand near the socket (teacher review 4).
-    - assets/images/electric-safety-socket-v2.webp
+    # Socket rule: no hand near the socket, the child well away (reviews 4, 5).
+    - assets/images/electric-safety-socket-v3.webp
     - assets/images/water-world-v1.webp
     - assets/audio/
   fonts:
