@@ -84,20 +84,25 @@ class _TapCounterState extends State<TapCounter> {
         );
         return Column(
           children: [
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              alignment: WrapAlignment.center,
-              children: [
-                for (var i = 0; i < count; i++)
-                  Padding(
-                    padding: EdgeInsets.only(
-                      top: scattered ? (i * 7 % 3) * 6.0 : 0,
-                      bottom: scattered ? 12 - (i * 7 % 3) * 6.0 : 0,
+            // Rows of five or ten, like a ten frame: "half of 20" shows
+            // two rows of ten.
+            SizedBox(
+              width: perRow * tile + (perRow - 1) * 8,
+              child: Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                alignment: WrapAlignment.center,
+                children: [
+                  for (var i = 0; i < count; i++)
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: scattered ? (i * 7 % 3) * 6.0 : 0,
+                        bottom: scattered ? 12 - (i * 7 % 3) * 6.0 : 0,
+                      ),
+                      child: _object(i, item, tile),
                     ),
-                    child: _object(i, item, tile),
-                  ),
-              ],
+                ],
+              ),
             ),
             const SizedBox(height: 8),
             Wrap(

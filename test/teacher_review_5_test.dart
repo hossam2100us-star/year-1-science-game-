@@ -533,4 +533,30 @@ void main() {
     expect(t.takeException(), isNull);
     await t.pumpWidget(const SizedBox());
   });
+
+  testWidgets('the next counting question starts at zero', (t) async {
+    // Found on the tablet: the counter kept the apples' count on the stars
+    // of the next question.
+    final store = await play(t, 'math_unit_01.step.002');
+    for (var i = 0; i < 8; i++) {
+      await t.tap(find.byKey(ValueKey('maths-tap-count-$i')));
+      await t.pump(const Duration(milliseconds: 40));
+    }
+    final step = maths.lessons['math_unit_01']!.steps[1];
+    final eight = step.options.firstWhere((o) => o.label == '8');
+    await helpers.tapVisible(
+      t,
+      find.byKey(ValueKey('maths-option-${eight.id}')),
+    );
+    await helpers.tapVisible(t, find.byKey(const ValueKey('lessonCheck')));
+    await helpers.tapVisible(t, find.byKey(const ValueKey('lessonNext')));
+    await t.pump(const Duration(milliseconds: 500));
+    expect(find.text('Count the stars. How many are there?'), findsWidgets);
+    expect(find.text('0 counted'), findsOneWidget);
+    await t.tap(find.byKey(const ValueKey('maths-tap-count-0')));
+    await t.pump(const Duration(milliseconds: 300));
+    expect(currentOf(store, 'math_unit_01')['lab']['counted'], [0]);
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+  });
 }

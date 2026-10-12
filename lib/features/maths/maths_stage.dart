@@ -61,6 +61,8 @@ class MathsStage extends StatelessWidget {
     final save = onSaveLab, say = onSay;
     if (save != null && say != null && TapCounter.countable(diagram)) {
       return TapCounter(
+        // One counter per question: the next question starts at zero.
+        key: ValueKey('tap-counter-${step.id}'),
         data: diagram,
         initial: List<int>.from(lab['counted'] ?? const []),
         onSave: (counted) => save({...lab, 'counted': counted}, false),
@@ -70,6 +72,7 @@ class MathsStage extends StatelessWidget {
     }
     if (save != null && say != null && NumberLineJumps.jumpable(diagram)) {
       return NumberLineJumps(
+        key: ValueKey('number-line-${step.id}'),
         data: diagram,
         initial: List<int>.from(lab['hops'] ?? const []),
         onSave: (hops) => save({...lab, 'hops': hops}, false),
