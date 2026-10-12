@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "subject": "maths",
+  "title": "Maths",
+  "ar": "الرياضيات",
+  "welcome": "Welcome to Maths Island! Start by helping Owl count each apple once in Term 1.",
+  "sourcePages": [
+    2,
+    3
+  ],
+  "islands": [
+    {
+      "title": "Maths Island: Term 1",
+      "ar": "جزيرة الرياضيات: الفصل 1",
+      "color": "FF3E9B5A",
+      "levels": [
+        {
+          "id": "math_unit_01",
+          "title": "Numbers to 20",
+          "ar": "الأعداد حتى ٢٠"
+        },
+        {
+          "id": "math_unit_02",
+          "title": "Addition and Subtraction",
+          "ar": "الجمع والطرح"
+        },
+        {
+          "id": "math_unit_03",
+          "title": "Shapes, Direction and Movement",
+          "ar": "الأشكال والاتجاه والحركة"
+        },
+        {
+          "id": "math_unit_04",
+          "title": "Statistical Methods",
+          "ar": "الجداول والرسوم البيانية"
+        },
+        {
+          "id": "math_unit_05",
+          "title": "Numbers to 20 - Order and Zero",
+          "ar": "ترتيب الأعداد والصفر"
+        },
+        {
+          "id": "math_unit_06",
+          "title": "Time and Measurement",
+          "ar": "الوقت والقياس"
+        },
+        {
+          "id": "math_quiz_01",
+          "title": "Big Challenge: Term 1",
+          "ar": "تحدي الفصل الدراسي 1",
+          "quiz": true
+        }
+      ]
+    },
+    {
+      "title": "Maths Island: Term 2",
+      "ar": "جزيرة الرياضيات: الفصل 2",
+      "color": "FFE88A2E",
+      "levels": [
+        {
+          "id": "math_unit_07",
+          "title": "Statistical Methods - Sorting Diagrams",
+          "ar": "مخططات التصنيف"
+        },
+        {
+          "id": "math_unit_08",
+          "title": "Shapes, Direction and Movement - Patterns and Directions",
+          "ar": "الأنماط والاتجاهات"
+        },
+        {
+          "id": "math_unit_09",
+          "title": "Numbers to 20 - Tens and Ones",
+          "ar": "العشرات والآحاد"
+        },
+        {
+          "id": "math_unit_10",
+          "title": "Time and Measurement - Days, Length and Mass",
+          "ar": "الأيام والطول والكتلة"
+        },
+        {
+          "id": "math_unit_11",
+          "title": "Addition and Subtraction - Pairs and Differences",
+          "ar": "مكملات العشرة والفرق"
+        },
+        {
+          "id": "math_unit_12",
+          "title": "Fractions - Halves",
+          "ar": "الكسور والأنصاف"
+        },
+        {
+          "id": "math_quiz_02",
+          "title": "Big Challenge: Term 2",
+          "ar": "تحدي الفصل الدراسي 2",
+          "quiz": true
+        }
+      ]
+    },
+    {
+      "title": "Maths Island: Term 3",
+      "ar": "جزيرة الرياضيات: الفصل 3",
+      "color": "FF4A9FE0",
+      "levels": [
+        {
+          "id": "math_unit_13",
+          "title": "Numbers to 20 - Odd, Even, Order and Money",
+          "ar": "الفردي والزوجي والترتيب والنقود"
+        },
+        {
+          "id": "math_unit_14",
+          "title": "Addition and Subtraction - Doubles and Counting On",
+          "ar": "الضعف والعد التصاعدي"
+        },
+        {
+          "id": "math_unit_15",
+          "title": "Shapes, Direction and Movement - Faces, Corners and Turns",
+          "ar": "الأوجه والأركان والدوران"
+        },
+        {
+          "id": "math_unit_16",
+          "title": "Statistical Methods - Reading Graphs",
+          "ar": "قراءة الرسوم البيانية"
+        },
+        {
+          "id": "math_unit_17",
+          "title": "Fractions - One Half (½)",
+          "ar": "النصف ½"
+        },
+        {
+          "id": "math_unit_18",
+          "title": "Time and Measurement - Clocks, Capacity and Tools",
+          "ar": "الساعة والسعة وأدوات القياس"
+        },
+        {
+          "id": "math_quiz_03",
+          "title": "Big Challenge: Term 3",
+          "ar": "تحدي الفصل الدراسي 3",
+          "quiz": true
+        }
+      ]
+    },
+    {
+      "title": "Chart Skills Island",
+      "ar": "جزيرة مهارات الرسوم",
+      "color": "FF5B4BA8",
+      "levels": [
+        {
+          "id": "math_charts",
+          "title": "Chart Skills",
+          "ar": "مهارات قراءة الرسوم"
+        }
+      ]
+    }
+  ],
+  "parentRules": [
+    {
+      "en": "Keep sessions short: two or three sittings of fifteen minutes.",
+      "ar": "خلي الجلسة قصيرة: حوالي ربع ساعة في كل مرة.",
+      "sourcePage": 2
+    },
+    {
+      "en": "Play with objects before answering on screen.",
+      "ar": "خلّي الطفل يلعب بالحاجات الأول، وبعدها يجاوب.",
+      "sourcePage": 2
+    },
+    {
+      "en": "Ask for a guess before counting. Praise the thinking.",
+      "ar": "اسأله يتوقع العدد قبل العدّ، وامدح طريقته في التفكير.",
+      "sourcePage": 2
+    },
+    {
+      "en": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "ar": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "sourcePage": 2
+    }
+  ]
+}

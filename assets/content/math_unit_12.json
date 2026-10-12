@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_12",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Fractions - Halves",
+  "ar": "الكسور والأنصاف",
+  "term": 2,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    41,
+    42,
+    43
+  ],
+  "introductionText": "Term 2 · Fractions\nFractions — Halves\nThe Big Idea: A half is one of two equal parts. Sharing fairly between two people gives\neach person a half.\nSay It Like This\nRead aloud\n\"If I cut this sandwich into two pieces that are exactly the same size, each piece is one\nhalf. If one piece is big and one is small, those are not halves — that isn't fair! Half of 8\ngrapes: one for you, one for me, one for you, one for me... we each get 4. The word\nfraction means equal parts of a whole.\"\nWatch Out For\nThe slip almost every child makes\n\"I want the bigger half!\" Children (and adults!) say it all the time. Gently: \"If one is bigger,\nthey aren't halves. Halves are always the same size.\" Let him cut, and let his sister or you\nchoose first — he'll quickly learn to cut equal parts.\nTry It at Home\nGame 1 — Fold and check (5 minutes)\nGive him a paper napkin, a slice of bread and a sheet of paper. Can he fold each so the\nedges match exactly? Open the paper: the fold line cuts it into two halves. Try folding a\ndifferent way — corner to corner. Are those halves too?\nGame 2 — Two plates (5 minutes)\nPut two plates on the table and 10 raisins. He shares them, one on each plate at a time,\nuntil none are left. How many on each? That's half of 10. Try 6, 8, then 7. What happens\nwith 7?\n8 grapes shared: 4 and 4\n2 equal parts ✓ NOT halves ✗ half of 8 is 4\nAsk which circle shows halves and why the other one doesn't. Then share 8 real grapes onto two plates.\nMore examples to talk about\n• Half of 2 is 1, half of 4 is 2, half of 6 is 3, half of 10 is 5.\n• A square can be cut in half in more than one way: straight down, straight across, or\ncorner to corner.\n• Tricky: 7 sweets can't be shared into halves without cutting one sweet in two.\n• Tricky: two pieces can be halves even if they look different, as long as they are the same\nsize — like the two triangles from a square.\n• We share things in halves every day: an orange, a sandwich, the sofa.\nKey Words\nhalf halves equal fair share whole fraction fold",
+  "sourceQuestions": [
+    {
+      "id": "math.u12.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Tick the shapes that are cut into halves.\na b c",
+      "answerKeyText": "a and c. b is cut into two unequal parts.",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u12.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Half of 6 is",
+      "answerKeyText": "3",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u12.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Half of 10 is",
+      "answerKeyText": "5",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u12.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Share 8 apples equally between 2 children. Each child gets",
+      "answerKeyText": "4",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u12.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "A half is one of equal parts.",
+      "answerKeyText": "2",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u12.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "True or false? \"I'll have the bigger half\" makes sense.",
+      "answerKeyText": "False. Halves are always the same size.",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u12.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Draw one line to cut the rectangle in half.",
+      "answerKeyText": "A line straight down the middle, straight across the middle, or corner to corner — all\nmake halves.",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u12.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Name something at home that you can share in half.",
+      "answerKeyText": "Any sensible answer: a sandwich, an orange, a cake, a pack of biscuits.",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u12.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "Halves must be...\n( big ) ( different sizes ) ( equal )",
+      "answerKeyText": "equal",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u12.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Half of 4 is...\n( 4 ) ( 1 ) ( 2 )",
+      "answerKeyText": "2",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u12.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "A pizza cut into 2 equal parts: each part is...\n( one half ) ( one whole ) ( two halves )",
+      "answerKeyText": "one half",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u12.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Sharing 6 fairly between 2 people gives each...\n( 3 ) ( 2 ) ( 6 )",
+      "answerKeyText": "3",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u12.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Fraction means...\n( equal parts of a whole ) ( a very big number ) ( any pieces )",
+      "answerKeyText": "equal parts of a whole",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

@@ -5,9 +5,11 @@ import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:science_adventure/content/lesson.dart';
 import 'package:science_adventure/core/models.dart';
+import 'package:science_adventure/core/providers.dart';
 import 'package:science_adventure/core/storage.dart';
 import 'package:science_adventure/features/biology/illustrated_art.dart';
 import 'package:science_adventure/features/lesson/lesson_player.dart';
@@ -244,7 +246,10 @@ void main() {
     tablet(t);
     await helpers.mount(
       t,
-      const ParentArea(),
+      ProviderScope(
+        overrides: [lessonLibraryProvider.overrideWith((ref) async => library)],
+        child: const ParentArea(),
+      ),
       MemoryProgressStore(
         AppData(
           profile: const ChildProfile(name: 'Nour'),
@@ -262,9 +267,6 @@ void main() {
           ],
         ),
       ),
-    );
-    await t.runAsync(
-      () => Future<void>.delayed(const Duration(milliseconds: 300)),
     );
     await t.pump();
     final lesson = library.lessons['unit_02']!;

@@ -11,6 +11,8 @@ import '../plants/plant_lab_stage.dart';
 import '../plants/plant_mission_stage.dart';
 import '../science/science_lab.dart';
 import '../science/science_stage.dart';
+import '../maths/maths_stage.dart';
+import '../maths/maths_workshop.dart';
 import 'scene_kind.dart';
 
 /// What a scene renderer may read from, and ask of, the lesson it is part
@@ -80,10 +82,36 @@ abstract class SceneRenderer {
     SceneKind.ourselves: _OurselvesRenderer(),
     SceneKind.plantLab: _PlantLabRenderer(),
     SceneKind.plantMission: _PlantMissionRenderer(),
+    SceneKind.maths: _MathsRenderer(),
     SceneKind.discovery: _DiscoveryRenderer(),
   };
 
   static SceneRenderer of(SceneKind kind) => registry[kind]!;
+}
+
+class _MathsRenderer extends SceneRenderer {
+  const _MathsRenderer();
+  @override
+  Widget build(BuildContext context, LessonSceneHost host) =>
+      host.step.json['mathWorkshop'] is Map
+      ? MathsWorkshop(
+          key: ValueKey(host.step.id),
+          config: Map<String, dynamic>.from(host.step.json['mathWorkshop']),
+          initial: host.lab,
+          onSave: host.saveLab,
+          onSay: host.say,
+          locked: host.busy,
+        )
+      : MathsStage(
+          step: host.step,
+          selected: host.selected,
+          placements: host.placements,
+          touched: host.touched,
+          reviewItems: host.reviewItems,
+          locked: host.answerLocked || host.freeDone || host.busy,
+          onItem: host.item,
+          onPlace: host.place,
+        );
 }
 
 class _LightExperimentRenderer extends SceneRenderer {

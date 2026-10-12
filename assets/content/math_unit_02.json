@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_02",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Addition and Subtraction",
+  "ar": "الجمع والطرح",
+  "term": 1,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    8,
+    9,
+    10
+  ],
+  "introductionText": "Term 1 · Number\nAddition and Subtraction\nThe Big Idea: Adding puts groups together and makes more. Taking away removes some\nand leaves fewer. On a number line, adding jumps forwards and taking away jumps\nbackwards.\nSay It Like This\nRead aloud\n\"You have 3 grapes. I give you 2 more. Now you have... let's count on: three in your head,\nthen four, five. Five grapes! That is adding. Now you have 7 grapes and you eat 2. Count\nback: seven in your head, then six, five. Five left. That is taking away. This sign + means\nadd. This sign − means take away. And this sign = means is the same as.\"\nWatch Out For\nThe slip almost every child makes\nCounting the starting number as a jump. For 3 + 2 he puts his finger on 3 and says \"three,\nfour\" → answer 4. Tell him: \"Your finger is standing on 3. Standing isn't jumping. Now\njump: one (4), two (5).\" Count the jumps, not the numbers you touch.\n\"How many more?\" answered with the bigger number. Mona has 7 sweets, Ali has 4. He\nsays \"7\". Line the sweets up in pairs — the 3 without a partner are the answer.\nTry It at Home\nGame 1 — The floor number line (10 minutes)\nStick masking tape on the floor and write 0 to 10 on paper squares along it. He stands on\n4. \"Jump forwards 3.\" Where did you land? Then \"Jump back 2.\" Let him say the number\nsentence out loud: \"4 add 3 is 7.\" Before each jump, ask him to guess where he will land.\nGame 2 — The grape shop (5 minutes)\nPut 5 grapes on his plate and 8 on yours. \"Who has more? How many more?\" Line them\nup in two rows, one opposite one. Count the grapes on your plate that have no partner.\nThen ask: what could we do to make the plates the same?\n3 + 2 = 5\n0 1 2 3 4 5 6 7 8 9 10\n7 − 2 = 5\n0 1 2 3 4 5 6 7 8 9 10\nPut his finger on the orange start number and let him trace each green jump forwards, then each red jump\nbackwards, counting the jumps.\nMore examples to talk about\n• Adding 0 changes nothing: 6 + 0 = 6. Taking away 0 changes nothing too.\n• 2 + 3 and 3 + 2 give the same answer. Show him with his two hands.\n• Take away everything: 4 − 4 = 0. Nothing left on the plate!\n• 1 more than 9 is 10 — the ten frame fills up.\n• Tricky: you can't take 5 away from 3 grapes. Ask him why — there aren't enough!\nKey Words\nadd plus (+) take away minus (−) equals (=) 1 more 1 less count on\ncount back number sentence",
+  "sourceQuestions": [
+    {
+      "id": "math.u02.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "1 more than 6 is 1 less than 10 is",
+      "answerKeyText": "7 and 9",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u02.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Count on. Start at 5 and jump 3. 5 add 3 is\n0 1 2 3 4 5 6 7 8 9 10",
+      "answerKeyText": "8",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u02.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Count back. Start at 9 and jump back 4. 9 take away 4 is\n0 1 2 3 4 5 6 7 8 9 10",
+      "answerKeyText": "5",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u02.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Write the number sentence for the blue and orange dots.\n+ =",
+      "answerKeyText": "4 + 3 = 7",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u02.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "The crossed-out cubes are taken away.\n8 take away 3 leaves",
+      "answerKeyText": "5",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u02.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Write these with the signs + − =\n4 add 3 equals 7 →\n7 take away 2 is 5 →",
+      "answerKeyText": "4 + 3 = 7 and 7 − 2 = 5",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u02.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "There are 8 cars in the street. 4 cars drive away. Zara wrote 8 + 4 = 12. Is she right? Write\nthe correct number sentence.",
+      "answerKeyText": "No. Cars drove away, so it is taking away: 8 − 4 = 4.",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u02.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Mona has 7 sweets. Ali has 4 sweets. How many more sweets does Mona have?",
+      "answerKeyText": "3. If he says 7, line up 7 and 4 objects in pairs and count the ones without a partner.",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u02.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "The sign + means...\n( take away ) ( add ) ( is the same as )",
+      "answerKeyText": "add",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u02.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "6 take away 2 is...\n( 8 ) ( 4 ) ( 3 )",
+      "answerKeyText": "4",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u02.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "On a number line, taking away makes you jump...\n( backwards ) ( up ) ( forwards )",
+      "answerKeyText": "backwards",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u02.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "1 less than 8 is...\n( 7 ) ( 6 ) ( 9 )",
+      "answerKeyText": "7",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u02.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "5 + 0 =\n( 0 ) ( 6 ) ( 5 )",
+      "answerKeyText": "5",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

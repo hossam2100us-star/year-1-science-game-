@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_05",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Numbers to 20 - Order and Zero",
+  "ar": "ترتيب الأعداد والصفر",
+  "term": 1,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    18,
+    19,
+    20
+  ],
+  "introductionText": "Term 1 · Number\nNumbers to 20 — Order and Zero\nThe Big Idea: Numbers always go in the same order. The further along the track, the\nbigger the number. Zero means none at all.\nSay It Like This\nRead aloud\n\"Let's walk along the number track. Every step forward, the number gets 1 bigger. Every\nstep back, it gets 1 smaller. Right at the very start is zero. Zero means nothing — like an\nempty plate. Which is bigger, 12 or 17? Walk to 12... keep going... 17 is further along, so\n17 is bigger. Before we count a big pile, we can estimate — that means a clever guess —\nthen count to check.\"\nWatch Out For\nThe slip almost every child makes\nComparing by the last digit. He says \"12 is bigger than 17\" or \"9 is bigger than 15\"\nbecause 9 looks like a big digit. Don't argue — find both numbers on the track and let the\ntrack decide: \"Which one did you pass first?\"\nThinking zero isn't a number. Zero is a real number: it is where the track starts, and it is\nthe answer to \"how many elephants are in the kitchen?\"\nTry It at Home\nGame 1 — The bean jar guess (10 minutes)\nDrop a handful of dried beans into a clear glass — between 10 and 20. Ask him to\nestimate and write his guess. Then tip them out and count them into an egg box, one per\nhole. Was the guess close? Play three times — guesses usually get better, and he'll notice.\nGame 2 — The staircase (5 minutes)\nNumber the stairs with sticky notes, 0 at the bottom. \"Stand on 4. Go up 3. Where are\nyou?\" \"Go down 5. Where now?\" Then ask: \"If you're on 9 and I'm on 13, who is higher\nup?\"\n0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\neach step along, the number gets bigger\nzero = none\n17 is bigger than 12 — you pass 12 to reach 17\nWalk your finger along the track from 0 while he counts aloud, first forwards, then backwards from 20.\nMore examples to talk about\n• Many lifts show 0 for the ground floor — show him next time you take one.\n• A football score of 2–0 means one team scored nothing.\n• He can see up to about 5 things without counting, but 17 beans need an estimate first.\n• Tricky: counting back from 12: 12, 11, 10, 9 — many children stop at 10 or say\n\"elevenety\". Practise crossing 10 in both directions.\n• Tricky: 20 is bigger than 19 even though 9 looks bigger than 0.\nKey Words\nestimate check count on count back zero larger smaller number track\nbefore after",
+  "sourceQuestions": [
+    {
+      "id": "math.u05.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Write the numbers: eleven fifteen twenty",
+      "answerKeyText": "11, 15, 20",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u05.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Count back. Fill in the missing numbers.\n18 17 14 12",
+      "answerKeyText": "16, 15, 13",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u05.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Circle the larger number in each pair: 14 or 19 | 8 or 11 | 20 or 2",
+      "answerKeyText": "19, 11, 20",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u05.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Circle the smaller number in each pair: 13 or 10 | 6 or 16",
+      "answerKeyText": "10, 6",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u05.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "The fruit bowl is empty. How many apples are in it?",
+      "answerKeyText": "0 (zero)",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u05.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Estimate first, then count to check.\nMy estimate: I counted:",
+      "answerKeyText": "Any sensible estimate; the count is 12.",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u05.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Start at 7 and count on 4. Where do you land?",
+      "answerKeyText": "11",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u05.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Start at 15 and count back 3. Where do you land?",
+      "answerKeyText": "12",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u05.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "Zero means...\n( nothing ) ( one ) ( ten )",
+      "answerKeyText": "nothing",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u05.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Which number is the largest?\n( 12 ) ( 9 ) ( 17 )",
+      "answerKeyText": "17",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u05.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "The number just before 10 is...\n( 1 ) ( 9 ) ( 11 )",
+      "answerKeyText": "9",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u05.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "A clever guess of how many, before we count, is called an...\n( answer ) ( zero ) ( estimate )",
+      "answerKeyText": "estimate",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u05.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Count back: 12, 11, ...\n( 13 ) ( 9 ) ( 10 )",
+      "answerKeyText": "10",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

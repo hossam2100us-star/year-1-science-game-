@@ -1,0 +1,1324 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_16",
+  "subject": "maths",
+  "title": "Statistical Methods - Reading Graphs",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    54,
+    55,
+    56
+  ],
+  "steps": [
+    {
+      "id": "math_unit_16.step.001",
+      "kind": "explore",
+      "title": "Read and compare columns",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Read the travel chart. Which way has the most children?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Car has three blocks; walk has six. Add blocks to the car group until it matches walk.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "How many children are represented altogether?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Read the labels, then compare the columns from their shared baseline.",
+      "explanation": "Use the chart labels, count differences and find the total.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Read and compare columns",
+        "goal": "Use the chart labels, count differences and find the total.",
+        "scene": "village",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "Read the travel chart. Which way has the most children?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "walk"
+              },
+              {
+                "id": "answer_3",
+                "label": "bike"
+              },
+              {
+                "id": "answer_2",
+                "label": "bus"
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "Walk has six blocks, the tallest column and the most children.",
+            "hint": "Read the labels, then compare the columns from their shared baseline.",
+            "visual": {
+              "type": "chart",
+              "title": "How we came to school today",
+              "rows": [
+                {
+                  "label": "walk",
+                  "value": 6
+                },
+                {
+                  "label": "bus",
+                  "value": 4
+                },
+                {
+                  "label": "car",
+                  "value": 3
+                },
+                {
+                  "label": "bike",
+                  "value": 2
+                }
+              ],
+              "style": "block",
+              "unit": "one child"
+            },
+            "id": "explore_1"
+          },
+          {
+            "mode": "build",
+            "prompt": "Car has three blocks; walk has six. Add blocks to the car group until it matches walk.",
+            "target": 6,
+            "item": "counter",
+            "initialCount": 3,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "You added three blocks. Six is three more than three.",
+            "hint": "Count only the extra blocks needed after the first three.",
+            "visual": {
+              "type": "chart",
+              "title": "How we came to school today",
+              "rows": [
+                {
+                  "label": "walk",
+                  "value": 6
+                },
+                {
+                  "label": "bus",
+                  "value": 4
+                },
+                {
+                  "label": "car",
+                  "value": 3
+                },
+                {
+                  "label": "bike",
+                  "value": 2
+                }
+              ],
+              "style": "block",
+              "unit": "one child"
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "How many children are represented altogether?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "12"
+              },
+              {
+                "id": "answer_2",
+                "label": "15"
+              },
+              {
+                "id": "answer_3",
+                "label": "16"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Six plus four plus three plus two makes fifteen children altogether.",
+            "hint": "Add the counts of all four labeled columns, not just the tallest one.",
+            "visual": {
+              "type": "chart",
+              "title": "How we came to school today",
+              "rows": [
+                {
+                  "label": "walk",
+                  "value": 6
+                },
+                {
+                  "label": "bus",
+                  "value": 4
+                },
+                {
+                  "label": "car",
+                  "value": 3
+                },
+                {
+                  "label": "bike",
+                  "value": 2
+                }
+              ],
+              "style": "block",
+              "unit": "one child"
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_16.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "How many children walked?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u16.main.01",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "Count the walk column: 6 blocks.",
+      "shortExplanation": "Count the walk column: 6 blocks.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.main.01",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "6",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "How we came to school today",
+        "rows": [
+          {
+            "label": "walk",
+            "value": 6
+          },
+          {
+            "label": "bus",
+            "value": 4
+          },
+          {
+            "label": "car",
+            "value": 3
+          },
+          {
+            "label": "bike",
+            "value": 2
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    },
+    {
+      "id": "math_unit_16.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "How many came by bus?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u16.main.02",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "Count the bus column: 4 blocks.",
+      "shortExplanation": "Count the bus column: 4 blocks.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.main.02",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "How we came to school today",
+        "rows": [
+          {
+            "label": "walk",
+            "value": 6
+          },
+          {
+            "label": "bus",
+            "value": 4
+          },
+          {
+            "label": "car",
+            "value": 3
+          },
+          {
+            "label": "bike",
+            "value": 2
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    },
+    {
+      "id": "math_unit_16.step.004",
+      "kind": "tap-choice",
+      "title": "Maths discovery 4",
+      "prompt": "Which way was most popular?",
+      "options": [
+        {
+          "id": "choice_4",
+          "label": "bike",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "car",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "bus",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "walk",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u16.main.03",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "Walk has the tallest column and the most children.",
+      "shortExplanation": "Walk has the tallest column and the most children.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.main.03",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "walking",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "How we came to school today",
+        "rows": [
+          {
+            "label": "walk",
+            "value": 6
+          },
+          {
+            "label": "bus",
+            "value": 4
+          },
+          {
+            "label": "car",
+            "value": 3
+          },
+          {
+            "label": "bike",
+            "value": 2
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    },
+    {
+      "id": "math_unit_16.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "Which way was least popular?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "bus",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "walk",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_4",
+          "label": "bike",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "car",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_4"
+      },
+      "assessed": true,
+      "objective": "math.u16.main.04",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "Bike has the shortest column and the fewest children.",
+      "shortExplanation": "Bike has the shortest column and the fewest children.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.main.04",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "bike",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "How we came to school today",
+        "rows": [
+          {
+            "label": "walk",
+            "value": 6
+          },
+          {
+            "label": "bus",
+            "value": 4
+          },
+          {
+            "label": "car",
+            "value": 3
+          },
+          {
+            "label": "bike",
+            "value": 2
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    },
+    {
+      "id": "math_unit_16.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "How many more walked than came by car?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u16.main.05",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "Six walked and 3 came by car. The difference is 3.",
+      "shortExplanation": "Six walked and 3 came by car. The difference is 3.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.main.05",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "3",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "How we came to school today",
+        "rows": [
+          {
+            "label": "walk",
+            "value": 6
+          },
+          {
+            "label": "bus",
+            "value": 4
+          },
+          {
+            "label": "car",
+            "value": 3
+          },
+          {
+            "label": "bike",
+            "value": 2
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    },
+    {
+      "id": "math_unit_16.step.007",
+      "kind": "tap-choice",
+      "title": "Maths discovery 7",
+      "prompt": "How many children are in the graph altogether?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "14",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "15",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "16",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u16.main.06",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "Add the columns: 6 + 4 + 3 + 2 = 15.",
+      "shortExplanation": "Add the columns: 6 + 4 + 3 + 2 = 15.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.main.06",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "15",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "How we came to school today",
+        "rows": [
+          {
+            "label": "walk",
+            "value": 6
+          },
+          {
+            "label": "bus",
+            "value": 4
+          },
+          {
+            "label": "car",
+            "value": 3
+          },
+          {
+            "label": "bike",
+            "value": 2
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    },
+    {
+      "id": "math_unit_16.step.008",
+      "kind": "match-lines",
+      "title": "Maths discovery 8",
+      "prompt": "Sort the flat shapes by their corners.",
+      "options": [
+        {
+          "id": "item_1",
+          "label": "circle",
+          "art": "math_label"
+        },
+        {
+          "id": "item_2",
+          "label": "square",
+          "art": "math_label"
+        },
+        {
+          "id": "item_3",
+          "label": "triangle",
+          "art": "math_label"
+        },
+        {
+          "id": "item_4",
+          "label": "oval",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "has corners",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "has no corners",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_2",
+          "item_2": "target_1",
+          "item_3": "target_1",
+          "item_4": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u16.main.07",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "Square and triangle have corners; circle and oval have none.",
+      "shortExplanation": "Square and triangle have corners; circle and oval have none.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.main.07",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "has corners: square, triangle • no corners: circle, oval",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_16.step.009",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "Ask an adult your own question about this graph. Use the graph to check your answer.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.main.08",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "Any question the graph can answer, with the correct answer from the graph.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "How we came to school today",
+        "rows": [
+          {
+            "label": "walk",
+            "value": 6
+          },
+          {
+            "label": "bus",
+            "value": 4
+          },
+          {
+            "label": "car",
+            "value": 3
+          },
+          {
+            "label": "bike",
+            "value": 2
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      },
+      "parentReview": {
+        "en": "Any question the graph can answer, with the correct answer from the graph.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_16.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "The tallest column shows the...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "most",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "total",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "least",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u16.choice.01",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "Most is the answer. More blocks make a taller column.",
+      "shortExplanation": "Most is the answer. More blocks make a taller column.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.choice.01",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "most",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_16.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "How many children came by car?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u16.choice.02",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "3 is the answer. Count the three car blocks.",
+      "shortExplanation": "3 is the answer. Count the three car blocks.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.choice.02",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "3",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "How we came to school today",
+        "rows": [
+          {
+            "label": "walk",
+            "value": 6
+          },
+          {
+            "label": "bus",
+            "value": 4
+          },
+          {
+            "label": "car",
+            "value": 3
+          },
+          {
+            "label": "bike",
+            "value": 2
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    },
+    {
+      "id": "math_unit_16.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "How many came by bus and bike together?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u16.choice.03",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "6 is the answer. Four bus blocks and two bike blocks make six.",
+      "shortExplanation": "6 is the answer. Four bus blocks and two bike blocks make six.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.choice.03",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "6",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "How we came to school today",
+        "rows": [
+          {
+            "label": "walk",
+            "value": 6
+          },
+          {
+            "label": "bus",
+            "value": 4
+          },
+          {
+            "label": "car",
+            "value": 3
+          },
+          {
+            "label": "bike",
+            "value": 2
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    },
+    {
+      "id": "math_unit_16.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "Every graph needs a...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "rubber",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "colour",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "title",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u16.choice.04",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "Title is the answer. The title tells us what the graph is about.",
+      "shortExplanation": "Title is the answer. The title tells us what the graph is about.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.choice.04",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "title",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_16.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "A column with no blocks means...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "zero",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "ten",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "one",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u16.choice.05",
+      "hint": "Read the labels. Count blocks and compare the columns.",
+      "explanation": "Zero is the answer. No blocks means nobody chose that group.",
+      "shortExplanation": "Zero is the answer. No blocks means nobody chose that group.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.choice.05",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "zero",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_16.sticker",
+      "word": "total",
+      "art": "math_label",
+      "meaning": "How many there are altogether.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Record a short supervised toy-colour survey. Make a block graph with equal-size bricks, then ask about most, least, difference and total.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u16.main.01",
+      "text": "Discuss this question with an adult: How many children walked? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.main.02",
+      "text": "Discuss this question with an adult: How many came by bus? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.main.03",
+      "text": "Discuss this question with an adult: Which way was most popular? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.main.04",
+      "text": "Discuss this question with an adult: Which way was least popular? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.main.05",
+      "text": "Discuss this question with an adult: How many more walked than came by car? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.main.06",
+      "text": "Discuss this question with an adult: How many children are in the graph altogether? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.main.07",
+      "text": "Discuss this question with an adult: Sort the flat shapes by their corners. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.choice.01",
+      "text": "Discuss this question with an adult: The tallest column shows the... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.choice.02",
+      "text": "Discuss this question with an adult: How many children came by car? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.choice.03",
+      "text": "Discuss this question with an adult: How many came by bus and bike together? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.choice.04",
+      "text": "Discuss this question with an adult: Every graph needs a... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.choice.05",
+      "text": "Discuss this question with an adult: A column with no blocks means... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

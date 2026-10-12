@@ -36,6 +36,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/content/catalog.json
+    - assets/content/maths_catalog.json
     # Arabic for the parent report's activities (teacher review 4, T4-5e).
     - assets/content/parent_ar.json
     - assets/content/playable/
@@ -50,6 +51,9 @@ flutter:
     - assets/images/greenhouse-v1.webp
     - assets/images/home-hunt-v1.webp
     - assets/images/islands-v2.webp
+    - assets/images/maths-islands-v2.webp
+    - assets/images/maths-objects-v2.webp
+    - assets/images/maths-backdrops-v2.webp
     - assets/images/light-plants-v1.webp
     - assets/images/light-room-v1.webp
     - assets/images/materials-atlas-v2.webp

@@ -34,7 +34,11 @@ void main() {
         seen.add(kind);
       }
     }
-    expect(seen, SceneKind.values.toSet(), reason: 'all kinds are in use');
+    expect(
+      seen,
+      SceneKind.values.toSet()..remove(SceneKind.maths),
+      reason: 'all Science kinds are in use',
+    );
   });
 
   test('the registry has exactly one renderer per scene kind', () {

@@ -1,0 +1,1099 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_10",
+  "subject": "maths",
+  "title": "Time and Measurement - Days, Length and Mass",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    35,
+    36,
+    37
+  ],
+  "steps": [
+    {
+      "id": "math_unit_10.step.001",
+      "kind": "explore",
+      "title": "Measure fairly",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "How many same-size cubes cover the pencil with no gaps?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Which day comes after Monday?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "On a balance, B goes down and A goes up. Which object is heavier?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Count each cube once. Gaps would leave part of the length unmeasured.",
+      "explanation": "Use equal touching cubes, the day sequence and a balance.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Measure fairly",
+        "goal": "Use equal touching cubes, the day sequence and a balance.",
+        "scene": "workshop",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "How many same-size cubes cover the pencil with no gaps?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "5"
+              },
+              {
+                "id": "answer_2",
+                "label": "6"
+              },
+              {
+                "id": "answer_3",
+                "label": "7"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Six equal cubes cover the whole pencil length without gaps.",
+            "hint": "Count each cube once. Gaps would leave part of the length unmeasured.",
+            "visual": {
+              "type": "ruler",
+              "units": 6,
+              "unit": "cube",
+              "item": "pencil"
+            },
+            "id": "explore_1"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Which day comes after Monday?",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "Tuesday"
+              },
+              {
+                "id": "answer_1",
+                "label": "Sunday"
+              },
+              {
+                "id": "answer_3",
+                "label": "Friday"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Tuesday comes after Monday in the repeating week.",
+            "hint": "Find Monday in the day row, then read the next day.",
+            "visual": {
+              "type": "pattern",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "Sun"
+                },
+                {
+                  "type": "text",
+                  "text": "Mon"
+                },
+                {
+                  "type": "text",
+                  "text": "Tue"
+                },
+                {
+                  "type": "text",
+                  "text": "Wed"
+                },
+                {
+                  "type": "text",
+                  "text": "Thu"
+                },
+                {
+                  "type": "text",
+                  "text": "Fri"
+                },
+                {
+                  "type": "text",
+                  "text": "Sat"
+                }
+              ]
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "On a balance, B goes down and A goes up. Which object is heavier?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "A"
+              },
+              {
+                "id": "answer_2",
+                "label": "B"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "The heavier side goes down, so object B is heavier.",
+            "hint": "Look for the side that went down. Size alone cannot tell us mass.",
+            "visual": {
+              "type": "text",
+              "text": "A ↑       B ↓"
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_10.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "How many days are in a week?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "7",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u10.main.01",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "There are 7 days before the week repeats.",
+      "shortExplanation": "There are 7 days before the week repeats.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.main.01",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "7",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_10.step.003",
+      "kind": "match-lines",
+      "title": "Maths discovery 3",
+      "prompt": "Find the neighbouring days.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "before Friday",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "after Monday",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "Tuesday",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "Thursday",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "Saturday",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u10.main.02",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "Tuesday follows Monday. Thursday comes before Friday.",
+      "shortExplanation": "Tuesday follows Monday. Thursday comes before Friday.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.main.02",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "Tuesday and Thursday",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_10.step.004",
+      "kind": "tap-choice",
+      "title": "Maths discovery 4",
+      "prompt": "How many months are in a year?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "13",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "12",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u10.main.03",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "A year has 12 months, from January to December.",
+      "shortExplanation": "A year has 12 months, from January to December.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.main.03",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "12",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_10.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "Which month comes after January?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "March",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "December",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "February",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u10.main.04",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "February is the month after January.",
+      "shortExplanation": "February is the month after January.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.main.04",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "February",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_10.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "How many cubes long is the pencil?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u10.main.05",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "Six equal cubes cover the pencil length with no gaps.",
+      "shortExplanation": "Six equal cubes cover the pencil length with no gaps.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.main.05",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "6 cubes",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true,
+      "mathVisual": {
+        "type": "ruler",
+        "units": 6,
+        "unit": "cube",
+        "item": "pencil"
+      }
+    },
+    {
+      "id": "math_unit_10.step.007",
+      "kind": "tap-choice",
+      "title": "Maths discovery 7",
+      "prompt": "On this balance, B is down and A is up. Which is heavier?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "B",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "A",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u10.main.06",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "The heavier side goes down, so B is heavier.",
+      "shortExplanation": "The heavier side goes down, so B is heavier.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.main.06",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "B — its side went down.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_10.step.008",
+      "kind": "tap-choice",
+      "title": "Maths discovery 8",
+      "prompt": "A bigger object is always heavier.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "True",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "False",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u10.main.07",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "A large pillow can be lighter than a small stone.",
+      "shortExplanation": "A large pillow can be lighter than a small stone.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.main.07",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "False. A big pillow is lighter than a small stone.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_10.step.009",
+      "kind": "order-sequence",
+      "title": "Maths discovery 9",
+      "prompt": "Put these in order, heaviest first.",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "feather",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "book",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "chair",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "choice_3",
+          "choice_1",
+          "choice_2"
+        ]
+      },
+      "assessed": true,
+      "objective": "math.u10.main.08",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "A typical chair is heavier than a book, and a feather is lightest.",
+      "shortExplanation": "A typical chair is heavier than a book, and a feather is lightest.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.main.08",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "chair 1, book 2, feather 3",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_10.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "A year has...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "7 months",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "12 months",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "10 months",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u10.choice.01",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "12 months is the answer. The months run from January through December.",
+      "shortExplanation": "12 months is the answer. The months run from January through December.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.choice.01",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "12 months",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_10.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "On a balance, the heavier side goes...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "up",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "down",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "sideways",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u10.choice.02",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "Down is the answer. More mass makes that side lower.",
+      "shortExplanation": "Down is the answer. More mass makes that side lower.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.choice.02",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "down",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_10.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "When measuring with cubes, leave...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "big gaps",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "no gaps",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "one gap",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u10.choice.03",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "No gaps is the answer. Touching units cover the whole length.",
+      "shortExplanation": "No gaps is the answer. Touching units cover the whole length.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.choice.03",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "no gaps",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_10.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "The day after Saturday is...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "Monday",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "Sunday",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "Friday",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u10.choice.04",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "Sunday is the answer. The week cycles back to Sunday.",
+      "shortExplanation": "Sunday is the answer. The week cycles back to Sunday.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.choice.04",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "Sunday",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_10.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "Which is the heaviest?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "a grape",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "a watermelon",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "a strawberry",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u10.choice.05",
+      "hint": "Check the day order; use equal units or see which side goes down.",
+      "explanation": "A watermelon is the answer. A typical watermelon has more mass than a grape or strawberry.",
+      "shortExplanation": "A watermelon is the answer. A typical watermelon has more mass than a grape or strawberry.",
+      "source": {
+        "pages": [
+          35,
+          36,
+          37
+        ],
+        "questionId": "math.u10.choice.05",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "a watermelon",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_10",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_10.sticker",
+      "word": "mass",
+      "art": "math_label",
+      "meaning": "How heavy or light an object is.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "With an adult, measure a spoon using equal-size bricks with no gaps. Compare mass with a safe balance and talk about days and months.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u10.main.01",
+      "text": "Discuss this question with an adult: How many days are in a week? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u10.main.02",
+      "text": "Discuss this question with an adult: Find the neighbouring days. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u10.main.03",
+      "text": "Discuss this question with an adult: How many months are in a year? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u10.main.04",
+      "text": "Discuss this question with an adult: Which month comes after January? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u10.main.05",
+      "text": "Discuss this question with an adult: How many cubes long is the pencil? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u10.main.06",
+      "text": "Discuss this question with an adult: On this balance, B is down and A is up. Which is heavier? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u10.main.07",
+      "text": "Discuss this question with an adult: A bigger object is always heavier. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u10.main.08",
+      "text": "Discuss this question with an adult: Put these in order, heaviest first. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u10.choice.01",
+      "text": "Discuss this question with an adult: A year has... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u10.choice.02",
+      "text": "Discuss this question with an adult: On a balance, the heavier side goes... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u10.choice.03",
+      "text": "Discuss this question with an adult: When measuring with cubes, leave... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u10.choice.04",
+      "text": "Discuss this question with an adult: The day after Saturday is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u10.choice.05",
+      "text": "Discuss this question with an adult: Which is the heaviest? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

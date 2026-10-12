@@ -1,0 +1,1097 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_11",
+  "subject": "maths",
+  "title": "Addition and Subtraction - Pairs and Differences",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    38,
+    39,
+    40
+  ],
+  "steps": [
+    {
+      "id": "math_unit_11.step.001",
+      "kind": "explore",
+      "title": "Find the missing partner",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Seven spaces are filled. Add counters until the ten frame is full.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "How many forward jumps take you from five to nine?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Ten beans are ready. Hide four by taking them off the tray. How many stay visible?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Count the empty spaces. Each needs one counter.",
+      "explanation": "Make ten and count the difference as jumps.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Find the missing partner",
+        "goal": "Make ten and count the difference as jumps.",
+        "scene": "workshop",
+        "tasks": [
+          {
+            "mode": "build",
+            "prompt": "Seven spaces are filled. Add counters until the ten frame is full.",
+            "target": 10,
+            "item": "counter",
+            "initialCount": 7,
+            "arrangement": "tenFrame",
+            "maxCount": 20,
+            "feedback": "You added three counters. Seven and three make ten.",
+            "hint": "Count the empty spaces. Each needs one counter.",
+            "id": "explore_1"
+          },
+          {
+            "mode": "choose",
+            "prompt": "How many forward jumps take you from five to nine?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "3"
+              },
+              {
+                "id": "answer_3",
+                "label": "9"
+              },
+              {
+                "id": "answer_2",
+                "label": "4"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Five to nine takes four jumps. The standing start is not a jump.",
+            "hint": "Start on five. Count jumps to six, seven, eight and nine.",
+            "visual": {
+              "type": "numberLine",
+              "start": 5,
+              "end": 9,
+              "markers": [
+                5,
+                9
+              ]
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "build",
+            "prompt": "Ten beans are ready. Hide four by taking them off the tray. How many stay visible?",
+            "target": 6,
+            "item": "bean",
+            "initialCount": 10,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Six are visible and four are hidden. Both parts still make ten.",
+            "hint": "Remove four beans. Count only those still on the tray.",
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_11.step.002",
+      "kind": "match-lines",
+      "title": "Maths discovery 2",
+      "prompt": "Fill the partners that make 10.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "2 + __ = 10",
+          "art": "math_label"
+        },
+        {
+          "id": "item_3",
+          "label": "__ + 5 = 10",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "6 + __ = 10",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2",
+          "item_3": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u11.main.01",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "The partners are 6 and 4, 2 and 8, 5 and 5.",
+      "shortExplanation": "The partners are 6 and 4, 2 and 8, 5 and 5.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.main.01",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "4, 8, 5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_11.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "7 + __ = 10. How many empty spaces?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u11.main.02",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "Seven filled spaces leave 3 empty spaces in a ten frame.",
+      "shortExplanation": "Seven filled spaces leave 3 empty spaces in a ten frame.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.main.02",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "3",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 7,
+        "item": "dot",
+        "arrangement": "tenFrame"
+      }
+    },
+    {
+      "id": "math_unit_11.step.004",
+      "kind": "match-lines",
+      "title": "Maths discovery 4",
+      "prompt": "Find each total.",
+      "options": [
+        {
+          "id": "item_1",
+          "label": "3 + 2",
+          "art": "math_label"
+        },
+        {
+          "id": "item_2",
+          "label": "4 + 1",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "6",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_2",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u11.main.03",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "Both addition sentences have the same total: 5.",
+      "shortExplanation": "Both addition sentences have the same total: 5.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.main.03",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "5 and 5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_11.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "Use the number line: 12 + 3 = ?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "15",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "14",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "16",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u11.main.04",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "Three forward jumps from 12 land on 15.",
+      "shortExplanation": "Three forward jumps from 12 land on 15.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.main.04",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "15",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20
+      }
+    },
+    {
+      "id": "math_unit_11.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "There are 16 cubes. Take away 4. How many remain?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "13",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u11.main.05",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "Taking 4 from 16 leaves 12.",
+      "shortExplanation": "Taking 4 from 16 leaves 12.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.main.05",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "12",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 16,
+        "item": "cube",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_11.step.007",
+      "kind": "tap-choice",
+      "title": "Maths discovery 7",
+      "prompt": "What is the difference between 5 and 9?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u11.main.06",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "Count 4 jumps from 5 to 9.",
+      "shortExplanation": "Count 4 jumps from 5 to 9.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.main.06",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10
+      }
+    },
+    {
+      "id": "math_unit_11.step.008",
+      "kind": "tap-choice",
+      "title": "Maths discovery 8",
+      "prompt": "Sam says 6 + 3 = 19. Choose the sensible total.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "19",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u11.main.07",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "Six and three are small groups. Together they make 9.",
+      "shortExplanation": "Six and three are small groups. Together they make 9.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.main.07",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "No. Both numbers are small, so the answer can't be near 20. 6 + 3 = 9.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_11.step.009",
+      "kind": "tap-choice",
+      "title": "Maths discovery 9",
+      "prompt": "There are 10 beans. You see 6. How many are hiding?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u11.main.08",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "Six visible beans and 4 hidden beans make 10.",
+      "shortExplanation": "Six visible beans and 4 hidden beans make 10.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.main.08",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 6,
+        "item": "bean",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_11.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "Which pair makes 10?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "6 and 4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "6 and 3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "5 and 4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u11.choice.01",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "6 and 4 is the answer. 6 + 4 fills all ten spaces.",
+      "shortExplanation": "6 and 4 is the answer. 6 + 4 fills all ten spaces.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.choice.01",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "6 and 4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_11.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "The difference between 8 and 10 is...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "18",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u11.choice.02",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "2 is the answer. Two jumps lead from 8 to 10.",
+      "shortExplanation": "2 is the answer. Two jumps lead from 8 to 10.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.choice.02",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "2",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_11.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "14 + 2 =",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "15",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "16",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u11.choice.03",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "16 is the answer. Adding two to 14 reaches 16.",
+      "shortExplanation": "16 is the answer. Adding two to 14 reaches 16.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.choice.03",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "16",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_11.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "9 + 1 =",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "91",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "10",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u11.choice.04",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "10 is the answer. One more than 9 completes ten.",
+      "shortExplanation": "10 is the answer. One more than 9 completes ten.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.choice.04",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_11.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "18 − 3 =",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "16",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "15",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "21",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u11.choice.05",
+      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "explanation": "15 is the answer. Three backward jumps from 18 reach 15.",
+      "shortExplanation": "15 is the answer. Three backward jumps from 18 reach 15.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.choice.05",
+        "answerKeyPages": [
+          77
+        ],
+        "answerKeyText": "15",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_11.sticker",
+      "word": "difference",
+      "art": "math_label",
+      "meaning": "How many steps from the smaller number to the bigger number.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Use ten safe large counters. Hide some under a cup, count what remains and find the hidden partner. Use a number track for differences.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u11.main.01",
+      "text": "Discuss this question with an adult: Fill the partners that make 10. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.main.02",
+      "text": "Discuss this question with an adult: 7 + __ = 10. How many empty spaces? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.main.03",
+      "text": "Discuss this question with an adult: Find each total. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.main.04",
+      "text": "Discuss this question with an adult: Use the number line: 12 + 3 = ? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.main.05",
+      "text": "Discuss this question with an adult: There are 16 cubes. Take away 4. How many remain? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.main.06",
+      "text": "Discuss this question with an adult: What is the difference between 5 and 9? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.main.07",
+      "text": "Discuss this question with an adult: Sam says 6 + 3 = 19. Choose the sensible total. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.main.08",
+      "text": "Discuss this question with an adult: There are 10 beans. You see 6. How many are hiding? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.choice.01",
+      "text": "Discuss this question with an adult: Which pair makes 10? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.choice.02",
+      "text": "Discuss this question with an adult: The difference between 8 and 10 is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.choice.03",
+      "text": "Discuss this question with an adult: 14 + 2 = Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.choice.04",
+      "text": "Discuss this question with an adult: 9 + 1 = Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.choice.05",
+      "text": "Discuss this question with an adult: 18 − 3 = Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

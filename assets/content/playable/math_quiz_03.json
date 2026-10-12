@@ -1,0 +1,678 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_quiz_03",
+  "subject": "maths",
+  "title": "Big Challenge: Term 3",
+  "quiz": true,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    64
+  ],
+  "steps": [
+    {
+      "id": "math_quiz_03.step.001",
+      "kind": "tap-choice",
+      "title": "Maths discovery 1",
+      "prompt": "Choose the even number.",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q03.01",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "Six makes three pairs with none left over.",
+      "shortExplanation": "Six makes three pairs with none left over.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.01",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "6",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_03.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "Which position comes after 2nd?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "1st",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "4th",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "3rd",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q03.02",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "Third follows second.",
+      "shortExplanation": "Third follows second.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.02",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "3rd",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_03.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "Double 4 is...?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "8",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q03.03",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "Four and another four make eight.",
+      "shortExplanation": "Four and another four make eight.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.03",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "8",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_03.step.004",
+      "kind": "tap-choice",
+      "title": "Maths discovery 4",
+      "prompt": "6 + 11 = ?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "17",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "18",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "16",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q03.04",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "Start at eleven and count on six to reach seventeen.",
+      "shortExplanation": "Start at eleven and count on six to reach seventeen.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.04",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "17 (start at 11, count on 6)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_03.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "How many faces does a cube have?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q03.05",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "A cube has six square faces.",
+      "shortExplanation": "A cube has six square faces.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.05",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "6",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_03.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "A triangle turns upside down. Is it still a triangle?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "no",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "yes",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q03.06",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "It still has three straight sides and three corners.",
+      "shortExplanation": "It still has three straight sides and three corners.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.06",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "Yes",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_03.step.007",
+      "kind": "tap-choice",
+      "title": "Maths discovery 7",
+      "prompt": "Which graph column shows the most?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "the first",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "the shortest",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "the tallest",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q03.07",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "The tallest column has the greatest count.",
+      "shortExplanation": "The tallest column has the greatest count.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.07",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "the tallest",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_03.step.008",
+      "kind": "tap-choice",
+      "title": "Maths discovery 8",
+      "prompt": "Half of 20 is...?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "10",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q03.08",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "Two equal groups of ten make twenty.",
+      "shortExplanation": "Two equal groups of ten make twenty.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.08",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_03.step.009",
+      "kind": "tap-choice",
+      "title": "Maths discovery 9",
+      "prompt": "What time does this clock show?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "12 o'clock",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "2 o'clock",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "half past 2",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q03.09",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "The minute hand is on twelve; the hour hand is on two.",
+      "shortExplanation": "The minute hand is on twelve; the hour hand is on two.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.09",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "2 o'clock",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "clock",
+        "hour": 2,
+        "minute": 0
+      }
+    },
+    {
+      "id": "math_quiz_03.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "What do we use to weigh flour?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "jug",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "scales",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "ruler",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q03.10",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "Scales measure mass, so use them to weigh flour.",
+      "shortExplanation": "Scales measure mass, so use them to weigh flour.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.10",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "scales",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_quiz_03.sticker",
+      "word": "count on",
+      "art": "math_label",
+      "meaning": "Start with a number and add forward jumps.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        64
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Revisit the home games for this term. Talk about how each answer was found.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.q03.01",
+      "text": "Discuss this question with an adult: Choose the even number. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.02",
+      "text": "Discuss this question with an adult: Which position comes after 2nd? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.03",
+      "text": "Discuss this question with an adult: Double 4 is...? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.04",
+      "text": "Discuss this question with an adult: 6 + 11 = ? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.05",
+      "text": "Discuss this question with an adult: How many faces does a cube have? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.06",
+      "text": "Discuss this question with an adult: A triangle turns upside down. Is it still a triangle? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.07",
+      "text": "Discuss this question with an adult: Which graph column shows the most? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.08",
+      "text": "Discuss this question with an adult: Half of 20 is...? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.09",
+      "text": "Discuss this question with an adult: What time does this clock show? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.10",
+      "text": "Discuss this question with an adult: What do we use to weigh flour? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  },
+  "practiceUnitId": "math_unit_13"
+}

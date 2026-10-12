@@ -1,0 +1,244 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_01",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Numbers to 20",
+  "ar": "الأعداد حتى ٢٠",
+  "term": 1,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "introductionText": "Term 1 · Number\nNumbers to 20\nThe Big Idea: A number tells us how many. When we count, we touch each thing once,\nand the last number we say is how many there are altogether.\nSay It Like This\nRead aloud\n\"Numbers are names for how many. When we count, we touch each thing once and say\none number for it: one, two, three... The last number we say tells us how many there are.\nLook — if I spread the spoons out, are there more now? No! Moving things doesn't make\nmore. We still have the same number.\"\nWatch Out For\nThe slip almost every child makes\n1. Saying numbers faster than touching. His mouth runs ahead of his finger, so he skips\nan object or counts one twice. Slow him down: \"Push each spoon to the side as you count\nit.\" Moved objects can't be counted again.\n2. Thinking spread-out means more. A long line of 6 looks like \"more\" than a tight pile of\n6. Let him count both and discover they match.\n3. Writing teen numbers backwards. We say \"four-teen\" — the four comes first — but\nwe write 14 with the 1 first. Say it this way: \"Fourteen is ten and four. The ten is written\nfirst.\"\nTry It at Home\nGame 1 — The spoon trick (5 minutes)\nPut 7 spoons in a tight row. Count them together, sliding each one as you count. Now\nspread them all over the table and ask: \"How many are there now?\" Let him guess before\ncounting. Most six-year-olds want to count again — that's fine. The day he says \"still 7, I\ndidn't take any away\" without counting, the idea has landed.\nGame 2 — Flash the dice (3 minutes)\nRoll one dice, show it for two seconds, then hide it. \"How many dots?\" Children can learn\nto see up to 6 dots at a glance without counting one by one. Then use two dice. Can he\nsee 5 and 3 and know it is 8?\nCounted in a row:\n1 2 3 4 5\n3\n1\nSpread out:\n5\n2\n4\nStill 5 apples!\nCount the top row with him, touching each apple. Then ask how many are in the bottom row before he\ncounts — the answer is the same.\nMore examples to talk about\n• An egg box holds 10 or 12 eggs. Count the empty holes too.\n• Things you can't touch can still be counted: claps, jumps, the ding of a spoon on a glass.\nClose his eyes and ask him to count the claps.\n• Tricky: the number on a bus or a house door is a name, not a count. Bus 13 doesn't have\n13 passengers.\n• Tricky: if you count the same toys starting from a different one, you still get the same\nanswer.\n• Twenty is two tens — the fingers of two people's hands.\nKey Words\ncount number how many altogether the same more digit",
+  "sourceQuestions": [
+    {
+      "id": "math.u01.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Count the apples. Write how many.",
+      "answerKeyText": "8",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u01.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Count the stars. Write how many.",
+      "answerKeyText": "13",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u01.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Fill in the missing numbers.\n11 12 14 15 17 19 20",
+      "answerKeyText": "13, 16, 18",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u01.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Say how many dots without counting one by one. Write the number under each.",
+      "answerKeyText": "4, 6, 10. The dice pattern and the full ten frame should be known at a glance; if he counts\none by one, that's fine for now — play Game 2 again.",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u01.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Draw 9 circles in the box.",
+      "answerKeyText": "Nine circles. Count them with him; check he didn't draw 10.",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u01.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "True or false? Sara counted 6 cups in a row. Then she spread them out. Now there are\nmore than 6 cups.",
+      "answerKeyText": "False. There are still 6 cups — moving them doesn't make more.",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u01.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Circle the number twelve: 21 12 2 20",
+      "answerKeyText": "12. If he circles 21, say \"twelve is ten and two — the ten comes first.\"",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u01.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Count something in your room. What did you count, and how many were there?",
+      "answerKeyText": "Any real object and a correct count, e.g. \"I counted my cars, there were 9.\"",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u01.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "The last number you say when you count tells you...\n( which is the biggest ) ( which is the first one ) ( how many altogether )",
+      "answerKeyText": "how many altogether",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u01.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Which number comes just after 15?\n( 16 ) ( 14 ) ( 51 )",
+      "answerKeyText": "16",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u01.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "How many dots fill a whole ten frame?\n( 10 ) ( 20 ) ( 5 )",
+      "answerKeyText": "10",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u01.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Thirteen is written...\n( 30 ) ( 13 ) ( 31 )",
+      "answerKeyText": "13",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u01.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "5 spoons were in a pile. Now they are in a long line. How many spoons are there?\n( more than 5 ) ( fewer than 5 ) ( 5 )",
+      "answerKeyText": "5",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        72
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

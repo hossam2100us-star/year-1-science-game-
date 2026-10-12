@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:drift/drift.dart';
 
+import '../../content/curriculum.dart';
 import '../../content/lesson.dart';
 import '../../core/models.dart';
 import '../../domain/journey/journey_state.dart';
@@ -209,7 +210,14 @@ class SyncStore {
     // If the account already has this child (linked before), the create
     // changes nothing there: these settings replace the account's.
     await outbox.settingsReplace(id, settings);
-    for (final a in await progress.attemptRows(id)) {
+    final attempts = [
+      ...await progress.attemptRows(id),
+      ...await ProgressRepository(
+        db,
+        curriculum: mathsCurriculum,
+      ).attemptRows(id),
+    ];
+    for (final a in attempts) {
       await outbox.attemptCreate(
         id,
         a.row.id,

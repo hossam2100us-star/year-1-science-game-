@@ -1,0 +1,1097 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_01",
+  "subject": "maths",
+  "title": "Numbers to 20",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "steps": [
+    {
+      "id": "math_unit_01.step.001",
+      "kind": "explore",
+      "title": "Count for Owl",
+      "prompt": "Help Owl count the apples.",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Tap each apple once to count the apples for Owl.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "The same seven apples are spread out. None joined or left. How many now?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Make a group of ten counters. Fill the ten frame, one counter in each space.",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each object once. A marked object has already been counted.",
+      "explanation": "Count each object once, say how many altogether, and make a group of ten.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Count for Owl",
+        "goal": "Count each object once, say how many altogether, and make a group of ten.",
+        "scene": "orchard",
+        "tasks": [
+          {
+            "mode": "count",
+            "prompt": "Tap each apple once to count the apples for Owl.",
+            "count": 7,
+            "item": "apple",
+            "arrangement": "row",
+            "choices": [
+              {
+                "id": "answer_3",
+                "label": "8",
+                "value": 8
+              },
+              {
+                "id": "answer_2",
+                "label": "7",
+                "value": 7
+              },
+              {
+                "id": "answer_1",
+                "label": "6",
+                "value": 6
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "You counted each apple once. Seven is the last count, so there are seven apples altogether.",
+            "hint": "Tap each object once. A marked object has already been counted.",
+            "id": "explore_1"
+          },
+          {
+            "mode": "choose",
+            "prompt": "The same seven apples are spread out. None joined or left. How many now?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "6"
+              },
+              {
+                "id": "answer_3",
+                "label": "8"
+              },
+              {
+                "id": "answer_2",
+                "label": "7"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Still seven! Moving apples changes where they are, not how many there are.",
+            "hint": "Think about whether an apple joined or left. You may count again to check.",
+            "visual": {
+              "type": "count",
+              "count": 7,
+              "item": "apple",
+              "arrangement": "scattered"
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "build",
+            "prompt": "Make a group of ten counters. Fill the ten frame, one counter in each space.",
+            "target": 10,
+            "item": "counter",
+            "initialCount": 0,
+            "arrangement": "tenFrame",
+            "maxCount": 20,
+            "feedback": "Ten counters fill all ten spaces. The number ten tells us how many altogether.",
+            "hint": "Each space holds one counter. Count the filled spaces before checking.",
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_01.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "Count the apples. How many are there?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "9",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u01.main.01",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "Touch each apple once. There are 8 apples.",
+      "shortExplanation": "Touch each apple once. There are 8 apples.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.main.01",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "8",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 8,
+        "item": "apple",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_01.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "Count the stars. How many are there?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "14",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "13",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u01.main.02",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "Counting each star once gives 13 stars.",
+      "shortExplanation": "Counting each star once gives 13 stars.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.main.02",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "13",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 13,
+        "item": "star",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_01.step.004",
+      "kind": "match-lines",
+      "title": "Maths discovery 4",
+      "prompt": "Fill the gaps in the number track.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "14, 15, __, 17",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "11, 12, __, 14",
+          "art": "math_label"
+        },
+        {
+          "id": "item_3",
+          "label": "17, __, 19, 20",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "13",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "16",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "18",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2",
+          "item_3": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u01.main.03",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "The missing numbers are 13, 16 and 18.",
+      "shortExplanation": "The missing numbers are 13, 16 and 18.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.main.03",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "13, 16, 18",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 11,
+        "end": 20
+      }
+    },
+    {
+      "id": "math_unit_01.step.005",
+      "kind": "match-lines",
+      "title": "Maths discovery 5",
+      "prompt": "Match each dot picture to its number.",
+      "options": [
+        {
+          "id": "item_3",
+          "label": "C",
+          "art": "math_label"
+        },
+        {
+          "id": "item_2",
+          "label": "B",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "A",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "10",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2",
+          "item_3": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u01.main.04",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "The pictures show 4, 6 and 10 dots.",
+      "shortExplanation": "The pictures show 4, 6 and 10 dots.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.main.04",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "4, 6, 10. The dice pattern and the full ten frame should be known at a glance; if he counts\none by one, that's fine for now — play Game 2 again.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 4,
+            "item": "dot",
+            "arrangement": "row",
+            "label": "A"
+          },
+          {
+            "type": "count",
+            "count": 6,
+            "item": "dot",
+            "arrangement": "row",
+            "label": "B"
+          },
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "label": "C"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_01.step.006",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "With an adult, draw 9 circles on paper. Count them together.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.main.05",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "Nine circles. Count them with him; check he didn't draw 10.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true,
+      "parentReview": {
+        "en": "Nine circles. Count them with him; check he didn't draw 10.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_01.step.007",
+      "kind": "tap-choice",
+      "title": "Maths discovery 7",
+      "prompt": "Sara spreads out 6 cups. Now there are more than 6 cups.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "True",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "False",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u01.main.06",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "Moving the cups does not change how many there are.",
+      "shortExplanation": "Moving the cups does not change how many there are.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.main.06",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "False. There are still 6 cups — moving them doesn't make more.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_01.step.008",
+      "kind": "tap-choice",
+      "title": "Maths discovery 8",
+      "prompt": "Choose the number twelve.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "21",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_4",
+          "label": "20",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "12",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u01.main.07",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "Twelve is ten and two, written 12.",
+      "shortExplanation": "Twelve is ten and two, written 12.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.main.07",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "12. If he circles 21, say \"twelve is ten and two — the ten comes first.\"",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_01.step.009",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "Count something in your room with an adult. What did you count, and how many?",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.main.08",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "Any real object and a correct count, e.g. \"I counted my cars, there were 9.\"",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true,
+      "parentReview": {
+        "en": "Any real object and a correct count, e.g. \"I counted my cars, there were 9.\"",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_01.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "The last number you say when you count tells you...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "how many altogether",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "which is the first one",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "which is the biggest",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u01.choice.01",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "How many altogether is the answer. The last count names the whole group.",
+      "shortExplanation": "How many altogether is the answer. The last count names the whole group.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.choice.01",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "how many altogether",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_01.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "Which number comes just after 15?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "16",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "14",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "51",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u01.choice.02",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "16 is the answer. Counting on one moves from 15 to 16.",
+      "shortExplanation": "16 is the answer. Counting on one moves from 15 to 16.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.choice.02",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "16",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_01.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "How many dots fill a whole ten frame?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "10",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "20",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u01.choice.03",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "10 is the answer. A ten frame has ten spaces.",
+      "shortExplanation": "10 is the answer. A ten frame has ten spaces.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.choice.03",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_01.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "Thirteen is written...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "30",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "31",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "13",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u01.choice.04",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "13 is the answer. Thirteen is ten and three.",
+      "shortExplanation": "13 is the answer. Thirteen is ten and three.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.choice.04",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "13",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_01.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "5 spoons were in a pile. Now they are in a long line. How many spoons are there?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "fewer than 5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "more than 5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u01.choice.05",
+      "hint": "Touch each object once, then remember the last number.",
+      "explanation": "5 is the answer. Moving a group does not change its number.",
+      "shortExplanation": "5 is the answer. Moving a group does not change its number.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "math.u01.choice.05",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_01",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_01.sticker",
+      "word": "count",
+      "art": "math_label",
+      "meaning": "Say one number for each thing, in order.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Count 7 spoons while moving each once. Spread them out and ask whether the number changed. Play a short dice-dot guessing game.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u01.main.01",
+      "text": "Discuss this question with an adult: Count the apples. How many are there? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u01.main.02",
+      "text": "Discuss this question with an adult: Count the stars. How many are there? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u01.main.03",
+      "text": "Discuss this question with an adult: Fill the gaps in the number track. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u01.main.04",
+      "text": "Discuss this question with an adult: Match each dot picture to its number. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u01.main.06",
+      "text": "Discuss this question with an adult: Sara spreads out 6 cups. Now there are more than 6 cups. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u01.main.07",
+      "text": "Discuss this question with an adult: Choose the number twelve. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u01.choice.01",
+      "text": "Discuss this question with an adult: The last number you say when you count tells you... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u01.choice.02",
+      "text": "Discuss this question with an adult: Which number comes just after 15? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u01.choice.03",
+      "text": "Discuss this question with an adult: How many dots fill a whole ten frame? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u01.choice.04",
+      "text": "Discuss this question with an adult: Thirteen is written... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u01.choice.05",
+      "text": "Discuss this question with an adult: 5 spoons were in a pile. Now they are in a long line. How many spoons are there? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

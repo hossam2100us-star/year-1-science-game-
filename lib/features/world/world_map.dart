@@ -10,6 +10,7 @@ import '../../parent/parent_gate.dart';
 import '../../parent/parent_area.dart';
 import '../lesson/lesson_player.dart';
 import '../biology/sticker_album.dart';
+import '../maths/maths_art.dart';
 import 'island_art.dart';
 import 'todays_challenge.dart';
 
@@ -19,8 +20,10 @@ class WorldMap extends ConsumerStatefulWidget {
     required this.onParentChanged,
     this.onSubjects,
     this.preview = false,
+    this.catalogue,
   });
   final bool preview;
+  final Catalog? catalogue;
   final ValueChanged<bool> onParentChanged;
   final VoidCallback? onSubjects;
   @override
@@ -36,7 +39,7 @@ class _WorldMapState extends ConsumerState<WorldMap> {
         ref
             .read(narrationProvider)
             .speak(
-              'Welcome to our science islands. Tap Biology Island to explore.',
+              (widget.catalogue ?? ref.read<Catalog>(catalogProvider)).welcome,
             );
       }
     });
@@ -62,7 +65,11 @@ class _WorldMapState extends ConsumerState<WorldMap> {
     ref.read(narrationProvider).stop();
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (_) => IslandScreen(index: index, preview: widget.preview),
+        builder: (_) => IslandScreen(
+          index: index,
+          preview: widget.preview,
+          catalogue: widget.catalogue,
+        ),
       ),
     );
   }
@@ -71,7 +78,8 @@ class _WorldMapState extends ConsumerState<WorldMap> {
   Widget build(BuildContext context) {
     final data = ref.watch(appProvider),
         profile = data.profile!,
-        catalog = ref.watch(catalogProvider);
+        catalog = widget.catalogue ?? ref.watch<Catalog>(catalogProvider),
+        progress = data.progressForSubject(catalog.subject);
     return Scaffold(
       backgroundColor: const Color(0xFFD4ECE9),
       body: SafeArea(
@@ -108,7 +116,7 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                   ],
                 ),
               ),
-              const TodaysChallenge(),
+              if (catalog.subject == 'science') const TodaysChallenge(),
               LayoutBuilder(
                 builder: (context, box) {
                   final largeText =
@@ -139,14 +147,20 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                                     AspectRatio(
                                       // Match the painting region so the whole
                                       // island remains visible above its label.
-                                      aspectRatio:
-                                          2 *
-                                          islandRegions[i].width /
-                                          islandRegions[i].height,
-                                      child: IslandIllustration(
-                                        key: ValueKey('island-art-$i'),
-                                        index: i,
-                                      ),
+                                      aspectRatio: catalog.subject == 'science'
+                                          ? 2 *
+                                                islandRegions[i].width /
+                                                islandRegions[i].height
+                                          : 1.5,
+                                      child: catalog.subject == 'science'
+                                          ? IslandIllustration(
+                                              key: ValueKey('island-art-$i'),
+                                              index: i,
+                                            )
+                                          : MathsIslandArt(
+                                              key: ValueKey('island-art-$i'),
+                                              index: i,
+                                            ),
                                     ),
                                     Padding(
                                       key: ValueKey('island-caption-$i'),
@@ -159,9 +173,8 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                                             catalog.islandUnlocked(i, data),
                                         completed: catalog.islands[i].levels
                                             .where(
-                                              (l) => data.isAdventureComplete(
-                                                l.id,
-                                              ),
+                                              (l) => progress
+                                                  .isAdventureComplete(l.id),
                                             )
                                             .length,
                                       ),
@@ -191,7 +204,8 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                     OutlinedButton.icon(
                       onPressed: () => Navigator.of(context).push(
                         MaterialPageRoute<void>(
-                          builder: (_) => const StickerAlbum(),
+                          builder: (_) =>
+                              StickerAlbum(subject: catalog.subject),
                         ),
                       ),
                       icon: const Icon(Icons.auto_awesome_rounded),
@@ -200,7 +214,11 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                     IconButton(
                       onPressed: () => ref
                           .read(narrationProvider)
-                          .speak('Tap an island. Start with Biology Island.'),
+                          .speak(
+                            catalog.subject == 'science'
+                                ? 'Tap an island. Start with Biology Island.'
+                                : catalog.welcome,
+                          ),
                       tooltip: 'Listen to the map',
                       icon: const Icon(Icons.volume_up_rounded),
                     ),
@@ -277,13 +295,15 @@ class _IslandLabel extends StatelessWidget {
   );
 }
 
-void _comingSoon(BuildContext context, String name) {
+void _comingSoon(BuildContext context, String name, String subject) {
   showDialog<void>(
     context: context,
     builder: (context) => AlertDialog(
       scrollable: true,
       content: StoryPanel(
-        text: '$name is being prepared. Let us explore the garden for now.',
+        text: subject == 'science'
+            ? '$name is being prepared. Let us explore the garden for now.'
+            : '$name is being prepared. Let us explore another adventure.',
       ),
       actions: [
         FilledButton(
@@ -296,14 +316,21 @@ void _comingSoon(BuildContext context, String name) {
 }
 
 class IslandScreen extends ConsumerWidget {
-  const IslandScreen({super.key, required this.index, this.preview = false});
+  const IslandScreen({
+    super.key,
+    required this.index,
+    this.preview = false,
+    this.catalogue,
+  });
   final bool preview;
   final int index;
+  final Catalog? catalogue;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final catalog = ref.watch(catalogProvider),
+    final catalog = catalogue ?? ref.watch<Catalog>(catalogProvider),
         island = catalog.islands[index],
-        data = ref.watch(appProvider);
+        data = ref.watch(appProvider),
+        progress = data.progressForSubject(catalog.subject);
     final color = Color(island.color),
         locked = !preview && !catalog.islandUnlocked(index, data);
     return Scaffold(
@@ -346,7 +373,9 @@ class IslandScreen extends ConsumerWidget {
                 builder: (context, box) => SizedBox(
                   height: (box.maxWidth * .34).clamp(210, 380),
                   width: double.infinity,
-                  child: IslandIllustration(index: index),
+                  child: catalog.subject == 'science'
+                      ? IslandIllustration(index: index)
+                      : MathsIslandArt(index: index),
                 ),
               ),
               if (locked)
@@ -399,7 +428,7 @@ class IslandScreen extends ConsumerWidget {
                               unlocked:
                                   preview ||
                                   catalog.levelUnlocked(index, i, data),
-                              complete: data.isAdventureComplete(
+                              complete: progress.isAdventureComplete(
                                 island.levels[i].id,
                               ),
                               onTap: () {
@@ -407,7 +436,11 @@ class IslandScreen extends ConsumerWidget {
                                 if (!LessonLibrary.availableIds.contains(
                                   level.id,
                                 )) {
-                                  _comingSoon(context, level.title);
+                                  _comingSoon(
+                                    context,
+                                    level.title,
+                                    catalog.subject,
+                                  );
                                   return;
                                 }
                                 if (!preview &&

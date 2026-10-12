@@ -1,0 +1,1109 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_02",
+  "subject": "maths",
+  "title": "Addition and Subtraction",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    8,
+    9,
+    10
+  ],
+  "steps": [
+    {
+      "id": "math_unit_02.step.001",
+      "kind": "explore",
+      "title": "Join and take away",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Tap the three beans once each. How many are in the starting group?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Three beans are ready. Add two more beans, then check the new group.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Seven beans are ready. Take away two beans, then check what is left.",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each object once. A marked object has already been counted.",
+      "explanation": "See how adding and taking away change a group.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Join and take away",
+        "goal": "See how adding and taking away change a group.",
+        "scene": "orchard",
+        "tasks": [
+          {
+            "mode": "count",
+            "prompt": "Tap the three beans once each. How many are in the starting group?",
+            "count": 3,
+            "item": "bean",
+            "arrangement": "row",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "2",
+                "value": 2
+              },
+              {
+                "id": "answer_2",
+                "label": "3",
+                "value": 3
+              },
+              {
+                "id": "answer_3",
+                "label": "4",
+                "value": 4
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "There are three beans to start with.",
+            "hint": "Tap each object once. A marked object has already been counted.",
+            "id": "explore_1"
+          },
+          {
+            "mode": "build",
+            "prompt": "Three beans are ready. Add two more beans, then check the new group.",
+            "target": 5,
+            "item": "bean",
+            "initialCount": 3,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Three beans and two more make five: 3 + 2 = 5.",
+            "hint": "Keep the three you started with. Add one, then one more.",
+            "id": "explore_2"
+          },
+          {
+            "mode": "build",
+            "prompt": "Seven beans are ready. Take away two beans, then check what is left.",
+            "target": 5,
+            "item": "bean",
+            "initialCount": 7,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Taking two away from seven leaves five: 7 - 2 = 5.",
+            "hint": "Remove one bean, then one more. Count only the beans that remain.",
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_02.step.002",
+      "kind": "match-lines",
+      "title": "Maths discovery 2",
+      "prompt": "Find one more and one less.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "1 less than 10",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "1 more than 6",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "9",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u02.main.01",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "One more moves forward; one less moves back.",
+      "shortExplanation": "One more moves forward; one less moves back.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.01",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "7 and 9",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10
+      }
+    },
+    {
+      "id": "math_unit_02.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "Start at 5 and count on 3. Where do you land?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "8",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.main.02",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "Three forward jumps from 5 land on 8.",
+      "shortExplanation": "Three forward jumps from 5 land on 8.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.02",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "8",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10
+      }
+    },
+    {
+      "id": "math_unit_02.step.004",
+      "kind": "tap-choice",
+      "title": "Maths discovery 4",
+      "prompt": "Start at 9 and count back 4. Where do you land?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.main.03",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "Four backward jumps from 9 land on 5.",
+      "shortExplanation": "Four backward jumps from 9 land on 5.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.03",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10
+      }
+    },
+    {
+      "id": "math_unit_02.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "Choose the addition sentence for the two groups.",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "3 + 3 = 6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "4 + 3 = 7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "4 - 3 = 1",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u02.main.04",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "Adding 4 blue dots and 3 orange dots makes 7.",
+      "shortExplanation": "Adding 4 blue dots and 3 orange dots makes 7.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.04",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "4 + 3 = 7",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 4,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "blue"
+          },
+          {
+            "type": "count",
+            "count": 3,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "orange"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_02.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "There are 8 cubes. Take away 3. How many remain?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.main.05",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "Taking 3 cubes from 8 leaves 5 cubes.",
+      "shortExplanation": "Taking 3 cubes from 8 leaves 5 cubes.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.05",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 8,
+        "item": "cube",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_02.step.007",
+      "kind": "match-lines",
+      "title": "Maths discovery 7",
+      "prompt": "Match the words to the number sentence.",
+      "options": [
+        {
+          "id": "item_1",
+          "label": "4 add 3 equals 7",
+          "art": "math_label"
+        },
+        {
+          "id": "item_2",
+          "label": "7 take away 2 is 5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "4 + 3 = 7",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "7 - 2 = 5",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u02.main.06",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "Plus adds, minus takes away and equals means the same as.",
+      "shortExplanation": "Plus adds, minus takes away and equals means the same as.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.06",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "4 + 3 = 7 and 7 − 2 = 5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_02.step.008",
+      "kind": "tap-choice",
+      "title": "Maths discovery 8",
+      "prompt": "8 cars were parked. 4 drive away. Choose the correct sentence.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "8 + 4 = 12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "4 - 4 = 0",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "8 - 4 = 4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.main.07",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "The cars leave, so take 4 away from 8.",
+      "shortExplanation": "The cars leave, so take 4 away from 8.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.07",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "No. Cars drove away, so it is taking away: 8 − 4 = 4.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_02.step.009",
+      "kind": "tap-choice",
+      "title": "Maths discovery 9",
+      "prompt": "Mona has 7 sweets. Ali has 4. How many more does Mona have?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.main.08",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "Match the sweets in pairs. Mona has 3 without partners.",
+      "shortExplanation": "Match the sweets in pairs. Mona has 3 without partners.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.08",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "3. If he says 7, line up 7 and 4 objects in pairs and count the ones without a partner.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 7,
+            "item": "dot",
+            "arrangement": "row",
+            "label": "Mona"
+          },
+          {
+            "type": "count",
+            "count": 4,
+            "item": "dot",
+            "arrangement": "row",
+            "label": "Ali"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_02.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "The sign + means...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "add",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "is the same as",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "take away",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.choice.01",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "Add is the answer. The plus sign joins groups.",
+      "shortExplanation": "Add is the answer. The plus sign joins groups.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.choice.01",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "add",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_02.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "6 take away 2 is...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.choice.02",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "4 is the answer. Two backward jumps from 6 leave 4.",
+      "shortExplanation": "4 is the answer. Two backward jumps from 6 leave 4.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.choice.02",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_02.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "On a number line, taking away makes you jump...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "forwards",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "up",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "backwards",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u02.choice.03",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "Backwards is the answer. Taking away moves toward smaller numbers.",
+      "shortExplanation": "Backwards is the answer. Taking away moves toward smaller numbers.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.choice.03",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "backwards",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_02.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "1 less than 8 is...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "7",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u02.choice.04",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "7 is the answer. One backward step from 8 reaches 7.",
+      "shortExplanation": "7 is the answer. One backward step from 8 reaches 7.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.choice.04",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "7",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_02.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "5 + 0 =",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "0",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u02.choice.05",
+      "hint": "Think whether things join the group or leave it.",
+      "explanation": "5 is the answer. Adding nothing changes nothing.",
+      "shortExplanation": "5 is the answer. Adding nothing changes nothing.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.choice.05",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_02.sticker",
+      "word": "add",
+      "art": "math_label",
+      "meaning": "Put groups together to make more.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Make a floor number line with an adult. Start on a number and count forward or back by jumps. Compare two groups by pairing objects.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u02.main.01",
+      "text": "Discuss this question with an adult: Find one more and one less. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.02",
+      "text": "Discuss this question with an adult: Start at 5 and count on 3. Where do you land? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.03",
+      "text": "Discuss this question with an adult: Start at 9 and count back 4. Where do you land? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.04",
+      "text": "Discuss this question with an adult: Choose the addition sentence for the two groups. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.05",
+      "text": "Discuss this question with an adult: There are 8 cubes. Take away 3. How many remain? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.06",
+      "text": "Discuss this question with an adult: Match the words to the number sentence. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.07",
+      "text": "Discuss this question with an adult: 8 cars were parked. 4 drive away. Choose the correct sentence. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.08",
+      "text": "Discuss this question with an adult: Mona has 7 sweets. Ali has 4. How many more does Mona have? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.choice.01",
+      "text": "Discuss this question with an adult: The sign + means... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.choice.02",
+      "text": "Discuss this question with an adult: 6 take away 2 is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.choice.03",
+      "text": "Discuss this question with an adult: On a number line, taking away makes you jump... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.choice.04",
+      "text": "Discuss this question with an adult: 1 less than 8 is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.choice.05",
+      "text": "Discuss this question with an adult: 5 + 0 = Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

@@ -1,0 +1,1145 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_15",
+  "subject": "maths",
+  "title": "Shapes, Direction and Movement - Faces, Corners and Turns",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    51,
+    52,
+    53
+  ],
+  "steps": [
+    {
+      "id": "math_unit_15.step.001",
+      "kind": "explore",
+      "title": "Shapes keep their names",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "One triangle has turned upside down. Are both still triangles?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "These are the cube's flat faces shown separately. How many faces?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "The robot faces up, then turns right without moving. Where does it face?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Compare sides and corners, not the direction the point faces.",
+      "explanation": "Notice unchanged shapes, all six cube faces and a robot turn.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Shapes keep their names",
+        "goal": "Notice unchanged shapes, all six cube faces and a robot turn.",
+        "scene": "harbour",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "One triangle has turned upside down. Are both still triangles?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "yes"
+              },
+              {
+                "id": "answer_2",
+                "label": "no"
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "Both still have three straight sides and three corners. Turning keeps the shape unchanged.",
+            "hint": "Compare sides and corners, not the direction the point faces.",
+            "visual": {
+              "type": "groups",
+              "items": [
+                {
+                  "type": "shape",
+                  "shape": "triangle"
+                },
+                {
+                  "type": "shape",
+                  "shape": "triangle",
+                  "rotation": 180
+                }
+              ]
+            },
+            "id": "explore_1"
+          },
+          {
+            "mode": "choose",
+            "prompt": "These are the cube's flat faces shown separately. How many faces?",
+            "choices": [
+              {
+                "id": "answer_3",
+                "label": "8"
+              },
+              {
+                "id": "answer_1",
+                "label": "3"
+              },
+              {
+                "id": "answer_2",
+                "label": "6"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "A cube has six square faces. A single view of the cube hides some of them.",
+            "hint": "Count all six named face pictures once, including the hidden back and bottom.",
+            "visual": {
+              "type": "groups",
+              "items": [
+                {
+                  "type": "shape",
+                  "shape": "square",
+                  "label": "front"
+                },
+                {
+                  "type": "shape",
+                  "shape": "square",
+                  "label": "back"
+                },
+                {
+                  "type": "shape",
+                  "shape": "square",
+                  "label": "top"
+                },
+                {
+                  "type": "shape",
+                  "shape": "square",
+                  "label": "bottom"
+                },
+                {
+                  "type": "shape",
+                  "shape": "square",
+                  "label": "left"
+                },
+                {
+                  "type": "shape",
+                  "shape": "square",
+                  "label": "right"
+                }
+              ]
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "The robot faces up, then turns right without moving. Where does it face?",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "right",
+                "visual": {
+                  "type": "text",
+                  "text": "→"
+                }
+              },
+              {
+                "id": "answer_1",
+                "label": "up",
+                "visual": {
+                  "type": "text",
+                  "text": "↑"
+                }
+              },
+              {
+                "id": "answer_3",
+                "label": "down",
+                "visual": {
+                  "type": "text",
+                  "text": "↓"
+                }
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "It faces right. Turning changes facing, while staying in the same place.",
+            "hint": "The robot stays on its square. Imagine a right turn from up.",
+            "visual": {
+              "type": "text",
+              "text": "Start ↑"
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_15.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "How many faces does a cube have?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "7",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u15.main.01",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "A cube has 6 square faces.",
+      "shortExplanation": "A cube has 6 square faces.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.main.01",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "6",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "cube"
+      }
+    },
+    {
+      "id": "math_unit_15.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "How many corners does a cube have?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "9",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u15.main.02",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "A cube has 8 corners.",
+      "shortExplanation": "A cube has 8 corners.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.main.02",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "8",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "cube"
+      }
+    },
+    {
+      "id": "math_unit_15.step.004",
+      "kind": "tap-choice",
+      "title": "Maths discovery 4",
+      "prompt": "Are these the same shape?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "yes",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "no",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u15.main.03",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "Both are triangles. Turning does not change the shape.",
+      "shortExplanation": "Both are triangles. Turning does not change the shape.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.main.03",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "Yes — both are triangles; one is just turned.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "shape",
+            "shape": "triangle"
+          },
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "rotation": 180
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_15.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "How many flat faces does a cylinder have?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "1",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u15.main.04",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "A cylinder has two flat circular faces.",
+      "shortExplanation": "A cylinder has two flat circular faces.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.main.04",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "2",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "cylinder"
+      }
+    },
+    {
+      "id": "math_unit_15.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "sphere, cube, cube, sphere, cube, cube... What comes next?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "cone",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cone"
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "sphere",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "sphere"
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "cube",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cube"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u15.main.05",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "The repeating part is sphere, cube, cube.",
+      "shortExplanation": "The repeating part is sphere, cube, cube.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.main.05",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "sphere",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_15.step.007",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "With an adult, name something in a playground that has the shape of a circle.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.main.06",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "Any circle: a wheel, a swing seat top, the top of a bin, a clock.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true,
+      "parentReview": {
+        "en": "Any circle: a wheel, a swing seat top, the top of a bin, a clock.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_15.step.008",
+      "kind": "match-lines",
+      "title": "Maths discovery 8",
+      "prompt": "Sort the solid shapes by their faces.",
+      "options": [
+        {
+          "id": "item_3",
+          "label": "cylinder",
+          "art": "math_label"
+        },
+        {
+          "id": "item_5",
+          "label": "cone",
+          "art": "math_label"
+        },
+        {
+          "id": "item_6",
+          "label": "pyramid",
+          "art": "math_label"
+        },
+        {
+          "id": "item_4",
+          "label": "cuboid",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "sphere",
+          "art": "math_label"
+        },
+        {
+          "id": "item_2",
+          "label": "cube",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "has a curved face",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "only flat faces",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2",
+          "item_3": "target_1",
+          "item_4": "target_2",
+          "item_5": "target_1",
+          "item_6": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u15.main.07",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "Sphere, cylinder and cone have curved faces; the other shapes have only flat faces.",
+      "shortExplanation": "Sphere, cylinder and cone have curved faces; the other shapes have only flat faces.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.main.07",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "curved: sphere, cylinder, cone • only flat: cube, cuboid, pyramid",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_15.step.009",
+      "kind": "drag-to-basket",
+      "title": "Maths discovery 9",
+      "prompt": "The robot faces up. Choose both routes that reach the star two spaces up and two right.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "2 forwards, turn right, 2 forwards",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "turn right, 2 forwards, turn left, 2 forwards",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "2 backwards, turn right, 2 forwards",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_1",
+          "choice_2"
+        ]
+      },
+      "assessed": true,
+      "objective": "math.u15.main.08",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "Both selected routes finish two spaces up and two right of the start.",
+      "shortExplanation": "Both selected routes finish two spaces up and two right of the start.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.main.08",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "2 forwards, turn right, 2 forwards. (Also correct: turn right, 2 forwards, turn left, 2\nforwards.)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_15.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "A shape that is turned round...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "changes its name",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "disappears",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "keeps its name",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u15.choice.01",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "Keeps its name is the answer. Its sides and corners stay the same.",
+      "shortExplanation": "Keeps its name is the answer. Its sides and corners stay the same.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.choice.01",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "keeps its name",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_15.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "A cone has...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "1 pointy corner",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "4 corners",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "8 corners",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u15.choice.02",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "1 pointy corner is the answer. A cone meets at one pointed corner.",
+      "shortExplanation": "1 pointy corner is the answer. A cone meets at one pointed corner.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.choice.02",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "1 pointy corner",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_15.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "A sphere has...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "one curved face",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "3 sides",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "6 flat faces",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u15.choice.03",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "One curved face is the answer. A sphere is curved all around.",
+      "shortExplanation": "One curved face is the answer. A sphere is curved all around.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.choice.03",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "one curved face",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_15.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "A cuboid has...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "4 faces",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "2 faces",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "6 faces",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u15.choice.04",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "6 faces is the answer. A cuboid has six flat faces.",
+      "shortExplanation": "6 faces is the answer. A cuboid has six flat faces.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.choice.04",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "6 faces",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_15.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "A triangle has...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "3 sides",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "no sides",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "4 sides",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u15.choice.05",
+      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "explanation": "3 sides is the answer. A triangle has three straight sides.",
+      "shortExplanation": "3 sides is the answer. A triangle has three straight sides.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.choice.05",
+        "answerKeyPages": [
+          80
+        ],
+        "answerKeyText": "3 sides",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_15.sticker",
+      "word": "face",
+      "art": "math_label",
+      "meaning": "A flat or curved part of a solid shape.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Feel safe solid shapes in a bag and describe flat or curved faces. Mark each cube corner once. Give robot commands along a paper grid.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u15.main.01",
+      "text": "Discuss this question with an adult: How many faces does a cube have? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.main.02",
+      "text": "Discuss this question with an adult: How many corners does a cube have? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.main.03",
+      "text": "Discuss this question with an adult: Are these the same shape? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.main.04",
+      "text": "Discuss this question with an adult: How many flat faces does a cylinder have? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.main.05",
+      "text": "Discuss this question with an adult: sphere, cube, cube, sphere, cube, cube... What comes next? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.main.07",
+      "text": "Discuss this question with an adult: Sort the solid shapes by their faces. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.main.08",
+      "text": "Discuss this question with an adult: The robot faces up. Choose both routes that reach the star two spaces up and two right. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.choice.01",
+      "text": "Discuss this question with an adult: A shape that is turned round... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.choice.02",
+      "text": "Discuss this question with an adult: A cone has... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.choice.03",
+      "text": "Discuss this question with an adult: A sphere has... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.choice.04",
+      "text": "Discuss this question with an adult: A cuboid has... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.choice.05",
+      "text": "Discuss this question with an adult: A triangle has... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

@@ -1,0 +1,1056 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_14",
+  "subject": "maths",
+  "title": "Addition and Subtraction - Doubles and Counting On",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    48,
+    49,
+    50
+  ],
+  "steps": [
+    {
+      "id": "math_unit_14.step.001",
+      "kind": "explore",
+      "title": "Double and count on",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Tap the three beans once each. This is our first group.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Double three means three again. Add another group of three beans.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "For four plus nine, start with nine. Count on four more beans.",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each object once. A marked object has already been counted.",
+      "explanation": "Add the same group again for doubles; start with the larger number.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Double and count on",
+        "goal": "Add the same group again for doubles; start with the larger number.",
+        "scene": "orchard",
+        "tasks": [
+          {
+            "mode": "count",
+            "prompt": "Tap the three beans once each. This is our first group.",
+            "count": 3,
+            "item": "bean",
+            "arrangement": "row",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "3",
+                "value": 3
+              },
+              {
+                "id": "answer_3",
+                "label": "4",
+                "value": 4
+              },
+              {
+                "id": "answer_1",
+                "label": "2",
+                "value": 2
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Our first group has three beans.",
+            "hint": "Tap each object once. A marked object has already been counted.",
+            "id": "explore_1"
+          },
+          {
+            "mode": "build",
+            "prompt": "Double three means three again. Add another group of three beans.",
+            "target": 6,
+            "item": "bean",
+            "initialCount": 3,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Three and another three make six. Double three is six.",
+            "hint": "Keep the first three. Add the same number again.",
+            "id": "explore_2"
+          },
+          {
+            "mode": "build",
+            "prompt": "For four plus nine, start with nine. Count on four more beans.",
+            "target": 13,
+            "item": "bean",
+            "initialCount": 9,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Starting at nine and adding four reaches thirteen. Nine plus four equals four plus nine.",
+            "hint": "Say ten, eleven, twelve, thirteen as you add four beans.",
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_14.step.002",
+      "kind": "match-lines",
+      "title": "Maths discovery 2",
+      "prompt": "Find the doubles.",
+      "options": [
+        {
+          "id": "item_1",
+          "label": "double 2",
+          "art": "math_label"
+        },
+        {
+          "id": "item_2",
+          "label": "double 5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "10",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u14.main.01",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "Double means the same number added again.",
+      "shortExplanation": "Double means the same number added again.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.main.01",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "4 and 10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_14.step.003",
+      "kind": "match-lines",
+      "title": "Maths discovery 3",
+      "prompt": "Find these doubles.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "double 10",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "double 7",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "14",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "20",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u14.main.02",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "7 + 7 = 14, and 10 + 10 = 20.",
+      "shortExplanation": "7 + 7 = 14, and 10 + 10 = 20.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.main.02",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "14 and 20",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_14.step.004",
+      "kind": "tap-choice",
+      "title": "Maths discovery 4",
+      "prompt": "Start with the bigger number and find 3 + 8.",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "10",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "11",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u14.main.03",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "Start at 8 and count on 3 to reach 11.",
+      "shortExplanation": "Start at 8 and count on 3 to reach 11.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.main.03",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "11 (start at 8)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20
+      }
+    },
+    {
+      "id": "math_unit_14.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "Start with the bigger number and find 5 + 12.",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "17",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "16",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "18",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u14.main.04",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "Start at 12 and count on 5 to reach 17.",
+      "shortExplanation": "Start at 12 and count on 5 to reach 17.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.main.04",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "17 (start at 12)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20
+      }
+    },
+    {
+      "id": "math_unit_14.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "8 birds are in a tree. 4 more come. How many now?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "13",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "12",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u14.main.05",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "Adding 4 birds to 8 gives 12 birds.",
+      "shortExplanation": "Adding 4 birds to 8 gives 12 birds.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.main.05",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "12",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 8,
+            "item": "bird",
+            "arrangement": "row"
+          },
+          {
+            "type": "count",
+            "count": 4,
+            "item": "bird",
+            "arrangement": "row"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_14.step.007",
+      "kind": "tap-choice",
+      "title": "Maths discovery 7",
+      "prompt": "Count back: 15 - 3 = ?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "13",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "12",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u14.main.06",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "Count back three jumps from 15: 14, 13, 12.",
+      "shortExplanation": "Count back three jumps from 15: 14, 13, 12.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.main.06",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "12",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20
+      }
+    },
+    {
+      "id": "math_unit_14.step.008",
+      "kind": "tap-choice",
+      "title": "Maths discovery 8",
+      "prompt": "What is the difference between 13 and 17?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u14.main.07",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "There are 4 jumps from 13 to 17.",
+      "shortExplanation": "There are 4 jumps from 13 to 17.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.main.07",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20
+      }
+    },
+    {
+      "id": "math_unit_14.step.009",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "Tell an adult your own number story for 6 + 4 = 10. Act it out with safe objects.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.main.08",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "Any story where 6 things and 4 more things are joined to make 10, e.g. \"6 cars were\nparked, 4 more came, now there are 10.\"",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true,
+      "parentReview": {
+        "en": "Any story where 6 things and 4 more things are joined to make 10, e.g. \"6 cars were\nparked, 4 more came, now there are 10.\"",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_14.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "Double 6 is...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "8",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u14.choice.01",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "12 is the answer. 6 + 6 gives twelve.",
+      "shortExplanation": "12 is the answer. 6 + 6 gives twelve.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.choice.01",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "12",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_14.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "For 2 + 9, the quickest way is to start counting on from...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u14.choice.02",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "9 is the answer. Starting with the larger number needs fewer jumps.",
+      "shortExplanation": "9 is the answer. Starting with the larger number needs fewer jumps.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.choice.02",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "9",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_14.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "7 + 3 is the same as...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "7 + 7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "7 − 3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "3 + 7",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u14.choice.03",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "3 + 7 is the answer. Swapping the groups does not change the total.",
+      "shortExplanation": "3 + 7 is the answer. Swapping the groups does not change the total.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.choice.03",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "3 + 7",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_14.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "20 − 2 =",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "17",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "22",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "18",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u14.choice.04",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "18 is the answer. Two backward jumps from twenty reach eighteen.",
+      "shortExplanation": "18 is the answer. Two backward jumps from twenty reach eighteen.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.choice.04",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "18",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_14.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "Double 8 is...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "16",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "10",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "18",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u14.choice.05",
+      "hint": "Start with the bigger number. A double adds the same number again.",
+      "explanation": "16 is the answer. 8 + 8 gives sixteen.",
+      "shortExplanation": "16 is the answer. 8 + 8 gives sixteen.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.choice.05",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "16",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_14.sticker",
+      "word": "double",
+      "art": "math_label",
+      "meaning": "The same number added again.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Show the same number of large counters in two groups to make doubles. Tell and act out small addition and subtraction stories.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u14.main.01",
+      "text": "Discuss this question with an adult: Find the doubles. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.main.02",
+      "text": "Discuss this question with an adult: Find these doubles. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.main.03",
+      "text": "Discuss this question with an adult: Start with the bigger number and find 3 + 8. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.main.04",
+      "text": "Discuss this question with an adult: Start with the bigger number and find 5 + 12. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.main.05",
+      "text": "Discuss this question with an adult: 8 birds are in a tree. 4 more come. How many now? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.main.06",
+      "text": "Discuss this question with an adult: Count back: 15 - 3 = ? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.main.07",
+      "text": "Discuss this question with an adult: What is the difference between 13 and 17? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.choice.01",
+      "text": "Discuss this question with an adult: Double 6 is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.choice.02",
+      "text": "Discuss this question with an adult: For 2 + 9, the quickest way is to start counting on from... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.choice.03",
+      "text": "Discuss this question with an adult: 7 + 3 is the same as... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.choice.04",
+      "text": "Discuss this question with an adult: 20 − 2 = Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.choice.05",
+      "text": "Discuss this question with an adult: Double 8 is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

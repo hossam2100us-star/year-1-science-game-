@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_14",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Addition and Subtraction - Doubles and Counting On",
+  "ar": "الضعف والعد التصاعدي",
+  "term": 3,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    48,
+    49,
+    50
+  ],
+  "introductionText": "Term 3 · Number\nAddition and Subtraction — Doubles and\nCounting On\nThe Big Idea: To add quickly, start with the bigger number and count on. A double is two\nof the same number added together.\nSay It Like This\nRead aloud\n\"Try 4 + 9. Which is bigger? 9. Put 9 in your head and count on 4: ten, eleven, twelve,\nthirteen. Much quicker than starting at 4! Now doubles. When you hold 3 beans in front of\na mirror, you see 3 more. Double 3 is 3 + 3 = 6. Your two hands are double 5 — that's 10.\nDouble 10 is 20.\"\nWatch Out For\nThe slip almost every child makes\nDouble means \"add one\" or \"add two\". He says double 4 is 5 or 6. Hold up 4 fingers on\neach hand: \"Double means the same number again.\"\nThinking the order changes the answer. 2 + 8 and 8 + 2 are both 10. That's exactly why\nwe can start with the bigger number.\nTry It at Home\nGame 1 — Mirror doubles (5 minutes)\nPut a small mirror on the table standing up. He puts 1 to 10 beans in front of it and says\nthe double he sees. Keep a list: double 1 is 2, double 2 is 4... Do you notice anything about\nall the answers? (They're all even.)\nGame 2 — Number stories (10 minutes)\nTake turns telling tiny stories: \"8 birds sat on the balcony. 4 more came. How many birds\nnow?\" He acts it out with beans and writes the number sentence. Then he makes up a\nstory for you to solve.\nDoubles in a mirror\n4 + 9: start at 9, count on 4\n8 9 10 11 12 13 14\n9 + 4 = 13\ndouble 3 = 3 + 3 = 6\nCover the mirror side and ask how many he'll see. Then trace the jumps from 9, counting on 4.\nMore examples to talk about\n• Double 1 = 2, double 2 = 4, double 3 = 6, double 4 = 8, double 5 = 10.\n• Double 6 = 12, double 7 = 14, double 8 = 16, double 9 = 18, double 10 = 20.\n• Double 0 is still 0.\n• Tricky: if double 7 is 14, then 7 + 8 is just one more: 15.\n• Subtracting by counting back: 15 − 3 → fourteen, thirteen, twelve.\nKey Words\ndouble total number story count on bigger number first difference",
+  "sourceQuestions": [
+    {
+      "id": "math.u14.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Double 2 is Double 5 is",
+      "answerKeyText": "4 and 10",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u14.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Double 7 is Double 10 is",
+      "answerKeyText": "14 and 20",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u14.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Circle the bigger number, then count on: 3 + 8 =",
+      "answerKeyText": "11 (start at 8)",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u14.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Circle the bigger number, then count on: 5 + 12 =",
+      "answerKeyText": "17 (start at 12)",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u14.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "8 birds are in a tree. 4 more birds come. How many birds are there now?",
+      "answerKeyText": "12",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u14.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Count back: 15 − 3 =\n10 11 12 13 14 15 16 17 18 19 20",
+      "answerKeyText": "12",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u14.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "What is the difference between 13 and 17?",
+      "answerKeyText": "4",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u14.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Write your own number story for 6 + 4 = 10.",
+      "answerKeyText": "Any story where 6 things and 4 more things are joined to make 10, e.g. \"6 cars were\nparked, 4 more came, now there are 10.\"",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u14.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "Double 6 is...\n( 8 ) ( 12 ) ( 7 )",
+      "answerKeyText": "12",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u14.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "For 2 + 9, the quickest way is to start counting on from...\n( 1 ) ( 2 ) ( 9 )",
+      "answerKeyText": "9",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u14.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "7 + 3 is the same as...\n( 7 + 7 ) ( 3 + 7 ) ( 7 − 3 )",
+      "answerKeyText": "3 + 7",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u14.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "20 − 2 =\n( 22 ) ( 18 ) ( 17 )",
+      "answerKeyText": "18",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u14.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Double 8 is...\n( 10 ) ( 16 ) ( 18 )",
+      "answerKeyText": "16",
+      "sourcePages": [
+        48,
+        49,
+        50
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

@@ -1,0 +1,1146 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_09",
+  "subject": "maths",
+  "title": "Numbers to 20 - Tens and Ones",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    32,
+    33,
+    34
+  ],
+  "steps": [
+    {
+      "id": "math_unit_09.step.001",
+      "kind": "explore",
+      "title": "Build tens and ones",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "One ten and four ones make which number?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Ten counters are ready. Add six extra ones to make sixteen.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Two complete tens have no extra ones. What number is that?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Start with ten, then count on the four extra ones.",
+      "explanation": "Keep a whole ten together, then add the extra ones.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Build tens and ones",
+        "goal": "Keep a whole ten together, then add the extra ones.",
+        "scene": "workshop",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "One ten and four ones make which number?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "14"
+              },
+              {
+                "id": "answer_3",
+                "label": "4"
+              },
+              {
+                "id": "answer_2",
+                "label": "41"
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "One whole ten and four extra ones make fourteen.",
+            "hint": "Start with ten, then count on the four extra ones.",
+            "visual": {
+              "type": "groups",
+              "items": [
+                {
+                  "type": "count",
+                  "count": 10,
+                  "item": "dot",
+                  "arrangement": "tenFrame",
+                  "label": "one ten"
+                },
+                {
+                  "type": "count",
+                  "count": 4,
+                  "item": "dot",
+                  "arrangement": "row",
+                  "label": "ones"
+                }
+              ]
+            },
+            "id": "explore_1"
+          },
+          {
+            "mode": "build",
+            "prompt": "Ten counters are ready. Add six extra ones to make sixteen.",
+            "target": 16,
+            "item": "counter",
+            "initialCount": 10,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Sixteen is one ten and six ones. The ten stays a whole group.",
+            "hint": "Keep the ten you started with. Count on six extra counters.",
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Two complete tens have no extra ones. What number is that?",
+            "choices": [
+              {
+                "id": "answer_3",
+                "label": "20"
+              },
+              {
+                "id": "answer_1",
+                "label": "2"
+              },
+              {
+                "id": "answer_2",
+                "label": "12"
+              }
+            ],
+            "correctId": "answer_3",
+            "feedback": "Two tens make twenty; there are zero extra ones.",
+            "hint": "Each full frame is ten. Count whole tens: ten, twenty.",
+            "visual": {
+              "type": "groups",
+              "items": [
+                {
+                  "type": "count",
+                  "count": 10,
+                  "item": "dot",
+                  "arrangement": "tenFrame"
+                },
+                {
+                  "type": "count",
+                  "count": 10,
+                  "item": "dot",
+                  "arrangement": "tenFrame"
+                }
+              ]
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_09.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "What number do the ten and ones make?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "15",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "13",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "14",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u09.main.01",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "One ten and 4 ones make 14.",
+      "shortExplanation": "One ten and 4 ones make 14.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.01",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "14",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "arrangement": "tenFrame",
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 4,
+            "label": "ones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "What number do the ten and ones make?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "18",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "19",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "20",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u09.main.02",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "One ten and 9 ones make 19.",
+      "shortExplanation": "One ten and 9 ones make 19.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.02",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "19",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "arrangement": "tenFrame",
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 9,
+            "label": "ones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.004",
+      "kind": "match-lines",
+      "title": "Maths discovery 4",
+      "prompt": "Complete: 17 is __ ten and __ ones.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "ones",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "tens",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "7",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u09.main.03",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "The 1 is one ten; the 7 is seven ones.",
+      "shortExplanation": "The 1 is one ten; the 7 is seven ones.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.03",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "1 ten and 7 ones",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_09.step.005",
+      "kind": "match-lines",
+      "title": "Maths discovery 5",
+      "prompt": "Complete: 20 is __ tens and __ ones.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "ones",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "tens",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "0",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "2",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_2",
+          "item_2": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u09.main.04",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "20 has 2 tens and no extra ones.",
+      "shortExplanation": "20 has 2 tens and no extra ones.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.04",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "2 tens and 0 ones",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_09.step.006",
+      "kind": "order-sequence",
+      "title": "Maths discovery 6",
+      "prompt": "Put the numbers in order, smallest first.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "15",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "20",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_4",
+          "label": "9",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "choice_4",
+          "choice_1",
+          "choice_2",
+          "choice_3"
+        ]
+      },
+      "assessed": true,
+      "objective": "math.u09.main.05",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "Compare the tens first, then the ones.",
+      "shortExplanation": "Compare the tens first, then the ones.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.05",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "9, 12, 15, 20",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20
+      }
+    },
+    {
+      "id": "math_unit_09.step.007",
+      "kind": "match-lines",
+      "title": "Maths discovery 7",
+      "prompt": "Count in tens and fill the gaps.",
+      "options": [
+        {
+          "id": "item_1",
+          "label": "10, 20, __, 40",
+          "art": "math_label"
+        },
+        {
+          "id": "item_2",
+          "label": "20, 30, 40, __",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "30",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "50",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u09.main.06",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "Counting in tens adds a whole ten each time.",
+      "shortExplanation": "Counting in tens adds a whole ten each time.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.06",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "30 and 50",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_09.step.008",
+      "kind": "tap-choice",
+      "title": "Maths discovery 8",
+      "prompt": "Count on in tens: 4, 14, __, 34. What is missing?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "25",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "23",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "24",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u09.main.07",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "Adding ten to 14 gives 24. The ones stay 4.",
+      "shortExplanation": "Adding ten to 14 gives 24. The ones stay 4.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.07",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "24",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_09.step.009",
+      "kind": "tap-choice",
+      "title": "Maths discovery 9",
+      "prompt": "Omar wrote sixteen as 61. Choose sixteen.",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "16",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "61",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u09.main.08",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "Sixteen is one ten and six ones: 16.",
+      "shortExplanation": "Sixteen is one ten and six ones: 16.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.08",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "No — 16. The ten is written first.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_09.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "13 is...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "3 tens and 1 one",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "1 ten and 3 ones",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "13 tens",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u09.choice.01",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "1 ten and 3 ones is the answer. 13 contains one complete ten and three extras.",
+      "shortExplanation": "1 ten and 3 ones is the answer. 13 contains one complete ten and three extras.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.choice.01",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "1 ten and 3 ones",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_09.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "Ten more than 5 is...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "50",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "15",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u09.choice.02",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "15 is the answer. Adding one ten to 5 gives 15.",
+      "shortExplanation": "15 is the answer. Adding one ten to 5 gives 15.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.choice.02",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "15",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_09.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "Count in tens: 10, 20, 30, ...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "50",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "31",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "40",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u09.choice.03",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "40 is the answer. The next bundle adds ten.",
+      "shortExplanation": "40 is the answer. The next bundle adds ten.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.choice.03",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "40",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_09.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "Which is in order, smallest first?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "4, 11, 18",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "11, 4, 18",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "18, 11, 4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u09.choice.04",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "4, 11, 18 is the answer. Each number is larger than the previous one.",
+      "shortExplanation": "4, 11, 18 is the answer. Each number is larger than the previous one.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.choice.04",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "4, 11, 18",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_09.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "The 1 in 18 means...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "eighteen",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "one ten",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "just one",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u09.choice.05",
+      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "explanation": "One ten is the answer. The tens digit names a whole group of ten.",
+      "shortExplanation": "One ten is the answer. The tens digit names a whole group of ten.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.choice.05",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "one ten",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_09.sticker",
+      "word": "tens and ones",
+      "art": "math_label",
+      "meaning": "16 is one ten and six ones.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Bundle ten safe large counters and add loose ones to build teen numbers. Make two bundles for 20 and practise counting whole tens.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u09.main.01",
+      "text": "Discuss this question with an adult: What number do the ten and ones make? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.02",
+      "text": "Discuss this question with an adult: What number do the ten and ones make? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.03",
+      "text": "Discuss this question with an adult: Complete: 17 is __ ten and __ ones. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.04",
+      "text": "Discuss this question with an adult: Complete: 20 is __ tens and __ ones. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.05",
+      "text": "Discuss this question with an adult: Put the numbers in order, smallest first. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.06",
+      "text": "Discuss this question with an adult: Count in tens and fill the gaps. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.07",
+      "text": "Discuss this question with an adult: Count on in tens: 4, 14, __, 34. What is missing? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.08",
+      "text": "Discuss this question with an adult: Omar wrote sixteen as 61. Choose sixteen. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.choice.01",
+      "text": "Discuss this question with an adult: 13 is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.choice.02",
+      "text": "Discuss this question with an adult: Ten more than 5 is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.choice.03",
+      "text": "Discuss this question with an adult: Count in tens: 10, 20, 30, ... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.choice.04",
+      "text": "Discuss this question with an adult: Which is in order, smallest first? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.choice.05",
+      "text": "Discuss this question with an adult: The 1 in 18 means... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

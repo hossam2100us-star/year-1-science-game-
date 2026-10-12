@@ -1,0 +1,1252 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_08",
+  "subject": "maths",
+  "title": "Shapes, Direction and Movement - Patterns and Directions",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    28,
+    29,
+    30,
+    31
+  ],
+  "steps": [
+    {
+      "id": "math_unit_08.step.001",
+      "kind": "explore",
+      "title": "Patterns and robot turns",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Red circle, blue square, red circle, blue square. Choose what comes next.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "The robot faces up. It turns right. Which way does it face now?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Take three steps forwards, then one backwards. How many steps forwards from the start?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Say the two-shape part aloud twice, then start it again.",
+      "explanation": "Continue a repeating part and use the direction a robot faces.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Patterns and robot turns",
+        "goal": "Continue a repeating part and use the direction a robot faces.",
+        "scene": "harbour",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "Red circle, blue square, red circle, blue square. Choose what comes next.",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "red circle",
+                "visual": {
+                  "type": "shape",
+                  "shape": "circle",
+                  "color": "red"
+                }
+              },
+              {
+                "id": "answer_2",
+                "label": "blue square",
+                "visual": {
+                  "type": "shape",
+                  "shape": "square",
+                  "color": "blue"
+                }
+              },
+              {
+                "id": "answer_3",
+                "label": "yellow triangle",
+                "visual": {
+                  "type": "shape",
+                  "shape": "triangle",
+                  "color": "yellow"
+                }
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "The repeating part is red circle, blue square. It starts again with red circle.",
+            "hint": "Say the two-shape part aloud twice, then start it again.",
+            "visual": {
+              "type": "pattern",
+              "items": [
+                {
+                  "type": "shape",
+                  "shape": "circle",
+                  "color": "red"
+                },
+                {
+                  "type": "shape",
+                  "shape": "square",
+                  "color": "blue"
+                },
+                {
+                  "type": "shape",
+                  "shape": "circle",
+                  "color": "red"
+                },
+                {
+                  "type": "shape",
+                  "shape": "square",
+                  "color": "blue"
+                }
+              ]
+            },
+            "id": "explore_1"
+          },
+          {
+            "mode": "choose",
+            "prompt": "The robot faces up. It turns right. Which way does it face now?",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "right",
+                "visual": {
+                  "type": "text",
+                  "text": "→"
+                }
+              },
+              {
+                "id": "answer_1",
+                "label": "up",
+                "visual": {
+                  "type": "text",
+                  "text": "↑"
+                }
+              },
+              {
+                "id": "answer_3",
+                "label": "left",
+                "visual": {
+                  "type": "text",
+                  "text": "←"
+                }
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "A right turn changes its facing direction from up to right.",
+            "hint": "Keep it in the same place. Only change the way it faces.",
+            "visual": {
+              "type": "text",
+              "text": "Robot faces ↑"
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Take three steps forwards, then one backwards. How many steps forwards from the start?",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "2"
+              },
+              {
+                "id": "answer_3",
+                "label": "3"
+              },
+              {
+                "id": "answer_1",
+                "label": "1"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Three forwards and one back leaves two steps forwards from the start.",
+            "hint": "Start at zero. Count three forward jumps, then one backward jump.",
+            "visual": {
+              "type": "numberLine",
+              "start": 0,
+              "end": 4,
+              "markers": [
+                0
+              ]
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_08.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "What comes next in the pattern?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "yellow triangle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "red circle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "blue square",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square",
+            "color": "blue"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u08.main.01",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "The repeating part is red circle, blue square.",
+      "shortExplanation": "The repeating part is red circle, blue square.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.main.01",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "circle (red)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true,
+      "mathVisual": {
+        "type": "pattern",
+        "items": [
+          {
+            "type": "shape",
+            "shape": "circle",
+            "color": "red"
+          },
+          {
+            "type": "shape",
+            "shape": "square",
+            "color": "blue"
+          },
+          {
+            "type": "shape",
+            "shape": "circle",
+            "color": "red"
+          },
+          {
+            "type": "shape",
+            "shape": "square",
+            "color": "blue"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_08.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "What comes next in this pattern?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "circle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "square",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square"
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "triangle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u08.main.02",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "Two triangles and a circle repeat. The next shape is a triangle.",
+      "shortExplanation": "Two triangles and a circle repeat. The next shape is a triangle.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.main.02",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "triangle",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true,
+      "mathVisual": {
+        "type": "pattern",
+        "items": [
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          },
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          },
+          {
+            "type": "shape",
+            "shape": "circle",
+            "color": "green"
+          },
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          },
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          },
+          {
+            "type": "shape",
+            "shape": "circle",
+            "color": "green"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_08.step.004",
+      "kind": "match-lines",
+      "title": "Maths discovery 4",
+      "prompt": "Fill the next two gaps: red, blue, blue, red, blue, blue, __, __.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "second gap",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "first gap",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "red",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "blue",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u08.main.03",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "The repeating part is red, blue, blue.",
+      "shortExplanation": "The repeating part is red, blue, blue.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.main.03",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "red, blue",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_08.step.005",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "Make your own repeating pattern with two shapes on paper. Repeat the part at least twice.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.main.04",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "Any pattern where a part clearly repeats at least twice.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true,
+      "parentReview": {
+        "en": "Any pattern where a part clearly repeats at least twice.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_08.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "Walk 3 steps forwards and 1 backwards. How many steps from the start?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u08.main.05",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "Three forwards and one backwards leaves 2 steps forwards.",
+      "shortExplanation": "Three forwards and one backwards leaves 2 steps forwards.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.main.05",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "2 steps (forwards of where he started).",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 4
+      }
+    },
+    {
+      "id": "math_unit_08.step.007",
+      "kind": "tap-choice",
+      "title": "Maths discovery 7",
+      "prompt": "A cube is a flat 2D shape.",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "False",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "True",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u08.main.06",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "A cube is solid, so it is a 3D shape.",
+      "shortExplanation": "A cube is solid, so it is a 3D shape.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.main.06",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "False. A cube is solid — it is 3D.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_08.step.008",
+      "kind": "match-lines",
+      "title": "Maths discovery 8",
+      "prompt": "Compare a square and a rectangle.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "Only the square must have 4 equal sides.",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "They each have 4 sides and 4 corners.",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "same",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "different",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u08.main.07",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "Both have 4 sides. A square has all 4 sides equal.",
+      "shortExplanation": "Both have 4 sides. A square has all 4 sides equal.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.main.07",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "Same: 4 sides and 4 corners. Different: a square's sides are all equal; a rectangle has two\nlong and two short sides.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "shape",
+            "shape": "square"
+          },
+          {
+            "type": "shape",
+            "shape": "rectangle"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_08.step.009",
+      "kind": "match-lines",
+      "title": "Maths discovery 9",
+      "prompt": "Sort the shapes by their corners.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "triangle",
+          "art": "math_label"
+        },
+        {
+          "id": "item_4",
+          "label": "rectangle",
+          "art": "math_label"
+        },
+        {
+          "id": "item_3",
+          "label": "square",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "circle",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "0 corners",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "3 corners",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "4 corners",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2",
+          "item_3": "target_3",
+          "item_4": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u08.main.08",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "Circle: 0 corners. Triangle: 3. Square and rectangle: 4.",
+      "shortExplanation": "Circle: 0 corners. Triangle: 3. Square and rectangle: 4.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.main.08",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "0: circle • 3: triangle • 4: square, rectangle",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_08.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "red, yellow, red, yellow, ... What comes next?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "yellow",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "blue",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "red",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u08.choice.01",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "Red is the answer. Red and yellow repeat in pairs.",
+      "shortExplanation": "Red is the answer. Red and yellow repeat in pairs.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.choice.01",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "red",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_08.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "How many sides does a square have?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u08.choice.02",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "4 is the answer. A square has four straight sides.",
+      "shortExplanation": "4 is the answer. A square has four straight sides.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.choice.02",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_08.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "Moving the way your back faces is moving...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "backwards",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "forwards",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "sideways",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u08.choice.03",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "Backwards is the answer. Your back faces the backward direction.",
+      "shortExplanation": "Backwards is the answer. Your back faces the backward direction.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.choice.03",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "backwards",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_08.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "Turning means...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "walking a long way",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "changing the way you face",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "jumping up",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u08.choice.04",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "Changing the way you face is the answer. Turning changes the direction you face.",
+      "shortExplanation": "Changing the way you face is the answer. Turning changes the direction you face.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.choice.04",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "changing the way you face",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_08.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "A 3D shape is...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "solid - you can hold it",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "flat",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "only a drawing",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u08.choice.05",
+      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "explanation": "Solid - you can hold it is the answer. 3D shapes have depth as well as height and width.",
+      "shortExplanation": "Solid - you can hold it is the answer. 3D shapes have depth as well as",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.choice.05",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "solid - you can hold it",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_08.sticker",
+      "word": "pattern",
+      "art": "math_label",
+      "meaning": "Something that repeats in the same way.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Continue a two-shape or two-sound pattern, then invent one. Play robot commands in a clear space: forwards, backwards, left and right.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u08.main.01",
+      "text": "Discuss this question with an adult: What comes next in the pattern? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.main.02",
+      "text": "Discuss this question with an adult: What comes next in this pattern? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.main.03",
+      "text": "Discuss this question with an adult: Fill the next two gaps: red, blue, blue, red, blue, blue, __, __. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.main.05",
+      "text": "Discuss this question with an adult: Walk 3 steps forwards and 1 backwards. How many steps from the start? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.main.06",
+      "text": "Discuss this question with an adult: A cube is a flat 2D shape. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.main.07",
+      "text": "Discuss this question with an adult: Compare a square and a rectangle. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.main.08",
+      "text": "Discuss this question with an adult: Sort the shapes by their corners. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.choice.01",
+      "text": "Discuss this question with an adult: red, yellow, red, yellow, ... What comes next? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.choice.02",
+      "text": "Discuss this question with an adult: How many sides does a square have? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.choice.03",
+      "text": "Discuss this question with an adult: Moving the way your back faces is moving... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.choice.04",
+      "text": "Discuss this question with an adult: Turning means... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.choice.05",
+      "text": "Discuss this question with an adult: A 3D shape is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

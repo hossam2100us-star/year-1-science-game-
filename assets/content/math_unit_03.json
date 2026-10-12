@@ -1,0 +1,244 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_03",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Shapes, Direction and Movement",
+  "ar": "الأشكال والاتجاه والحركة",
+  "term": 1,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    11,
+    12,
+    13,
+    14
+  ],
+  "introductionText": "Term 1 · Geometry\nShapes, Direction and Movement\nThe Big Idea: Flat shapes (2D) can be drawn on paper. Solid shapes (3D) can be held in\nyour hand. We tell them apart by counting sides and corners, and by looking for flat or\ncurved parts.\nSay It Like This\nRead aloud\n\"Some shapes are flat, like a drawing — we call them 2D. A square has 4 straight sides, all\nthe same length, and 4 corners. A rectangle also has 4 sides and 4 corners, but two sides\nare long and two are short, like a door. A triangle has 3 sides and 3 corners. A circle is\nround, with no corners at all. Shapes you can hold are 3D: a dice is a cube, a ball is a\nsphere, a tin is a cylinder.\"\nWatch Out For\nThe slip almost every child makes\nCalling a 3D shape by its face's name. He calls a ball a \"circle\" and a dice a \"square\". Hold\nup the dice: \"This flat part is a square. The whole dice is a cube. Flat — square. Solid —\ncube.\"\nThinking a turned square is a new shape. A square standing on its corner is often called a\n\"diamond\". It still has 4 equal sides and 4 corners — it is still a square.\nTry It at Home\nGame 1 — Kitchen shape hunt (10 minutes)\nFind one of each: a cube (sugar cube, dice), a cuboid (tissue box, cereal box), a cylinder\n(tin, glass), a sphere (orange, ball), a cone (ice-cream cone, funnel). Put them on a tray.\nAsk him to guess first: which will roll? which will stack? Then test each one on the floor.\nGame 2 — Shape prints (5 minutes)\nPress the bottom of a cup, a box and a dice into play dough (or trace around them on\npaper). Which print does each make? The cup leaves a circle, the box a rectangle, the dice\na square. Then ask: could a ball leave a print with corners?\nFlat (2D) shapes\ncircle triangle square rectangle\nSolid (3D) shapes\ncube cuboid sphere cylinder cone pyramid\nPoint to each shape and say its name, then find a matching object in the room together.\nMore examples to talk about\n• A cylinder can roll and stack. A sphere only rolls. A cube only slides and stacks.\n• A cone rolls round in a circle, not in a straight line — try it!\n• The Pyramids of Giza are giant pyramids — the 3D shape is named after buildings like\nthem.\n• Tricky: a slice of pizza looks like a triangle, but one side is curved, so it isn't really a\ntriangle.\n• Tricky: a very long, thin square is impossible — if the sides aren't all equal, it's a\nrectangle.\nKey Words\n2D 3D side corner face straight curved circle triangle square\nrectangle cube cuboid sphere cylinder cone pyramid",
+  "sourceQuestions": [
+    {
+      "id": "math.u03.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Write the name under each shape.",
+      "answerKeyText": "circle, triangle, square, rectangle",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u03.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "I have 4 corners and 4 equal sides. What am I?",
+      "answerKeyText": "square",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u03.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "I have 6 square faces and 8 corners. What am I?",
+      "answerKeyText": "cube",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u03.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "A triangle has sides and corners.",
+      "answerKeyText": "3 sides and 3 corners",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u03.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Circle the shapes that can roll:\nsphere cube cylinder cuboid",
+      "answerKeyText": "sphere and cylinder",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u03.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Sort these into the table: square, ball, tin, triangle, dice, circle\nFlat (2D) Solid (3D)",
+      "answerKeyText": "2D: square, triangle, circle • 3D: ball, tin, dice",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u03.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "True or false? A square turned onto its corner is still a square.",
+      "answerKeyText": "True. It still has 4 equal sides and 4 corners.",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u03.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Draw a house using squares, rectangles and triangles. How many triangles did you use?",
+      "answerKeyText": "Any house built from the named shapes; the number of triangles must match his drawing.",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u03.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "A football is a...\n( sphere ) ( cylinder ) ( circle )",
+      "answerKeyText": "sphere",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u03.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "A cereal box is a...\n( cone ) ( cube ) ( cuboid )",
+      "answerKeyText": "cuboid",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u03.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "A rectangle has...\n( no corners ) ( 3 corners ) ( 4 corners )",
+      "answerKeyText": "4 corners",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u03.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Which shape has no corners?\n( triangle ) ( square ) ( circle )",
+      "answerKeyText": "circle",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u03.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "A tin pushed into sand leaves the print of a...\n( triangle ) ( square ) ( circle )",
+      "answerKeyText": "circle",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

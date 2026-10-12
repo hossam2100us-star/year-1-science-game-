@@ -1,0 +1,677 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_quiz_02",
+  "subject": "maths",
+  "title": "Big Challenge: Term 2",
+  "quiz": true,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    44
+  ],
+  "steps": [
+    {
+      "id": "math_quiz_02.step.001",
+      "kind": "tap-choice",
+      "title": "Maths discovery 1",
+      "prompt": "What belongs where two Venn hoops overlap?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "things that fit both labels",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "only red things",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "things that fit neither label",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q02.01",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "The overlap satisfies both sorting rules.",
+      "shortExplanation": "The overlap satisfies both sorting rules.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.01",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "things that fit both labels",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_02.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "red, blue, red, blue... What comes next?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "red",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "green",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "blue",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q02.02",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "The repeated part is red, blue.",
+      "shortExplanation": "The repeated part is red, blue.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.02",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "red",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_02.step.003",
+      "kind": "match-lines",
+      "title": "Maths discovery 3",
+      "prompt": "15 has how many tens and ones?",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "ones",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "tens",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.q02.03",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "15 is one whole ten and five ones.",
+      "shortExplanation": "15 is one whole ten and five ones.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.03",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "1 ten and 5 ones",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_02.step.004",
+      "kind": "tap-choice",
+      "title": "Maths discovery 4",
+      "prompt": "Count in tens: 10, 20, ...?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "31",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "30",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "29",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.04",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "One more ten after 20 is 30.",
+      "shortExplanation": "One more ten after 20 is 30.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.04",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "30",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_02.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "How many days are in a week?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "6",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.05",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "There are seven days before the week repeats.",
+      "shortExplanation": "There are seven days before the week repeats.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.05",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "7",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_02.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "On a balance, does the heavier side go up or down?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "up",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "down",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.06",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "More mass makes that side go down.",
+      "shortExplanation": "More mass makes that side go down.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.06",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "down",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_02.step.007",
+      "kind": "tap-choice",
+      "title": "Maths discovery 7",
+      "prompt": "8 + __ = 10. Find the missing partner.",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "1",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.07",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "Eight and two make ten.",
+      "shortExplanation": "Eight and two make ten.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.07",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "2",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_02.step.008",
+      "kind": "tap-choice",
+      "title": "Maths discovery 8",
+      "prompt": "What is the difference between 7 and 10?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.08",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "Three forward jumps lead from seven to ten.",
+      "shortExplanation": "Three forward jumps lead from seven to ten.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.08",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "3",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_02.step.009",
+      "kind": "tap-choice",
+      "title": "Maths discovery 9",
+      "prompt": "Half of 8 is...?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.09",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "Share eight equally into two groups of four.",
+      "shortExplanation": "Share eight equally into two groups of four.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.09",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_02.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "Two halves of the same whole can have different sizes.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "True",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "False",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.10",
+      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "explanation": "Halves of the same whole are always equal.",
+      "shortExplanation": "Halves of the same whole are always equal.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.10",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "False — halves are always equal.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_quiz_02.sticker",
+      "word": "count on",
+      "art": "math_label",
+      "meaning": "Start with a number and add forward jumps.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        44
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Revisit the home games for this term. Talk about how each answer was found.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.q02.01",
+      "text": "Discuss this question with an adult: What belongs where two Venn hoops overlap? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.02",
+      "text": "Discuss this question with an adult: red, blue, red, blue... What comes next? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.03",
+      "text": "Discuss this question with an adult: 15 has how many tens and ones? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.04",
+      "text": "Discuss this question with an adult: Count in tens: 10, 20, ...? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.05",
+      "text": "Discuss this question with an adult: How many days are in a week? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.06",
+      "text": "Discuss this question with an adult: On a balance, does the heavier side go up or down? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.07",
+      "text": "Discuss this question with an adult: 8 + __ = 10. Find the missing partner. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.08",
+      "text": "Discuss this question with an adult: What is the difference between 7 and 10? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.09",
+      "text": "Discuss this question with an adult: Half of 8 is...? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.10",
+      "text": "Discuss this question with an adult: Two halves of the same whole can have different sizes. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  },
+  "practiceUnitId": "math_unit_07"
+}

@@ -1,0 +1,1072 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_18",
+  "subject": "maths",
+  "title": "Time and Measurement - Clocks, Capacity and Tools",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    60,
+    61,
+    62,
+    63
+  ],
+  "steps": [
+    {
+      "id": "math_unit_18.step.001",
+      "kind": "explore",
+      "title": "Clocks and containers",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "The long hand points to twelve. What time is shown?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Now the long hand points to six. What time is shown?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Each dot stands for one cup of water. Which container holds most?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Use the short hand for the hour after finding the long hand on twelve.",
+      "explanation": "Read the long hand first and compare how much containers hold.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Clocks and containers",
+        "goal": "Read the long hand first and compare how much containers hold.",
+        "scene": "harbour",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "The long hand points to twelve. What time is shown?",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "half past 3"
+              },
+              {
+                "id": "answer_3",
+                "label": "12 o'clock"
+              },
+              {
+                "id": "answer_1",
+                "label": "3 o'clock"
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "Long hand on twelve means o'clock; the short hand points to three.",
+            "hint": "Use the short hand for the hour after finding the long hand on twelve.",
+            "visual": {
+              "type": "clock",
+              "hour": 3,
+              "minute": 0
+            },
+            "id": "explore_1"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Now the long hand points to six. What time is shown?",
+            "choices": [
+              {
+                "id": "answer_3",
+                "label": "half past 4"
+              },
+              {
+                "id": "answer_1",
+                "label": "3 o'clock"
+              },
+              {
+                "id": "answer_2",
+                "label": "half past 3"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "The hour hand is past three but not yet four. It is half past three.",
+            "hint": "Read the hour it has gone past, not the next hour.",
+            "visual": {
+              "type": "clock",
+              "hour": 3,
+              "minute": 30
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Each dot stands for one cup of water. Which container holds most?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "jug"
+              },
+              {
+                "id": "answer_2",
+                "label": "bowl"
+              },
+              {
+                "id": "answer_3",
+                "label": "mug"
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "The jug holds five cups, more than the bowl's four or the mug's two.",
+            "hint": "Compare the number of same-size cups, not the height of the containers.",
+            "visual": {
+              "type": "groups",
+              "items": [
+                {
+                  "type": "count",
+                  "count": 5,
+                  "item": "dot",
+                  "arrangement": "row",
+                  "label": "jug"
+                },
+                {
+                  "type": "count",
+                  "count": 4,
+                  "item": "dot",
+                  "arrangement": "row",
+                  "label": "bowl"
+                },
+                {
+                  "type": "count",
+                  "count": 2,
+                  "item": "dot",
+                  "arrangement": "row",
+                  "label": "mug"
+                }
+              ]
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_18.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "What time does this clock show?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "4 o'clock",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "3 o'clock",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "half past 4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u18.main.01",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "The long hand is on 12 and the short hand is on 4.",
+      "shortExplanation": "The long hand is on 12 and the short hand is on 4.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.main.01",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "4 o'clock",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true,
+      "mathVisual": {
+        "type": "clock",
+        "hour": 4,
+        "minute": 0
+      }
+    },
+    {
+      "id": "math_unit_18.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "What time does this clock show?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "half past 8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "7 o'clock",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "half past 7",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u18.main.02",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "The long hand is on 6. The short hand is between 7 and 8.",
+      "shortExplanation": "The long hand is on 6. The short hand is between 7 and 8.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.main.02",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "half past 7",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true,
+      "mathVisual": {
+        "type": "clock",
+        "hour": 7,
+        "minute": 30
+      }
+    },
+    {
+      "id": "math_unit_18.step.004",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "Draw the hands for 9 o'clock on paper with an adult. Long hand on 12, short hand on 9.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.main.03",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "Long (minute) hand pointing to 12, short (hour) hand pointing to 9.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true,
+      "parentReview": {
+        "en": "Long (minute) hand pointing to 12, short (hour) hand pointing to 9.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_18.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "What is the long hand called?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "minute hand",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "hour hand",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u18.main.04",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "The long hand shows minutes.",
+      "shortExplanation": "The long hand shows minutes.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.main.04",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "the minute hand",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_18.step.006",
+      "kind": "match-lines",
+      "title": "Maths discovery 6",
+      "prompt": "Match each measuring job to its tool.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "weigh flour",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "measure a pencil",
+          "art": "math_label"
+        },
+        {
+          "id": "item_3",
+          "label": "measure water",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "ruler",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "scales",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "jug",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2",
+          "item_3": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u18.main.05",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "A ruler measures length, scales measure mass, and a jug measures water.",
+      "shortExplanation": "A ruler measures length, scales measure mass, and a jug measures water.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.main.05",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "pencil → ruler; flour → scales; water → jug",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_18.step.007",
+      "kind": "order-sequence",
+      "title": "Maths discovery 7",
+      "prompt": "Jug holds 5 cups, bowl 4 and mug 2. Put them in order, holds most first.",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "jug",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "mug",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "bowl",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "choice_3",
+          "choice_1",
+          "choice_2"
+        ]
+      },
+      "assessed": true,
+      "objective": "math.u18.main.06",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "Compare capacity: 5 cups, then 4 cups, then 2 cups.",
+      "shortExplanation": "Compare capacity: 5 cups, then 4 cups, then 2 cups.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.main.06",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "jug, bowl, mug",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_18.step.008",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "Tell an adult your lunchtime. Draw it on a paper clock and check the hands together.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.main.07",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "Any real lunchtime shown correctly as o'clock or half past.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true,
+      "parentReview": {
+        "en": "Any real lunchtime shown correctly as o'clock or half past.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_18.step.009",
+      "kind": "tap-choice",
+      "title": "Maths discovery 9",
+      "prompt": "At half past, the long hand points to 6.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "True",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "False",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u18.main.08",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "The minute hand has travelled halfway around the clock.",
+      "shortExplanation": "The minute hand has travelled halfway around the clock.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.main.08",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "True",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_18.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "At 3 o'clock the long hand points to...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "12",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u18.choice.01",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "12 is the answer. The minute hand is at twelve for o'clock.",
+      "shortExplanation": "12 is the answer. The minute hand is at twelve for o'clock.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.choice.01",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "12",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_18.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "At half past 5 the short hand is...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "on 12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "between 5 and 6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "exactly on 5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u18.choice.02",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "Between 5 and 6 is the answer. Half an hour moves the hour hand halfway toward six.",
+      "shortExplanation": "Between 5 and 6 is the answer. Half an hour moves the hour hand halfway toward",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.choice.02",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "between 5 and 6",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_18.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "To weigh a parcel, use...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a jug",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "a ruler",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "scales",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u18.choice.03",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "Scales is the answer. Scales measure mass.",
+      "shortExplanation": "Scales is the answer. Scales measure mass.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.choice.03",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "scales",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_18.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "A container that holds more has a bigger...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "clock",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "capacity",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "corner",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u18.choice.04",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "Capacity is the answer. Capacity means how much the container holds.",
+      "shortExplanation": "Capacity is the answer. Capacity means how much the container holds.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.choice.04",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "capacity",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_18.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "Half an hour is...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "60 minutes",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "30 minutes",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "15 minutes",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u18.choice.05",
+      "hint": "Find the long hand first; compare how much each container holds.",
+      "explanation": "30 minutes is the answer. Thirty is half of sixty minutes.",
+      "shortExplanation": "30 minutes is the answer. Thirty is half of sixty minutes.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.choice.05",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "30 minutes",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_18.sticker",
+      "word": "capacity",
+      "art": "math_label",
+      "meaning": "How much a container can hold.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Make a paper clock with an adult handling the scissors. Practise o'clock and half past. Guess how many same-size cups fill a container, then measure at the sink.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u18.main.01",
+      "text": "Discuss this question with an adult: What time does this clock show? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.main.02",
+      "text": "Discuss this question with an adult: What time does this clock show? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.main.04",
+      "text": "Discuss this question with an adult: What is the long hand called? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.main.05",
+      "text": "Discuss this question with an adult: Match each measuring job to its tool. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.main.06",
+      "text": "Discuss this question with an adult: Jug holds 5 cups, bowl 4 and mug 2. Put them in order, holds most first. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.main.08",
+      "text": "Discuss this question with an adult: At half past, the long hand points to 6. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.choice.01",
+      "text": "Discuss this question with an adult: At 3 o'clock the long hand points to... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.choice.02",
+      "text": "Discuss this question with an adult: At half past 5 the short hand is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.choice.03",
+      "text": "Discuss this question with an adult: To weigh a parcel, use... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.choice.04",
+      "text": "Discuss this question with an adult: A container that holds more has a bigger... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.choice.05",
+      "text": "Discuss this question with an adult: Half an hour is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

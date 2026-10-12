@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_07",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Statistical Methods - Sorting Diagrams",
+  "ar": "مخططات التصنيف",
+  "term": 2,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    25,
+    26,
+    27
+  ],
+  "introductionText": "Term 2 · Statistics\nStatistical Methods — Sorting Diagrams\nThe Big Idea: A Venn diagram and a Carroll diagram are sorting boxes. Every object goes\nin exactly one place — even the ones that fit both labels, or neither.\nSay It Like This\nRead aloud\n\"Here are two hoops. This one is for red things. This one is for things with wheels. A red\ncar is red and has wheels, so it goes in the middle, where the hoops overlap. A green leaf\nis not red and has no wheels, so it goes outside both hoops. A Carroll diagram does the\nsame job with boxes: this box says less than 10, this box says not less than 10. Every\nnumber fits in one box.\"\nWatch Out For\nThe slip almost every child makes\nLeaving out the \"neither\" things. He puts the leaf back in the toy box because \"it doesn't\ngo anywhere\". It does — outside the hoops, but still inside the big rectangle.\nPutting a \"both\" thing in one hoop. Ask two questions, one at a time: \"Is it red? Does it\nhave wheels?\" Two yeses means the middle.\nTry It at Home\nGame 1 — Belt hoops (10 minutes)\nLay two belts or scarves on the floor as overlapping circles. Label them on paper: red and\nhas wheels. He sorts ten toys. Then change one label to soft and sort again. Ask: which\ntoy moved?\nGame 2 — The number fold (5 minutes)\nFold a sheet of paper in half and write less than 10 on one side, not less than 10 on the\nother. Write the numbers 1 to 20 on scraps and let him sort them. Leave 10 until last and\nlet him argue where it goes.\nred has wheels Carroll diagram\nless than not less\n10 than 10\n3 10\n7 14\nbike\n9 18\nAsk him to explain why the red car is in the middle and why the leaf is outside. Then ask where 10 goes in\nthe Carroll diagram — and why.\nMore examples to talk about\n• The middle of a Venn diagram can be empty — if nothing is both red and has wheels.\n• In a Carroll diagram, not red means every other colour: blue, green, yellow...\n• The same toys can be sorted many ways. Sorting depends on the question we ask.\n• Tricky: 10 is not less than 10. It goes in the \"not less than 10\" box.\n• A block graph like the one below answers \"which pet is most popular?\" at a glance.\nKey Words\nsort Venn diagram Carroll diagram overlap both neither not block graph",
+  "sourceQuestions": [
+    {
+      "id": "math.u07.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Look at the Venn diagram above. What is in the middle, where the hoops overlap?",
+      "answerKeyText": "the red car",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u07.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Why does the red car go in the middle?",
+      "answerKeyText": "Because it is red and it has wheels — it fits both labels.",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u07.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Name one thing that is outside both hoops.",
+      "answerKeyText": "the green leaf or the blue ball — both are outside both hoops.",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u07.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Sort these numbers into the Carroll diagram: 3, 12, 7, 15, 9, 18, 10\nless than 10 not less than 10",
+      "answerKeyText": "less than 10: 3, 7, 9 • not less than 10: 12, 15, 18, 10",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u07.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Look at the block graph. How many children have a cat?\nOur pets\n5\n4\n3\n2\n1\n0\ncat dog fish",
+      "answerKeyText": "5",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u07.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "How many more cats than dogs?",
+      "answerKeyText": "2",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u07.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "True or false? A thing that fits both labels goes where the hoops overlap.",
+      "answerKeyText": "True",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u07.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Think of one more thing to put outside both hoops. Draw it.",
+      "answerKeyText": "Anything that is not red and has no wheels, e.g. a yellow banana, a book.",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u07.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "The overlap in a Venn diagram is for things that are...\n( only red ) ( both ) ( neither )",
+      "answerKeyText": "both",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u07.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Where does 10 go?\n( less than 10 ) ( not less than 10 )",
+      "answerKeyText": "not less than 10",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u07.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Things that fit neither label go...\n( in the middle ) ( nowhere ) ( outside the hoops )",
+      "answerKeyText": "outside the hoops",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u07.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "In the pets block graph, each block stands for...\n( two children ) ( one child ) ( ten children )",
+      "answerKeyText": "one child",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u07.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "The tallest column shows the...\n( first one ) ( least popular ) ( most popular )",
+      "answerKeyText": "most popular",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

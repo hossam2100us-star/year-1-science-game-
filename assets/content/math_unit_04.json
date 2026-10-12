@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_04",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Statistical Methods",
+  "ar": "الجداول والرسوم البيانية",
+  "term": 1,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    15,
+    16,
+    17
+  ],
+  "introductionText": "Term 1 · Statistics\nStatistical Methods\nThe Big Idea: When we collect lots of information, we sort it and show it as a picture — a\nlist, a table, a pictogram or a block graph — so we can answer questions just by looking.\nSay It Like This\nRead aloud\n\"Let's find out which fruit our family likes best. First we ask everyone and write a list. Then\nwe draw one little picture for each person, in rows. That is a pictogram. The longest row is\nthe favourite. A block graph is the same idea, but we colour one square for each person,\none on top of the other.\"\nWatch Out For\nThe slip almost every child makes\nPictures of different sizes. If the banana pictures are drawn big and the apple pictures\nsmall, the banana row looks longer even with fewer bananas. Every picture must be the\nsame size, lined up from the same starting line — just like lining up pencils to compare\nthem.\nGuessing from height instead of counting. In a block graph, count the blocks. Two\ncolumns that look \"about the same\" may differ by one.\nTry It at Home\nGame 1 — The family fruit vote (10 minutes)\nAsk everyone at home (and grandparents on the phone): \"Which fruit do you like best?\"\nPut a real fruit (or a sticky note) on the table for each answer, in rows, starting from the\nedge of the table. Before counting, ask him: \"Which row do you think is longest?\" Then\ncount each row.\nGame 2 — Sorting in a table (5 minutes)\nTip a handful of his toys on the floor. Make a two-column table on paper: red / not red.\nHe puts each toy in the right column. Then re-sort the same toys a new way: has wheels /\nno wheels. Same toys, new groups!\nOur favourite fruit (pictogram) The same, as a block graph\napple\n4\nbanana\n3\norange\n2\nmango\n1\n0\napple banana orange mango\nCount each row of the pictogram with him, then find the same number of blocks in the graph. Ask: which\nshows the favourite more clearly?\nMore examples to talk about\n• Ten people voted: 4 + 2 + 3 + 1 = 10. Adding all the rows tells you how many people\nwere asked.\n• A table is a quick way to write the same information with numbers instead of pictures.\n• A Carroll diagram is a table with two boxes, like red and not red. Every toy fits in exactly\none box.\n• Tricky: if nobody picks grapes, the grape row is empty — but it still has a row, showing\nzero.\n• Class weather charts and votes for a class name are real pictograms.\nKey Words\nlist table pictogram block graph sort Carroll diagram most least",
+  "sourceQuestions": [
+    {
+      "id": "math.u04.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Look at the picture above. How many people chose apple?",
+      "answerKeyText": "4",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u04.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Which fruit is the favourite?",
+      "answerKeyText": "apple",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u04.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Which fruit did the fewest people choose?",
+      "answerKeyText": "mango",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u04.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "How many people chose banana and orange together?",
+      "answerKeyText": "5 (2 + 3)",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u04.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "How many people were asked altogether?",
+      "answerKeyText": "10",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u04.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Sort these toys into the Carroll diagram: red car, blue ball, red ball, green car\nred not red",
+      "answerKeyText": "red: red car, red ball • not red: blue ball, green car",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u04.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Five children said their favourite pet: Sara – cat, Omar – dog, Laila – cat, Adam – fish,\nNour – cat. Fill in the table.\ncat dog fish",
+      "answerKeyText": "cat 3, dog 1, fish 1",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u04.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Ask 4 people their favourite colour. Draw a pictogram with one circle for each person.",
+      "answerKeyText": "Four circles in total, same size, lined up in rows by colour.",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u04.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "In our pictogram, each picture stands for...\n( nobody ) ( one person ) ( two people )",
+      "answerKeyText": "one person",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u04.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "The longest row in a pictogram shows the...\n( most ) ( first ) ( least )",
+      "answerKeyText": "most",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u04.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "A block graph is made of...\n( only words ) ( only circles ) ( blocks (squares) )",
+      "answerKeyText": "blocks (squares)",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u04.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "In the picture above, how many people chose orange?\n( 4 ) ( 3 ) ( 2 )",
+      "answerKeyText": "3",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u04.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Pictures in a pictogram should be...\n( anywhere on the page ) ( the same size and lined up ) ( all different sizes )",
+      "answerKeyText": "the same size and lined up",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ],
+      "answerKeyPages": [
+        73
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

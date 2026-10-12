@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_charts",
+  "kind": "skills",
+  "subject": "maths",
+  "title": "Chart Skills",
+  "ar": "مهارات قراءة الرسوم",
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    65,
+    66
+  ],
+  "sourceQuestions": [
+    {
+      "id": "math.charts.01",
+      "category": "chart",
+      "number": 1,
+      "sourceText": "How many cars are in the box?",
+      "answerKeyText": "4",
+      "sourcePages": [
+        65
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.charts.02",
+      "category": "chart",
+      "number": 2,
+      "sourceText": "Which toy is there most of?",
+      "answerKeyText": "cars",
+      "sourcePages": [
+        65
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.charts.03",
+      "category": "chart",
+      "number": 3,
+      "sourceText": "How many toys are there altogether?",
+      "answerKeyText": "10 (4 + 2 + 3 + 1)",
+      "sourcePages": [
+        65
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.charts.04",
+      "category": "chart",
+      "number": 4,
+      "sourceText": "On which day did he earn the most stars?",
+      "answerKeyText": "Wednesday",
+      "sourcePages": [
+        65
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.charts.05",
+      "category": "chart",
+      "number": 5,
+      "sourceText": "How many stars did he earn on Monday and Tuesday together?",
+      "answerKeyText": "4 (3 + 1)",
+      "sourcePages": [
+        65
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.charts.06",
+      "category": "chart",
+      "number": 6,
+      "sourceText": "How many more stars on Wednesday than on Sunday?",
+      "answerKeyText": "2 (4 − 2)",
+      "sourcePages": [
+        65
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.charts.07",
+      "category": "chart",
+      "number": 7,
+      "sourceText": "How many sparrows were seen?",
+      "answerKeyText": "8",
+      "sourcePages": [
+        66
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.charts.08",
+      "category": "chart",
+      "number": 8,
+      "sourceText": "Which bird was seen the fewest times?",
+      "answerKeyText": "crows",
+      "sourcePages": [
+        66
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.charts.09",
+      "category": "chart",
+      "number": 9,
+      "sourceText": "How many pigeons and crows altogether?",
+      "answerKeyText": "9 (6 + 3)",
+      "sourcePages": [
+        66
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

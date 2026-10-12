@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_quiz_03",
+  "kind": "quiz",
+  "subject": "maths",
+  "title": "Big Challenge: Term 3",
+  "ar": "تحدي الفصل الدراسي 3",
+  "term": 3,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    64
+  ],
+  "sourceQuestions": [
+    {
+      "id": "math.q03.01",
+      "category": "quiz",
+      "number": 1,
+      "sourceText": "Circle the even number: 3 6 9",
+      "answerKeyText": "6",
+      "sourcePages": [
+        64
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q03.02",
+      "category": "quiz",
+      "number": 2,
+      "sourceText": "What position comes after 2nd?",
+      "answerKeyText": "3rd",
+      "sourcePages": [
+        64
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q03.03",
+      "category": "quiz",
+      "number": 3,
+      "sourceText": "Double 4 is",
+      "answerKeyText": "8",
+      "sourcePages": [
+        64
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q03.04",
+      "category": "quiz",
+      "number": 4,
+      "sourceText": "6 + 11 =",
+      "answerKeyText": "17 (start at 11, count on 6)",
+      "sourcePages": [
+        64
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q03.05",
+      "category": "quiz",
+      "number": 5,
+      "sourceText": "How many faces does a cube have?",
+      "answerKeyText": "6",
+      "sourcePages": [
+        64
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q03.06",
+      "category": "quiz",
+      "number": 6,
+      "sourceText": "A triangle is turned upside down. Is it still a triangle?",
+      "answerKeyText": "Yes",
+      "sourcePages": [
+        64
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q03.07",
+      "category": "quiz",
+      "number": 7,
+      "sourceText": "In a block graph, which column shows the most?",
+      "answerKeyText": "the tallest",
+      "sourcePages": [
+        64
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q03.08",
+      "category": "quiz",
+      "number": 8,
+      "sourceText": "Half of 20 is",
+      "answerKeyText": "10",
+      "sourcePages": [
+        64
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q03.09",
+      "category": "quiz",
+      "number": 9,
+      "sourceText": "What time is it?\n12\n11 1\n10 2\n9 3\n8 4\n7 5\n6",
+      "answerKeyText": "2 o'clock",
+      "sourcePages": [
+        64
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q03.10",
+      "category": "quiz",
+      "number": 10,
+      "sourceText": "What do we use to weigh flour?",
+      "answerKeyText": "scales",
+      "sourcePages": [
+        64
+      ],
+      "answerKeyPages": [
+        82
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "scoreBands": [
+    {
+      "min": 8,
+      "max": 10,
+      "label": "excellent"
+    },
+    {
+      "min": 5,
+      "max": 7,
+      "label": "keep practising"
+    },
+    {
+      "min": 0,
+      "max": 4,
+      "label": "play the games again"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

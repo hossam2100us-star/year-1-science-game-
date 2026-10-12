@@ -3,6 +3,8 @@ library;
 
 import 'dart:math';
 
+import 'package:flame/flame.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:science_adventure/content/catalog.dart';
@@ -46,6 +48,7 @@ void main() {
         MemoryProgressStore(const AppData(profile: ChildProfile(name: 'Nour'))),
       );
       // Decode the artwork for real so every run captures the same frame.
+      await tester.runAsync(() => Flame.images.load('maths-islands-v2.webp'));
       await tester.runAsync(
         () => precacheImage(
           const AssetImage('assets/images/islands-v2.webp'),

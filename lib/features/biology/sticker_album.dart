@@ -6,10 +6,11 @@ import '../../core/widgets.dart';
 import '../../games/science_art.dart';
 
 class StickerAlbum extends ConsumerWidget {
-  const StickerAlbum({super.key});
+  const StickerAlbum({super.key, this.subject = 'science'});
+  final String subject;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final data = ref.watch(appProvider);
+    final data = ref.watch(appProvider).progressForSubject(subject);
     return Scaffold(
       body: AdventurePage(
         child: Column(
@@ -24,8 +25,10 @@ class StickerAlbum extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 16),
-            const StoryPanel(
-              text: 'My science words! Finish a unit to earn its stickers. Tap an earned sticker to listen.',
+            StoryPanel(
+              text: subject == 'science'
+                  ? 'My science words! Finish a unit to earn its stickers. Tap an earned sticker to listen.'
+                  : 'My maths words! Finish a unit to earn its stickers. Tap an earned sticker to listen.',
             ),
             const SizedBox(height: 16),
             ref
@@ -39,7 +42,9 @@ class StickerAlbum extends ConsumerWidget {
                   data: (library) {
                     final words = <String, Map<String, dynamic>>{};
                     final earned = <String>{};
-                    for (final lesson in library.lessons.values) {
+                    for (final lesson in library.lessons.values.where(
+                      (lesson) => lesson.subject == subject,
+                    )) {
                       for (final sticker in lesson.stickers) {
                         words[sticker['id']] = sticker;
                         if (data.isComplete(lesson.id)) {
@@ -85,7 +90,13 @@ class StickerAlbum extends ConsumerWidget {
                               child: Column(
                                 children: [
                                   if (earned.contains(entry.key))
-                                    SciencePicture(art: entry.key)
+                                    if (subject == 'science')
+                                      SciencePicture(art: entry.key)
+                                    else
+                                      const Icon(
+                                        Icons.calculate_rounded,
+                                        size: 64,
+                                      )
                                   else
                                     const Icon(
                                       Icons.lock_outline_rounded,

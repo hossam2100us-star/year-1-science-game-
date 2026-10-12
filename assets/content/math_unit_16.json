@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_16",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Statistical Methods - Reading Graphs",
+  "ar": "قراءة الرسوم البيانية",
+  "term": 3,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    54,
+    55,
+    56
+  ],
+  "introductionText": "Term 3 · Statistics\nStatistical Methods — Reading Graphs\nThe Big Idea: Graphs answer questions: which is the most, which is the least, how many\nmore, and how many altogether.\nSay It Like This\nRead aloud\n\"Look at this graph of how children came to school. Every block is one child. Which column\nis tallest? Walk — so most children walked. How many more walked than came by car?\nCount the walk blocks that stick up above the car column: 1, 2, 3. Three more. To find how\nmany children altogether, add all the columns.\"\nWatch Out For\nThe slip almost every child makes\n\"How many more\" answered with the bigger number. Same slip as in Unit 2. Put a ruler\nacross the top of the shorter column and count only the blocks above it.\nForgetting to read the labels. Before any question, read the title and the words under\neach column together.\nTry It at Home\nGame 1 — Balcony car count (10 minutes)\nFrom a window or balcony, count the colours of cars going past for 5 minutes. Build a\nblock graph with Lego — one brick for each car, a tower for each colour. Ask: which colour\nwon? How many more white than red?\nGame 2 — Weather week (a week)\nEach day, draw the weather in a pictogram: a sun, a cloud or a wind swirl. At the end of\nthe week ask three questions about it — and let him ask you one.\nHow we came to school today\n7\n6\n5\n4\n3\n2\n1\n0\nwalk bus car bike\nnerdlihc\nfo\nrebmun\nCount each column with him, then ask him to make up a question about the graph for you to answer.\nMore examples to talk about\n• 6 + 4 + 3 + 2 = 15 children altogether.\n• A column with no blocks means zero — nobody chose it.\n• Every graph needs a title, or nobody knows what it's about.\n• A pictogram and a block graph can show exactly the same numbers.\n• Tricky: bus and bike together (6) are the same as walk (6).\nKey Words\nblock graph pictogram column title most least total how many more",
+  "sourceQuestions": [
+    {
+      "id": "math.u16.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "How many children walked?",
+      "answerKeyText": "6",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u16.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "How many came by bus?",
+      "answerKeyText": "4",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u16.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Which way was the most popular?",
+      "answerKeyText": "walking",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u16.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Which way was the least popular?",
+      "answerKeyText": "bike",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u16.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "How many more children walked than came by car?",
+      "answerKeyText": "3",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u16.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "How many children are in the graph altogether?",
+      "answerKeyText": "15",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u16.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Sort into the Carroll diagram: circle, square, triangle, oval\nhas corners has no corners",
+      "answerKeyText": "has corners: square, triangle • no corners: circle, oval",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u16.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Write your own question about the graph. Then answer it.",
+      "answerKeyText": "Any question the graph can answer, with the correct answer from the graph.",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u16.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "The tallest column shows the...\n( most ) ( least ) ( total )",
+      "answerKeyText": "most",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u16.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "How many children came by car?\n( 4 ) ( 2 ) ( 3 )",
+      "answerKeyText": "3",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u16.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "How many came by bus and bike together?\n( 6 ) ( 4 ) ( 8 )",
+      "answerKeyText": "6",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u16.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Every graph needs a...\n( title ) ( rubber ) ( colour )",
+      "answerKeyText": "title",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u16.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "A column with no blocks means...\n( one ) ( ten ) ( zero )",
+      "answerKeyText": "zero",
+      "sourcePages": [
+        54,
+        55,
+        56
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

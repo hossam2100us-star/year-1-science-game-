@@ -24,6 +24,9 @@ enum SceneKind {
   /// Plant mission choices.
   plantMission,
 
+  /// Number, shape and measurement activities using the shared lesson engine.
+  maths,
+
   /// The original Flame discovery scene, used when no other scene applies.
   discovery;
 
@@ -41,6 +44,7 @@ enum SceneKind {
       'ourselves' => ourselves,
       'plant-lab' => plantLab,
       'plant-mission' => plantMission,
+      'maths' => maths,
       _ => discovery,
     };
   }

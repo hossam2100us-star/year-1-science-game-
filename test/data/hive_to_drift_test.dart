@@ -90,6 +90,47 @@ void main() {
     );
   });
 
+  test(
+    'Maths progress migrates into its curriculum without changing Science',
+    () async {
+      final data = AppData.fromJson(child('Nour')).withSubjectProgress(
+        'maths',
+        attempts: [
+          UnitAttempt(
+            unitId: 'math_unit_01',
+            completedAt: DateTime(2026, 10, 11),
+            objectives: const {'counting': DecisionOutcome.firstTry},
+            completed: true,
+            effortStars: 3,
+            attemptId: 'maths-legacy',
+          ),
+        ],
+        journeys: const {
+          'math_unit_02': {'version': 1, 'index': 2},
+        },
+      );
+      await hive.write(data);
+      final report = await HiveToDriftMigration(hive, db).run();
+      expect(report.attempts, data.attempts.length + 1);
+      expect(report.journeys, data.journeys.length + 1);
+      final reopened = await DriftProgressStore.open(db);
+      expect(
+        reopened.read().attempts.single.attemptId,
+        data.attempts.single.attemptId,
+      );
+      expect(
+        reopened.read().otherSubjects['maths'],
+        data.otherSubjects['maths'],
+      );
+      expect(
+        (await db.select(db.unitAttempts).get())
+            .map((a) => a.curriculum)
+            .toSet(),
+        {'y1.science', 'y1.maths'},
+      );
+    },
+  );
+
   test('several children, active child and a UUID id kept as is', () async {
     final uuid = Ids.uuidV7();
     final hex = 'ab' * 16;

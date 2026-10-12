@@ -1,0 +1,1049 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_charts",
+  "subject": "maths",
+  "title": "Chart Skills",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    65,
+    66
+  ],
+  "steps": [
+    {
+      "id": "math_charts.step.001",
+      "kind": "explore",
+      "title": "Find the story in a chart",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Read the cars column in Toys in the box. How many cars?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Each picture is one earned star. Which day has the most?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "The crows bar ends halfway between two and four. How many crows?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Find cars below the chart, then count only that column.",
+      "explanation": "Read titles, labels and keys before counting or reading the scale.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          65,
+          66
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_charts",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Find the story in a chart",
+        "goal": "Read titles, labels and keys before counting or reading the scale.",
+        "scene": "workshop",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "Read the cars column in Toys in the box. How many cars?",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "4"
+              },
+              {
+                "id": "answer_3",
+                "label": "5"
+              },
+              {
+                "id": "answer_1",
+                "label": "3"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "The cars column contains four blocks. Each block is one toy.",
+            "hint": "Find cars below the chart, then count only that column.",
+            "visual": {
+              "type": "chart",
+              "title": "Toys in the box",
+              "rows": [
+                {
+                  "label": "cars",
+                  "value": 4
+                },
+                {
+                  "label": "balls",
+                  "value": 2
+                },
+                {
+                  "label": "dolls",
+                  "value": 3
+                },
+                {
+                  "label": "blocks",
+                  "value": 1
+                }
+              ],
+              "style": "block",
+              "unit": "one toy"
+            },
+            "id": "explore_1"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Each picture is one earned star. Which day has the most?",
+            "choices": [
+              {
+                "id": "answer_3",
+                "label": "Thu"
+              },
+              {
+                "id": "answer_2",
+                "label": "Wed"
+              },
+              {
+                "id": "answer_1",
+                "label": "Mon"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Wednesday has four earned stars, the most in this pictogram.",
+            "hint": "Read the day labels and compare the equal-size pictures.",
+            "visual": {
+              "type": "chart",
+              "title": "Stars earned this week",
+              "rows": [
+                {
+                  "label": "Sun",
+                  "value": 2
+                },
+                {
+                  "label": "Mon",
+                  "value": 3
+                },
+                {
+                  "label": "Tue",
+                  "value": 1
+                },
+                {
+                  "label": "Wed",
+                  "value": 4
+                },
+                {
+                  "label": "Thu",
+                  "value": 2
+                }
+              ],
+              "style": "pictogram",
+              "unit": "one star earned"
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "The crows bar ends halfway between two and four. How many crows?",
+            "choices": [
+              {
+                "id": "answer_3",
+                "label": "4"
+              },
+              {
+                "id": "answer_2",
+                "label": "3"
+              },
+              {
+                "id": "answer_1",
+                "label": "2"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Three lies halfway between two and four. The bar represents three crows.",
+            "hint": "The scale counts in twos. The unlabelled middle number is three.",
+            "visual": {
+              "type": "chart",
+              "title": "Birds we saw from the balcony",
+              "rows": [
+                {
+                  "label": "pigeons",
+                  "value": 6
+                },
+                {
+                  "label": "sparrows",
+                  "value": 8
+                },
+                {
+                  "label": "crows",
+                  "value": 3
+                }
+              ],
+              "style": "bar",
+              "unit": "one bird",
+              "axisMax": 10,
+              "tickStep": 2
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_charts.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "How many cars are in the box?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.charts.01",
+      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "explanation": "Count four car blocks.",
+      "shortExplanation": "Count four car blocks.",
+      "source": {
+        "pages": [
+          65
+        ],
+        "questionId": "math.charts.01",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_charts",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Toys in the box",
+        "rows": [
+          {
+            "label": "cars",
+            "value": 4
+          },
+          {
+            "label": "balls",
+            "value": 2
+          },
+          {
+            "label": "dolls",
+            "value": 3
+          },
+          {
+            "label": "blocks",
+            "value": 1
+          }
+        ],
+        "style": "block",
+        "unit": "one toy"
+      }
+    },
+    {
+      "id": "math_charts.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "Which toy is there most of?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "cars",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "balls",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_4",
+          "label": "blocks",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "dolls",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.charts.02",
+      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "explanation": "The cars column has the most blocks.",
+      "shortExplanation": "The cars column has the most blocks.",
+      "source": {
+        "pages": [
+          65
+        ],
+        "questionId": "math.charts.02",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "cars",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_charts",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Toys in the box",
+        "rows": [
+          {
+            "label": "cars",
+            "value": 4
+          },
+          {
+            "label": "balls",
+            "value": 2
+          },
+          {
+            "label": "dolls",
+            "value": 3
+          },
+          {
+            "label": "blocks",
+            "value": 1
+          }
+        ],
+        "style": "block",
+        "unit": "one toy"
+      }
+    },
+    {
+      "id": "math_charts.step.004",
+      "kind": "tap-choice",
+      "title": "Maths discovery 4",
+      "prompt": "How many toys altogether?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "10",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "11",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.charts.03",
+      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "explanation": "Add 4 + 2 + 3 + 1 to make 10 toys.",
+      "shortExplanation": "Add 4 + 2 + 3 + 1 to make 10 toys.",
+      "source": {
+        "pages": [
+          65
+        ],
+        "questionId": "math.charts.03",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "10 (4 + 2 + 3 + 1)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_charts",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Toys in the box",
+        "rows": [
+          {
+            "label": "cars",
+            "value": 4
+          },
+          {
+            "label": "balls",
+            "value": 2
+          },
+          {
+            "label": "dolls",
+            "value": 3
+          },
+          {
+            "label": "blocks",
+            "value": 1
+          }
+        ],
+        "style": "block",
+        "unit": "one toy"
+      }
+    },
+    {
+      "id": "math_charts.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "Which day has the most stars?",
+      "options": [
+        {
+          "id": "choice_5",
+          "label": "Thu",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_4",
+          "label": "Wed",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "Sun",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "Mon",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "Tue",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_4"
+      },
+      "assessed": true,
+      "objective": "math.charts.04",
+      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "explanation": "Wednesday has four stars, the largest count.",
+      "shortExplanation": "Wednesday has four stars, the largest count.",
+      "source": {
+        "pages": [
+          65
+        ],
+        "questionId": "math.charts.04",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "Wednesday",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_charts",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Stars earned this week",
+        "rows": [
+          {
+            "label": "Sun",
+            "value": 2
+          },
+          {
+            "label": "Mon",
+            "value": 3
+          },
+          {
+            "label": "Tue",
+            "value": 1
+          },
+          {
+            "label": "Wed",
+            "value": 4
+          },
+          {
+            "label": "Thu",
+            "value": 2
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one star earned"
+      }
+    },
+    {
+      "id": "math_charts.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "How many stars on Monday and Tuesday together?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.charts.05",
+      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "explanation": "Monday has three and Tuesday one: four altogether.",
+      "shortExplanation": "Monday has three and Tuesday one: four altogether.",
+      "source": {
+        "pages": [
+          65
+        ],
+        "questionId": "math.charts.05",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "4 (3 + 1)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_charts",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Stars earned this week",
+        "rows": [
+          {
+            "label": "Sun",
+            "value": 2
+          },
+          {
+            "label": "Mon",
+            "value": 3
+          },
+          {
+            "label": "Tue",
+            "value": 1
+          },
+          {
+            "label": "Wed",
+            "value": 4
+          },
+          {
+            "label": "Thu",
+            "value": 2
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one star earned"
+      }
+    },
+    {
+      "id": "math_charts.step.007",
+      "kind": "tap-choice",
+      "title": "Maths discovery 7",
+      "prompt": "How many more stars on Wednesday than Sunday?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.charts.06",
+      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "explanation": "Four minus two gives a difference of two.",
+      "shortExplanation": "Four minus two gives a difference of two.",
+      "source": {
+        "pages": [
+          65
+        ],
+        "questionId": "math.charts.06",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "2 (4 − 2)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_charts",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Stars earned this week",
+        "rows": [
+          {
+            "label": "Sun",
+            "value": 2
+          },
+          {
+            "label": "Mon",
+            "value": 3
+          },
+          {
+            "label": "Tue",
+            "value": 1
+          },
+          {
+            "label": "Wed",
+            "value": 4
+          },
+          {
+            "label": "Thu",
+            "value": 2
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one star earned"
+      }
+    },
+    {
+      "id": "math_charts.step.008",
+      "kind": "tap-choice",
+      "title": "Maths discovery 8",
+      "prompt": "How many sparrows were seen?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "7",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.charts.07",
+      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "explanation": "The sparrows bar reaches eight on the scale.",
+      "shortExplanation": "The sparrows bar reaches eight on the scale.",
+      "source": {
+        "pages": [
+          66
+        ],
+        "questionId": "math.charts.07",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "8",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_charts",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Birds we saw from the balcony",
+        "rows": [
+          {
+            "label": "pigeons",
+            "value": 6
+          },
+          {
+            "label": "sparrows",
+            "value": 8
+          },
+          {
+            "label": "crows",
+            "value": 3
+          }
+        ],
+        "style": "bar",
+        "unit": "one bird",
+        "axisMax": 10,
+        "tickStep": 2
+      }
+    },
+    {
+      "id": "math_charts.step.009",
+      "kind": "tap-choice",
+      "title": "Maths discovery 9",
+      "prompt": "Which bird was seen the fewest times?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "sparrows",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "crows",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "pigeons",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.charts.08",
+      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "explanation": "Crows have the shortest bar and the smallest count.",
+      "shortExplanation": "Crows have the shortest bar and the smallest count.",
+      "source": {
+        "pages": [
+          66
+        ],
+        "questionId": "math.charts.08",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "crows",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_charts",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Birds we saw from the balcony",
+        "rows": [
+          {
+            "label": "pigeons",
+            "value": 6
+          },
+          {
+            "label": "sparrows",
+            "value": 8
+          },
+          {
+            "label": "crows",
+            "value": 3
+          }
+        ],
+        "style": "bar",
+        "unit": "one bird",
+        "axisMax": 10,
+        "tickStep": 2
+      }
+    },
+    {
+      "id": "math_charts.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "How many pigeons and crows altogether?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "10",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "8",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.charts.09",
+      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "explanation": "Six pigeons and three crows make nine birds.",
+      "shortExplanation": "Six pigeons and three crows make nine birds.",
+      "source": {
+        "pages": [
+          66
+        ],
+        "questionId": "math.charts.09",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "9 (6 + 3)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_charts",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Birds we saw from the balcony",
+        "rows": [
+          {
+            "label": "pigeons",
+            "value": 6
+          },
+          {
+            "label": "sparrows",
+            "value": 8
+          },
+          {
+            "label": "crows",
+            "value": 3
+          }
+        ],
+        "style": "bar",
+        "unit": "one bird",
+        "axisMax": 10,
+        "tickStep": 2
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_charts.sticker",
+      "word": "bar chart",
+      "art": "math_label",
+      "meaning": "A chart where the end of each bar shows a number.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        65,
+        66
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Build a toy survey chart together. Ask about the most, least, total and difference.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        65,
+        66
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.charts.01",
+      "text": "Discuss this question with an adult: How many cars are in the box? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        65
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.charts.02",
+      "text": "Discuss this question with an adult: Which toy is there most of? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        65
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.charts.03",
+      "text": "Discuss this question with an adult: How many toys altogether? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        65
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.charts.04",
+      "text": "Discuss this question with an adult: Which day has the most stars? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        65
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.charts.05",
+      "text": "Discuss this question with an adult: How many stars on Monday and Tuesday together? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        65
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.charts.06",
+      "text": "Discuss this question with an adult: How many more stars on Wednesday than Sunday? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        65
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.charts.07",
+      "text": "Discuss this question with an adult: How many sparrows were seen? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        66
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.charts.08",
+      "text": "Discuss this question with an adult: Which bird was seen the fewest times? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        66
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.charts.09",
+      "text": "Discuss this question with an adult: How many pigeons and crows altogether? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        66
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

@@ -1,0 +1,1048 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_06",
+  "subject": "maths",
+  "title": "Time and Measurement",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    21,
+    22,
+    23
+  ],
+  "steps": [
+    {
+      "id": "math_unit_06.step.001",
+      "kind": "explore",
+      "title": "A day and its lengths",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "You wake up and eat breakfast. Which part of the day is this?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Which takes longer: a blink or a night of sleep?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Both pencil ends start at the same line. Which pencil is shorter?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Think about the beginning of your usual school day.",
+      "explanation": "Use time-of-day words and compare lengths from the same start.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "A day and its lengths",
+        "goal": "Use time-of-day words and compare lengths from the same start.",
+        "scene": "village",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "You wake up and eat breakfast. Which part of the day is this?",
+            "choices": [
+              {
+                "id": "answer_3",
+                "label": "night"
+              },
+              {
+                "id": "answer_1",
+                "label": "morning"
+              },
+              {
+                "id": "answer_2",
+                "label": "afternoon"
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "Breakfast after waking up is usually in the morning.",
+            "hint": "Think about the beginning of your usual school day.",
+            "visual": {
+              "type": "text",
+              "text": "Wake up → breakfast"
+            },
+            "id": "explore_1"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Which takes longer: a blink or a night of sleep?",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "a night of sleep"
+              },
+              {
+                "id": "answer_1",
+                "label": "a blink"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "A blink is very short. A night of sleep lasts much longer.",
+            "hint": "Think about whether each activity ends quickly or lasts for hours.",
+            "visual": {
+              "type": "text",
+              "text": "Blink  /  sleep"
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Both pencil ends start at the same line. Which pencil is shorter?",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "B"
+              },
+              {
+                "id": "answer_1",
+                "label": "A"
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "Pencil A ends first when both start together, so A is shorter.",
+            "hint": "Compare the far ends after checking that the starting ends line up.",
+            "visual": {
+              "type": "groups",
+              "items": [
+                {
+                  "type": "ruler",
+                  "units": 3,
+                  "item": "pencil",
+                  "label": "A"
+                },
+                {
+                  "type": "ruler",
+                  "units": 5,
+                  "item": "pencil",
+                  "label": "B"
+                }
+              ]
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_06.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "When do you usually eat breakfast?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "night",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "morning",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u06.main.01",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "We usually eat breakfast in the morning.",
+      "shortExplanation": "We usually eat breakfast in the morning.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.main.01",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "morning",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_06.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "When do you usually go to sleep?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "night",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "afternoon",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u06.main.02",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "We usually sleep at night.",
+      "shortExplanation": "We usually sleep at night.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.main.02",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "night",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_06.step.004",
+      "kind": "order-sequence",
+      "title": "Maths discovery 4",
+      "prompt": "Put these parts of a school day in order.",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "eat dinner",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "wake up",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "go to school",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "choice_3",
+          "choice_1",
+          "choice_2"
+        ]
+      },
+      "assessed": true,
+      "objective": "math.u06.main.03",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "Wake up first, go to school, then eat dinner later.",
+      "shortExplanation": "Wake up first, go to school, then eat dinner later.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.main.03",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "wake up 1, go to school 2, eat dinner 3",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_06.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "Which takes longer?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "a night's sleep",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "brushing your teeth",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u06.main.04",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "A night of sleep takes much longer than brushing your teeth.",
+      "shortExplanation": "A night of sleep takes much longer than brushing your teeth.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.main.04",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "a night's sleep",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_06.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "Which takes a shorter time?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "a football match",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "a blink",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u06.main.05",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "A blink takes a very short time.",
+      "shortExplanation": "A blink takes a very short time.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.main.05",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "a blink",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_06.step.007",
+      "kind": "match-lines",
+      "title": "Maths discovery 7",
+      "prompt": "Compare the ribbons. Choose the longest and shortest.",
+      "options": [
+        {
+          "id": "item_1",
+          "label": "longest",
+          "art": "math_label"
+        },
+        {
+          "id": "item_2",
+          "label": "shortest",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "a",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "b",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "c",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_2",
+          "item_2": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u06.main.06",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "Start at the same line. Ribbon b is longest and c shortest.",
+      "shortExplanation": "Start at the same line. Ribbon b is longest and c shortest.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.main.06",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "longest b, shortest c",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "ruler",
+            "units": 5,
+            "item": "ribbon",
+            "label": "a"
+          },
+          {
+            "type": "ruler",
+            "units": 7,
+            "item": "ribbon",
+            "label": "b"
+          },
+          {
+            "type": "ruler",
+            "units": 3,
+            "item": "ribbon",
+            "label": "c"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_06.step.008",
+      "kind": "tap-choice",
+      "title": "Maths discovery 8",
+      "prompt": "To compare two pencils, put their ends on the same line.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "True",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "False",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u06.main.07",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "Lining up the ends makes the length comparison fair.",
+      "shortExplanation": "Lining up the ends makes the length comparison fair.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.main.07",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "True",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_06.step.009",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "With an adult, draw something you do in the afternoon. Tell them about it.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.main.08",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "Any real afternoon activity: coming home, lunch, playing, homework.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true,
+      "parentReview": {
+        "en": "Any real afternoon activity: coming home, lunch, playing, homework.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_06.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "The Moon and stars come out at...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "morning",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "midday",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "night",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u06.choice.01",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "Night is the answer. We usually see a dark sky at night.",
+      "shortExplanation": "Night is the answer. We usually see a dark sky at night.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.choice.01",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "night",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_06.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "We usually have dinner in the...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "morning",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "evening",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "middle of the night",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u06.choice.02",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "Evening is the answer. Dinner usually comes in the evening.",
+      "shortExplanation": "Evening is the answer. Dinner usually comes in the evening.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.choice.02",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "evening",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_06.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "Which is usually the longest?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a spoon",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "a shoe",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "a bed",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u06.choice.03",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "A bed is the answer. A bed is typically longer than a shoe or spoon.",
+      "shortExplanation": "A bed is the answer. A bed is typically longer than a shoe or spoon.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.choice.03",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "a bed",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_06.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "To compare lengths fairly, line up the...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "ends",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "middles",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "colours",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u06.choice.04",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "Ends is the answer. A shared start line makes comparison fair.",
+      "shortExplanation": "Ends is the answer. A shared start line makes comparison fair.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.choice.04",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "ends",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_06.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "The opposite of longer is...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "shorter",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "taller",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "heavier",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u06.choice.05",
+      "hint": "Think about your day, or line up the ends before comparing.",
+      "explanation": "Shorter is the answer. Shorter is the opposite of longer.",
+      "shortExplanation": "Shorter is the answer. Shorter is the opposite of longer.",
+      "source": {
+        "pages": [
+          21,
+          22,
+          23
+        ],
+        "questionId": "math.u06.choice.05",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "shorter",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_06",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_06.sticker",
+      "word": "longer",
+      "art": "math_label",
+      "meaning": "Having greater length when the ends line up.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Line up the ends of three spoons or pencils and order their lengths. Predict which daily activity takes longer, then compare.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u06.main.01",
+      "text": "Discuss this question with an adult: When do you usually eat breakfast? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u06.main.02",
+      "text": "Discuss this question with an adult: When do you usually go to sleep? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u06.main.03",
+      "text": "Discuss this question with an adult: Put these parts of a school day in order. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u06.main.04",
+      "text": "Discuss this question with an adult: Which takes longer? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u06.main.05",
+      "text": "Discuss this question with an adult: Which takes a shorter time? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u06.main.06",
+      "text": "Discuss this question with an adult: Compare the ribbons. Choose the longest and shortest. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u06.main.07",
+      "text": "Discuss this question with an adult: To compare two pencils, put their ends on the same line. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u06.choice.01",
+      "text": "Discuss this question with an adult: The Moon and stars come out at... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u06.choice.02",
+      "text": "Discuss this question with an adult: We usually have dinner in the... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u06.choice.03",
+      "text": "Discuss this question with an adult: Which is usually the longest? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u06.choice.04",
+      "text": "Discuss this question with an adult: To compare lengths fairly, line up the... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u06.choice.05",
+      "text": "Discuss this question with an adult: The opposite of longer is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

@@ -11,9 +11,15 @@ import '../features/garden/garden_model.dart';
 import '../l10n/parent_strings.dart';
 
 class UnitReport extends ConsumerWidget {
-  const UnitReport({super.key, required this.level, required this.arabic});
+  const UnitReport({
+    super.key,
+    required this.level,
+    required this.arabic,
+    this.subject = 'science',
+  });
   final LevelInfo level;
   final bool arabic;
+  final String subject;
 
   /// The activity in Arabic, right to left, when the parent area is Arabic
   /// and a translation exists (`assets/content/parent_ar.json`); otherwise
@@ -34,7 +40,7 @@ class UnitReport extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l = parentStrings(arabic);
-    final data = ref.watch(appProvider);
+    final data = ref.watch(appProvider).progressForSubject(subject);
     final lesson = ref.watch(lessonLibraryProvider).value?.lessons[level.id];
     final bean = level.id == 'unit_02' ? data.journeys['unit_02.bean'] : null;
     final latest = data.latest(level.id),
@@ -169,7 +175,12 @@ class UnitReport extends ConsumerWidget {
                   navigator.push(
                     MaterialPageRoute<void>(
                       builder: (_) => LessonRoute(
-                        id: level.id.startsWith('quiz') ? 'unit_01' : level.id,
+                        id: subject == 'science' && level.quiz
+                            ? 'unit_01'
+                            : level.quiz
+                            ? lesson?.json['practiceUnitId'] as String? ??
+                                  level.id
+                            : level.id,
                       ),
                     ),
                   );

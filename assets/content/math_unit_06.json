@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_06",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Time and Measurement",
+  "ar": "الوقت والقياس",
+  "term": 1,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    21,
+    22,
+    23
+  ],
+  "introductionText": "Term 1 · Measure\nTime and Measurement\nThe Big Idea: We use time words to say when things happen, and length words to\ncompare how long things are. To compare lengths fairly, always start from the same line.\nSay It Like This\nRead aloud\n\"In the morning you wake up and have breakfast. In the afternoon you come home from\nschool. In the evening we have dinner. At night you sleep. Some things take a long time,\nlike sleeping. Some take a short time, like brushing your teeth. When we compare two\npencils, we put their ends on the same line. The one that sticks out further is longer.\"\nWatch Out For\nThe slip almost every child makes\nComparing lengths without lining up the ends. A short pencil placed further along the\ntable \"looks\" longer. Always slide both to the edge of a book first, then compare.\nMixing up \"long\" and \"tall\". We say tall for things standing up (a person, a tree) and long\nfor things lying down (a train, a snake).\nTry It at Home\nGame 1 — Line them up (5 minutes)\nTake three spoons — a teaspoon, a dessert spoon and a big serving spoon — and mix\nthem up. Ask him to guess the order from shortest to longest. Then line their ends against\nthe edge of a chopping board and check. Repeat with three pencils, then three shoes from\nthe door.\nGame 2 — Long time or short time? (10 minutes)\nSet a phone timer for one minute. How many times can he jump? Write his name? Then\ncompare: which takes longer — putting on his shoes, or eating a banana? Let him predict\nfirst, then time both. Does the same job always take the same time?\nmorning afternoon evening night\nwake up, breakfast home from school dinner sleep\nlongest\nshortest\nstart line\nAsk what he does at each time of day. Then cover the pencils and ask which is longest — uncover and check\nagainst the start line.\nMore examples to talk about\n• A blink is one of the shortest things we do; a night's sleep is one of the longest.\n• Morning is before afternoon; evening is before night. The order never changes.\n• A giraffe is tall; a train is long; a worm can be both short and long depending on what\nyou compare it with.\n• Tricky: a curly piece of string can be longer than a straight one that looks longer.\nStraighten it to check.\n• Tricky: the longest pencil isn't always the heaviest or the newest.\nKey Words\nmorning afternoon evening night before after longer shorter longest\nshortest tall",
+  "sourceQuestions": [
+    {
+      "id": "math.u06.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "When do you eat breakfast? Circle: morning night",
+      "answerKeyText": "morning",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u06.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "When do you go to sleep? Circle: afternoon night",
+      "answerKeyText": "night",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u06.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Number these in order (1, 2, 3): eat dinner wake up go to school",
+      "answerKeyText": "wake up 1, go to school 2, eat dinner 3",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u06.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Which takes longer: brushing your teeth or a night's sleep?",
+      "answerKeyText": "a night's sleep",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u06.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Which takes a shorter time: a blink or a football match?",
+      "answerKeyText": "a blink",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u06.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Look at the ribbons. Which is the longest? Which is the shortest?\na\nb\nc",
+      "answerKeyText": "longest b, shortest c",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u06.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "True or false? To compare two pencils, put their ends on the same line.",
+      "answerKeyText": "True",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u06.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Draw something you do in the afternoon.",
+      "answerKeyText": "Any real afternoon activity: coming home, lunch, playing, homework.",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u06.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "The Moon and stars come out at...\n( night ) ( midday ) ( morning )",
+      "answerKeyText": "night",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u06.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "We usually have dinner in the...\n( evening ) ( morning ) ( middle of the night )",
+      "answerKeyText": "evening",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u06.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Which is usually the longest?\n( a spoon ) ( a shoe ) ( a bed )",
+      "answerKeyText": "a bed",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u06.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "To compare lengths fairly, line up the...\n( middles ) ( ends ) ( colours )",
+      "answerKeyText": "ends",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u06.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "The opposite of longer is...\n( shorter ) ( taller ) ( heavier )",
+      "answerKeyText": "shorter",
+      "sourcePages": [
+        21,
+        22,
+        23
+      ],
+      "answerKeyPages": [
+        74
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

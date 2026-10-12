@@ -1,0 +1,1070 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_17",
+  "subject": "maths",
+  "title": "Fractions - One Half (½)",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    57,
+    58,
+    59
+  ],
+  "steps": [
+    {
+      "id": "math_unit_17.step.001",
+      "kind": "explore",
+      "title": "One half and one whole",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Which picture has one of two equal parts coloured?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Fourteen counters are shared equally between two groups. Build one half.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Put the two equal halves back together. What have we made?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Count the equal parts in the whole, then the coloured parts.",
+      "explanation": "Connect ½ to an equal part, a fair share and a complete whole.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "One half and one whole",
+        "goal": "Connect ½ to an equal part, a fair share and a complete whole.",
+        "scene": "orchard",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "Which picture has one of two equal parts coloured?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "A",
+                "visual": {
+                  "type": "fraction",
+                  "shape": "circle",
+                  "parts": 2,
+                  "shaded": 1,
+                  "equal": true
+                }
+              },
+              {
+                "id": "answer_2",
+                "label": "B",
+                "visual": {
+                  "type": "fraction",
+                  "shape": "square",
+                  "parts": 4,
+                  "shaded": 1,
+                  "equal": true
+                }
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "A shows one half: one of two equal parts. B shows one of four equal parts.",
+            "hint": "Count the equal parts in the whole, then the coloured parts.",
+            "id": "explore_1"
+          },
+          {
+            "mode": "build",
+            "prompt": "Fourteen counters are shared equally between two groups. Build one half.",
+            "target": 7,
+            "item": "counter",
+            "initialCount": 0,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Seven and seven make fourteen, so half of fourteen is seven.",
+            "hint": "Both groups must get the same number. Check that your share doubled makes fourteen.",
+            "visual": {
+              "type": "count",
+              "count": 14,
+              "item": "dot",
+              "arrangement": "row"
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Put the two equal halves back together. What have we made?",
+            "choices": [
+              {
+                "id": "answer_3",
+                "label": "two wholes"
+              },
+              {
+                "id": "answer_1",
+                "label": "one half"
+              },
+              {
+                "id": "answer_2",
+                "label": "one whole"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Two halves of the same thing join to make one whole.",
+            "hint": "The complete shape is one whole, even though a dividing line remains.",
+            "visual": {
+              "type": "fraction",
+              "shape": "square",
+              "parts": 2,
+              "shaded": 2,
+              "equal": true
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_17.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "Choose how to write one half.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "½",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "2/1",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u17.main.01",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "One over two means one of two equal parts.",
+      "shortExplanation": "One over two means one of two equal parts.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.main.01",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "½",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_17.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "Half of 20 is...?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "10",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "11",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u17.main.02",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "Two equal groups of 10 make 20.",
+      "shortExplanation": "Two equal groups of 10 make 20.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.main.02",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 20,
+        "item": "dot",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_17.step.004",
+      "kind": "tap-choice",
+      "title": "Maths discovery 4",
+      "prompt": "Half of 14 is...?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "8",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u17.main.03",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "Two equal groups of 7 make 14.",
+      "shortExplanation": "Two equal groups of 7 make 14.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.main.03",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "7",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 14,
+        "item": "dot",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_17.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "Half of 12 is...?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "7",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u17.main.04",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "Two equal groups of 6 make 12.",
+      "shortExplanation": "Two equal groups of 6 make 12.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.main.04",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "6",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 12,
+        "item": "dot",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_17.step.006",
+      "kind": "drag-to-basket",
+      "title": "Maths discovery 6",
+      "prompt": "Choose all shapes with one half coloured.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "circle",
+            "parts": 2,
+            "shaded": 1,
+            "equal": true
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "square",
+            "parts": 4,
+            "shaded": 1,
+            "equal": true
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 2,
+            "shaded": 1,
+            "equal": true
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_1",
+          "choice_3"
+        ]
+      },
+      "assessed": true,
+      "objective": "math.u17.main.05",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "a and c have half coloured. b has only one of four equal parts coloured.",
+      "shortExplanation": "a and c have half coloured. b has only one of four equal parts coloured.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.main.05",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "a and c. In b, only one of four parts is coloured.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_17.step.007",
+      "kind": "tap-choice",
+      "title": "Maths discovery 7",
+      "prompt": "Two halves make one...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "half",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "quarter",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "whole",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u17.main.06",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "Putting two equal halves together makes the whole again.",
+      "shortExplanation": "Putting two equal halves together makes the whole again.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.main.06",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "whole",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_17.step.008",
+      "kind": "tap-choice",
+      "title": "Maths discovery 8",
+      "prompt": "Half a team is 5 children. How many are in the whole team?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "10",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "11",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u17.main.07",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "Five children are one half. Another five make the whole team of 10.",
+      "shortExplanation": "Five children are one half. Another five make the whole team of 10.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.main.07",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_17.step.009",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "With an adult, draw a cake and one line that divides it into two equal halves.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.main.08",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "Any cake with one line making two equal parts.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true,
+      "parentReview": {
+        "en": "Any cake with one line making two equal parts.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_17.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "½ means...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "twelve",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "one of two equal parts",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "one of two parts of any size",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u17.choice.01",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "One of two equal parts is the answer. The two parts must be equal.",
+      "shortExplanation": "One of two equal parts is the answer. The two parts must be equal.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.choice.01",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "one of two equal parts",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_17.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "Half of 16 is...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "6",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u17.choice.02",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "8 is the answer. Eight and eight make sixteen.",
+      "shortExplanation": "8 is the answer. Eight and eight make sixteen.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.choice.02",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "8",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_17.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "Two halves make...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "one whole",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "two wholes",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "nothing",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u17.choice.03",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "One whole is the answer. Together the two parts rebuild the whole.",
+      "shortExplanation": "One whole is the answer. Together the two parts rebuild the whole.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.choice.03",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "one whole",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_17.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "Half of 18 is...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "10",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u17.choice.04",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "9 is the answer. Nine and nine make eighteen.",
+      "shortExplanation": "9 is the answer. Nine and nine make eighteen.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.choice.04",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "9",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_17.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "To find the middle of a string...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "tie a knot",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "cut anywhere",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "fold the ends together",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u17.choice.05",
+      "hint": "One half is one of two equal parts. Share the group equally.",
+      "explanation": "Fold the ends together is the answer. Matching the ends shows the midpoint.",
+      "shortExplanation": "Fold the ends together is the answer. Matching the ends shows the midpoint.",
+      "source": {
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "questionId": "math.u17.choice.05",
+        "answerKeyPages": [
+          81
+        ],
+        "answerKeyText": "fold the ends together",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_17",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_17.sticker",
+      "word": "whole",
+      "art": "math_label",
+      "meaning": "The complete thing before it is cut.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        57,
+        58,
+        59
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Fold a ribbon in half with an adult. Share 12, 14, 16, 18 or 20 large counters into two equal groups. Write one half as ½.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u17.main.01",
+      "text": "Discuss this question with an adult: Choose how to write one half. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u17.main.02",
+      "text": "Discuss this question with an adult: Half of 20 is...? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u17.main.03",
+      "text": "Discuss this question with an adult: Half of 14 is...? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u17.main.04",
+      "text": "Discuss this question with an adult: Half of 12 is...? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u17.main.05",
+      "text": "Discuss this question with an adult: Choose all shapes with one half coloured. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u17.main.06",
+      "text": "Discuss this question with an adult: Two halves make one... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u17.main.07",
+      "text": "Discuss this question with an adult: Half a team is 5 children. How many are in the whole team? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u17.choice.01",
+      "text": "Discuss this question with an adult: ½ means... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u17.choice.02",
+      "text": "Discuss this question with an adult: Half of 16 is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u17.choice.03",
+      "text": "Discuss this question with an adult: Two halves make... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u17.choice.04",
+      "text": "Discuss this question with an adult: Half of 18 is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u17.choice.05",
+      "text": "Discuss this question with an adult: To find the middle of a string... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_08",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Shapes, Direction and Movement - Patterns and Directions",
+  "ar": "الأنماط والاتجاهات",
+  "term": 2,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    28,
+    29,
+    30,
+    31
+  ],
+  "introductionText": "Term 2 · Geometry\nShapes, Direction and Movement —\nPatterns and Directions\nThe Big Idea: A pattern repeats, so we can say what comes next. Directions tell us how to\nmove: forwards, backwards, turn left, turn right.\nSay It Like This\nRead aloud\n\"Look: red, blue, red, blue... what comes next? Red! The bit that repeats is red, blue. Now\nstand up. Take 2 steps forwards — the way your nose points. Take 1 step backwards.\nNow turn to face the window. You moved, but your feet stayed on the same spot —\nturning changes the way you face.\"\nWatch Out For\nThe slip almost every child makes\nContinuing a pattern by copying the last shape. After red, blue, red, blue he adds\nanother blue. Ask him to say the pattern aloud in a rhythm — \"red-blue, red-blue\" — the\nnext word is obvious when it's sung.\nLeft and right. These take years to settle. Put a sticker on his right hand for the games.\nRemember: when he faces you, his right hand is on your left.\nTry It at Home\nGame 1 — Pasta necklace (10 minutes)\nUse two kinds of pasta. Make a pattern: tube, shell, tube, shell. He continues it on a piece\nof string. Then try a harder one: tube, tube, shell. Ask him to invent a pattern for you to\ncontinue — and make a mistake on purpose so he can catch it.\nGame 2 — The robot (10 minutes)\nHe is a robot and only obeys exact orders. Hide a treat. Guide him with commands: \"3\nsteps forwards. Turn right. 2 steps forwards.\" Then swap: he gives the orders and you are\nthe robot. Obey exactly what he says, even when it's wrong — it's the fastest way for him\nto learn.\nA repeating pattern — what comes next?\n?\nThe robot's moves:\n1. 3 steps forwards\n2. turn right\n3. 3 steps forwards\n→ it reaches the star!\nAsk what shape comes next. Then trace the robot's path with his finger, saying each move aloud.\nMore examples to talk about\n• Patterns are everywhere: stripes on a shirt, tiles on the kitchen floor, the days of the\nweek.\n• A pattern can repeat colours, shapes, sizes or sounds: clap, clap, stamp.\n• A square and a rectangle are the same in some ways (4 sides, 4 corners) and different in\none way (a square's sides are all equal).\n• A 2D shape is flat; a 3D shape is solid. You can draw a cube's face, but not hold a\ndrawing.\n• Tricky: walking backwards means you move the way your back faces, but you keep\nfacing the same way.\nKey Words\npattern repeat sequence next forwards backwards turn left right",
+  "sourceQuestions": [
+    {
+      "id": "math.u08.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "What comes next? Draw it.",
+      "answerKeyText": "circle (red)",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u08.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "What comes next? Draw it.",
+      "answerKeyText": "triangle",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u08.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Continue the pattern: red, blue, blue, red, blue, blue, ,",
+      "answerKeyText": "red, blue",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u08.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Make your own pattern with 2 shapes. Draw it.",
+      "answerKeyText": "Any pattern where a part clearly repeats at least twice.",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u08.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "You stand facing the door. You take 3 steps forwards and 1 step backwards. How many\nsteps are you from where you started?",
+      "answerKeyText": "2 steps (forwards of where he started).",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u08.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "True or false? A cube is a flat (2D) shape.",
+      "answerKeyText": "False. A cube is solid — it is 3D.",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u08.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Say one thing that is the same and one thing that is different about a square and a\nrectangle.",
+      "answerKeyText": "Same: 4 sides and 4 corners. Different: a square's sides are all equal; a rectangle has two\nlong and two short sides.",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u08.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Sort the shapes by how many corners they have: circle, triangle, square, rectangle\n0 corners 3 corners 4 corners",
+      "answerKeyText": "0: circle • 3: triangle • 4: square, rectangle",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u08.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "red, yellow, red, yellow, ... What comes next?\n( red ) ( blue ) ( yellow )",
+      "answerKeyText": "red",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u08.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "How many sides does a square have?\n( 5 ) ( 3 ) ( 4 )",
+      "answerKeyText": "4",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u08.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Moving the way your back faces is moving...\n( backwards ) ( sideways ) ( forwards )",
+      "answerKeyText": "backwards",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u08.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Turning means...\n( walking a long way ) ( jumping up ) ( changing the way you face )",
+      "answerKeyText": "changing the way you face",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u08.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "A 3D shape is...\n( only a drawing ) ( solid — you can hold it ) ( flat )",
+      "answerKeyText": "solid - you can hold it",
+      "sourcePages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

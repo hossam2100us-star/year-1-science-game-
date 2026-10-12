@@ -1,0 +1,1272 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_04",
+  "subject": "maths",
+  "title": "Statistical Methods",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    15,
+    16,
+    17
+  ],
+  "steps": [
+    {
+      "id": "math_unit_04.step.001",
+      "kind": "explore",
+      "title": "Build a fruit vote",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Each picture is one person. How many people chose apple?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Make one counter for each of the four apple votes.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Which fruit has the most votes?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Read the apple label, then count the pictures in that row.",
+      "explanation": "Link one vote to one picture, then read the fruit choices.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Build a fruit vote",
+        "goal": "Link one vote to one picture, then read the fruit choices.",
+        "scene": "village",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "Each picture is one person. How many people chose apple?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "3"
+              },
+              {
+                "id": "answer_3",
+                "label": "5"
+              },
+              {
+                "id": "answer_2",
+                "label": "4"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Four apple pictures stand for four people.",
+            "hint": "Read the apple label, then count the pictures in that row.",
+            "visual": {
+              "type": "chart",
+              "title": "Our favourite fruit",
+              "rows": [
+                {
+                  "label": "apple",
+                  "value": 4
+                },
+                {
+                  "label": "banana",
+                  "value": 2
+                },
+                {
+                  "label": "orange",
+                  "value": 3
+                },
+                {
+                  "label": "mango",
+                  "value": 1
+                }
+              ],
+              "style": "pictogram",
+              "unit": "one person"
+            },
+            "id": "explore_1"
+          },
+          {
+            "mode": "build",
+            "prompt": "Make one counter for each of the four apple votes.",
+            "target": 4,
+            "item": "counter",
+            "initialCount": 0,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Four votes need four counters: one counter for each person.",
+            "hint": "One person needs one counter. Stop when every apple vote has a counter.",
+            "visual": {
+              "type": "chart",
+              "title": "Our favourite fruit",
+              "rows": [
+                {
+                  "label": "apple",
+                  "value": 4
+                },
+                {
+                  "label": "banana",
+                  "value": 2
+                },
+                {
+                  "label": "orange",
+                  "value": 3
+                },
+                {
+                  "label": "mango",
+                  "value": 1
+                }
+              ],
+              "style": "pictogram",
+              "unit": "one person"
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Which fruit has the most votes?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "apple"
+              },
+              {
+                "id": "answer_2",
+                "label": "banana"
+              },
+              {
+                "id": "answer_3",
+                "label": "mango"
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "Apple has the most pictures, so it has the most votes.",
+            "hint": "Compare equal-size pictures from the same starting line.",
+            "visual": {
+              "type": "chart",
+              "title": "Our favourite fruit",
+              "rows": [
+                {
+                  "label": "apple",
+                  "value": 4
+                },
+                {
+                  "label": "banana",
+                  "value": 2
+                },
+                {
+                  "label": "orange",
+                  "value": 3
+                },
+                {
+                  "label": "mango",
+                  "value": 1
+                }
+              ],
+              "style": "pictogram",
+              "unit": "one person"
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_04.step.002",
+      "kind": "tap-choice",
+      "title": "Maths discovery 2",
+      "prompt": "How many people chose apple?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u04.main.01",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "One picture represents one person. The apple row has 4.",
+      "shortExplanation": "One picture represents one person. The apple row has 4.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.main.01",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our favourite fruit",
+        "rows": [
+          {
+            "label": "apple",
+            "value": 4
+          },
+          {
+            "label": "banana",
+            "value": 2
+          },
+          {
+            "label": "orange",
+            "value": 3
+          },
+          {
+            "label": "mango",
+            "value": 1
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one person"
+      }
+    },
+    {
+      "id": "math_unit_04.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "Which fruit is the favourite?",
+      "options": [
+        {
+          "id": "choice_4",
+          "label": "mango",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "orange",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "banana",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "apple",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u04.main.02",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "The apple row has the most pictures.",
+      "shortExplanation": "The apple row has the most pictures.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.main.02",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "apple",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our favourite fruit",
+        "rows": [
+          {
+            "label": "apple",
+            "value": 4
+          },
+          {
+            "label": "banana",
+            "value": 2
+          },
+          {
+            "label": "orange",
+            "value": 3
+          },
+          {
+            "label": "mango",
+            "value": 1
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one person"
+      }
+    },
+    {
+      "id": "math_unit_04.step.004",
+      "kind": "tap-choice",
+      "title": "Maths discovery 4",
+      "prompt": "Which fruit did the fewest people choose?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "banana",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "apple",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "orange",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_4",
+          "label": "mango",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_4"
+      },
+      "assessed": true,
+      "objective": "math.u04.main.03",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "Mango has the fewest pictures: one.",
+      "shortExplanation": "Mango has the fewest pictures: one.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.main.03",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "mango",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our favourite fruit",
+        "rows": [
+          {
+            "label": "apple",
+            "value": 4
+          },
+          {
+            "label": "banana",
+            "value": 2
+          },
+          {
+            "label": "orange",
+            "value": 3
+          },
+          {
+            "label": "mango",
+            "value": 1
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one person"
+      }
+    },
+    {
+      "id": "math_unit_04.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "How many chose banana and orange together?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "6",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u04.main.04",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "Two chose banana and 3 chose orange. Together that is 5.",
+      "shortExplanation": "Two chose banana and 3 chose orange. Together that is 5.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.main.04",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "5 (2 + 3)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our favourite fruit",
+        "rows": [
+          {
+            "label": "apple",
+            "value": 4
+          },
+          {
+            "label": "banana",
+            "value": 2
+          },
+          {
+            "label": "orange",
+            "value": 3
+          },
+          {
+            "label": "mango",
+            "value": 1
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one person"
+      }
+    },
+    {
+      "id": "math_unit_04.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "How many people were asked altogether?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "10",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u04.main.05",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "Add all the rows: 4 + 2 + 3 + 1 = 10.",
+      "shortExplanation": "Add all the rows: 4 + 2 + 3 + 1 = 10.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.main.05",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our favourite fruit",
+        "rows": [
+          {
+            "label": "apple",
+            "value": 4
+          },
+          {
+            "label": "banana",
+            "value": 2
+          },
+          {
+            "label": "orange",
+            "value": 3
+          },
+          {
+            "label": "mango",
+            "value": 1
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one person"
+      }
+    },
+    {
+      "id": "math_unit_04.step.007",
+      "kind": "match-lines",
+      "title": "Maths discovery 7",
+      "prompt": "Sort the toys by colour.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "blue ball",
+          "art": "math_label"
+        },
+        {
+          "id": "item_3",
+          "label": "red ball",
+          "art": "math_label"
+        },
+        {
+          "id": "item_4",
+          "label": "green car",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "red car",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "red",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "not red",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2",
+          "item_3": "target_1",
+          "item_4": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u04.main.06",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "Red objects go in red. Every other colour goes in not red.",
+      "shortExplanation": "Red objects go in red. Every other colour goes in not red.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.main.06",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "red: red car, red ball • not red: blue ball, green car",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_04.step.008",
+      "kind": "match-lines",
+      "title": "Maths discovery 8",
+      "prompt": "Sara, Laila and Nour chose cat. Omar chose dog. Adam chose fish. Match each pet to its total.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "dog",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "cat",
+          "art": "math_label"
+        },
+        {
+          "id": "item_3",
+          "label": "fish",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_2",
+          "item_2": "target_1",
+          "item_3": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u04.main.07",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "Count each vote once: 3 cats, 1 dog and 1 fish.",
+      "shortExplanation": "Count each vote once: 3 cats, 1 dog and 1 fish.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.main.07",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "cat 3, dog 1, fish 1",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_04.step.009",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "Ask 4 people their favourite colour with an adult. Draw one equal-size circle for each vote.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.main.08",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "Four circles in total, same size, lined up in rows by colour.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true,
+      "parentReview": {
+        "en": "Four circles in total, same size, lined up in rows by colour.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_04.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "In our pictogram, each picture stands for...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "one person",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "nobody",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "two people",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u04.choice.01",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "One person is the answer. There is one equal-size picture per vote.",
+      "shortExplanation": "One person is the answer. There is one equal-size picture per vote.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.choice.01",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "one person",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_04.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "The longest row in a pictogram shows the...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "most",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "first",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "least",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u04.choice.02",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "Most is the answer. The longest row has the greatest count.",
+      "shortExplanation": "Most is the answer. The longest row has the greatest count.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.choice.02",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "most",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_04.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "A block graph is made of...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "only circles",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "only words",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "blocks (squares)",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u04.choice.03",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "Blocks (squares) is the answer. Each equal-size block represents a vote.",
+      "shortExplanation": "Blocks (squares) is the answer. Each equal-size block represents a vote.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.choice.03",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "blocks (squares)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_04.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "In the picture above, how many people chose orange?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "2",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u04.choice.04",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "3 is the answer. Count the three orange pictures.",
+      "shortExplanation": "3 is the answer. Count the three orange pictures.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.choice.04",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "3",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our favourite fruit",
+        "rows": [
+          {
+            "label": "apple",
+            "value": 4
+          },
+          {
+            "label": "banana",
+            "value": 2
+          },
+          {
+            "label": "orange",
+            "value": 3
+          },
+          {
+            "label": "mango",
+            "value": 1
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one person"
+      }
+    },
+    {
+      "id": "math_unit_04.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "Pictures in a pictogram should be...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "all different sizes",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "anywhere on the page",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "the same size and lined up",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u04.choice.05",
+      "hint": "Read the labels and count one picture for each vote.",
+      "explanation": "The same size and lined up is the answer. Equal sizes make the comparison fair.",
+      "shortExplanation": "The same size and lined up is the answer. Equal sizes make the comparison fair.",
+      "source": {
+        "pages": [
+          15,
+          16,
+          17
+        ],
+        "questionId": "math.u04.choice.05",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "the same size and lined up",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_04",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_04.sticker",
+      "word": "pictogram",
+      "art": "math_label",
+      "meaning": "A chart where each picture stands for one thing.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        15,
+        16,
+        17
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Ask family members their favourite fruit. Put one equal-size drawing per vote in rows. Read the totals and sort toys by red/not red.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u04.main.01",
+      "text": "Discuss this question with an adult: How many people chose apple? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u04.main.02",
+      "text": "Discuss this question with an adult: Which fruit is the favourite? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u04.main.03",
+      "text": "Discuss this question with an adult: Which fruit did the fewest people choose? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u04.main.04",
+      "text": "Discuss this question with an adult: How many chose banana and orange together? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u04.main.05",
+      "text": "Discuss this question with an adult: How many people were asked altogether? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u04.main.06",
+      "text": "Discuss this question with an adult: Sort the toys by colour. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u04.main.07",
+      "text": "Discuss this question with an adult: Sara, Laila and Nour chose cat. Omar chose dog. Adam chose fish. Match each pet to its total. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u04.choice.01",
+      "text": "Discuss this question with an adult: In our pictogram, each picture stands for... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u04.choice.02",
+      "text": "Discuss this question with an adult: The longest row in a pictogram shows the... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u04.choice.03",
+      "text": "Discuss this question with an adult: A block graph is made of... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u04.choice.04",
+      "text": "Discuss this question with an adult: In the picture above, how many people chose orange? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u04.choice.05",
+      "text": "Discuss this question with an adult: Pictures in a pictogram should be... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

@@ -1,0 +1,1170 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_13",
+  "subject": "maths",
+  "title": "Numbers to 20 - Odd, Even, Order and Money",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    45,
+    46,
+    47
+  ],
+  "steps": [
+    {
+      "id": "math_unit_13.step.001",
+      "kind": "explore",
+      "title": "Partners, positions and coins",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Seven socks make three pairs and one left over. Is seven odd or even?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Ali finishes first, Mona second and Omar third. Who is in second position?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "One pound is one hundred piastres. Which coin is worth the most?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "An even group pairs with none left over. Look for the unpaired sock.",
+      "explanation": "Use pairing for odd/even, order for positions, and value for money.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Partners, positions and coins",
+        "goal": "Use pairing for odd/even, order for positions, and value for money.",
+        "scene": "village",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "Seven socks make three pairs and one left over. Is seven odd or even?",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "even"
+              },
+              {
+                "id": "answer_1",
+                "label": "odd"
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "One sock has no partner, so seven is odd.",
+            "hint": "An even group pairs with none left over. Look for the unpaired sock.",
+            "visual": {
+              "type": "count",
+              "count": 7,
+              "item": "sock",
+              "arrangement": "pairs"
+            },
+            "id": "explore_1"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Ali finishes first, Mona second and Omar third. Who is in second position?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "Ali"
+              },
+              {
+                "id": "answer_2",
+                "label": "Mona"
+              },
+              {
+                "id": "answer_3",
+                "label": "Omar"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Mona is second: after Ali and before Omar.",
+            "hint": "Second is the middle position in this three-person order.",
+            "visual": {
+              "type": "groups",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "1st Ali"
+                },
+                {
+                  "type": "text",
+                  "text": "2nd Mona"
+                },
+                {
+                  "type": "text",
+                  "text": "3rd Omar"
+                }
+              ]
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "One pound is one hundred piastres. Which coin is worth the most?",
+            "choices": [
+              {
+                "id": "answer_3",
+                "label": "1 pound",
+                "visual": {
+                  "type": "money",
+                  "coins": [
+                    100
+                  ],
+                  "unit": "piastres"
+                }
+              },
+              {
+                "id": "answer_1",
+                "label": "25 piastres",
+                "visual": {
+                  "type": "money",
+                  "coins": [
+                    25
+                  ],
+                  "unit": "piastres"
+                }
+              },
+              {
+                "id": "answer_2",
+                "label": "50 piastres",
+                "visual": {
+                  "type": "money",
+                  "coins": [
+                    50
+                  ],
+                  "unit": "piastres"
+                }
+              }
+            ],
+            "correctId": "answer_3",
+            "feedback": "One pound is one hundred piastres, more than fifty or twenty-five.",
+            "hint": "Compare the written values, rather than the number or size of coins.",
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_13.step.002",
+      "kind": "drag-to-basket",
+      "title": "Maths discovery 2",
+      "prompt": "Choose all the even numbers.",
+      "options": [
+        {
+          "id": "choice_6",
+          "label": "17",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_5",
+          "label": "14",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_4",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_1",
+          "choice_3",
+          "choice_5"
+        ]
+      },
+      "assessed": true,
+      "objective": "math.u13.main.01",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "2, 8 and 14 make pairs with none left over.",
+      "shortExplanation": "2, 8 and 14 make pairs with none left over.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.main.01",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "2, 8, 14",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_13.step.003",
+      "kind": "tap-choice",
+      "title": "Maths discovery 3",
+      "prompt": "Is 7 odd or even?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "odd",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "even",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u13.main.02",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "Seven makes three pairs and one left over, so it is odd.",
+      "shortExplanation": "Seven makes three pairs and one left over, so it is odd.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.main.02",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "odd — one is left over.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 7,
+        "item": "sock",
+        "arrangement": "pairs"
+      }
+    },
+    {
+      "id": "math_unit_13.step.004",
+      "kind": "match-lines",
+      "title": "Maths discovery 4",
+      "prompt": "Count in twos and fill the gaps.",
+      "options": [
+        {
+          "id": "item_1",
+          "label": "2, 4, __, 8",
+          "art": "math_label"
+        },
+        {
+          "id": "item_2",
+          "label": "4, 6, 8, __",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "10",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u13.main.03",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "Counting in twos adds 2 each time.",
+      "shortExplanation": "Counting in twos adds 2 each time.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.main.03",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "6 and 10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_13.step.005",
+      "kind": "tap-choice",
+      "title": "Maths discovery 5",
+      "prompt": "Ali came 1st, Mona 2nd and Omar 3rd. Who came 2nd?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "Omar",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "Mona",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "Ali",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u13.main.04",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "Mona is in the second position.",
+      "shortExplanation": "Mona is in the second position.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.main.04",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "Mona",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_13.step.006",
+      "kind": "tap-choice",
+      "title": "Maths discovery 6",
+      "prompt": "Which position means the third star from the left?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "1st",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_4",
+          "label": "4th",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "2nd",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3rd",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u13.main.05",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "The third star from the left is in position 3rd.",
+      "shortExplanation": "The third star from the left is in position 3rd.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.main.05",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "The third star from the left.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 5,
+        "item": "star",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_13.step.007",
+      "kind": "match-lines",
+      "title": "Maths discovery 7",
+      "prompt": "Fill the parts of 14.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "14 = 7 + __",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "14 = 10 + __",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "7",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u13.main.06",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "10 and 4 make 14; 7 and 7 make 14 too.",
+      "shortExplanation": "10 and 4 make 14; 7 and 7 make 14 too.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.main.06",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "4 and 7",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_13.step.008",
+      "kind": "tap-choice",
+      "title": "Maths discovery 8",
+      "prompt": "Which coin is worth the most?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u13.main.07",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "One pound is 100 piastres, more than 50 or 25 piastres.",
+      "shortExplanation": "One pound is 100 piastres, more than 50 or 25 piastres.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.main.07",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "b — the 1-pound coin.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "money",
+            "coins": [
+              50
+            ],
+            "label": "a",
+            "unit": "piastres"
+          },
+          {
+            "type": "money",
+            "coins": [
+              100
+            ],
+            "label": "b",
+            "unit": "piastres"
+          },
+          {
+            "type": "money",
+            "coins": [
+              25
+            ],
+            "label": "c",
+            "unit": "piastres"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_13.step.009",
+      "kind": "tap-choice",
+      "title": "Maths discovery 9",
+      "prompt": "You have 5 pairs of socks. How many socks?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "10",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u13.main.08",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "Each pair has 2 socks. Five pairs have 10 socks.",
+      "shortExplanation": "Each pair has 2 socks. Five pairs have 10 socks.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.main.08",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 10,
+        "item": "sock",
+        "arrangement": "pairs"
+      }
+    },
+    {
+      "id": "math_unit_13.step.010",
+      "kind": "tap-choice",
+      "title": "Maths discovery 10",
+      "prompt": "Even numbers...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "pair up with none left over",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "always have one left over",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "are all big",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u13.choice.01",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "Pair up with none left over is the answer. Every object has a partner.",
+      "shortExplanation": "Pair up with none left over is the answer. Every object has a partner.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.choice.01",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "pair up with none left over",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_13.step.011",
+      "kind": "tap-choice",
+      "title": "Maths discovery 11",
+      "prompt": "Which number is odd?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u13.choice.02",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "9 is the answer. Nine pairs with one left over.",
+      "shortExplanation": "9 is the answer. Nine pairs with one left over.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.choice.02",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "9",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_13.step.012",
+      "kind": "tap-choice",
+      "title": "Maths discovery 12",
+      "prompt": "The position after 2nd is...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "3rd",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "1st",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "4th",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u13.choice.03",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "3rd is the answer. Third follows second.",
+      "shortExplanation": "3rd is the answer. Third follows second.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.choice.03",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "3rd",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_13.step.013",
+      "kind": "tap-choice",
+      "title": "Maths discovery 13",
+      "prompt": "In Egypt we pay with...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "only coins",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "cubes",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "pounds and piastres",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u13.choice.04",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "Pounds and piastres is the answer. Pounds and piastres are money units in Egypt.",
+      "shortExplanation": "Pounds and piastres is the answer. Pounds and piastres are money units in Egypt.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.choice.04",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "pounds and piastres",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_13.step.014",
+      "kind": "tap-choice",
+      "title": "Maths discovery 14",
+      "prompt": "12 = 10 +",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "12",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u13.choice.05",
+      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "explanation": "2 is the answer. Ten and two make twelve.",
+      "shortExplanation": "2 is the answer. Ten and two make twelve.",
+      "source": {
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "questionId": "math.u13.choice.05",
+        "answerKeyPages": [
+          79
+        ],
+        "answerKeyText": "2",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_13",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_13.sticker",
+      "word": "odd",
+      "art": "math_label",
+      "meaning": "A number that makes pairs with one left over.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Pair socks to decide odd or even. Race three toy cars to name positions. Compare supervised coins by written value, not the number of coins.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u13.main.01",
+      "text": "Discuss this question with an adult: Choose all the even numbers. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u13.main.02",
+      "text": "Discuss this question with an adult: Is 7 odd or even? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u13.main.03",
+      "text": "Discuss this question with an adult: Count in twos and fill the gaps. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u13.main.04",
+      "text": "Discuss this question with an adult: Ali came 1st, Mona 2nd and Omar 3rd. Who came 2nd? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u13.main.05",
+      "text": "Discuss this question with an adult: Which position means the third star from the left? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u13.main.06",
+      "text": "Discuss this question with an adult: Fill the parts of 14. Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u13.main.07",
+      "text": "Discuss this question with an adult: Which coin is worth the most? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u13.main.08",
+      "text": "Discuss this question with an adult: You have 5 pairs of socks. How many socks? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u13.choice.01",
+      "text": "Discuss this question with an adult: Even numbers... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u13.choice.02",
+      "text": "Discuss this question with an adult: Which number is odd? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u13.choice.03",
+      "text": "Discuss this question with an adult: The position after 2nd is... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u13.choice.04",
+      "text": "Discuss this question with an adult: In Egypt we pay with... Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u13.choice.05",
+      "text": "Discuss this question with an adult: 12 = 10 + Use safe objects or drawings and explain the reasoning.",
+      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

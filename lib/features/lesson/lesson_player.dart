@@ -124,7 +124,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     final saved = widget.onPracticeComplete == null
-        ? ref.read(appProvider).journeys[widget.lesson.id]
+        ? ref
+              .read(appProvider)
+              .progressForSubject(widget.lesson.subject)
+              .journeys[widget.lesson.id]
         : null;
     _session = saved != null && LessonSession.canRestore(widget.lesson, saved)
         ? LessonSession.restore(widget.lesson, saved)
@@ -233,7 +236,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   }
 
   void _say(String text) {
-    if (_science && widget.lesson.id == 'unit_06') ScienceAudio.stop();
+    if (!_session.finished && _science && widget.lesson.id == 'unit_06') {
+      ScienceAudio.stop();
+    }
     ref.read(narrationProvider).speak(text);
   }
 
@@ -274,7 +279,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     snapshot['responses'] = Map<String, dynamic>.from(_session.responses);
     final writer = ref.read(appProvider.notifier);
     final task = _writes.then(
-      (_) => writer.saveJourney(widget.lesson.id, snapshot),
+      (_) => writer.saveJourney(
+        widget.lesson.id,
+        snapshot,
+        subject: widget.lesson.subject,
+      ),
     );
     _writes = task.catchError((Object error, StackTrace stack) {
       if (mounted) {
@@ -492,7 +501,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       if (widget.onPracticeComplete == null) {
         await ref
             .read(appProvider.notifier)
-            .saveJourney(widget.lesson.id, _session.toJson());
+            .saveJourney(
+              widget.lesson.id,
+              _session.toJson(),
+              subject: widget.lesson.subject,
+            );
       }
       _game.pauseEngine();
       _prepare();
@@ -536,7 +549,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
           if (mounted) Navigator.of(context).pop();
           return;
         }
-        await ref.read(appProvider.notifier).completeJourney(_session.result());
+        await ref
+            .read(appProvider.notifier)
+            .completeJourney(_session.result(), subject: widget.lesson.subject);
         if (mounted) {
           setState(() => _complete = true);
           _say(_resultText);
@@ -545,7 +560,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         if (widget.onPracticeComplete == null) {
           await ref
               .read(appProvider.notifier)
-              .saveJourney(widget.lesson.id, _session.toJson());
+              .saveJourney(
+                widget.lesson.id,
+                _session.toJson(),
+                subject: widget.lesson.subject,
+              );
         }
         _game.pauseEngine();
         _prepare();
@@ -1000,6 +1019,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     return math.max(base, button + 16);
   }
 
+  bool get _compactMathsControls =>
+      widget.lesson.subject == 'maths' &&
+      MediaQuery.sizeOf(context).width < 600 &&
+      MediaQuery.textScalerOf(context).scale(1) >= 1.5;
+
   Widget _controls() => Container(
     key: const ValueKey('lesson-controls'),
     height: _stripHeight,
@@ -1049,7 +1073,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                 ? null
                 : _check,
             child: Text(
-              _needsCorrection
+              _compactMathsControls
+                  ? 'Check'
+                  : _needsCorrection
                   ? _correctionText('check')
                   : 'Check my discovery',
             ),
@@ -1064,7 +1090,13 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
             ),
             onPressed: _busy ? null : _next,
             icon: const Icon(Icons.arrow_forward_rounded),
-            label: Text(_busy ? 'Saving…' : 'Keep exploring'),
+            label: Text(
+              _busy
+                  ? 'Saving…'
+                  : _compactMathsControls
+                  ? 'Next'
+                  : 'Keep exploring',
+            ),
           ),
       ],
     ),
@@ -1169,8 +1201,12 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     onBack: _leave,
     onPractice: () => Navigator.of(context).pushReplacement(
       MaterialPageRoute<void>(
-        builder: (_) =>
-            LessonRoute(id: practiceUnitFor(_session.result().objectives)),
+        builder: (_) => LessonRoute(
+          id: widget.lesson.subject == 'science'
+              ? practiceUnitFor(_session.result().objectives)
+              : widget.lesson.json['practiceUnitId'] as String? ??
+                    widget.lesson.id,
+        ),
       ),
     ),
   );

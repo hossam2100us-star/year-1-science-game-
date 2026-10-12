@@ -39,6 +39,7 @@ abstract final class JourneyMigrations {
     ('unit_02', 1, 3): _mergedSteps,
     ('unit_02', 1, 2): _mergedSteps,
     ('unit_03', 1, 2): _compactOurselves,
+    for (final id in LessonLibrary.mathsIds) (id, 1, 2): _mathsWorkshop,
   };
 
   /// Whether a journey saved at [savedVersion] can be continued.
@@ -78,6 +79,28 @@ abstract final class JourneyMigrations {
 
   static bool _finished(Lesson lesson, JourneyRestore r) =>
       r.index >= lesson.steps.length;
+
+  // ---- Maths: activity workshops v1 -> v2 ---------------------------------
+
+  static void _mathsWorkshop(
+    Lesson lesson,
+    Map<String, dynamic> saved,
+    JourneyRestore r,
+  ) {
+    // Assessment IDs, option IDs and answers are unchanged. Relocation keeps
+    // the current assessment and its selection, feedback and scoring evidence.
+    _relocate(lesson, saved, r);
+    if (lesson.quiz || r.index != 0) return;
+
+    // The old three-card exploration cannot complete the new workshop through
+    // its touched/freeDone flags or a completed response's resumeState. Reset
+    // only when the child is on that introduction, even after navigating back.
+    // Children already beyond it retain its completed response: their earned
+    // progress and effort stars stay intact, and revisiting that previously
+    // completed introduction follows the existing replay behavior.
+    r.responses.remove(lesson.steps.first.id);
+    r.current = {};
+  }
 
   // ---- unit_06: sound chart v1 -> v2 ---------------------------------------
 
