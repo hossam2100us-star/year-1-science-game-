@@ -104,6 +104,10 @@ jobs:
       - run: pip install -r scripts/requirements-content.txt
       - name: Validate playable lessons against the schema
         run: python scripts/validate_playable.py
+      # Maths: book coverage, answers, diagrams, catalogue, and that the
+      # build script reproduces the committed lessons byte for byte.
+      - name: Validate the Maths content and its reproducible build
+        run: python scripts/validate_maths_content.py --check-idempotence
 
   android-build:
     runs-on: ubuntu-latest

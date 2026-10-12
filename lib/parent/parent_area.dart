@@ -245,11 +245,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                             const Center(child: CircularProgressIndicator()),
                         error: (error, stack) => OutlinedButton(
                           onPressed: () => ref.invalidate(mathsCatalogProvider),
-                          child: Text(
-                            ar
-                                ? 'أعد فتح نتائج الرياضيات'
-                                : 'Try opening Maths results again',
-                          ),
+                          child: Text(l.parentAreaMathsResultsRetry),
                         ),
                         data: (catalogue) => ParentSection(
                           title: ar ? catalogue.arabic : catalogue.title,
@@ -349,11 +345,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                             const Center(child: CircularProgressIndicator()),
                         error: (error, stack) => OutlinedButton(
                           onPressed: () => ref.invalidate(mathsCatalogProvider),
-                          child: Text(
-                            ar
-                                ? 'أعد فتح دليل الرياضيات'
-                                : 'Try opening the Maths guide again',
-                          ),
+                          child: Text(l.parentAreaMathsGuideRetry),
                         ),
                         data: (catalogue) => ParentSection(
                           title: ar ? catalogue.arabic : catalogue.title,

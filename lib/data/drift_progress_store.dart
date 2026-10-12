@@ -370,8 +370,7 @@ class DriftProgressStore implements ProgressStore {
       return;
     }
     AppData view(Map<String, dynamic>? value) =>
-        AppData(otherSubjects: {'maths': ?value})
-            .progressForSubject('maths');
+        AppData(otherSubjects: {'maths': ?value}).progressForSubject('maths');
     final previous = view(oldRecord);
     final next = view(record);
     if (normalize ||

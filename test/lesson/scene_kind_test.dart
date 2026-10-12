@@ -41,6 +41,16 @@ void main() {
     );
   });
 
+  test('every Maths step uses the Maths scene', () async {
+    final maths = await LessonLibrary.loadMaths();
+    expect(maths.lessons, hasLength(LessonLibrary.mathsIds.length));
+    for (final lesson in maths.lessons.values) {
+      for (final step in lesson.steps) {
+        expect(SceneKind.of(step), SceneKind.maths, reason: step.id);
+      }
+    }
+  });
+
   test('the registry has exactly one renderer per scene kind', () {
     expect(SceneRenderer.registry.keys.toSet(), SceneKind.values.toSet());
   });

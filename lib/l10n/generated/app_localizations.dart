@@ -224,6 +224,18 @@ abstract class AppLocalizations {
   /// **'Stars reward effort and completion. Understanding uses first decisions before hints. Predictions and free play are not graded.'**
   String get parentAreaStarsRewardEffortAndCompletion;
 
+  /// No description provided for @parentAreaMathsResultsRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try opening the Maths results again'**
+  String get parentAreaMathsResultsRetry;
+
+  /// No description provided for @parentAreaMathsGuideRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try opening the Maths guide again'**
+  String get parentAreaMathsGuideRetry;
+
   /// No description provided for @parentAreaTimeOnTheChildScreens.
   ///
   /// In en, this message translates to:
