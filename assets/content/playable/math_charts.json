@@ -901,7 +901,7 @@
   "homeActivities": [
     {
       "text": "Build a toy survey chart together. Ask about the most, least, total and difference.",
-      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "textAr": "اعملوا مع بعض رسم بياني للعب اللي في البيت. واسألوا: أنهي أكتر؟ أنهي أقل؟ المجموع كام؟ والفرق كام؟",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -918,7 +918,7 @@
     {
       "objective": "math.charts.01",
       "text": "Discuss this question with an adult: How many cars are in the box? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام عربية في الصندوق؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -932,7 +932,7 @@
     {
       "objective": "math.charts.02",
       "text": "Discuss this question with an adult: Which toy is there most of? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي لعبة عددها أكتر؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -946,7 +946,7 @@
     {
       "objective": "math.charts.03",
       "text": "Discuss this question with an adult: How many toys altogether? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام لعبة في المجموع؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -960,7 +960,7 @@
     {
       "objective": "math.charts.04",
       "text": "Discuss this question with an adult: Which day has the most stars? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي يوم فيه أكتر نجوم؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -974,7 +974,7 @@
     {
       "objective": "math.charts.05",
       "text": "Discuss this question with an adult: How many stars on Monday and Tuesday together? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام نجمة يوم الاتنين والتلات مع بعض؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -988,7 +988,7 @@
     {
       "objective": "math.charts.06",
       "text": "Discuss this question with an adult: How many more stars on Wednesday than Sunday? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «يوم الأربع فيه نجوم أكتر من يوم الحد بكام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1002,7 +1002,7 @@
     {
       "objective": "math.charts.07",
       "text": "Discuss this question with an adult: How many sparrows were seen? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «اتشاف كام عصفور؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1016,7 +1016,7 @@
     {
       "objective": "math.charts.08",
       "text": "Discuss this question with an adult: Which bird was seen the fewest times? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي طير اتشاف أقل عدد مرات؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1030,7 +1030,7 @@
     {
       "objective": "math.charts.09",
       "text": "Discuss this question with an adult: How many pigeons and crows altogether? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام حمامة وغراب في المجموع؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

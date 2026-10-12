@@ -723,6 +723,9 @@ def chart_specs():
 def build():
     specs=unit_specs()
     workshops=guided_workshops()
+    # Egyptian Arabic for the parent report, one entry per activity; a missing
+    # entry stops the build instead of falling back to a generic sentence.
+    arabic=json.loads((CONTENT/'maths_parent_ar.json').read_text(encoding='utf-8'))
     for file in sorted(CONTENT.glob('math_*.json')):
         if file.name in ['math_support.json']: continue
         draft=json.loads(file.read_text(encoding='utf-8'))
@@ -750,15 +753,14 @@ def build():
                 'parentReview':{'en':'Guided practice is ungraded. Completion records the child doing the activities, not a book-question score.'}})
         for record,spec in zip(records,adapted):
             steps.append(playable_step(draft,record,spec,len(steps)+1,hint,'Look carefully at the groups and explain how you found your answer.'))
-        home_ar='جرّب النشاط مع الطفل باستخدام حاجات آمنة. اسأله يتوقع الأول، وبعدها يعدّ أو يقارن، ويحكي فكّر إزاي.'
         goals=[{'objective':s['objective'],'text':f'Discuss this question with an adult: {s["prompt"]} Use safe objects or drawings and explain the reasoning.',
-            'textAr':home_ar,'safety':SAFETY,'safetyAr':SAFETY_AR,'pages':s['source']['pages'],'safetyPages':[2],'adapted':True} for s in steps if s['assessed']]
+            'textAr':arabic['goal'][f"{ident}/{s['objective']}"],'safety':SAFETY,'safetyAr':arabic['safety'][SAFETY],'pages':s['source']['pages'],'safetyPages':[2],'adapted':True} for s in steps if s['assessed']]
         word,meaning=WORDS[unit-1] if ident.startswith('math_unit_') else ('bar chart','A chart where the end of each bar shows a number.') if ident=='math_charts' else ('count on','Start with a number and add forward jumps.')
         book={'schemaVersion':1,'contentVersion':2,'id':ident,'subject':'maths','title':draft['title'],'quiz':quiz,
             'sourceSha256':draft['sourceSha256'],'sourcePages':draft['sourcePages'],'steps':steps,
             'stickers':[{'id':f'{ident}.sticker','word':word,'art':'math_label','meaning':meaning,
                 'meaningSource':'adapted_from_big_idea','sourcePages':draft['sourcePages']}],
-            'homeActivities':[{'text':home,'textAr':home_ar,'safety':SAFETY,'safetyAr':SAFETY_AR,'pages':draft['sourcePages'],'safetyPages':[2],'adapted':True}],
+            'homeActivities':[{'text':home,'textAr':arabic['home'][ident],'safety':SAFETY,'safetyAr':arabic['safety'][SAFETY],'pages':draft['sourcePages'],'safetyPages':[2],'adapted':True}],
             'goalActivities':goals,'parentNote':{'en':'Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.',
                 'ar':'الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات.'}}
         if quiz: book['practiceUnitId']=f'math_unit_{(int(ident[-2:])-1)*6+1:02d}'

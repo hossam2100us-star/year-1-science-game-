@@ -224,6 +224,7 @@ def audit(check_idempotence=False,pdf_path=None):
     schema=read(ROOT/'schemas/lesson.schema.json')
     drafts={ident:read(CONTENT/f'{ident}.json') for ident in EXPECTED_IDS}
     books={ident:read(CONTENT/'playable'/f'{ident}.json') for ident in EXPECTED_IDS}
+    arabic=read(CONTENT/'maths_parent_ar.json')
     question_ids=set(); step_ids=set(); free_ids=set(); assessed=0; total_steps=0; workshops=[]; numeric_positions=[]
     source_hash={d['sourceSha256'] for d in drafts.values()}; assert len(source_hash)==1
     for ident,book in books.items():
@@ -270,6 +271,11 @@ def audit(check_idempotence=False,pdf_path=None):
         assert {a['objective'] for a in book['goalActivities']}=={s['objective'] for s in book['steps'] if s['assessed']}
         assert all(s['word'] and s['meaning'] for s in book['stickers'])
         assert all(a['textAr'] and a['safetyAr'] for a in book['homeActivities']+book['goalActivities'])
+        # Each activity has its own Arabic from maths_parent_ar.json (the first
+        # version gave all 280 the same generic sentence).
+        assert all(a['textAr']==arabic['goal'][f"{ident}/{a['objective']}"] for a in book['goalActivities']),(ident,'goal Arabic')
+        assert all(a['textAr']==arabic['home'][ident] for a in book['homeActivities']),(ident,'home Arabic')
+        assert all(a['safetyAr']==arabic['safety'][a['safety']] for a in book['homeActivities']+book['goalActivities'])
         audit_visuals(book)
     assert len(question_ids)==273 and free_ids==FREE_QUESTIONS and assessed==258 and total_steps==292
     assert len(workshops)==19 and len({w['title'] for w in workshops})==19
