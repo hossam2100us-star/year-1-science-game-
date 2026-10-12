@@ -119,7 +119,7 @@ class DiscoveryWorld extends StatelessWidget {
                         // rules are panels of the shared picture.
                         child: index == 0
                             ? const IllustratedArt(
-                                asset: 'electric-safety-socket-v2.webp',
+                                asset: 'electric-safety-socket-v3.webp',
                               )
                             : IllustratedArt(
                                 asset: 'electric-safety-v1.webp',

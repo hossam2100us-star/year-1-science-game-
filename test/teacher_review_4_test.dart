@@ -113,10 +113,10 @@ void main() {
     tablet(t);
     await open(t, 'unit_07.step.001');
     expect(discoveries(t), 'Discoveries 0 / 3');
-    // T4-1: the socket rule shows the picture without a hand at the socket.
+    // T4-1 and review 5: no hand at the socket, the child well away from it.
     expect(
       t.widget<IllustratedArt>(find.byType(IllustratedArt)).asset,
-      'electric-safety-socket-v2.webp',
+      'electric-safety-socket-v3.webp',
     );
     await t.tap(find.byType(IllustratedArt));
     await t.pump(const Duration(milliseconds: 300));
