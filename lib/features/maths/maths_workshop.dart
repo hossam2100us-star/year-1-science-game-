@@ -36,7 +36,20 @@ class MathsWorkshop extends StatefulWidget {
 
 class _MathsWorkshopState extends State<MathsWorkshop> {
   late Map<String, dynamic> _data;
-  bool _saving = false;
+
+  /// The last state the lesson stored. A failed save returns to it.
+  late Map<String, dynamic> _saved;
+
+  /// Saves run one at a time, in the order of the touches. A touch is shown
+  /// at once and never waits for the save before it: a child counting
+  /// quickly must not lose an object (each lost touch also renumbered the
+  /// objects counted after it).
+  Future<void> _queue = Future.value();
+
+  /// Bumped when a save fails, so the touches queued after it are dropped
+  /// with it instead of being stored on top of the state that was undone.
+  int _generation = 0;
+  final _top = GlobalKey(), _end = GlobalKey();
   List<Map<String, dynamic>> get _tasks =>
       (widget.config['tasks'] as List).cast<Map<String, dynamic>>();
   int get _index =>
@@ -47,33 +60,76 @@ class _MathsWorkshopState extends State<MathsWorkshop> {
       _data['built'] as int? ?? _task['initialCount'] as int? ?? 0;
   bool get _passed => _data['passed'] == true;
   bool get _done => MathsWorkshop.isComplete(widget.config, _data);
-  bool get _locked => widget.locked || _saving || _passed || _done;
+  bool get _locked => widget.locked || _passed || _done;
   String get _item => _task['item'] as String? ?? 'counter';
 
   @override
   void initState() {
     super.initState();
     _data = Map<String, dynamic>.from(widget.initial);
+    _saved = _data;
   }
 
-  Future<void> _save(Map<String, dynamic> next, {String? say}) async {
-    if (_saving) return;
-    final previous = _data;
-    setState(() {
-      _data = next;
-      _saving = true;
-    });
-    try {
-      await widget.onSave(next, MathsWorkshop.isComplete(widget.config, next));
-      if (mounted && say != null) widget.onSay(say);
-    } catch (error, stack) {
-      if (mounted) {
-        setState(() => _data = previous);
-        showSaveError(context, error, stack);
-      }
-    } finally {
-      if (mounted) setState(() => _saving = false);
+  void _save(Map<String, dynamic> next, {String? say}) {
+    final before = _data;
+    setState(() => _data = next);
+    if ((next['taskIndex'] ?? 0) != (before['taskIndex'] ?? 0)) {
+      // The next idea starts with its question at the top.
+      WidgetsBinding.instance.addPostFrameCallback(
+        (_) => _show(_top, ScrollPositionAlignmentPolicy.keepVisibleAtStart),
+      );
+    } else if (_reveals(before, next)) {
+      WidgetsBinding.instance.addPostFrameCallback(
+        (_) => _show(_end, ScrollPositionAlignmentPolicy.keepVisibleAtEnd),
+      );
     }
+    final generation = _generation;
+    _queue = _queue.then((_) async {
+      if (generation != _generation) return;
+      try {
+        await widget.onSave(
+          next,
+          MathsWorkshop.isComplete(widget.config, next),
+        );
+        _saved = next;
+        if (mounted && say != null) widget.onSay(say);
+      } catch (error, stack) {
+        _generation++;
+        if (mounted) {
+          setState(() => _data = _saved);
+          showSaveError(context, error, stack);
+        }
+      }
+    });
+  }
+
+  /// Whether [next] shows something below what the child was looking at:
+  /// the answer choices after the last object is counted, feedback, or the
+  /// button to the next idea.
+  bool _reveals(Map<String, dynamic> before, Map<String, dynamic> next) {
+    bool counted(Map<String, dynamic> data) =>
+        _task['mode'] == 'count' &&
+        (data['counted'] as List? ?? const []).length == _task['count'];
+    return counted(next) && !counted(before) ||
+        (next['message'] as String? ?? '').isNotEmpty &&
+            next['message'] != before['message'] ||
+        next['passed'] == true && before['passed'] != true ||
+        MathsWorkshop.isComplete(widget.config, next);
+  }
+
+  /// Scrolls the lesson only as far as needed. On a tablet the choices and
+  /// the next button otherwise appear below the screen's edge.
+  void _show(GlobalKey key, ScrollPositionAlignmentPolicy policy) {
+    final target = key.currentContext;
+    if (target == null || !mounted) return;
+    Scrollable.ensureVisible(
+      target,
+      duration: MediaQuery.disableAnimationsOf(context)
+          ? Duration.zero
+          : const Duration(milliseconds: 300),
+      curve: Curves.easeOut,
+      alignmentPolicy: policy,
+    );
   }
 
   void _count(int object) {
@@ -102,7 +158,7 @@ class _MathsWorkshopState extends State<MathsWorkshop> {
   }
 
   void _continue() {
-    if (!_passed || _saving || _done) return;
+    if (!_passed || _done) return;
     final completed = <String>{
       ...List<String>.from(_data['completedTasks'] ?? const []),
       _task['id'] as String,
@@ -293,6 +349,7 @@ class _MathsWorkshopState extends State<MathsWorkshop> {
   Widget build(BuildContext context) {
     final message = _data['message'] as String? ?? '';
     return Container(
+      key: _top,
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: const Color(0xFFFFF1D5),
@@ -433,7 +490,7 @@ class _MathsWorkshopState extends State<MathsWorkshop> {
             Center(
               child: FilledButton.icon(
                 key: const ValueKey('maths-workshop-next'),
-                onPressed: _saving ? null : _continue,
+                onPressed: _continue,
                 icon: const Icon(Icons.arrow_forward_rounded),
                 label: Text(
                   _index == _tasks.length - 1
@@ -443,6 +500,7 @@ class _MathsWorkshopState extends State<MathsWorkshop> {
               ),
             ),
           ],
+          SizedBox(key: _end, height: 0),
         ],
       ),
     );

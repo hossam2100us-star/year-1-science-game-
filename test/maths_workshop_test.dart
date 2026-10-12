@@ -50,8 +50,15 @@ Future<void> tap(WidgetTester t, String key) async {
   await t.ensureVisible(button);
   await t.pump();
   await t.tap(button);
-  await t.pump();
-  await t.pump(const Duration(milliseconds: 50));
+  await settle(t);
+}
+
+/// Lets saves finish and a scroll of up to 300 ms end (the lesson keeps
+/// animating, so it never settles).
+Future<void> settle(WidgetTester t) async {
+  for (var frame = 0; frame < 8; frame++) {
+    await t.pump(const Duration(milliseconds: 60));
+  }
 }
 
 Future<void> mountWorkshop(
@@ -169,6 +176,109 @@ void main() {
     );
     expect(t.takeException(), isNull);
   });
+
+  testWidgets('quick touches during slow saves are all counted in order', (
+    t,
+  ) async {
+    // On a tablet emulator, seven touches in two seconds counted three and
+    // numbered the apples 1, 4, 5, 2, 6, 3, 7: each save locked the objects.
+    final config = workshop(maths.lessons['math_unit_01']!);
+    final task = tasks(config).firstWhere((task) => task['mode'] == 'count');
+    final count = task['count'] as int;
+    final saved = <List<Object?>>[];
+    final said = <String>[];
+    await mountWorkshop(
+      t,
+      oneTask(config, task),
+      save: (lab, complete) async {
+        await Future<void>.delayed(const Duration(milliseconds: 250));
+        saved.add(List<Object?>.from(lab['counted'] as List));
+      },
+      say: said.add,
+    );
+    for (var object = 0; object < count; object++) {
+      await t.tap(find.byKey(ValueKey('maths-count-object-$object')));
+      await t.pump(const Duration(milliseconds: 40));
+    }
+    expect(find.text('$count counted'), findsOneWidget);
+    for (var object = 0; object < count; object++) {
+      expect(
+        find.descendant(
+          of: find.byKey(ValueKey('maths-count-object-$object')),
+          matching: find.text('${object + 1}'),
+        ),
+        findsOneWidget,
+        reason: 'object $object keeps its place in the count',
+      );
+    }
+    await t.pump(Duration(milliseconds: 250 * count + 100));
+    expect(saved, [
+      for (var n = 1; n <= count; n++) List.generate(n, (i) => i),
+    ], reason: 'every touch is stored, in order');
+    expect(said, [for (var n = 1; n <= count; n++) '$n']);
+    expect(t.takeException(), isNull);
+  });
+
+  testWidgets(
+    'on a tablet the choices and the next idea scroll into view by themselves',
+    (t) async {
+      t.view.physicalSize = const Size(1280, 800);
+      t.view.devicePixelRatio = 1;
+      t.view.padding = const FakeViewPadding(top: 24, bottom: 60);
+      t.view.viewPadding = const FakeViewPadding(top: 24, bottom: 60);
+      addTearDown(t.view.resetPhysicalSize);
+      addTearDown(t.view.resetDevicePixelRatio);
+      addTearDown(t.view.resetPadding);
+      addTearDown(t.view.resetViewPadding);
+      final lesson = maths.lessons['math_unit_01']!;
+      final task = tasks(workshop(lesson)).first;
+      final store = MemoryProgressStore(
+        const AppData(profile: ChildProfile(name: 'Nour')),
+      );
+      await preloadImages(t);
+      await t.pumpWidget(
+        ProviderScope(
+          overrides: [
+            storeProvider.overrideWithValue(store),
+            catalogProvider.overrideWithValue(science),
+            lessonLibraryProvider.overrideWith((ref) async => maths),
+            narrationProvider.overrideWith((ref) => helpers.SilentNarration()),
+          ],
+          child: MaterialApp(
+            theme: adventureTheme(store.data.profile),
+            home: LessonPlayer(lesson: lesson),
+          ),
+        ),
+      );
+      await t.pump();
+      final strip = t.getRect(find.byKey(const ValueKey('lesson-controls')));
+      void onScreen(Finder finder) {
+        final rect = t.getRect(finder);
+        expect(rect.top, greaterThanOrEqualTo(0), reason: '$finder');
+        expect(rect.bottom, lessThanOrEqualTo(strip.top), reason: '$finder');
+      }
+
+      // Plain touches, no test scrolling: what a child sees is what counts.
+      for (var object = 0; object < (task['count'] as int); object++) {
+        await t.tap(find.byKey(ValueKey('maths-count-object-$object')));
+        await t.pump(const Duration(milliseconds: 50));
+      }
+      await settle(t);
+      final answer = find.byKey(
+        ValueKey('maths-workshop-choice-${task['correctId']}'),
+      );
+      onScreen(answer);
+      await t.tap(answer);
+      await settle(t);
+      onScreen(find.byKey(const ValueKey('maths-workshop-next')));
+      await t.tap(find.byKey(const ValueKey('maths-workshop-next')));
+      await settle(t);
+      onScreen(find.text(tasks(workshop(lesson))[1]['prompt'] as String));
+      expect(t.takeException(), isNull);
+      await t.pumpWidget(const SizedBox());
+      await t.pump();
+    },
+  );
 
   testWidgets('a wrong answer gives a hint without completing practice', (
     t,
@@ -366,6 +476,9 @@ void main() {
     expect(lab['passed'], isTrue);
     expect(find.byKey(const ValueKey('maths-workshop-next')), findsOneWidget);
     expect(find.text('You are ready for the next discovery!'), findsNothing);
+    // The error message covers the bottom of the screen until it goes away.
+    await t.pump(const Duration(seconds: 5));
+    await settle(t);
     await tap(t, 'maths-workshop-next');
     expect(complete, isTrue);
     expect(lab['completedTasks'], [task['id']]);
