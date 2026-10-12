@@ -21,6 +21,10 @@ EXPECTED_IDS = ([f'math_unit_{n:02d}' for n in range(1,19)]
 KNOWN_PAGES = [(4,7,72),(8,10,72),(11,14,73),(15,17,73),(18,20,74),(21,23,74),
     (25,27,75),(28,31,76),(32,34,76),(35,37,77),(38,40,77),(41,43,78),
     (45,47,79),(48,50,79),(51,53,80),(54,56,80),(57,59,81),(60,63,81)]
+REVIEW5_PICTURES={'math_quiz_01':[4,5,6],'math_quiz_02':[6],'math_quiz_03':[7],'math_unit_01':[12],
+    'math_unit_02':[12],'math_unit_03':[13],'math_unit_04':[10,11,12,14],'math_unit_06':[10],
+    'math_unit_07':[5,10,13,14],'math_unit_08':[7,14],'math_unit_10':[7,11,12],'math_unit_15':[9,10],
+    'math_unit_16':[10,13,14],'math_unit_18':[10]}
 FREE_QUESTIONS = {'math.u01.main.05','math.u01.main.08','math.u03.main.08',
     'math.u04.main.08','math.u06.main.08','math.u07.main.08','math.u08.main.04',
     'math.u12.main.07','math.u12.main.08','math.u14.main.08','math.u15.main.06',
@@ -57,7 +61,7 @@ def expect(books,qid,value):
 
 def visuals(value):
     if isinstance(value,dict):
-        if 'type' in value and value['type'] in {'count','shape','clock','chart','numberLine','pattern','fraction','groups','money','ruler','text','missing'}:
+        if 'type' in value and value['type'] in {'count','shape','clock','chart','numberLine','pattern','fraction','groups','money','ruler','text','missing','balance','sky','venn','robot','carroll'}:
             yield value
         for child in value.values(): yield from visuals(child)
     elif isinstance(value,list):
@@ -91,6 +95,36 @@ def audit_visuals(book):
         elif kind=='numberLine': assert visual['start']<visual['end']
         elif kind=='money': assert visual['unit']=='piastres' and all(c in [25,50,100] for c in visual['coins'])
         elif kind=='ruler': assert isinstance(visual['units'],int) and 1<=visual['units']<=10
+        elif kind=='balance':
+            left,right=visual['left']['count'],visual['right']['count']
+            assert 1<=left<=9 and 1<=right<=9
+            # The side holding more goes down.
+            assert visual['tilt']==('left' if left>right else 'right' if right>left else 'level')
+        elif kind=='sky': assert visual['time'] in ['morning','midday','night']
+        elif kind=='venn':
+            assert len(visual['labels'])==2
+            assert all(i['region'] in ['left','right','both','outside'] for i in visual['items'])
+        elif kind=='robot':
+            assert visual['facing'] in ROBOT_FACINGS and visual['routes']
+            assert all(0<=visual[k][0]<visual['cols'] and 0<=visual[k][1]<visual['rows'] for k in ['start','star'])
+            assert all(set(route)<={'F','B','L','R'} for route in visual['routes'].values())
+        elif kind=='carroll': assert len(visual['columns'])>=2
+
+
+ROBOT_FACINGS=['up','right','down','left']
+ROBOT_MOVES=[(0,-1),(1,0),(0,1),(-1,0)]
+
+
+def robot_end(visual,route):
+    """Where a route leaves the robot (the picture draws the same moves)."""
+    (x,y),facing=visual['start'],ROBOT_FACINGS.index(visual['facing'])
+    for move in route:
+        if move=='R': facing=(facing+1)%4
+        elif move=='L': facing=(facing+3)%4
+        else:
+            dx,dy=ROBOT_MOVES[facing]; sign=1 if move=='F' else -1
+            x,y=x+sign*dx,y+sign*dy
+    return [x,y]
 
 
 def audit_workshop(book):
@@ -277,7 +311,21 @@ def audit(check_idempotence=False,pdf_path=None):
         assert all(a['textAr']==arabic['home'][ident] for a in book['homeActivities']),(ident,'home Arabic')
         assert all(a['safetyAr']==arabic['safety'][a['safety']] for a in book['homeActivities']+book['goalActivities'])
         audit_visuals(book)
+        for step in book['steps']:
+            visual=step.get('mathVisual') or {}
+            if visual.get('type')=='robot':
+                labels={o['id']:o['label'] for o in step['options']}
+                assert set(visual['routes'])==set(labels.values()),(step['id'],'robot routes')
+                reach={label for label,route in visual['routes'].items() if robot_end(visual,route)==visual['star']}
+                assert reach=={labels[i] for i in step['answer']['value']},(step['id'],'robot answer')
+            if visual.get('type')=='carroll':
+                assert visual['columns']==[t['label'] for t in step['targets']],(step['id'],'carroll')
     assert len(question_ids)==273 and free_ids==FREE_QUESTIONS and assessed==258 and total_steps==292
+    # Teacher review 5: these questions talked about something not shown.
+    for ident,numbers in REVIEW5_PICTURES.items():
+        for n in numbers:
+            step=next(s for s in books[ident]['steps'] if s['id']==f'{ident}.step.{n:03d}')
+            assert step.get('mathVisual') or any(o.get('visual') for o in step['options']),(step['id'],'no picture')
     assert len(workshops)==19 and len({w['title'] for w in workshops})==19
     assert len({w['goal'] for w in workshops})==19
     tasks=[t for w in workshops for t in w['tasks']]

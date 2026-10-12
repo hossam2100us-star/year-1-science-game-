@@ -591,7 +591,11 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_08",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "cube"
+      }
     },
     {
       "id": "math_unit_08.step.008",
@@ -1003,7 +1007,24 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_08",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "shape",
+            "shape": "cube"
+          },
+          {
+            "type": "shape",
+            "shape": "cylinder"
+          },
+          {
+            "type": "shape",
+            "shape": "sphere"
+          }
+        ]
+      }
     }
   ],
   "stickers": [

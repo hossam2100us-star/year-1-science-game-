@@ -756,7 +756,12 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_02",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10
+      }
     },
     {
       "id": "math_unit_02.step.013",

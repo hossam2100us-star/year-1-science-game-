@@ -655,7 +655,45 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_15",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "robot",
+        "cols": 4,
+        "rows": 5,
+        "start": [
+          0,
+          2
+        ],
+        "facing": "up",
+        "star": [
+          2,
+          0
+        ],
+        "routes": {
+          "2 forwards, turn right, 2 forwards": [
+            "F",
+            "F",
+            "R",
+            "F",
+            "F"
+          ],
+          "turn right, 2 forwards, turn left, 2 forwards": [
+            "R",
+            "F",
+            "F",
+            "L",
+            "F",
+            "F"
+          ],
+          "2 backwards, turn right, 2 forwards": [
+            "B",
+            "B",
+            "R",
+            "F",
+            "F"
+          ]
+        }
+      }
     },
     {
       "id": "math_unit_15.step.010",
@@ -706,7 +744,23 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_15",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "label": "before"
+          },
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "rotation": 180,
+            "label": "turned"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_15.step.011",

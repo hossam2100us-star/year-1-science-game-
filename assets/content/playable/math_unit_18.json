@@ -632,7 +632,12 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_18",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "clock",
+        "hour": 3,
+        "minute": 0
+      }
     },
     {
       "id": "math_unit_18.step.011",

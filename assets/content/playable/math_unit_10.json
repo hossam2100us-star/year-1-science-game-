@@ -492,7 +492,19 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_10",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "balance",
+        "left": {
+          "count": 1,
+          "label": "A"
+        },
+        "right": {
+          "count": 3,
+          "label": "B"
+        },
+        "tilt": "right"
+      }
     },
     {
       "id": "math_unit_10.step.008",
@@ -695,7 +707,17 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_10",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "balance",
+        "left": {
+          "count": 1
+        },
+        "right": {
+          "count": 3
+        },
+        "tilt": "right"
+      }
     },
     {
       "id": "math_unit_10.step.012",
@@ -746,7 +768,13 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_10",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "ruler",
+        "units": 6,
+        "unit": "cube",
+        "item": "pencil"
+      }
     },
     {
       "id": "math_unit_10.step.013",

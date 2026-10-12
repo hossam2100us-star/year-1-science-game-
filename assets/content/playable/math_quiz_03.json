@@ -346,7 +346,27 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_03",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our pets",
+        "rows": [
+          {
+            "label": "cat",
+            "value": 5
+          },
+          {
+            "label": "dog",
+            "value": 3
+          },
+          {
+            "label": "fish",
+            "value": 1
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
     },
     {
       "id": "math_quiz_03.step.008",

@@ -307,4 +307,103 @@ void main() {
       await t.pumpWidget(const SizedBox());
     });
   }
+
+  // Section 1: 28 questions talked about something not shown.
+  const listed = {
+    'math_quiz_01': [4, 5, 6],
+    'math_quiz_02': [6],
+    'math_quiz_03': [7],
+    'math_unit_01': [12],
+    'math_unit_02': [12],
+    'math_unit_03': [13],
+    'math_unit_04': [10, 11, 12, 14],
+    'math_unit_06': [10],
+    'math_unit_07': [5, 10, 13, 14],
+    'math_unit_08': [7, 14],
+    'math_unit_10': [7, 11, 12],
+    'math_unit_15': [9, 10],
+    'math_unit_16': [10, 13, 14],
+    'math_unit_18': [10],
+  };
+
+  testWidgets('every question the teacher listed shows its picture', (t) async {
+    var shown = 0;
+    for (final MapEntry(key: lessonId, value: numbers) in listed.entries) {
+      for (final n in numbers) {
+        final id = '$lessonId.step.${n.toString().padLeft(3, '0')}';
+        final key = GlobalKey();
+        // A fresh player for each question (the same widget type would
+        // otherwise keep the previous lesson).
+        await t.pumpWidget(const SizedBox());
+        await open(t, id, key);
+        expect(
+          find.byType(MathsVisual).evaluate().isNotEmpty ||
+              find.byType(CarrollTable).evaluate().isNotEmpty,
+          isTrue,
+          reason: id,
+        );
+        await capture(t, key, 'pictures/$id');
+        expect(t.takeException(), isNull, reason: id);
+        shown++;
+      }
+    }
+    expect(shown, 28);
+    await t.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('numbers are sorted into the Carroll diagram itself', (t) async {
+    final key = GlobalKey();
+    await open(t, 'math_unit_07.step.005', key);
+    final step = maths.lessons['math_unit_07']!.steps.firstWhere(
+      (s) => s.id == 'math_unit_07.step.005',
+    );
+    final card = step.options.firstWhere((o) => o.label == '12');
+    final column = step.targets.firstWhere(
+      (target) => target.label == 'not less than 10',
+    );
+    expect(find.byKey(ValueKey('maths-target-${column.id}')), findsNothing);
+    await helpers.tapVisible(
+      t,
+      find.byKey(ValueKey('maths-option-${card.id}')),
+    );
+    await helpers.tapVisible(
+      t,
+      find.byKey(ValueKey('maths-carroll-${column.id}')),
+    );
+    expect(
+      find.descendant(
+        of: find.byKey(ValueKey('maths-carroll-${column.id}')),
+        matching: find.text('12'),
+      ),
+      findsOneWidget,
+    );
+    await capture(t, key, 'unit07-carroll-sorted');
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('the robot draws each chosen route from the start', (t) async {
+    final key = GlobalKey();
+    await open(t, 'math_unit_15.step.009', key);
+    final step = maths.lessons['math_unit_15']!.steps.firstWhere(
+      (s) => s.id == 'math_unit_15.step.009',
+    );
+    List<Object?> shown() =>
+        t
+                .widgetList<MathsVisual>(find.byType(MathsVisual))
+                .firstWhere((v) => v.data['type'] == 'robot')
+                .data['show']
+            as List<Object?>;
+    expect(shown(), isEmpty);
+    for (final option in step.options.take(2)) {
+      await helpers.tapVisible(
+        t,
+        find.byKey(ValueKey('maths-option-${option.id}')),
+      );
+    }
+    expect(shown(), [for (final o in step.options.take(2)) o.label]);
+    await capture(t, key, 'unit15-robot-routes');
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+  });
 }

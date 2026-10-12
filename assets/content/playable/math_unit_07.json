@@ -413,7 +413,14 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_07",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "carroll",
+        "columns": [
+          "less than 10",
+          "not less than 10"
+        ]
+      }
     },
     {
       "id": "math_unit_07.step.006",
@@ -688,7 +695,28 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_07",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": [
+          {
+            "item": "apple",
+            "region": "left"
+          },
+          {
+            "item": "car",
+            "region": "both"
+          },
+          {
+            "item": "banana",
+            "region": "outside"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_07.step.011",
@@ -836,7 +864,27 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_07",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our pets",
+        "rows": [
+          {
+            "label": "cat",
+            "value": 5
+          },
+          {
+            "label": "dog",
+            "value": 3
+          },
+          {
+            "label": "fish",
+            "value": 1
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
     },
     {
       "id": "math_unit_07.step.014",
@@ -887,7 +935,27 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_07",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our pets",
+        "rows": [
+          {
+            "label": "cat",
+            "value": 5
+          },
+          {
+            "label": "dog",
+            "value": 3
+          },
+          {
+            "label": "fish",
+            "value": 1
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
     }
   ],
   "stickers": [

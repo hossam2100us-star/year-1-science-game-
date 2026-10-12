@@ -809,7 +809,31 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_04",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our favourite fruit",
+        "rows": [
+          {
+            "label": "apple",
+            "value": 4
+          },
+          {
+            "label": "banana",
+            "value": 2
+          },
+          {
+            "label": "orange",
+            "value": 3
+          },
+          {
+            "label": "mango",
+            "value": 1
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one person"
+      }
     },
     {
       "id": "math_unit_04.step.011",
@@ -860,7 +884,31 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_04",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our favourite fruit",
+        "rows": [
+          {
+            "label": "apple",
+            "value": 4
+          },
+          {
+            "label": "banana",
+            "value": 2
+          },
+          {
+            "label": "orange",
+            "value": 3
+          },
+          {
+            "label": "mango",
+            "value": 1
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one person"
+      }
     },
     {
       "id": "math_unit_04.step.012",
@@ -911,7 +959,27 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_04",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our pets",
+        "rows": [
+          {
+            "label": "cat",
+            "value": 5
+          },
+          {
+            "label": "dog",
+            "value": 3
+          },
+          {
+            "label": "fish",
+            "value": 1
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
     },
     {
       "id": "math_unit_04.step.013",
@@ -1037,7 +1105,31 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_04",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our favourite fruit",
+        "rows": [
+          {
+            "label": "apple",
+            "value": 4
+          },
+          {
+            "label": "banana",
+            "value": 2
+          },
+          {
+            "label": "orange",
+            "value": 3
+          },
+          {
+            "label": "mango",
+            "value": 1
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one person"
+      }
     }
   ],
   "stickers": [

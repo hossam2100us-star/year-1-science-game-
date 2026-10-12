@@ -881,17 +881,29 @@
         {
           "id": "choice_2",
           "label": "square",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square"
+          }
         },
         {
           "id": "choice_1",
           "label": "triangle",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle"
+          }
         },
         {
           "id": "choice_3",
           "label": "circle",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
         }
       ],
       "targets": [],

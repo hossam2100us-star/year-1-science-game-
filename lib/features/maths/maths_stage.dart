@@ -31,6 +31,37 @@ class MathsStage extends StatelessWidget {
 
   Widget _visual(Map<String, dynamic> data) => MathsVisual(data: data);
 
+  Map<String, dynamic>? get _diagram => switch (step.json['mathVisual']) {
+    final Map<String, dynamic> diagram => diagram,
+    _ => null,
+  };
+
+  /// The Carroll diagram is where the cards are sorted, so it takes the
+  /// place of the target buttons.
+  bool get _carroll => _diagram?['type'] == 'carroll';
+
+  /// A robot draws the routes the child has chosen (teacher review 5).
+  Widget _picture(Map<String, dynamic> diagram) => _visual({
+    ...diagram,
+    if (diagram['type'] == 'robot')
+      'show': [for (final id in selected) step.label(id)],
+  });
+
+  Widget _carrollTable() => CarrollTable(
+    data: _diagram!,
+    columns: [for (final t in step.targets) (id: t.id, label: t.label)],
+    placed: {
+      for (final t in step.targets)
+        t.id: [
+          for (final o in step.options)
+            if (placements[o.id] == t.id) o.label,
+        ],
+    },
+    onColumn: locked || selected.isEmpty
+        ? null
+        : (target) => onPlace(selected.first, target),
+  );
+
   Widget _option(BuildContext context, PictureItem item, double width) {
     final json = (step.json['options'] as List)
         .cast<Map<String, dynamic>>()
@@ -60,7 +91,11 @@ class MathsStage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (visual is Map) ...[
-              _visual(Map<String, dynamic>.from(visual)),
+              // A shape in an answer is smaller, so the answers fit.
+              _visual({
+                ...Map<String, dynamic>.from(visual),
+                if (visual['type'] == 'shape') 'height': 100,
+              }),
               const SizedBox(height: 8),
             ],
             Text(item.label, textAlign: TextAlign.center),
@@ -103,15 +138,15 @@ class MathsStage extends StatelessWidget {
             ),
           ),
         const SizedBox(height: 16),
-        if (step.json['mathVisual']
-            case final Map<String, dynamic> diagram) ...[
+        if (_diagram case final Map<String, dynamic> diagram
+            when !_carroll) ...[
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
             ),
-            child: _visual(Map<String, dynamic>.from(diagram)),
+            child: _picture(Map<String, dynamic>.from(diagram)),
           ),
           const SizedBox(height: 16),
         ],
@@ -163,7 +198,10 @@ class MathsStage extends StatelessWidget {
             );
           },
         ),
-        if (step.isMapping) ...[
+        if (_carroll) ...[
+          const SizedBox(height: 16),
+          _carrollTable(),
+        ] else if (step.isMapping) ...[
           const SizedBox(height: 16),
           Wrap(
             spacing: 12,

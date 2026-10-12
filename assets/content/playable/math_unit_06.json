@@ -609,7 +609,11 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_06",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "sky",
+        "time": "night"
+      }
     },
     {
       "id": "math_unit_06.step.011",

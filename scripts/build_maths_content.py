@@ -184,8 +184,36 @@ def number(prompt,n,visual=None,explanation=None,hint=None):
     return single(prompt,n,choices,visual,explanation,hint)
 
 
-def tf(prompt,answer,explanation=None):
-    return single(prompt,'True' if answer else 'False',['True','False'],explanation=explanation)
+def tf(prompt,answer,explanation=None,visual=None):
+    return single(prompt,'True' if answer else 'False',['True','False'],visual,explanation=explanation)
+
+
+def balance(left,right,left_label=None,right_label=None):
+    """A pan balance with equal cubes; the side holding more goes down."""
+    def side(n,label): return {'count':n,**({'label':label} if label else {})}
+    return {'type':'balance','left':side(left,left_label),'right':side(right,right_label),
+        'tilt':'left' if left>right else 'right' if right>left else 'level'}
+
+
+def sky(time):
+    return {'type':'sky','time':time}
+
+
+def venn(labels,items):
+    return {'type':'venn','labels':labels,'items':[{'item':i,'region':r} for i,r in items]}
+
+
+def robot(routes,*,cols=4,rows=5,start=(0,2),facing='up',star=(2,0)):
+    """A grid with a robot, its facing and a star; routes are F, B, L and R moves."""
+    return {'type':'robot','cols':cols,'rows':rows,'start':list(start),'facing':facing,'star':list(star),'routes':routes}
+
+
+def carroll(columns):
+    return {'type':'carroll','columns':columns}
+
+
+def shapes(*names):
+    return {name:shape(name) for name in names}
 
 
 def mapping(prompt,pairs,targets,visual=None,explanation=None):
@@ -361,6 +389,26 @@ def guided_workshops():
 FRUIT=chart('Our favourite fruit',[('apple',4),('banana',2),('orange',3),('mango',1)],'pictogram','one person')
 PETS=chart('Our pets',[('cat',5),('dog',3),('fish',1)],unit='one child')
 SCHOOL=chart('How we came to school today',[('walk',6),('bus',4),('car',3),('bike',2)],unit='one child')
+PETS_NO_FISH=chart('Pets in our class',[('cat',3),('dog',2),('fish',0)],unit='one child')
+
+# Teacher review 5: a question shows what it talks about. Keys are
+# (unit, multiple-choice number); pictures never mark the answer.
+MCQ_VISUALS={
+    (1,3):count(0,'dot','tenFrame'),
+    (2,3):line(0,10),
+    (4,1):FRUIT,(4,2):FRUIT,(4,3):PETS,(4,5):FRUIT,
+    (6,1):sky('night'),
+    (7,1):venn(['red','has wheels'],[('apple','left'),('car','both'),('banana','outside')]),
+    (7,4):PETS,(7,5):PETS,
+    (8,5):groups(shape('cube'),shape('cylinder'),shape('sphere')),
+    (10,2):balance(1,3),
+    (10,3):{'type':'ruler','units':6,'unit':'cube','item':'pencil'},
+    (15,1):groups({**shape('triangle'),'label':'before'},{**shape('triangle',rotation=180),'label':'turned'}),
+    (16,1):SCHOOL,(16,4):SCHOOL,(16,5):PETS_NO_FISH,
+    (18,1):{'type':'clock','hour':3,'minute':0},
+}
+MCQ_OPTION_VISUALS={(3,4):shapes('square','triangle','circle')}
+
 HALVES={'a':{'type':'fraction','shape':'circle','parts':2,'shaded':0,'equal':True},
         'b':{'type':'fraction','shape':'rectangle','parts':2,'shaded':0,'equal':False},
         'c':{'type':'fraction','shape':'square','parts':2,'shaded':0,'equal':True,'orientation':'diagonal'}}
@@ -436,7 +484,7 @@ def unit_specs():
         single('Which object belongs in both red and has wheels?','red car',['red car','red apple','blue ball'],explanation='A red car is red and has wheels, so it fits both labels.'),
         single('Why does the red car belong in the overlap?','It is red and has wheels.',['It is red and has wheels.','It is only red.','It fits neither label.'],explanation='The overlap is for objects that fit both labels.'),
         multiple('Choose the objects that fit neither red nor has wheels.',['red car','green leaf','blue ball','red apple'],['green leaf','blue ball'],explanation='The green leaf and blue ball are not red and have no wheels.'),
-        mapping('Sort the numbers into the Carroll diagram.', [(str(v),'less than 10' if v<10 else 'not less than 10') for v in [3,12,7,15,9,18,10]],['less than 10','not less than 10'],explanation='10 is not less than 10. It belongs with 12, 15 and 18.'),
+        mapping('Sort the numbers into the Carroll diagram.', [(str(v),'less than 10' if v<10 else 'not less than 10') for v in [3,12,7,15,9,18,10]],['less than 10','not less than 10'],carroll(['less than 10','not less than 10']),explanation='10 is not less than 10. It belongs with 12, 15 and 18.'),
         number('How many children have a cat?',5,PETS,'Each block is one child. The cat column has 5.'),
         number('How many more cats than dogs?',2,PETS,'There are 5 cats and 3 dogs. The difference is 2.'),
         tf('An object that fits both labels belongs in the overlap.',True,'Both labels are true in the overlap.'),
@@ -448,7 +496,7 @@ def unit_specs():
         mapping('Fill the next two gaps: red, blue, blue, red, blue, blue, __, __.', [('first gap','red'),('second gap','blue')],['red','blue'],explanation='The repeating part is red, blue, blue.'),
         free('Make your own repeating pattern with two shapes on paper. Repeat the part at least twice.'),
         number('Walk 3 steps forwards and 1 backwards. How many steps from the start?',2,line(0,4),'Three forwards and one backwards leaves 2 steps forwards.'),
-        tf('A cube is a flat 2D shape.',False,'A cube is solid, so it is a 3D shape.'),
+        tf('A cube is a flat 2D shape.',False,'A cube is solid, so it is a 3D shape.',shape('cube')),
         mapping('Compare a square and a rectangle.', [('They each have 4 sides and 4 corners.','same'),('Only the square must have 4 equal sides.','different')],['same','different'],groups(shape('square'),shape('rectangle')),'Both have 4 sides. A square has all 4 sides equal.'),
         mapping('Sort the shapes by their corners.', [('circle','0 corners'),('triangle','3 corners'),('square','4 corners'),('rectangle','4 corners')],['0 corners','3 corners','4 corners'],explanation='Circle: 0 corners. Triangle: 3. Square and rectangle: 4.'),
     ],
@@ -468,7 +516,7 @@ def unit_specs():
         number('How many months are in a year?',12,explanation='A year has 12 months, from January to December.'),
         single('Which month comes after January?','February',['March','February','December'],explanation='February is the month after January.'),
         number('How many cubes long is the pencil?',6,{'type':'ruler','units':6,'unit':'cube','item':'pencil'},'Six equal cubes cover the pencil length with no gaps.'),
-        single('On this balance, B is down and A is up. Which is heavier?','B',['A','B'],explanation='The heavier side goes down, so B is heavier.'),
+        single('On this balance, B is down and A is up. Which is heavier?','B',['A','B'],balance(1,3,'A','B'),explanation='The heavier side goes down, so B is heavier.'),
         tf('A bigger object is always heavier.',False,'A large pillow can be lighter than a small stone.'),
         ordered('Put these in order, heaviest first.',['chair','book','feather'],explanation='A typical chair is heavier than a book, and a feather is lightest.'),
     ],
@@ -520,7 +568,7 @@ def unit_specs():
         single('sphere, cube, cube, sphere, cube, cube... What comes next?','sphere',['sphere','cube','cone'],explanation='The repeating part is sphere, cube, cube.',option_visuals={s:shape(s) for s in ['sphere','cube','cone']}),
         free('With an adult, name something in a playground that has the shape of a circle.'),
         mapping('Sort the solid shapes by their faces.', [(s,'has a curved face' if s in ['sphere','cylinder','cone'] else 'only flat faces') for s in ['sphere','cube','cylinder','cuboid','cone','pyramid']],['has a curved face','only flat faces'],explanation='Sphere, cylinder and cone have curved faces; the other shapes have only flat faces.'),
-        multiple('The robot faces up. Choose both routes that reach the star two spaces up and two right.', ['2 forwards, turn right, 2 forwards','turn right, 2 forwards, turn left, 2 forwards','2 backwards, turn right, 2 forwards'],['2 forwards, turn right, 2 forwards','turn right, 2 forwards, turn left, 2 forwards'],explanation='Both selected routes finish two spaces up and two right of the start.'),
+        multiple('The robot faces up. Choose both routes that reach the star two spaces up and two right.', ['2 forwards, turn right, 2 forwards','turn right, 2 forwards, turn left, 2 forwards','2 backwards, turn right, 2 forwards'],['2 forwards, turn right, 2 forwards','turn right, 2 forwards, turn left, 2 forwards'],robot({'2 forwards, turn right, 2 forwards':['F','F','R','F','F'],'turn right, 2 forwards, turn left, 2 forwards':['R','F','F','L','F','F'],'2 backwards, turn right, 2 forwards':['B','B','R','F','F']}),explanation='Both selected routes finish two spaces up and two right of the start.'),
     ],
     16:[
         number('How many children walked?',6,SCHOOL,'Count the walk column: 6 blocks.'),
@@ -697,8 +745,8 @@ def mcq_spec(record,unit):
     prompt=text.split('(',1)[0].strip()
     correct=MCQ[unit-1][record['number']-1]
     assert correct in choices,(unit,record['number'],correct,choices)
-    visual=FRUIT if unit==4 and record['number']==4 else SCHOOL if unit==16 and record['number'] in [2,3] else None
-    return single(prompt,correct,choices,visual,explanation=f'{correct[0].upper()+correct[1:]} is the answer. {MCQ_REASONS[unit-1][record["number"]-1]}')
+    visual=MCQ_VISUALS.get((unit,record['number'])) or (FRUIT if unit==4 and record['number']==4 else SCHOOL if unit==16 and record['number'] in [2,3] else None)
+    return single(prompt,correct,choices,visual,option_visuals=MCQ_OPTION_VISUALS.get((unit,record['number'])),explanation=f'{correct[0].upper()+correct[1:]} is the answer. {MCQ_REASONS[unit-1][record["number"]-1]}')
 
 
 MCQ_REASONS=[
@@ -725,9 +773,9 @@ MCQ_REASONS=[
 
 def quiz_specs(n):
     return {
-    1:[number('How many dots?',9,count(9),'Count each dot once: there are 9.'),number('1 more than 12 is...?',13,explanation='One forward step from 12 reaches 13.'),number('7 take away 3 is...?',4,explanation='Taking three away from seven leaves four.'),single('Name a flat shape with 3 sides.','triangle',['triangle','square','circle'],explanation='A triangle has three straight sides.'),single('Name a solid shape like a football.','sphere',['sphere','cylinder','circle'],explanation='A football is solid and round like a sphere.'),single('The longest pictogram row shows the...','most',['most','least','first'],explanation='The longest row has the most equal-size pictures.'),single('Choose the larger number.','18',['18','15'],explanation='18 comes after 15 on the number track.'),number('How many sweets are in an empty bag?',0,explanation='An empty bag contains zero sweets.'),single('When do you usually sleep?','night',['morning','night'],explanation='We usually sleep at night.'),single('What should you line up to compare two pencils?','the ends',['the ends','the middles','the colours'],explanation='Start both pencils at the same line.')],
-    2:[single('What belongs where two Venn hoops overlap?','things that fit both labels',['things that fit both labels','things that fit neither label','only red things'],explanation='The overlap satisfies both sorting rules.'),single('red, blue, red, blue... What comes next?','red',['red','blue','green'],explanation='The repeated part is red, blue.'),mapping('15 has how many tens and ones?',[('tens','1'),('ones','5')],[1,5],explanation='15 is one whole ten and five ones.'),number('Count in tens: 10, 20, ...?',30,explanation='One more ten after 20 is 30.'),number('How many days are in a week?',7,explanation='There are seven days before the week repeats.'),single('On a balance, does the heavier side go up or down?','down',['up','down'],explanation='More mass makes that side go down.'),number('8 + __ = 10. Find the missing partner.',2,explanation='Eight and two make ten.'),number('What is the difference between 7 and 10?',3,explanation='Three forward jumps lead from seven to ten.'),number('Half of 8 is...?',4,explanation='Share eight equally into two groups of four.'),tf('Two halves of the same whole can have different sizes.',False,'Halves of the same whole are always equal.')],
-    3:[single('Choose the even number.','6',['3','6','9'],explanation='Six makes three pairs with none left over.'),single('Which position comes after 2nd?','3rd',['1st','3rd','4th'],explanation='Third follows second.'),number('Double 4 is...?',8,explanation='Four and another four make eight.'),number('6 + 11 = ?',17,explanation='Start at eleven and count on six to reach seventeen.'),number('How many faces does a cube have?',6,explanation='A cube has six square faces.'),single('A triangle turns upside down. Is it still a triangle?','yes',['yes','no'],explanation='It still has three straight sides and three corners.'),single('Which graph column shows the most?','the tallest',['the tallest','the shortest','the first'],explanation='The tallest column has the greatest count.'),number('Half of 20 is...?',10,explanation='Two equal groups of ten make twenty.'),single('What time does this clock show?','2 o\'clock',['2 o\'clock','12 o\'clock','half past 2'],{'type':'clock','hour':2,'minute':0},'The minute hand is on twelve; the hour hand is on two.'),single('What do we use to weigh flour?','scales',['scales','ruler','jug'],explanation='Scales measure mass, so use them to weigh flour.')]
+    1:[number('How many dots?',9,count(9),'Count each dot once: there are 9.'),number('1 more than 12 is...?',13,explanation='One forward step from 12 reaches 13.'),number('7 take away 3 is...?',4,explanation='Taking three away from seven leaves four.'),single('Name a flat shape with 3 sides.','triangle',['triangle','square','circle'],explanation='A triangle has three straight sides.',option_visuals=shapes('triangle','square','circle')),single('Name a solid shape like a football.','sphere',['sphere','cylinder','circle'],count(1,'ball'),explanation='A football is solid and round like a sphere.',option_visuals=shapes('sphere','cylinder','circle')),single('The longest pictogram row shows the...','most',['most','least','first'],FRUIT,explanation='The longest row has the most equal-size pictures.'),single('Choose the larger number.','18',['18','15'],explanation='18 comes after 15 on the number track.'),number('How many sweets are in an empty bag?',0,explanation='An empty bag contains zero sweets.'),single('When do you usually sleep?','night',['morning','night'],explanation='We usually sleep at night.'),single('What should you line up to compare two pencils?','the ends',['the ends','the middles','the colours'],explanation='Start both pencils at the same line.')],
+    2:[single('What belongs where two Venn hoops overlap?','things that fit both labels',['things that fit both labels','things that fit neither label','only red things'],explanation='The overlap satisfies both sorting rules.'),single('red, blue, red, blue... What comes next?','red',['red','blue','green'],explanation='The repeated part is red, blue.'),mapping('15 has how many tens and ones?',[('tens','1'),('ones','5')],[1,5],explanation='15 is one whole ten and five ones.'),number('Count in tens: 10, 20, ...?',30,explanation='One more ten after 20 is 30.'),number('How many days are in a week?',7,explanation='There are seven days before the week repeats.'),single('On a balance, does the heavier side go up or down?','down',['up','down'],balance(3,1),explanation='More mass makes that side go down.'),number('8 + __ = 10. Find the missing partner.',2,explanation='Eight and two make ten.'),number('What is the difference between 7 and 10?',3,explanation='Three forward jumps lead from seven to ten.'),number('Half of 8 is...?',4,explanation='Share eight equally into two groups of four.'),tf('Two halves of the same whole can have different sizes.',False,'Halves of the same whole are always equal.')],
+    3:[single('Choose the even number.','6',['3','6','9'],explanation='Six makes three pairs with none left over.'),single('Which position comes after 2nd?','3rd',['1st','3rd','4th'],explanation='Third follows second.'),number('Double 4 is...?',8,explanation='Four and another four make eight.'),number('6 + 11 = ?',17,explanation='Start at eleven and count on six to reach seventeen.'),number('How many faces does a cube have?',6,explanation='A cube has six square faces.'),single('A triangle turns upside down. Is it still a triangle?','yes',['yes','no'],explanation='It still has three straight sides and three corners.'),single('Which graph column shows the most?','the tallest',['the tallest','the shortest','the first'],PETS,explanation='The tallest column has the greatest count.'),number('Half of 20 is...?',10,explanation='Two equal groups of ten make twenty.'),single('What time does this clock show?','2 o\'clock',['2 o\'clock','12 o\'clock','half past 2'],{'type':'clock','hour':2,'minute':0},'The minute hand is on twelve; the hour hand is on two.'),single('What do we use to weigh flour?','scales',['scales','ruler','jug'],explanation='Scales measure mass, so use them to weigh flour.')]
     }[n]
 
 

@@ -761,7 +761,13 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_01",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 0,
+        "item": "dot",
+        "arrangement": "tenFrame"
+      }
     },
     {
       "id": "math_unit_01.step.013",

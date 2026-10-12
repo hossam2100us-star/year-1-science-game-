@@ -837,7 +837,31 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_16",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "How we came to school today",
+        "rows": [
+          {
+            "label": "walk",
+            "value": 6
+          },
+          {
+            "label": "bus",
+            "value": 4
+          },
+          {
+            "label": "car",
+            "value": 3
+          },
+          {
+            "label": "bike",
+            "value": 2
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
     },
     {
       "id": "math_unit_16.step.011",
@@ -1038,7 +1062,31 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_16",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "How we came to school today",
+        "rows": [
+          {
+            "label": "walk",
+            "value": 6
+          },
+          {
+            "label": "bus",
+            "value": 4
+          },
+          {
+            "label": "car",
+            "value": 3
+          },
+          {
+            "label": "bike",
+            "value": 2
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
     },
     {
       "id": "math_unit_16.step.014",
@@ -1089,7 +1137,27 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_16",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Pets in our class",
+        "rows": [
+          {
+            "label": "cat",
+            "value": 3
+          },
+          {
+            "label": "dog",
+            "value": 2
+          },
+          {
+            "label": "fish",
+            "value": 0
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
     }
   ],
   "stickers": [

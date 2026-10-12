@@ -65,20 +65,28 @@ class MathsVisual extends StatelessWidget {
         ),
       );
     }
-    final height = switch (type) {
-      'numberLine' => 100.0,
-      'ruler' => 120.0,
-      'clock' => 200.0,
-      'count' => 170.0,
-      _ => 160.0,
-    };
+    if (type == 'carroll') return CarrollTable(data: data);
+    // A picture inside an answer may ask for less height.
+    final height =
+        (data['height'] as num?)?.toDouble() ??
+        switch (type) {
+          'numberLine' => 100.0,
+          'robot' => 230.0,
+          'venn' => 190.0,
+          'balance' => 184.0,
+          'sky' => 140.0,
+          'ruler' => 120.0,
+          'clock' => 200.0,
+          'count' => 170.0,
+          _ => 160.0,
+        };
     return Semantics(
       label: data['description'] as String? ?? _description,
       image: true,
       child: SizedBox(
         height: height,
         width: double.infinity,
-        child: const {'count', 'clock', 'ruler'}.contains(type)
+        child: const {'count', 'clock', 'ruler', 'venn'}.contains(type)
             ? GameImage(
                 asset: mathsObjectAsset,
                 builder: (context, image) =>
@@ -97,6 +105,10 @@ class MathsVisual extends StatelessWidget {
     'ruler' => 'An object aligned with a ruler',
     'numberLine' => 'Number line',
     'money' => 'Coins',
+    'balance' => 'A pan balance',
+    'sky' => 'The sky',
+    'venn' => 'A Venn diagram with two overlapping hoops',
+    'robot' => 'A robot and a star on a grid',
     _ => 'Maths diagram',
   };
 }
@@ -424,6 +436,14 @@ class _MathsPainter extends CustomPainter {
         _ruler(canvas, size);
       case 'fraction':
         _fraction(canvas, size);
+      case 'balance':
+        _balance(canvas, size);
+      case 'sky':
+        _sky(canvas, size);
+      case 'venn':
+        _venn(canvas, size);
+      case 'robot':
+        _robot(canvas, size);
       case 'shape':
         final side = math.min(size.width * .75, size.height * .75);
         canvas.save();
@@ -655,6 +675,286 @@ class _MathsPainter extends CustomPainter {
         canvas.drawCircle(Offset(x, y), 6, _paint(blue));
       }
     }
+  }
+
+  /// A small five-pointed star.
+  void _star(Canvas canvas, Offset center, double radius, Color color) {
+    final path = Path();
+    for (var p = 0; p < 10; p++) {
+      final angle = -math.pi / 2 + p * math.pi / 5;
+      final r = radius * (p.isEven ? 1 : .45);
+      final point = center + Offset(math.cos(angle), math.sin(angle)) * r;
+      if (p == 0) {
+        path.moveTo(point.dx, point.dy);
+      } else {
+        path.lineTo(point.dx, point.dy);
+      }
+    }
+    canvas.drawPath(path..close(), _paint(color));
+  }
+
+  /// A pan balance with equal cubes in each pan; the heavier side goes down
+  /// (teacher review 5: the balance questions showed no balance).
+  void _balance(Canvas canvas, Size size) {
+    Map<String, dynamic> side(String key) =>
+        Map<String, dynamic>.from(data[key] as Map? ?? const {});
+    final tilt = switch (data['tilt']) {
+      'left' => 1.0,
+      'right' => -1.0,
+      _ => 0.0,
+    };
+    final cx = size.width / 2;
+    final pivot = Offset(cx, size.height * .3);
+    final arm = math.min(size.width * .34, 160.0);
+    final angle = tilt * .22;
+    final beam = _paint(dark)
+      ..strokeWidth = 6
+      ..strokeCap = StrokeCap.round;
+    final string = _paint(dark)..strokeWidth = 1.5;
+    canvas.drawLine(pivot, Offset(cx, size.height - 14), beam);
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(
+        Rect.fromCenter(
+          center: Offset(cx, size.height - 10),
+          width: 96,
+          height: 10,
+        ),
+        const Radius.circular(4),
+      ),
+      _paint(dark),
+    );
+    final left = pivot + Offset(-math.cos(angle) * arm, math.sin(angle) * arm);
+    final right = pivot + Offset(math.cos(angle) * arm, -math.sin(angle) * arm);
+    canvas.drawLine(left, right, beam);
+    canvas.drawCircle(pivot, 7, _paint(const Color(0xFFE6B746)));
+    for (final (end, load, colour) in [
+      (left, side('left'), const Color(0xFFE88A2E)),
+      (right, side('right'), blue),
+    ]) {
+      final panY = end.dy + 44;
+      canvas.drawLine(end, Offset(end.dx - 40, panY), string);
+      canvas.drawLine(end, Offset(end.dx + 40, panY), string);
+      final pan = Rect.fromCenter(
+        center: Offset(end.dx, panY),
+        width: 98,
+        height: 20,
+      );
+      canvas.drawArc(pan, 0, math.pi, true, _paint(const Color(0xFFB7CFD1)));
+      canvas.drawArc(pan, 0, math.pi, true, _paint(dark, stroke: true));
+      final count = (load['count'] as num? ?? 0).toInt();
+      const cube = 20.0;
+      for (var i = 0; i < count; i++) {
+        final row = i ~/ 3, inRow = math.min(3, count - row * 3);
+        final x = end.dx + (i % 3 - (inRow - 1) / 2) * (cube + 2);
+        final y = panY - 2 - (row + .5) * (cube + 2);
+        final rect = Rect.fromCenter(
+          center: Offset(x, y),
+          width: cube,
+          height: cube,
+        );
+        canvas.drawRect(rect, _material(colour, rect));
+        canvas.drawRect(rect, _paint(dark, stroke: true)..strokeWidth = 1);
+      }
+      if (load['label'] case final String label) {
+        _text(canvas, label, Offset(end.dx, panY + 26), size: 18);
+      }
+    }
+  }
+
+  /// The sky at a time of day; at night, the Moon and stars.
+  void _sky(Canvas canvas, Size size) {
+    final night = data['time'] == 'night';
+    final area = (Offset.zero & size).deflate(6);
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(area, const Radius.circular(16)),
+      Paint()
+        ..shader = LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: night
+              ? const [Color(0xFF0E1E45), Color(0xFF2D3F7A)]
+              : const [Color(0xFF7FC4F0), Color(0xFFD6EEFB)],
+        ).createShader(area),
+    );
+    if (night) {
+      final moon = Offset(size.width * .72, size.height * .4);
+      final r = math.min(size.height * .2, 30.0);
+      canvas.drawPath(
+        Path.combine(
+          PathOperation.difference,
+          Path()..addOval(Rect.fromCircle(center: moon, radius: r)),
+          Path()..addOval(
+            Rect.fromCircle(
+              center: moon + Offset(r * .45, -r * .15),
+              radius: r * .9,
+            ),
+          ),
+        ),
+        _paint(const Color(0xFFF6E7A1)),
+      );
+      for (final (x, y, s) in const [
+        (.12, .3, 7.0),
+        (.3, .6, 5.0),
+        (.45, .25, 6.0),
+        (.57, .7, 4.0),
+        (.88, .72, 5.0),
+        (.22, .78, 4.0),
+      ]) {
+        _star(
+          canvas,
+          Offset(size.width * x, size.height * y),
+          s,
+          const Color(0xFFFFF4C2),
+        );
+      }
+    } else {
+      final high = data['time'] == 'midday';
+      canvas.drawCircle(
+        Offset(size.width * (high ? .5 : .2), size.height * (high ? .3 : .7)),
+        math.min(size.height * .18, 26),
+        _paint(const Color(0xFFF6C344)),
+      );
+    }
+  }
+
+  /// Two overlapping hoops, each with its rule, and objects placed by the
+  /// rules they fit: one rule, both, or neither (outside, top right).
+  void _venn(Canvas canvas, Size size) {
+    final labels = (data['labels'] as List? ?? const []).cast<String>();
+    final r = math.min(size.height * .36, size.width * .22);
+    final cy = size.height * .58;
+    final left = Offset(size.width / 2 - r * .62, cy);
+    final right = Offset(size.width / 2 + r * .62, cy);
+    for (final (centre, colour) in [
+      (left, const Color(0x33D0504B)),
+      (right, const Color(0x332170B5)),
+    ]) {
+      canvas.drawCircle(centre, r, _paint(colour));
+      canvas.drawCircle(centre, r, _paint(dark, stroke: true));
+    }
+    if (labels.length == 2) {
+      _text(canvas, labels[0], left + Offset(-r * .35, -r - 13), size: 16);
+      _text(canvas, labels[1], right + Offset(r * .35, -r - 13), size: 16);
+    }
+    final places = {
+      'left': left + Offset(-r * .5, 0),
+      'both': Offset(size.width / 2, cy),
+      'right': right + Offset(r * .5, 0),
+      'outside': Offset(size.width - r * .3 - 6, r * .3 + 6),
+    };
+    for (final item
+        in (data['items'] as List? ?? const []).cast<Map<String, dynamic>>()) {
+      final at = places[item['region']] ?? places['outside']!;
+      final side = item['region'] == 'outside' ? r * .5 : r * .62;
+      final dest = Rect.fromCenter(center: at, width: side, height: side);
+      if (image != null) {
+        paintMathsObject(canvas, image!, '${item['item']}', dest);
+      } else {
+        canvas.drawCircle(at, side / 3, _paint(blue));
+      }
+    }
+  }
+
+  /// A robot on a grid with the way it faces, a star, and the routes the
+  /// child has chosen (data['show']), each drawn from the same start.
+  void _robot(Canvas canvas, Size size) {
+    final cols = (data['cols'] as num? ?? 4).toInt();
+    final rows = (data['rows'] as num? ?? 5).toInt();
+    final cell = math.min((size.width - 8) / cols, (size.height - 8) / rows);
+    final origin = Offset(
+      (size.width - cell * cols) / 2,
+      (size.height - cell * rows) / 2,
+    );
+    Offset centre(Offset p) => origin + (p + const Offset(.5, .5)) * cell;
+    Offset point(String key) {
+      final p = (data[key] as List).cast<num>();
+      return Offset(p[0].toDouble(), p[1].toDouble());
+    }
+
+    for (var c = 0; c < cols; c++) {
+      for (var r = 0; r < rows; r++) {
+        final rect = Rect.fromLTWH(
+          origin.dx + c * cell,
+          origin.dy + r * cell,
+          cell,
+          cell,
+        );
+        canvas.drawRect(rect, _paint(const Color(0xFFFFFAEE)));
+        canvas.drawRect(
+          rect,
+          _paint(const Color(0xFFA47745), stroke: true)..strokeWidth = 1.5,
+        );
+      }
+    }
+    final start = point('start');
+    const facings = ['up', 'right', 'down', 'left'];
+    const moves = [Offset(0, -1), Offset(1, 0), Offset(0, 1), Offset(-1, 0)];
+    final first = math.max(0, facings.indexOf('${data['facing'] ?? 'up'}'));
+    final routes = Map<String, dynamic>.from(data['routes'] as Map? ?? {});
+    final shown = (data['show'] as List? ?? const []).cast<String>();
+    const colours = [Color(0xFF2170B5), Color(0xFFE88A2E), Color(0xFF794D91)];
+    for (final (i, label) in shown.indexed) {
+      var facing = first;
+      var at = start;
+      final points = [at];
+      for (final move in (routes[label] as List? ?? const []).cast<String>()) {
+        switch (move) {
+          case 'R':
+            facing = (facing + 1) % 4;
+          case 'L':
+            facing = (facing + 3) % 4;
+          case 'F':
+            at += moves[facing];
+            points.add(at);
+          case 'B':
+            at -= moves[facing];
+            points.add(at);
+        }
+      }
+      // Routes along the same cells sit side by side, not on top.
+      final shift = const Offset(1, 1) * ((i - (shown.length - 1) / 2) * 5);
+      final path = Path();
+      for (final (j, p) in points.indexed) {
+        final o = centre(p) + shift;
+        if (j == 0) {
+          path.moveTo(o.dx, o.dy);
+        } else {
+          path.lineTo(o.dx, o.dy);
+        }
+      }
+      final colour = colours[i % colours.length];
+      canvas.drawPath(
+        path,
+        _paint(colour, stroke: true)
+          ..strokeWidth = 5
+          ..strokeCap = StrokeCap.round
+          ..strokeJoin = StrokeJoin.round,
+      );
+      canvas.drawCircle(centre(points.last) + shift, 6, _paint(colour));
+    }
+    // The star stays visible on top of routes that reach it.
+    _star(canvas, centre(point('star')), cell * .32, const Color(0xFFE6B746));
+    final home = centre(start);
+    final body = Rect.fromCenter(
+      center: home,
+      width: cell * .58,
+      height: cell * .58,
+    );
+    final rounded = RRect.fromRectAndRadius(body, Radius.circular(cell * .12));
+    canvas.drawRRect(rounded, _material(const Color(0xFF6E8FA8), body));
+    canvas.drawRRect(rounded, _paint(dark, stroke: true));
+    final ahead = moves[first], across = Offset(-ahead.dy, ahead.dx);
+    Offset at(double forward, double side) =>
+        home + ahead * (cell * forward) + across * (cell * side);
+    final tip = at(.2, 0), back1 = at(-.08, .14), back2 = at(-.08, -.14);
+    canvas.drawPath(
+      Path()
+        ..moveTo(tip.dx, tip.dy)
+        ..lineTo(back1.dx, back1.dy)
+        ..lineTo(back2.dx, back2.dy)
+        ..close(),
+      _paint(Colors.white),
+    );
   }
 
   /// Egyptian coins: 25 and 50 piastres, and the 1 pound coin. Values stay
@@ -1022,4 +1322,103 @@ class _MathsPainter extends CustomPainter {
   @override
   bool shouldRepaint(_MathsPainter oldDelegate) =>
       oldDelegate.data != data || oldDelegate.image != image;
+}
+
+/// A Carroll diagram: one column per sorting rule. The cards sorted so far
+/// appear in their column, and a tap on a column puts the chosen card there
+/// (teacher review 5: "Sort the numbers into the Carroll diagram" showed no
+/// diagram, only buttons).
+class CarrollTable extends StatelessWidget {
+  const CarrollTable({
+    super.key,
+    required this.data,
+    this.columns,
+    this.placed = const {},
+    this.onColumn,
+  });
+
+  final Map<String, dynamic> data;
+
+  /// Column IDs and headings; by default the headings in data['columns'].
+  final List<({String id, String label})>? columns;
+
+  /// Card labels already sorted, by column ID.
+  final Map<String, List<String>> placed;
+  final ValueChanged<String>? onColumn;
+
+  @override
+  Widget build(BuildContext context) {
+    final cols =
+        columns ??
+        [
+          for (final heading in data['columns'] as List? ?? const [])
+            (id: '$heading', label: '$heading'),
+        ];
+    return Semantics(
+      label: 'Carroll diagram',
+      child: IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            for (final (i, column) in cols.indexed)
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.only(left: i == 0 ? 0 : 8),
+                  child: Material(
+                    color: const Color(0xFFFFFAEE),
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                        color: Color(0xFFA47745),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    clipBehavior: Clip.antiAlias,
+                    child: InkWell(
+                      key: ValueKey('maths-carroll-${column.id}'),
+                      onTap: onColumn == null
+                          ? null
+                          : () => onColumn!(column.id),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Container(
+                            color: i.isEven
+                                ? const Color(0xFFF6D9A8)
+                                : const Color(0xFFD8E8F4),
+                            padding: const EdgeInsets.all(10),
+                            child: Text(
+                              column.label,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: ConstrainedBox(
+                              constraints: const BoxConstraints(minHeight: 64),
+                              child: Wrap(
+                                spacing: 8,
+                                runSpacing: 8,
+                                alignment: WrapAlignment.center,
+                                children: [
+                                  for (final card in placed[column.id] ?? [])
+                                    Chip(label: Text(card)),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
 }

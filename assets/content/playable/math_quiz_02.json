@@ -306,7 +306,17 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_02",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "balance",
+        "left": {
+          "count": 3
+        },
+        "right": {
+          "count": 1
+        },
+        "tilt": "left"
+      }
     },
     {
       "id": "math_quiz_02.step.007",
