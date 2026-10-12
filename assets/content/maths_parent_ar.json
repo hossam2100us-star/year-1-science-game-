@@ -1,5 +1,5 @@
 {
-  "_about": "DRAFT for the owner: Egyptian Arabic for the Maths parent report (goal and home activities, safety note), read by scripts/build_maths_content.py. Keys: <lesson>/<objective>, <lesson>, English safety text. Written by the developer on 2026-10-12; not yet approved.",
+  "_about": "Egyptian Arabic for the Maths parent report (goal and home activities, safety note), read by scripts/build_maths_content.py. Keys: <lesson>/<objective>, <lesson>, English safety text. Written by the developer and approved by the owner on 2026-10-12.",
   "goal": {
     "math_charts/math.charts.01": "اتكلّم مع طفلك في السؤال ده: «كام عربية في الصندوق؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح فكّر إزاي.",
     "math_charts/math.charts.02": "اتكلّم مع طفلك في السؤال ده: «أنهي لعبة عددها أكتر؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح فكّر إزاي.",
