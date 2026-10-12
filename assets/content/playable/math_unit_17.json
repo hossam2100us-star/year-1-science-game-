@@ -150,7 +150,7 @@
     {
       "id": "math_unit_17.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "Writing a half",
       "prompt": "Choose how to write one half.",
       "options": [
         {
@@ -176,7 +176,7 @@
       },
       "assessed": true,
       "objective": "math.u17.main.01",
-      "hint": "One half is one of two equal parts. Share the group equally.",
+      "hint": "A half is 1 part out of 2.",
       "explanation": "One over two means one of two equal parts.",
       "shortExplanation": "One over two means one of two equal parts.",
       "source": {
@@ -201,7 +201,7 @@
     {
       "id": "math_unit_17.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "Half of 20",
       "prompt": "Half of 20 is...?",
       "options": [
         {
@@ -227,7 +227,7 @@
       },
       "assessed": true,
       "objective": "math.u17.main.02",
-      "hint": "One half is one of two equal parts. Share the group equally.",
+      "hint": "Share 20 into two equal rows.",
       "explanation": "Two equal groups of 10 make 20.",
       "shortExplanation": "Two equal groups of 10 make 20.",
       "source": {
@@ -258,7 +258,7 @@
     {
       "id": "math_unit_17.step.004",
       "kind": "tap-choice",
-      "title": "Maths discovery 4",
+      "title": "Half of 14",
       "prompt": "Half of 14 is...?",
       "options": [
         {
@@ -284,7 +284,7 @@
       },
       "assessed": true,
       "objective": "math.u17.main.03",
-      "hint": "One half is one of two equal parts. Share the group equally.",
+      "hint": "Share 14 into two equal groups.",
       "explanation": "Two equal groups of 7 make 14.",
       "shortExplanation": "Two equal groups of 7 make 14.",
       "source": {
@@ -315,7 +315,7 @@
     {
       "id": "math_unit_17.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "Half of 12",
       "prompt": "Half of 12 is...?",
       "options": [
         {
@@ -341,7 +341,7 @@
       },
       "assessed": true,
       "objective": "math.u17.main.04",
-      "hint": "One half is one of two equal parts. Share the group equally.",
+      "hint": "Share 12 into two equal groups.",
       "explanation": "Two equal groups of 6 make 12.",
       "shortExplanation": "Two equal groups of 6 make 12.",
       "source": {
@@ -372,7 +372,7 @@
     {
       "id": "math_unit_17.step.006",
       "kind": "drag-to-basket",
-      "title": "Maths discovery 6",
+      "title": "Half coloured",
       "prompt": "Choose all shapes with one half coloured.",
       "options": [
         {
@@ -422,7 +422,7 @@
       },
       "assessed": true,
       "objective": "math.u17.main.05",
-      "hint": "One half is one of two equal parts. Share the group equally.",
+      "hint": "Is the coloured part one of two equal parts?",
       "explanation": "a and c have half coloured. b has only one of four equal parts coloured.",
       "shortExplanation": "a and c have half coloured. b has only one of four equal parts coloured.",
       "source": {
@@ -447,7 +447,7 @@
     {
       "id": "math_unit_17.step.007",
       "kind": "tap-choice",
-      "title": "Maths discovery 7",
+      "title": "Two halves",
       "prompt": "Two halves make one...",
       "options": [
         {
@@ -473,7 +473,7 @@
       },
       "assessed": true,
       "objective": "math.u17.main.06",
-      "hint": "One half is one of two equal parts. Share the group equally.",
+      "hint": "Put two halves of a pizza back together.",
       "explanation": "Putting two equal halves together makes the whole again.",
       "shortExplanation": "Putting two equal halves together makes the whole again.",
       "source": {
@@ -498,7 +498,7 @@
     {
       "id": "math_unit_17.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Half a team",
       "prompt": "Half a team is 5 children. How many are in the whole team?",
       "options": [
         {
@@ -524,7 +524,7 @@
       },
       "assessed": true,
       "objective": "math.u17.main.07",
-      "hint": "One half is one of two equal parts. Share the group equally.",
+      "hint": "If one half is 5, what is the other half?",
       "explanation": "Five children are one half. Another five make the whole team of 10.",
       "shortExplanation": "Five children are one half. Another five make the whole team of 10.",
       "source": {
@@ -585,7 +585,7 @@
     {
       "id": "math_unit_17.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "What ½ means",
       "prompt": "½ means...",
       "options": [
         {
@@ -611,9 +611,9 @@
       },
       "assessed": true,
       "objective": "math.u17.choice.01",
-      "hint": "One half is one of two equal parts. Share the group equally.",
-      "explanation": "One of two equal parts is the answer. The two parts must be equal.",
-      "shortExplanation": "One of two equal parts is the answer. The two parts must be equal.",
+      "hint": "Do the two parts have to be the same size?",
+      "explanation": "½ means one of two equal parts.",
+      "shortExplanation": "½ means one of two equal parts.",
       "source": {
         "pages": [
           57,
@@ -636,7 +636,7 @@
     {
       "id": "math_unit_17.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "Half of 16",
       "prompt": "Half of 16 is...",
       "options": [
         {
@@ -662,9 +662,9 @@
       },
       "assessed": true,
       "objective": "math.u17.choice.02",
-      "hint": "One half is one of two equal parts. Share the group equally.",
-      "explanation": "8 is the answer. Eight and eight make sixteen.",
-      "shortExplanation": "8 is the answer. Eight and eight make sixteen.",
+      "hint": "Share 16 into two equal groups.",
+      "explanation": "Eight and eight make 16, so half of 16 is 8.",
+      "shortExplanation": "Eight and eight make 16, so half of 16 is 8.",
       "source": {
         "pages": [
           57,
@@ -687,7 +687,7 @@
     {
       "id": "math_unit_17.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Halves together",
       "prompt": "Two halves make...",
       "options": [
         {
@@ -713,9 +713,9 @@
       },
       "assessed": true,
       "objective": "math.u17.choice.03",
-      "hint": "One half is one of two equal parts. Share the group equally.",
-      "explanation": "One whole is the answer. Together the two parts rebuild the whole.",
-      "shortExplanation": "One whole is the answer. Together the two parts rebuild the whole.",
+      "hint": "Put the two halves back together.",
+      "explanation": "Two halves together make one whole.",
+      "shortExplanation": "Two halves together make one whole.",
       "source": {
         "pages": [
           57,
@@ -738,7 +738,7 @@
     {
       "id": "math_unit_17.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "Half of 18",
       "prompt": "Half of 18 is...",
       "options": [
         {
@@ -764,9 +764,9 @@
       },
       "assessed": true,
       "objective": "math.u17.choice.04",
-      "hint": "One half is one of two equal parts. Share the group equally.",
-      "explanation": "9 is the answer. Nine and nine make eighteen.",
-      "shortExplanation": "9 is the answer. Nine and nine make eighteen.",
+      "hint": "Share 18 into two equal groups.",
+      "explanation": "Nine and nine make 18, so half of 18 is 9.",
+      "shortExplanation": "Nine and nine make 18, so half of 18 is 9.",
       "source": {
         "pages": [
           57,
@@ -789,7 +789,7 @@
     {
       "id": "math_unit_17.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "Middle of a string",
       "prompt": "To find the middle of a string...",
       "options": [
         {
@@ -815,9 +815,9 @@
       },
       "assessed": true,
       "objective": "math.u17.choice.05",
-      "hint": "One half is one of two equal parts. Share the group equally.",
-      "explanation": "Fold the ends together is the answer. Matching the ends shows the midpoint.",
-      "shortExplanation": "Fold the ends together is the answer. Matching the ends shows the midpoint.",
+      "hint": "How could you make both parts exactly the same?",
+      "explanation": "Folding the ends together finds the middle exactly.",
+      "shortExplanation": "Folding the ends together finds the middle exactly.",
       "source": {
         "pages": [
           57,

@@ -146,7 +146,7 @@
     {
       "id": "math_unit_12.step.002",
       "kind": "drag-to-basket",
-      "title": "Maths discovery 2",
+      "title": "Equal parts",
       "prompt": "Choose all shapes cut into two equal parts.",
       "options": [
         {
@@ -197,7 +197,7 @@
       },
       "assessed": true,
       "objective": "math.u12.main.01",
-      "hint": "Share equally into two groups. The parts must match.",
+      "hint": "Look at each cut. Are both parts the same size?",
       "explanation": "Shapes a and c have equal parts. Shape b has unequal parts.",
       "shortExplanation": "Shapes a and c have equal parts. Shape b has unequal parts.",
       "source": {
@@ -222,7 +222,7 @@
     {
       "id": "math_unit_12.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "Half of 6",
       "prompt": "Half of 6 is...?",
       "options": [
         {
@@ -248,7 +248,7 @@
       },
       "assessed": true,
       "objective": "math.u12.main.02",
-      "hint": "Share equally into two groups. The parts must match.",
+      "hint": "Share 6 into two groups, one at a time.",
       "explanation": "Sharing 6 equally between two groups gives 3 each.",
       "shortExplanation": "Sharing 6 equally between two groups gives 3 each.",
       "source": {
@@ -279,7 +279,7 @@
     {
       "id": "math_unit_12.step.004",
       "kind": "tap-choice",
-      "title": "Maths discovery 4",
+      "title": "Half of 10",
       "prompt": "Half of 10 is...?",
       "options": [
         {
@@ -305,7 +305,7 @@
       },
       "assessed": true,
       "objective": "math.u12.main.03",
-      "hint": "Share equally into two groups. The parts must match.",
+      "hint": "Share 10 into two groups, one at a time.",
       "explanation": "Sharing 10 equally gives 5 in each group.",
       "shortExplanation": "Sharing 10 equally gives 5 in each group.",
       "source": {
@@ -336,7 +336,7 @@
     {
       "id": "math_unit_12.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "Sharing apples",
       "prompt": "Share 8 apples equally between 2 children. How many each?",
       "options": [
         {
@@ -362,7 +362,7 @@
       },
       "assessed": true,
       "objective": "math.u12.main.04",
-      "hint": "Share equally into two groups. The parts must match.",
+      "hint": "Give one apple to each child in turn.",
       "explanation": "Two equal groups of 4 make 8 apples.",
       "shortExplanation": "Two equal groups of 4 make 8 apples.",
       "source": {
@@ -393,7 +393,7 @@
     {
       "id": "math_unit_12.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "What a half is",
       "prompt": "A half is one of how many equal parts?",
       "options": [
         {
@@ -419,7 +419,7 @@
       },
       "assessed": true,
       "objective": "math.u12.main.05",
-      "hint": "Share equally into two groups. The parts must match.",
+      "hint": "When we halve, how many equal parts are there?",
       "explanation": "A half is one of two equal parts.",
       "shortExplanation": "A half is one of two equal parts.",
       "source": {
@@ -444,7 +444,7 @@
     {
       "id": "math_unit_12.step.007",
       "kind": "tap-choice",
-      "title": "Maths discovery 7",
+      "title": "The bigger half",
       "prompt": "It makes sense to ask for the bigger half.",
       "options": [
         {
@@ -465,7 +465,7 @@
       },
       "assessed": true,
       "objective": "math.u12.main.06",
-      "hint": "Share equally into two groups. The parts must match.",
+      "hint": "Can two halves of the same thing be different sizes?",
       "explanation": "Halves of the same whole must be the same size.",
       "shortExplanation": "Halves of the same whole must be the same size.",
       "source": {
@@ -562,7 +562,7 @@
     {
       "id": "math_unit_12.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "Fair halves",
       "prompt": "Halves must be...",
       "options": [
         {
@@ -588,9 +588,9 @@
       },
       "assessed": true,
       "objective": "math.u12.choice.01",
-      "hint": "Share equally into two groups. The parts must match.",
-      "explanation": "Equal is the answer. Fair halves have matching size.",
-      "shortExplanation": "Equal is the answer. Fair halves have matching size.",
+      "hint": "Would it be fair if one part were bigger?",
+      "explanation": "Halves must be equal, so each part is the same size.",
+      "shortExplanation": "Halves must be equal, so each part is the same size.",
       "source": {
         "pages": [
           41,
@@ -613,7 +613,7 @@
     {
       "id": "math_unit_12.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "Half of 4",
       "prompt": "Half of 4 is...",
       "options": [
         {
@@ -639,9 +639,9 @@
       },
       "assessed": true,
       "objective": "math.u12.choice.02",
-      "hint": "Share equally into two groups. The parts must match.",
-      "explanation": "2 is the answer. Two and two make four.",
-      "shortExplanation": "2 is the answer. Two and two make four.",
+      "hint": "Share 4 into two equal groups.",
+      "explanation": "Two and two make 4, so half of 4 is 2.",
+      "shortExplanation": "Two and two make 4, so half of 4 is 2.",
       "source": {
         "pages": [
           41,
@@ -664,7 +664,7 @@
     {
       "id": "math_unit_12.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Pizza halves",
       "prompt": "A pizza cut into 2 equal parts: each part is...",
       "options": [
         {
@@ -690,9 +690,9 @@
       },
       "assessed": true,
       "objective": "math.u12.choice.03",
-      "hint": "Share equally into two groups. The parts must match.",
-      "explanation": "One half is the answer. Each equal part is half the pizza.",
-      "shortExplanation": "One half is the answer. Each equal part is half the pizza.",
+      "hint": "The pizza has two equal parts. What is one of them called?",
+      "explanation": "One of two equal parts is one half.",
+      "shortExplanation": "One of two equal parts is one half.",
       "source": {
         "pages": [
           41,
@@ -715,7 +715,7 @@
     {
       "id": "math_unit_12.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "Sharing 6",
       "prompt": "Sharing 6 fairly between 2 people gives each...",
       "options": [
         {
@@ -741,9 +741,9 @@
       },
       "assessed": true,
       "objective": "math.u12.choice.04",
-      "hint": "Share equally into two groups. The parts must match.",
-      "explanation": "3 is the answer. Three for each person makes six altogether.",
-      "shortExplanation": "3 is the answer. Three for each person makes six altogether.",
+      "hint": "Give one to each person in turn until none are left.",
+      "explanation": "Sharing 6 fairly between 2 people gives 3 each.",
+      "shortExplanation": "Sharing 6 fairly between 2 people gives 3 each.",
       "source": {
         "pages": [
           41,
@@ -766,7 +766,7 @@
     {
       "id": "math_unit_12.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "Fractions",
       "prompt": "Fraction means...",
       "options": [
         {
@@ -792,9 +792,9 @@
       },
       "assessed": true,
       "objective": "math.u12.choice.05",
-      "hint": "Share equally into two groups. The parts must match.",
-      "explanation": "Equal parts of a whole is the answer. Fractions describe equal parts.",
-      "shortExplanation": "Equal parts of a whole is the answer. Fractions describe equal parts.",
+      "hint": "Think of a cake cut into equal pieces.",
+      "explanation": "A fraction names equal parts of one whole.",
+      "shortExplanation": "A fraction names equal parts of one whole.",
       "source": {
         "pages": [
           41,

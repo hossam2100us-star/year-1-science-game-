@@ -199,7 +199,7 @@
     {
       "id": "math_unit_04.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "Counting votes",
       "prompt": "How many people chose apple?",
       "options": [
         {
@@ -225,7 +225,7 @@
       },
       "assessed": true,
       "objective": "math.u04.main.01",
-      "hint": "Read the labels and count one picture for each vote.",
+      "hint": "Find the apple row and count its pictures once.",
       "explanation": "One picture represents one person. The apple row has 4.",
       "shortExplanation": "One picture represents one person. The apple row has 4.",
       "source": {
@@ -274,7 +274,7 @@
     {
       "id": "math_unit_04.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "The favourite",
       "prompt": "Which fruit is the favourite?",
       "options": [
         {
@@ -305,7 +305,7 @@
       },
       "assessed": true,
       "objective": "math.u04.main.02",
-      "hint": "Read the labels and count one picture for each vote.",
+      "hint": "Which row has the most pictures?",
       "explanation": "The apple row has the most pictures.",
       "shortExplanation": "The apple row has the most pictures.",
       "source": {
@@ -354,7 +354,7 @@
     {
       "id": "math_unit_04.step.004",
       "kind": "tap-choice",
-      "title": "Maths discovery 4",
+      "title": "The fewest",
       "prompt": "Which fruit did the fewest people choose?",
       "options": [
         {
@@ -385,7 +385,7 @@
       },
       "assessed": true,
       "objective": "math.u04.main.03",
-      "hint": "Read the labels and count one picture for each vote.",
+      "hint": "Which row has the fewest pictures?",
       "explanation": "Mango has the fewest pictures: one.",
       "shortExplanation": "Mango has the fewest pictures: one.",
       "source": {
@@ -434,7 +434,7 @@
     {
       "id": "math_unit_04.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "Two rows together",
       "prompt": "How many chose banana and orange together?",
       "options": [
         {
@@ -460,7 +460,7 @@
       },
       "assessed": true,
       "objective": "math.u04.main.04",
-      "hint": "Read the labels and count one picture for each vote.",
+      "hint": "Count the banana pictures, then count on the orange ones.",
       "explanation": "Two chose banana and 3 chose orange. Together that is 5.",
       "shortExplanation": "Two chose banana and 3 chose orange. Together that is 5.",
       "source": {
@@ -509,7 +509,7 @@
     {
       "id": "math_unit_04.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "Everyone asked",
       "prompt": "How many people were asked altogether?",
       "options": [
         {
@@ -535,7 +535,7 @@
       },
       "assessed": true,
       "objective": "math.u04.main.05",
-      "hint": "Read the labels and count one picture for each vote.",
+      "hint": "Count every picture in every row once.",
       "explanation": "Add all the rows: 4 + 2 + 3 + 1 = 10.",
       "shortExplanation": "Add all the rows: 4 + 2 + 3 + 1 = 10.",
       "source": {
@@ -584,7 +584,7 @@
     {
       "id": "math_unit_04.step.007",
       "kind": "match-lines",
-      "title": "Maths discovery 7",
+      "title": "Sorting by colour",
       "prompt": "Sort the toys by colour.",
       "options": [
         {
@@ -631,7 +631,7 @@
       },
       "assessed": true,
       "objective": "math.u04.main.06",
-      "hint": "Read the labels and count one picture for each vote.",
+      "hint": "Ask one question about each toy: is it red?",
       "explanation": "Red objects go in red. Every other colour goes in not red.",
       "shortExplanation": "Red objects go in red. Every other colour goes in not red.",
       "source": {
@@ -656,7 +656,7 @@
     {
       "id": "math_unit_04.step.008",
       "kind": "match-lines",
-      "title": "Maths discovery 8",
+      "title": "Pet votes",
       "prompt": "Sara, Laila and Nour chose cat. Omar chose dog. Adam chose fish. Match each pet to its total.",
       "options": [
         {
@@ -702,7 +702,7 @@
       },
       "assessed": true,
       "objective": "math.u04.main.07",
-      "hint": "Read the labels and count one picture for each vote.",
+      "hint": "Count how many children chose each pet.",
       "explanation": "Count each vote once: 3 cats, 1 dog and 1 fish.",
       "shortExplanation": "Count each vote once: 3 cats, 1 dog and 1 fish.",
       "source": {
@@ -763,7 +763,7 @@
     {
       "id": "math_unit_04.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "The picture key",
       "prompt": "In our pictogram, each picture stands for...",
       "options": [
         {
@@ -789,9 +789,9 @@
       },
       "assessed": true,
       "objective": "math.u04.choice.01",
-      "hint": "Read the labels and count one picture for each vote.",
-      "explanation": "One person is the answer. There is one equal-size picture per vote.",
-      "shortExplanation": "One person is the answer. There is one equal-size picture per vote.",
+      "hint": "Read the key under the pictogram.",
+      "explanation": "The key says each picture shows one person.",
+      "shortExplanation": "The key says each picture shows one person.",
       "source": {
         "pages": [
           15,
@@ -838,7 +838,7 @@
     {
       "id": "math_unit_04.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "The longest row",
       "prompt": "The longest row in a pictogram shows the...",
       "options": [
         {
@@ -864,9 +864,9 @@
       },
       "assessed": true,
       "objective": "math.u04.choice.02",
-      "hint": "Read the labels and count one picture for each vote.",
-      "explanation": "Most is the answer. The longest row has the greatest count.",
-      "shortExplanation": "Most is the answer. The longest row has the greatest count.",
+      "hint": "More pictures make a row longer.",
+      "explanation": "The longest row has the most pictures, so it shows the most.",
+      "shortExplanation": "The longest row has the most pictures, so it shows the most.",
       "source": {
         "pages": [
           15,
@@ -913,7 +913,7 @@
     {
       "id": "math_unit_04.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Block graphs",
       "prompt": "A block graph is made of...",
       "options": [
         {
@@ -939,9 +939,9 @@
       },
       "assessed": true,
       "objective": "math.u04.choice.03",
-      "hint": "Read the labels and count one picture for each vote.",
-      "explanation": "Blocks (squares) is the answer. Each equal-size block represents a vote.",
-      "shortExplanation": "Blocks (squares) is the answer. Each equal-size block represents a vote.",
+      "hint": "Look at a block graph: what is each column built from?",
+      "explanation": "A block graph is built from equal square blocks.",
+      "shortExplanation": "A block graph is built from equal square blocks.",
       "source": {
         "pages": [
           15,
@@ -984,7 +984,7 @@
     {
       "id": "math_unit_04.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "Orange votes",
       "prompt": "In the picture above, how many people chose orange?",
       "options": [
         {
@@ -1010,9 +1010,9 @@
       },
       "assessed": true,
       "objective": "math.u04.choice.04",
-      "hint": "Read the labels and count one picture for each vote.",
-      "explanation": "3 is the answer. Count the three orange pictures.",
-      "shortExplanation": "3 is the answer. Count the three orange pictures.",
+      "hint": "Find the orange row and count its pictures.",
+      "explanation": "The orange row has three pictures, so 3 people chose orange.",
+      "shortExplanation": "The orange row has three pictures, so 3 people chose orange.",
       "source": {
         "pages": [
           15,
@@ -1059,7 +1059,7 @@
     {
       "id": "math_unit_04.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "Fair pictograms",
       "prompt": "Pictures in a pictogram should be...",
       "options": [
         {
@@ -1085,9 +1085,9 @@
       },
       "assessed": true,
       "objective": "math.u04.choice.05",
-      "hint": "Read the labels and count one picture for each vote.",
-      "explanation": "The same size and lined up is the answer. Equal sizes make the comparison fair.",
-      "shortExplanation": "The same size and lined up is the answer. Equal sizes make the comparison fair.",
+      "hint": "How can we compare the rows fairly?",
+      "explanation": "Same-size pictures in lines let us compare rows fairly.",
+      "shortExplanation": "Same-size pictures in lines let us compare rows fairly.",
       "source": {
         "pages": [
           15,

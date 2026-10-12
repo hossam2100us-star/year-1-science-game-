@@ -148,7 +148,7 @@
     {
       "id": "math_unit_05.step.002",
       "kind": "match-lines",
-      "title": "Maths discovery 2",
+      "title": "Number words",
       "prompt": "Match each number word to its number.",
       "options": [
         {
@@ -194,7 +194,7 @@
       },
       "assessed": true,
       "objective": "math.u05.main.01",
-      "hint": "Find the numbers on a track. Each step changes the number by one.",
+      "hint": "Say each word aloud, then find its number.",
       "explanation": "These words name the numbers 11, 15 and 20.",
       "shortExplanation": "These words name the numbers 11, 15 and 20.",
       "source": {
@@ -219,7 +219,7 @@
     {
       "id": "math_unit_05.step.003",
       "kind": "match-lines",
-      "title": "Maths discovery 3",
+      "title": "Counting back gaps",
       "prompt": "Count back and fill each gap.",
       "options": [
         {
@@ -265,7 +265,7 @@
       },
       "assessed": true,
       "objective": "math.u05.main.02",
-      "hint": "Find the numbers on a track. Each step changes the number by one.",
+      "hint": "Count back one at a time: each number is one less.",
       "explanation": "Counting back takes away one each time.",
       "shortExplanation": "Counting back takes away one each time.",
       "source": {
@@ -295,7 +295,7 @@
     {
       "id": "math_unit_05.step.004",
       "kind": "match-lines",
-      "title": "Maths discovery 4",
+      "title": "Larger numbers",
       "prompt": "Choose the larger number in each pair.",
       "options": [
         {
@@ -341,7 +341,7 @@
       },
       "assessed": true,
       "objective": "math.u05.main.03",
-      "hint": "Find the numbers on a track. Each step changes the number by one.",
+      "hint": "The larger number comes later when you count.",
       "explanation": "The larger number is farther along the number track.",
       "shortExplanation": "The larger number is farther along the number track.",
       "source": {
@@ -371,7 +371,7 @@
     {
       "id": "math_unit_05.step.005",
       "kind": "match-lines",
-      "title": "Maths discovery 5",
+      "title": "Smaller numbers",
       "prompt": "Choose the smaller number in each pair.",
       "options": [
         {
@@ -406,7 +406,7 @@
       },
       "assessed": true,
       "objective": "math.u05.main.04",
-      "hint": "Find the numbers on a track. Each step changes the number by one.",
+      "hint": "The smaller number comes first when you count.",
       "explanation": "The smaller number comes first on the number track.",
       "shortExplanation": "The smaller number comes first on the number track.",
       "source": {
@@ -436,7 +436,7 @@
     {
       "id": "math_unit_05.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "An empty bowl",
       "prompt": "The fruit bowl is empty. How many apples are there?",
       "options": [
         {
@@ -462,7 +462,7 @@
       },
       "assessed": true,
       "objective": "math.u05.main.05",
-      "hint": "Find the numbers on a track. Each step changes the number by one.",
+      "hint": "How many apples can you see in the bowl?",
       "explanation": "Zero means there are no apples.",
       "shortExplanation": "Zero means there are no apples.",
       "source": {
@@ -493,7 +493,7 @@
     {
       "id": "math_unit_05.step.007",
       "kind": "tap-choice",
-      "title": "Maths discovery 7",
+      "title": "Guess, then count",
       "prompt": "Make a guess aloud first. Then count the dots. How many are there?",
       "options": [
         {
@@ -519,7 +519,7 @@
       },
       "assessed": true,
       "objective": "math.u05.main.06",
-      "hint": "Your guess does not have to match. Count each dot once.",
+      "hint": "Your guess does not have to match. Touch each dot once.",
       "explanation": "An estimate is a guess. Counting checks it: there are 12.",
       "shortExplanation": "An estimate is a guess. Counting checks it: there are 12.",
       "source": {
@@ -550,7 +550,7 @@
     {
       "id": "math_unit_05.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Counting on from 7",
       "prompt": "Start at 7 and count on 4. Where do you land?",
       "options": [
         {
@@ -576,7 +576,7 @@
       },
       "assessed": true,
       "objective": "math.u05.main.07",
-      "hint": "Find the numbers on a track. Each step changes the number by one.",
+      "hint": "Start on 7 and make four jumps forward.",
       "explanation": "Four forward jumps from 7 land on 11.",
       "shortExplanation": "Four forward jumps from 7 land on 11.",
       "source": {
@@ -611,7 +611,7 @@
     {
       "id": "math_unit_05.step.009",
       "kind": "tap-choice",
-      "title": "Maths discovery 9",
+      "title": "Counting back from 15",
       "prompt": "Start at 15 and count back 3. Where do you land?",
       "options": [
         {
@@ -637,7 +637,7 @@
       },
       "assessed": true,
       "objective": "math.u05.main.08",
-      "hint": "Find the numbers on a track. Each step changes the number by one.",
+      "hint": "Start on 15 and make three jumps back.",
       "explanation": "Three backward jumps from 15 land on 12.",
       "shortExplanation": "Three backward jumps from 15 land on 12.",
       "source": {
@@ -672,7 +672,7 @@
     {
       "id": "math_unit_05.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "Zero",
       "prompt": "Zero means...",
       "options": [
         {
@@ -698,9 +698,9 @@
       },
       "assessed": true,
       "objective": "math.u05.choice.01",
-      "hint": "Find the numbers on a track. Each step changes the number by one.",
-      "explanation": "Nothing is the answer. Zero names an empty group.",
-      "shortExplanation": "Nothing is the answer. Zero names an empty group.",
+      "hint": "How many sweets are in an empty bag?",
+      "explanation": "Zero means nothing: an empty group.",
+      "shortExplanation": "Zero means nothing: an empty group.",
       "source": {
         "pages": [
           18,
@@ -723,7 +723,7 @@
     {
       "id": "math_unit_05.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "The largest number",
       "prompt": "Which number is the largest?",
       "options": [
         {
@@ -749,9 +749,9 @@
       },
       "assessed": true,
       "objective": "math.u05.choice.02",
-      "hint": "Find the numbers on a track. Each step changes the number by one.",
-      "explanation": "17 is the answer. 17 is farther along the number track.",
-      "shortExplanation": "17 is the answer. 17 is farther along the number track.",
+      "hint": "Which number would you say last when you count?",
+      "explanation": "17 comes after 9 and 12 when we count, so it is largest.",
+      "shortExplanation": "17 comes after 9 and 12 when we count, so it is largest.",
       "source": {
         "pages": [
           18,
@@ -774,7 +774,7 @@
     {
       "id": "math_unit_05.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Just before 10",
       "prompt": "The number just before 10 is...",
       "options": [
         {
@@ -800,9 +800,9 @@
       },
       "assessed": true,
       "objective": "math.u05.choice.03",
-      "hint": "Find the numbers on a track. Each step changes the number by one.",
-      "explanation": "9 is the answer. 9 comes immediately before 10.",
-      "shortExplanation": "9 is the answer. 9 comes immediately before 10.",
+      "hint": "Count up to 10. Which number do you say just before it?",
+      "explanation": "9 comes just before 10 when we count.",
+      "shortExplanation": "9 comes just before 10 when we count.",
       "source": {
         "pages": [
           18,
@@ -825,7 +825,7 @@
     {
       "id": "math_unit_05.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "A clever guess",
       "prompt": "A clever guess of how many, before we count, is called an...",
       "options": [
         {
@@ -851,9 +851,9 @@
       },
       "assessed": true,
       "objective": "math.u05.choice.04",
-      "hint": "Find the numbers on a track. Each step changes the number by one.",
-      "explanation": "Estimate is the answer. We guess before counting to check.",
-      "shortExplanation": "Estimate is the answer. We guess before counting to check.",
+      "hint": "It is a guess we make before we count.",
+      "explanation": "An estimate is a clever guess before we count.",
+      "shortExplanation": "An estimate is a clever guess before we count.",
       "source": {
         "pages": [
           18,
@@ -876,7 +876,7 @@
     {
       "id": "math_unit_05.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "Counting back from 12",
       "prompt": "Count back: 12, 11, ...",
       "options": [
         {
@@ -902,9 +902,9 @@
       },
       "assessed": true,
       "objective": "math.u05.choice.05",
-      "hint": "Find the numbers on a track. Each step changes the number by one.",
-      "explanation": "10 is the answer. Count back one step from 11.",
-      "shortExplanation": "10 is the answer. Count back one step from 11.",
+      "hint": "Each number is one less than the one before.",
+      "explanation": "One less than 11 is 10.",
+      "shortExplanation": "One less than 11 is 10.",
       "source": {
         "pages": [
           18,

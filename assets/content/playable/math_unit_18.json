@@ -175,7 +175,7 @@
     {
       "id": "math_unit_18.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "O'clock",
       "prompt": "What time does this clock show?",
       "options": [
         {
@@ -201,7 +201,7 @@
       },
       "assessed": true,
       "objective": "math.u18.main.01",
-      "hint": "Find the long hand first; compare how much each container holds.",
+      "hint": "Look at the long hand first, then the short hand.",
       "explanation": "The long hand is on 12 and the short hand is on 4.",
       "shortExplanation": "The long hand is on 12 and the short hand is on 4.",
       "source": {
@@ -232,7 +232,7 @@
     {
       "id": "math_unit_18.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "Half past",
       "prompt": "What time does this clock show?",
       "options": [
         {
@@ -258,7 +258,7 @@
       },
       "assessed": true,
       "objective": "math.u18.main.02",
-      "hint": "Find the long hand first; compare how much each container holds.",
+      "hint": "The long hand on 6 means half past. Where is the short hand?",
       "explanation": "The long hand is on 6. The short hand is between 7 and 8.",
       "shortExplanation": "The long hand is on 6. The short hand is between 7 and 8.",
       "source": {
@@ -326,7 +326,7 @@
     {
       "id": "math_unit_18.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "Clock hands",
       "prompt": "What is the long hand called?",
       "options": [
         {
@@ -347,7 +347,7 @@
       },
       "assessed": true,
       "objective": "math.u18.main.04",
-      "hint": "Find the long hand first; compare how much each container holds.",
+      "hint": "Which hand moves quickly around the clock?",
       "explanation": "The long hand shows minutes.",
       "shortExplanation": "The long hand shows minutes.",
       "source": {
@@ -373,7 +373,7 @@
     {
       "id": "math_unit_18.step.006",
       "kind": "match-lines",
-      "title": "Maths discovery 6",
+      "title": "Measuring tools",
       "prompt": "Match each measuring job to its tool.",
       "options": [
         {
@@ -419,7 +419,7 @@
       },
       "assessed": true,
       "objective": "math.u18.main.05",
-      "hint": "Find the long hand first; compare how much each container holds.",
+      "hint": "What do we measure: length, weight or water?",
       "explanation": "A ruler measures length, scales measure mass, and a jug measures water.",
       "shortExplanation": "A ruler measures length, scales measure mass, and a jug measures water.",
       "source": {
@@ -445,7 +445,7 @@
     {
       "id": "math_unit_18.step.007",
       "kind": "order-sequence",
-      "title": "Maths discovery 7",
+      "title": "Holds the most",
       "prompt": "Jug holds 5 cups, bowl 4 and mug 2. Put them in order, holds most first.",
       "options": [
         {
@@ -475,7 +475,7 @@
       },
       "assessed": true,
       "objective": "math.u18.main.06",
-      "hint": "Find the long hand first; compare how much each container holds.",
+      "hint": "Compare how many cups each one holds.",
       "explanation": "Compare capacity: 5 cups, then 4 cups, then 2 cups.",
       "shortExplanation": "Compare capacity: 5 cups, then 4 cups, then 2 cups.",
       "source": {
@@ -538,7 +538,7 @@
     {
       "id": "math_unit_18.step.009",
       "kind": "tap-choice",
-      "title": "Maths discovery 9",
+      "title": "The long hand at half past",
       "prompt": "At half past, the long hand points to 6.",
       "options": [
         {
@@ -559,7 +559,7 @@
       },
       "assessed": true,
       "objective": "math.u18.main.08",
-      "hint": "Find the long hand first; compare how much each container holds.",
+      "hint": "Halfway around the clock, where is the long hand?",
       "explanation": "The minute hand has travelled halfway around the clock.",
       "shortExplanation": "The minute hand has travelled halfway around the clock.",
       "source": {
@@ -585,7 +585,7 @@
     {
       "id": "math_unit_18.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "3 o'clock",
       "prompt": "At 3 o'clock the long hand points to...",
       "options": [
         {
@@ -611,9 +611,9 @@
       },
       "assessed": true,
       "objective": "math.u18.choice.01",
-      "hint": "Find the long hand first; compare how much each container holds.",
-      "explanation": "12 is the answer. The minute hand is at twelve for o'clock.",
-      "shortExplanation": "12 is the answer. The minute hand is at twelve for o'clock.",
+      "hint": "At any o'clock, where is the long hand?",
+      "explanation": "At o'clock the long hand always points to 12.",
+      "shortExplanation": "At o'clock the long hand always points to 12.",
       "source": {
         "pages": [
           60,
@@ -642,7 +642,7 @@
     {
       "id": "math_unit_18.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "Half past 5",
       "prompt": "At half past 5 the short hand is...",
       "options": [
         {
@@ -668,9 +668,9 @@
       },
       "assessed": true,
       "objective": "math.u18.choice.02",
-      "hint": "Find the long hand first; compare how much each container holds.",
-      "explanation": "Between 5 and 6 is the answer. The hour hand is halfway to six.",
-      "shortExplanation": "Between 5 and 6 is the answer. The hour hand is halfway to six.",
+      "hint": "After half an hour, has the short hand reached 6 yet?",
+      "explanation": "At half past 5 the short hand is halfway to 6.",
+      "shortExplanation": "At half past 5 the short hand is halfway to 6.",
       "source": {
         "pages": [
           60,
@@ -694,7 +694,7 @@
     {
       "id": "math_unit_18.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Weighing",
       "prompt": "To weigh a parcel, use...",
       "options": [
         {
@@ -720,9 +720,9 @@
       },
       "assessed": true,
       "objective": "math.u18.choice.03",
-      "hint": "Find the long hand first; compare how much each container holds.",
-      "explanation": "Scales is the answer. Scales measure mass.",
-      "shortExplanation": "Scales is the answer. Scales measure mass.",
+      "hint": "Which tool shows how heavy something is?",
+      "explanation": "Scales show how heavy a parcel is.",
+      "shortExplanation": "Scales show how heavy a parcel is.",
       "source": {
         "pages": [
           60,
@@ -746,7 +746,7 @@
     {
       "id": "math_unit_18.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "Capacity",
       "prompt": "A container that holds more has a bigger...",
       "options": [
         {
@@ -772,9 +772,9 @@
       },
       "assessed": true,
       "objective": "math.u18.choice.04",
-      "hint": "Find the long hand first; compare how much each container holds.",
-      "explanation": "Capacity is the answer. Capacity means how much the container holds.",
-      "shortExplanation": "Capacity is the answer. Capacity means how much the container holds.",
+      "hint": "What word means how much a container holds?",
+      "explanation": "Capacity means how much a container can hold.",
+      "shortExplanation": "Capacity means how much a container can hold.",
       "source": {
         "pages": [
           60,
@@ -798,7 +798,7 @@
     {
       "id": "math_unit_18.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "Half an hour",
       "prompt": "Half an hour is...",
       "options": [
         {
@@ -824,9 +824,9 @@
       },
       "assessed": true,
       "objective": "math.u18.choice.05",
-      "hint": "Find the long hand first; compare how much each container holds.",
-      "explanation": "30 minutes is the answer. Thirty is half of sixty minutes.",
-      "shortExplanation": "30 minutes is the answer. Thirty is half of sixty minutes.",
+      "hint": "One hour is 60 minutes. What is half of 60?",
+      "explanation": "An hour is 60 minutes, so half an hour is 30.",
+      "shortExplanation": "An hour is 60 minutes, so half an hour is 30.",
       "source": {
         "pages": [
           60,

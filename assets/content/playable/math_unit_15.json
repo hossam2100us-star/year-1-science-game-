@@ -198,7 +198,7 @@
     {
       "id": "math_unit_15.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "Cube faces",
       "prompt": "How many faces does a cube have?",
       "options": [
         {
@@ -224,7 +224,7 @@
       },
       "assessed": true,
       "objective": "math.u15.main.01",
-      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "hint": "Count each flat face of a dice once.",
       "explanation": "A cube has 6 square faces.",
       "shortExplanation": "A cube has 6 square faces.",
       "source": {
@@ -253,7 +253,7 @@
     {
       "id": "math_unit_15.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "Cube corners",
       "prompt": "How many corners does a cube have?",
       "options": [
         {
@@ -279,7 +279,7 @@
       },
       "assessed": true,
       "objective": "math.u15.main.02",
-      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "hint": "Count the top corners, then the bottom corners.",
       "explanation": "A cube has 8 corners.",
       "shortExplanation": "A cube has 8 corners.",
       "source": {
@@ -308,7 +308,7 @@
     {
       "id": "math_unit_15.step.004",
       "kind": "tap-choice",
-      "title": "Maths discovery 4",
+      "title": "Turned shapes",
       "prompt": "Are these the same shape?",
       "options": [
         {
@@ -329,7 +329,7 @@
       },
       "assessed": true,
       "objective": "math.u15.main.03",
-      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "hint": "Count the sides of each. Did turning change them?",
       "explanation": "Both are triangles. Turning does not change the shape.",
       "shortExplanation": "Both are triangles. Turning does not change the shape.",
       "source": {
@@ -368,7 +368,7 @@
     {
       "id": "math_unit_15.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "Cylinder faces",
       "prompt": "How many flat faces does a cylinder have?",
       "options": [
         {
@@ -394,7 +394,7 @@
       },
       "assessed": true,
       "objective": "math.u15.main.04",
-      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "hint": "Look at a tin: how many flat ends does it have?",
       "explanation": "A cylinder has two flat circular faces.",
       "shortExplanation": "A cylinder has two flat circular faces.",
       "source": {
@@ -423,7 +423,7 @@
     {
       "id": "math_unit_15.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "Solid pattern",
       "prompt": "sphere, cube, cube, sphere, cube, cube... What comes next?",
       "options": [
         {
@@ -461,7 +461,7 @@
       },
       "assessed": true,
       "objective": "math.u15.main.05",
-      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "hint": "Say the shapes aloud and find the part that repeats.",
       "explanation": "The repeating part is sphere, cube, cube.",
       "shortExplanation": "The repeating part is sphere, cube, cube.",
       "source": {
@@ -522,7 +522,7 @@
     {
       "id": "math_unit_15.step.008",
       "kind": "match-lines",
-      "title": "Maths discovery 8",
+      "title": "Flat or curved faces",
       "prompt": "Sort the solid shapes by their faces.",
       "options": [
         {
@@ -581,7 +581,7 @@
       },
       "assessed": true,
       "objective": "math.u15.main.07",
-      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "hint": "Does the shape have a curved surface that can roll?",
       "explanation": "Sphere, cylinder and cone have curved faces; the other shapes have only flat faces.",
       "shortExplanation": "Sphere, cylinder and cone have curved faces; the other shapes have only flat faces.",
       "source": {
@@ -606,7 +606,7 @@
     {
       "id": "math_unit_15.step.009",
       "kind": "drag-to-basket",
-      "title": "Maths discovery 9",
+      "title": "Robot routes",
       "prompt": "The robot faces up. Choose both routes that reach the star two spaces up and two right.",
       "options": [
         {
@@ -635,7 +635,7 @@
       },
       "assessed": true,
       "objective": "math.u15.main.08",
-      "hint": "Turning leaves the shape the same. Count each face or corner once.",
+      "hint": "Choose a route and watch where the robot ends.",
       "explanation": "Both selected routes finish two spaces up and two right of the start.",
       "shortExplanation": "Both selected routes finish two spaces up and two right of the start.",
       "source": {
@@ -698,7 +698,7 @@
     {
       "id": "math_unit_15.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "Turning a shape",
       "prompt": "A shape that is turned round...",
       "options": [
         {
@@ -724,9 +724,9 @@
       },
       "assessed": true,
       "objective": "math.u15.choice.01",
-      "hint": "Turning leaves the shape the same. Count each face or corner once.",
-      "explanation": "Keeps its name is the answer. Its sides and corners stay the same.",
-      "shortExplanation": "Keeps its name is the answer. Its sides and corners stay the same.",
+      "hint": "Turn a triangle. Does it still have 3 sides?",
+      "explanation": "Turning does not change sides or corners, so the name stays.",
+      "shortExplanation": "Turning does not change sides or corners, so the name stays.",
       "source": {
         "pages": [
           51,
@@ -765,7 +765,7 @@
     {
       "id": "math_unit_15.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "Cone corners",
       "prompt": "A cone has...",
       "options": [
         {
@@ -791,9 +791,9 @@
       },
       "assessed": true,
       "objective": "math.u15.choice.02",
-      "hint": "Turning leaves the shape the same. Count each face or corner once.",
-      "explanation": "1 pointy corner is the answer. A cone meets at one pointed corner.",
-      "shortExplanation": "1 pointy corner is the answer. A cone meets at one pointed corner.",
+      "hint": "Where does a cone come to a point?",
+      "explanation": "A cone has one pointy corner at its top.",
+      "shortExplanation": "A cone has one pointy corner at its top.",
       "source": {
         "pages": [
           51,
@@ -816,7 +816,7 @@
     {
       "id": "math_unit_15.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Sphere faces",
       "prompt": "A sphere has...",
       "options": [
         {
@@ -842,9 +842,9 @@
       },
       "assessed": true,
       "objective": "math.u15.choice.03",
-      "hint": "Turning leaves the shape the same. Count each face or corner once.",
-      "explanation": "One curved face is the answer. A sphere is curved all around.",
-      "shortExplanation": "One curved face is the answer. A sphere is curved all around.",
+      "hint": "Is a ball flat anywhere?",
+      "explanation": "A sphere has one curved face all the way round.",
+      "shortExplanation": "A sphere has one curved face all the way round.",
       "source": {
         "pages": [
           51,
@@ -867,7 +867,7 @@
     {
       "id": "math_unit_15.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "Cuboid faces",
       "prompt": "A cuboid has...",
       "options": [
         {
@@ -893,9 +893,9 @@
       },
       "assessed": true,
       "objective": "math.u15.choice.04",
-      "hint": "Turning leaves the shape the same. Count each face or corner once.",
-      "explanation": "6 faces is the answer. A cuboid has six flat faces.",
-      "shortExplanation": "6 faces is the answer. A cuboid has six flat faces.",
+      "hint": "Count the faces of a box: top, bottom and the sides.",
+      "explanation": "A box shape has a top, a bottom and four sides: 6 faces.",
+      "shortExplanation": "A box shape has a top, a bottom and four sides: 6 faces.",
       "source": {
         "pages": [
           51,
@@ -918,7 +918,7 @@
     {
       "id": "math_unit_15.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "Triangle sides",
       "prompt": "A triangle has...",
       "options": [
         {
@@ -944,9 +944,9 @@
       },
       "assessed": true,
       "objective": "math.u15.choice.05",
-      "hint": "Turning leaves the shape the same. Count each face or corner once.",
-      "explanation": "3 sides is the answer. A triangle has three straight sides.",
-      "shortExplanation": "3 sides is the answer. A triangle has three straight sides.",
+      "hint": "Touch each straight side of a triangle.",
+      "explanation": "A triangle has three straight sides.",
+      "shortExplanation": "A triangle has three straight sides.",
       "source": {
         "pages": [
           51,

@@ -7,6 +7,7 @@ No schoolbook PDF or personal certificate is bundled in the application.
 from __future__ import annotations
 
 import argparse
+import functools
 import hashlib
 import json
 import re
@@ -700,6 +701,11 @@ def source_ref(draft,record=None):
         'answerKeyText':record['answerKeyText'] if record else '', 'sourceSha256':draft['sourceSha256']}
 
 
+@functools.lru_cache(maxsize=None)
+def question_text():
+    return json.loads((CONTENT/'maths_question_text.json').read_text(encoding='utf-8'))
+
+
 def short_explanation(text,limit=16):
     """Whole sentences up to the word limit, never a sentence cut short.
 
@@ -725,12 +731,15 @@ def playable_step(draft,record,spec,index,hint,explanation):
         options=[{'id':f'choice_{i+1}','label':str(label),'art':'math_label',**({'visual':spec['optionVisuals'][label]} if label in spec.get('optionVisuals',{}) else {})} for i,label in enumerate(spec['choices'])]
         ids={o['label']:o['id'] for o in options}
         answer={'type':spec['type'],'value':ids[spec['correct']] if spec['type']=='single' else [ids[v] for v in spec['correct']]}
-    text=spec.get('explanation') or explanation
+    # Teacher review 5: a title, a hint and a reason of its own for every
+    # assessed question (assets/content/maths_question_text.json).
+    words=question_text()[record['id']] if answer else {}
+    text=words.get('explanation') or spec.get('explanation') or explanation
     short=short_explanation(text)
-    step={'id':f'{draft["id"]}.step.{index:03d}','kind':kind,'title':('Try it at home' if spec['type']=='free' else f'Maths discovery {index}'),
+    step={'id':f'{draft["id"]}.step.{index:03d}','kind':kind,'title':('Try it at home' if spec['type']=='free' else words['title']),
         'prompt':spec['prompt'],'options':options,'targets':targets,'answer':answer,
         'assessed':answer is not None,'objective':record['id'] if answer else '',
-        'hint':spec.get('hint') or hint,'explanation':text,'shortExplanation':short,
+        'hint':words.get('hint') or spec.get('hint') or hint,'explanation':text,'shortExplanation':short,
         'source':source_ref(draft,record),'scene':'workshop','section':'Try at home' if spec['type']=='free' else ('Challenge' if draft['kind']=='quiz' else 'Discover'),
         'playScene':'maths','theme':draft['id'],'adapted':True}
     if spec.get('visual'): step['mathVisual']=spec['visual']

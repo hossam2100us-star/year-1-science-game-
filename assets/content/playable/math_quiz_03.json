@@ -13,7 +13,7 @@
     {
       "id": "math_quiz_03.step.001",
       "kind": "tap-choice",
-      "title": "Maths discovery 1",
+      "title": "An even number",
       "prompt": "Choose the even number.",
       "options": [
         {
@@ -39,7 +39,7 @@
       },
       "assessed": true,
       "objective": "math.q03.01",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Which number makes pairs with none left over?",
       "explanation": "Six makes three pairs with none left over.",
       "shortExplanation": "Six makes three pairs with none left over.",
       "source": {
@@ -62,7 +62,7 @@
     {
       "id": "math_quiz_03.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "After 2nd",
       "prompt": "Which position comes after 2nd?",
       "options": [
         {
@@ -88,7 +88,7 @@
       },
       "assessed": true,
       "objective": "math.q03.02",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Say first, second, then the next position.",
       "explanation": "Third follows second.",
       "shortExplanation": "Third follows second.",
       "source": {
@@ -111,7 +111,7 @@
     {
       "id": "math_quiz_03.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "Double 4",
       "prompt": "Double 4 is...?",
       "options": [
         {
@@ -137,7 +137,7 @@
       },
       "assessed": true,
       "objective": "math.q03.03",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Add 4 and 4.",
       "explanation": "Four and another four make eight.",
       "shortExplanation": "Four and another four make eight.",
       "source": {
@@ -160,7 +160,7 @@
     {
       "id": "math_quiz_03.step.004",
       "kind": "tap-choice",
-      "title": "Maths discovery 4",
+      "title": "Adding 6 and 11",
       "prompt": "6 + 11 = ?",
       "options": [
         {
@@ -186,7 +186,7 @@
       },
       "assessed": true,
       "objective": "math.q03.04",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Start on 11, the bigger number, and count on 6.",
       "explanation": "Start at eleven and count on six to reach seventeen.",
       "shortExplanation": "Start at eleven and count on six to reach seventeen.",
       "source": {
@@ -209,7 +209,7 @@
     {
       "id": "math_quiz_03.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "Cube faces",
       "prompt": "How many faces does a cube have?",
       "options": [
         {
@@ -235,7 +235,7 @@
       },
       "assessed": true,
       "objective": "math.q03.05",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Count each flat face of a dice once.",
       "explanation": "A cube has six square faces.",
       "shortExplanation": "A cube has six square faces.",
       "source": {
@@ -258,7 +258,7 @@
     {
       "id": "math_quiz_03.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "An upside-down triangle",
       "prompt": "A triangle turns upside down. Is it still a triangle?",
       "options": [
         {
@@ -279,7 +279,7 @@
       },
       "assessed": true,
       "objective": "math.q03.06",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Count its sides and corners after turning.",
       "explanation": "It still has three straight sides and three corners.",
       "shortExplanation": "It still has three straight sides and three corners.",
       "source": {
@@ -302,7 +302,7 @@
     {
       "id": "math_quiz_03.step.007",
       "kind": "tap-choice",
-      "title": "Maths discovery 7",
+      "title": "The most in a graph",
       "prompt": "Which graph column shows the most?",
       "options": [
         {
@@ -328,7 +328,7 @@
       },
       "assessed": true,
       "objective": "math.q03.07",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "More blocks make a taller column.",
       "explanation": "The tallest column has the greatest count.",
       "shortExplanation": "The tallest column has the greatest count.",
       "source": {
@@ -371,7 +371,7 @@
     {
       "id": "math_quiz_03.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Half of 20",
       "prompt": "Half of 20 is...?",
       "options": [
         {
@@ -397,7 +397,7 @@
       },
       "assessed": true,
       "objective": "math.q03.08",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Share 20 into two equal groups.",
       "explanation": "Two equal groups of ten make twenty.",
       "shortExplanation": "Two equal groups of ten make twenty.",
       "source": {
@@ -420,7 +420,7 @@
     {
       "id": "math_quiz_03.step.009",
       "kind": "tap-choice",
-      "title": "Maths discovery 9",
+      "title": "Reading the clock",
       "prompt": "What time does this clock show?",
       "options": [
         {
@@ -446,7 +446,7 @@
       },
       "assessed": true,
       "objective": "math.q03.09",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Look at the long hand first, then the short hand.",
       "explanation": "The minute hand is on twelve; the hour hand is on two.",
       "shortExplanation": "The minute hand is on twelve; the hour hand is on two.",
       "source": {
@@ -474,7 +474,7 @@
     {
       "id": "math_quiz_03.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "Weighing flour",
       "prompt": "What do we use to weigh flour?",
       "options": [
         {
@@ -500,7 +500,7 @@
       },
       "assessed": true,
       "objective": "math.q03.10",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Which tool shows how heavy something is?",
       "explanation": "Scales measure mass, so use them to weigh flour.",
       "shortExplanation": "Scales measure mass, so use them to weigh flour.",
       "source": {

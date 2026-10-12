@@ -168,7 +168,7 @@
     {
       "id": "math_unit_03.step.002",
       "kind": "match-lines",
-      "title": "Maths discovery 2",
+      "title": "Naming flat shapes",
       "prompt": "Match each flat shape to its name.",
       "options": [
         {
@@ -225,7 +225,7 @@
       },
       "assessed": true,
       "objective": "math.u03.main.01",
-      "hint": "Count sides and corners; look for flat or curved faces.",
+      "hint": "Count the straight sides and the corners of each shape.",
       "explanation": "Count straight sides and corners to name the shapes.",
       "shortExplanation": "Count straight sides and corners to name the shapes.",
       "source": {
@@ -276,7 +276,7 @@
     {
       "id": "math_unit_03.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "Shape riddle",
       "prompt": "I have 4 corners and 4 equal sides. What am I?",
       "options": [
         {
@@ -314,7 +314,7 @@
       },
       "assessed": true,
       "objective": "math.u03.main.02",
-      "hint": "Count sides and corners; look for flat or curved faces.",
+      "hint": "Which shapes have 4 corners? Which one has all its sides the same?",
       "explanation": "A square has 4 equal sides and 4 corners.",
       "shortExplanation": "A square has 4 equal sides and 4 corners.",
       "source": {
@@ -340,7 +340,7 @@
     {
       "id": "math_unit_03.step.004",
       "kind": "tap-choice",
-      "title": "Maths discovery 4",
+      "title": "Solid riddle",
       "prompt": "I have 6 square faces and 8 corners. What am I?",
       "options": [
         {
@@ -378,7 +378,7 @@
       },
       "assessed": true,
       "objective": "math.u03.main.03",
-      "hint": "Count sides and corners; look for flat or curved faces.",
+      "hint": "Think of a dice and count its square faces.",
       "explanation": "A cube has 6 square faces and 8 corners.",
       "shortExplanation": "A cube has 6 square faces and 8 corners.",
       "source": {
@@ -404,7 +404,7 @@
     {
       "id": "math_unit_03.step.005",
       "kind": "match-lines",
-      "title": "Maths discovery 5",
+      "title": "Triangle facts",
       "prompt": "Complete the triangle facts.",
       "options": [
         {
@@ -444,7 +444,7 @@
       },
       "assessed": true,
       "objective": "math.u03.main.04",
-      "hint": "Count sides and corners; look for flat or curved faces.",
+      "hint": "Touch each side of a triangle, then each corner.",
       "explanation": "A triangle has 3 sides and 3 corners.",
       "shortExplanation": "A triangle has 3 sides and 3 corners.",
       "source": {
@@ -474,7 +474,7 @@
     {
       "id": "math_unit_03.step.006",
       "kind": "drag-to-basket",
-      "title": "Maths discovery 6",
+      "title": "Shapes that roll",
       "prompt": "Choose all the shapes that can roll.",
       "options": [
         {
@@ -524,7 +524,7 @@
       },
       "assessed": true,
       "objective": "math.u03.main.05",
-      "hint": "Count sides and corners; look for flat or curved faces.",
+      "hint": "A shape with a curved surface can roll.",
       "explanation": "Spheres and cylinders have curved parts that let them roll.",
       "shortExplanation": "Spheres and cylinders have curved parts that let them roll.",
       "source": {
@@ -550,7 +550,7 @@
     {
       "id": "math_unit_03.step.007",
       "kind": "match-lines",
-      "title": "Maths discovery 7",
+      "title": "Flat or solid",
       "prompt": "Sort flat drawings and solid objects.",
       "options": [
         {
@@ -609,7 +609,7 @@
       },
       "assessed": true,
       "objective": "math.u03.main.06",
-      "hint": "Count sides and corners; look for flat or curved faces.",
+      "hint": "Could you hold it and turn it in your hand?",
       "explanation": "Flat drawings are 2D. Objects you can hold are 3D.",
       "shortExplanation": "Flat drawings are 2D. Objects you can hold are 3D.",
       "source": {
@@ -635,7 +635,7 @@
     {
       "id": "math_unit_03.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Turning a square",
       "prompt": "A square turned onto its corner is still a square.",
       "options": [
         {
@@ -656,7 +656,7 @@
       },
       "assessed": true,
       "objective": "math.u03.main.07",
-      "hint": "Count sides and corners; look for flat or curved faces.",
+      "hint": "Count its sides and corners after turning. Did they change?",
       "explanation": "Turning does not change its 4 equal sides or 4 corners.",
       "shortExplanation": "Turning does not change its 4 equal sides or 4 corners.",
       "source": {
@@ -719,7 +719,7 @@
     {
       "id": "math_unit_03.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "A football",
       "prompt": "A football is a...",
       "options": [
         {
@@ -745,9 +745,9 @@
       },
       "assessed": true,
       "objective": "math.u03.choice.01",
-      "hint": "Count sides and corners; look for flat or curved faces.",
-      "explanation": "Sphere is the answer. A football is a solid round shape.",
-      "shortExplanation": "Sphere is the answer. A football is a solid round shape.",
+      "hint": "Is a football flat or solid? Is it round all over?",
+      "explanation": "A football is solid and round all over, like a sphere.",
+      "shortExplanation": "A football is solid and round all over, like a sphere.",
       "source": {
         "pages": [
           11,
@@ -771,7 +771,7 @@
     {
       "id": "math_unit_03.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "A cereal box",
       "prompt": "A cereal box is a...",
       "options": [
         {
@@ -797,9 +797,9 @@
       },
       "assessed": true,
       "objective": "math.u03.choice.02",
-      "hint": "Count sides and corners; look for flat or curved faces.",
-      "explanation": "Cuboid is the answer. A cereal box has rectangular faces.",
-      "shortExplanation": "Cuboid is the answer. A cereal box has rectangular faces.",
+      "hint": "Are all its faces squares, or are some long rectangles?",
+      "explanation": "A cereal box has rectangle faces, so it is a cuboid.",
+      "shortExplanation": "A cereal box has rectangle faces, so it is a cuboid.",
       "source": {
         "pages": [
           11,
@@ -823,7 +823,7 @@
     {
       "id": "math_unit_03.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Rectangle corners",
       "prompt": "A rectangle has...",
       "options": [
         {
@@ -849,9 +849,9 @@
       },
       "assessed": true,
       "objective": "math.u03.choice.03",
-      "hint": "Count sides and corners; look for flat or curved faces.",
-      "explanation": "4 corners is the answer. A rectangle has four corners.",
-      "shortExplanation": "4 corners is the answer. A rectangle has four corners.",
+      "hint": "Touch each corner of a rectangle and count.",
+      "explanation": "A rectangle has four corners, like a door.",
+      "shortExplanation": "A rectangle has four corners, like a door.",
       "source": {
         "pages": [
           11,
@@ -875,7 +875,7 @@
     {
       "id": "math_unit_03.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "No corners",
       "prompt": "Which shape has no corners?",
       "options": [
         {
@@ -913,9 +913,9 @@
       },
       "assessed": true,
       "objective": "math.u03.choice.04",
-      "hint": "Count sides and corners; look for flat or curved faces.",
-      "explanation": "Circle is the answer. A circle is round with no corners.",
-      "shortExplanation": "Circle is the answer. A circle is round with no corners.",
+      "hint": "Run your finger round each shape. Which one never turns a corner?",
+      "explanation": "A circle is round all the way, so it has no corners.",
+      "shortExplanation": "A circle is round all the way, so it has no corners.",
       "source": {
         "pages": [
           11,
@@ -939,7 +939,7 @@
     {
       "id": "math_unit_03.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "A print in sand",
       "prompt": "A tin pushed into sand leaves the print of a...",
       "options": [
         {
@@ -965,9 +965,9 @@
       },
       "assessed": true,
       "objective": "math.u03.choice.05",
-      "hint": "Count sides and corners; look for flat or curved faces.",
-      "explanation": "Circle is the answer. A cylinder has a circular flat face.",
-      "shortExplanation": "Circle is the answer. A cylinder has a circular flat face.",
+      "hint": "Look at the flat end of a tin. What shape is it?",
+      "explanation": "The flat end of a tin is a circle.",
+      "shortExplanation": "The flat end of a tin is a circle.",
       "source": {
         "pages": [
           11,

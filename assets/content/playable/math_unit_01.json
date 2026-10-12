@@ -141,7 +141,7 @@
     {
       "id": "math_unit_01.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "Counting apples",
       "prompt": "Count the apples. How many are there?",
       "options": [
         {
@@ -167,7 +167,7 @@
       },
       "assessed": true,
       "objective": "math.u01.main.01",
-      "hint": "Touch each object once, then remember the last number.",
+      "hint": "Touch each apple once and say one number for each.",
       "explanation": "Touch each apple once. There are 8 apples.",
       "shortExplanation": "Touch each apple once. There are 8 apples.",
       "source": {
@@ -199,7 +199,7 @@
     {
       "id": "math_unit_01.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "Counting stars",
       "prompt": "Count the stars. How many are there?",
       "options": [
         {
@@ -225,7 +225,7 @@
       },
       "assessed": true,
       "objective": "math.u01.main.02",
-      "hint": "Touch each object once, then remember the last number.",
+      "hint": "Touch each star once. Keep going until every star is counted.",
       "explanation": "Counting each star once gives 13 stars.",
       "shortExplanation": "Counting each star once gives 13 stars.",
       "source": {
@@ -257,7 +257,7 @@
     {
       "id": "math_unit_01.step.004",
       "kind": "match-lines",
-      "title": "Maths discovery 4",
+      "title": "Number track gaps",
       "prompt": "Fill the gaps in the number track.",
       "options": [
         {
@@ -303,7 +303,7 @@
       },
       "assessed": true,
       "objective": "math.u01.main.03",
-      "hint": "Touch each object once, then remember the last number.",
+      "hint": "Say the numbers in order. Which one is missing between its neighbours?",
       "explanation": "The missing numbers are 13, 16 and 18.",
       "shortExplanation": "The missing numbers are 13, 16 and 18.",
       "source": {
@@ -334,7 +334,7 @@
     {
       "id": "math_unit_01.step.005",
       "kind": "match-lines",
-      "title": "Maths discovery 5",
+      "title": "Dot pictures",
       "prompt": "Match each dot picture to its number.",
       "options": [
         {
@@ -380,7 +380,7 @@
       },
       "assessed": true,
       "objective": "math.u01.main.04",
-      "hint": "Touch each object once, then remember the last number.",
+      "hint": "Count the dots in each picture, one dot at a time.",
       "explanation": "The pictures show 4, 6 and 10 dots.",
       "shortExplanation": "The pictures show 4, 6 and 10 dots.",
       "source": {
@@ -469,7 +469,7 @@
     {
       "id": "math_unit_01.step.007",
       "kind": "tap-choice",
-      "title": "Maths discovery 7",
+      "title": "Spreading out",
       "prompt": "Sara spreads out 6 cups. Now there are more than 6 cups.",
       "options": [
         {
@@ -490,7 +490,7 @@
       },
       "assessed": true,
       "objective": "math.u01.main.06",
-      "hint": "Touch each object once, then remember the last number.",
+      "hint": "Were any cups added or taken away, or only moved?",
       "explanation": "Moving the cups does not change how many there are.",
       "shortExplanation": "Moving the cups does not change how many there are.",
       "source": {
@@ -516,7 +516,7 @@
     {
       "id": "math_unit_01.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Writing twelve",
       "prompt": "Choose the number twelve.",
       "options": [
         {
@@ -547,7 +547,7 @@
       },
       "assessed": true,
       "objective": "math.u01.main.07",
-      "hint": "Touch each object once, then remember the last number.",
+      "hint": "Twelve is ten and two more. Look for a 1 and then a 2.",
       "explanation": "Twelve is ten and two, written 12.",
       "shortExplanation": "Twelve is ten and two, written 12.",
       "source": {
@@ -610,7 +610,7 @@
     {
       "id": "math_unit_01.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "The last number",
       "prompt": "The last number you say when you count tells you...",
       "options": [
         {
@@ -636,9 +636,9 @@
       },
       "assessed": true,
       "objective": "math.u01.choice.01",
-      "hint": "Touch each object once, then remember the last number.",
-      "explanation": "How many altogether is the answer. The last count names the whole group.",
-      "shortExplanation": "How many altogether is the answer. The last count names the whole group.",
+      "hint": "Count three things aloud. What does your last number tell you?",
+      "explanation": "The last number you say tells how many there are altogether.",
+      "shortExplanation": "The last number you say tells how many there are altogether.",
       "source": {
         "pages": [
           4,
@@ -662,7 +662,7 @@
     {
       "id": "math_unit_01.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "Just after 15",
       "prompt": "Which number comes just after 15?",
       "options": [
         {
@@ -688,9 +688,9 @@
       },
       "assessed": true,
       "objective": "math.u01.choice.02",
-      "hint": "Touch each object once, then remember the last number.",
-      "explanation": "16 is the answer. Counting on one moves from 15 to 16.",
-      "shortExplanation": "16 is the answer. Counting on one moves from 15 to 16.",
+      "hint": "Say 15, then say the next counting number.",
+      "explanation": "Counting on one step from 15 gives 16.",
+      "shortExplanation": "Counting on one step from 15 gives 16.",
       "source": {
         "pages": [
           4,
@@ -714,7 +714,7 @@
     {
       "id": "math_unit_01.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "A full ten frame",
       "prompt": "How many dots fill a whole ten frame?",
       "options": [
         {
@@ -740,9 +740,9 @@
       },
       "assessed": true,
       "objective": "math.u01.choice.03",
-      "hint": "Touch each object once, then remember the last number.",
-      "explanation": "10 is the answer. A ten frame has ten spaces.",
-      "shortExplanation": "10 is the answer. A ten frame has ten spaces.",
+      "hint": "Count the empty spaces in the ten frame.",
+      "explanation": "A ten frame has 10 spaces, so 10 dots fill it.",
+      "shortExplanation": "A ten frame has 10 spaces, so 10 dots fill it.",
       "source": {
         "pages": [
           4,
@@ -772,7 +772,7 @@
     {
       "id": "math_unit_01.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "Writing thirteen",
       "prompt": "Thirteen is written...",
       "options": [
         {
@@ -798,9 +798,9 @@
       },
       "assessed": true,
       "objective": "math.u01.choice.04",
-      "hint": "Touch each object once, then remember the last number.",
-      "explanation": "13 is the answer. Thirteen is ten and three.",
-      "shortExplanation": "13 is the answer. Thirteen is ten and three.",
+      "hint": "Thirteen is ten and three. Which digit comes first?",
+      "explanation": "Thirteen is one ten and three ones, so we write 13.",
+      "shortExplanation": "Thirteen is one ten and three ones, so we write 13.",
       "source": {
         "pages": [
           4,
@@ -824,7 +824,7 @@
     {
       "id": "math_unit_01.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "Spoons in a line",
       "prompt": "5 spoons were in a pile. Now they are in a long line. How many spoons are there?",
       "options": [
         {
@@ -850,9 +850,9 @@
       },
       "assessed": true,
       "objective": "math.u01.choice.05",
-      "hint": "Touch each object once, then remember the last number.",
-      "explanation": "5 is the answer. Moving a group does not change its number.",
-      "shortExplanation": "5 is the answer. Moving a group does not change its number.",
+      "hint": "Were any spoons added or taken away?",
+      "explanation": "Only their places changed, so there are still 5 spoons.",
+      "shortExplanation": "Only their places changed, so there are still 5 spoons.",
       "source": {
         "pages": [
           4,

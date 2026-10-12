@@ -123,7 +123,7 @@
     {
       "id": "math_unit_02.step.002",
       "kind": "match-lines",
-      "title": "Maths discovery 2",
+      "title": "One more, one less",
       "prompt": "Find one more and one less.",
       "options": [
         {
@@ -158,7 +158,7 @@
       },
       "assessed": true,
       "objective": "math.u02.main.01",
-      "hint": "Think whether things join the group or leave it.",
+      "hint": "One more is the next number; one less is the number before.",
       "explanation": "One more moves forward; one less moves back.",
       "shortExplanation": "One more moves forward; one less moves back.",
       "source": {
@@ -188,7 +188,7 @@
     {
       "id": "math_unit_02.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "Counting on",
       "prompt": "Start at 5 and count on 3. Where do you land?",
       "options": [
         {
@@ -214,7 +214,7 @@
       },
       "assessed": true,
       "objective": "math.u02.main.02",
-      "hint": "Think whether things join the group or leave it.",
+      "hint": "Start on 5, then make three jumps forward.",
       "explanation": "Three forward jumps from 5 land on 8.",
       "shortExplanation": "Three forward jumps from 5 land on 8.",
       "source": {
@@ -249,7 +249,7 @@
     {
       "id": "math_unit_02.step.004",
       "kind": "tap-choice",
-      "title": "Maths discovery 4",
+      "title": "Counting back",
       "prompt": "Start at 9 and count back 4. Where do you land?",
       "options": [
         {
@@ -275,7 +275,7 @@
       },
       "assessed": true,
       "objective": "math.u02.main.03",
-      "hint": "Think whether things join the group or leave it.",
+      "hint": "Start on 9, then make four jumps back.",
       "explanation": "Four backward jumps from 9 land on 5.",
       "shortExplanation": "Four backward jumps from 9 land on 5.",
       "source": {
@@ -310,7 +310,7 @@
     {
       "id": "math_unit_02.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "Adding two groups",
       "prompt": "Choose the addition sentence for the two groups.",
       "options": [
         {
@@ -336,7 +336,7 @@
       },
       "assessed": true,
       "objective": "math.u02.main.04",
-      "hint": "Think whether things join the group or leave it.",
+      "hint": "Count the blue dots, then the orange dots. Do the groups join?",
       "explanation": "Adding 4 blue dots and 3 orange dots makes 7.",
       "shortExplanation": "Adding 4 blue dots and 3 orange dots makes 7.",
       "source": {
@@ -380,7 +380,7 @@
     {
       "id": "math_unit_02.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "Taking away cubes",
       "prompt": "There are 8 cubes. Take away 3. How many remain?",
       "options": [
         {
@@ -406,7 +406,7 @@
       },
       "assessed": true,
       "objective": "math.u02.main.05",
-      "hint": "Think whether things join the group or leave it.",
+      "hint": "Count 8 cubes, cover 3, then count the cubes left.",
       "explanation": "Taking 3 cubes from 8 leaves 5 cubes.",
       "shortExplanation": "Taking 3 cubes from 8 leaves 5 cubes.",
       "source": {
@@ -437,7 +437,7 @@
     {
       "id": "math_unit_02.step.007",
       "kind": "match-lines",
-      "title": "Maths discovery 7",
+      "title": "Words and signs",
       "prompt": "Match the words to the number sentence.",
       "options": [
         {
@@ -472,7 +472,7 @@
       },
       "assessed": true,
       "objective": "math.u02.main.06",
-      "hint": "Think whether things join the group or leave it.",
+      "hint": "Add means +, take away means −, and equals means =.",
       "explanation": "Plus adds, minus takes away and equals means the same as.",
       "shortExplanation": "Plus adds, minus takes away and equals means the same as.",
       "source": {
@@ -497,7 +497,7 @@
     {
       "id": "math_unit_02.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Cars drive away",
       "prompt": "8 cars were parked. 4 drive away. Choose the correct sentence.",
       "options": [
         {
@@ -523,7 +523,7 @@
       },
       "assessed": true,
       "objective": "math.u02.main.07",
-      "hint": "Think whether things join the group or leave it.",
+      "hint": "Do the cars join the group or leave it?",
       "explanation": "The cars leave, so take 4 away from 8.",
       "shortExplanation": "The cars leave, so take 4 away from 8.",
       "source": {
@@ -548,7 +548,7 @@
     {
       "id": "math_unit_02.step.009",
       "kind": "tap-choice",
-      "title": "Maths discovery 9",
+      "title": "How many more",
       "prompt": "Mona has 7 sweets. Ali has 4. How many more does Mona have?",
       "options": [
         {
@@ -574,7 +574,7 @@
       },
       "assessed": true,
       "objective": "math.u02.main.08",
-      "hint": "Think whether things join the group or leave it.",
+      "hint": "Pair each of Ali's sweets with one of Mona's.",
       "explanation": "Match the sweets in pairs. Mona has 3 without partners.",
       "shortExplanation": "Match the sweets in pairs. Mona has 3 without partners.",
       "source": {
@@ -618,7 +618,7 @@
     {
       "id": "math_unit_02.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "The plus sign",
       "prompt": "The sign + means...",
       "options": [
         {
@@ -644,9 +644,9 @@
       },
       "assessed": true,
       "objective": "math.u02.choice.01",
-      "hint": "Think whether things join the group or leave it.",
-      "explanation": "Add is the answer. The plus sign joins groups.",
-      "shortExplanation": "Add is the answer. The plus sign joins groups.",
+      "hint": "What do we do with two groups when we see +?",
+      "explanation": "The plus sign means add: it joins two groups together.",
+      "shortExplanation": "The plus sign means add: it joins two groups together.",
       "source": {
         "pages": [
           8,
@@ -669,7 +669,7 @@
     {
       "id": "math_unit_02.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "Take away 2",
       "prompt": "6 take away 2 is...",
       "options": [
         {
@@ -695,9 +695,9 @@
       },
       "assessed": true,
       "objective": "math.u02.choice.02",
-      "hint": "Think whether things join the group or leave it.",
-      "explanation": "4 is the answer. Two backward jumps from 6 leave 4.",
-      "shortExplanation": "4 is the answer. Two backward jumps from 6 leave 4.",
+      "hint": "Start on 6 and jump back twice.",
+      "explanation": "Two jumps back from 6 land on 4.",
+      "shortExplanation": "Two jumps back from 6 land on 4.",
       "source": {
         "pages": [
           8,
@@ -720,7 +720,7 @@
     {
       "id": "math_unit_02.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Jumping to take away",
       "prompt": "On a number line, taking away makes you jump...",
       "options": [
         {
@@ -746,9 +746,9 @@
       },
       "assessed": true,
       "objective": "math.u02.choice.03",
-      "hint": "Think whether things join the group or leave it.",
-      "explanation": "Backwards is the answer. Taking away moves toward smaller numbers.",
-      "shortExplanation": "Backwards is the answer. Taking away moves toward smaller numbers.",
+      "hint": "Taking away makes a number smaller. Where are the smaller numbers?",
+      "explanation": "Taking away makes numbers smaller, so we jump backwards.",
+      "shortExplanation": "Taking away makes numbers smaller, so we jump backwards.",
       "source": {
         "pages": [
           8,
@@ -776,7 +776,7 @@
     {
       "id": "math_unit_02.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "One less than 8",
       "prompt": "1 less than 8 is...",
       "options": [
         {
@@ -802,9 +802,9 @@
       },
       "assessed": true,
       "objective": "math.u02.choice.04",
-      "hint": "Think whether things join the group or leave it.",
-      "explanation": "7 is the answer. One backward step from 8 reaches 7.",
-      "shortExplanation": "7 is the answer. One backward step from 8 reaches 7.",
+      "hint": "Say the number that comes just before 8.",
+      "explanation": "One step back from 8 is 7.",
+      "shortExplanation": "One step back from 8 is 7.",
       "source": {
         "pages": [
           8,
@@ -827,7 +827,7 @@
     {
       "id": "math_unit_02.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "Adding zero",
       "prompt": "5 + 0 =",
       "options": [
         {
@@ -853,9 +853,9 @@
       },
       "assessed": true,
       "objective": "math.u02.choice.05",
-      "hint": "Think whether things join the group or leave it.",
-      "explanation": "5 is the answer. Adding nothing changes nothing.",
-      "shortExplanation": "5 is the answer. Adding nothing changes nothing.",
+      "hint": "Zero means nothing. What happens when you add nothing?",
+      "explanation": "Adding zero adds nothing, so 5 stays 5.",
+      "shortExplanation": "Adding zero adds nothing, so 5 stays 5.",
       "source": {
         "pages": [
           8,

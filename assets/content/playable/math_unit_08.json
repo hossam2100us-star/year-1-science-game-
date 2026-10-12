@@ -203,7 +203,7 @@
     {
       "id": "math_unit_08.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "What comes next",
       "prompt": "What comes next in the pattern?",
       "options": [
         {
@@ -244,7 +244,7 @@
       },
       "assessed": true,
       "objective": "math.u08.main.01",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "hint": "Say the pattern aloud and find the part that repeats.",
       "explanation": "The repeating part is red circle, blue square.",
       "shortExplanation": "The repeating part is red circle, blue square.",
       "source": {
@@ -295,7 +295,7 @@
     {
       "id": "math_unit_08.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "Shape pattern",
       "prompt": "What comes next in this pattern?",
       "options": [
         {
@@ -333,7 +333,7 @@
       },
       "assessed": true,
       "objective": "math.u08.main.02",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "hint": "Say the shapes aloud. Which part repeats?",
       "explanation": "Two triangles and a circle repeat. The next shape is a triangle.",
       "shortExplanation": "Two triangles and a circle repeat. The next shape is a triangle.",
       "source": {
@@ -394,7 +394,7 @@
     {
       "id": "math_unit_08.step.004",
       "kind": "match-lines",
-      "title": "Maths discovery 4",
+      "title": "Pattern gaps",
       "prompt": "Fill the next two gaps: red, blue, blue, red, blue, blue, __, __.",
       "options": [
         {
@@ -429,7 +429,7 @@
       },
       "assessed": true,
       "objective": "math.u08.main.03",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "hint": "Find red, blue, blue, then keep saying it.",
       "explanation": "The repeating part is red, blue, blue.",
       "shortExplanation": "The repeating part is red, blue, blue.",
       "source": {
@@ -492,7 +492,7 @@
     {
       "id": "math_unit_08.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "Steps from the start",
       "prompt": "Walk 3 steps forwards and 1 backwards. How many steps from the start?",
       "options": [
         {
@@ -518,7 +518,7 @@
       },
       "assessed": true,
       "objective": "math.u08.main.05",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "hint": "Step forward three times, then back once. Where are you now?",
       "explanation": "Three forwards and one backwards leaves 2 steps forwards.",
       "shortExplanation": "Three forwards and one backwards leaves 2 steps forwards.",
       "source": {
@@ -555,7 +555,7 @@
     {
       "id": "math_unit_08.step.007",
       "kind": "tap-choice",
-      "title": "Maths discovery 7",
+      "title": "Is a cube flat?",
       "prompt": "A cube is a flat 2D shape.",
       "options": [
         {
@@ -576,7 +576,7 @@
       },
       "assessed": true,
       "objective": "math.u08.main.06",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "hint": "Could you hold a cube in your hand?",
       "explanation": "A cube is solid, so it is a 3D shape.",
       "shortExplanation": "A cube is solid, so it is a 3D shape.",
       "source": {
@@ -606,7 +606,7 @@
     {
       "id": "math_unit_08.step.008",
       "kind": "match-lines",
-      "title": "Maths discovery 8",
+      "title": "Square and rectangle",
       "prompt": "Compare a square and a rectangle.",
       "options": [
         {
@@ -641,7 +641,7 @@
       },
       "assessed": true,
       "objective": "math.u08.main.07",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "hint": "Count the sides of each. Are all the sides the same length?",
       "explanation": "Both have 4 sides. A square has all 4 sides equal.",
       "shortExplanation": "Both have 4 sides. A square has all 4 sides equal.",
       "source": {
@@ -680,7 +680,7 @@
     {
       "id": "math_unit_08.step.009",
       "kind": "match-lines",
-      "title": "Maths discovery 9",
+      "title": "Counting corners",
       "prompt": "Sort the shapes by their corners.",
       "options": [
         {
@@ -732,7 +732,7 @@
       },
       "assessed": true,
       "objective": "math.u08.main.08",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
+      "hint": "Touch and count the corners of each shape.",
       "explanation": "Circle: 0 corners. Triangle: 3. Square and rectangle: 4.",
       "shortExplanation": "Circle: 0 corners. Triangle: 3. Square and rectangle: 4.",
       "source": {
@@ -758,7 +758,7 @@
     {
       "id": "math_unit_08.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "Colour pattern",
       "prompt": "red, yellow, red, yellow, ... What comes next?",
       "options": [
         {
@@ -784,9 +784,9 @@
       },
       "assessed": true,
       "objective": "math.u08.choice.01",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
-      "explanation": "Red is the answer. Red and yellow repeat in pairs.",
-      "shortExplanation": "Red is the answer. Red and yellow repeat in pairs.",
+      "hint": "Say the colours aloud. What came after yellow before?",
+      "explanation": "Red and yellow take turns, so red comes next.",
+      "shortExplanation": "Red and yellow take turns, so red comes next.",
       "source": {
         "pages": [
           28,
@@ -810,7 +810,7 @@
     {
       "id": "math_unit_08.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "Square sides",
       "prompt": "How many sides does a square have?",
       "options": [
         {
@@ -836,9 +836,9 @@
       },
       "assessed": true,
       "objective": "math.u08.choice.02",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
-      "explanation": "4 is the answer. A square has four straight sides.",
-      "shortExplanation": "4 is the answer. A square has four straight sides.",
+      "hint": "Touch each side of a square and count.",
+      "explanation": "A square has four straight sides, all the same length.",
+      "shortExplanation": "A square has four straight sides, all the same length.",
       "source": {
         "pages": [
           28,
@@ -862,7 +862,7 @@
     {
       "id": "math_unit_08.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Moving backwards",
       "prompt": "Moving the way your back faces is moving...",
       "options": [
         {
@@ -888,9 +888,9 @@
       },
       "assessed": true,
       "objective": "math.u08.choice.03",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
-      "explanation": "Backwards is the answer. Your back faces the backward direction.",
-      "shortExplanation": "Backwards is the answer. Your back faces the backward direction.",
+      "hint": "Your face looks forwards. Which way does your back face?",
+      "explanation": "Moving the way your back faces is moving backwards.",
+      "shortExplanation": "Moving the way your back faces is moving backwards.",
       "source": {
         "pages": [
           28,
@@ -914,7 +914,7 @@
     {
       "id": "math_unit_08.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "Turning",
       "prompt": "Turning means...",
       "options": [
         {
@@ -940,9 +940,9 @@
       },
       "assessed": true,
       "objective": "math.u08.choice.04",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
-      "explanation": "Changing the way you face is the answer. Turning changes the direction you face.",
-      "shortExplanation": "Changing the way you face is the answer. Turning changes the direction you face.",
+      "hint": "Turn around on the spot. What changes?",
+      "explanation": "When you turn, you stay in place but face a new way.",
+      "shortExplanation": "When you turn, you stay in place but face a new way.",
       "source": {
         "pages": [
           28,
@@ -966,7 +966,7 @@
     {
       "id": "math_unit_08.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "3D shapes",
       "prompt": "A 3D shape is...",
       "options": [
         {
@@ -992,9 +992,9 @@
       },
       "assessed": true,
       "objective": "math.u08.choice.05",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
-      "explanation": "Solid - you can hold it is the answer. 3D shapes also have depth.",
-      "shortExplanation": "Solid - you can hold it is the answer. 3D shapes also have depth.",
+      "hint": "Think of a ball or a box. Could you pick them up?",
+      "explanation": "A 3D shape is solid, so you can pick it up.",
+      "shortExplanation": "A 3D shape is solid, so you can pick it up.",
       "source": {
         "pages": [
           28,

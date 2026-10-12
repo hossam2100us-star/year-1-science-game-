@@ -154,7 +154,7 @@
     {
       "id": "math_unit_06.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "Breakfast time",
       "prompt": "When do you usually eat breakfast?",
       "options": [
         {
@@ -175,7 +175,7 @@
       },
       "assessed": true,
       "objective": "math.u06.main.01",
-      "hint": "Think about your day, or line up the ends before comparing.",
+      "hint": "Think about what you do soon after waking up.",
       "explanation": "We usually eat breakfast in the morning.",
       "shortExplanation": "We usually eat breakfast in the morning.",
       "source": {
@@ -200,7 +200,7 @@
     {
       "id": "math_unit_06.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "Sleep time",
       "prompt": "When do you usually go to sleep?",
       "options": [
         {
@@ -221,7 +221,7 @@
       },
       "assessed": true,
       "objective": "math.u06.main.02",
-      "hint": "Think about your day, or line up the ends before comparing.",
+      "hint": "Is it light or dark when you go to bed?",
       "explanation": "We usually sleep at night.",
       "shortExplanation": "We usually sleep at night.",
       "source": {
@@ -246,7 +246,7 @@
     {
       "id": "math_unit_06.step.004",
       "kind": "order-sequence",
-      "title": "Maths discovery 4",
+      "title": "A school day",
       "prompt": "Put these parts of a school day in order.",
       "options": [
         {
@@ -276,7 +276,7 @@
       },
       "assessed": true,
       "objective": "math.u06.main.03",
-      "hint": "Think about your day, or line up the ends before comparing.",
+      "hint": "What do you do first when the day starts?",
       "explanation": "Wake up first, go to school, then eat dinner later.",
       "shortExplanation": "Wake up first, go to school, then eat dinner later.",
       "source": {
@@ -301,7 +301,7 @@
     {
       "id": "math_unit_06.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "Which takes longer",
       "prompt": "Which takes longer?",
       "options": [
         {
@@ -322,7 +322,7 @@
       },
       "assessed": true,
       "objective": "math.u06.main.04",
-      "hint": "Think about your day, or line up the ends before comparing.",
+      "hint": "Imagine doing each one. Which lasts all night?",
       "explanation": "A night of sleep takes much longer than brushing your teeth.",
       "shortExplanation": "A night of sleep takes much longer than brushing your teeth.",
       "source": {
@@ -347,7 +347,7 @@
     {
       "id": "math_unit_06.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "Which is quicker",
       "prompt": "Which takes a shorter time?",
       "options": [
         {
@@ -368,7 +368,7 @@
       },
       "assessed": true,
       "objective": "math.u06.main.05",
-      "hint": "Think about your day, or line up the ends before comparing.",
+      "hint": "Which one is over in a moment?",
       "explanation": "A blink takes a very short time.",
       "shortExplanation": "A blink takes a very short time.",
       "source": {
@@ -393,7 +393,7 @@
     {
       "id": "math_unit_06.step.007",
       "kind": "match-lines",
-      "title": "Maths discovery 7",
+      "title": "Comparing ribbons",
       "prompt": "Compare the ribbons. Choose the longest and shortest.",
       "options": [
         {
@@ -433,7 +433,7 @@
       },
       "assessed": true,
       "objective": "math.u06.main.06",
-      "hint": "Think about your day, or line up the ends before comparing.",
+      "hint": "Check the ribbons start at the same line, then compare the other ends.",
       "explanation": "Start at the same line. Ribbon b is longest and c shortest.",
       "shortExplanation": "Start at the same line. Ribbon b is longest and c shortest.",
       "source": {
@@ -481,7 +481,7 @@
     {
       "id": "math_unit_06.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Fair comparing",
       "prompt": "To compare two pencils, put their ends on the same line.",
       "options": [
         {
@@ -502,7 +502,7 @@
       },
       "assessed": true,
       "objective": "math.u06.main.07",
-      "hint": "Think about your day, or line up the ends before comparing.",
+      "hint": "What happens if one pencil starts further along?",
       "explanation": "Lining up the ends makes the length comparison fair.",
       "shortExplanation": "Lining up the ends makes the length comparison fair.",
       "source": {
@@ -563,7 +563,7 @@
     {
       "id": "math_unit_06.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "Moon and stars",
       "prompt": "The Moon and stars come out at...",
       "options": [
         {
@@ -589,9 +589,9 @@
       },
       "assessed": true,
       "objective": "math.u06.choice.01",
-      "hint": "Think about your day, or line up the ends before comparing.",
-      "explanation": "Night is the answer. We usually see a dark sky at night.",
-      "shortExplanation": "Night is the answer. We usually see a dark sky at night.",
+      "hint": "When is the sky dark?",
+      "explanation": "We see the Moon and stars in the dark night sky.",
+      "shortExplanation": "We see the Moon and stars in the dark night sky.",
       "source": {
         "pages": [
           21,
@@ -618,7 +618,7 @@
     {
       "id": "math_unit_06.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "Dinner time",
       "prompt": "We usually have dinner in the...",
       "options": [
         {
@@ -644,9 +644,9 @@
       },
       "assessed": true,
       "objective": "math.u06.choice.02",
-      "hint": "Think about your day, or line up the ends before comparing.",
-      "explanation": "Evening is the answer. Dinner usually comes in the evening.",
-      "shortExplanation": "Evening is the answer. Dinner usually comes in the evening.",
+      "hint": "Is dinner early or late in the day?",
+      "explanation": "Dinner is the meal we usually eat in the evening.",
+      "shortExplanation": "Dinner is the meal we usually eat in the evening.",
       "source": {
         "pages": [
           21,
@@ -669,7 +669,7 @@
     {
       "id": "math_unit_06.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "The longest thing",
       "prompt": "Which is usually the longest?",
       "options": [
         {
@@ -695,9 +695,9 @@
       },
       "assessed": true,
       "objective": "math.u06.choice.03",
-      "hint": "Think about your day, or line up the ends before comparing.",
-      "explanation": "A bed is the answer. A bed is typically longer than a shoe or spoon.",
-      "shortExplanation": "A bed is the answer. A bed is typically longer than a shoe or spoon.",
+      "hint": "Which one could you lie down on?",
+      "explanation": "A bed is longer than a shoe or a spoon.",
+      "shortExplanation": "A bed is longer than a shoe or a spoon.",
       "source": {
         "pages": [
           21,
@@ -720,7 +720,7 @@
     {
       "id": "math_unit_06.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "Lining up",
       "prompt": "To compare lengths fairly, line up the...",
       "options": [
         {
@@ -746,9 +746,9 @@
       },
       "assessed": true,
       "objective": "math.u06.choice.04",
-      "hint": "Think about your day, or line up the ends before comparing.",
-      "explanation": "Ends is the answer. A shared start line makes comparison fair.",
-      "shortExplanation": "Ends is the answer. A shared start line makes comparison fair.",
+      "hint": "Where should both things start?",
+      "explanation": "Lining up the ends gives both things the same start.",
+      "shortExplanation": "Lining up the ends gives both things the same start.",
       "source": {
         "pages": [
           21,
@@ -771,7 +771,7 @@
     {
       "id": "math_unit_06.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "Opposite of longer",
       "prompt": "The opposite of longer is...",
       "options": [
         {
@@ -797,9 +797,9 @@
       },
       "assessed": true,
       "objective": "math.u06.choice.05",
-      "hint": "Think about your day, or line up the ends before comparing.",
-      "explanation": "Shorter is the answer. Shorter is the opposite of longer.",
-      "shortExplanation": "Shorter is the answer. Shorter is the opposite of longer.",
+      "hint": "If one ribbon is longer, the other one is…",
+      "explanation": "Shorter is the opposite of longer.",
+      "shortExplanation": "Shorter is the opposite of longer.",
       "source": {
         "pages": [
           21,

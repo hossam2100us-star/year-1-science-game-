@@ -123,7 +123,7 @@
     {
       "id": "math_unit_14.step.002",
       "kind": "match-lines",
-      "title": "Maths discovery 2",
+      "title": "Doubles",
       "prompt": "Find the doubles.",
       "options": [
         {
@@ -158,7 +158,7 @@
       },
       "assessed": true,
       "objective": "math.u14.main.01",
-      "hint": "Start with the bigger number. A double adds the same number again.",
+      "hint": "A double is the same number added again.",
       "explanation": "Double means the same number added again.",
       "shortExplanation": "Double means the same number added again.",
       "source": {
@@ -183,7 +183,7 @@
     {
       "id": "math_unit_14.step.003",
       "kind": "match-lines",
-      "title": "Maths discovery 3",
+      "title": "Bigger doubles",
       "prompt": "Find these doubles.",
       "options": [
         {
@@ -218,7 +218,7 @@
       },
       "assessed": true,
       "objective": "math.u14.main.02",
-      "hint": "Start with the bigger number. A double adds the same number again.",
+      "hint": "Add each number to itself.",
       "explanation": "7 + 7 = 14, and 10 + 10 = 20.",
       "shortExplanation": "7 + 7 = 14, and 10 + 10 = 20.",
       "source": {
@@ -243,7 +243,7 @@
     {
       "id": "math_unit_14.step.004",
       "kind": "tap-choice",
-      "title": "Maths discovery 4",
+      "title": "Counting on from 8",
       "prompt": "Start with the bigger number and find 3 + 8.",
       "options": [
         {
@@ -269,7 +269,7 @@
       },
       "assessed": true,
       "objective": "math.u14.main.03",
-      "hint": "Start with the bigger number. A double adds the same number again.",
+      "hint": "Start on 8, the bigger number, and count on 3.",
       "explanation": "Start at 8 and count on 3 to reach 11.",
       "shortExplanation": "Start at 8 and count on 3 to reach 11.",
       "source": {
@@ -304,7 +304,7 @@
     {
       "id": "math_unit_14.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "Counting on from 12",
       "prompt": "Start with the bigger number and find 5 + 12.",
       "options": [
         {
@@ -330,7 +330,7 @@
       },
       "assessed": true,
       "objective": "math.u14.main.04",
-      "hint": "Start with the bigger number. A double adds the same number again.",
+      "hint": "Start on 12, the bigger number, and count on 5.",
       "explanation": "Start at 12 and count on 5 to reach 17.",
       "shortExplanation": "Start at 12 and count on 5 to reach 17.",
       "source": {
@@ -365,7 +365,7 @@
     {
       "id": "math_unit_14.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "More birds",
       "prompt": "8 birds are in a tree. 4 more come. How many now?",
       "options": [
         {
@@ -391,7 +391,7 @@
       },
       "assessed": true,
       "objective": "math.u14.main.05",
-      "hint": "Start with the bigger number. A double adds the same number again.",
+      "hint": "Start on 8 and count on 4 more.",
       "explanation": "Adding 4 birds to 8 gives 12 birds.",
       "shortExplanation": "Adding 4 birds to 8 gives 12 birds.",
       "source": {
@@ -433,7 +433,7 @@
     {
       "id": "math_unit_14.step.007",
       "kind": "tap-choice",
-      "title": "Maths discovery 7",
+      "title": "Counting back from 15",
       "prompt": "Count back: 15 - 3 = ?",
       "options": [
         {
@@ -459,7 +459,7 @@
       },
       "assessed": true,
       "objective": "math.u14.main.06",
-      "hint": "Start with the bigger number. A double adds the same number again.",
+      "hint": "Start on 15 and jump back three times.",
       "explanation": "Count back three jumps from 15: 14, 13, 12.",
       "shortExplanation": "Count back three jumps from 15: 14, 13, 12.",
       "source": {
@@ -494,7 +494,7 @@
     {
       "id": "math_unit_14.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Difference of 13 and 17",
       "prompt": "What is the difference between 13 and 17?",
       "options": [
         {
@@ -520,7 +520,7 @@
       },
       "assessed": true,
       "objective": "math.u14.main.07",
-      "hint": "Start with the bigger number. A double adds the same number again.",
+      "hint": "Start on 13 and count the jumps to 17.",
       "explanation": "There are 4 jumps from 13 to 17.",
       "shortExplanation": "There are 4 jumps from 13 to 17.",
       "source": {
@@ -591,7 +591,7 @@
     {
       "id": "math_unit_14.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "Double 6",
       "prompt": "Double 6 is...",
       "options": [
         {
@@ -617,9 +617,9 @@
       },
       "assessed": true,
       "objective": "math.u14.choice.01",
-      "hint": "Start with the bigger number. A double adds the same number again.",
-      "explanation": "12 is the answer. 6 + 6 gives twelve.",
-      "shortExplanation": "12 is the answer. 6 + 6 gives twelve.",
+      "hint": "Add 6 and 6.",
+      "explanation": "Double 6 is 6 + 6, which is 12.",
+      "shortExplanation": "Double 6 is 6 + 6, which is 12.",
       "source": {
         "pages": [
           48,
@@ -642,7 +642,7 @@
     {
       "id": "math_unit_14.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "The quickest start",
       "prompt": "For 2 + 9, the quickest way is to start counting on from...",
       "options": [
         {
@@ -668,9 +668,9 @@
       },
       "assessed": true,
       "objective": "math.u14.choice.02",
-      "hint": "Start with the bigger number. A double adds the same number again.",
-      "explanation": "9 is the answer. Starting with the larger number needs fewer jumps.",
-      "shortExplanation": "9 is the answer. Starting with the larger number needs fewer jumps.",
+      "hint": "Which start needs fewer jumps?",
+      "explanation": "Starting on the bigger number, 9, needs only two jumps.",
+      "shortExplanation": "Starting on the bigger number, 9, needs only two jumps.",
       "source": {
         "pages": [
           48,
@@ -693,7 +693,7 @@
     {
       "id": "math_unit_14.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Swapping numbers",
       "prompt": "7 + 3 is the same as...",
       "options": [
         {
@@ -719,9 +719,9 @@
       },
       "assessed": true,
       "objective": "math.u14.choice.03",
-      "hint": "Start with the bigger number. A double adds the same number again.",
-      "explanation": "3 + 7 is the answer. Swapping the groups does not change the total.",
-      "shortExplanation": "3 + 7 is the answer. Swapping the groups does not change the total.",
+      "hint": "Does the order of adding change the total?",
+      "explanation": "Swapping the numbers does not change the total: 3 + 7 is 10 too.",
+      "shortExplanation": "Swapping the numbers does not change the total: 3 + 7 is 10 too.",
       "source": {
         "pages": [
           48,
@@ -744,7 +744,7 @@
     {
       "id": "math_unit_14.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "Taking 2 from 20",
       "prompt": "20 − 2 =",
       "options": [
         {
@@ -770,9 +770,9 @@
       },
       "assessed": true,
       "objective": "math.u14.choice.04",
-      "hint": "Start with the bigger number. A double adds the same number again.",
-      "explanation": "18 is the answer. Two backward jumps from twenty reach eighteen.",
-      "shortExplanation": "18 is the answer. Two backward jumps from twenty reach eighteen.",
+      "hint": "Start on 20 and jump back twice.",
+      "explanation": "Two jumps back from 20 land on 18.",
+      "shortExplanation": "Two jumps back from 20 land on 18.",
       "source": {
         "pages": [
           48,
@@ -795,7 +795,7 @@
     {
       "id": "math_unit_14.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "Double 8",
       "prompt": "Double 8 is...",
       "options": [
         {
@@ -821,9 +821,9 @@
       },
       "assessed": true,
       "objective": "math.u14.choice.05",
-      "hint": "Start with the bigger number. A double adds the same number again.",
-      "explanation": "16 is the answer. 8 + 8 gives sixteen.",
-      "shortExplanation": "16 is the answer. 8 + 8 gives sixteen.",
+      "hint": "Add 8 and 8.",
+      "explanation": "Double 8 is 8 + 8, which is 16.",
+      "shortExplanation": "Double 8 is 8 + 8, which is 16.",
       "source": {
         "pages": [
           48,

@@ -163,7 +163,7 @@
     {
       "id": "math_unit_09.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "Ten and ones",
       "prompt": "What number do the ten and ones make?",
       "options": [
         {
@@ -189,7 +189,7 @@
       },
       "assessed": true,
       "objective": "math.u09.main.01",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "hint": "Count the full ten, then count on the ones.",
       "explanation": "One ten and 4 ones make 14.",
       "shortExplanation": "One ten and 4 ones make 14.",
       "source": {
@@ -230,7 +230,7 @@
     {
       "id": "math_unit_09.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "More tens and ones",
       "prompt": "What number do the ten and ones make?",
       "options": [
         {
@@ -256,7 +256,7 @@
       },
       "assessed": true,
       "objective": "math.u09.main.02",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "hint": "Start at 10, then count on each loose one.",
       "explanation": "One ten and 9 ones make 19.",
       "shortExplanation": "One ten and 9 ones make 19.",
       "source": {
@@ -297,7 +297,7 @@
     {
       "id": "math_unit_09.step.004",
       "kind": "match-lines",
-      "title": "Maths discovery 4",
+      "title": "Seventeen",
       "prompt": "Complete: 17 is __ ten and __ ones.",
       "options": [
         {
@@ -332,7 +332,7 @@
       },
       "assessed": true,
       "objective": "math.u09.main.03",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "hint": "The first digit counts tens; the second counts ones.",
       "explanation": "The 1 is one ten; the 7 is seven ones.",
       "shortExplanation": "The 1 is one ten; the 7 is seven ones.",
       "source": {
@@ -357,7 +357,7 @@
     {
       "id": "math_unit_09.step.005",
       "kind": "match-lines",
-      "title": "Maths discovery 5",
+      "title": "Twenty",
       "prompt": "Complete: 20 is __ tens and __ ones.",
       "options": [
         {
@@ -392,7 +392,7 @@
       },
       "assessed": true,
       "objective": "math.u09.main.04",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "hint": "How many full tens make 20? Are any ones left over?",
       "explanation": "20 has 2 tens and no extra ones.",
       "shortExplanation": "20 has 2 tens and no extra ones.",
       "source": {
@@ -417,7 +417,7 @@
     {
       "id": "math_unit_09.step.006",
       "kind": "order-sequence",
-      "title": "Maths discovery 6",
+      "title": "Smallest first",
       "prompt": "Put the numbers in order, smallest first.",
       "options": [
         {
@@ -453,7 +453,7 @@
       },
       "assessed": true,
       "objective": "math.u09.main.05",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "hint": "Find the number with no tens first.",
       "explanation": "Compare the tens first, then the ones.",
       "shortExplanation": "Compare the tens first, then the ones.",
       "source": {
@@ -483,7 +483,7 @@
     {
       "id": "math_unit_09.step.007",
       "kind": "match-lines",
-      "title": "Maths discovery 7",
+      "title": "Counting in tens",
       "prompt": "Count in tens and fill the gaps.",
       "options": [
         {
@@ -518,7 +518,7 @@
       },
       "assessed": true,
       "objective": "math.u09.main.06",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "hint": "Each step adds one more ten.",
       "explanation": "Counting in tens adds a whole ten each time.",
       "shortExplanation": "Counting in tens adds a whole ten each time.",
       "source": {
@@ -543,7 +543,7 @@
     {
       "id": "math_unit_09.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Tens from 4",
       "prompt": "Count on in tens: 4, 14, __, 34. What is missing?",
       "options": [
         {
@@ -569,7 +569,7 @@
       },
       "assessed": true,
       "objective": "math.u09.main.07",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "hint": "Add a ten each time. The ones digit stays the same.",
       "explanation": "Adding ten to 14 gives 24. The ones stay 4.",
       "shortExplanation": "Adding ten to 14 gives 24. The ones stay 4.",
       "source": {
@@ -594,7 +594,7 @@
     {
       "id": "math_unit_09.step.009",
       "kind": "tap-choice",
-      "title": "Maths discovery 9",
+      "title": "Writing sixteen",
       "prompt": "Omar wrote sixteen as 61. Choose sixteen.",
       "options": [
         {
@@ -620,7 +620,7 @@
       },
       "assessed": true,
       "objective": "math.u09.main.08",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
+      "hint": "Sixteen is one ten and six ones. Which digit comes first?",
       "explanation": "Sixteen is one ten and six ones: 16.",
       "shortExplanation": "Sixteen is one ten and six ones: 16.",
       "source": {
@@ -645,7 +645,7 @@
     {
       "id": "math_unit_09.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "Tens in 13",
       "prompt": "13 is...",
       "options": [
         {
@@ -671,9 +671,9 @@
       },
       "assessed": true,
       "objective": "math.u09.choice.01",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
-      "explanation": "1 ten and 3 ones is the answer. 13 contains one complete ten and three extras.",
-      "shortExplanation": "1 ten and 3 ones is the answer. 13 contains one complete ten and three extras.",
+      "hint": "How many full tens fit in 13? How many are left?",
+      "explanation": "13 is one full ten and three more ones.",
+      "shortExplanation": "13 is one full ten and three more ones.",
       "source": {
         "pages": [
           32,
@@ -696,7 +696,7 @@
     {
       "id": "math_unit_09.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "Ten more",
       "prompt": "Ten more than 5 is...",
       "options": [
         {
@@ -722,9 +722,9 @@
       },
       "assessed": true,
       "objective": "math.u09.choice.02",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
-      "explanation": "15 is the answer. Adding one ten to 5 gives 15.",
-      "shortExplanation": "15 is the answer. Adding one ten to 5 gives 15.",
+      "hint": "Add a whole ten to 5.",
+      "explanation": "Ten more than 5 is one ten and five ones: 15.",
+      "shortExplanation": "Ten more than 5 is one ten and five ones: 15.",
       "source": {
         "pages": [
           32,
@@ -747,7 +747,7 @@
     {
       "id": "math_unit_09.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Tens pattern",
       "prompt": "Count in tens: 10, 20, 30, ...",
       "options": [
         {
@@ -773,9 +773,9 @@
       },
       "assessed": true,
       "objective": "math.u09.choice.03",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
-      "explanation": "40 is the answer. The next bundle adds ten.",
-      "shortExplanation": "40 is the answer. The next bundle adds ten.",
+      "hint": "Each number is ten more than the one before.",
+      "explanation": "One more ten after 30 gives 40.",
+      "shortExplanation": "One more ten after 30 gives 40.",
       "source": {
         "pages": [
           32,
@@ -798,7 +798,7 @@
     {
       "id": "math_unit_09.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "In order",
       "prompt": "Which is in order, smallest first?",
       "options": [
         {
@@ -824,9 +824,9 @@
       },
       "assessed": true,
       "objective": "math.u09.choice.04",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
-      "explanation": "4, 11, 18 is the answer. Each number is larger than the previous one.",
-      "shortExplanation": "4, 11, 18 is the answer. Each number is larger than the previous one.",
+      "hint": "Check that each number is bigger than the one before.",
+      "explanation": "4, then 11, then 18: each number is bigger than the last.",
+      "shortExplanation": "4, then 11, then 18: each number is bigger than the last.",
       "source": {
         "pages": [
           32,
@@ -849,7 +849,7 @@
     {
       "id": "math_unit_09.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "The 1 in 18",
       "prompt": "The 1 in 18 means...",
       "options": [
         {
@@ -875,9 +875,9 @@
       },
       "assessed": true,
       "objective": "math.u09.choice.05",
-      "hint": "A ten is a full group of ten. Compare tens, then ones.",
-      "explanation": "One ten is the answer. The tens digit names a whole group of ten.",
-      "shortExplanation": "One ten is the answer. The tens digit names a whole group of ten.",
+      "hint": "In 18, the first digit counts tens.",
+      "explanation": "The 1 in 18 stands for one whole ten.",
+      "shortExplanation": "The 1 in 18 stands for one whole ten.",
       "source": {
         "pages": [
           32,

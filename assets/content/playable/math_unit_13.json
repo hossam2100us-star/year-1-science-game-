@@ -177,7 +177,7 @@
     {
       "id": "math_unit_13.step.002",
       "kind": "drag-to-basket",
-      "title": "Maths discovery 2",
+      "title": "Even numbers",
       "prompt": "Choose all the even numbers.",
       "options": [
         {
@@ -222,7 +222,7 @@
       },
       "assessed": true,
       "objective": "math.u13.main.01",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "hint": "Can each number make pairs with none left over?",
       "explanation": "2, 8 and 14 make pairs with none left over.",
       "shortExplanation": "2, 8 and 14 make pairs with none left over.",
       "source": {
@@ -247,7 +247,7 @@
     {
       "id": "math_unit_13.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "Odd or even",
       "prompt": "Is 7 odd or even?",
       "options": [
         {
@@ -268,7 +268,7 @@
       },
       "assessed": true,
       "objective": "math.u13.main.02",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "hint": "Pair up 7 things. Is one left alone?",
       "explanation": "Seven makes three pairs and one left over, so it is odd.",
       "shortExplanation": "Seven makes three pairs and one left over, so it is odd.",
       "source": {
@@ -299,7 +299,7 @@
     {
       "id": "math_unit_13.step.004",
       "kind": "match-lines",
-      "title": "Maths discovery 4",
+      "title": "Counting in twos",
       "prompt": "Count in twos and fill the gaps.",
       "options": [
         {
@@ -334,7 +334,7 @@
       },
       "assessed": true,
       "objective": "math.u13.main.03",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "hint": "Each number is two more than the one before.",
       "explanation": "Counting in twos adds 2 each time.",
       "shortExplanation": "Counting in twos adds 2 each time.",
       "source": {
@@ -359,7 +359,7 @@
     {
       "id": "math_unit_13.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "Race positions",
       "prompt": "Ali came 1st, Mona 2nd and Omar 3rd. Who came 2nd?",
       "options": [
         {
@@ -385,7 +385,7 @@
       },
       "assessed": true,
       "objective": "math.u13.main.04",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "hint": "Who finished just after the one who came 1st?",
       "explanation": "Mona is in the second position.",
       "shortExplanation": "Mona is in the second position.",
       "source": {
@@ -410,7 +410,7 @@
     {
       "id": "math_unit_13.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "Third from the left",
       "prompt": "Which position means the third star from the left?",
       "options": [
         {
@@ -441,7 +441,7 @@
       },
       "assessed": true,
       "objective": "math.u13.main.05",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "hint": "Touch the stars from the left: first, second, third.",
       "explanation": "The third star from the left is in position 3rd.",
       "shortExplanation": "The third star from the left is in position 3rd.",
       "source": {
@@ -472,7 +472,7 @@
     {
       "id": "math_unit_13.step.007",
       "kind": "match-lines",
-      "title": "Maths discovery 7",
+      "title": "Parts of 14",
       "prompt": "Fill the parts of 14.",
       "options": [
         {
@@ -507,7 +507,7 @@
       },
       "assessed": true,
       "objective": "math.u13.main.06",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "hint": "What do you add to 10 to make 14? And to 7?",
       "explanation": "10 and 4 make 14; 7 and 7 make 14 too.",
       "shortExplanation": "10 and 4 make 14; 7 and 7 make 14 too.",
       "source": {
@@ -532,7 +532,7 @@
     {
       "id": "math_unit_13.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Coin values",
       "prompt": "Which coin is worth the most?",
       "options": [
         {
@@ -558,7 +558,7 @@
       },
       "assessed": true,
       "objective": "math.u13.main.07",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "hint": "Read the value on each coin, not its size.",
       "explanation": "One pound is 100 piastres, more than 50 or 25 piastres.",
       "shortExplanation": "One pound is 100 piastres, more than 50 or 25 piastres.",
       "source": {
@@ -612,7 +612,7 @@
     {
       "id": "math_unit_13.step.009",
       "kind": "tap-choice",
-      "title": "Maths discovery 9",
+      "title": "Pairs of socks",
       "prompt": "You have 5 pairs of socks. How many socks?",
       "options": [
         {
@@ -638,7 +638,7 @@
       },
       "assessed": true,
       "objective": "math.u13.main.08",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
+      "hint": "Each pair has 2 socks. Count in twos.",
       "explanation": "Each pair has 2 socks. Five pairs have 10 socks.",
       "shortExplanation": "Each pair has 2 socks. Five pairs have 10 socks.",
       "source": {
@@ -669,7 +669,7 @@
     {
       "id": "math_unit_13.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "What even means",
       "prompt": "Even numbers...",
       "options": [
         {
@@ -695,9 +695,9 @@
       },
       "assessed": true,
       "objective": "math.u13.choice.01",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
-      "explanation": "Pair up with none left over is the answer. Every object has a partner.",
-      "shortExplanation": "Pair up with none left over is the answer. Every object has a partner.",
+      "hint": "Try pairing up 6 counters. Is any left over?",
+      "explanation": "Even numbers make pairs with none left over.",
+      "shortExplanation": "Even numbers make pairs with none left over.",
       "source": {
         "pages": [
           45,
@@ -720,7 +720,7 @@
     {
       "id": "math_unit_13.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "An odd number",
       "prompt": "Which number is odd?",
       "options": [
         {
@@ -746,9 +746,9 @@
       },
       "assessed": true,
       "objective": "math.u13.choice.02",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
-      "explanation": "9 is the answer. Nine pairs with one left over.",
-      "shortExplanation": "9 is the answer. Nine pairs with one left over.",
+      "hint": "Pair up each number. Which one leaves one alone?",
+      "explanation": "9 makes four pairs with one left over, so it is odd.",
+      "shortExplanation": "9 makes four pairs with one left over, so it is odd.",
       "source": {
         "pages": [
           45,
@@ -771,7 +771,7 @@
     {
       "id": "math_unit_13.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "After 2nd",
       "prompt": "The position after 2nd is...",
       "options": [
         {
@@ -797,9 +797,9 @@
       },
       "assessed": true,
       "objective": "math.u13.choice.03",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
-      "explanation": "3rd is the answer. Third follows second.",
-      "shortExplanation": "3rd is the answer. Third follows second.",
+      "hint": "Say first, second, then the next position.",
+      "explanation": "Third comes after second: 3rd.",
+      "shortExplanation": "Third comes after second: 3rd.",
       "source": {
         "pages": [
           45,
@@ -822,7 +822,7 @@
     {
       "id": "math_unit_13.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "Egyptian money",
       "prompt": "In Egypt we pay with...",
       "options": [
         {
@@ -848,9 +848,9 @@
       },
       "assessed": true,
       "objective": "math.u13.choice.04",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
-      "explanation": "Pounds and piastres is the answer. Pounds and piastres are money units in Egypt.",
-      "shortExplanation": "Pounds and piastres is the answer. Pounds and piastres are money units in Egypt.",
+      "hint": "What are the coins and notes in Egypt called?",
+      "explanation": "In Egypt we pay with pounds and piastres.",
+      "shortExplanation": "In Egypt we pay with pounds and piastres.",
       "source": {
         "pages": [
           45,
@@ -873,7 +873,7 @@
     {
       "id": "math_unit_13.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "Making 12",
       "prompt": "12 = 10 +",
       "options": [
         {
@@ -899,9 +899,9 @@
       },
       "assessed": true,
       "objective": "math.u13.choice.05",
-      "hint": "Pair things up; for coins, compare their value rather than their count.",
-      "explanation": "2 is the answer. Ten and two make twelve.",
-      "shortExplanation": "2 is the answer. Ten and two make twelve.",
+      "hint": "Start at 10. How many more make 12?",
+      "explanation": "Ten and two more make twelve.",
+      "shortExplanation": "Ten and two more make twelve.",
       "source": {
         "pages": [
           45,

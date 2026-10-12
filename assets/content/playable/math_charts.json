@@ -209,7 +209,7 @@
     {
       "id": "math_charts.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "Counting cars",
       "prompt": "How many cars are in the box?",
       "options": [
         {
@@ -235,7 +235,7 @@
       },
       "assessed": true,
       "objective": "math.charts.01",
-      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "hint": "Find the cars column and count its blocks.",
       "explanation": "Count four car blocks.",
       "shortExplanation": "Count four car blocks.",
       "source": {
@@ -282,7 +282,7 @@
     {
       "id": "math_charts.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "The most toys",
       "prompt": "Which toy is there most of?",
       "options": [
         {
@@ -313,7 +313,7 @@
       },
       "assessed": true,
       "objective": "math.charts.02",
-      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "hint": "Which column is the tallest?",
       "explanation": "The cars column has the most blocks.",
       "shortExplanation": "The cars column has the most blocks.",
       "source": {
@@ -360,7 +360,7 @@
     {
       "id": "math_charts.step.004",
       "kind": "tap-choice",
-      "title": "Maths discovery 4",
+      "title": "All the toys",
       "prompt": "How many toys altogether?",
       "options": [
         {
@@ -386,7 +386,7 @@
       },
       "assessed": true,
       "objective": "math.charts.03",
-      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "hint": "Add the blocks in every column.",
       "explanation": "Add 4 + 2 + 3 + 1 to make 10 toys.",
       "shortExplanation": "Add 4 + 2 + 3 + 1 to make 10 toys.",
       "source": {
@@ -433,7 +433,7 @@
     {
       "id": "math_charts.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "The best day",
       "prompt": "Which day has the most stars?",
       "options": [
         {
@@ -469,7 +469,7 @@
       },
       "assessed": true,
       "objective": "math.charts.04",
-      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "hint": "Which day's row has the most stars?",
       "explanation": "Wednesday has four stars, the largest count.",
       "shortExplanation": "Wednesday has four stars, the largest count.",
       "source": {
@@ -520,7 +520,7 @@
     {
       "id": "math_charts.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "Two days together",
       "prompt": "How many stars on Monday and Tuesday together?",
       "options": [
         {
@@ -546,7 +546,7 @@
       },
       "assessed": true,
       "objective": "math.charts.05",
-      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "hint": "Count Monday's stars, then count on Tuesday's.",
       "explanation": "Monday has three and Tuesday one: four altogether.",
       "shortExplanation": "Monday has three and Tuesday one: four altogether.",
       "source": {
@@ -597,7 +597,7 @@
     {
       "id": "math_charts.step.007",
       "kind": "tap-choice",
-      "title": "Maths discovery 7",
+      "title": "How many more stars",
       "prompt": "How many more stars on Wednesday than Sunday?",
       "options": [
         {
@@ -623,7 +623,7 @@
       },
       "assessed": true,
       "objective": "math.charts.06",
-      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "hint": "Count both rows, then find the difference.",
       "explanation": "Four minus two gives a difference of two.",
       "shortExplanation": "Four minus two gives a difference of two.",
       "source": {
@@ -674,7 +674,7 @@
     {
       "id": "math_charts.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Sparrows",
       "prompt": "How many sparrows were seen?",
       "options": [
         {
@@ -700,7 +700,7 @@
       },
       "assessed": true,
       "objective": "math.charts.07",
-      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "hint": "Follow the top of the sparrows bar across to the numbers.",
       "explanation": "The sparrows bar reaches eight on the scale.",
       "shortExplanation": "The sparrows bar reaches eight on the scale.",
       "source": {
@@ -745,7 +745,7 @@
     {
       "id": "math_charts.step.009",
       "kind": "tap-choice",
-      "title": "Maths discovery 9",
+      "title": "The fewest birds",
       "prompt": "Which bird was seen the fewest times?",
       "options": [
         {
@@ -771,7 +771,7 @@
       },
       "assessed": true,
       "objective": "math.charts.08",
-      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "hint": "Which bar is the shortest?",
       "explanation": "Crows have the shortest bar and the smallest count.",
       "shortExplanation": "Crows have the shortest bar and the smallest count.",
       "source": {
@@ -816,7 +816,7 @@
     {
       "id": "math_charts.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "Pigeons and crows",
       "prompt": "How many pigeons and crows altogether?",
       "options": [
         {
@@ -842,7 +842,7 @@
       },
       "assessed": true,
       "objective": "math.charts.09",
-      "hint": "Read the title and labels first. Count the marks or read the scale.",
+      "hint": "Read both bars, then add them.",
       "explanation": "Six pigeons and three crows make nine birds.",
       "shortExplanation": "Six pigeons and three crows make nine birds.",
       "source": {

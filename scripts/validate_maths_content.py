@@ -259,6 +259,7 @@ def audit(check_idempotence=False,pdf_path=None):
     drafts={ident:read(CONTENT/f'{ident}.json') for ident in EXPECTED_IDS}
     books={ident:read(CONTENT/'playable'/f'{ident}.json') for ident in EXPECTED_IDS}
     arabic=read(CONTENT/'maths_parent_ar.json')
+    question_text=read(CONTENT/'maths_question_text.json')
     question_ids=set(); step_ids=set(); free_ids=set(); assessed=0; total_steps=0; workshops=[]; numeric_positions=[]
     source_hash={d['sourceSha256'] for d in drafts.values()}; assert len(source_hash)==1
     for ident,book in books.items():
@@ -311,6 +312,15 @@ def audit(check_idempotence=False,pdf_path=None):
         assert all(a['textAr']==arabic['home'][ident] for a in book['homeActivities']),(ident,'home Arabic')
         assert all(a['safetyAr']==arabic['safety'][a['safety']] for a in book['homeActivities']+book['goalActivities'])
         audit_visuals(book)
+        # Teacher review 5: each question has its own title, hint and reason.
+        graded=[s for s in book['steps'] if s['assessed']]
+        titles=[s['title'] for s in graded]
+        assert all(t and not t.startswith('Maths discovery') for t in titles),(ident,'generic title')
+        assert len(set(titles))==len(titles),(ident,'repeated title')
+        hints=[s['hint'] for s in graded]
+        assert all(hints.count(h)<=2 for h in hints),(ident,'one hint for many questions')
+        assert all(' is the answer.' not in s['explanation'] for s in graded),(ident,'answer-first explanation')
+        assert all(s['title']==question_text[s['objective']]['title'] and s['hint']==question_text[s['objective']]['hint'] for s in graded),(ident,'question text')
         for step in book['steps']:
             visual=step.get('mathVisual') or {}
             if visual.get('type')=='robot':
@@ -330,6 +340,7 @@ def audit(check_idempotence=False,pdf_path=None):
             if visual.get('type')=='carroll':
                 assert visual['columns']==[t['label'] for t in step['targets']],(step['id'],'carroll')
     assert len(question_ids)==273 and free_ids==FREE_QUESTIONS and assessed==258 and total_steps==292
+    assert len([k for k in question_text if not k.startswith('_')])==258
     # Teacher review 5: these questions talked about something not shown.
     for ident,numbers in REVIEW5_PICTURES.items():
         for n in numbers:

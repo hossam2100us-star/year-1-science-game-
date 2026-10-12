@@ -176,7 +176,7 @@
     {
       "id": "math_unit_10.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "Days in a week",
       "prompt": "How many days are in a week?",
       "options": [
         {
@@ -202,7 +202,7 @@
       },
       "assessed": true,
       "objective": "math.u10.main.01",
-      "hint": "Check the day order; use equal units or see which side goes down.",
+      "hint": "Say the days from Sunday to Saturday and count them.",
       "explanation": "There are 7 days before the week repeats.",
       "shortExplanation": "There are 7 days before the week repeats.",
       "source": {
@@ -227,7 +227,7 @@
     {
       "id": "math_unit_10.step.003",
       "kind": "match-lines",
-      "title": "Maths discovery 3",
+      "title": "Neighbouring days",
       "prompt": "Find the neighbouring days.",
       "options": [
         {
@@ -267,7 +267,7 @@
       },
       "assessed": true,
       "objective": "math.u10.main.02",
-      "hint": "Check the day order; use equal units or see which side goes down.",
+      "hint": "Say the days in order. Which comes after Monday?",
       "explanation": "Tuesday follows Monday. Thursday comes before Friday.",
       "shortExplanation": "Tuesday follows Monday. Thursday comes before Friday.",
       "source": {
@@ -292,7 +292,7 @@
     {
       "id": "math_unit_10.step.004",
       "kind": "tap-choice",
-      "title": "Maths discovery 4",
+      "title": "Months in a year",
       "prompt": "How many months are in a year?",
       "options": [
         {
@@ -318,7 +318,7 @@
       },
       "assessed": true,
       "objective": "math.u10.main.03",
-      "hint": "Check the day order; use equal units or see which side goes down.",
+      "hint": "Say the months from January to December and count them.",
       "explanation": "A year has 12 months, from January to December.",
       "shortExplanation": "A year has 12 months, from January to December.",
       "source": {
@@ -343,7 +343,7 @@
     {
       "id": "math_unit_10.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "After January",
       "prompt": "Which month comes after January?",
       "options": [
         {
@@ -369,7 +369,7 @@
       },
       "assessed": true,
       "objective": "math.u10.main.04",
-      "hint": "Check the day order; use equal units or see which side goes down.",
+      "hint": "Say the months in order, starting from January.",
       "explanation": "February is the month after January.",
       "shortExplanation": "February is the month after January.",
       "source": {
@@ -394,7 +394,7 @@
     {
       "id": "math_unit_10.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "Measuring with cubes",
       "prompt": "How many cubes long is the pencil?",
       "options": [
         {
@@ -420,7 +420,7 @@
       },
       "assessed": true,
       "objective": "math.u10.main.05",
-      "hint": "Check the day order; use equal units or see which side goes down.",
+      "hint": "Count the cubes from one end of the pencil to the other.",
       "explanation": "Six equal cubes cover the pencil length with no gaps.",
       "shortExplanation": "Six equal cubes cover the pencil length with no gaps.",
       "source": {
@@ -451,7 +451,7 @@
     {
       "id": "math_unit_10.step.007",
       "kind": "tap-choice",
-      "title": "Maths discovery 7",
+      "title": "The heavier side",
       "prompt": "On this balance, B is down and A is up. Which is heavier?",
       "options": [
         {
@@ -472,7 +472,7 @@
       },
       "assessed": true,
       "objective": "math.u10.main.06",
-      "hint": "Check the day order; use equal units or see which side goes down.",
+      "hint": "Which side of the balance went down?",
       "explanation": "The heavier side goes down, so B is heavier.",
       "shortExplanation": "The heavier side goes down, so B is heavier.",
       "source": {
@@ -509,7 +509,7 @@
     {
       "id": "math_unit_10.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Big and heavy",
       "prompt": "A bigger object is always heavier.",
       "options": [
         {
@@ -530,7 +530,7 @@
       },
       "assessed": true,
       "objective": "math.u10.main.07",
-      "hint": "Check the day order; use equal units or see which side goes down.",
+      "hint": "Think of a big pillow and a small stone.",
       "explanation": "A large pillow can be lighter than a small stone.",
       "shortExplanation": "A large pillow can be lighter than a small stone.",
       "source": {
@@ -555,7 +555,7 @@
     {
       "id": "math_unit_10.step.009",
       "kind": "order-sequence",
-      "title": "Maths discovery 9",
+      "title": "Heaviest first",
       "prompt": "Put these in order, heaviest first.",
       "options": [
         {
@@ -585,7 +585,7 @@
       },
       "assessed": true,
       "objective": "math.u10.main.08",
-      "hint": "Check the day order; use equal units or see which side goes down.",
+      "hint": "Imagine lifting each one. Which is hardest to lift?",
       "explanation": "A typical chair is heavier than a book, and a feather is lightest.",
       "shortExplanation": "A typical chair is heavier than a book, and a feather is lightest.",
       "source": {
@@ -610,7 +610,7 @@
     {
       "id": "math_unit_10.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "A year",
       "prompt": "A year has...",
       "options": [
         {
@@ -636,9 +636,9 @@
       },
       "assessed": true,
       "objective": "math.u10.choice.01",
-      "hint": "Check the day order; use equal units or see which side goes down.",
-      "explanation": "12 months is the answer. The months run from January through December.",
-      "shortExplanation": "12 months is the answer. The months run from January through December.",
+      "hint": "Say the months from January to December.",
+      "explanation": "A year has 12 months, from January to December.",
+      "shortExplanation": "A year has 12 months, from January to December.",
       "source": {
         "pages": [
           35,
@@ -661,7 +661,7 @@
     {
       "id": "math_unit_10.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "Balance rule",
       "prompt": "On a balance, the heavier side goes...",
       "options": [
         {
@@ -687,9 +687,9 @@
       },
       "assessed": true,
       "objective": "math.u10.choice.02",
-      "hint": "Check the day order; use equal units or see which side goes down.",
-      "explanation": "Down is the answer. More mass makes that side lower.",
-      "shortExplanation": "Down is the answer. More mass makes that side lower.",
+      "hint": "Look at the balance. Which pan is lower?",
+      "explanation": "The heavier side pulls its pan down.",
+      "shortExplanation": "The heavier side pulls its pan down.",
       "source": {
         "pages": [
           35,
@@ -722,7 +722,7 @@
     {
       "id": "math_unit_10.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Measuring fairly",
       "prompt": "When measuring with cubes, leave...",
       "options": [
         {
@@ -748,9 +748,9 @@
       },
       "assessed": true,
       "objective": "math.u10.choice.03",
-      "hint": "Check the day order; use equal units or see which side goes down.",
-      "explanation": "No gaps is the answer. Touching units cover the whole length.",
-      "shortExplanation": "No gaps is the answer. Touching units cover the whole length.",
+      "hint": "Would gaps change how many cubes you count?",
+      "explanation": "Cubes must touch, with no gaps, to measure the whole length.",
+      "shortExplanation": "Cubes must touch, with no gaps, to measure the whole length.",
       "source": {
         "pages": [
           35,
@@ -779,7 +779,7 @@
     {
       "id": "math_unit_10.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "After Saturday",
       "prompt": "The day after Saturday is...",
       "options": [
         {
@@ -805,9 +805,9 @@
       },
       "assessed": true,
       "objective": "math.u10.choice.04",
-      "hint": "Check the day order; use equal units or see which side goes down.",
-      "explanation": "Sunday is the answer. The week cycles back to Sunday.",
-      "shortExplanation": "Sunday is the answer. The week cycles back to Sunday.",
+      "hint": "What happens to the week after Saturday?",
+      "explanation": "After Saturday the week starts again with Sunday.",
+      "shortExplanation": "After Saturday the week starts again with Sunday.",
       "source": {
         "pages": [
           35,
@@ -830,7 +830,7 @@
     {
       "id": "math_unit_10.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "The heaviest",
       "prompt": "Which is the heaviest?",
       "options": [
         {
@@ -856,9 +856,9 @@
       },
       "assessed": true,
       "objective": "math.u10.choice.05",
-      "hint": "Check the day order; use equal units or see which side goes down.",
-      "explanation": "A watermelon is the answer. A typical watermelon has more mass than a grape or strawberry.",
-      "shortExplanation": "A watermelon is the answer. A typical watermelon has more mass than a grape or strawberry.",
+      "hint": "Which one would be hardest to carry?",
+      "explanation": "A watermelon is much heavier than a grape or a strawberry.",
+      "shortExplanation": "A watermelon is much heavier than a grape or a strawberry.",
       "source": {
         "pages": [
           35,

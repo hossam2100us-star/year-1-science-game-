@@ -126,7 +126,7 @@
     {
       "id": "math_unit_11.step.002",
       "kind": "match-lines",
-      "title": "Maths discovery 2",
+      "title": "Partners of 10",
       "prompt": "Fill the partners that make 10.",
       "options": [
         {
@@ -172,7 +172,7 @@
       },
       "assessed": true,
       "objective": "math.u11.main.01",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "hint": "Use a ten frame: how many spaces are still empty?",
       "explanation": "The partners are 6 and 4, 2 and 8, 5 and 5.",
       "shortExplanation": "The partners are 6 and 4, 2 and 8, 5 and 5.",
       "source": {
@@ -197,7 +197,7 @@
     {
       "id": "math_unit_11.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "Empty spaces",
       "prompt": "7 + __ = 10. How many empty spaces?",
       "options": [
         {
@@ -223,7 +223,7 @@
       },
       "assessed": true,
       "objective": "math.u11.main.02",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "hint": "Fill 7 spaces, then count the empty ones.",
       "explanation": "Seven filled spaces leave 3 empty spaces in a ten frame.",
       "shortExplanation": "Seven filled spaces leave 3 empty spaces in a ten frame.",
       "source": {
@@ -254,7 +254,7 @@
     {
       "id": "math_unit_11.step.004",
       "kind": "match-lines",
-      "title": "Maths discovery 4",
+      "title": "The same total",
       "prompt": "Find each total.",
       "options": [
         {
@@ -294,7 +294,7 @@
       },
       "assessed": true,
       "objective": "math.u11.main.03",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "hint": "Count on from the bigger number in each sum.",
       "explanation": "Both addition sentences have the same total: 5.",
       "shortExplanation": "Both addition sentences have the same total: 5.",
       "source": {
@@ -319,7 +319,7 @@
     {
       "id": "math_unit_11.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "Adding on a line",
       "prompt": "Use the number line: 12 + 3 = ?",
       "options": [
         {
@@ -345,7 +345,7 @@
       },
       "assessed": true,
       "objective": "math.u11.main.04",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "hint": "Start on 12 and make three jumps forward.",
       "explanation": "Three forward jumps from 12 land on 15.",
       "shortExplanation": "Three forward jumps from 12 land on 15.",
       "source": {
@@ -380,7 +380,7 @@
     {
       "id": "math_unit_11.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "Taking away 4",
       "prompt": "There are 16 cubes. Take away 4. How many remain?",
       "options": [
         {
@@ -406,7 +406,7 @@
       },
       "assessed": true,
       "objective": "math.u11.main.05",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "hint": "Count 16 cubes, cover 4, then count the cubes left.",
       "explanation": "Taking 4 from 16 leaves 12.",
       "shortExplanation": "Taking 4 from 16 leaves 12.",
       "source": {
@@ -437,7 +437,7 @@
     {
       "id": "math_unit_11.step.007",
       "kind": "tap-choice",
-      "title": "Maths discovery 7",
+      "title": "Difference of 5 and 9",
       "prompt": "What is the difference between 5 and 9?",
       "options": [
         {
@@ -463,7 +463,7 @@
       },
       "assessed": true,
       "objective": "math.u11.main.06",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "hint": "Start on 5 and count the jumps to 9.",
       "explanation": "Count 4 jumps from 5 to 9.",
       "shortExplanation": "Count 4 jumps from 5 to 9.",
       "source": {
@@ -498,7 +498,7 @@
     {
       "id": "math_unit_11.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "A sensible total",
       "prompt": "Sam says 6 + 3 = 19. Choose the sensible total.",
       "options": [
         {
@@ -524,7 +524,7 @@
       },
       "assessed": true,
       "objective": "math.u11.main.07",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "hint": "Is 6 + 3 small or big? Could it be near 20?",
       "explanation": "Six and three are small groups. Together they make 9.",
       "shortExplanation": "Six and three are small groups. Together they make 9.",
       "source": {
@@ -549,7 +549,7 @@
     {
       "id": "math_unit_11.step.009",
       "kind": "tap-choice",
-      "title": "Maths discovery 9",
+      "title": "Hidden beans",
       "prompt": "There are 10 beans. You see 6. How many are hiding?",
       "options": [
         {
@@ -575,7 +575,7 @@
       },
       "assessed": true,
       "objective": "math.u11.main.08",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
+      "hint": "Count on from 6 up to 10.",
       "explanation": "Six visible beans and 4 hidden beans make 10.",
       "shortExplanation": "Six visible beans and 4 hidden beans make 10.",
       "source": {
@@ -606,7 +606,7 @@
     {
       "id": "math_unit_11.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "Making 10",
       "prompt": "Which pair makes 10?",
       "options": [
         {
@@ -632,9 +632,9 @@
       },
       "assessed": true,
       "objective": "math.u11.choice.01",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
-      "explanation": "6 and 4 is the answer. 6 + 4 fills all ten spaces.",
-      "shortExplanation": "6 and 4 is the answer. 6 + 4 fills all ten spaces.",
+      "hint": "Check each pair on a ten frame.",
+      "explanation": "6 and 4 fill all ten spaces of a ten frame.",
+      "shortExplanation": "6 and 4 fill all ten spaces of a ten frame.",
       "source": {
         "pages": [
           38,
@@ -657,7 +657,7 @@
     {
       "id": "math_unit_11.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "Difference of 8 and 10",
       "prompt": "The difference between 8 and 10 is...",
       "options": [
         {
@@ -683,9 +683,9 @@
       },
       "assessed": true,
       "objective": "math.u11.choice.02",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
-      "explanation": "2 is the answer. Two jumps lead from 8 to 10.",
-      "shortExplanation": "2 is the answer. Two jumps lead from 8 to 10.",
+      "hint": "Start on 8 and count the jumps to 10.",
+      "explanation": "Two jumps go from 8 to 10, so the difference is 2.",
+      "shortExplanation": "Two jumps go from 8 to 10, so the difference is 2.",
       "source": {
         "pages": [
           38,
@@ -708,7 +708,7 @@
     {
       "id": "math_unit_11.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Adding 2 to 14",
       "prompt": "14 + 2 =",
       "options": [
         {
@@ -734,9 +734,9 @@
       },
       "assessed": true,
       "objective": "math.u11.choice.03",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
-      "explanation": "16 is the answer. Adding two to 14 reaches 16.",
-      "shortExplanation": "16 is the answer. Adding two to 14 reaches 16.",
+      "hint": "Start on 14 and jump forward twice.",
+      "explanation": "Two jumps forward from 14 land on 16.",
+      "shortExplanation": "Two jumps forward from 14 land on 16.",
       "source": {
         "pages": [
           38,
@@ -759,7 +759,7 @@
     {
       "id": "math_unit_11.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "Adding 1 to 9",
       "prompt": "9 + 1 =",
       "options": [
         {
@@ -785,9 +785,9 @@
       },
       "assessed": true,
       "objective": "math.u11.choice.04",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
-      "explanation": "10 is the answer. One more than 9 completes ten.",
-      "shortExplanation": "10 is the answer. One more than 9 completes ten.",
+      "hint": "What comes just after 9?",
+      "explanation": "One more than 9 is 10.",
+      "shortExplanation": "One more than 9 is 10.",
       "source": {
         "pages": [
           38,
@@ -810,7 +810,7 @@
     {
       "id": "math_unit_11.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "Taking 3 from 18",
       "prompt": "18 − 3 =",
       "options": [
         {
@@ -836,9 +836,9 @@
       },
       "assessed": true,
       "objective": "math.u11.choice.05",
-      "hint": "Use a ten frame or count the jumps between the numbers.",
-      "explanation": "15 is the answer. Three backward jumps from 18 reach 15.",
-      "shortExplanation": "15 is the answer. Three backward jumps from 18 reach 15.",
+      "hint": "Start on 18 and jump back three times.",
+      "explanation": "Three jumps back from 18 land on 15.",
+      "shortExplanation": "Three jumps back from 18 land on 15.",
       "source": {
         "pages": [
           38,

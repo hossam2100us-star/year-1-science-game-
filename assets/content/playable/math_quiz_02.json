@@ -13,7 +13,7 @@
     {
       "id": "math_quiz_02.step.001",
       "kind": "tap-choice",
-      "title": "Maths discovery 1",
+      "title": "Venn overlap",
       "prompt": "What belongs where two Venn hoops overlap?",
       "options": [
         {
@@ -39,7 +39,7 @@
       },
       "assessed": true,
       "objective": "math.q02.01",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "The overlap is inside both hoops.",
       "explanation": "The overlap satisfies both sorting rules.",
       "shortExplanation": "The overlap satisfies both sorting rules.",
       "source": {
@@ -62,7 +62,7 @@
     {
       "id": "math_quiz_02.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "Colour pattern",
       "prompt": "red, blue, red, blue... What comes next?",
       "options": [
         {
@@ -88,7 +88,7 @@
       },
       "assessed": true,
       "objective": "math.q02.02",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Say the colours aloud and find the part that repeats.",
       "explanation": "The repeated part is red, blue.",
       "shortExplanation": "The repeated part is red, blue.",
       "source": {
@@ -111,7 +111,7 @@
     {
       "id": "math_quiz_02.step.003",
       "kind": "match-lines",
-      "title": "Maths discovery 3",
+      "title": "Tens and ones in 15",
       "prompt": "15 has how many tens and ones?",
       "options": [
         {
@@ -146,7 +146,7 @@
       },
       "assessed": true,
       "objective": "math.q02.03",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "The first digit counts tens; the second counts ones.",
       "explanation": "15 is one whole ten and five ones.",
       "shortExplanation": "15 is one whole ten and five ones.",
       "source": {
@@ -169,7 +169,7 @@
     {
       "id": "math_quiz_02.step.004",
       "kind": "tap-choice",
-      "title": "Maths discovery 4",
+      "title": "Counting in tens",
       "prompt": "Count in tens: 10, 20, ...?",
       "options": [
         {
@@ -195,7 +195,7 @@
       },
       "assessed": true,
       "objective": "math.q02.04",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Add one more ten to 20.",
       "explanation": "One more ten after 20 is 30.",
       "shortExplanation": "One more ten after 20 is 30.",
       "source": {
@@ -218,7 +218,7 @@
     {
       "id": "math_quiz_02.step.005",
       "kind": "tap-choice",
-      "title": "Maths discovery 5",
+      "title": "Days in a week",
       "prompt": "How many days are in a week?",
       "options": [
         {
@@ -244,7 +244,7 @@
       },
       "assessed": true,
       "objective": "math.q02.05",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Say the days from Sunday to Saturday and count them.",
       "explanation": "There are seven days before the week repeats.",
       "shortExplanation": "There are seven days before the week repeats.",
       "source": {
@@ -267,7 +267,7 @@
     {
       "id": "math_quiz_02.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "Balance rule",
       "prompt": "On a balance, does the heavier side go up or down?",
       "options": [
         {
@@ -288,7 +288,7 @@
       },
       "assessed": true,
       "objective": "math.q02.06",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Look at the balance. Which pan is lower?",
       "explanation": "More mass makes that side go down.",
       "shortExplanation": "More mass makes that side go down.",
       "source": {
@@ -321,7 +321,7 @@
     {
       "id": "math_quiz_02.step.007",
       "kind": "tap-choice",
-      "title": "Maths discovery 7",
+      "title": "Partner of 8",
       "prompt": "8 + __ = 10. Find the missing partner.",
       "options": [
         {
@@ -347,7 +347,7 @@
       },
       "assessed": true,
       "objective": "math.q02.07",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Fill 8 spaces of a ten frame. How many are empty?",
       "explanation": "Eight and two make ten.",
       "shortExplanation": "Eight and two make ten.",
       "source": {
@@ -370,7 +370,7 @@
     {
       "id": "math_quiz_02.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Difference of 7 and 10",
       "prompt": "What is the difference between 7 and 10?",
       "options": [
         {
@@ -396,7 +396,7 @@
       },
       "assessed": true,
       "objective": "math.q02.08",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Start on 7 and count the jumps to 10.",
       "explanation": "Three forward jumps lead from seven to ten.",
       "shortExplanation": "Three forward jumps lead from seven to ten.",
       "source": {
@@ -419,7 +419,7 @@
     {
       "id": "math_quiz_02.step.009",
       "kind": "tap-choice",
-      "title": "Maths discovery 9",
+      "title": "Half of 8",
       "prompt": "Half of 8 is...?",
       "options": [
         {
@@ -445,7 +445,7 @@
       },
       "assessed": true,
       "objective": "math.q02.09",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Share 8 into two equal groups.",
       "explanation": "Share eight equally into two groups of four.",
       "shortExplanation": "Share eight equally into two groups of four.",
       "source": {
@@ -468,7 +468,7 @@
     {
       "id": "math_quiz_02.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "Equal halves",
       "prompt": "Two halves of the same whole can have different sizes.",
       "options": [
         {
@@ -489,7 +489,7 @@
       },
       "assessed": true,
       "objective": "math.q02.10",
-      "hint": "Think about the objects, number track or equal groups before choosing.",
+      "hint": "Can halves of the same whole be different sizes?",
       "explanation": "Halves of the same whole are always equal.",
       "shortExplanation": "Halves of the same whole are always equal.",
       "source": {

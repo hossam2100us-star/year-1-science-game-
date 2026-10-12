@@ -559,4 +559,46 @@ void main() {
     expect(t.takeException(), isNull);
     await t.pumpWidget(const SizedBox());
   });
+
+  // Section 5: one hint for a whole unit, "Maths discovery N" titles and
+  // explanations that began "... is the answer."
+  test('every Maths question has its own title, hint and reason', () {
+    for (final lesson in maths.lessons.values) {
+      final graded = [
+        for (final step in lesson.steps)
+          if (step.assessed) step,
+      ];
+      final titles = [for (final step in graded) step.title];
+      expect(titles.toSet(), hasLength(titles.length), reason: lesson.id);
+      for (final step in graded) {
+        expect(step.title, isNot(startsWith('Maths discovery')));
+        expect(step.explanation, isNot(contains(' is the answer.')));
+        final sameHint = graded.where((other) => other.hint == step.hint);
+        expect(sameHint.length, lessThanOrEqualTo(2), reason: step.id);
+      }
+    }
+  });
+
+  testWidgets('a wrong answer brings the hint written for that question', (
+    t,
+  ) async {
+    final store = await play(t, 'math_unit_02.step.003');
+    expect(find.textContaining('Counting on'), findsWidgets);
+    final step = maths.lessons['math_unit_02']!.steps.firstWhere(
+      (s) => s.id == 'math_unit_02.step.003',
+    );
+    final wrong = step.options.firstWhere((o) => o.label == '7');
+    await helpers.tapVisible(
+      t,
+      find.byKey(ValueKey('maths-option-${wrong.id}')),
+    );
+    await helpers.tapVisible(t, find.byKey(const ValueKey('lessonCheck')));
+    expect(currentOf(store, 'math_unit_02')['mistakes'], 1);
+    expect(
+      find.textContaining('Start on 5, then make three jumps forward.'),
+      findsWidgets,
+    );
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+  });
 }

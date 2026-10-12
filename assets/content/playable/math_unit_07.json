@@ -167,7 +167,7 @@
     {
       "id": "math_unit_07.step.002",
       "kind": "tap-choice",
-      "title": "Maths discovery 2",
+      "title": "Both labels",
       "prompt": "Which object belongs in both red and has wheels?",
       "options": [
         {
@@ -193,7 +193,7 @@
       },
       "assessed": true,
       "objective": "math.u07.main.01",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
+      "hint": "Ask two questions: is it red? Does it have wheels?",
       "explanation": "A red car is red and has wheels, so it fits both labels.",
       "shortExplanation": "A red car is red and has wheels, so it fits both labels.",
       "source": {
@@ -218,7 +218,7 @@
     {
       "id": "math_unit_07.step.003",
       "kind": "tap-choice",
-      "title": "Maths discovery 3",
+      "title": "The overlap",
       "prompt": "Why does the red car belong in the overlap?",
       "options": [
         {
@@ -244,7 +244,7 @@
       },
       "assessed": true,
       "objective": "math.u07.main.02",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
+      "hint": "Check the car against each label in turn.",
       "explanation": "The overlap is for objects that fit both labels.",
       "shortExplanation": "The overlap is for objects that fit both labels.",
       "source": {
@@ -269,7 +269,7 @@
     {
       "id": "math_unit_07.step.004",
       "kind": "drag-to-basket",
-      "title": "Maths discovery 4",
+      "title": "Neither label",
       "prompt": "Choose the objects that fit neither red nor has wheels.",
       "options": [
         {
@@ -303,7 +303,7 @@
       },
       "assessed": true,
       "objective": "math.u07.main.03",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
+      "hint": "Find the things that are not red and have no wheels.",
       "explanation": "The green leaf and blue ball are not red and have no wheels.",
       "shortExplanation": "The green leaf and blue ball are not red and have no wheels.",
       "source": {
@@ -328,7 +328,7 @@
     {
       "id": "math_unit_07.step.005",
       "kind": "match-lines",
-      "title": "Maths discovery 5",
+      "title": "Carroll diagram",
       "prompt": "Sort the numbers into the Carroll diagram.",
       "options": [
         {
@@ -393,7 +393,7 @@
       },
       "assessed": true,
       "objective": "math.u07.main.04",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
+      "hint": "For each number ask: is it less than 10? Think about 10 itself.",
       "explanation": "10 is not less than 10. It belongs with 12, 15 and 18.",
       "shortExplanation": "10 is not less than 10. It belongs with 12, 15 and 18.",
       "source": {
@@ -425,7 +425,7 @@
     {
       "id": "math_unit_07.step.006",
       "kind": "tap-choice",
-      "title": "Maths discovery 6",
+      "title": "Children with cats",
       "prompt": "How many children have a cat?",
       "options": [
         {
@@ -451,7 +451,7 @@
       },
       "assessed": true,
       "objective": "math.u07.main.05",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
+      "hint": "Count the blocks in the cat column.",
       "explanation": "Each block is one child. The cat column has 5.",
       "shortExplanation": "Each block is one child. The cat column has 5.",
       "source": {
@@ -496,7 +496,7 @@
     {
       "id": "math_unit_07.step.007",
       "kind": "tap-choice",
-      "title": "Maths discovery 7",
+      "title": "More cats than dogs",
       "prompt": "How many more cats than dogs?",
       "options": [
         {
@@ -522,7 +522,7 @@
       },
       "assessed": true,
       "objective": "math.u07.main.06",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
+      "hint": "Count both columns, then find the difference.",
       "explanation": "There are 5 cats and 3 dogs. The difference is 2.",
       "shortExplanation": "There are 5 cats and 3 dogs. The difference is 2.",
       "source": {
@@ -567,7 +567,7 @@
     {
       "id": "math_unit_07.step.008",
       "kind": "tap-choice",
-      "title": "Maths discovery 8",
+      "title": "Fitting both labels",
       "prompt": "An object that fits both labels belongs in the overlap.",
       "options": [
         {
@@ -588,7 +588,7 @@
       },
       "assessed": true,
       "objective": "math.u07.main.07",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
+      "hint": "Where do the two hoops share space?",
       "explanation": "Both labels are true in the overlap.",
       "shortExplanation": "Both labels are true in the overlap.",
       "source": {
@@ -649,7 +649,7 @@
     {
       "id": "math_unit_07.step.010",
       "kind": "tap-choice",
-      "title": "Maths discovery 10",
+      "title": "Venn overlap",
       "prompt": "The overlap in a Venn diagram is for things that are...",
       "options": [
         {
@@ -675,9 +675,9 @@
       },
       "assessed": true,
       "objective": "math.u07.choice.01",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
-      "explanation": "Both is the answer. The overlap fits both sorting rules.",
-      "shortExplanation": "Both is the answer. The overlap fits both sorting rules.",
+      "hint": "The overlap is inside both hoops at once.",
+      "explanation": "The overlap is inside both hoops, so things there fit both labels.",
+      "shortExplanation": "The overlap is inside both hoops, so things there fit both labels.",
       "source": {
         "pages": [
           25,
@@ -721,7 +721,7 @@
     {
       "id": "math_unit_07.step.011",
       "kind": "tap-choice",
-      "title": "Maths discovery 11",
+      "title": "Where 10 goes",
       "prompt": "Where does 10 go?",
       "options": [
         {
@@ -742,9 +742,9 @@
       },
       "assessed": true,
       "objective": "math.u07.choice.02",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
-      "explanation": "Not less than 10 is the answer. 10 is equal to 10, not less.",
-      "shortExplanation": "Not less than 10 is the answer. 10 is equal to 10, not less.",
+      "hint": "Is 10 less than 10, or the same?",
+      "explanation": "10 is the same as 10, so it is not less than 10.",
+      "shortExplanation": "10 is the same as 10, so it is not less than 10.",
       "source": {
         "pages": [
           25,
@@ -767,7 +767,7 @@
     {
       "id": "math_unit_07.step.012",
       "kind": "tap-choice",
-      "title": "Maths discovery 12",
+      "title": "Outside the hoops",
       "prompt": "Things that fit neither label go...",
       "options": [
         {
@@ -793,9 +793,9 @@
       },
       "assessed": true,
       "objective": "math.u07.choice.03",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
-      "explanation": "Outside the hoops is the answer. Neither fits either label.",
-      "shortExplanation": "Outside the hoops is the answer. Neither fits either label.",
+      "hint": "If a thing fits no hoop, where can it go?",
+      "explanation": "Things that fit neither label go outside both hoops.",
+      "shortExplanation": "Things that fit neither label go outside both hoops.",
       "source": {
         "pages": [
           25,
@@ -818,7 +818,7 @@
     {
       "id": "math_unit_07.step.013",
       "kind": "tap-choice",
-      "title": "Maths discovery 13",
+      "title": "Each block",
       "prompt": "In the pets block graph, each block stands for...",
       "options": [
         {
@@ -844,9 +844,9 @@
       },
       "assessed": true,
       "objective": "math.u07.choice.04",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
-      "explanation": "One child is the answer. One equal-size block represents one child.",
-      "shortExplanation": "One child is the answer. One equal-size block represents one child.",
+      "hint": "Read the words under the graph.",
+      "explanation": "Each block in the pets graph stands for one child.",
+      "shortExplanation": "Each block in the pets graph stands for one child.",
       "source": {
         "pages": [
           25,
@@ -889,7 +889,7 @@
     {
       "id": "math_unit_07.step.014",
       "kind": "tap-choice",
-      "title": "Maths discovery 14",
+      "title": "The tallest column",
       "prompt": "The tallest column shows the...",
       "options": [
         {
@@ -915,9 +915,9 @@
       },
       "assessed": true,
       "objective": "math.u07.choice.05",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
-      "explanation": "Most popular is the answer. The tallest column contains most blocks.",
-      "shortExplanation": "Most popular is the answer. The tallest column contains most blocks.",
+      "hint": "More blocks make a taller column.",
+      "explanation": "The tallest column has the most blocks, so it is most popular.",
+      "shortExplanation": "The tallest column has the most blocks, so it is most popular.",
       "source": {
         "pages": [
           25,
