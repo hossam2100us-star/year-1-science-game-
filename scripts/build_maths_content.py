@@ -643,6 +643,19 @@ def source_ref(draft,record=None):
         'answerKeyText':record['answerKeyText'] if record else '', 'sourceSha256':draft['sourceSha256']}
 
 
+def short_explanation(text,limit=16):
+    """Whole sentences up to the word limit, never a sentence cut short.
+
+    Cutting at 16 words left "...depth as well as" (teacher review 5).
+    """
+    short=''
+    for sentence in re.split(r'(?<=[.!?])\s+',text.strip()):
+        candidate=f'{short} {sentence}'.strip()
+        if short and len(candidate.split())>limit: break
+        short=candidate
+    return short
+
+
 def playable_step(draft,record,spec,index,hint,explanation):
     options=[]; targets=[]; answer=None
     kind={'single':'tap-choice','set':'drag-to-basket','mapping':'match-lines','sequence':'order-sequence','free':'story'}[spec['type']]
@@ -656,7 +669,7 @@ def playable_step(draft,record,spec,index,hint,explanation):
         ids={o['label']:o['id'] for o in options}
         answer={'type':spec['type'],'value':ids[spec['correct']] if spec['type']=='single' else [ids[v] for v in spec['correct']]}
     text=spec.get('explanation') or explanation
-    short=' '.join(text.split()[:16])
+    short=short_explanation(text)
     step={'id':f'{draft["id"]}.step.{index:03d}','kind':kind,'title':('Try it at home' if spec['type']=='free' else f'Maths discovery {index}'),
         'prompt':spec['prompt'],'options':options,'targets':targets,'answer':answer,
         'assessed':answer is not None,'objective':record['id'] if answer else '',
@@ -667,7 +680,12 @@ def playable_step(draft,record,spec,index,hint,explanation):
     if not answer:
         step['parentReview']={'en':record['answerKeyText'],'note':'Discuss with an adult; this personal or drawing response is not automatically graded.'}
     if options:
-        step['options']=stable_order(options,step['id'])
+        if all(re.fullmatch(r'[A-Za-z]',o['label']) for o in options):
+            # Letters name pictures labelled a, b, c: keep them in that order
+            # (teacher review 5 saw b, c, a). Other answers stay shuffled.
+            step['options']=sorted(options,key=lambda o:o['label'].lower())
+        else:
+            step['options']=stable_order(options,step['id'])
         if answer and answer['type']=='sequence' and [o['id'] for o in step['options']]==answer['value']:
             step['options']=step['options'][1:]+step['options'][:1]
     return step
@@ -691,7 +709,7 @@ MCQ_REASONS=[
     ['Zero names an empty group.','17 is farther along the number track.','9 comes immediately before 10.','We guess before counting to check.','Count back one step from 11.'],
     ['We usually see a dark sky at night.','Dinner usually comes in the evening.','A bed is typically longer than a shoe or spoon.','A shared start line makes comparison fair.','Shorter is the opposite of longer.'],
     ['The overlap fits both sorting rules.','10 is equal to 10, not less.','Neither fits either label.','One equal-size block represents one child.','The tallest column contains most blocks.'],
-    ['Red and yellow repeat in pairs.','A square has four straight sides.','Your back faces the backward direction.','Turning changes the direction you face.','3D shapes have depth as well as height and width.'],
+    ['Red and yellow repeat in pairs.','A square has four straight sides.','Your back faces the backward direction.','Turning changes the direction you face.','3D shapes also have depth.'],
     ['13 contains one complete ten and three extras.','Adding one ten to 5 gives 15.','The next bundle adds ten.','Each number is larger than the previous one.','The tens digit names a whole group of ten.'],
     ['The months run from January through December.','More mass makes that side lower.','Touching units cover the whole length.','The week cycles back to Sunday.','A typical watermelon has more mass than a grape or strawberry.'],
     ['6 + 4 fills all ten spaces.','Two jumps lead from 8 to 10.','Adding two to 14 reaches 16.','One more than 9 completes ten.','Three backward jumps from 18 reach 15.'],
@@ -701,7 +719,7 @@ MCQ_REASONS=[
     ['Its sides and corners stay the same.','A cone meets at one pointed corner.','A sphere is curved all around.','A cuboid has six flat faces.','A triangle has three straight sides.'],
     ['More blocks make a taller column.','Count the three car blocks.','Four bus blocks and two bike blocks make six.','The title tells us what the graph is about.','No blocks means nobody chose that group.'],
     ['The two parts must be equal.','Eight and eight make sixteen.','Together the two parts rebuild the whole.','Nine and nine make eighteen.','Matching the ends shows the midpoint.'],
-    ['The minute hand is at twelve for o\'clock.','Half an hour moves the hour hand halfway toward six.','Scales measure mass.','Capacity means how much the container holds.','Thirty is half of sixty minutes.'],
+    ['The minute hand is at twelve for o\'clock.','The hour hand is halfway to six.','Scales measure mass.','Capacity means how much the container holds.','Thirty is half of sixty minutes.'],
 ]
 
 

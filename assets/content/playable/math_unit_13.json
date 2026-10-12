@@ -536,6 +536,11 @@
       "prompt": "Which coin is worth the most?",
       "options": [
         {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label"
+        },
+        {
           "id": "choice_2",
           "label": "b",
           "art": "math_label"
@@ -543,11 +548,6 @@
         {
           "id": "choice_3",
           "label": "c",
-          "art": "math_label"
-        },
-        {
-          "id": "choice_1",
-          "label": "a",
           "art": "math_label"
         }
       ],

@@ -338,8 +338,8 @@
       "prompt": "Match each dot picture to its number.",
       "options": [
         {
-          "id": "item_3",
-          "label": "C",
+          "id": "item_1",
+          "label": "A",
           "art": "math_label"
         },
         {
@@ -348,8 +348,8 @@
           "art": "math_label"
         },
         {
-          "id": "item_1",
-          "label": "A",
+          "id": "item_3",
+          "label": "C",
           "art": "math_label"
         }
       ],

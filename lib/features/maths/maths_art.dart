@@ -11,6 +11,11 @@ const mathsObjectAsset = 'maths-objects-v2.webp';
 const mathsBackdropAsset = 'maths-backdrops-v2.webp';
 const mathsIslandAsset = 'maths-islands-v2.webp';
 
+/// Three birds in equal cells, so a chart can tell pigeons, sparrows and
+/// crows apart without one looking bigger than another (teacher review 5).
+const mathsBirdAsset = 'maths-birds-v1.webp';
+const mathsBirdCells = <String, int>{'pigeon': 0, 'sparrow': 1, 'crow': 2};
+
 /// One original transparent object per atlas cell. Counts, positions and all
 /// mathematical markings belong to the lesson renderer, rather than the art.
 const mathsObjectCells = <String, int>{
@@ -100,10 +105,16 @@ class MathsArt extends StatelessWidget {
     child: SizedBox(
       height: height,
       width: width ?? height,
-      child: IllustratedArt(
-        asset: mathsObjectAsset,
-        crop: mathsObjectCrop(item),
-      ),
+      child: switch (mathsBirdCells[item]) {
+        final int cell => IllustratedArt(
+          asset: mathsBirdAsset,
+          crop: Rect.fromLTWH(cell / 3, 0, 1 / 3, 1),
+        ),
+        null => IllustratedArt(
+          asset: mathsObjectAsset,
+          crop: mathsObjectCrop(item),
+        ),
+      },
     ),
   );
 }

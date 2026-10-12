@@ -664,8 +664,8 @@
       "assessed": true,
       "objective": "math.u18.choice.02",
       "hint": "Find the long hand first; compare how much each container holds.",
-      "explanation": "Between 5 and 6 is the answer. Half an hour moves the hour hand halfway toward six.",
-      "shortExplanation": "Between 5 and 6 is the answer. Half an hour moves the hour hand halfway toward",
+      "explanation": "Between 5 and 6 is the answer. The hour hand is halfway to six.",
+      "shortExplanation": "Between 5 and 6 is the answer. The hour hand is halfway to six.",
       "source": {
         "pages": [
           60,

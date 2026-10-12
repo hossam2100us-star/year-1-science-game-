@@ -129,3 +129,11 @@ the socket untouched). The magenta background was removed with
 tools/images/cutout.mjs (lossless), part of the empty space between the boy and
 the wall was cut so the gap is about the boy's width, and the result was
 encoded once as WebP (quality 80, alpha 90) at 1024×708, 83 KB.
+
+## Maths bird pictures — 12 October 2026 (teacher review 5)
+
+assets/images/maths-birds-v1.webp: a pigeon, a house sparrow and a hooded crow
+for the Maths bird chart. The owner generated it with Google Gemini, using the
+Maths objects atlas as style reference and the prompt written for this change.
+Background removal and encoding as described in docs/MATHS_ART_V2.md. No
+third-party or book artwork was used.

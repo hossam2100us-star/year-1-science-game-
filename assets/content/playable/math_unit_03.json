@@ -172,13 +172,13 @@
       "prompt": "Match each flat shape to its name.",
       "options": [
         {
-          "id": "item_2",
-          "label": "B",
+          "id": "item_1",
+          "label": "A",
           "art": "math_label"
         },
         {
-          "id": "item_1",
-          "label": "A",
+          "id": "item_2",
+          "label": "B",
           "art": "math_label"
         },
         {

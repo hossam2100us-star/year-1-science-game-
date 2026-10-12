@@ -150,6 +150,18 @@
       "prompt": "Choose all shapes cut into two equal parts.",
       "options": [
         {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "circle",
+            "parts": 2,
+            "shaded": 0,
+            "equal": true
+          }
+        },
+        {
           "id": "choice_2",
           "label": "b",
           "art": "math_label",
@@ -172,18 +184,6 @@
             "shaded": 0,
             "equal": true,
             "orientation": "diagonal"
-          }
-        },
-        {
-          "id": "choice_1",
-          "label": "a",
-          "art": "math_label",
-          "visual": {
-            "type": "fraction",
-            "shape": "circle",
-            "parts": 2,
-            "shaded": 0,
-            "equal": true
           }
         }
       ],

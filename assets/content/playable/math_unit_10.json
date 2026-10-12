@@ -455,13 +455,13 @@
       "prompt": "On this balance, B is down and A is up. Which is heavier?",
       "options": [
         {
-          "id": "choice_2",
-          "label": "B",
+          "id": "choice_1",
+          "label": "A",
           "art": "math_label"
         },
         {
-          "id": "choice_1",
-          "label": "A",
+          "id": "choice_2",
+          "label": "B",
           "art": "math_label"
         }
       ],

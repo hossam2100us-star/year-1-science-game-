@@ -43,3 +43,15 @@ Originals remain under
 
 The application uses workspace copies only. Teaching rationale and the limit
 of the AI review are recorded in `MATHS_TEACHING_REVIEW.md`.
+
+## Bird atlas — 12 October 2026 (teacher review 5)
+
+The bird chart used one blue bird for pigeons, sparrows and crows.
+`assets/images/maths-birds-v1.webp` (1536×512, 78 KB) holds a pigeon, a house
+sparrow and a hooded crow in three equal cells, so no bird looks bigger than
+another. The owner generated it with Google Gemini, with the objects atlas as
+style reference and the prompt written for this change (three birds, side
+view, same size, flat magenta background). The magenta was removed with
+`tools/images/cutout.mjs` (lossless), each bird was trimmed and fitted to a
+512-pixel cell, and the atlas was encoded once as WebP (quality 80, alpha 90).
+`mathsBirdCells` in `maths_art.dart` maps `pigeon`, `sparrow` and `crow`.

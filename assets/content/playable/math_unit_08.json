@@ -983,8 +983,8 @@
       "assessed": true,
       "objective": "math.u08.choice.05",
       "hint": "Say the repeating part aloud. Turning changes where you face.",
-      "explanation": "Solid - you can hold it is the answer. 3D shapes have depth as well as height and width.",
-      "shortExplanation": "Solid - you can hold it is the answer. 3D shapes have depth as well as",
+      "explanation": "Solid - you can hold it is the answer. 3D shapes also have depth.",
+      "shortExplanation": "Solid - you can hold it is the answer. 3D shapes also have depth.",
       "source": {
         "pages": [
           28,

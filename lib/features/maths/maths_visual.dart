@@ -17,6 +17,14 @@ class MathsVisual extends StatelessWidget {
     final type = data['type'];
     if (type == 'groups' || type == 'pattern') {
       final items = (data['items'] as List? ?? []).cast<Map<String, dynamic>>();
+      // Groups of counters side by side use one counter size, so the group
+      // with fewer counters does not show bigger ones (teacher review 5).
+      final slots = items
+          .where((item) => item['type'] == 'count')
+          .fold<int>(
+            0,
+            (n, item) => math.max(n, (item['count'] as num).toInt()),
+          );
       return Wrap(
         spacing: 12,
         runSpacing: 12,
@@ -32,7 +40,12 @@ class MathsVisual extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  MathsVisual(data: Map<String, dynamic>.from(item)),
+                  MathsVisual(
+                    data: {
+                      ...item,
+                      if (item['type'] == 'count') 'slots': slots,
+                    },
+                  ),
                   if (item['label'] != null)
                     Text('${item['label']}', textAlign: TextAlign.center),
                 ],
@@ -88,6 +101,13 @@ class MathsVisual extends StatelessWidget {
   };
 }
 
+/// What an Egyptian coin worth [piastres] says: 25 or 50 piastres, or 1
+/// pound for a hundred (teacher review 5: there is no "100 piastres" coin).
+({String amount, String unit}) coinDenomination(int piastres) =>
+    piastres >= 100 && piastres % 100 == 0
+    ? (amount: '${piastres ~/ 100}', unit: piastres == 100 ? 'pound' : 'pounds')
+    : (amount: '$piastres', unit: 'piastres');
+
 class _Chart extends StatelessWidget {
   const _Chart({required this.data});
   final Map<String, dynamic> data;
@@ -101,7 +121,9 @@ class _Chart extends StatelessWidget {
     'balls' => 'ball',
     'dolls' => 'doll',
     'blocks' => 'cube',
-    'pigeons' || 'sparrows' || 'crows' => 'bird',
+    'pigeons' => 'pigeon',
+    'sparrows' => 'sparrow',
+    'crows' => 'crow',
     _ => null,
   };
 
@@ -109,8 +131,20 @@ class _Chart extends StatelessWidget {
     final unit = '${data['unit'] ?? ''}'.toLowerCase();
     if (unit.contains('star')) return 'star';
     if (unit.contains('bird')) return 'bird';
+    if (unit.contains('person') || unit.contains('people')) return 'person';
     return 'counter';
   }
+
+  /// One mark of a pictogram. A person is a person symbol, not a coloured
+  /// circle that looks like the apples in the first row (teacher review 5).
+  Widget _mark(String art, {required double height, double? width}) =>
+      art == 'person'
+      ? SizedBox(
+          height: height,
+          width: width ?? height,
+          child: const CustomPaint(painter: _PersonPainter()),
+        )
+      : MathsArt(art, height: height, width: width);
 
   Widget _rowLabel(Map<String, dynamic> row, {bool compact = false}) {
     final label = '${row['label']}';
@@ -271,7 +305,7 @@ class _Chart extends StatelessWidget {
                             width: unit,
                             height: 30,
                             child: i < (row['value'] as num).toInt()
-                                ? MathsArt(_markerArt, height: 30, width: unit)
+                                ? _mark(_markerArt, height: 30, width: unit)
                                 : null,
                           ),
                       ],
@@ -282,7 +316,17 @@ class _Chart extends StatelessWidget {
             ),
           ),
         if (data['unit'] != null)
-          Text('Key: ${data['unit']}', textAlign: TextAlign.center),
+          // Wraps on a phone with large text instead of overflowing.
+          Wrap(
+            key: const ValueKey('maths-pictogram-key'),
+            alignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              const Text('Key: '),
+              _mark(_markerArt, height: 28),
+              Text(' = ${data['unit']}'),
+            ],
+          ),
         if (!pictogram)
           Text(
             List.generate(maxValue + 1, (i) => '$i').join('  '),
@@ -292,6 +336,36 @@ class _Chart extends StatelessWidget {
       ],
     );
   }
+}
+
+/// A simple person symbol for pictograms: a head and a rounded body.
+class _PersonPainter extends CustomPainter {
+  const _PersonPainter();
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = const Color(0xFF2E6F8E);
+    final side = math.min(size.width, size.height);
+    final centre = Offset(size.width / 2, size.height / 2);
+    canvas.drawCircle(centre + Offset(0, -side * .26), side * .17, paint);
+    canvas.drawRRect(
+      RRect.fromRectAndCorners(
+        Rect.fromCenter(
+          center: centre + Offset(0, side * .22),
+          width: side * .56,
+          height: side * .44,
+        ),
+        topLeft: Radius.circular(side * .22),
+        topRight: Radius.circular(side * .22),
+        bottomLeft: Radius.circular(side * .05),
+        bottomRight: Radius.circular(side * .05),
+      ),
+      paint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(_PersonPainter oldDelegate) => false;
 }
 
 class _MathsPainter extends CustomPainter {
@@ -414,7 +488,17 @@ class _MathsPainter extends CustomPainter {
     final frameGap = frame ? 8.0 : 0.0;
     final cellW = (size.width - pairGap * (columns / 2 - 1)) / columns;
     final cellH = (size.height - frameGap * (frameCells / 10 - 1)) / rows;
-    final radius = math.min(36.0, math.min(cellW, cellH) * .36);
+    // A shared size for groups shown together (see MathsVisual.groups).
+    final slots = (data['slots'] as num?)?.toInt() ?? 0;
+    final sizeW = frame || pairs
+        ? cellW
+        : size.width / math.min(math.max(count, slots), 5);
+    final radius = math.min(36.0, math.min(sizeW, cellH) * .36);
+    // A counter given a colour is drawn in it: the art's own counter is
+    // always coral, which made '4 blue dots and 3 orange dots' all orange.
+    final tinted =
+        data['color'] != null &&
+        const {'dot', 'counter'}.contains(data['item'] ?? 'counter');
     final removed = (data['removed'] as num? ?? 0).toInt();
     for (var i = 0; i < frameCells; i++) {
       var center = Offset(
@@ -439,7 +523,7 @@ class _MathsPainter extends CustomPainter {
         );
         if (i >= count) continue;
       }
-      if (image != null) {
+      if (image != null && !tinted) {
         paintMathsObject(canvas, image!, '${data['item'] ?? 'counter'}', rect);
       } else if (data['item'] == 'star') {
         final path = Path();
@@ -573,14 +657,20 @@ class _MathsPainter extends CustomPainter {
     }
   }
 
+  /// Egyptian coins: 25 and 50 piastres, and the 1 pound coin. Values stay
+  /// in piastres for comparing; a hundred is written and drawn as a pound
+  /// (teacher review 5: there is no "100 piastres" coin).
   void _money(Canvas canvas, Size size) {
     final coins = (data['coins'] as List? ?? []).cast<num>();
     if (coins.isEmpty) return;
     final radius = math.min(27.0, size.width / (coins.length * 2 + 1));
     for (var i = 0; i < coins.length; i++) {
+      final value = coins[i].toInt();
+      final (:amount, :unit) = coinDenomination(value);
+      final pounds = unit != 'piastres';
       final center = Offset(
         size.width * (i + .5) / coins.length,
-        size.height / 2,
+        size.height / 2 - 8,
       );
       canvas.drawCircle(
         center,
@@ -590,6 +680,17 @@ class _MathsPainter extends CustomPainter {
           Rect.fromCircle(center: center, radius: radius),
         ),
       );
+      if (pounds) {
+        // The pound coin: a silver centre inside a golden ring.
+        canvas.drawCircle(
+          center,
+          radius * .68,
+          _material(
+            const Color(0xFFC9CED6),
+            Rect.fromCircle(center: center, radius: radius * .68),
+          ),
+        );
+      }
       canvas.drawCircle(
         center,
         radius,
@@ -600,14 +701,9 @@ class _MathsPainter extends CustomPainter {
         radius * .82,
         _paint(const Color(0x99FFF4CD), stroke: true)..strokeWidth = 1.5,
       );
-      _text(canvas, '${coins[i]}', center, size: radius < 20 ? 14 : 20);
+      _text(canvas, amount, center, size: radius < 20 ? 14 : 20);
+      _text(canvas, unit, center + Offset(0, radius + 14), size: 13);
     }
-    _text(
-      canvas,
-      '${data['unit'] ?? 'piastres'}',
-      Offset(size.width / 2, size.height / 2 + radius + 22),
-      size: 14,
-    );
   }
 
   void _ruler(Canvas canvas, Size size) {
