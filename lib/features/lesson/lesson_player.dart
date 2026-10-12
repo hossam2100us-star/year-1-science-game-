@@ -233,7 +233,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   }
 
   void _say(String text) {
-    if (_science && widget.lesson.id == 'unit_06') ScienceAudio.stop();
+    if (!_session.finished && _science && widget.lesson.id == 'unit_06') {
+      ScienceAudio.stop();
+    }
     ref.read(narrationProvider).speak(text);
   }
 

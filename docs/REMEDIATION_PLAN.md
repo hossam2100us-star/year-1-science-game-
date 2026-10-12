@@ -43,6 +43,7 @@ re-checked against `main` @ `2e81558` on 2026-10-10; "Checked" says what was fou
 | T4-5e | Low. Home activities appear in English, left to right, inside the Arabic parent area | Confirmed: `unit_report.dart` forces `TextDirection.ltr`; activity text exists in English only | Arabic text for each home activity (draft by the developer, reviewed by the owner), shown when the parent area is Arabic | **Owner:** review the Arabic wording |
 | X-1 | Found while checking: the "Saving…" label in the lesson strip is mis-encoded (`Savingâ€¦`) | Confirmed; only occurrence in tracked text files | Fix the character; a test that no source or content file contains mis-encoded UTF-8 | — |
 | X-2 | README says the app has no INTERNET permission and keeps all data on the device (the review's "not reviewed" note) | Confirmed: true before M4, not since | Rewrite for parents: device-only by default, what is sent only after choosing an account and saving a child, photos never | — |
+| X-3 | Found during the Maths work (PR #6), present since before the remediation: at the end of every lesson, narration read the current scene after the session had passed its last step. The RangeError was reported as a failed save: an error message on the completion screen and no spoken result | Confirmed on M5 with a new test (`test/lesson/lesson_end_test.dart`, Science quiz 1 and unit 6) | The same one-line guard as in the Maths branch: the unit 6 sound check runs only while a step is current | — |
 
 **Status 2026-10-10:**
 - **FIXED** with tests in `test/teacher_review_4_test.dart`, `test/text_encoding_test.dart` and `test/forces_scenes_test.dart`:
@@ -53,6 +54,7 @@ re-checked against `main` @ `2e81558` on 2026-10-10; "Checked" says what was fou
 - **FIXED** (approved by the owner on 2026-10-10):
   - T4-5d: quiz 3 questions 4 and 5 gain a third choice ("Ears", "It stays the same"); 1, 2 and 9 stay as in the book (an optional magnet test before 9 was not done);
   - T4-5e: Arabic for every home activity, goal activity and safety note.
+- **FIXED 2026-10-12:** X-3, the error message at the end of every lesson (in the trial APK 0.5.2 too), with `test/lesson/lesson_end_test.dart`.
 
 Verification for M5a: tests above, goldens regenerated and compared by eye, emulator run at
 1280×800 (Electricity safety, Water world, Space, a lesson with long and short steps), then
