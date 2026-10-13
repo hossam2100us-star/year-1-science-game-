@@ -72,7 +72,7 @@ flutter build apk --release --split-per-abi --obfuscate --split-debug-info=build
   Release only if sideloading is needed. Never commit APK/AAB files.
 
 CI builds a release AAB and per-ABI APKs with a throwaway key on every push to
-prove the release configuration works; that key is generated per run and
+`main` (and on a manual run) to prove the release configuration works; that key is generated per run and
 deleted, and those builds are never distributed.
 
 ## 4. Signing key — creation and custody (SEC-06) — owner action
@@ -107,7 +107,7 @@ never be updated again under the same package name.
    logs; never `echo` them.
 
 `.gitignore` already excludes `android/key.properties`, `*.jks`, `*.keystore`
-and `secrets.*`, and the `security-scan` workflow runs gitleaks on every push.
+and `secrets.*`, and the `security-scan` workflow runs gitleaks on every pull request and push to `main`.
 
 Note: builds signed with the debug key cannot be updated in place by builds
 signed with the upload key; testers must uninstall the preview first (their

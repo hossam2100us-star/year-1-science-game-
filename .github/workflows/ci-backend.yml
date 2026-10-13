@@ -2,7 +2,7 @@ name: ci-backend
 
 on:
   push:
-    branches: [main, 'remediation/**']
+    branches: [main]
     paths: ['backend/**', 'api/**', 'infrastructure/**', '.github/workflows/ci-backend.yml']
   pull_request:
     paths: ['backend/**', 'api/**', 'infrastructure/**', '.github/workflows/ci-backend.yml']
