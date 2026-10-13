@@ -112,7 +112,17 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_01",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "from": 12,
+        "jumps": [
+          1
+        ],
+        "ask": "landing"
+      }
     },
     {
       "id": "math_quiz_01.step.003",
@@ -161,7 +171,17 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_01",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 7,
+        "jumps": [
+          -3
+        ],
+        "ask": "landing"
+      }
     },
     {
       "id": "math_quiz_01.step.004",
@@ -406,7 +426,16 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_01",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20,
+        "markers": [
+          15,
+          18
+        ]
+      }
     },
     {
       "id": "math_quiz_01.step.008",
@@ -455,7 +484,21 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_01",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 0,
+            "item": "counter",
+            "arrangement": "row",
+            "width": 260,
+            "height": 110,
+            "label": "an empty bag"
+          }
+        ]
+      }
     },
     {
       "id": "math_quiz_01.step.009",
@@ -466,12 +509,20 @@
         {
           "id": "choice_1",
           "label": "morning",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "morning"
+          }
         },
         {
           "id": "choice_2",
           "label": "night",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "night"
+          }
         }
       ],
       "targets": [],
@@ -548,7 +599,24 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_01",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "ruler",
+            "units": 3,
+            "item": "pencil",
+            "label": "A"
+          },
+          {
+            "type": "ruler",
+            "units": 5,
+            "item": "pencil",
+            "label": "B"
+          }
+        ]
+      }
     }
   ],
   "stickers": [

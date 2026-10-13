@@ -439,7 +439,14 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_12",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+      }
     },
     {
       "id": "math_unit_12.step.007",
@@ -485,7 +492,14 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_12",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+      }
     },
     {
       "id": "math_unit_12.step.008",
@@ -608,7 +622,28 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_12",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "fraction",
+            "shape": "circle",
+            "parts": 2,
+            "shaded": 1,
+            "equal": true,
+            "label": "halves"
+          },
+          {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 2,
+            "shaded": 1,
+            "equal": false,
+            "label": "not halves"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_12.step.011",
@@ -659,7 +694,15 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_12",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 4,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
     },
     {
       "id": "math_unit_12.step.012",
@@ -710,7 +753,14 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_12",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+      }
     },
     {
       "id": "math_unit_12.step.013",
@@ -761,7 +811,15 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_12",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 6,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
     },
     {
       "id": "math_unit_12.step.014",
@@ -812,7 +870,14 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_12",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "rectangle",
+        "parts": 4,
+        "shaded": 1,
+        "equal": true
+      }
     }
   ],
   "stickers": [

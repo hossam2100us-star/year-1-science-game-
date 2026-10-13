@@ -556,32 +556,56 @@
         {
           "id": "item_4",
           "label": "triangle",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle"
+          }
         },
         {
           "id": "item_3",
           "label": "tin",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cylinder"
+          }
         },
         {
           "id": "item_2",
           "label": "ball",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "sphere"
+          }
         },
         {
           "id": "item_5",
           "label": "dice",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cube"
+          }
         },
         {
           "id": "item_1",
           "label": "square",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square"
+          }
         },
         {
           "id": "item_6",
           "label": "circle",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
         }
       ],
       "targets": [
@@ -677,7 +701,23 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_03",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "shape",
+            "shape": "square",
+            "label": "square"
+          },
+          {
+            "type": "shape",
+            "shape": "square",
+            "rotation": 45,
+            "label": "on its corner"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_03.step.009",
@@ -725,17 +765,29 @@
         {
           "id": "choice_1",
           "label": "sphere",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "sphere"
+          }
         },
         {
           "id": "choice_3",
           "label": "circle",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
         },
         {
           "id": "choice_2",
           "label": "cylinder",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cylinder"
+          }
         }
       ],
       "targets": [],
@@ -766,7 +818,13 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_03",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 1,
+        "item": "ball",
+        "arrangement": "row"
+      }
     },
     {
       "id": "math_unit_03.step.011",
@@ -777,17 +835,29 @@
         {
           "id": "choice_1",
           "label": "cone",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cone"
+          }
         },
         {
           "id": "choice_3",
           "label": "cuboid",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cuboid"
+          }
         },
         {
           "id": "choice_2",
           "label": "cube",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cube"
+          }
         }
       ],
       "targets": [],
@@ -870,7 +940,11 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_03",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "rectangle"
+      }
     },
     {
       "id": "math_unit_03.step.013",
@@ -945,17 +1019,29 @@
         {
           "id": "choice_2",
           "label": "square",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square"
+          }
         },
         {
           "id": "choice_1",
           "label": "triangle",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle"
+          }
         },
         {
           "id": "choice_3",
           "label": "circle",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
         }
       ],
       "targets": [],
@@ -986,7 +1072,11 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_03",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "cylinder"
+      }
     }
   ],
   "stickers": [

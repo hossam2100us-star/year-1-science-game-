@@ -665,22 +665,38 @@
         {
           "id": "item_1",
           "label": "circle",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
         },
         {
           "id": "item_2",
           "label": "square",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square"
+          }
         },
         {
           "id": "item_3",
           "label": "triangle",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle"
+          }
         },
         {
           "id": "item_4",
           "label": "oval",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "oval"
+          }
         }
       ],
       "targets": [

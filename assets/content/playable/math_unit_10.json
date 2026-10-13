@@ -222,7 +222,19 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_10",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "cycle",
+        "labels": [
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat"
+        ]
+      }
     },
     {
       "id": "math_unit_10.step.003",
@@ -287,7 +299,19 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_10",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "cycle",
+        "labels": [
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat"
+        ]
+      }
     },
     {
       "id": "math_unit_10.step.004",
@@ -338,7 +362,24 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_10",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "cycle",
+        "labels": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ]
+      }
     },
     {
       "id": "math_unit_10.step.005",
@@ -389,7 +430,24 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_10",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "cycle",
+        "labels": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ]
+      }
     },
     {
       "id": "math_unit_10.step.006",
@@ -656,7 +714,24 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_10",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "cycle",
+        "labels": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ]
+      }
     },
     {
       "id": "math_unit_10.step.011",
@@ -825,7 +900,19 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_10",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "cycle",
+        "labels": [
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat"
+        ]
+      }
     },
     {
       "id": "math_unit_10.step.014",

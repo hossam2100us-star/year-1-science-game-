@@ -196,7 +196,14 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_17",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+      }
     },
     {
       "id": "math_unit_17.step.003",
@@ -493,7 +500,14 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_17",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 2,
+        "equal": true
+      }
     },
     {
       "id": "math_unit_17.step.008",
@@ -544,7 +558,15 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_17",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 10,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
     },
     {
       "id": "math_unit_17.step.009",
@@ -631,7 +653,14 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_17",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+      }
     },
     {
       "id": "math_unit_17.step.011",
@@ -682,7 +711,15 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_17",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 16,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
     },
     {
       "id": "math_unit_17.step.012",
@@ -733,7 +770,14 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_17",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 2,
+        "equal": true
+      }
     },
     {
       "id": "math_unit_17.step.013",
@@ -784,7 +828,15 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_17",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 18,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
     },
     {
       "id": "math_unit_17.step.014",

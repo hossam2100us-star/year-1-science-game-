@@ -590,22 +590,42 @@
         {
           "id": "item_2",
           "label": "blue ball",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "sphere",
+            "color": "blue"
+          }
         },
         {
           "id": "item_3",
           "label": "red ball",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "sphere",
+            "color": "red"
+          }
         },
         {
           "id": "item_4",
           "label": "green car",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "car",
+            "color": "green"
+          }
         },
         {
           "id": "item_1",
           "label": "red car",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "car",
+            "color": "red"
+          }
         }
       ],
       "targets": [
@@ -722,7 +742,27 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_04",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Pets we chose",
+        "rows": [
+          {
+            "label": "cat",
+            "value": 3
+          },
+          {
+            "label": "dog",
+            "value": 1
+          },
+          {
+            "label": "fish",
+            "value": 1
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one child"
+      }
     },
     {
       "id": "math_unit_04.step.009",

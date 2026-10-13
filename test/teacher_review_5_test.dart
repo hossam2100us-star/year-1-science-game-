@@ -560,6 +560,96 @@ void main() {
     await t.pumpWidget(const SizedBox());
   });
 
+  // Section 1 again: a picture in every question. Questions about real
+  // objects (spoons, beds, feathers...) wait for drawings; the content
+  // validator lists them as AWAITING_ART.
+  test('every other Maths question has a picture', () {
+    bool pictured(LessonStep step) =>
+        step.json['mathVisual'] is Map ||
+        (step.json['options'] as List).any((o) => (o as Map)['visual'] != null);
+    final without = [
+      for (final step in assessed())
+        if (!pictured(step)) step.objective,
+    ];
+    expect(without, hasLength(13), reason: '$without');
+    expect(assessed().where(pictured), hasLength(245));
+  });
+
+  testWidgets('a double shows two equal rows in two colours', (t) async {
+    final key = GlobalKey();
+    await open(t, 'math_unit_14.step.010', key);
+    final image = await capture(t, key, 'unit14-double-6');
+    final red = await pixelsNear(t, image, const Color(0xFFD0504B));
+    final blue = await pixelsNear(t, image, const Color(0xFF2170B5));
+    expect(red, greaterThan(800));
+    expect(blue / red, inInclusiveRange(.8, 1.25));
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('the days of the week go round in a circle', (t) async {
+    final key = GlobalKey();
+    await open(t, 'math_unit_10.step.013', key);
+    expect(
+      find.byWidgetPredicate(
+        (w) => w is MathsVisual && w.data['type'] == 'cycle',
+      ),
+      findsOneWidget,
+    );
+    expect(
+      find.bySemanticsLabel('Names in order around a circle'),
+      findsOneWidget,
+    );
+    await capture(t, key, 'unit10-week');
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('a Carroll diagram in a question shows sorted numbers', (
+    t,
+  ) async {
+    final key = GlobalKey();
+    await open(t, 'math_unit_07.step.011', key);
+    for (final card in ['3', '7', '12', '15']) {
+      expect(
+        find.descendant(
+          of: find.byType(CarrollTable),
+          matching: find.text(card),
+        ),
+        findsOneWidget,
+      );
+    }
+    expect(t.takeException(), isNull);
+    await t.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('cards to sort and times of day show pictures', (t) async {
+    for (final (stepId, label) in [
+      ('math_unit_03.step.007', 'tin'),
+      ('math_unit_06.step.011', 'evening'),
+      ('math_unit_11.step.010', '6 and 4'),
+    ]) {
+      final key = GlobalKey();
+      await t.pumpWidget(const SizedBox());
+      await open(t, stepId, key);
+      final lesson = maths.lessons[stepId.split('.').first]!;
+      final option = lesson.steps
+          .firstWhere((s) => s.id == stepId)
+          .options
+          .firstWhere((o) => o.label == label);
+      expect(
+        find.descendant(
+          of: find.byKey(ValueKey('maths-option-${option.id}')),
+          matching: find.byType(MathsVisual),
+        ),
+        findsOneWidget,
+        reason: stepId,
+      );
+      expect(t.takeException(), isNull, reason: stepId);
+    }
+    await t.pumpWidget(const SizedBox());
+  });
+
   // Section 5: one hint for a whole unit, "Maths discovery N" titles and
   // explanations that began "... is the answer."
   test('every Maths question has its own title, hint and reason', () {

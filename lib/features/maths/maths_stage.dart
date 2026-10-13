@@ -54,7 +54,7 @@ class MathsStage extends StatelessWidget {
 
   /// The Carroll diagram is where the cards are sorted, so it takes the
   /// place of the target buttons.
-  bool get _carroll => _diagram?['type'] == 'carroll';
+  bool get _carroll => _diagram?['type'] == 'carroll' && step.isMapping;
 
   /// A robot draws the routes the child has chosen (teacher review 5).
   Widget _picture(Map<String, dynamic> diagram) {
@@ -132,10 +132,10 @@ class MathsStage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (visual is Map) ...[
-              // A shape in an answer is smaller, so the answers fit.
               _visual({
                 ...Map<String, dynamic>.from(visual),
-                if (visual['type'] == 'shape') 'height': 100,
+                // Pictures in answers are smaller, so the answers fit.
+                'height': visual['type'] == 'shape' ? 100 : 110,
               }),
               const SizedBox(height: 8),
             ],

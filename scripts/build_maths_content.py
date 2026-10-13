@@ -419,6 +419,200 @@ MCQ_VISUALS={
 }
 MCQ_OPTION_VISUALS={(3,4):shapes('square','triangle','circle')}
 
+
+def cycle(labels):
+    """Names in order around a circle: the last one leads back to the first."""
+    return {'type':'cycle','labels':labels}
+
+
+def tens(n):
+    """n as full ten frames and a row of ones (an empty row for no ones)."""
+    size={'width':190,'height':80}
+    frames=[{**count(10,arrangement='tenFrame'),**size,'label':'one ten' if n<20 else 'ten'} for _ in range(n//10)]
+    ones=n%10
+    return groups(*frames,{**count(ones),**size,'label':'one' if ones==1 else 'ones'})
+
+
+def colours(*names):
+    """A colour pattern; None is a gap to fill."""
+    return {'type':'pattern','items':[{**count(1),'color':name,'height':70} if name else {'type':'missing','text':'?'} for name in names]}
+
+
+def two_colours(a,b,arrangement='row'):
+    """a counters, then b more in a second colour: 6 and 4 in a ten frame."""
+    return {**count(a+b,'dot',arrangement),'color':'red','split':a,'color2':'blue'}
+
+
+def double(n):
+    """Two equal rows of n: double n, or 2n shared into two halves."""
+    return {**count(2*n,'dot','double'),'color':'red','color2':'blue'}
+
+
+def pairs(n,slots=None):
+    """Socks in pairs; answers given the same slots show socks one size."""
+    return {**count(n,'sock','pairs'),**({'slots':slots} if slots else {})}
+
+
+def clock(hour,minute):
+    return {'type':'clock','hour':hour,'minute':minute}
+
+
+def plus(a,b,item='apple',b_label=None):
+    """a + b as two groups of one size, with a plus sign between them."""
+    most=max(a,b,1)
+    size={'width':max(120,56*min(most,5)),'height':90 if most<=5 else 150}
+    return groups({**count(a,item),**size,'label':str(a)},{'type':'text','text':'+','width':40},{**count(b,item),**size,'label':b_label or str(b)})
+
+
+HALF={'type':'fraction','shape':'circle','parts':2,'shaded':1,'equal':True}
+UNEQUAL={'type':'fraction','shape':'rectangle','parts':2,'shaded':1,'equal':False}
+WHOLE={'type':'fraction','shape':'circle','parts':2,'shaded':2,'equal':True}
+QUARTER={'type':'fraction','shape':'rectangle','parts':4,'shaded':1,'equal':True}
+PENCILS=groups({'type':'ruler','units':3,'item':'pencil','label':'A'},{'type':'ruler','units':5,'item':'pencil','label':'B'})
+WEEK=cycle(['Sun','Mon','Tue','Wed','Thu','Fri','Sat'])
+YEAR=cycle(['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'])
+HOOPS=venn(['red','has wheels'],[])
+RED_CAR=venn(['red','has wheels'],[('car','both')])
+POSITIONS={'type':'pattern','items':[{'type':'text','text':'1st'},{'type':'text','text':'2nd'},{'type':'missing','text':'?'}]}
+
+# Teacher review 5 asked for a picture in every question. Keys are question
+# IDs; 'visual' goes above the question and 'options' on answers by label.
+# Pictures never mark the answer. Questions about real objects (spoons,
+# beds, feathers...) wait for drawings: AWAITING_ART in the validator.
+PICTURES={
+    'math.u01.main.06':{'visual':groups({**count(6,'counter'),'columns':3,'width':150,'height':100,'label':'before'},{**count(6,'counter','scattered'),'columns':6,'width':400,'height':56,'label':'spread out'})},
+    'math.u01.main.07':{'visual':tens(12)},
+    'math.u01.choice.01':{'visual':count(5,'apple')},
+    'math.u01.choice.02':{'visual':jumps(10,20,15,[1])},
+    'math.u01.choice.04':{'visual':tens(13)},
+    'math.u01.choice.05':{'visual':groups({**count(5,'counter','scattered'),'columns':3,'width':150,'height':100,'label':'in a pile'},{**count(5,'counter'),'width':300,'height':56,'label':'in a line'})},
+    'math.u02.main.06':{'visual':plus(4,3)},
+    'math.u02.main.07':{'visual':{**count(8,'car'),'removed':4}},
+    'math.u02.choice.01':{'visual':plus(2,3)},
+    'math.u02.choice.02':{'visual':{**count(6,'cube'),'removed':2}},
+    'math.u02.choice.04':{'visual':jumps(0,10,8,[-1])},
+    'math.u02.choice.05':{'visual':plus(5,0)},
+    'math.u03.main.06':{'options':{'triangle':shape('triangle'),'tin':shape('cylinder'),'ball':shape('sphere'),'dice':shape('cube'),'square':shape('square'),'circle':shape('circle')}},
+    'math.u03.main.07':{'visual':groups({**shape('square'),'label':'square'},{**shape('square',rotation=45),'label':'on its corner'})},
+    'math.u03.choice.01':{'visual':count(1,'ball'),'options':shapes('sphere','circle','cylinder')},
+    'math.u03.choice.02':{'options':shapes('cone','cuboid','cube')},
+    'math.u03.choice.03':{'visual':shape('rectangle')},
+    'math.u03.choice.05':{'visual':shape('cylinder'),'options':shapes('square','triangle','circle')},
+    'math.u04.main.06':{'options':{'blue ball':shape('sphere',color='blue'),'red ball':shape('sphere',color='red'),'green car':shape('car',color='green'),'red car':shape('car',color='red')}},
+    'math.u04.main.07':{'visual':chart('Pets we chose',[('cat',3),('dog',1),('fish',1)],'pictogram','one child')},
+    'math.u05.main.01':{'options':{'twenty':two_colours(10,10),'eleven':two_colours(10,1),'fifteen':two_colours(10,5)}},
+    'math.u05.choice.01':{'visual':groups({**count(0,'apple'),'width':260,'height':110,'label':'no apples'})},
+    'math.u05.choice.02':{'visual':line(0,20,markers=[9,12,17])},
+    'math.u05.choice.03':{'visual':jumps(0,20,10,[-1])},
+    'math.u05.choice.04':{'visual':count(14,'dot','scattered')},
+    'math.u05.choice.05':{'visual':jumps(0,20,12,[-2])},
+    'math.u06.main.01':{'options':{'night':sky('night'),'morning':sky('morning')}},
+    'math.u06.main.02':{'options':{'night':sky('night'),'afternoon':sky('afternoon')}},
+    'math.u06.main.07':{'visual':PENCILS},
+    'math.u06.choice.02':{'options':{'morning':sky('morning'),'evening':sky('evening'),'middle of the night':sky('night')}},
+    'math.u06.choice.04':{'visual':PENCILS},
+    'math.u06.choice.05':{'visual':PENCILS},
+    'math.q01.02':{'visual':jumps(0,20,12,[1])},
+    'math.q01.03':{'visual':jumps(0,10,7,[-3])},
+    'math.q01.07':{'visual':line(10,20,markers=[15,18])},
+    'math.q01.08':{'visual':groups({**count(0,'counter'),'width':260,'height':110,'label':'an empty bag'})},
+    'math.q01.09':{'options':{'morning':sky('morning'),'night':sky('night')}},
+    'math.q01.10':{'visual':PENCILS},
+    'math.u07.main.01':{'visual':HOOPS},
+    'math.u07.main.02':{'visual':RED_CAR},
+    'math.u07.main.03':{'visual':HOOPS},
+    'math.u07.main.07':{'visual':RED_CAR},
+    'math.u07.choice.02':{'visual':{**carroll(['less than 10','not less than 10']),'placed':{'less than 10':['3','7'],'not less than 10':['12','15']}}},
+    'math.u07.choice.03':{'visual':HOOPS},
+    'math.u08.main.03':{'visual':colours('red','blue','blue','red','blue','blue',None,None)},
+    'math.u08.main.08':{'options':shapes('triangle','rectangle','square','circle')},
+    'math.u08.choice.01':{'visual':colours('red','yellow','red','yellow',None)},
+    'math.u08.choice.02':{'visual':shape('square')},
+    'math.u08.choice.03':{'visual':robot({'backwards':'B','forwards':'F','sideways':'RF'},cols=3,rows=3,start=(1,1),star=(1,2))},
+    'math.u08.choice.04':{'visual':groups({**shape('triangle'),'label':'before'},{**shape('triangle',rotation=90),'label':'turned'})},
+    'math.u09.main.03':{'visual':tens(17)},
+    'math.u09.main.04':{'visual':tens(20)},
+    'math.u09.main.06':{'visual':line(0,50,markers=[10,20,40])},
+    'math.u09.main.07':{'visual':line(0,40,markers=[4,14,34])},
+    'math.u09.main.08':{'visual':tens(16)},
+    'math.u09.choice.01':{'visual':tens(13)},
+    'math.u09.choice.02':{'visual':groups({**count(5),'width':190,'height':80,'label':'5'},{'type':'text','text':'+','width':40},{**count(10,arrangement='tenFrame'),'width':190,'height':80,'label':'ten more'})},
+    'math.u09.choice.03':{'visual':line(0,50,markers=[10,20,30])},
+    'math.u09.choice.04':{'visual':line(0,20,markers=[4,11,18])},
+    'math.u09.choice.05':{'visual':tens(18)},
+    'math.u10.main.01':{'visual':WEEK},
+    'math.u10.main.02':{'visual':WEEK},
+    'math.u10.main.03':{'visual':YEAR},
+    'math.u10.main.04':{'visual':YEAR},
+    'math.u10.choice.01':{'visual':YEAR},
+    'math.u10.choice.04':{'visual':WEEK},
+    'math.u11.main.01':{'options':{'2 + __ = 10':count(2,arrangement='tenFrame'),'__ + 5 = 10':count(5,arrangement='tenFrame'),'6 + __ = 10':count(6,arrangement='tenFrame')}},
+    'math.u11.main.03':{'options':{'3 + 2':two_colours(3,2),'4 + 1':two_colours(4,1)}},
+    'math.u11.main.07':{'visual':two_colours(6,3,'tenFrame')},
+    'math.u11.choice.01':{'options':{'6 and 4':two_colours(6,4,'tenFrame'),'6 and 3':two_colours(6,3,'tenFrame'),'5 and 4':two_colours(5,4,'tenFrame')}},
+    'math.u11.choice.02':{'visual':jumps(0,10,8,[2],ask='distance')},
+    'math.u11.choice.03':{'visual':jumps(10,20,14,[2])},
+    'math.u11.choice.04':{'visual':jumps(0,10,9,[1])},
+    'math.u11.choice.05':{'visual':jumps(10,20,18,[-3])},
+    'math.u12.main.05':{'visual':HALF},
+    'math.u12.main.06':{'visual':HALF},
+    'math.u12.choice.01':{'visual':groups({**HALF,'label':'halves'},{**UNEQUAL,'label':'not halves'})},
+    'math.u12.choice.02':{'visual':double(2)},
+    'math.u12.choice.03':{'visual':HALF},
+    'math.u12.choice.04':{'visual':double(3)},
+    'math.u12.choice.05':{'visual':QUARTER},
+    'math.q02.01':{'visual':HOOPS},
+    'math.q02.02':{'visual':colours('red','blue','red','blue',None)},
+    'math.q02.03':{'visual':tens(15)},
+    'math.q02.04':{'visual':line(0,40,markers=[10,20])},
+    'math.q02.05':{'visual':WEEK},
+    'math.q02.07':{'visual':count(8,arrangement='tenFrame')},
+    'math.q02.08':{'visual':jumps(0,10,7,[3],ask='distance')},
+    'math.q02.09':{'visual':double(4)},
+    'math.q02.10':{'visual':HALF},
+    'math.u13.main.01':{'visual':groups({**pairs(6),'width':220,'height':110,'label':'6: even'},{**pairs(7),'width':220,'height':110,'label':'7: odd'})},
+    'math.u13.main.03':{'visual':pairs(10)},
+    'math.u13.main.06':{'options':{'14 = 7 + __':double(7),'14 = 10 + __':two_colours(10,4)}},
+    'math.u13.main.04':{'visual':{'type':'podium','places':[{'name':'Ali','place':1},{'name':'Mona','place':2},{'name':'Omar','place':3}]}},
+    'math.u13.choice.01':{'visual':pairs(6)},
+    'math.u13.choice.02':{'options':{'9':pairs(9,12),'12':pairs(12,12),'4':pairs(4,12)}},
+    'math.u13.choice.03':{'visual':POSITIONS},
+    'math.u13.choice.04':{'visual':{'type':'money','coins':[25,50,100]}},
+    'math.u13.choice.05':{'visual':tens(12)},
+    'math.u14.main.01':{'options':{'double 2':double(2),'double 5':double(5)}},
+    'math.u14.main.02':{'options':{'double 10':double(10),'double 7':double(7)}},
+    'math.u14.choice.01':{'visual':double(6)},
+    'math.u14.choice.02':{'visual':line(0,12,markers=[2,9])},
+    'math.u14.choice.03':{'visual':plus(7,3,'cube')},
+    'math.u14.choice.04':{'visual':jumps(10,20,20,[-2])},
+    'math.u14.choice.05':{'visual':double(8)},
+    'math.u15.main.07':{'options':shapes('cylinder','cone','pyramid','cuboid','sphere','cube')},
+    'math.u15.choice.02':{'visual':shape('cone')},
+    'math.u15.choice.03':{'visual':shape('sphere')},
+    'math.u15.choice.04':{'visual':shape('cuboid')},
+    'math.u15.choice.05':{'visual':shape('triangle')},
+    'math.u16.main.07':{'options':shapes('circle','square','triangle','oval')},
+    'math.u17.main.01':{'visual':HALF},
+    'math.u17.main.06':{'visual':WHOLE},
+    'math.u17.main.07':{'visual':double(5)},
+    'math.u17.choice.01':{'visual':HALF},
+    'math.u17.choice.02':{'visual':double(8)},
+    'math.u17.choice.03':{'visual':WHOLE},
+    'math.u17.choice.04':{'visual':double(9)},
+    'math.u18.main.04':{'visual':clock(3,0)},
+    'math.u18.main.08':{'visual':clock(3,30)},
+    'math.u18.choice.02':{'visual':clock(5,30)},
+    'math.u18.choice.05':{'visual':clock(3,30)},
+    'math.q03.01':{'options':{'6':pairs(6,9),'3':pairs(3,9),'9':pairs(9,9)}},
+    'math.q03.02':{'visual':POSITIONS},
+    'math.q03.03':{'visual':double(4)},
+    'math.q03.04':{'visual':jumps(0,20,11,[6])},
+    'math.q03.05':{'visual':shape('cube')},
+    'math.q03.06':{'visual':groups({**shape('triangle'),'label':'before'},{**shape('triangle',rotation=180),'label':'upside down'})},
+    'math.q03.08':{'visual':double(10)},
+}
+PICTURED=set()
+
 HALVES={'a':{'type':'fraction','shape':'circle','parts':2,'shaded':0,'equal':True},
         'b':{'type':'fraction','shape':'rectangle','parts':2,'shaded':0,'equal':False},
         'c':{'type':'fraction','shape':'square','parts':2,'shaded':0,'equal':True,'orientation':'diagonal'}}
@@ -721,14 +915,21 @@ def short_explanation(text,limit=16):
 
 def playable_step(draft,record,spec,index,hint,explanation):
     options=[]; targets=[]; answer=None
+    pictures=PICTURES.get(record['id'],{}) if spec['type']!='free' else {}
+    assert not (pictures.get('visual') and spec.get('visual')),(record['id'],'two pictures')
+    labels=[str(p[0]) for p in spec['pairs']] if spec['type']=='mapping' else spec.get('choices',[])
+    assert set(pictures.get('options',{}))<=set(labels),(record['id'],'picture for a missing answer')
+    option_visuals={**pictures.get('options',{}),**spec.get('optionVisuals',{})}
+    visual=spec.get('visual') or pictures.get('visual')
+    if pictures: PICTURED.add(record['id'])
     kind={'single':'tap-choice','set':'drag-to-basket','mapping':'match-lines','sequence':'order-sequence','free':'story'}[spec['type']]
     if spec['type']=='mapping':
         targets=[{'id':f'target_{i+1}','label':str(t),'art':'math_label'} for i,t in enumerate(spec['targets'])]
         ids={t['label']:t['id'] for t in targets}
-        options=[{'id':f'item_{i+1}','label':str(label),'art':'math_label'} for i,(label,_) in enumerate(spec['pairs'])]
+        options=[{'id':f'item_{i+1}','label':str(label),'art':'math_label',**({'visual':option_visuals[str(label)]} if str(label) in option_visuals else {})} for i,(label,_) in enumerate(spec['pairs'])]
         answer={'type':'mapping','value':{options[i]['id']:ids[str(v)] for i,(_,v) in enumerate(spec['pairs'])}}
     elif spec['type']!='free':
-        options=[{'id':f'choice_{i+1}','label':str(label),'art':'math_label',**({'visual':spec['optionVisuals'][label]} if label in spec.get('optionVisuals',{}) else {})} for i,label in enumerate(spec['choices'])]
+        options=[{'id':f'choice_{i+1}','label':str(label),'art':'math_label',**({'visual':option_visuals[label]} if label in option_visuals else {})} for i,label in enumerate(spec['choices'])]
         ids={o['label']:o['id'] for o in options}
         answer={'type':spec['type'],'value':ids[spec['correct']] if spec['type']=='single' else [ids[v] for v in spec['correct']]}
     # Teacher review 5: a title, a hint and a reason of its own for every
@@ -742,7 +943,7 @@ def playable_step(draft,record,spec,index,hint,explanation):
         'hint':words.get('hint') or spec.get('hint') or hint,'explanation':text,'shortExplanation':short,
         'source':source_ref(draft,record),'scene':'workshop','section':'Try at home' if spec['type']=='free' else ('Challenge' if draft['kind']=='quiz' else 'Discover'),
         'playScene':'maths','theme':draft['id'],'adapted':True}
-    if spec.get('visual'): step['mathVisual']=spec['visual']
+    if visual: step['mathVisual']=visual
     if not answer:
         step['parentReview']={'en':record['answerKeyText'],'note':'Discuss with an adult; this personal or drawing response is not automatically graded.'}
     if options:
@@ -850,6 +1051,8 @@ def build():
         if quiz: book['practiceUnitId']=f'math_unit_{(int(ident[-2:])-1)*6+1:02d}'
         visual_units(book)
         dump(CONTENT/'playable'/f'{ident}.json',book)
+    # A picture written for a question that no longer exists is a mistake.
+    assert PICTURED==set(PICTURES),sorted(set(PICTURES)-PICTURED)
     islands=[]
     for term in range(1,4):
         levels=[{'id':f'math_unit_{n:02d}','title':META[n-1][0],'ar':META[n-1][1]} for n in range((term-1)*6+1,term*6+1)]

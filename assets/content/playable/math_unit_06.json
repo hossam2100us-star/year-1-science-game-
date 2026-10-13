@@ -160,12 +160,20 @@
         {
           "id": "choice_2",
           "label": "night",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "night"
+          }
         },
         {
           "id": "choice_1",
           "label": "morning",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "morning"
+          }
         }
       ],
       "targets": [],
@@ -206,12 +214,20 @@
         {
           "id": "choice_2",
           "label": "night",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "night"
+          }
         },
         {
           "id": "choice_1",
           "label": "afternoon",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "afternoon"
+          }
         }
       ],
       "targets": [],
@@ -522,7 +538,24 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_06",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "ruler",
+            "units": 3,
+            "item": "pencil",
+            "label": "A"
+          },
+          {
+            "type": "ruler",
+            "units": 5,
+            "item": "pencil",
+            "label": "B"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_06.step.009",
@@ -624,17 +657,29 @@
         {
           "id": "choice_2",
           "label": "morning",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "morning"
+          }
         },
         {
           "id": "choice_1",
           "label": "evening",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "evening"
+          }
         },
         {
           "id": "choice_3",
           "label": "middle of the night",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "night"
+          }
         }
       ],
       "targets": [],
@@ -766,7 +811,24 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_06",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "ruler",
+            "units": 3,
+            "item": "pencil",
+            "label": "A"
+          },
+          {
+            "type": "ruler",
+            "units": 5,
+            "item": "pencil",
+            "label": "B"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_06.step.014",
@@ -817,7 +879,24 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_06",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "ruler",
+            "units": 3,
+            "item": "pencil",
+            "label": "A"
+          },
+          {
+            "type": "ruler",
+            "units": 5,
+            "item": "pencil",
+            "label": "B"
+          }
+        ]
+      }
     }
   ],
   "stickers": [

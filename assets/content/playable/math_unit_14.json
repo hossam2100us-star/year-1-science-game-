@@ -129,12 +129,28 @@
         {
           "id": "item_1",
           "label": "double 2",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 4,
+            "item": "dot",
+            "arrangement": "double",
+            "color": "red",
+            "color2": "blue"
+          }
         },
         {
           "id": "item_2",
           "label": "double 5",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "double",
+            "color": "red",
+            "color2": "blue"
+          }
         }
       ],
       "targets": [
@@ -189,12 +205,28 @@
         {
           "id": "item_2",
           "label": "double 10",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 20,
+            "item": "dot",
+            "arrangement": "double",
+            "color": "red",
+            "color2": "blue"
+          }
         },
         {
           "id": "item_1",
           "label": "double 7",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 14,
+            "item": "dot",
+            "arrangement": "double",
+            "color": "red",
+            "color2": "blue"
+          }
         }
       ],
       "targets": [
@@ -637,7 +669,15 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_14",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 12,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
     },
     {
       "id": "math_unit_14.step.011",
@@ -688,7 +728,16 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_14",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 12,
+        "markers": [
+          2,
+          9
+        ]
+      }
     },
     {
       "id": "math_unit_14.step.012",
@@ -739,7 +788,35 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_14",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 7,
+            "item": "cube",
+            "arrangement": "row",
+            "width": 280,
+            "height": 150,
+            "label": "7"
+          },
+          {
+            "type": "text",
+            "text": "+",
+            "width": 40
+          },
+          {
+            "type": "count",
+            "count": 3,
+            "item": "cube",
+            "arrangement": "row",
+            "width": 280,
+            "height": 150,
+            "label": "3"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_14.step.013",
@@ -790,7 +867,17 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_14",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20,
+        "from": 20,
+        "jumps": [
+          -2
+        ],
+        "ask": "landing"
+      }
     },
     {
       "id": "math_unit_14.step.014",
@@ -841,7 +928,15 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_14",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 16,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
     }
   ],
   "stickers": [

@@ -25,6 +25,9 @@ REVIEW5_PICTURES={'math_quiz_01':[4,5,6],'math_quiz_02':[6],'math_quiz_03':[7],'
     'math_unit_02':[12],'math_unit_03':[13],'math_unit_04':[10,11,12,14],'math_unit_06':[10],
     'math_unit_07':[5,10,13,14],'math_unit_08':[7,14],'math_unit_10':[7,11,12],'math_unit_15':[9,10],
     'math_unit_16':[10,13,14],'math_unit_18':[10]}
+AWAITING_ART={'math.u06.main.03','math.u06.main.04','math.u06.main.05','math.u06.choice.03',
+    'math.u10.main.07','math.u10.main.08','math.u10.choice.05','math.u17.choice.05','math.u18.main.05','math.u18.main.06','math.u18.choice.03',
+    'math.u18.choice.04','math.q03.10'}
 FREE_QUESTIONS = {'math.u01.main.05','math.u01.main.08','math.u03.main.08',
     'math.u04.main.08','math.u06.main.08','math.u07.main.08','math.u08.main.04',
     'math.u12.main.07','math.u12.main.08','math.u14.main.08','math.u15.main.06',
@@ -61,7 +64,7 @@ def expect(books,qid,value):
 
 def visuals(value):
     if isinstance(value,dict):
-        if 'type' in value and value['type'] in {'count','shape','clock','chart','numberLine','pattern','fraction','groups','money','ruler','text','missing','balance','sky','venn','robot','carroll'}:
+        if 'type' in value and value['type'] in {'count','shape','clock','chart','numberLine','pattern','fraction','groups','money','ruler','text','missing','balance','sky','venn','robot','carroll','cycle','podium'}:
             yield value
         for child in value.values(): yield from visuals(child)
     elif isinstance(value,list):
@@ -73,8 +76,12 @@ def audit_visuals(book):
         kind=visual['type']
         if kind=='count':
             assert isinstance(visual['count'],int) and 0<=visual['count']<=20
-            assert visual.get('arrangement','row') in {'row','scattered','tenFrame','pairs'}
+            assert visual.get('arrangement','row') in {'row','scattered','tenFrame','pairs','double'}
             if visual.get('arrangement')=='tenFrame': assert visual['count']<=10
+            # Two colours: the first 'split' counters, then the rest.
+            if visual.get('arrangement')=='double': assert visual['count']%2==0 and visual.get('color')
+            if 'split' in visual: assert 0<visual['split']<visual['count'] and visual.get('color')
+            if 'columns' in visual: assert isinstance(visual['columns'],int) and 1<=visual['columns']<=10
         elif kind=='clock':
             assert 1<=visual['hour']<=12 and visual['minute'] in [0,30]
         elif kind=='chart':
@@ -88,7 +95,7 @@ def audit_visuals(book):
                 assert isinstance(visual['tickStep'],int) and visual['tickStep']>0
                 assert visual.get('axisMax',max(r['value'] for r in visual['rows'])) % visual['tickStep']==0
         elif kind=='shape':
-            assert visual['shape'] in ['circle','oval','triangle','square','rectangle','cube','cuboid','sphere','cylinder','cone','pyramid']
+            assert visual['shape'] in ['circle','oval','triangle','square','rectangle','cube','cuboid','sphere','cylinder','cone','pyramid','car']
         elif kind=='fraction':
             assert visual['parts'] in [2,4] and 0<=visual['shaded']<=visual['parts']
             assert isinstance(visual['equal'],bool)
@@ -100,7 +107,10 @@ def audit_visuals(book):
             assert 1<=left<=9 and 1<=right<=9
             # The side holding more goes down.
             assert visual['tilt']==('left' if left>right else 'right' if right>left else 'level')
-        elif kind=='sky': assert visual['time'] in ['morning','midday','night']
+        elif kind=='sky': assert visual['time'] in ['morning','midday','afternoon','evening','night']
+        elif kind=='podium':
+            assert sorted(p['place'] for p in visual['places'])==[1,2,3] and all(p['name'] for p in visual['places'])
+        elif kind=='cycle': assert len(visual['labels'])>=2 and len(set(visual['labels']))==len(visual['labels'])
         elif kind=='venn':
             assert len(visual['labels'])==2
             assert all(i['region'] in ['left','right','both','outside'] for i in visual['items'])
@@ -108,7 +118,9 @@ def audit_visuals(book):
             assert visual['facing'] in ROBOT_FACINGS and visual['routes']
             assert all(0<=visual[k][0]<visual['cols'] and 0<=visual[k][1]<visual['rows'] for k in ['start','star'])
             assert all(set(route)<={'F','B','L','R'} for route in visual['routes'].values())
-        elif kind=='carroll': assert len(visual['columns'])>=2
+        elif kind=='carroll':
+            assert len(visual['columns'])>=2
+            assert set(visual.get('placed',{}))<=set(visual['columns'])
 
 
 ROBOT_FACINGS=['up','right','down','left']
@@ -327,7 +339,9 @@ def audit(check_idempotence=False,pdf_path=None):
                 labels={o['id']:o['label'] for o in step['options']}
                 assert set(visual['routes'])==set(labels.values()),(step['id'],'robot routes')
                 reach={label for label,route in visual['routes'].items() if robot_end(visual,route)==visual['star']}
-                assert reach=={labels[i] for i in step['answer']['value']},(step['id'],'robot answer')
+                value=step['answer']['value']
+                # One answer (a string) or several (a list).
+                assert reach=={labels[i] for i in (value if isinstance(value,list) else [value])},(step['id'],'robot answer')
             if visual.get('type')=='numberLine' and 'from' in visual:
                 # Jumps stay on the line; where they land (or how far they go)
                 # is the correct answer.
@@ -337,7 +351,7 @@ def audit(check_idempotence=False,pdf_path=None):
                 expected=at if visual['ask']=='landing' else abs(at-visual['from'])
                 labels={o['id']:o['label'] for o in step['options']}
                 assert labels[step['answer']['value']]==str(expected),(step['id'],'number line answer')
-            if visual.get('type')=='carroll':
+            if visual.get('type')=='carroll' and step['answer']['type']=='mapping':
                 assert visual['columns']==[t['label'] for t in step['targets']],(step['id'],'carroll')
     assert len(question_ids)==273 and free_ids==FREE_QUESTIONS and assessed==258 and total_steps==292
     assert len([k for k in question_text if not k.startswith('_')])==258
@@ -346,6 +360,11 @@ def audit(check_idempotence=False,pdf_path=None):
         for n in numbers:
             step=next(s for s in books[ident]['steps'] if s['id']==f'{ident}.step.{n:03d}')
             assert step.get('mathVisual') or any(o.get('visual') for o in step['options']),(step['id'],'no picture')
+    # Every other question has a picture too; these few wait for drawings
+    # of real objects (spoons, beds, feathers...).
+    unpictured={s['objective'] for b in books.values() for s in b['steps']
+        if s['assessed'] and not (s.get('mathVisual') or any(o.get('visual') for o in s['options']))}
+    assert unpictured==AWAITING_ART,sorted(unpictured^AWAITING_ART)
     assert len(workshops)==19 and len({w['title'] for w in workshops})==19
     assert len({w['goal'] for w in workshops})==19
     tasks=[t for w in workshops for t in w['tasks']]

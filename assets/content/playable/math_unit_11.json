@@ -132,17 +132,35 @@
         {
           "id": "item_2",
           "label": "2 + __ = 10",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 2,
+            "item": "dot",
+            "arrangement": "tenFrame"
+          }
         },
         {
           "id": "item_3",
           "label": "__ + 5 = 10",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 5,
+            "item": "dot",
+            "arrangement": "tenFrame"
+          }
         },
         {
           "id": "item_1",
           "label": "6 + __ = 10",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 6,
+            "item": "dot",
+            "arrangement": "tenFrame"
+          }
         }
       ],
       "targets": [
@@ -260,12 +278,30 @@
         {
           "id": "item_1",
           "label": "3 + 2",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 5,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "split": 3,
+            "color2": "blue"
+          }
         },
         {
           "id": "item_2",
           "label": "4 + 1",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 5,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "split": 4,
+            "color2": "blue"
+          }
         }
       ],
       "targets": [
@@ -544,7 +580,16 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_11",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 9,
+        "item": "dot",
+        "arrangement": "tenFrame",
+        "color": "red",
+        "split": 6,
+        "color2": "blue"
+      }
     },
     {
       "id": "math_unit_11.step.009",
@@ -612,17 +657,44 @@
         {
           "id": "choice_1",
           "label": "6 and 4",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "color": "red",
+            "split": 6,
+            "color2": "blue"
+          }
         },
         {
           "id": "choice_2",
           "label": "6 and 3",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 9,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "color": "red",
+            "split": 6,
+            "color2": "blue"
+          }
         },
         {
           "id": "choice_3",
           "label": "5 and 4",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 9,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "color": "red",
+            "split": 5,
+            "color2": "blue"
+          }
         }
       ],
       "targets": [],
@@ -703,7 +775,17 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_11",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 8,
+        "jumps": [
+          2
+        ],
+        "ask": "distance"
+      }
     },
     {
       "id": "math_unit_11.step.012",
@@ -754,7 +836,17 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_11",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20,
+        "from": 14,
+        "jumps": [
+          2
+        ],
+        "ask": "landing"
+      }
     },
     {
       "id": "math_unit_11.step.013",
@@ -805,7 +897,17 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_11",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 9,
+        "jumps": [
+          1
+        ],
+        "ask": "landing"
+      }
     },
     {
       "id": "math_unit_11.step.014",
@@ -856,7 +958,17 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_11",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20,
+        "from": 18,
+        "jumps": [
+          -3
+        ],
+        "ask": "landing"
+      }
     }
   ],
   "stickers": [

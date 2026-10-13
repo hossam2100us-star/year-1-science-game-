@@ -213,7 +213,15 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_07",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": []
+      }
     },
     {
       "id": "math_unit_07.step.003",
@@ -264,7 +272,20 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_07",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": [
+          {
+            "item": "car",
+            "region": "both"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_07.step.004",
@@ -323,7 +344,15 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_07",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": []
+      }
     },
     {
       "id": "math_unit_07.step.005",
@@ -608,7 +637,20 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_07",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": [
+          {
+            "item": "car",
+            "region": "both"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_07.step.009",
@@ -762,7 +804,24 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_07",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "carroll",
+        "columns": [
+          "less than 10",
+          "not less than 10"
+        ],
+        "placed": {
+          "less than 10": [
+            "3",
+            "7"
+          ],
+          "not less than 10": [
+            "12",
+            "15"
+          ]
+        }
+      }
     },
     {
       "id": "math_unit_07.step.012",
@@ -813,7 +872,15 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_07",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": []
+      }
     },
     {
       "id": "math_unit_07.step.013",

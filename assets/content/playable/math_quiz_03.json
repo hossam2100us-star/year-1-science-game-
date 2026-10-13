@@ -19,17 +19,38 @@
         {
           "id": "choice_2",
           "label": "6",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 6,
+            "item": "sock",
+            "arrangement": "pairs",
+            "slots": 9
+          }
         },
         {
           "id": "choice_1",
           "label": "3",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 3,
+            "item": "sock",
+            "arrangement": "pairs",
+            "slots": 9
+          }
         },
         {
           "id": "choice_3",
           "label": "9",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 9,
+            "item": "sock",
+            "arrangement": "pairs",
+            "slots": 9
+          }
         }
       ],
       "targets": [],
@@ -106,7 +127,24 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_03",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "pattern",
+        "items": [
+          {
+            "type": "text",
+            "text": "1st"
+          },
+          {
+            "type": "text",
+            "text": "2nd"
+          },
+          {
+            "type": "missing",
+            "text": "?"
+          }
+        ]
+      }
     },
     {
       "id": "math_quiz_03.step.003",
@@ -155,7 +193,15 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_03",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 8,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
     },
     {
       "id": "math_quiz_03.step.004",
@@ -204,7 +250,17 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_03",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "from": 11,
+        "jumps": [
+          6
+        ],
+        "ask": "landing"
+      }
     },
     {
       "id": "math_quiz_03.step.005",
@@ -253,7 +309,11 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_03",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "cube"
+      }
     },
     {
       "id": "math_quiz_03.step.006",
@@ -297,7 +357,23 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_03",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "label": "before"
+          },
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "rotation": 180,
+            "label": "upside down"
+          }
+        ]
+      }
     },
     {
       "id": "math_quiz_03.step.007",
@@ -415,7 +491,15 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_03",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 20,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
     },
     {
       "id": "math_quiz_03.step.009",

@@ -29,14 +29,18 @@ class MathsVisual extends StatelessWidget {
         spacing: 12,
         runSpacing: 12,
         alignment: WrapAlignment.center,
+        // A plus sign sits level with the groups beside it.
+        crossAxisAlignment: WrapCrossAlignment.center,
         children: [
           for (final item in items)
             SizedBox(
-              width: type == 'pattern'
-                  ? 90
-                  : item['type'] == 'ruler'
-                  ? 220
-                  : 150,
+              width:
+                  (item['width'] as num?)?.toDouble() ??
+                  (type == 'pattern'
+                      ? 90
+                      : item['type'] == 'ruler'
+                      ? 220
+                      : 150),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -75,6 +79,8 @@ class MathsVisual extends StatelessWidget {
           'venn' => 190.0,
           'balance' => 184.0,
           'sky' => 140.0,
+          'cycle' => 270.0,
+          'podium' => 190.0,
           'ruler' => 120.0,
           'clock' => 200.0,
           'count' => 170.0,
@@ -109,6 +115,8 @@ class MathsVisual extends StatelessWidget {
     'sky' => 'The sky',
     'venn' => 'A Venn diagram with two overlapping hoops',
     'robot' => 'A robot and a star on a grid',
+    'cycle' => 'Names in order around a circle',
+    'podium' => 'A winners podium with first, second and third places',
     _ => 'Maths diagram',
   };
 }
@@ -444,6 +452,10 @@ class _MathsPainter extends CustomPainter {
         _venn(canvas, size);
       case 'robot':
         _robot(canvas, size);
+      case 'cycle':
+        _cycle(canvas, size);
+      case 'podium':
+        _podium(canvas, size);
       case 'shape':
         final side = math.min(size.width * .75, size.height * .75);
         canvas.save();
@@ -461,7 +473,9 @@ class _MathsPainter extends CustomPainter {
     }
   }
 
-  Color get _color => switch (data['color']) {
+  Color get _color => _colorOf(data['color']);
+
+  Color _colorOf(Object? name) => switch (name) {
     'red' => const Color(0xFFD0504B),
     'yellow' => const Color(0xFFE6B746),
     'green' => const Color(0xFF3E9B5A),
@@ -475,6 +489,8 @@ class _MathsPainter extends CustomPainter {
     final count = math.max(0, (data['count'] as num? ?? 0).toInt());
     final frame = data['arrangement'] == 'tenFrame';
     final pairs = data['arrangement'] == 'pairs';
+    // Two equal rows, as in 'double 7' or 'half of 16'.
+    final twoRows = data['arrangement'] == 'double';
     if (count == 0 && !frame) {
       canvas.drawRRect(
         RRect.fromRectAndRadius(
@@ -493,36 +509,55 @@ class _MathsPainter extends CustomPainter {
       return;
     }
     final frameCells = frame ? math.max(10, (count / 10).ceil() * 10) : count;
+    // A shared size for groups shown together (see MathsVisual.groups).
+    final slots = (data['slots'] as num?)?.toInt() ?? 0;
+    final cells = math.max(count, slots);
     final pairColumns = size.width >= 260
         ? 6
         : size.width >= 130
         ? 4
         : 2;
-    final columns = frame
-        ? 5
-        : pairs
-        ? math.min(pairColumns, math.max(2, (count / 2).ceil() * 2))
-        : math.min(count, 5);
+    // A picture may set its columns: six cups close together in two rows
+    // of three, then spread out in one long row.
+    final fixed = (data['columns'] as num?)?.toInt();
+    final columns =
+        fixed ??
+        (frame
+            ? 5
+            : pairs
+            ? math.min(pairColumns, math.max(2, (cells / 2).ceil() * 2))
+            : twoRows
+            ? math.max(1, (count / 2).ceil())
+            : math.min(count, 5));
     final rows = (frameCells / columns).ceil();
     final pairGap = pairs ? 10.0 : 0.0;
     final frameGap = frame ? 8.0 : 0.0;
-    final cellW = (size.width - pairGap * (columns / 2 - 1)) / columns;
     final cellH = (size.height - frameGap * (frameCells / 10 - 1)) / rows;
-    // A shared size for groups shown together (see MathsVisual.groups).
-    final slots = (data['slots'] as num?)?.toInt() ?? 0;
-    final sizeW = frame || pairs
-        ? cellW
-        : size.width / math.min(math.max(count, slots), 5);
-    final radius = math.min(36.0, math.min(sizeW, cellH) * .36);
+    final spaces = frame || pairs || twoRows || fixed != null
+        ? columns
+        : math.max(columns, math.min(cells, 5));
+    // Counters stay close together, in the middle: two dots no longer sit
+    // at the far ends of a wide picture.
+    final cellW = math.min(
+      (size.width - pairGap * (columns / 2 - 1)) / spaces,
+      cellH * 1.6,
+    );
+    final left =
+        (size.width - columns * cellW - pairGap * (columns / 2 - 1)) / 2;
+    final radius = math.min(36.0, math.min(cellW, cellH) * .36);
     // A counter given a colour is drawn in it: the art's own counter is
     // always coral, which made '4 blue dots and 3 orange dots' all orange.
     final tinted =
         data['color'] != null &&
         const {'dot', 'counter'}.contains(data['item'] ?? 'counter');
     final removed = (data['removed'] as num? ?? 0).toInt();
+    // The counters after 'split' are drawn in a second colour: 6 and 4 in a
+    // ten frame, or the two halves of a double.
+    final split =
+        (data['split'] as num?)?.toInt() ?? (twoRows ? columns : null);
     for (var i = 0; i < frameCells; i++) {
       var center = Offset(
-        (i % columns + .5) * cellW + (i % columns ~/ 2) * pairGap,
+        left + (i % columns + .5) * cellW + (i % columns ~/ 2) * pairGap,
         (i ~/ columns + .5) * cellH + (i ~/ columns ~/ 2) * frameGap,
       );
       if (data['arrangement'] == 'scattered') {
@@ -543,6 +578,9 @@ class _MathsPainter extends CustomPainter {
         );
         if (i >= count) continue;
       }
+      final colour = split != null && i >= split
+          ? _colorOf(data['color2'] ?? 'blue')
+          : _color;
       if (image != null && !tinted) {
         paintMathsObject(canvas, image!, '${data['item'] ?? 'counter'}', rect);
       } else if (data['item'] == 'star') {
@@ -557,11 +595,11 @@ class _MathsPainter extends CustomPainter {
             path.lineTo(point.dx, point.dy);
           }
         }
-        canvas.drawPath(path..close(), _paint(_color));
+        canvas.drawPath(path..close(), _paint(colour));
       } else if (data['item'] == 'cube' || data['item'] == 'square') {
         canvas.drawRRect(
           RRect.fromRectAndRadius(rect, const Radius.circular(3)),
-          _paint(_color),
+          _paint(colour),
         );
       } else if (data['item'] == 'sock') {
         final sock = Path()
@@ -577,10 +615,10 @@ class _MathsPainter extends CustomPainter {
           ..lineTo(rect.left, rect.bottom - radius * .5)
           ..lineTo(rect.left + radius * .5, rect.center.dy)
           ..close();
-        canvas.drawPath(sock, _paint(_color));
+        canvas.drawPath(sock, _paint(colour));
         canvas.drawPath(sock, _paint(dark, stroke: true));
       } else {
-        canvas.drawOval(rect, _paint(_color));
+        canvas.drawOval(rect, _paint(colour));
         if (data['item'] == 'apple') {
           canvas.drawLine(
             center - Offset(0, radius),
@@ -664,7 +702,13 @@ class _MathsPainter extends CustomPainter {
     final y = size.height * .5;
     canvas.drawLine(Offset(14, y), Offset(size.width - 14, y), _paint(dark));
     final markers = (data['markers'] as List? ?? []).cast<num>();
-    final stride = span / range < 23 ? 2 : 1;
+    // Label every 1, 2, 5 or 10 numbers, whichever leaves room to read.
+    final stride = const [
+      1,
+      2,
+      5,
+      10,
+    ].firstWhere((s) => span / range * s >= 30, orElse: () => 10);
     for (var n = start; n <= end; n++) {
       final x = 14 + (n - start) / range * span;
       canvas.drawLine(Offset(x, y - 5), Offset(x, y + 5), _paint(dark));
@@ -825,9 +869,12 @@ class _MathsPainter extends CustomPainter {
         ..shader = LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: night
-              ? const [Color(0xFF0E1E45), Color(0xFF2D3F7A)]
-              : const [Color(0xFF7FC4F0), Color(0xFFD6EEFB)],
+          colors: switch (data['time']) {
+            'night' => const [Color(0xFF0E1E45), Color(0xFF2D3F7A)],
+            'evening' => const [Color(0xFF6B4C8C), Color(0xFFF2A65A)],
+            'morning' => const [Color(0xFF9FD3F2), Color(0xFFFCE7C2)],
+            _ => const [Color(0xFF7FC4F0), Color(0xFFD6EEFB)],
+          },
         ).createShader(area),
     );
     if (night) {
@@ -862,9 +909,16 @@ class _MathsPainter extends CustomPainter {
         );
       }
     } else {
-      final high = data['time'] == 'midday';
+      // The sun: low on the left in the morning, high at midday, lower on
+      // the right in the afternoon, setting in the evening.
+      final (x, y) = switch (data['time']) {
+        'midday' => (.5, .3),
+        'afternoon' => (.72, .42),
+        'evening' => (.8, .82),
+        _ => (.2, .7),
+      };
       canvas.drawCircle(
-        Offset(size.width * (high ? .5 : .2), size.height * (high ? .3 : .7)),
+        Offset(size.width * x, size.height * y),
         math.min(size.height * .18, 26),
         _paint(const Color(0xFFF6C344)),
       );
@@ -1009,6 +1063,100 @@ class _MathsPainter extends CustomPainter {
         ..close(),
       _paint(Colors.white),
     );
+  }
+
+  /// A winners' podium: 2nd on the left, 1st in the middle and highest,
+  /// 3rd on the right, each with the runner's name above.
+  void _podium(Canvas canvas, Size size) {
+    final places = (data['places'] as List? ?? const [])
+        .cast<Map<String, dynamic>>();
+    final width = math.min(size.width / 3, 160.0);
+    final left = (size.width - width * 3) / 2;
+    const order = [2, 1, 3];
+    const heights = {1: .66, 2: .48, 3: .32};
+    const colours = {
+      1: Color(0xFFE6B746),
+      2: Color(0xFFB9C3C9),
+      3: Color(0xFFC98A4B),
+    };
+    for (final (i, place) in order.indexed) {
+      final h = size.height * heights[place]!;
+      final block = Rect.fromLTWH(left + i * width, size.height - h, width, h);
+      canvas.drawRect(block, _material(colours[place]!, block));
+      canvas.drawRect(block, _paint(dark, stroke: true));
+      _text(canvas, '$place', block.center, size: 30);
+      final runner = places.firstWhere(
+        (p) => p['place'] == place,
+        orElse: () => const {},
+      );
+      if (runner['name'] case final String name) {
+        _text(canvas, name, Offset(block.center.dx, block.top - 20), size: 22);
+      }
+    }
+  }
+
+  /// Days of the week or months of the year around a circle, with arrows in
+  /// order, so the last one leads back to the first ("the day after
+  /// Saturday is Sunday").
+  void _cycle(Canvas canvas, Size size) {
+    final labels = (data['labels'] as List? ?? const []).cast<String>();
+    if (labels.isEmpty) return;
+    final centre = size.center(Offset.zero);
+    final radius = math.min(size.width * .4, size.height * .4);
+    final step = 2 * math.pi / labels.length;
+    Offset at(int i, [double r = 1]) =>
+        centre +
+        Offset(
+              math.cos(-math.pi / 2 + i * step),
+              math.sin(-math.pi / 2 + i * step),
+            ) *
+            (radius * r);
+    final arrow = _paint(const Color(0xFFA47745), stroke: true)
+      ..strokeWidth = 2;
+    for (var i = 0; i < labels.length; i++) {
+      // A short clockwise arc from this label towards the next.
+      final from = -math.pi / 2 + (i + .3) * step;
+      final sweep = step * .4;
+      canvas.drawArc(
+        Rect.fromCircle(center: centre, radius: radius * .78),
+        from,
+        sweep,
+        false,
+        arrow,
+      );
+      final end = from + sweep;
+      final tip =
+          centre + Offset(math.cos(end), math.sin(end)) * (radius * .78);
+      final along = Offset(-math.sin(end), math.cos(end));
+      final across = Offset(math.cos(end), math.sin(end));
+      canvas.drawPath(
+        Path()
+          ..moveTo(tip.dx, tip.dy)
+          ..lineTo(
+            (tip - along * 7 + across * 4).dx,
+            (tip - along * 7 + across * 4).dy,
+          )
+          ..lineTo(
+            (tip - along * 7 - across * 4).dx,
+            (tip - along * 7 - across * 4).dy,
+          )
+          ..close(),
+        _paint(const Color(0xFFA47745)),
+      );
+    }
+    final box = labels.length > 8 ? 50.0 : 58.0;
+    for (final (i, label) in labels.indexed) {
+      final rect = Rect.fromCenter(center: at(i), width: box, height: 32);
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(rect, const Radius.circular(10)),
+        _paint(i == 0 ? const Color(0xFFF6D9A8) : const Color(0xFFFFFAEE)),
+      );
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(rect, const Radius.circular(10)),
+        _paint(const Color(0xFFA47745), stroke: true)..strokeWidth = 1.5,
+      );
+      _text(canvas, label, rect.center, size: 16);
+    }
   }
 
   /// Egyptian coins: 25 and 50 piastres, and the 1 pound coin. Values stay
@@ -1335,6 +1483,48 @@ class _MathsPainter extends CustomPainter {
         canvas.drawPath(side, _material(Color.lerp(color, dark, .2)!, r));
         canvas.drawPath(face, edge);
         canvas.drawPath(side, edge);
+      case 'car':
+        // A toy car seen from the side, in the colour the question names.
+        final body = RRect.fromRectAndCorners(
+          Rect.fromLTRB(
+            r.left,
+            r.top + r.height * .38,
+            r.right,
+            r.bottom - r.height * .2,
+          ),
+          topLeft: Radius.circular(r.height * .12),
+          topRight: Radius.circular(r.height * .2),
+          bottomLeft: Radius.circular(r.height * .06),
+          bottomRight: Radius.circular(r.height * .06),
+        );
+        final roof = Path()
+          ..moveTo(r.left + r.width * .22, r.top + r.height * .4)
+          ..lineTo(r.left + r.width * .34, r.top + r.height * .14)
+          ..lineTo(r.left + r.width * .66, r.top + r.height * .14)
+          ..lineTo(r.left + r.width * .8, r.top + r.height * .4)
+          ..close();
+        canvas.drawPath(roof, fill);
+        canvas.drawPath(roof, edge);
+        canvas.drawPath(
+          Path()
+            ..moveTo(r.left + r.width * .3, r.top + r.height * .37)
+            ..lineTo(r.left + r.width * .37, r.top + r.height * .2)
+            ..lineTo(r.left + r.width * .63, r.top + r.height * .2)
+            ..lineTo(r.left + r.width * .72, r.top + r.height * .37)
+            ..close(),
+          _paint(const Color(0xFFD8EEFB)),
+        );
+        canvas.drawRRect(body, fill);
+        canvas.drawRRect(body, edge);
+        for (final x in [.26, .74]) {
+          final wheel = Offset(r.left + r.width * x, r.bottom - r.height * .2);
+          canvas.drawCircle(wheel, r.height * .15, _paint(dark));
+          canvas.drawCircle(
+            wheel,
+            r.height * .06,
+            _paint(const Color(0xFFB9C3C9)),
+          );
+        }
       case 'oval':
         final oval = Rect.fromCenter(
           center: r.center,
@@ -1408,6 +1598,14 @@ class CarrollTable extends StatelessWidget {
           for (final heading in data['columns'] as List? ?? const [])
             (id: '$heading', label: '$heading'),
         ];
+    // A Carroll diagram in a picture shows the cards already sorted.
+    final cards = placed.isNotEmpty
+        ? placed
+        : {
+            for (final MapEntry(:key, :value)
+                in (data['placed'] as Map? ?? const {}).entries)
+              '$key': [for (final card in value as List) '$card'],
+          };
     return Semantics(
       label: 'Carroll diagram',
       child: IntrinsicHeight(
@@ -1458,7 +1656,7 @@ class CarrollTable extends StatelessWidget {
                                 runSpacing: 8,
                                 alignment: WrapAlignment.center,
                                 children: [
-                                  for (final card in placed[column.id] ?? [])
+                                  for (final card in cards[column.id] ?? [])
                                     Chip(label: Text(card)),
                                 ],
                               ),

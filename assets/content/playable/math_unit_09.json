@@ -352,7 +352,30 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_09",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 7,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "ones"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_09.step.005",
@@ -412,7 +435,39 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_09",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "ten"
+          },
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "ten"
+          },
+          {
+            "type": "count",
+            "count": 0,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "ones"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_09.step.006",
@@ -538,7 +593,17 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_09",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 50,
+        "markers": [
+          10,
+          20,
+          40
+        ]
+      }
     },
     {
       "id": "math_unit_09.step.008",
@@ -589,7 +654,17 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_09",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 40,
+        "markers": [
+          4,
+          14,
+          34
+        ]
+      }
     },
     {
       "id": "math_unit_09.step.009",
@@ -640,7 +715,30 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_09",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 6,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "ones"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_09.step.010",
@@ -691,7 +789,30 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_09",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 3,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "ones"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_09.step.011",
@@ -742,7 +863,35 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_09",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 5,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "5"
+          },
+          {
+            "type": "text",
+            "text": "+",
+            "width": 40
+          },
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "ten more"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_09.step.012",
@@ -793,7 +942,17 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_09",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 50,
+        "markers": [
+          10,
+          20,
+          30
+        ]
+      }
     },
     {
       "id": "math_unit_09.step.013",
@@ -844,7 +1003,17 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_09",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "markers": [
+          4,
+          11,
+          18
+        ]
+      }
     },
     {
       "id": "math_unit_09.step.014",
@@ -895,7 +1064,30 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_09",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 8,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "ones"
+          }
+        ]
+      }
     }
   ],
   "stickers": [

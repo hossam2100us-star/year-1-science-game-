@@ -450,7 +450,68 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_08",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "pattern",
+        "items": [
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "blue",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "blue",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "blue",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "blue",
+            "height": 70
+          },
+          {
+            "type": "missing",
+            "text": "?"
+          },
+          {
+            "type": "missing",
+            "text": "?"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_08.step.005",
@@ -686,22 +747,38 @@
         {
           "id": "item_2",
           "label": "triangle",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle"
+          }
         },
         {
           "id": "item_4",
           "label": "rectangle",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "rectangle"
+          }
         },
         {
           "id": "item_3",
           "label": "square",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square"
+          }
         },
         {
           "id": "item_1",
           "label": "circle",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
         }
       ],
       "targets": [
@@ -805,7 +882,48 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_08",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "pattern",
+        "items": [
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "yellow",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "yellow",
+            "height": 70
+          },
+          {
+            "type": "missing",
+            "text": "?"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_08.step.011",
@@ -857,7 +975,11 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_08",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "square"
+      }
     },
     {
       "id": "math_unit_08.step.012",
@@ -909,7 +1031,26 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_08",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "robot",
+        "cols": 3,
+        "rows": 3,
+        "start": [
+          1,
+          1
+        ],
+        "facing": "up",
+        "star": [
+          1,
+          2
+        ],
+        "routes": {
+          "backwards": "B",
+          "forwards": "F",
+          "sideways": "RF"
+        }
+      }
     },
     {
       "id": "math_unit_08.step.013",
@@ -961,7 +1102,23 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_08",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "label": "before"
+          },
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "rotation": 90,
+            "label": "turned"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_08.step.014",

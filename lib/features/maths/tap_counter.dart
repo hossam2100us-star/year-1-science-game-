@@ -30,7 +30,11 @@ class TapCounter extends StatefulWidget {
   static bool countable(Map<String, dynamic> data) =>
       data['type'] == 'count' &&
       const {'row', 'scattered'}.contains(data['arrangement'] ?? 'row') &&
-      (data['count'] as num? ?? 0) >= 2;
+      (data['count'] as num? ?? 0) >= 2 &&
+      // Objects crossed out for a take-away stay a picture.
+      (data['removed'] as num? ?? 0) == 0 &&
+      // Two colours show two groups; counting by touch would hide them.
+      data['split'] == null;
 
   @override
   State<TapCounter> createState() => _TapCounterState();

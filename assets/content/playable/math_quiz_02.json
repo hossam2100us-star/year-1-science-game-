@@ -57,7 +57,15 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_02",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": []
+      }
     },
     {
       "id": "math_quiz_02.step.002",
@@ -106,7 +114,48 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_02",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "pattern",
+        "items": [
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "blue",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "blue",
+            "height": 70
+          },
+          {
+            "type": "missing",
+            "text": "?"
+          }
+        ]
+      }
     },
     {
       "id": "math_quiz_02.step.003",
@@ -164,7 +213,30 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_02",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 5,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "ones"
+          }
+        ]
+      }
     },
     {
       "id": "math_quiz_02.step.004",
@@ -213,7 +285,16 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_02",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 40,
+        "markers": [
+          10,
+          20
+        ]
+      }
     },
     {
       "id": "math_quiz_02.step.005",
@@ -262,7 +343,19 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_02",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "cycle",
+        "labels": [
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat"
+        ]
+      }
     },
     {
       "id": "math_quiz_02.step.006",
@@ -365,7 +458,13 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_02",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 8,
+        "item": "dot",
+        "arrangement": "tenFrame"
+      }
     },
     {
       "id": "math_quiz_02.step.008",
@@ -414,7 +513,17 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_02",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 7,
+        "jumps": [
+          3
+        ],
+        "ask": "distance"
+      }
     },
     {
       "id": "math_quiz_02.step.009",
@@ -463,7 +572,15 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_02",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 8,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
     },
     {
       "id": "math_quiz_02.step.010",
@@ -507,7 +624,14 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_02",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+      }
     }
   ],
   "stickers": [
