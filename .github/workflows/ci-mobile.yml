@@ -1,9 +1,21 @@
 name: ci-mobile
 
+# To save Actions minutes: a branch with an open pull request is checked
+# once (by the pull_request event, not again by its push), documentation-only
+# changes are skipped, and the slow jobs (Windows goldens and the release
+# builds) run only on main or when started by hand.
 on:
   push:
-    branches: [main, 'remediation/**']
+    branches: [main]
+    paths-ignore:
+      - 'docs/**'
+      - 'reports/**'
+      - '**/*.md'
   pull_request:
+    paths-ignore:
+      - 'docs/**'
+      - 'reports/**'
+      - '**/*.md'
   workflow_dispatch:
 
 permissions:
@@ -64,6 +76,8 @@ jobs:
   goldens:
     # Baselines in test/goldens were generated on Windows; compare on the
     # same OS so anti-aliasing differences cannot cause false failures.
+    # Windows minutes bill double, so only on main or a manual run.
+    if: github.event_name != 'pull_request'
     runs-on: windows-latest
     timeout-minutes: 30
     steps:
@@ -97,6 +111,7 @@ jobs:
         run: python scripts/validate_playable.py
 
   android-build:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     needs: analyze-and-test
