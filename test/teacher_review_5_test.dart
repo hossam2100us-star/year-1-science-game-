@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:ui' as ui;
 
 import 'package:flame/flame.dart';
@@ -677,6 +678,49 @@ void main() {
       expect(t.takeException(), isNull, reason: stepId);
     }
     await t.pumpWidget(const SizedBox());
+  });
+
+  // Section 6: 22 questions had only two choices. Five gained a useful
+  // third; the other 17 are true or false, or pairs with no third answer
+  // (odd or even, up or down, the two hands of a clock, two pans).
+  test('two choices only where no third answer makes sense', () {
+    final pairs = [
+      for (final step in assessed())
+        if (const {'single', 'set'}.contains(step.answer?['type']) &&
+            step.options.length == 2)
+          step.objective,
+    ];
+    expect(pairs, hasLength(17));
+    for (final id in [
+      'math.q01.09',
+      'math.u06.main.01',
+      'math.u06.main.02',
+      'math.u06.main.04',
+      'math.u06.main.05',
+    ]) {
+      expect(pairs, isNot(contains(id)));
+    }
+  });
+
+  // Section 6: a challenge repeated a unit question word for word. Now the
+  // same words only come back with a different picture (another clock time,
+  // another chart); otherwise the challenge asks in a new example.
+  test('a challenge never repeats a unit question and its picture', () {
+    final units = [
+      for (final step in assessed())
+        if (step.objective.startsWith('math.u')) step,
+    ];
+    for (final step in assessed()) {
+      if (!step.objective.startsWith('math.q')) continue;
+      for (final unit in units) {
+        if (unit.prompt.toLowerCase() != step.prompt.toLowerCase()) continue;
+        expect(
+          jsonEncode(unit.json['mathVisual']),
+          isNot(jsonEncode(step.json['mathVisual'])),
+          reason: '${step.objective} repeats ${unit.objective}',
+        );
+      }
+    }
   });
 
   // Section 5: one hint for a whole unit, "Maths discovery N" titles and

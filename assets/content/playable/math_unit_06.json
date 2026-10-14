@@ -174,6 +174,15 @@
             "type": "sky",
             "time": "morning"
           }
+        },
+        {
+          "id": "choice_3",
+          "label": "evening",
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "evening"
+          }
         }
       ],
       "targets": [],
@@ -211,6 +220,15 @@
       "title": "Sleep time",
       "prompt": "When do you usually go to sleep?",
       "options": [
+        {
+          "id": "choice_3",
+          "label": "morning",
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "morning"
+          }
+        },
         {
           "id": "choice_2",
           "label": "night",
@@ -339,6 +357,17 @@
       "prompt": "Which takes longer?",
       "options": [
         {
+          "id": "choice_3",
+          "label": "eating dinner",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "dinner"
+            ]
+          }
+        },
+        {
           "id": "choice_2",
           "label": "a night's sleep",
           "art": "math_label",
@@ -416,6 +445,17 @@
             "items": [
               "open eye",
               "closed eye"
+            ]
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "a night's sleep",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "bed"
             ]
           }
         }

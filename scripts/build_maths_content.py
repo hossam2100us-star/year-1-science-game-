@@ -511,11 +511,11 @@ PICTURES={
     'math.u05.choice.03':{'visual':jumps(0,20,10,[-1])},
     'math.u05.choice.04':{'visual':count(14,'dot','scattered')},
     'math.u05.choice.05':{'visual':jumps(0,20,12,[-2])},
-    'math.u06.main.01':{'options':{'night':sky('night'),'morning':sky('morning')}},
-    'math.u06.main.02':{'options':{'night':sky('night'),'afternoon':sky('afternoon')}},
+    'math.u06.main.01':{'options':{'night':sky('night'),'morning':sky('morning'),'evening':sky('evening')}},
+    'math.u06.main.02':{'options':{'night':sky('night'),'afternoon':sky('afternoon'),'morning':sky('morning')}},
     'math.u06.main.03':{'options':{'wake up':thing('alarm clock'),'go to school':thing('school bag'),'eat dinner':thing('dinner')}},
-    'math.u06.main.04':{'options':{"a night's sleep":thing('bed'),'brushing your teeth':thing('toothbrush')}},
-    'math.u06.main.05':{'options':{'a football match':thing('football'),'a blink':thing('open eye','closed eye')}},
+    'math.u06.main.04':{'options':{"a night's sleep":thing('bed'),'brushing your teeth':thing('toothbrush'),'eating dinner':thing('dinner')}},
+    'math.u06.main.05':{'options':{'a football match':thing('football'),'a blink':thing('open eye','closed eye'),"a night's sleep":thing('bed')}},
     'math.u06.main.07':{'visual':PENCILS},
     'math.u06.choice.02':{'options':{'morning':sky('morning'),'evening':sky('evening'),'middle of the night':sky('night')}},
     'math.u06.choice.03':{'options':{'a spoon':thing('spoon'),'a shoe':thing('shoe'),'a bed':thing('bed')}},
@@ -525,7 +525,7 @@ PICTURES={
     'math.q01.03':{'visual':jumps(0,10,7,[-3])},
     'math.q01.07':{'visual':line(10,20,markers=[15,18])},
     'math.q01.08':{'visual':groups({**count(0,'counter'),'width':260,'height':110,'label':'an empty bag'})},
-    'math.q01.09':{'options':{'morning':sky('morning'),'night':sky('night')}},
+    'math.q01.09':{'options':{'morning':sky('morning'),'night':sky('night'),'afternoon':sky('afternoon')}},
     'math.q01.10':{'visual':PENCILS},
     'math.u07.main.01':{'visual':HOOPS},
     'math.u07.main.02':{'visual':RED_CAR},
@@ -626,7 +626,7 @@ PICTURES={
     'math.q03.04':{'visual':jumps(0,20,11,[6])},
     'math.q03.05':{'visual':shape('cube')},
     'math.q03.06':{'visual':groups({**shape('triangle'),'label':'before'},{**shape('triangle',rotation=180),'label':'upside down'})},
-    'math.q03.08':{'visual':double(10)},
+    'math.q03.08':{'visual':double(10)},  # two friends, ten sweets each
     'math.q03.10':{'visual':thing('flour'),'options':{'jug':thing('jug'),'scales':thing('scales'),'ruler':thing('ruler')}},
 }
 PICTURED=set()
@@ -693,11 +693,11 @@ def unit_specs():
         number('Start at 15 and count back 3. Where do you land?',12,jumps(0,20,15,[-3]),'Three backward jumps from 15 land on 12.'),
     ],
     6:[
-        single('When do you usually eat breakfast?','morning',['morning','night'],explanation='We usually eat breakfast in the morning.'),
-        single('When do you usually go to sleep?','night',['afternoon','night'],explanation='We usually sleep at night.'),
+        single('When do you usually eat breakfast?','morning',['morning','night','evening'],explanation='We usually eat breakfast in the morning.'),
+        single('When do you usually go to sleep?','night',['afternoon','night','morning'],explanation='We usually sleep at night.'),
         ordered('Put these parts of a school day in order.',['wake up','go to school','eat dinner'],explanation='Wake up first, go to school, then eat dinner later.'),
-        single('Which takes longer?','a night\'s sleep',['brushing your teeth','a night\'s sleep'],explanation='A night of sleep takes much longer than brushing your teeth.'),
-        single('Which takes a shorter time?','a blink',['a blink','a football match'],explanation='A blink takes a very short time.'),
+        single('Which takes longer?','a night\'s sleep',['brushing your teeth','a night\'s sleep','eating dinner'],explanation='A night of sleep takes much longer than brushing your teeth.'),
+        single('Which takes a shorter time?','a blink',['a blink','a football match','a night\'s sleep'],explanation='A blink takes a very short time.'),
         mapping('Compare the ribbons. Choose the longest and shortest.', [('longest','b'),('shortest','c')],['a','b','c'],groups({'type':'ruler','units':5,'item':'ribbon','label':'a'},{'type':'ruler','units':7,'item':'ribbon','label':'b'},{'type':'ruler','units':3,'item':'ribbon','label':'c'}),'Start at the same line. Ribbon b is longest and c shortest.'),
         tf('To compare two pencils, put their ends on the same line.',True,'Lining up the ends makes the length comparison fair.'),
         free('With an adult, draw something you do in the afternoon. Tell them about it.'),
@@ -1010,9 +1010,9 @@ MCQ_REASONS=[
 
 def quiz_specs(n):
     return {
-    1:[number('How many dots?',9,count(9),'Count each dot once: there are 9.'),number('1 more than 12 is...?',13,explanation='One forward step from 12 reaches 13.'),number('7 take away 3 is...?',4,explanation='Taking three away from seven leaves four.'),single('Name a flat shape with 3 sides.','triangle',['triangle','square','circle'],explanation='A triangle has three straight sides.',option_visuals=shapes('triangle','square','circle')),single('Name a solid shape like a football.','sphere',['sphere','cylinder','circle'],count(1,'ball'),explanation='A football is solid and round like a sphere.',option_visuals=shapes('sphere','cylinder','circle')),single('The longest pictogram row shows the...','most',['most','least','first'],FRUIT,explanation='The longest row has the most equal-size pictures.'),single('Choose the larger number.','18',['18','15'],explanation='18 comes after 15 on the number track.'),number('How many sweets are in an empty bag?',0,explanation='An empty bag contains zero sweets.'),single('When do you usually sleep?','night',['morning','night'],explanation='We usually sleep at night.'),single('What should you line up to compare two pencils?','the ends',['the ends','the middles','the colours'],explanation='Start both pencils at the same line.')],
-    2:[single('What belongs where two Venn hoops overlap?','things that fit both labels',['things that fit both labels','things that fit neither label','only red things'],explanation='The overlap satisfies both sorting rules.'),single('red, blue, red, blue... What comes next?','red',['red','blue','green'],explanation='The repeated part is red, blue.'),mapping('15 has how many tens and ones?',[('tens','1'),('ones','5')],[1,5],explanation='15 is one whole ten and five ones.'),number('Count in tens: 10, 20, ...?',30,explanation='One more ten after 20 is 30.'),number('How many days are in a week?',7,explanation='There are seven days before the week repeats.'),single('On a balance, does the heavier side go up or down?','down',['up','down'],balance(3,1),explanation='More mass makes that side go down.'),number('8 + __ = 10. Find the missing partner.',2,explanation='Eight and two make ten.'),number('What is the difference between 7 and 10?',3,explanation='Three forward jumps lead from seven to ten.'),number('Half of 8 is...?',4,explanation='Share eight equally into two groups of four.'),tf('Two halves of the same whole can have different sizes.',False,'Halves of the same whole are always equal.')],
-    3:[single('Choose the even number.','6',['3','6','9'],explanation='Six makes three pairs with none left over.'),single('Which position comes after 2nd?','3rd',['1st','3rd','4th'],explanation='Third follows second.'),number('Double 4 is...?',8,explanation='Four and another four make eight.'),number('6 + 11 = ?',17,explanation='Start at eleven and count on six to reach seventeen.'),number('How many faces does a cube have?',6,explanation='A cube has six square faces.'),single('A triangle turns upside down. Is it still a triangle?','yes',['yes','no'],explanation='It still has three straight sides and three corners.'),single('Which graph column shows the most?','the tallest',['the tallest','the shortest','the first'],PETS,explanation='The tallest column has the greatest count.'),number('Half of 20 is...?',10,explanation='Two equal groups of ten make twenty.'),single('What time does this clock show?','2 o\'clock',['2 o\'clock','12 o\'clock','half past 2'],{'type':'clock','hour':2,'minute':0},'The minute hand is on twelve; the hour hand is on two.'),single('What do we use to weigh flour?','scales',['scales','ruler','jug'],explanation='Scales measure mass, so use them to weigh flour.')]
+    1:[number('How many dots?',9,count(9),'Count each dot once: there are 9.'),number('1 more than 12 is...?',13,explanation='One forward step from 12 reaches 13.'),number('7 take away 3 is...?',4,explanation='Taking three away from seven leaves four.'),single('Name a flat shape with 3 sides.','triangle',['triangle','square','circle'],explanation='A triangle has three straight sides.',option_visuals=shapes('triangle','square','circle')),single('Name a solid shape like a football.','sphere',['sphere','cylinder','circle'],count(1,'ball'),explanation='A football is solid and round like a sphere.',option_visuals=shapes('sphere','cylinder','circle')),single('The longest pictogram row shows the...','most',['most','least','first'],FRUIT,explanation='The longest row has the most equal-size pictures.'),single('Choose the larger number.','18',['18','15'],explanation='18 comes after 15 on the number track.'),number('How many sweets are in an empty bag?',0,explanation='An empty bag contains zero sweets.'),single('When do you usually sleep?','night',['morning','night','afternoon'],explanation='We usually sleep at night.'),single('What should you line up to compare two pencils?','the ends',['the ends','the middles','the colours'],explanation='Start both pencils at the same line.')],
+    2:[single('What belongs where two Venn hoops overlap?','things that fit both labels',['things that fit both labels','things that fit neither label','only red things'],explanation='The overlap satisfies both sorting rules.'),single('red, blue, red, blue... What comes next?','red',['red','blue','green'],explanation='The repeated part is red, blue.'),mapping('15 has how many tens and ones?',[('tens','1'),('ones','5')],[1,5],explanation='15 is one whole ten and five ones.'),number('Count in tens: 10, 20, ...?',30,explanation='One more ten after 20 is 30.'),number('Omar plays outside every day for one week. How many days is that?',7,explanation='One week has seven days, from Sunday to Saturday.'),single('On a balance, does the heavier side go up or down?','down',['up','down'],balance(3,1),explanation='More mass makes that side go down.'),number('8 + __ = 10. Find the missing partner.',2,explanation='Eight and two make ten.'),number('What is the difference between 7 and 10?',3,explanation='Three forward jumps lead from seven to ten.'),number('Half of 8 is...?',4,explanation='Share eight equally into two groups of four.'),tf('Two halves of the same whole can have different sizes.',False,'Halves of the same whole are always equal.')],
+    3:[single('Choose the even number.','6',['3','6','9'],explanation='Six makes three pairs with none left over.'),single('Which position comes after 2nd?','3rd',['1st','3rd','4th'],explanation='Third follows second.'),number('Double 4 is...?',8,explanation='Four and another four make eight.'),number('6 + 11 = ?',17,explanation='Start at eleven and count on six to reach seventeen.'),number('A dice is a cube. How many faces does a dice have?',6,explanation='A dice is a cube, and a cube has six square faces.'),single('A triangle turns upside down. Is it still a triangle?','yes',['yes','no'],explanation='It still has three straight sides and three corners.'),single('Which graph column shows the most?','the tallest',['the tallest','the shortest','the first'],PETS,explanation='The tallest column has the greatest count.'),number('Share 20 sweets fairly between 2 friends. How many does each friend get?',10,explanation='Two equal groups of ten make twenty, so each friend gets ten.'),single('What time does this clock show?','2 o\'clock',['2 o\'clock','12 o\'clock','half past 2'],{'type':'clock','hour':2,'minute':0},'The minute hand is on twelve; the hour hand is on two.'),single('What do we use to weigh flour?','scales',['scales','ruler','jug'],explanation='Scales measure mass, so use them to weigh flour.')]
     }[n]
 
 

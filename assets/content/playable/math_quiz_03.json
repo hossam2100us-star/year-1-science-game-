@@ -265,8 +265,8 @@
     {
       "id": "math_quiz_03.step.005",
       "kind": "tap-choice",
-      "title": "Cube faces",
-      "prompt": "How many faces does a cube have?",
+      "title": "Faces of a dice",
+      "prompt": "A dice is a cube. How many faces does a dice have?",
       "options": [
         {
           "id": "choice_1",
@@ -292,8 +292,8 @@
       "assessed": true,
       "objective": "math.q03.05",
       "hint": "Count each flat face of a dice once.",
-      "explanation": "A cube has six square faces.",
-      "shortExplanation": "A cube has six square faces.",
+      "explanation": "A dice is a cube, and a cube has six square faces.",
+      "shortExplanation": "A dice is a cube, and a cube has six square faces.",
       "source": {
         "pages": [
           64
@@ -447,8 +447,8 @@
     {
       "id": "math_quiz_03.step.008",
       "kind": "tap-choice",
-      "title": "Half of 20",
-      "prompt": "Half of 20 is...?",
+      "title": "Sharing 20 fairly",
+      "prompt": "Share 20 sweets fairly between 2 friends. How many does each friend get?",
       "options": [
         {
           "id": "choice_3",
@@ -474,8 +474,8 @@
       "assessed": true,
       "objective": "math.q03.08",
       "hint": "Share 20 into two equal groups.",
-      "explanation": "Two equal groups of ten make twenty.",
-      "shortExplanation": "Two equal groups of ten make twenty.",
+      "explanation": "Two equal groups of ten make twenty, so each friend gets ten.",
+      "shortExplanation": "Two equal groups of ten make twenty, so each friend gets ten.",
       "source": {
         "pages": [
           64
@@ -715,8 +715,8 @@
     },
     {
       "objective": "math.q03.05",
-      "text": "Discuss this question with an adult: How many faces does a cube have? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «المكعب ليه كام وش؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: A dice is a cube. How many faces does a dice have? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «حجر الزهر مكعب. ليه كام وش؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -757,8 +757,8 @@
     },
     {
       "objective": "math.q03.08",
-      "text": "Discuss this question with an adult: Half of 20 is...? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «نص الـ ٢٠ كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: Share 20 sweets fairly between 2 friends. How many does each friend get? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «قسّم ٢٠ حتة حلاوة بالعدل بين صاحبين. كل واحد ياخد كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

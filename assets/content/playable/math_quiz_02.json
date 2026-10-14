@@ -299,8 +299,8 @@
     {
       "id": "math_quiz_02.step.005",
       "kind": "tap-choice",
-      "title": "Days in a week",
-      "prompt": "How many days are in a week?",
+      "title": "Every day for a week",
+      "prompt": "Omar plays outside every day for one week. How many days is that?",
       "options": [
         {
           "id": "choice_2",
@@ -326,8 +326,8 @@
       "assessed": true,
       "objective": "math.q02.05",
       "hint": "Say the days from Sunday to Saturday and count them.",
-      "explanation": "There are seven days before the week repeats.",
-      "shortExplanation": "There are seven days before the week repeats.",
+      "explanation": "One week has seven days, from Sunday to Saturday.",
+      "shortExplanation": "One week has seven days, from Sunday to Saturday.",
       "source": {
         "pages": [
           44
@@ -720,8 +720,8 @@
     },
     {
       "objective": "math.q02.05",
-      "text": "Discuss this question with an adult: How many days are in a week? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الأسبوع فيه كام يوم؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: Omar plays outside every day for one week. How many days is that? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «عمر بيلعب برّه كل يوم لمدة أسبوع. يبقى كام يوم؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

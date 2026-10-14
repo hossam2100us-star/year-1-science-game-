@@ -507,6 +507,15 @@
       "prompt": "When do you usually sleep?",
       "options": [
         {
+          "id": "choice_3",
+          "label": "afternoon",
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "afternoon"
+          }
+        },
+        {
           "id": "choice_1",
           "label": "morning",
           "art": "math_label",

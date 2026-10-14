@@ -705,7 +705,7 @@
     "hint": "Add one more ten to 20."
   },
   "math.q02.05": {
-    "title": "Days in a week",
+    "title": "Every day for a week",
     "hint": "Say the days from Sunday to Saturday and count them."
   },
   "math.q02.06": {
@@ -1063,7 +1063,7 @@
     "hint": "Start on 11, the bigger number, and count on 6."
   },
   "math.q03.05": {
-    "title": "Cube faces",
+    "title": "Faces of a dice",
     "hint": "Count each flat face of a dice once."
   },
   "math.q03.06": {
@@ -1075,7 +1075,7 @@
     "hint": "More blocks make a taller column."
   },
   "math.q03.08": {
-    "title": "Half of 20",
+    "title": "Sharing 20 fairly",
     "hint": "Share 20 into two equal groups."
   },
   "math.q03.09": {
