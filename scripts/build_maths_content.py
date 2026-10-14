@@ -457,6 +457,11 @@ def clock(hour,minute):
     return {'type':'clock','hour':hour,'minute':minute}
 
 
+def thing(*items,**kwargs):
+    """Real objects drawn from the things atlas: a bed, a jug, a feather..."""
+    return {'type':'object','items':list(items),**kwargs}
+
+
 def plus(a,b,item='apple',b_label=None):
     """a + b as two groups of one size, with a plus sign between them."""
     most=max(a,b,1)
@@ -477,8 +482,8 @@ POSITIONS={'type':'pattern','items':[{'type':'text','text':'1st'},{'type':'text'
 
 # Teacher review 5 asked for a picture in every question. Keys are question
 # IDs; 'visual' goes above the question and 'options' on answers by label.
-# Pictures never mark the answer. Questions about real objects (spoons,
-# beds, feathers...) wait for drawings: AWAITING_ART in the validator.
+# Pictures never mark the answer. Real objects (a spoon, a bed, a
+# feather...) come from the things atlas, maths-things-v1.webp.
 PICTURES={
     'math.u01.main.06':{'visual':groups({**count(6,'counter'),'columns':3,'width':150,'height':100,'label':'before'},{**count(6,'counter','scattered'),'columns':6,'width':400,'height':56,'label':'spread out'})},
     'math.u01.main.07':{'visual':tens(12)},
@@ -508,8 +513,12 @@ PICTURES={
     'math.u05.choice.05':{'visual':jumps(0,20,12,[-2])},
     'math.u06.main.01':{'options':{'night':sky('night'),'morning':sky('morning')}},
     'math.u06.main.02':{'options':{'night':sky('night'),'afternoon':sky('afternoon')}},
+    'math.u06.main.03':{'options':{'wake up':thing('alarm clock'),'go to school':thing('school bag'),'eat dinner':thing('dinner')}},
+    'math.u06.main.04':{'options':{"a night's sleep":thing('bed'),'brushing your teeth':thing('toothbrush')}},
+    'math.u06.main.05':{'options':{'a football match':thing('football'),'a blink':thing('open eye','closed eye')}},
     'math.u06.main.07':{'visual':PENCILS},
     'math.u06.choice.02':{'options':{'morning':sky('morning'),'evening':sky('evening'),'middle of the night':sky('night')}},
+    'math.u06.choice.03':{'options':{'a spoon':thing('spoon'),'a shoe':thing('shoe'),'a bed':thing('bed')}},
     'math.u06.choice.04':{'visual':PENCILS},
     'math.u06.choice.05':{'visual':PENCILS},
     'math.q01.02':{'visual':jumps(0,20,12,[1])},
@@ -544,8 +553,11 @@ PICTURES={
     'math.u10.main.02':{'visual':WEEK},
     'math.u10.main.03':{'visual':YEAR},
     'math.u10.main.04':{'visual':YEAR},
+    'math.u10.main.07':{'visual':groups({**thing('pillow',height=150),'label':'a big pillow'},{**thing('stone',height=70),'label':'a small stone'})},
+    'math.u10.main.08':{'options':{'feather':thing('feather'),'book':thing('book'),'chair':thing('chair')}},
     'math.u10.choice.01':{'visual':YEAR},
     'math.u10.choice.04':{'visual':WEEK},
+    'math.u10.choice.05':{'options':{'a grape':thing('grape'),'a watermelon':thing('watermelon'),'a strawberry':thing('strawberry')}},
     'math.u11.main.01':{'options':{'2 + __ = 10':count(2,arrangement='tenFrame'),'__ + 5 = 10':count(5,arrangement='tenFrame'),'6 + __ = 10':count(6,arrangement='tenFrame')}},
     'math.u11.main.03':{'options':{'3 + 2':two_colours(3,2),'4 + 1':two_colours(4,1)}},
     'math.u11.main.07':{'visual':two_colours(6,3,'tenFrame')},
@@ -599,9 +611,14 @@ PICTURES={
     'math.u17.choice.02':{'visual':double(8)},
     'math.u17.choice.03':{'visual':WHOLE},
     'math.u17.choice.04':{'visual':double(9)},
+    'math.u17.choice.05':{'visual':thing('string',height=90,artWidth=360)},
     'math.u18.main.04':{'visual':clock(3,0)},
+    'math.u18.main.05':{'options':{'weigh flour':thing('flour'),'measure a pencil':thing('pencil'),'measure water':thing('glass of water')}},
+    'math.u18.main.06':{'options':{'jug':thing('jug'),'mug':thing('mug'),'bowl':thing('bowl')}},
     'math.u18.main.08':{'visual':clock(3,30)},
     'math.u18.choice.02':{'visual':clock(5,30)},
+    'math.u18.choice.03':{'visual':thing('parcel'),'options':{'a jug':thing('jug'),'a ruler':thing('ruler'),'scales':thing('scales')}},
+    'math.u18.choice.04':{'visual':groups({**thing('jug',height=150),'label':'a jug'},{**thing('mug',height=80),'label':'a mug'})},
     'math.u18.choice.05':{'visual':clock(3,30)},
     'math.q03.01':{'options':{'6':pairs(6,9),'3':pairs(3,9),'9':pairs(9,9)}},
     'math.q03.02':{'visual':POSITIONS},
@@ -610,6 +627,7 @@ PICTURES={
     'math.q03.05':{'visual':shape('cube')},
     'math.q03.06':{'visual':groups({**shape('triangle'),'label':'before'},{**shape('triangle',rotation=180),'label':'upside down'})},
     'math.q03.08':{'visual':double(10)},
+    'math.q03.10':{'visual':thing('flour'),'options':{'jug':thing('jug'),'scales':thing('scales'),'ruler':thing('ruler')}},
 }
 PICTURED=set()
 

@@ -65,6 +65,7 @@ void main() {
         'maths-islands-v2.webp',
         'maths-objects-v2.webp',
         'maths-backdrops-v2.webp',
+        'maths-things-v1.webp',
       ]),
     );
     await t.pumpWidget(

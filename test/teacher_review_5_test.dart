@@ -54,6 +54,7 @@ void main() {
         mathsObjectAsset,
         mathsBackdropAsset,
         mathsBirdAsset,
+        mathsThingAsset,
       ]) {
         await Flame.images.load(asset);
       }
@@ -560,10 +561,8 @@ void main() {
     await t.pumpWidget(const SizedBox());
   });
 
-  // Section 1 again: a picture in every question. Questions about real
-  // objects (spoons, beds, feathers...) wait for drawings; the content
-  // validator lists them as AWAITING_ART.
-  test('every other Maths question has a picture', () {
+  // Section 1 again: a picture in every question.
+  test('every Maths question has a picture', () {
     bool pictured(LessonStep step) =>
         step.json['mathVisual'] is Map ||
         (step.json['options'] as List).any((o) => (o as Map)['visual'] != null);
@@ -571,8 +570,38 @@ void main() {
       for (final step in assessed())
         if (!pictured(step)) step.objective,
     ];
-    expect(without, hasLength(13), reason: '$without');
-    expect(assessed().where(pictured), hasLength(245));
+    expect(without, isEmpty);
+    expect(assessed().where(pictured), hasLength(258));
+  });
+
+  testWidgets('questions about real things show those things', (t) async {
+    for (final (stepId, label, item) in [
+      ('math_unit_10.step.014', 'a watermelon', 'watermelon'),
+      ('math_unit_06.step.006', 'a blink', 'closed eye'),
+      ('math_quiz_03.step.010', 'scales', 'scales'),
+    ]) {
+      final key = GlobalKey();
+      await t.pumpWidget(const SizedBox());
+      await open(t, stepId, key);
+      final lesson = maths.lessons[stepId.split('.').first]!;
+      final option = lesson.steps
+          .firstWhere((s) => s.id == stepId)
+          .options
+          .firstWhere((o) => o.label == label);
+      expect(
+        find.descendant(
+          of: find.byKey(ValueKey('maths-option-${option.id}')),
+          matching: find.byWidgetPredicate(
+            (w) => w is MathsArt && w.item == item,
+          ),
+        ),
+        findsOneWidget,
+        reason: stepId,
+      );
+      await capture(t, key, 'things/$stepId');
+      expect(t.takeException(), isNull, reason: stepId);
+    }
+    await t.pumpWidget(const SizedBox());
   });
 
   testWidgets('a double shows two equal rows in two colours', (t) async {

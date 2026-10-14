@@ -887,7 +887,15 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_17",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "object",
+        "items": [
+          "string"
+        ],
+        "height": 90,
+        "artWidth": 360
+      }
     }
   ],
   "stickers": [

@@ -268,17 +268,35 @@
         {
           "id": "choice_2",
           "label": "eat dinner",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "dinner"
+            ]
+          }
         },
         {
           "id": "choice_3",
           "label": "wake up",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "alarm clock"
+            ]
+          }
         },
         {
           "id": "choice_1",
           "label": "go to school",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "school bag"
+            ]
+          }
         }
       ],
       "targets": [],
@@ -323,12 +341,24 @@
         {
           "id": "choice_2",
           "label": "a night's sleep",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "bed"
+            ]
+          }
         },
         {
           "id": "choice_1",
           "label": "brushing your teeth",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "toothbrush"
+            ]
+          }
         }
       ],
       "targets": [],
@@ -369,12 +399,25 @@
         {
           "id": "choice_2",
           "label": "a football match",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "football"
+            ]
+          }
         },
         {
           "id": "choice_1",
           "label": "a blink",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "open eye",
+              "closed eye"
+            ]
+          }
         }
       ],
       "targets": [],
@@ -720,17 +763,35 @@
         {
           "id": "choice_1",
           "label": "a spoon",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "spoon"
+            ]
+          }
         },
         {
           "id": "choice_2",
           "label": "a shoe",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "shoe"
+            ]
+          }
         },
         {
           "id": "choice_3",
           "label": "a bed",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "bed"
+            ]
+          }
         }
       ],
       "targets": [],

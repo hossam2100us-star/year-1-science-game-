@@ -16,6 +16,60 @@ const mathsIslandAsset = 'maths-islands-v2.webp';
 const mathsBirdAsset = 'maths-birds-v1.webp';
 const mathsBirdCells = <String, int>{'pigeon': 0, 'sparrow': 1, 'crow': 2};
 
+/// Everyday objects for questions about real things (teacher review 5),
+/// in equal cells six to a row: generated in Canva on magenta and cut out
+/// (docs/MATHS_ART_V2.md).
+const mathsThingAsset = 'maths-things-v1.webp';
+const mathsThings = [
+  'spoon', 'shoe', 'bed', 'toothbrush', 'football', 'alarm clock', //
+  'grape', 'watermelon', 'strawberry', 'feather', 'book', 'chair', //
+  'pillow', 'stone', 'jug', 'mug', 'bowl', 'scales', //
+  'ruler', 'parcel', 'flour', 'school bag', 'dinner', 'glass of water', //
+  'string', 'open eye', 'closed eye',
+];
+
+// Each object's bounds in the 1920×1600 atlas (320-pixel cells), so a
+// long string or ruler fills a wide picture instead of a square cell.
+const _mathsThingBounds = <Rect>[
+  Rect.fromLTRB(19, 14, 302, 306), // spoon
+  Rect.fromLTRB(334, 27, 626, 293), // shoe
+  Rect.fromLTRB(654, 27, 946, 294), // bed
+  Rect.fromLTRB(990, 14, 1250, 306), // toothbrush
+  Rect.fromLTRB(1296, 14, 1585, 306), // football
+  Rect.fromLTRB(1648, 14, 1872, 306), // alarm clock
+  Rect.fromLTRB(42, 334, 278, 626), // grape
+  Rect.fromLTRB(349, 334, 611, 626), // watermelon
+  Rect.fromLTRB(681, 334, 919, 626), // strawberry
+  Rect.fromLTRB(994, 334, 1246, 626), // feather
+  Rect.fromLTRB(1294, 357, 1586, 604), // book
+  Rect.fromLTRB(1648, 334, 1872, 626), // chair
+  Rect.fromLTRB(14, 677, 306, 923), // pillow
+  Rect.fromLTRB(334, 697, 626, 903), // stone
+  Rect.fromLTRB(667, 654, 934, 946), // jug
+  Rect.fromLTRB(974, 678, 1266, 923), // mug
+  Rect.fromLTRB(1294, 698, 1586, 903), // bowl
+  Rect.fromLTRB(1637, 654, 1883, 946), // scales
+  Rect.fromLTRB(21, 974, 299, 1266), // ruler
+  Rect.fromLTRB(334, 989, 626, 1251), // parcel
+  Rect.fromLTRB(673, 974, 928, 1266), // flour
+  Rect.fromLTRB(992, 974, 1248, 1266), // school bag
+  Rect.fromLTRB(1294, 1024, 1586, 1216), // dinner
+  Rect.fromLTRB(1661, 974, 1860, 1266), // glass of water
+  Rect.fromLTRB(14, 1409, 306, 1472), // string
+  Rect.fromLTRB(334, 1338, 626, 1543), // open eye
+  Rect.fromLTRB(654, 1381, 946, 1500), // closed eye
+];
+
+Rect mathsThingCrop(String item) {
+  final bounds = _mathsThingBounds[mathsThings.indexOf(item)];
+  return Rect.fromLTRB(
+    bounds.left / 1920,
+    bounds.top / 1600,
+    bounds.right / 1920,
+    bounds.bottom / 1600,
+  );
+}
+
 /// One original transparent object per atlas cell. Counts, positions and all
 /// mathematical markings belong to the lesson renderer, rather than the art.
 const mathsObjectCells = <String, int>{
@@ -109,6 +163,10 @@ class MathsArt extends StatelessWidget {
         final int cell => IllustratedArt(
           asset: mathsBirdAsset,
           crop: Rect.fromLTWH(cell / 3, 0, 1 / 3, 1),
+        ),
+        null when mathsThings.contains(item) => IllustratedArt(
+          asset: mathsThingAsset,
+          crop: mathsThingCrop(item),
         ),
         null => IllustratedArt(
           asset: mathsObjectAsset,

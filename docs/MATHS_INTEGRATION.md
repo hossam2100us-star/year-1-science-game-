@@ -193,15 +193,15 @@ and the old-content migration (v1 to v2) covers data that never shipped.
 
 ## A picture in every question (teacher review 5, 13 October 2026)
 
-245 of the 258 graded questions now show a picture; before, 115 did. The
-pictures are drawn in code from the content (`PICTURES` in
+Every one of the 258 graded questions now shows a picture; before, 115 did.
+Most are drawn in code from the content (`PICTURES` in
 `scripts/build_maths_content.py`, keyed by question ID): ten frames and tens,
 two-colour counters for doubles, halves and number bonds, socks in pairs,
 number lines to jump along, the week and the year as a circle, times of day,
 clocks, coins, fractions, 2D and 3D shapes, a toy car, Venn and Carroll
 diagrams, a robot grid and a podium. A picture never marks the answer.
 
-The other 13 questions are about real objects (a spoon, a bed, a feather,
-scales, a jug...) and wait for drawings; `AWAITING_ART` in
-`scripts/validate_maths_content.py` lists them, and the validator fails if any
-other graded question has no picture.
+The 13 questions about real objects (a spoon, a bed, a feather, scales, a
+jug...) use the everyday objects atlas `maths-things-v1.webp`
+(docs/MATHS_ART_V2.md). The validator fails if a graded question has no
+picture (`AWAITING_ART` in `scripts/validate_maths_content.py` is empty).

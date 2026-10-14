@@ -608,7 +608,28 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_10",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "object",
+            "items": [
+              "pillow"
+            ],
+            "height": 150,
+            "label": "a big pillow"
+          },
+          {
+            "type": "object",
+            "items": [
+              "stone"
+            ],
+            "height": 70,
+            "label": "a small stone"
+          }
+        ]
+      }
     },
     {
       "id": "math_unit_10.step.009",
@@ -619,17 +640,35 @@
         {
           "id": "choice_2",
           "label": "feather",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "feather"
+            ]
+          }
         },
         {
           "id": "choice_1",
           "label": "book",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "book"
+            ]
+          }
         },
         {
           "id": "choice_3",
           "label": "chair",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "chair"
+            ]
+          }
         }
       ],
       "targets": [],
@@ -923,17 +962,35 @@
         {
           "id": "choice_2",
           "label": "a grape",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "grape"
+            ]
+          }
         },
         {
           "id": "choice_3",
           "label": "a watermelon",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "watermelon"
+            ]
+          }
         },
         {
           "id": "choice_1",
           "label": "a strawberry",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "strawberry"
+            ]
+          }
         }
       ],
       "targets": [],

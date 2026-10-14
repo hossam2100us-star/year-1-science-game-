@@ -137,3 +137,14 @@ for the Maths bird chart. The owner generated it with Google Gemini, using the
 Maths objects atlas as style reference and the prompt written for this change.
 Background removal and encoding as described in docs/MATHS_ART_V2.md. No
 third-party or book artwork was used.
+
+## Maths everyday objects — 13 October 2026 (teacher review 5)
+
+assets/images/maths-things-v1.webp: 27 everyday objects (a spoon, a bed, a
+feather, kitchen scales, a jug, an open and a closed eye...) for the Maths
+questions about real things. Generated in the owner's Canva account with
+Canva's image generator, with prompts written for this change (objects in a
+grid on flat magenta, no text), exported at full size from a working design
+the owner approved, then cut out and arranged with
+tools/images/things-atlas.cjs as described in docs/MATHS_ART_V2.md. No
+third-party or book artwork was used.

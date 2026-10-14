@@ -25,9 +25,13 @@ REVIEW5_PICTURES={'math_quiz_01':[4,5,6],'math_quiz_02':[6],'math_quiz_03':[7],'
     'math_unit_02':[12],'math_unit_03':[13],'math_unit_04':[10,11,12,14],'math_unit_06':[10],
     'math_unit_07':[5,10,13,14],'math_unit_08':[7,14],'math_unit_10':[7,11,12],'math_unit_15':[9,10],
     'math_unit_16':[10,13,14],'math_unit_18':[10]}
-AWAITING_ART={'math.u06.main.03','math.u06.main.04','math.u06.main.05','math.u06.choice.03',
-    'math.u10.main.07','math.u10.main.08','math.u10.choice.05','math.u17.choice.05','math.u18.main.05','math.u18.main.06','math.u18.choice.03',
-    'math.u18.choice.04','math.q03.10'}
+# Questions allowed to have no picture yet (teacher review 5 asked for one
+# in every question).
+AWAITING_ART=set()
+# Everyday objects in maths-things-v1.webp, and the counting objects.
+THINGS={'spoon','shoe','bed','toothbrush','football','alarm clock','grape','watermelon',
+    'strawberry','feather','book','chair','pillow','stone','jug','mug','bowl','scales','ruler',
+    'parcel','flour','school bag','dinner','glass of water','string','open eye','closed eye','pencil'}
 FREE_QUESTIONS = {'math.u01.main.05','math.u01.main.08','math.u03.main.08',
     'math.u04.main.08','math.u06.main.08','math.u07.main.08','math.u08.main.04',
     'math.u12.main.07','math.u12.main.08','math.u14.main.08','math.u15.main.06',
@@ -64,7 +68,7 @@ def expect(books,qid,value):
 
 def visuals(value):
     if isinstance(value,dict):
-        if 'type' in value and value['type'] in {'count','shape','clock','chart','numberLine','pattern','fraction','groups','money','ruler','text','missing','balance','sky','venn','robot','carroll','cycle','podium'}:
+        if 'type' in value and value['type'] in {'count','shape','clock','chart','numberLine','pattern','fraction','groups','money','ruler','text','missing','balance','sky','venn','robot','carroll','cycle','podium','object'}:
             yield value
         for child in value.values(): yield from visuals(child)
     elif isinstance(value,list):
@@ -108,6 +112,7 @@ def audit_visuals(book):
             # The side holding more goes down.
             assert visual['tilt']==('left' if left>right else 'right' if right>left else 'level')
         elif kind=='sky': assert visual['time'] in ['morning','midday','afternoon','evening','night']
+        elif kind=='object': assert visual['items'] and set(visual['items'])<=THINGS,visual['items']
         elif kind=='podium':
             assert sorted(p['place'] for p in visual['places'])==[1,2,3] and all(p['name'] for p in visual['places'])
         elif kind=='cycle': assert len(visual['labels'])>=2 and len(set(visual['labels']))==len(visual['labels'])

@@ -70,6 +70,32 @@ class MathsVisual extends StatelessWidget {
       );
     }
     if (type == 'carroll') return CarrollTable(data: data);
+    if (type == 'object') {
+      // One or more real objects side by side: a bed, or an open and a
+      // closed eye for a blink.
+      final items = [
+        for (final item in data['items'] as List? ?? [data['item']]) '$item',
+      ];
+      final height = (data['height'] as num?)?.toDouble() ?? 140;
+      // A long thing (a string) may be wider than it is tall.
+      final width = (data['artWidth'] as num?)?.toDouble();
+      return Semantics(
+        label: data['description'] as String? ?? items.join(' and '),
+        image: true,
+        child: SizedBox(
+          height: height,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              for (final item in items)
+                Flexible(
+                  child: MathsArt(item, height: height, width: width),
+                ),
+            ],
+          ),
+        ),
+      );
+    }
     // A picture inside an answer may ask for less height.
     final height =
         (data['height'] as num?)?.toDouble() ??

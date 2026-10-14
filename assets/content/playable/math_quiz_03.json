@@ -564,17 +564,35 @@
         {
           "id": "choice_3",
           "label": "jug",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "jug"
+            ]
+          }
         },
         {
           "id": "choice_1",
           "label": "scales",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "scales"
+            ]
+          }
         },
         {
           "id": "choice_2",
           "label": "ruler",
-          "art": "math_label"
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "ruler"
+            ]
+          }
         }
       ],
       "targets": [],
@@ -602,7 +620,13 @@
       "section": "Challenge",
       "playScene": "maths",
       "theme": "math_quiz_03",
-      "adapted": true
+      "adapted": true,
+      "mathVisual": {
+        "type": "object",
+        "items": [
+          "flour"
+        ]
+      }
     }
   ],
   "stickers": [

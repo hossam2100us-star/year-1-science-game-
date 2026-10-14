@@ -55,3 +55,39 @@ view, same size, flat magenta background). The magenta was removed with
 `tools/images/cutout.mjs` (lossless), each bird was trimmed and fitted to a
 512-pixel cell, and the atlas was encoded once as WebP (quality 80, alpha 90).
 `mathsBirdCells` in `maths_art.dart` maps `pigeon`, `sparrow` and `crow`.
+
+## Everyday objects atlas — 13 October 2026 (teacher review 5)
+
+The last 13 questions without a picture were about real objects.
+`assets/images/maths-things-v1.webp` (1920×1600, 332 KB) holds 27 of them in
+320-pixel cells, six to a row: spoon, shoe, bed, toothbrush, football, alarm
+clock; grape, watermelon, strawberry, feather, book, chair; pillow, stone,
+jug, mug, bowl, scales; ruler, parcel, flour, school bag, dinner, glass of
+water; string, open eye, closed eye.
+
+They were generated with Canva's image generator in the owner's account
+(owner's approval), six objects at a time in a 3×2 grid ("children's
+storybook illustration… plain flat solid magenta background, no text, no
+labels, nothing touching"); the string and the two eyes in 2×1 sheets. The
+first eye came out as an orange ball and was replaced. The connector returns
+only 200-pixel previews, so with the owner's approval the six pictures were
+placed in a working Canva design ("Maths app object pictures") and exported
+as PNG at full size.
+
+`tools/images/things-atlas.cjs` builds the atlas from the six sheets:
+- the background colour is measured from each sheet's border (Canva's
+  magenta is about 247, 6, 235, not pure #FF00FF);
+- a pixel's transparency comes from how much magenta is mixed into it, but
+  only in the background (also inside handles and chair backs) and a
+  three-pixel edge around it, so the purple grape stays solid;
+- edge pixels are un-mixed from the measured colour, so the white feather
+  has no pink fringe;
+- connected pieces go to the grid cell of their centre, so a pillow reaching
+  into the next cell is not cut in two;
+- each object is fitted to its cell; the exact bounds are in
+  `_mathsThingBounds` in `maths_art.dart`, so a long string fills a wide
+  picture.
+
+The atlas was checked by eye on light and dark backgrounds and encoded once
+as WebP (quality 80, alpha 90). `MathsArt` draws these objects by name, and
+the `object` picture type shows one or more of them in a question or answer.
