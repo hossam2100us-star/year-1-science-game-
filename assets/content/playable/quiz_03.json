@@ -180,6 +180,11 @@
       "prompt": "What do we call something that makes sound?",
       "options": [
         {
+          "id": "ears",
+          "label": "Ears",
+          "art": "ears"
+        },
+        {
           "id": "source_of_sound",
           "label": "Source of sound",
           "art": "source_of_sound"
@@ -237,6 +242,11 @@
           "id": "fainter_and_quieter",
           "label": "Fainter and quieter",
           "art": "fainter_and_quieter"
+        },
+        {
+          "id": "stays_the_same",
+          "label": "It stays the same",
+          "art": "stays_the_same"
         }
       ],
       "targets": [],

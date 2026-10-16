@@ -237,3 +237,37 @@ Findings and what changed in the package afterwards:
   - permissions `INTERNET` and the internal receiver permission only;
   - no `.debug_*` sections or app class names in either packaged `libapp.so`.
 - 0.5.0 and 0.4.0 APKs and all symbol files kept outside the repository.
+
+## Milestone M5a — teacher review 4 (branch `remediation/m5-teacher-review-and-web`, 2026-10-10)
+
+- `flutter test`: 415 pass.
+- New tests:
+  - `test/teacher_review_4_test.dart`, at 1280×800 with the tablet's status (24) and navigation (60) bars: positions, taps on pictures, names first, checks, the strip's place on every step of three lessons, the Space model, Arabic parent activities;
+  - `test/text_encoding_test.dart`.
+- **Android 14 emulator (1280×800 tablet):**
+  - Electricity safety and Space fit without scrolling;
+  - the new socket picture shows;
+  - a tap on the Sun itself is a discovery;
+  - the action strip stays at the bottom;
+  - the Arabic home activity, its safety note and the Space "not to scale" note show right to left in the parent report.
+- Found on the emulator: the first layout fitted 1280×800 but not the 716 dp the app really gets between the system bars. The lesson page's SafeArea hides the bars from MediaQuery, so scene sizes now come from the window (`View`). The test now includes the bars.
+
+## Trial release 0.5.2 (versionCode 7), 2026-10-10
+
+- Built from `7d449d2`, with all of teacher review 4 M5a:
+  - new socket picture;
+  - discoveries on the whole picture;
+  - fixed action strip;
+  - names first;
+  - push, Space, hint;
+  - quiz 3 third choices;
+  - Arabic parent activities.
+- Same release command and checks as 0.5.1:
+  - 48.3 MB;
+  - upload key `a8:03:33:…:74:12:79`;
+  - `INTERNET` only;
+  - no debug sections or app class names in either packaged library;
+  - `parent_ar.json` and the new picture are packaged.
+- Local checks: `flutter analyze --fatal-infos` clean, 416 tests pass.
+- GitHub Actions did not run for these commits: the account's Actions spending limit or payment stopped the jobs before they started (annotation "recent account payments have failed or your spending limit needs to be increased"). A re-run on 2026-10-11 was stopped the same way.
+- The content validation therefore ran locally instead, with the CI's pinned `scripts/requirements-content.txt` in a temporary virtual environment (Python 3.13 rather than the CI's 3.12): `validate_playable.py` PASS for all 13 files, 187 steps (schema, IDs, answer references, prediction exclusion, source objectives). The other CI-only jobs (Chrome tests, goldens, the Android and web builds, the security scans, the images) have not run on M5.

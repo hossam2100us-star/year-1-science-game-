@@ -1,5 +1,7 @@
 name: security-scan
 
+# Branches are scanned through their pull request (once per push); main is
+# scanned on every push and weekly (docs/RELEASE.md §2).
 on:
   push:
     branches: [main]
@@ -10,6 +12,10 @@ on:
 
 permissions:
   contents: read
+
+concurrency:
+  group: security-scan-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   secrets:

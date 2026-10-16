@@ -115,7 +115,7 @@
       },
       "assessed": true,
       "objective": "u07.main.01",
-      "hint": "Ask which things need a plug or a battery to work.",
+      "hint": "Ask which things must be plugged in to work.",
       "explanation": "The television, vacuum cleaner, lamp and dishwasher need electricity to work. The book and chair do not. This lantern uses a flame instead.",
       "source": {
         "pages": [

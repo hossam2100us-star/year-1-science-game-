@@ -223,10 +223,7 @@ void main() {
       expect(state.selections.length, 4);
       await tap(t, 'science-item-${step.options.last.id}');
       expect(state.selections.length, 4);
-      expect(
-        state.voices.last,
-        step.json['senseDescriptions'][step.options.last.id],
-      );
+      expect(state.voices.last, step.discoveryText(step.options.last.id));
       expect(t.takeException(), isNull);
     },
   );

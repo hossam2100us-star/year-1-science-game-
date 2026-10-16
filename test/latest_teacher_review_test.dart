@@ -308,7 +308,8 @@ void main() {
             await tap(t, 'science-item-${step.options[0].id}');
             await tap(t, 'science-world-next');
             final description =
-                step.json['senseDescriptions'][step.options[1].id];
+                // The name comes first (teacher review 4).
+                step.discoveryText(step.options[1].id);
             expect(
               t
                   .widget<Text>(find.byKey(const ValueKey('lesson-feedback')))
@@ -349,8 +350,9 @@ void main() {
             expect(find.byKey(const ValueKey('lessonNext')), findsOneWidget);
             if (id == 'unit_09') {
               expect(
+                // Moved to the parent report (teacher review 4).
                 find.text('Model: sizes and distances are not to scale.'),
-                findsOneWidget,
+                findsNothing,
               );
             }
           }

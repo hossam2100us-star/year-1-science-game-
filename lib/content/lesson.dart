@@ -55,6 +55,20 @@ class LessonStep {
   String label(String id) =>
       [...options, ...targets].where((e) => e.id == id).firstOrNull?.label ??
       id.replaceAll('_', ' ');
+
+  /// What a discovery says and shows: the name first (it is the word being
+  /// taught), then the description, unless the description already names it
+  /// ("Ocean. The biggest water of all, and salty."; teacher review 4).
+  String discoveryText(String id) {
+    final name = label(id);
+    final description = json['senseDescriptions']?[id];
+    if (description is! String || description.isEmpty) return name;
+    final named = RegExp(
+      '\\b${RegExp.escape(name)}\\b',
+      caseSensitive: false,
+    ).hasMatch(description);
+    return named ? description : '$name. $description';
+  }
 }
 
 class Lesson {
@@ -96,13 +110,41 @@ class LessonLibrary {
   ];
   static Future<LessonLibrary> load() async {
     final result = <String, Lesson>{};
+    final arabic = Map<String, dynamic>.from(
+      jsonDecode(await rootBundle.loadString('assets/content/parent_ar.json')),
+    );
     for (final id in availableIds) {
-      result[id] = Lesson(
+      final json = Map<String, dynamic>.from(
         jsonDecode(
           await rootBundle.loadString('assets/content/playable/$id.json'),
         ),
       );
+      addParentArabic(id, json, arabic);
+      result[id] = Lesson(json);
     }
     return LessonLibrary(result);
+  }
+
+  /// Adds `textAr`/`safetyAr` to the activities shown in the Arabic parent
+  /// area (`assets/content/parent_ar.json`). An activity without Arabic keeps
+  /// only its English text, which the report then shows left to right.
+  static void addParentArabic(
+    String id,
+    Map<String, dynamic> lesson,
+    Map<String, dynamic> arabic,
+  ) {
+    final goals = Map<String, dynamic>.from(arabic['goal'] ?? const {});
+    final homes = Map<String, dynamic>.from(arabic['home'] ?? const {});
+    final safety = Map<String, dynamic>.from(arabic['safety'] ?? const {});
+    for (final activity in [...?lesson['goalActivities'] as List?]) {
+      final a = activity as Map<String, dynamic>;
+      a['textAr'] = goals['$id/${a['objective']}'];
+      a['safetyAr'] = safety[a['safety']];
+    }
+    for (final activity in [...?lesson['homeActivities'] as List?]) {
+      final a = activity as Map<String, dynamic>;
+      a['textAr'] = homes[id];
+      a['safetyAr'] = safety[a['safety']];
+    }
   }
 }

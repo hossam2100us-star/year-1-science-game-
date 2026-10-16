@@ -676,7 +676,7 @@ void main() {
   );
 
   testWidgets(
-    'Push keeps contact as child and trolley move; pull stays connected',
+    'Push keeps contact, then lets the trolley roll on; pull stays connected',
     (t) async {
       size(t, const Size(600, 360));
       for (final (width, motion) in [
@@ -714,28 +714,35 @@ void main() {
         );
         final cartStart = t.getCenter(cart).dx,
             childStart = t.getCenter(child).dx;
-        await t.pump(const Duration(milliseconds: 1100));
+        if (motion == 'push') {
+          // While pushing, the hands stay on the trolley.
+          await t.pump(const Duration(milliseconds: 400));
+          expect(t.getCenter(cart).dx, greaterThan(cartStart));
+          expect(
+            t.getCenter(child).dx - childStart,
+            closeTo(t.getCenter(cart).dx - cartStart, .01),
+          );
+          await t.pump(const Duration(milliseconds: 700));
+        } else {
+          await t.pump(const Duration(milliseconds: 1100));
+        }
         final cartNow = t.getCenter(cart).dx;
+        final childNow = t.getCenter(child).dx;
         expect(
           cartNow,
           motion == 'push' ? greaterThan(cartStart) : lessThan(cartStart),
         );
-        if (motion == 'push') {
-          expect(
-            t.getCenter(child).dx - childStart,
-            closeTo(cartNow - cartStart, .01),
-          );
-        } else {
-          expect(t.getCenter(child).dx, childStart);
-        }
+        if (motion == 'pull') expect(childNow, childStart);
         expect(t.getRect(cart).right, lessThanOrEqualTo(width));
         expect(t.getRect(child).left, greaterThanOrEqualTo(0));
         await capture(t, boundary, '$motion-mid-motion-${width.toInt()}');
         await t.pump(const Duration(milliseconds: 1100));
         if (motion == 'push') {
+          // Then the child lets go and stays; the trolley rolls on alone.
+          expect(t.getCenter(child).dx, childNow);
           expect(
             t.getCenter(cart).dx - t.getCenter(child).dx,
-            closeTo(cartStart - childStart, .01),
+            greaterThan(cartStart - childStart + 40),
           );
         }
         expect(t.getRect(cart).right, lessThanOrEqualTo(width));

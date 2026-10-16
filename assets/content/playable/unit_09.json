@@ -4,6 +4,10 @@
   "id": "unit_09",
   "title": "Earth in Space",
   "quiz": false,
+  "parentNote": {
+    "en": "The space model is not to scale: the real Sun is far bigger than Earth, and Earth and the Moon are very far from it.",
+    "ar": "نموذج الفضاء مش بالمقاس الحقيقي: الشمس في الحقيقة أكبر من الأرض بكتير جدًا، والأرض والقمر بعاد عنها جدًا."
+  },
   "sourceSha256": "d573acce712492af377e923a338920cc532f8b973b8cd185f4414b4a977bd508",
   "sourcePages": [
     24,

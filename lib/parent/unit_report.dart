@@ -14,6 +14,23 @@ class UnitReport extends ConsumerWidget {
   const UnitReport({super.key, required this.level, required this.arabic});
   final LevelInfo level;
   final bool arabic;
+
+  /// The activity in Arabic, right to left, when the parent area is Arabic
+  /// and a translation exists (`assets/content/parent_ar.json`); otherwise
+  /// the English text, left to right.
+  Widget _activityText(
+    Map<String, dynamic> activity,
+    String field, {
+    TextStyle? style,
+  }) {
+    final translated = arabic ? activity['${field}Ar'] as String? : null;
+    return Text(
+      translated ?? activity[field] as String,
+      textDirection: translated == null ? TextDirection.ltr : TextDirection.rtl,
+      style: style,
+    );
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l = parentStrings(arabic);
@@ -161,6 +178,17 @@ class UnitReport extends ConsumerWidget {
               ),
             ],
           ],
+          // Facts for grown-ups that would confuse a child on the screen
+          // ("the space model is not to scale"; teacher review 4).
+          if (lesson?.json['parentNote']
+              case final Map<String, dynamic> note) ...[
+            const SizedBox(height: 8),
+            Text(
+              '${note[arabic ? 'ar' : 'en'] ?? note['en']}',
+              key: ValueKey('parent-note-${level.id}'),
+              style: const TextStyle(fontStyle: FontStyle.italic),
+            ),
+          ],
           if (lesson != null) ...[
             for (final activity
                 in List<Map<String, dynamic>>.from(
@@ -178,10 +206,10 @@ class UnitReport extends ConsumerWidget {
                 l.unitReportPracticeFor(titleFor(activity['objective'])),
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
-              Text(activity['text'], textDirection: TextDirection.ltr),
-              Text(
-                activity['safety'],
-                textDirection: TextDirection.ltr,
+              _activityText(activity, 'text'),
+              _activityText(
+                activity,
+                'safety',
                 style: const TextStyle(color: Color(0xFFC0392B)),
               ),
               Text(l.unitReportGoalSourcePages(activity['pages'].join(', '))),
@@ -199,13 +227,13 @@ class UnitReport extends ConsumerWidget {
               Container(
                 padding: const EdgeInsets.all(12),
                 color: const Color(0xFFFCE8E6),
-                child: Text(
-                  activity['safety'],
-                  textDirection: TextDirection.ltr,
+                child: _activityText(
+                  activity,
+                  'safety',
                   style: const TextStyle(color: Color(0xFFC0392B)),
                 ),
               ),
-              Text(activity['text'], textDirection: TextDirection.ltr),
+              _activityText(activity, 'text'),
               Text(l.unitReportSourcePages(activity['pages'].join(', '))),
             ],
           ],

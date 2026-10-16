@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,7 @@ import 'scene_kind.dart';
 import 'scene_renderers.dart';
 import 'step_rules.dart';
 import '../biology/shoe_measure.dart';
+import '../science/discovery_world.dart';
 import '../science/force_guided_lab.dart';
 import '../science/force_discovery.dart';
 import '../science/science_audio.dart';
@@ -231,7 +233,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   }
 
   void _say(String text) {
-    if (_science && widget.lesson.id == 'unit_06') ScienceAudio.stop();
+    if (!_session.finished && _science && widget.lesson.id == 'unit_06') {
+      ScienceAudio.stop();
+    }
     ref.read(narrationProvider).speak(text);
   }
 
@@ -318,12 +322,12 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
             ? step.prompt
             : _plantLab && step.json['partDescriptions'] != null
             ? step.json['partDescriptions'][id] ?? step.label(id)
-            : step.json['senseDescriptions']?[id] ?? step.label(id),
+            : step.discoveryText(id),
       );
     }
     if (['explore', 'story', 'free-plant'].contains(step.kind)) {
       if (step.json['senseDescriptions'] is Map) {
-        _feedback = step.json['senseDescriptions'][id] ?? '';
+        _feedback = step.discoveryText(id);
       }
       _touched.remove(id);
       _touched.add(id);
@@ -804,10 +808,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                 onPrevious: previous,
                 onHome: _leave,
               ),
-              // Loose: short challenges keep "Check" right under the content
-              // instead of across an empty tablet screen; long ones still
-              // scroll with the controls pinned below (AUD-018).
-              Flexible(
+              // The feedback and action strip always sits at the bottom of
+              // the screen: children find the button by its place, not by
+              // reading (teacher review 4 reverses the loose layout of
+              // AUD-018). Long activities scroll above it.
+              Expanded(
                 child: SingleChildScrollView(
                   controller: _scroll,
                   padding: const EdgeInsets.symmetric(
@@ -823,8 +828,16 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
                             LayoutBuilder(
                               builder: (context, constraints) {
                                 final compact = constraints.maxWidth < 600;
+                                // A smaller owl on short screens (a tablet
+                                // without its system bars) keeps Next visible.
+                                final short =
+                                    DiscoveryWorld.usableHeight(context) < 760;
                                 final owl = ScientistOwl(
-                                  size: compact ? 44 : 70,
+                                  size: compact
+                                      ? 44
+                                      : short
+                                      ? 56
+                                      : 70,
                                   gender: profile?.gender ?? ChildGender.boy,
                                   mood: _engine.done
                                       ? (_engine.outcome ==
@@ -980,17 +993,25 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     );
   }
 
+  /// One height on every activity, so the buttons never move; longer
+  /// feedback scrolls inside it.
+  double get _stripHeight {
+    final usable = DiscoveryWorld.usableHeight(context);
+    final base = (usable * .10).clamp(72.0, 96.0);
+    final button = MediaQuery.textScalerOf(context).scale(18) + 20;
+    return math.max(base, button + 16);
+  }
+
   Widget _controls() => Container(
     key: const ValueKey('lesson-controls'),
+    height: _stripHeight,
     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     color: const Color(0xFFFFF8EC),
     child: Row(
       children: [
         Expanded(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              maxHeight: MediaQuery.sizeOf(context).height * .18,
-            ),
+          child: Align(
+            alignment: AlignmentDirectional.centerStart,
             child: SingleChildScrollView(
               child: Text(
                 _saveFailed
@@ -1045,7 +1066,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
             ),
             onPressed: _busy ? null : _next,
             icon: const Icon(Icons.arrow_forward_rounded),
-            label: Text(_busy ? 'Savingâ€¦' : 'Keep exploring'),
+            label: Text(_busy ? 'Saving…' : 'Keep exploring'),
           ),
       ],
     ),
