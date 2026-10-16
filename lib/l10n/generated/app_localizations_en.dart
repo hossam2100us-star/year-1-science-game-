@@ -378,14 +378,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get choiceTitle => 'Welcome! Before we start';
 
   @override
-  String get choiceBody =>
-      'A grown-up chooses how the game keeps the children\'s progress. You can change this later in the parent area.';
+  String get loginBody =>
+      'Sign in to your parent account to see the children\'s progress on all your devices, or continue without the Internet with what is saved on this device.';
 
   @override
-  String get choiceDeviceButton => 'Play on this device only';
+  String get loginOffline => 'Continue without the Internet';
 
   @override
-  String get choiceContinue => 'Continue to the game';
+  String get loginOfflineBody =>
+      'Play with the children and progress saved on this device. You can sign in later, here or in the parent area.';
 
   @override
   String get accountNotNow => 'Not now';

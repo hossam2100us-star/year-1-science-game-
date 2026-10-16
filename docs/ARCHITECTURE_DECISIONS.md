@@ -47,6 +47,15 @@ the parent able to choose to use the app on the device only.
   supplies the approved privacy notice and parental-consent text
   (configuration value); development builds can enable it for testing.
 * No analytics or tracking are added.
+**Update (2026-10-16, owner decision).** The one-time first-launch
+question became a **login page** shown each time the app opens until a
+parent signs in: the parent account sign-in form (create account and
+forgotten password too) and **"Continue without the Internet"**. There is no
+parent gate on this page (owner's choice); the consent screen still comes
+before the first sign-in or account creation. Continuing offline sends
+nothing and turns off an account turned on here for a sign-in that did not
+happen. A saved session goes straight in, and a session that ends later
+never interrupts play (`lib/parent/login_page.dart`).
 
 **Consequences.** The INTERNET permission is added only in M4, together
 with the account flow; the local-only path must keep working with no

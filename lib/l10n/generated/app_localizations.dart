@@ -693,23 +693,23 @@ abstract class AppLocalizations {
   /// **'Welcome! Before we start'**
   String get choiceTitle;
 
-  /// No description provided for @choiceBody.
+  /// No description provided for @loginBody.
   ///
   /// In en, this message translates to:
-  /// **'A grown-up chooses how the game keeps the children\'s progress. You can change this later in the parent area.'**
-  String get choiceBody;
+  /// **'Sign in to your parent account to see the children\'s progress on all your devices, or continue without the Internet with what is saved on this device.'**
+  String get loginBody;
 
-  /// No description provided for @choiceDeviceButton.
+  /// No description provided for @loginOffline.
   ///
   /// In en, this message translates to:
-  /// **'Play on this device only'**
-  String get choiceDeviceButton;
+  /// **'Continue without the Internet'**
+  String get loginOffline;
 
-  /// No description provided for @choiceContinue.
+  /// No description provided for @loginOfflineBody.
   ///
   /// In en, this message translates to:
-  /// **'Continue to the game'**
-  String get choiceContinue;
+  /// **'Play with the children and progress saved on this device. You can sign in later, here or in the parent area.'**
+  String get loginOfflineBody;
 
   /// No description provided for @accountNotNow.
   ///
