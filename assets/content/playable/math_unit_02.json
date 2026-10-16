@@ -984,6 +984,15 @@
       "id": "math_unit_02.sticker",
       "word": "add",
       "art": "math_label",
+      "picture": {
+        "type": "count",
+        "count": 5,
+        "item": "dot",
+        "arrangement": "row",
+        "color": "red",
+        "split": 2,
+        "color2": "blue"
+      },
       "meaning": "Put groups together to make more.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -1013,8 +1022,8 @@
   "goalActivities": [
     {
       "objective": "math.u02.main.01",
-      "text": "Discuss this question with an adult: Find one more and one less. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «لاقي الرقم اللي بعده بواحد واللي قبله بواحد.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Build a tower of 6 blocks. Add one and count. Then start with 10 and take one away.",
+      "textAr": "ابنوا برج من ٦ مكعبات. زوّدوا واحد وعدّوا. وبعدين ابدأوا بـ١٠ وشيلوا واحد.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1029,8 +1038,8 @@
     },
     {
       "objective": "math.u02.main.02",
-      "text": "Discuss this question with an adult: Start at 5 and count on 3. Where do you land? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «ابدأ من ٥ وعدّ ٣ لقدّام. هتقف فين؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Draw a number line from 0 to 10. Your child puts a finger on 5 and makes 3 jumps forward.",
+      "textAr": "ارسموا خط أرقام من ٠ لـ١٠. طفلك يحط صباعه على ٥ وينطّ ٣ نطّات لقدّام.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1045,8 +1054,8 @@
     },
     {
       "objective": "math.u02.main.03",
-      "text": "Discuss this question with an adult: Start at 9 and count back 4. Where do you land? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «ابدأ من ٩ وعدّ ٤ لورا. هتقف فين؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "On the same number line, start at 9 and make 4 jumps back, saying each number.",
+      "textAr": "على نفس خط الأرقام، ابدأوا من ٩ وانطّوا ٤ نطّات لورا، وقولوا كل رقم.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1061,8 +1070,8 @@
     },
     {
       "objective": "math.u02.main.04",
-      "text": "Discuss this question with an adult: Choose the addition sentence for the two groups. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «اختار جملة الجمع اللي بتوصف المجموعتين.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put 4 spoons and 3 forks together and count them all. Then write 4 + 3 = 7 and read it aloud.",
+      "textAr": "حطّوا ٤ معالق و٣ شوك مع بعض وعدّوهم كلهم. وبعدين اكتبوا ٤ + ٣ = ٧ واقروها بصوت عالي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1077,8 +1086,8 @@
     },
     {
       "objective": "math.u02.main.05",
-      "text": "Discuss this question with an adult: There are 8 cubes. Take away 3. How many remain? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «فيه ٨ مكعبات. شيل ٣. فاضل كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put 8 blocks in a line and take 3 away. Your child counts how many remain.",
+      "textAr": "صفّوا ٨ مكعبات وشيلوا ٣. طفلك يعدّ فاضل كام.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1093,8 +1102,8 @@
     },
     {
       "objective": "math.u02.main.06",
-      "text": "Discuss this question with an adult: Match the words to the number sentence. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «وصّل الكلام بجملة الأرقام المناسبة.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Tell a short story (\"4 birds, and 3 more come\") and help your child write it as 4 + 3 = 7. Then try a take-away story.",
+      "textAr": "احكوا حكاية صغيرة («٤ عصافير وجه ٣ كمان») وساعدوا طفلك يكتبها ٤ + ٣ = ٧. وبعدين جرّبوا حكاية فيها طرح.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1109,8 +1118,8 @@
     },
     {
       "objective": "math.u02.main.07",
-      "text": "Discuss this question with an adult: 8 cars were parked. 4 drive away. Choose the correct sentence. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كان فيه ٨ عربيات راكنين، و٤ مشيوا. اختار الجملة الصح.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Park 8 toy cars and drive 4 away. Your child says the take-away sentence: 8 − 4 = 4.",
+      "textAr": "صفّوا ٨ عربيات لعبة وخلّوا ٤ يمشوا. طفلك يقول جملة الطرح: ٨ − ٤ = ٤.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1125,8 +1134,8 @@
     },
     {
       "objective": "math.u02.main.08",
-      "text": "Discuss this question with an adult: Mona has 7 sweets. Ali has 4. How many more does Mona have? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «منى معاها ٧ حلويات وعلي معاه ٤. منى معاها أكتر منه بكام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make a line of 7 spoons with a line of 4 underneath. Your child counts the spoons that have no partner.",
+      "textAr": "صفّوا ٧ معالق وتحتهم ٤. طفلك يعدّ المعالق اللي مالهاش زميل.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1141,8 +1150,8 @@
     },
     {
       "objective": "math.u02.choice.01",
-      "text": "Discuss this question with an adult: Which picture shows 2 + 3? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي صورة بتوضّح ٢ + ٣؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put 2 apples on a plate and add 3 more. Talk about how plus puts the groups together: 5 in all.",
+      "textAr": "حطّوا ٢ تفاح في طبق وزوّدوا ٣ كمان. اتكلموا إن علامة الزائد بتجمع المجموعات: ٥ كلهم.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1157,8 +1166,8 @@
     },
     {
       "objective": "math.u02.choice.02",
-      "text": "Discuss this question with an adult: 6 take away 2 is... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «٦ ناقص ٢ يبقى…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Hold up 6 fingers and fold down 2. Count the fingers still up.",
+      "textAr": "ارفعوا ٦ صوابع ونزّلوا ٢. عدّوا الصوابع اللي لسه مرفوعة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1173,8 +1182,8 @@
     },
     {
       "objective": "math.u02.choice.03",
-      "text": "Discuss this question with an adult: On a number line, taking away makes you jump... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «على خط الأرقام، لما بنطرح بننطّ…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Walk along the floor tiles: forwards when you add, backwards when you take away.",
+      "textAr": "امشوا على بلاط الأرض: لقدّام لما نجمع، ولورا لما نطرح.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1189,8 +1198,8 @@
     },
     {
       "objective": "math.u02.choice.04",
-      "text": "Discuss this question with an adult: 1 less than 8 is... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الرقم اللي أقل من ٨ بواحد هو…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put 8 cups in a row, take one away and count. Practise \"one less\" with other numbers too.",
+      "textAr": "صفّوا ٨ كوبايات، شيلوا واحدة وعدّوا. اتمرّنوا على «واحد أقل» بأرقام تانية كمان.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1205,8 +1214,8 @@
     },
     {
       "objective": "math.u02.choice.05",
-      "text": "Discuss this question with an adult: 5 + 0 = Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «٥ وصفر يبقوا كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put 5 spoons on one plate and nothing on another. Put the plates together: adding zero changes nothing.",
+      "textAr": "حطّوا ٥ معالق في طبق والطبق التاني فاضي. حطّوا الطبقين مع بعض: جمع الصفر مش بيغيّر حاجة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

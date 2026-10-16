@@ -754,6 +754,39 @@ void main() {
     expect(words, isEmpty);
   });
 
+  // Section 6: every parent goal activity was one template ("Discuss this
+  // question with an adult..."). Each goal now has a home activity of its own.
+  test('each Maths goal has its own home activity', () async {
+    final books = [
+      for (final file in [
+        for (var n = 1; n <= 18; n++)
+          'math_unit_${n.toString().padLeft(2, '0')}',
+        'math_quiz_01',
+        'math_quiz_02',
+        'math_quiz_03',
+        'math_charts',
+      ])
+        jsonDecode(
+          await rootBundle.loadString('assets/content/playable/$file.json'),
+        ) as Map<String, dynamic>,
+    ];
+    final english = <String>{};
+    final arabic = <String>{};
+    for (final book in books) {
+      for (final activity in book['goalActivities'] as List) {
+        expect(activity['text'], isNot(startsWith('Discuss this question')));
+        expect(
+          activity['textAr'],
+          isNot(contains('اتكلّم مع طفلك في السؤال ده')),
+        );
+        english.add(activity['text']);
+        arabic.add(activity['textAr']);
+      }
+    }
+    expect(english, hasLength(258));
+    expect(arabic, hasLength(258));
+  });
+
   // Section 5: one hint for a whole unit, "Maths discovery N" titles and
   // explanations that began "... is the answer."
   test('every Maths question has its own title, hint and reason', () {

@@ -1028,6 +1028,12 @@
       "id": "math_unit_10.sticker",
       "word": "mass",
       "art": "math_label",
+      "picture": {
+        "type": "object",
+        "items": [
+          "watermelon"
+        ]
+      },
       "meaning": "How heavy or light an object is.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -1057,8 +1063,8 @@
   "goalActivities": [
     {
       "objective": "math.u10.main.01",
-      "text": "Discuss this question with an adult: How many days are in a week? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الأسبوع فيه كام يوم؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Sing or say the days of the week together, holding up one finger for each day.",
+      "textAr": "غنّوا أو قولوا أيام الأسبوع مع بعض، وارفعوا صباع لكل يوم.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1073,8 +1079,8 @@
     },
     {
       "objective": "math.u10.main.02",
-      "text": "Discuss this question with an adult: Find the neighbouring days. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «لاقي اليوم اللي قبله واللي بعده.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Write the days of the week on cards in a circle. Your child finds the day before and the day after a day you choose.",
+      "textAr": "اكتبوا أيام الأسبوع على كروت في دايرة. طفلك يدوّر على اليوم اللي قبل واللي بعد يوم تختاروه.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1089,8 +1095,8 @@
     },
     {
       "objective": "math.u10.main.03",
-      "text": "Discuss this question with an adult: How many months are in a year? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «السنة فيها كام شهر؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Look at a calendar and count the months together. Find the month of your child's birthday.",
+      "textAr": "بصّوا في النتيجة وعدّوا الشهور مع بعض. دوّروا على شهر عيد ميلاد طفلك.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1105,8 +1111,8 @@
     },
     {
       "objective": "math.u10.main.04",
-      "text": "Discuss this question with an adult: Which month comes after January? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «إيه الشهر اللي بعد يناير؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Say the months in order together. Stop at a month and ask which one comes next.",
+      "textAr": "قولوا الشهور بالترتيب مع بعض. اقفوا عند شهر واسألوا إيه اللي بعده.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1121,8 +1127,8 @@
     },
     {
       "objective": "math.u10.main.05",
-      "text": "Discuss this question with an adult: How many cubes long is the pencil? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «القلم طوله كام مكعب؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Measure a pencil or a spoon with blocks laid end to end, with no gaps. Count the blocks.",
+      "textAr": "قيسوا قلم أو معلقة بمكعبات ورا بعض من غير مسافات. عدّوا المكعبات.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1137,8 +1143,8 @@
     },
     {
       "objective": "math.u10.main.06",
-      "text": "Discuss this question with an adult: On this balance, B is down and A is up. Which is heavier? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «في الميزان ده، B نازل لتحت وA طالع لفوق. أنهي أتقل؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Hold something heavy in one hand and something light in the other, like a balance. Your child lowers the hand holding the heavier one.",
+      "textAr": "امسكوا حاجة تقيلة في إيد وحاجة خفيفة في التانية، كأنكم ميزان. طفلك ينزّل الإيد اللي فيها الأتقل.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1153,8 +1159,8 @@
     },
     {
       "objective": "math.u10.main.07",
-      "text": "Discuss this question with an adult: A bigger object is always heavier. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الحاجة الأكبر دايمًا أتقل.» صح ولا غلط؟ استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Hold a big pillow in one hand and a small stone in the other. Talk about which is bigger and which is heavier.",
+      "textAr": "امسكوا مخدة كبيرة في إيد وحجر صغير في التانية. اتكلموا مين أكبر ومين أتقل.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1169,8 +1175,8 @@
     },
     {
       "objective": "math.u10.main.08",
-      "text": "Discuss this question with an adult: Put these in order, heaviest first. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «رتّب دول من الأتقل للأخف.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "With an adult's help, compare lifting a chair, a book and a tissue. Put them in order from heaviest to lightest.",
+      "textAr": "بمساعدة الكبير، قارنوا شيلة كرسي وكتاب ومنديل. رتّبوهم من الأتقل للأخف.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1185,8 +1191,8 @@
     },
     {
       "objective": "math.u10.choice.01",
-      "text": "Discuss this question with an adult: A year has... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «السنة فيها…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Turn the pages of a calendar and count one page for each month: 12.",
+      "textAr": "قلّبوا صفحات النتيجة وعدّوا صفحة لكل شهر: ١٢.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1201,8 +1207,8 @@
     },
     {
       "objective": "math.u10.choice.02",
-      "text": "Discuss this question with an adult: On a balance, the heavier side goes... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «في الميزان، الناحية التقيلة بتروح…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Hang two bags on a coat hanger. Put a full can in one and an empty cup in the other, and watch which side goes down.",
+      "textAr": "علّقوا كيسين في شمّاعة. حطّوا علبة مليانة في كيس وكوباية فاضية في التاني، وشوفوا أنهي ناحية بتنزل.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1217,8 +1223,8 @@
     },
     {
       "objective": "math.u10.choice.03",
-      "text": "Discuss this question with an adult: When measuring with cubes, leave... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «لما نقيس بالمكعبات، لازم نسيب…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Measure a book with blocks twice: once with gaps between them and once with none. Talk about which count is right.",
+      "textAr": "قيسوا كتاب بالمكعبات مرتين: مرة فيها مسافات بينهم ومرة من غير. اتكلموا أنهي عدّة صح.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1233,8 +1239,8 @@
     },
     {
       "objective": "math.u10.choice.04",
-      "text": "Discuss this question with an adult: The day after Saturday is... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «اليوم اللي بعد السبت هو…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Lay the days of the week in a circle on the floor. Walk round it and find what comes after Saturday.",
+      "textAr": "اعملوا أيام الأسبوع دايرة على الأرض. امشوا عليها ودوّروا إيه اللي بعد السبت.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1249,8 +1255,8 @@
     },
     {
       "objective": "math.u10.choice.05",
-      "text": "Discuss this question with an adult: Which is the heaviest? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي الأتقل؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "At the market or at home, hold a grape, a strawberry and a watermelon (with help). Talk about which is heaviest.",
+      "textAr": "في السوق أو في البيت، امسكوا حباية عنب وفراولاية وبطيخة (بمساعدة). اتكلموا مين الأتقل.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

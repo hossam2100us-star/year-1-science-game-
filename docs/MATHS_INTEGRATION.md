@@ -226,3 +226,18 @@ picture (`AWAITING_ART` in `scripts/validate_maths_content.py` is empty).
   `scripts/build_maths_content.py`; each step's `source` still holds the
   book's question and answer. Questions about facts ("A triangle has...")
   are unchanged: they already show the shape.
+
+## Home activities and word stickers (teacher review 5, 16 October 2026)
+
+- **A home activity per goal.** The parent report shows a practice activity
+  for each goal the child found hard. All 258 said "Discuss this question
+  with an adult...". Each goal now has its own short activity with things
+  from home (spoons, socks, pencils, a ten frame drawn on paper), in English
+  (`home` in `assets/content/maths_question_text.json`) and Egyptian Arabic
+  (`goal` in `assets/content/maths_parent_ar.json`). The safety note still
+  shows under each one. The Arabic waits for the owner's review
+  (`build/review/maths-home-activities-review.html`, built locally).
+- **Word stickers.** Every Maths sticker showed the same calculator icon.
+  Each word now has a small picture of its own (`STICKER_PICTURES` in
+  `scripts/build_maths_content.py`): three apples for "count", half a circle
+  for "half", seven socks for "odd", a jug for "capacity"...

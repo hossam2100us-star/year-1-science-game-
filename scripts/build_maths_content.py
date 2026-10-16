@@ -623,6 +623,31 @@ PICTURES={
 }
 PICTURED=set()
 
+# Teacher review 5: every Maths sticker showed the same calculator icon. Each
+# word now has a small picture of its own, drawn like the question pictures.
+STICKER_PICTURES={
+    'count':count(3,'apple'),
+    'add':two_colours(2,3),
+    'side':shape('square'),
+    'pictogram':count(4,'banana'),
+    'zero':count(0),
+    'longer':thing('pencil',height=40,artWidth=150),
+    'Venn diagram':venn(['',''],[('car','both')]),
+    'pattern':{'type':'pattern','items':[{**count(1),'color':c,'width':30,'height':30} for c in ['red','blue','red','blue']]},
+    'tens and ones':two_colours(10,4),
+    'mass':thing('watermelon'),
+    'difference':line(0,10,markers=[7,10]),
+    'half':HALF,
+    'odd':pairs(7),
+    'double':double(3),
+    'face':shape('cube'),
+    'total':count(7,'counter','scattered'),
+    'whole':WHOLE,
+    'capacity':thing('jug'),
+    'count on':{**line(0,10),'from':5,'shown':[1,1,1]},
+    'bar chart':count(4,'cube'),
+}
+
 # Teacher review 5: questions that asked what a word means now ask about a
 # picture (the owner chose this for the definitions on 14 October 2026).
 # The book's question and answer stay in each step's source for the parent.
@@ -1065,12 +1090,14 @@ def build():
                 'parentReview':{'en':'Guided practice is ungraded. Completion records the child doing the activities, not a book-question score.'}})
         for record,spec in zip(records,adapted):
             steps.append(playable_step(draft,record,spec,len(steps)+1,hint,'Look carefully at the groups and explain how you found your answer.'))
-        goals=[{'objective':s['objective'],'text':f'Discuss this question with an adult: {s["prompt"]} Use safe objects or drawings and explain the reasoning.',
+        # One home activity per goal, written for its question (teacher
+        # review 5: every goal had the same "Discuss this question" text).
+        goals=[{'objective':s['objective'],'text':question_text()[s['objective']]['home'],
             'textAr':arabic['goal'][f"{ident}/{s['objective']}"],'safety':SAFETY,'safetyAr':arabic['safety'][SAFETY],'pages':s['source']['pages'],'safetyPages':[2],'adapted':True} for s in steps if s['assessed']]
         word,meaning=WORDS[unit-1] if ident.startswith('math_unit_') else ('bar chart','A chart where the end of each bar shows a number.') if ident=='math_charts' else ('count on','Start with a number and add forward jumps.')
         book={'schemaVersion':1,'contentVersion':2,'id':ident,'subject':'maths','title':draft['title'],'quiz':quiz,
             'sourceSha256':draft['sourceSha256'],'sourcePages':draft['sourcePages'],'steps':steps,
-            'stickers':[{'id':f'{ident}.sticker','word':word,'art':'math_label','meaning':meaning,
+            'stickers':[{'id':f'{ident}.sticker','word':word,'art':'math_label','picture':STICKER_PICTURES[word],'meaning':meaning,
                 'meaningSource':'adapted_from_big_idea','sourcePages':draft['sourcePages']}],
             'homeActivities':[{'text':home,'textAr':arabic['home'][ident],'safety':SAFETY,'safetyAr':arabic['safety'][SAFETY],'pages':draft['sourcePages'],'safetyPages':[2],'adapted':True}],
             'goalActivities':goals,'parentNote':{'en':'Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.',

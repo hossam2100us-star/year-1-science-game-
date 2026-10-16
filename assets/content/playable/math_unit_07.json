@@ -1030,6 +1030,19 @@
       "id": "math_unit_07.sticker",
       "word": "Venn diagram",
       "art": "math_label",
+      "picture": {
+        "type": "venn",
+        "labels": [
+          "",
+          ""
+        ],
+        "items": [
+          {
+            "item": "car",
+            "region": "both"
+          }
+        ]
+      },
       "meaning": "Sorting hoops with an overlap for things that fit both labels.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -1059,8 +1072,8 @@
   "goalActivities": [
     {
       "objective": "math.u07.main.01",
-      "text": "Discuss this question with an adult: Which object belongs in both red and has wheels? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي حاجة تتحط في «أحمر» وفي «ليه عجل» مع بعض؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make two string hoops on the floor: \"red\" and \"has wheels\". Your child puts a red toy car in the overlap.",
+      "textAr": "اعملوا دايرتين بخيط على الأرض: «أحمر» و«ليه عجل». طفلك يحط عربية لعبة حمرا في الجزء المشترك.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1075,8 +1088,8 @@
     },
     {
       "objective": "math.u07.main.02",
-      "text": "Discuss this question with an adult: Why does the red car belong in the overlap? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «ليه العربية الحمرا تتحط في الحتة المشتركة؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Ask your child where a red car goes and why: it is red and it has wheels.",
+      "textAr": "اسألوا طفلك العربية الحمرا تتحط فين وليه: علشان حمرا وليها عجل.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1091,8 +1104,8 @@
     },
     {
       "objective": "math.u07.main.03",
-      "text": "Discuss this question with an adult: Choose the objects that fit neither red nor has wheels. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «اختار الحاجات اللي لا هي حمرا ولا ليها عجل.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Find things that are not red and have no wheels (a green leaf, a blue ball). Put them outside both hoops.",
+      "textAr": "دوّروا على حاجات مش حمرا ومالهاش عجل (ورقة شجر خضرا، كورة زرقا). حطّوهم برّه الدايرتين.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1107,8 +1120,8 @@
     },
     {
       "objective": "math.u07.main.04",
-      "text": "Discuss this question with an adult: Sort the numbers into the Carroll diagram. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «قسّم الأرقام في جدول التصنيف (جدول كارول).» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Draw two columns: \"less than 10\" and \"not less than 10\". Your child sorts number cards from 1 to 20, thinking hard about 10.",
+      "textAr": "ارسموا عمودين: «أقل من ١٠» و«مش أقل من ١٠». طفلك يقسّم كروت أرقام من ١ لـ٢٠، ويفكّر كويس في الـ١٠.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1123,8 +1136,8 @@
     },
     {
       "objective": "math.u07.main.05",
-      "text": "Discuss this question with an adult: How many children have a cat? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام طفل عنده قطة؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make a block graph of the pets your family and friends have. Your child counts the blocks in the cat column.",
+      "textAr": "اعملوا رسم بالمكعبات للحيوانات الأليفة عند العيلة والأصحاب. طفلك يعدّ مكعبات عمود القطط.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1139,8 +1152,8 @@
     },
     {
       "objective": "math.u07.main.06",
-      "text": "Discuss this question with an adult: How many more cats than dogs? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «القطط أكتر من الكلاب بكام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put the cat and dog towers side by side. Your child counts how many extra blocks the taller tower has.",
+      "textAr": "حطّوا برج القطط وبرج الكلاب جنب بعض. طفلك يعدّ البرج الأطول فيه كام مكعب زيادة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1155,8 +1168,8 @@
     },
     {
       "objective": "math.u07.main.07",
-      "text": "Discuss this question with an adult: An object that fits both labels belongs in the overlap. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الحاجة اللي ينطبق عليها الوصفين تتحط في الحتة المشتركة.» صح ولا غلط؟ استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Play a sorting game with two hoops. Each time something fits both labels, your child puts it in the overlap.",
+      "textAr": "العبوا لعبة تقسيم بدايرتين. كل ما حاجة تنفع للاتنين، طفلك يحطها في الجزء المشترك.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1171,8 +1184,8 @@
     },
     {
       "objective": "math.u07.choice.01",
-      "text": "Discuss this question with an adult: The overlap in a Venn diagram is for things that are... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الحتة المشتركة في رسم ڤن بتاعة الحاجات اللي…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Use two hoops, \"fruit\" and \"red\". Ask where a red apple goes and why.",
+      "textAr": "استخدموا دايرتين: «فاكهة» و«أحمر». اسألوا التفاحة الحمرا تتحط فين وليه.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1187,8 +1200,8 @@
     },
     {
       "objective": "math.u07.choice.02",
-      "text": "Discuss this question with an adult: Where does 10 go? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الـ ١٠ تتحط فين؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Write 10 on a card and ask: is it less than 10? Talk about why 10 is not less than 10.",
+      "textAr": "اكتبوا ١٠ على كارت واسألوا: هو أقل من ١٠؟ اتكلموا ليه ١٠ مش أقل من ١٠.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1203,8 +1216,8 @@
     },
     {
       "objective": "math.u07.choice.03",
-      "text": "Discuss this question with an adult: Things that fit neither label go... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الحاجات اللي مالهاش ولا وصف من الاتنين تتحط…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "With two hoops on the floor, give your child something that fits neither label. Where should it go?",
+      "textAr": "والدايرتين على الأرض، ادّوا طفلك حاجة ماتنفعش لأي واحدة فيهم. تتحط فين؟",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1219,8 +1232,8 @@
     },
     {
       "objective": "math.u07.choice.04",
-      "text": "Discuss this question with an adult: In the pets block graph, each block stands for... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «في رسم الحيوانات الأليفة بالمكعبات، كل مكعب معناه…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Build a block graph where each block is one child. Your child adds a block for themself.",
+      "textAr": "ابنوا رسم بالمكعبات كل مكعب فيه لطفل واحد. طفلك يزوّد مكعب لنفسه.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1235,8 +1248,8 @@
     },
     {
       "objective": "math.u07.choice.05",
-      "text": "Discuss this question with an adult: The tallest column shows the... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أطول عمود بيورّينا…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Vote on dinner with blocks. The tallest column shows the most popular choice.",
+      "textAr": "اعملوا تصويت على أكلة العشا بالمكعبات. أطول عمود بيوضّح الاختيار الأشهر.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

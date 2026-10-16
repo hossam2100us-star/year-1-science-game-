@@ -917,6 +917,13 @@
       "id": "math_unit_17.sticker",
       "word": "whole",
       "art": "math_label",
+      "picture": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 2,
+        "equal": true
+      },
       "meaning": "The complete thing before it is cut.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -946,8 +953,8 @@
   "goalActivities": [
     {
       "objective": "math.u17.main.01",
-      "text": "Discuss this question with an adult: Choose how to write one half. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «اختار إزاي نكتب «نص».» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Fold a sheet of paper in half, colour one part and write ½ on it together.",
+      "textAr": "اطّبقوا ورقة نصّين، لوّنوا جزء واكتبوا عليه ½ مع بعض.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -962,8 +969,8 @@
     },
     {
       "objective": "math.u17.main.02",
-      "text": "Discuss this question with an adult: Half of 20 is...? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «نص الـ ٢٠ كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Share 20 blocks into two equal rows. Count one row.",
+      "textAr": "قسّموا ٢٠ مكعب صفّين متساويين. عدّوا صف واحد.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -978,8 +985,8 @@
     },
     {
       "objective": "math.u17.main.03",
-      "text": "Discuss this question with an adult: Half of 14 is...? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «نص الـ ١٤ كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Share 14 spoons between two cups, one at a time, and count each cup.",
+      "textAr": "قسّموا ١٤ معلقة على كوبايتين، واحدة واحدة، وعدّوا كل كوباية.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -994,8 +1001,8 @@
     },
     {
       "objective": "math.u17.main.04",
-      "text": "Discuss this question with an adult: Half of 12 is...? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «نص الـ ١٢ كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make two equal rows from 12 toys and count one row.",
+      "textAr": "اعملوا صفّين متساويين من ١٢ لعبة وعدّوا صف واحد.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1010,8 +1017,8 @@
     },
     {
       "objective": "math.u17.main.05",
-      "text": "Discuss this question with an adult: Choose all shapes with one half coloured. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «اختار كل الأشكال اللي نصها متلوّن.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Fold some shapes in half and colour one part; fold others into unequal parts. Your child picks the ones with one half coloured.",
+      "textAr": "اطّبقوا أشكال نصّين ولوّنوا جزء، واطّبقوا أشكال تانية لأجزاء مش متساوية. طفلك يختار اللي ملوّن فيها نص.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1026,8 +1033,8 @@
     },
     {
       "objective": "math.u17.main.06",
-      "text": "Discuss this question with an adult: Two halves make one... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «النصّين مع بعض يعملوا واحد…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "An adult cuts an apple in half. Put the halves back together: one whole apple.",
+      "textAr": "الكبير يقطع تفاحة نصّين. رجّعوا النصّين مع بعض: تفاحة كاملة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1042,8 +1049,8 @@
     },
     {
       "objective": "math.u17.main.07",
-      "text": "Discuss this question with an adult: Half a team is 5 children. How many are in the whole team? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «نص الفريق ٥ أطفال. الفريق كله كام طفل؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Line up 5 toys as half a team. Your child makes the other half and counts the whole team.",
+      "textAr": "صفّوا ٥ لعب كأنهم نص فريق. طفلك يعمل النص التاني ويعدّ الفريق كله.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1058,8 +1065,8 @@
     },
     {
       "objective": "math.u17.choice.01",
-      "text": "Discuss this question with an adult: Which picture shows ½? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي صورة بتوضّح ½؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Draw shapes cut into 2 equal parts and into 2 unequal parts. Your child colours ½ only where the parts are equal.",
+      "textAr": "ارسموا أشكال متقسّمة جزئين متساويين وأشكال جزئين مش متساويين. طفلك يلوّن ½ بس في اللي أجزاؤه متساوية.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1074,8 +1081,8 @@
     },
     {
       "objective": "math.u17.choice.02",
-      "text": "Discuss this question with an adult: Half of 16 is... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «نص الـ ١٦ هو…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Share 16 pencils between two people, one each in turn, and count each share.",
+      "textAr": "قسّموا ١٦ قلم بين شخصين، واحد لكل واحد بالدور، وعدّوا نصيب كل واحد.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1090,8 +1097,8 @@
     },
     {
       "objective": "math.u17.choice.03",
-      "text": "Discuss this question with an adult: Two halves make... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «النصّين مع بعض يعملوا…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put the two halves of a paper circle together and talk about the whole circle they make.",
+      "textAr": "حطّوا نصّين دايرة ورق جنب بعض واتكلموا عن الدايرة الكاملة اللي بيعملوها.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1106,8 +1113,8 @@
     },
     {
       "objective": "math.u17.choice.04",
-      "text": "Discuss this question with an adult: Half of 18 is... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «نص الـ ١٨ هو…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make 18 with blocks in two equal rows. Count one row.",
+      "textAr": "اعملوا ١٨ بالمكعبات في صفّين متساويين. عدّوا صف واحد.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1122,8 +1129,8 @@
     },
     {
       "objective": "math.u17.choice.05",
-      "text": "Discuss this question with an adult: To find the middle of a string... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عشان نلاقي نص الخيط…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Take a piece of string or ribbon, hold the two ends together and find the fold: that is the middle.",
+      "textAr": "خدوا حتة خيط أو شريط، امسكوا الطرفين مع بعض ودوّروا على مكان الطبقة: ده النص.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

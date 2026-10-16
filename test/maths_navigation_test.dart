@@ -12,6 +12,7 @@ import 'package:science_adventure/core/storage.dart';
 import 'package:science_adventure/features/biology/sticker_album.dart';
 import 'package:science_adventure/features/lesson/lesson_player.dart';
 import 'package:science_adventure/features/lesson/session.dart';
+import 'package:science_adventure/features/maths/maths_visual.dart';
 import 'package:science_adventure/features/world/subject_hub.dart';
 import 'package:science_adventure/features/world/world_map.dart';
 import 'package:science_adventure/l10n/parent_strings.dart';
@@ -222,6 +223,8 @@ void main() {
     await mount(t, const StickerAlbum(subject: 'maths'), store);
     await t.pumpAndSettle();
     expect(find.text(lesson.stickers.first['word'] as String), findsOneWidget);
+    // The earned word shows its own picture, not one icon for every word.
+    expect(find.byType(MathsVisual), findsOneWidget);
     expect(
       find.text(
         'My science words! Finish a unit to earn its stickers. Tap an earned sticker to listen.',

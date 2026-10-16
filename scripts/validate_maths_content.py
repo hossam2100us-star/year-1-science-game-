@@ -326,6 +326,9 @@ def audit(check_idempotence=False,pdf_path=None):
         # Each activity has its own Arabic from maths_parent_ar.json (the first
         # version gave all 280 the same generic sentence).
         assert all(a['textAr']==arabic['goal'][f"{ident}/{a['objective']}"] for a in book['goalActivities']),(ident,'goal Arabic')
+        # A home activity of its own for each goal, not one template.
+        assert all(a['text']==question_text[a['objective']]['home'] for a in book['goalActivities']),(ident,'goal activity')
+        assert not any(a['text'].startswith('Discuss this question') or 'اتكلّم مع طفلك في السؤال ده' in a['textAr'] for a in book['goalActivities']),(ident,'template activity')
         assert all(a['textAr']==arabic['home'][ident] for a in book['homeActivities']),(ident,'home Arabic')
         assert all(a['safetyAr']==arabic['safety'][a['safety']] for a in book['homeActivities']+book['goalActivities'])
         audit_visuals(book)

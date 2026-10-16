@@ -1181,6 +1181,12 @@
       "id": "math_unit_16.sticker",
       "word": "total",
       "art": "math_label",
+      "picture": {
+        "type": "count",
+        "count": 7,
+        "item": "counter",
+        "arrangement": "scattered"
+      },
       "meaning": "How many there are altogether.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -1210,8 +1216,8 @@
   "goalActivities": [
     {
       "objective": "math.u16.main.01",
-      "text": "Discuss this question with an adult: How many children walked? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام طفل جه ماشي؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Ask relatives or friends how they travel to school or work and make a block graph. Count the \"walk\" column.",
+      "textAr": "اسألوا القرايب أو الأصحاب بيروحوا المدرسة أو الشغل إزاي واعملوا رسم بالمكعبات. عدّوا عمود «مشي».",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1226,8 +1232,8 @@
     },
     {
       "objective": "math.u16.main.02",
-      "text": "Discuss this question with an adult: How many came by bus? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام واحد جه بالأتوبيس؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "In your block graph, count the bus column and write the number under it.",
+      "textAr": "في رسم المكعبات بتاعكم، عدّوا عمود الأتوبيس واكتبوا الرقم تحته.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1242,8 +1248,8 @@
     },
     {
       "objective": "math.u16.main.03",
-      "text": "Discuss this question with an adult: Which way was most popular? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي طريقة كانت الأكتر؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Your child finds the tallest column in your graph and says which way was most popular.",
+      "textAr": "طفلك يدوّر على أطول عمود في الرسم ويقول أنهي طريقة كانت الأشهر.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1258,8 +1264,8 @@
     },
     {
       "objective": "math.u16.main.04",
-      "text": "Discuss this question with an adult: Which way was least popular? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي طريقة كانت الأقل؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Find the shortest column and say which way was least popular.",
+      "textAr": "دوّروا على أقصر عمود وقولوا أنهي طريقة كانت الأقل.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1274,8 +1280,8 @@
     },
     {
       "objective": "math.u16.main.05",
-      "text": "Discuss this question with an adult: How many more walked than came by car? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «اللي جم ماشيين أكتر من اللي جم بالعربية بكام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put two towers side by side and count how many more blocks the taller one has.",
+      "textAr": "حطّوا برجين جنب بعض وعدّوا الأطول فيه كام مكعب زيادة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1290,8 +1296,8 @@
     },
     {
       "objective": "math.u16.main.06",
-      "text": "Discuss this question with an adult: How many children are in the graph altogether? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام طفل في الرسم البياني في المجموع؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count every block in your graph to find how many people you asked altogether.",
+      "textAr": "عدّوا كل المكعبات في الرسم عشان تعرفوا سألتوا كام شخص كلهم.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1306,8 +1312,8 @@
     },
     {
       "objective": "math.u16.main.07",
-      "text": "Discuss this question with an adult: Sort the flat shapes by their corners. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «قسّم الأشكال المسطحة حسب عدد أركانها.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Draw round a cup, a book, half a sandwich and an egg. Sort the drawings: has corners, or no corners.",
+      "textAr": "ارسموا حوالين كوباية وكتاب ونص سندوتش وبيضة. قسّموا الرسومات: ليها أركان ولا مالهاش.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1322,8 +1328,8 @@
     },
     {
       "objective": "math.u16.choice.01",
-      "text": "Discuss this question with an adult: The tallest column shows the... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أطول عمود بيورّينا…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Your child builds the tallest tower for the family's favourite game. Talk about why it is the tallest.",
+      "textAr": "طفلك يبني أطول برج للعبة المفضلة عند العيلة. اتكلموا ليه هو الأطول.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1338,8 +1344,8 @@
     },
     {
       "objective": "math.u16.choice.02",
-      "text": "Discuss this question with an adult: How many children came by car? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام طفل جه بالعربية؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count the car column in your graph, touching each block once.",
+      "textAr": "عدّوا عمود العربية في الرسم، والمسوا كل مكعب مرة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1354,8 +1360,8 @@
     },
     {
       "objective": "math.u16.choice.03",
-      "text": "Discuss this question with an adult: How many came by bus and bike together? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام واحد جه بالأتوبيس والعجلة مع بعض؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count two columns of your graph together and say the total.",
+      "textAr": "عدّوا عمودين من الرسم مع بعض وقولوا المجموع.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1370,8 +1376,8 @@
     },
     {
       "objective": "math.u16.choice.04",
-      "text": "Discuss this question with an adult: Which part of this graph tells us what it is about? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي جزء في الرسم البياني بيقولنا هو عن إيه؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make a graph together and let your child write or draw its title at the top.",
+      "textAr": "اعملوا رسم بياني مع بعض، وخلّوا طفلك يكتب أو يرسم العنوان فوق.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1386,8 +1392,8 @@
     },
     {
       "objective": "math.u16.choice.05",
-      "text": "Discuss this question with an adult: Look at the fish column. How many children chose fish? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «بُص على عمود السمك. كام طفل اختار السمك؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Add a column to your graph that nobody chose. Your child says how many blocks it has: zero.",
+      "textAr": "زوّدوا عمود في الرسم محدش اختاره. طفلك يقول فيه كام مكعب: صفر.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

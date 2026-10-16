@@ -1012,6 +1012,10 @@
       "id": "math_unit_15.sticker",
       "word": "face",
       "art": "math_label",
+      "picture": {
+        "type": "shape",
+        "shape": "cube"
+      },
       "meaning": "A flat or curved part of a solid shape.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -1041,8 +1045,8 @@
   "goalActivities": [
     {
       "objective": "math.u15.main.01",
-      "text": "Discuss this question with an adult: How many faces does a cube have? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «المكعب ليه كام وش؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Hold a dice or a cube-shaped box. Put a sticker on each face as you count: 6 faces.",
+      "textAr": "امسكوا حجر زهر أو علبة مكعبة. حطّوا ستيكر على كل وش وإنتو بتعدّوا: ٦ وشوش.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1057,8 +1061,8 @@
     },
     {
       "objective": "math.u15.main.02",
-      "text": "Discuss this question with an adult: How many corners does a cube have? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «المكعب ليه كام ركن؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count the corners of a cube-shaped box, touching each one once: 4 on top and 4 underneath.",
+      "textAr": "عدّوا أركان علبة شكلها مكعب، والمسوا كل ركن مرة: ٤ فوق و٤ تحت.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1073,8 +1077,8 @@
     },
     {
       "objective": "math.u15.main.03",
-      "text": "Discuss this question with an adult: Are these the same shape? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «دول نفس الشكل؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Turn a box on its side and on its end. Ask each time: is it still the same shape?",
+      "textAr": "اقلبوا علبة على جنبها وعلى طرفها. اسألوا كل مرة: لسه نفس الشكل؟",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1089,8 +1093,8 @@
     },
     {
       "objective": "math.u15.main.04",
-      "text": "Discuss this question with an adult: How many flat faces does a cylinder have? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الأسطوانة ليها كام وش مسطح؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Hold a tin and find its flat faces, top and bottom. Feel the curved side in between.",
+      "textAr": "امسكوا علبة صفيح ودوّروا على وشوشها المسطّحة، فوق وتحت. حسّوا الجنب المدوّر اللي بينهم.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1105,8 +1109,8 @@
     },
     {
       "objective": "math.u15.main.05",
-      "text": "Discuss this question with an adult: sphere, cube, cube, sphere, cube, cube... What comes next? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كورة، مكعب، مكعب، كورة، مكعب، مكعب… إيه اللي بعده؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make a pattern with balls and boxes: ball, box, box, ball, box, box. Your child says what comes next.",
+      "textAr": "اعملوا نمط بكور وعلب: كورة، علبة، علبة، كورة، علبة، علبة. طفلك يقول إيه اللي بعده.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1121,8 +1125,8 @@
     },
     {
       "objective": "math.u15.main.07",
-      "text": "Discuss this question with an adult: Sort the solid shapes by their faces. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «قسّم المجسمات حسب وشوشها.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Collect a ball, a tin, a box and a party hat. Sort them: has a curved face, or only flat faces.",
+      "textAr": "هاتوا كورة وعلبة صفيح وعلبة كرتون وطرطور حفلة. قسّموهم: ليه وش مدوّر، ولا وشوشه كلها مسطّحة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1137,8 +1141,8 @@
     },
     {
       "objective": "math.u15.main.08",
-      "text": "Discuss this question with an adult: The robot faces up. Choose both routes that reach the star two spaces up and two right. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الروبوت بيبص لفوق. اختار الطريقين اللي يوصلوا للنجمة اللي فوق بخانتين وعلى اليمين بخانتين.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make a grid on the floor with chalk or tape. Your child gives you robot commands (forwards, turn right) to reach a toy.",
+      "textAr": "اعملوا شبكة مربعات على الأرض بطباشير أو شريط لاصق. طفلك يدّيكم أوامر روبوت (لقدّام، لِف يمين) عشان توصلوا للعبة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1153,8 +1157,8 @@
     },
     {
       "objective": "math.u15.choice.01",
-      "text": "Discuss this question with an adult: A shape that is turned round... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الشكل لما نلفّه…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Turn a paper triangle in different ways. Each time, ask your child to name it.",
+      "textAr": "لفّوا مثلث ورق بطرق مختلفة. كل مرة اسألوا طفلك اسمه إيه.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1169,8 +1173,8 @@
     },
     {
       "objective": "math.u15.choice.02",
-      "text": "Discuss this question with an adult: A cone has... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «المخروط ليه…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Look at an ice cream cone or a party hat. Find its one pointy corner and its round flat face.",
+      "textAr": "بصّوا على كوز آيس كريم أو طرطور حفلة. دوّروا على الركن المدبّب الوحيد والوش المدوّر المسطّح.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1185,8 +1189,8 @@
     },
     {
       "objective": "math.u15.choice.03",
-      "text": "Discuss this question with an adult: A sphere has... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الكورة ليها…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Roll an orange between your hands. Talk about how a sphere has one curved face and no corners.",
+      "textAr": "دحرجوا برتقانة بين إيديكم. اتكلموا إن الكرة ليها وش واحد مدوّر ومالهاش أركان.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1201,8 +1205,8 @@
     },
     {
       "objective": "math.u15.choice.04",
-      "text": "Discuss this question with an adult: A cuboid has... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «متوازي المستطيلات ليه…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count the faces of a tissue box, putting a hand on each one: 6.",
+      "textAr": "عدّوا وشوش علبة مناديل، وحطّوا إيدكم على كل وش: ٦.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1217,8 +1221,8 @@
     },
     {
       "objective": "math.u15.choice.05",
-      "text": "Discuss this question with an adult: A triangle has... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «المثلث ليه…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make a triangle with three spoons. Count the sides.",
+      "textAr": "اعملوا مثلث بـ٣ معالق. عدّوا الأضلاع.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

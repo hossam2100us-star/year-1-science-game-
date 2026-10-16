@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/providers.dart';
 import '../../core/widgets.dart';
 import '../../games/science_art.dart';
+import '../maths/maths_visual.dart';
 
 class StickerAlbum extends ConsumerWidget {
   const StickerAlbum({super.key, this.subject = 'science'});
@@ -92,6 +93,13 @@ class StickerAlbum extends ConsumerWidget {
                                   if (earned.contains(entry.key))
                                     if (subject == 'science')
                                       SciencePicture(art: entry.key)
+                                    // Each Maths word has its own picture
+                                    // (teacher review 5: all showed one icon).
+                                    else if (entry.value['picture']
+                                        case final Map<String, dynamic> picture)
+                                      MathsVisual(
+                                        data: {...picture, 'height': 64},
+                                      )
                                     else
                                       const Icon(
                                         Icons.calculate_rounded,

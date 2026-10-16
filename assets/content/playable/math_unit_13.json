@@ -1066,6 +1066,12 @@
       "id": "math_unit_13.sticker",
       "word": "odd",
       "art": "math_label",
+      "picture": {
+        "type": "count",
+        "count": 7,
+        "item": "sock",
+        "arrangement": "pairs"
+      },
       "meaning": "A number that makes pairs with one left over.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -1095,8 +1101,8 @@
   "goalActivities": [
     {
       "objective": "math.u13.main.01",
-      "text": "Discuss this question with an adult: Choose all the even numbers. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «اختار كل الأرقام الزوجية.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Pair up socks or shoes for numbers like 2, 5, 8 and 11. Your child sorts the numbers into \"none left over\" and \"one left over\".",
+      "textAr": "اعملوا أزواج شرابات أو جزم لأرقام زي ٢ و٥ و٨ و١١. طفلك يقسّم الأرقام لـ«مافيش فردة فاضلة» و«فيه فردة فاضلة».",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1111,8 +1117,8 @@
     },
     {
       "objective": "math.u13.main.02",
-      "text": "Discuss this question with an adult: Is 7 odd or even? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «٧ فردي ولا زوجي؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put out 7 socks and make pairs. Your child finds the sock left alone, so 7 is odd.",
+      "textAr": "حطّوا ٧ شرابات واعملوهم أزواج. طفلك يلاقي الفردة اللي فضلت لوحدها، يبقى ٧ فردي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1127,8 +1133,8 @@
     },
     {
       "objective": "math.u13.main.03",
-      "text": "Discuss this question with an adult: Count in twos and fill the gaps. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عدّ اتنين اتنين وكمّل الأماكن الفاضية.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count the shoes by the door in twos: 2, 4, 6, 8, 10.",
+      "textAr": "عدّوا الجزم اللي عند الباب بالاتنين: ٢، ٤، ٦، ٨، ١٠.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1143,8 +1149,8 @@
     },
     {
       "objective": "math.u13.main.04",
-      "text": "Discuss this question with an adult: Ali came 1st, Mona 2nd and Omar 3rd. Who came 2nd? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «علي جه الأول، ومنى التانية، وعمر التالت. مين جه التاني؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Have a short race with toys or family members. Say who came 1st, 2nd and 3rd.",
+      "textAr": "اعملوا سباق قصير بلعب أو بأهل البيت. قولوا مين جه الأول والتاني والتالت.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1159,8 +1165,8 @@
     },
     {
       "objective": "math.u13.main.05",
-      "text": "Discuss this question with an adult: Which position means the third star from the left? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي ترتيب معناه النجمة التالتة من الشمال؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Line up 5 toys. Your child points to the 1st, the 2nd and the 3rd from the left.",
+      "textAr": "صفّوا ٥ لعب. طفلك يشاور على الأولى والتانية والتالتة من الشمال.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1175,8 +1181,8 @@
     },
     {
       "objective": "math.u13.main.06",
-      "text": "Discuss this question with an adult: Fill the parts of 14. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كمّل أجزاء الـ ١٤.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make 14 with blocks and split it in different ways: 10 and 4, 7 and 7. Count each part.",
+      "textAr": "اعملوا ١٤ بالمكعبات وقسّموهم بطرق مختلفة: ١٠ و٤، ٧ و٧. عدّوا كل جزء.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1191,8 +1197,8 @@
     },
     {
       "objective": "math.u13.main.07",
-      "text": "Discuss this question with an adult: Which coin is worth the most? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي عملة قيمتها أكبر؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Look at real coins together (25 and 50 piastres and 1 pound). Read the number on each and find the one worth most.",
+      "textAr": "بصّوا على عُملات حقيقية مع بعض (٢٥ و٥٠ قرش وجنيه). اقروا الرقم اللي على كل واحدة ودوّروا على الأغلى.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1207,8 +1213,8 @@
     },
     {
       "objective": "math.u13.main.08",
-      "text": "Discuss this question with an adult: You have 5 pairs of socks. How many socks? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «معاك ٥ أزواج شرابات. يبقى عندك كام فردة؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put 5 pairs of socks on the bed and count every sock in twos.",
+      "textAr": "حطّوا ٥ أزواج شرابات على السرير وعدّوا كل الشرابات بالاتنين.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1223,8 +1229,8 @@
     },
     {
       "objective": "math.u13.choice.01",
-      "text": "Discuss this question with an adult: Put these 6 socks in pairs. How many are left over? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «رتّب ٦ شرابات أزواج. كام فردة هتفضل لوحدها؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Pair up 6 socks from the laundry. Your child checks whether any sock is left alone.",
+      "textAr": "اعملوا أزواج من ٦ شرابات من الغسيل. طفلك يشوف لو فيه فردة فضلت لوحدها.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1239,8 +1245,8 @@
     },
     {
       "objective": "math.u13.choice.02",
-      "text": "Discuss this question with an adult: Which number is odd? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي رقم فردي؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Try pairing 9, 12 and 4 spoons. Your child finds the number that leaves one spoon alone.",
+      "textAr": "جرّبوا تعملوا أزواج من ٩ و١٢ و٤ معالق. طفلك يلاقي الرقم اللي بيفضّل معلقة لوحدها.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1255,8 +1261,8 @@
     },
     {
       "objective": "math.u13.choice.03",
-      "text": "Discuss this question with an adult: The position after 2nd is... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الترتيب اللي بعد التاني هو…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Queue toys in a line for a bus. Ask who is 2nd and who comes after them.",
+      "textAr": "صفّوا لعب في طابور للأتوبيس. اسألوا مين التاني ومين اللي بعده.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1271,8 +1277,8 @@
     },
     {
       "objective": "math.u13.choice.04",
-      "text": "Discuss this question with an adult: In Egypt we pay with... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «في مصر بندفع بـ…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Look at coins and a note together and talk about pounds and piastres. Let your child hand over the money when you buy something small.",
+      "textAr": "بصّوا على عُملات وورقة فلوس مع بعض واتكلموا عن الجنيه والقرش. خلّوا طفلك يدفع لما تشتروا حاجة صغيرة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1287,8 +1293,8 @@
     },
     {
       "objective": "math.u13.choice.05",
-      "text": "Discuss this question with an adult: 12 = 10 + Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «١٢ يبقوا ١٠ وكام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make 12 with a bundle of ten pencils and 2 loose ones. Your child says: 12 is 10 and 2.",
+      "textAr": "اعملوا ١٢ بربطة ١٠ أقلام و٢ سايبين. طفلك يقول: ١٢ هي ١٠ و٢.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

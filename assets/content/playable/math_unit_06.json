@@ -1005,6 +1005,14 @@
       "id": "math_unit_06.sticker",
       "word": "longer",
       "art": "math_label",
+      "picture": {
+        "type": "object",
+        "items": [
+          "pencil"
+        ],
+        "height": 40,
+        "artWidth": 150
+      },
       "meaning": "Having greater length when the ends line up.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -1034,8 +1042,8 @@
   "goalActivities": [
     {
       "objective": "math.u06.main.01",
-      "text": "Discuss this question with an adult: When do you usually eat breakfast? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عادةً بتفطر إمتى؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "At breakfast, talk about the time of day: morning. Name things you do in the morning, the afternoon and the evening.",
+      "textAr": "وقت الفطار اتكلموا عن الوقت ده من اليوم: الصبح. سمّوا حاجات بتعملوها الصبح وبعد الضهر وبالليل.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1050,8 +1058,8 @@
     },
     {
       "objective": "math.u06.main.02",
-      "text": "Discuss this question with an adult: When do you usually go to sleep? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عادةً بتنام إمتى؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Draw a sun and a moon. Your child puts drawings of daily jobs (breakfast, school, sleep) under the right one.",
+      "textAr": "ارسموا شمس وقمر. طفلك يحط رسومات حاجات اليوم (الفطار، المدرسة، النوم) تحت الصح.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1066,8 +1074,8 @@
     },
     {
       "objective": "math.u06.main.03",
-      "text": "Discuss this question with an adult: Put these parts of a school day in order. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «رتّب أجزاء يوم المدرسة دي.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Draw three pictures: waking up, going to school, eating dinner. Your child puts them in order and tells the day as a story.",
+      "textAr": "ارسموا ٣ صور: الصحيان، والروحة للمدرسة، والعشا. طفلك يرتّبهم ويحكي اليوم كأنه حكاية.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1082,8 +1090,8 @@
     },
     {
       "objective": "math.u06.main.04",
-      "text": "Discuss this question with an adult: Which takes longer? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي بياخد وقت أطول؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Compare brushing your teeth with a night's sleep, from bedtime to waking up. Talk about which takes longer.",
+      "textAr": "قارنوا غسيل السنان بالنوم بالليل، من وقت النوم للصحيان. اتكلموا أنهي بياخد وقت أطول.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1098,8 +1106,8 @@
     },
     {
       "objective": "math.u06.main.05",
-      "text": "Discuss this question with an adult: Which takes a shorter time? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي بياخد وقت أقصر؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Blink, clap and hum a song. Your child says which one is over the quickest.",
+      "textAr": "رمّشوا وصقّفوا ودندنوا أغنية. طفلك يقول أنهي فيهم بيخلص أسرع.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1114,8 +1122,8 @@
     },
     {
       "objective": "math.u06.main.06",
-      "text": "Discuss this question with an adult: Compare the ribbons. Choose the longest and shortest. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «قارن الشرايط. اختار الأطول والأقصر.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Lay three ribbons or strings side by side with one end lined up. Your child finds the longest and the shortest.",
+      "textAr": "حطّوا ٣ شرايط أو خيوط جنب بعض وطرفهم على خط واحد. طفلك يدوّر على الأطول والأقصر.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1130,8 +1138,8 @@
     },
     {
       "objective": "math.u06.main.07",
-      "text": "Discuss this question with an adult: To compare two pencils, put their ends on the same line. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عشان نقارن قلمين، نحط أطرافهم على نفس الخط.» صح ولا غلط؟ استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Compare two spoons, first with one end lined up and then with the ends apart. Talk about which way is fair.",
+      "textAr": "قارنوا معلقتين، الأول وطرفهم على خط واحد، وبعدين والأطراف بعيدة عن بعض. اتكلموا أنهي طريقة صح.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1146,8 +1154,8 @@
     },
     {
       "objective": "math.u06.choice.01",
-      "text": "Discuss this question with an adult: The Moon and stars come out at... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «القمر والنجوم بيطلعوا…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Look out of the window at night and find the Moon. Talk about when we see the Moon and the stars.",
+      "textAr": "بصّوا من الشباك بالليل ودوّروا على القمر. اتكلموا إمتى بنشوف القمر والنجوم.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1162,8 +1170,8 @@
     },
     {
       "objective": "math.u06.choice.02",
-      "text": "Discuss this question with an adult: We usually have dinner in the... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عادةً بنتعشى…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "At dinner, ask: is it morning, evening or the middle of the night? Look outside to check.",
+      "textAr": "وقت العشا اسألوا: إحنا دلوقتي الصبح ولا بالليل ولا نص الليل؟ بصّوا برّه وشوفوا.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1178,8 +1186,8 @@
     },
     {
       "objective": "math.u06.choice.03",
-      "text": "Discuss this question with an adult: Which is usually the longest? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي واحد عادةً بيبقى الأطول؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Lay a piece of string along a spoon, a shoe and a bed. Your child finds the longest.",
+      "textAr": "حطّوا حتة خيط على طول معلقة وجزمة وسرير. طفلك يدوّر على الأطول.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1194,8 +1202,8 @@
     },
     {
       "objective": "math.u06.choice.04",
-      "text": "Discuss this question with an adult: To compare lengths fairly, line up the... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عشان نقارن الأطوال بالعدل، نحط على نفس الخط…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Stand two pencils with their ends against a book. Your child says which is longer and why the ends must be together.",
+      "textAr": "حطّوا قلمين وطرفهم لازق في كتاب. طفلك يقول أنهي أطول وليه لازم الأطراف تكون مع بعض.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1210,8 +1218,8 @@
     },
     {
       "objective": "math.u06.choice.05",
-      "text": "Discuss this question with an adult: The opposite of longer is... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عكس «أطول» هو…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Compare two scarves or ribbons. Say \"this one is longer\" and your child says the other one \"is shorter\".",
+      "textAr": "قارنوا شالين أو شريطين. قولوا «ده أطول»، وطفلك يقول عن التاني «ده أقصر».",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

@@ -1177,6 +1177,12 @@
       "id": "math_unit_04.sticker",
       "word": "pictogram",
       "art": "math_label",
+      "picture": {
+        "type": "count",
+        "count": 4,
+        "item": "banana",
+        "arrangement": "row"
+      },
       "meaning": "A chart where each picture stands for one thing.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -1206,8 +1212,8 @@
   "goalActivities": [
     {
       "objective": "math.u04.main.01",
-      "text": "Discuss this question with an adult: How many people chose apple? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام واحد اختار التفاح؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Ask each family member for a favourite fruit and put one spoon in that fruit's row. Count the apple row.",
+      "textAr": "اسألوا أهل البيت عن فاكهتهم المفضلة، وكل واحد يحط معلقة في صف الفاكهة دي. عدّوا صف التفاح.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1222,8 +1228,8 @@
     },
     {
       "objective": "math.u04.main.02",
-      "text": "Discuss this question with an adult: Which fruit is the favourite? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي فاكهة هي المفضلة؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Look at your spoon chart. Your child finds the longest row: that fruit is the favourite.",
+      "textAr": "بصّوا على رسم المعالق. طفلك يدوّر على أطول صف: الفاكهة دي هي المفضلة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1238,8 +1244,8 @@
     },
     {
       "objective": "math.u04.main.03",
-      "text": "Discuss this question with an adult: Which fruit did the fewest people choose? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي فاكهة أقل ناس اختاروها؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "In the same chart, find the shortest row: the fruit the fewest people chose.",
+      "textAr": "في نفس الرسم، دوّروا على أقصر صف: الفاكهة اللي أقل ناس اختاروها.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1254,8 +1260,8 @@
     },
     {
       "objective": "math.u04.main.04",
-      "text": "Discuss this question with an adult: How many chose banana and orange together? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام واحد اختار الموز والبرتقان مع بعض؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count the banana row and the orange row, then count both rows together.",
+      "textAr": "عدّوا صف الموز وصف البرتقان، وبعدين عدّوا الصفّين مع بعض.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1270,8 +1276,8 @@
     },
     {
       "objective": "math.u04.main.05",
-      "text": "Discuss this question with an adult: How many people were asked altogether? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «سألنا كام واحد في المجموع؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count every spoon in the chart: one spoon for each person asked.",
+      "textAr": "عدّوا كل المعالق في الرسم: كل معلقة لشخص اتسأل.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1286,8 +1292,8 @@
     },
     {
       "objective": "math.u04.main.06",
-      "text": "Discuss this question with an adult: Sort the toys by colour. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «قسّم اللعب حسب اللون.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Sort a few toys into two groups: red and not red. Your child explains where each toy goes and why.",
+      "textAr": "قسّموا كام لعبة لمجموعتين: أحمر ومش أحمر. طفلك يشرح كل لعبة راحت فين وليه.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1302,8 +1308,8 @@
     },
     {
       "objective": "math.u04.main.07",
-      "text": "Discuss this question with an adult: Sara, Laila and Nour chose cat. Omar chose dog. Adam chose fish. Match each pet to its total. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «سارة وليلى ونور اختاروا القطة، وعمر اختار الكلب، وآدم اختار السمكة. وصّل كل حيوان بالمجموع بتاعه.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Ask family and friends which pet they like and draw one line for each answer: cat, dog or fish. Count each total.",
+      "textAr": "اسألوا العيلة والأصحاب بيحبوا أنهي حيوان أليف، وارسموا شَرطة لكل إجابة: قطة أو كلب أو سمكة. عدّوا مجموع كل واحد.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1318,8 +1324,8 @@
     },
     {
       "objective": "math.u04.choice.01",
-      "text": "Discuss this question with an adult: In our pictogram, each picture stands for... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «في الرسم بالصور بتاعنا، كل صورة معناها…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make a picture chart where each drawing is one person. Your child points to a drawing and says who it stands for.",
+      "textAr": "اعملوا رسم بالصور كل صورة فيه لشخص واحد. طفلك يشاور على صورة ويقول دي مين.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1334,8 +1340,8 @@
     },
     {
       "objective": "math.u04.choice.02",
-      "text": "Discuss this question with an adult: The longest row in a pictogram shows the... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أطول صف في الرسم بالصور بيورّينا…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make two rows of cups for two drinks the family likes. The longer row shows the drink most people chose.",
+      "textAr": "اعملوا صفّين كوبايات لمشروبين بيحبهم أهل البيت. الصف الأطول بيوضّح المشروب اللي أكتر ناس اختاروه.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1350,8 +1356,8 @@
     },
     {
       "objective": "math.u04.choice.03",
-      "text": "Discuss this question with an adult: Look at the graph. What is it made of? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «بُص على الرسم البياني. معمول من إيه؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Build a block graph with blocks or Lego: one block for each person's vote. Talk about how each column is built from equal blocks.",
+      "textAr": "ابنوا رسم بياني بالمكعبات أو الليجو: مكعب لكل صوت. اتكلموا إن كل عمود معمول من مكعبات قد بعض.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1366,8 +1372,8 @@
     },
     {
       "objective": "math.u04.choice.04",
-      "text": "Discuss this question with an adult: In the picture above, how many people chose orange? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «في الصورة اللي فوق، كام واحد اختار البرتقان؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "In your picture chart, your child counts the pictures in one row and says how many people chose that fruit.",
+      "textAr": "في رسم الصور بتاعكم، طفلك يعدّ صور صف واحد ويقول كام شخص اختار الفاكهة دي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1382,8 +1388,8 @@
     },
     {
       "objective": "math.u04.choice.05",
-      "text": "Discuss this question with an adult: Pictures in a pictogram should be... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الصور في الرسم بالصور لازم تكون…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make two rows of drawings, one spread out and one lined up. Talk about which one is fair to compare.",
+      "textAr": "اعملوا صفّين رسومات، واحد متفرّق وواحد مترصّ. اتكلموا أنهي ينفع نقارن بيه بالعدل.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

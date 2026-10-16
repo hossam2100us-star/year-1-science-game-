@@ -1095,6 +1095,15 @@
       "id": "math_unit_09.sticker",
       "word": "tens and ones",
       "art": "math_label",
+      "picture": {
+        "type": "count",
+        "count": 14,
+        "item": "dot",
+        "arrangement": "row",
+        "color": "red",
+        "split": 10,
+        "color2": "blue"
+      },
       "meaning": "16 is one ten and six ones.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -1124,8 +1133,8 @@
   "goalActivities": [
     {
       "objective": "math.u09.main.01",
-      "text": "Discuss this question with an adult: What number do the ten and ones make? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «العشرة والآحاد دول يعملوا رقم كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Bundle 10 straws or pencils and put 4 loose ones beside them. Count on from ten: 11, 12, 13, 14.",
+      "textAr": "اربطوا ١٠ شفاطات أو أقلام وحطّوا جنبهم ٤ سايبين. عدّوا من العشرة: ١١، ١٢، ١٣، ١٤.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1140,8 +1149,8 @@
     },
     {
       "objective": "math.u09.main.02",
-      "text": "Discuss this question with an adult: What number do the ten and ones make? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «العشرة والآحاد دول يعملوا رقم كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Show 10 fingers on your hands and 9 on your child's. Count on from ten to find 19.",
+      "textAr": "افردوا ١٠ صوابع بإيديكم و٩ بإيدين طفلك. عدّوا من العشرة لحد ١٩.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1156,8 +1165,8 @@
     },
     {
       "objective": "math.u09.main.03",
-      "text": "Discuss this question with an adult: Complete: 17 is __ ten and __ ones. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كمّل: ١٧ فيها كام عشرة وكام آحاد؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make 17 with a bundle of ten pencils and some loose ones. Your child says how many tens and how many ones.",
+      "textAr": "اعملوا ١٧ بربطة عشرة أقلام وأقلام سايبة. طفلك يقول كام عشرة وكام آحاد.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1172,8 +1181,8 @@
     },
     {
       "objective": "math.u09.main.04",
-      "text": "Discuss this question with an adult: Complete: 20 is __ tens and __ ones. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كمّل: ٢٠ فيها كام عشرة وكام آحاد؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make two bundles of 10 pencils. Ask how many tens and how many loose ones: 2 tens and no ones.",
+      "textAr": "اعملوا ربطتين كل واحدة ١٠ أقلام. اسألوا كام عشرة وكام سايبين: عشرتين ومافيش آحاد.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1188,8 +1197,8 @@
     },
     {
       "objective": "math.u09.main.05",
-      "text": "Discuss this question with an adult: Put the numbers in order, smallest first. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «رتّب الأرقام من الأصغر للأكبر.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Write 9, 12, 15 and 20 on cards and mix them up. Your child puts them in order, smallest first.",
+      "textAr": "اكتبوا ٩ و١٢ و١٥ و٢٠ على كروت واخلطوهم. طفلك يرتّبهم من الأصغر للأكبر.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1204,8 +1213,8 @@
     },
     {
       "objective": "math.u09.main.06",
-      "text": "Discuss this question with an adult: Count in tens and fill the gaps. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عدّ بالعشرات وكمّل الأماكن الفاضية.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count in tens while jumping: 10, 20, 30, 40, 50. Leave a gap and let your child fill it.",
+      "textAr": "عدّوا بالعشرات وإنتو بتنطّوا: ١٠، ٢٠، ٣٠، ٤٠، ٥٠. سيبوا رقم ناقص وطفلك يكمّله.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1220,8 +1229,8 @@
     },
     {
       "objective": "math.u09.main.07",
-      "text": "Discuss this question with an adult: Count on in tens: 4, 14, __, 34. What is missing? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عدّ لقدّام بالعشرات: ٤، ١٤، …، ٣٤. إيه الناقص؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Start at 4 on a tape measure and jump in tens: 4, 14, 24, 34.",
+      "textAr": "ابدأوا من ٤ على شريط القياس وانطّوا بالعشرات: ٤، ١٤، ٢٤، ٣٤.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1236,8 +1245,8 @@
     },
     {
       "objective": "math.u09.main.08",
-      "text": "Discuss this question with an adult: Omar wrote sixteen as 61. Choose sixteen. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عمر كتب ستاشر كده: ٦١. اختار ستاشر الصح.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Write 16 and 61 on cards. Make 16 with a bundle of ten and 6 loose pencils, and see which card it matches.",
+      "textAr": "اكتبوا ١٦ و٦١ على كروت. اعملوا ١٦ بربطة عشرة و٦ أقلام سايبة، وشوفوا تطابق أنهي كارت.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1252,8 +1261,8 @@
     },
     {
       "objective": "math.u09.choice.01",
-      "text": "Discuss this question with an adult: 13 is... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «١٣ هي…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make 13 with a bundle of ten and 3 loose pencils. Your child says: one ten and three ones.",
+      "textAr": "اعملوا ١٣ بربطة عشرة و٣ أقلام سايبة. طفلك يقول: عشرة واحدة و٣ آحاد.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1268,8 +1277,8 @@
     },
     {
       "objective": "math.u09.choice.02",
-      "text": "Discuss this question with an adult: Ten more than 5 is... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عشرة زيادة على ٥ يبقوا…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put down 5 loose pencils and add a bundle of ten. Count on to find ten more than 5.",
+      "textAr": "حطّوا ٥ أقلام سايبة وزوّدوا ربطة عشرة. عدّوا عشان تعرفوا عشرة أكتر من ٥.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1284,8 +1293,8 @@
     },
     {
       "objective": "math.u09.choice.03",
-      "text": "Discuss this question with an adult: Count in tens: 10, 20, 30, ... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عدّ بالعشرات: ١٠، ٢٠، ٣٠، …» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count everyone's fingers around the table in tens: 10, 20, 30, 40.",
+      "textAr": "عدّوا صوابع كل اللي على السفرة بالعشرات: ١٠، ٢٠، ٣٠، ٤٠.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1300,8 +1309,8 @@
     },
     {
       "objective": "math.u09.choice.04",
-      "text": "Discuss this question with an adult: Which is in order, smallest first? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي مجموعة مترتبة من الأصغر للأكبر؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Write 4, 11 and 18 on cards. Your child lays them on a tape measure in order and reads them smallest first.",
+      "textAr": "اكتبوا ٤ و١١ و١٨ على كروت. طفلك يحطهم على شريط القياس بالترتيب ويقراهم من الأصغر.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1316,8 +1325,8 @@
     },
     {
       "objective": "math.u09.choice.05",
-      "text": "Discuss this question with an adult: Look at 18 as tens and ones. What does the 1 in 18 stand for? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «بُص على ١٨ عشرات وآحاد. الـ ١ في ١٨ معناها إيه؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make 18 with a bundle of ten and 8 loose pencils. Point to the 1 in 18 and to the bundle: both mean one ten.",
+      "textAr": "اعملوا ١٨ بربطة عشرة و٨ أقلام سايبة. شاوروا على الـ١ في ١٨ وعلى الربطة: الاتنين معناهم عشرة واحدة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

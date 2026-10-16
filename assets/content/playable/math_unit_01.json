@@ -990,6 +990,12 @@
       "id": "math_unit_01.sticker",
       "word": "count",
       "art": "math_label",
+      "picture": {
+        "type": "count",
+        "count": 3,
+        "item": "apple",
+        "arrangement": "row"
+      },
       "meaning": "Say one number for each thing, in order.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -1021,8 +1027,8 @@
   "goalActivities": [
     {
       "objective": "math.u01.main.01",
-      "text": "Discuss this question with an adult: Count the apples. How many are there? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عدّ التفاح. فيه كام تفاحة؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put 8 apples or oranges in a row. Your child touches each one and says one number for each.",
+      "textAr": "حطّوا ٨ تفاحات أو برتقانات في صف. طفلك يلمس كل واحدة ويقول رقم واحد لكل واحدة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1038,8 +1044,8 @@
     },
     {
       "objective": "math.u01.main.02",
-      "text": "Discuss this question with an adult: Count the stars. How many are there? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عدّ النجوم. فيه كام نجمة؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Draw 13 stars spread out on paper. Your child ticks each star as it is counted, so none is missed.",
+      "textAr": "ارسموا ١٣ نجمة متفرّقين على ورقة. طفلك يعلّم على كل نجمة وهو بيعدّها، عشان مايفوّتش ولا واحدة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1055,8 +1061,8 @@
     },
     {
       "objective": "math.u01.main.03",
-      "text": "Discuss this question with an adult: Fill the gaps in the number track. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كمّل الأرقام الناقصة في شريط الأرقام.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Write 11 to 20 on a paper strip and cover a few numbers. Your child says the missing numbers.",
+      "textAr": "اكتبوا الأرقام من ١١ لـ٢٠ على شريط ورق وغطّوا كام رقم. طفلك يقول الأرقام الناقصة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1072,8 +1078,8 @@
     },
     {
       "objective": "math.u01.main.04",
-      "text": "Discuss this question with an adult: Match each dot picture to its number. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «وصّل كل صورة نقط بالرقم بتاعها.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Draw dot cards for 4, 6 and 10, and write the numbers on other cards. Your child matches each dot card to its number.",
+      "textAr": "ارسموا كروت نقط لـ٤ و٦ و١٠، واكتبوا الأرقام على كروت تانية. طفلك يوصّل كل كارت نقط برقمه.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1089,8 +1095,8 @@
     },
     {
       "objective": "math.u01.main.06",
-      "text": "Discuss this question with an adult: Sara spreads out 6 cups. Now there are more than 6 cups. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «سارة فرّقت ٦ كوبايات. دلوقتي بقوا أكتر من ٦.» صح ولا غلط؟ استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put 6 cups close together and count them. Spread them out across the table and count again: still 6.",
+      "textAr": "حطّوا ٦ كوبايات جنب بعض وعدّوهم. فرّقوهم على الترابيزة وعدّوا تاني: لسه ٦.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1106,8 +1112,8 @@
     },
     {
       "objective": "math.u01.main.07",
-      "text": "Discuss this question with an adult: Choose the number twelve. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «اختار رقم اتناشر.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Write 12, 21 and 2 on cards. Say \"twelve\" and ask your child to pick the right card: a 1, then a 2.",
+      "textAr": "اكتبوا ١٢ و٢١ و٢ على كروت. قولوا «اتناشر» وطفلك يختار الكارت الصح: ١ وبعده ٢.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1123,8 +1129,8 @@
     },
     {
       "objective": "math.u01.choice.01",
-      "text": "Discuss this question with an adult: The last number you say when you count tells you... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «آخر رقم بتقوله وانت بتعدّ بيقولك…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count 5 shoes together. Ask \"How many shoes?\" and help your child answer with the last number said.",
+      "textAr": "عدّوا ٥ جزم مع بعض. اسألوا «فيه كام جزمة؟» وساعدوا طفلك يجاوب بآخر رقم قاله.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1140,8 +1146,8 @@
     },
     {
       "objective": "math.u01.choice.02",
-      "text": "Discuss this question with an adult: Which number comes just after 15? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «إيه الرقم اللي بعد ١٥ على طول؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count up the stairs or along a ruler. Stop at 15 and ask which number comes just after.",
+      "textAr": "عدّوا وإنتو طالعين السلم أو على مسطرة. اقفوا عند ١٥ واسألوا إيه الرقم اللي بعده على طول.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1157,8 +1163,8 @@
     },
     {
       "objective": "math.u01.choice.03",
-      "text": "Discuss this question with an adult: How many dots fill a whole ten frame? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام نقطة تملا إطار العشرة كله؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Draw a ten frame (2 rows of 5 boxes). Put a dot in each box and count: a full frame holds 10.",
+      "textAr": "ارسموا إطار عشرة (صفّين في كل صف ٥ مربعات). حطّوا نقطة في كل مربع وعدّوا: الإطار المليان فيه ١٠.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1174,8 +1180,8 @@
     },
     {
       "objective": "math.u01.choice.04",
-      "text": "Discuss this question with an adult: Thirteen is written... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «تلاتاشر بتتكتب…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Write 13, 31 and 30 on cards. Say \"thirteen\" and your child picks 13: a ten and three.",
+      "textAr": "اكتبوا ١٣ و٣١ و٣٠ على كروت. قولوا «تلاتاشر» وطفلك يختار ١٣: عشرة وتلاتة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1191,8 +1197,8 @@
     },
     {
       "objective": "math.u01.choice.05",
-      "text": "Discuss this question with an adult: 5 spoons were in a pile. Now they are in a long line. How many spoons are there? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كان فيه ٥ معالق فوق بعض. دلوقتي متصفّفين في صف طويل. فيه كام معلقة؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put 5 spoons in a pile and count them. Lay them in a long line and count again: still 5.",
+      "textAr": "حطّوا ٥ معالق فوق بعض وعدّوهم. افرشوهم في صف طويل وعدّوا تاني: لسه ٥.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

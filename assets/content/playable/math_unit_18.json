@@ -954,6 +954,12 @@
       "id": "math_unit_18.sticker",
       "word": "capacity",
       "art": "math_label",
+      "picture": {
+        "type": "object",
+        "items": [
+          "jug"
+        ]
+      },
       "meaning": "How much a container can hold.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -985,8 +991,8 @@
   "goalActivities": [
     {
       "objective": "math.u18.main.01",
-      "text": "Discuss this question with an adult: What time does this clock show? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الساعة دي بتقول كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Set a toy or paper clock to 4 o'clock. Your child says where the long hand and the short hand point.",
+      "textAr": "ظبطوا ساعة لعبة أو ساعة ورق على ٤. طفلك يقول العقرب الطويل والقصير بيشاوروا فين.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1002,8 +1008,8 @@
     },
     {
       "objective": "math.u18.main.02",
-      "text": "Discuss this question with an adult: What time does this clock show? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الساعة دي بتقول كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "At half past seven, look at a clock together: the long hand points to 6 and the short hand is between 7 and 8.",
+      "textAr": "الساعة ٧ ونص بصّوا على الساعة مع بعض: العقرب الطويل على ٦ والقصير بين ٧ و٨.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1019,8 +1025,8 @@
     },
     {
       "objective": "math.u18.main.04",
-      "text": "Discuss this question with an adult: What is the long hand called? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «العقرب الطويل اسمه إيه؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Point to the two hands of a clock and name them: the long minute hand and the short hour hand.",
+      "textAr": "شاوروا على عقربين الساعة وسمّوهم: الطويل عقرب الدقايق، والقصير عقرب الساعات.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1036,8 +1042,8 @@
     },
     {
       "objective": "math.u18.main.05",
-      "text": "Discuss this question with an adult: Match each measuring job to its tool. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «وصّل كل حاجة عايزين نقيسها بالأداة بتاعتها.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "In the kitchen, match tools to jobs: scales to weigh flour, a jug for water, a ruler for a pencil.",
+      "textAr": "في المطبخ وصّلوا الأدوات بالشغلانات: الميزان لوزن الدقيق، والإبريق للمية، والمسطرة للقلم.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1053,8 +1059,8 @@
     },
     {
       "objective": "math.u18.main.06",
-      "text": "Discuss this question with an adult: Jug holds 5 cups, bowl 4 and mug 2. Put them in order, holds most first. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الإبريق بياخد ٥ كوبايات، والبولة ٤، والمج ٢. رتّبهم من اللي بياخد أكتر للي بياخد أقل.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "At the sink, fill a mug with water and pour it into a bowl and a jug. Count how many mugs each one holds.",
+      "textAr": "عند الحوض املوا مج مية وصبّوه في سلطانية وفي إبريق. عدّوا كل واحد بياخد كام مج.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1070,8 +1076,8 @@
     },
     {
       "objective": "math.u18.main.08",
-      "text": "Discuss this question with an adult: At half past, the long hand points to 6. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «لما الساعة تبقى ونص، العقرب الطويل بيشاور على ٦.» صح ولا غلط؟ استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Move the hands of a toy clock to half past. Your child shows that the long hand points to 6.",
+      "textAr": "حرّكوا عقارب ساعة لعبة على ونص. طفلك يوَرّي إن العقرب الطويل على ٦.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1087,8 +1093,8 @@
     },
     {
       "objective": "math.u18.choice.01",
-      "text": "Discuss this question with an adult: At 3 o'clock the long hand points to... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الساعة ٣ بالظبط، العقرب الطويل بيشاور على…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "At 3 o'clock, look at a clock and check where the long hand points: 12.",
+      "textAr": "الساعة ٣ بصّوا على الساعة وشوفوا العقرب الطويل على فين: ١٢.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1104,8 +1110,8 @@
     },
     {
       "objective": "math.u18.choice.02",
-      "text": "Discuss this question with an adult: At half past 5 the short hand is... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الساعة ٥ ونص، العقرب القصير بيبقى…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Set a toy clock to half past 5. Talk about why the short hand is between 5 and 6.",
+      "textAr": "ظبطوا ساعة لعبة على ٥ ونص. اتكلموا ليه العقرب القصير بين ٥ و٦.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1121,8 +1127,8 @@
     },
     {
       "objective": "math.u18.choice.03",
-      "text": "Discuss this question with an adult: To weigh a parcel, use... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عشان نوزن طرد، نستخدم…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Weigh a small parcel or a bag of fruit on the kitchen scales together.",
+      "textAr": "وزنوا طرد صغير أو كيس فاكهة على ميزان المطبخ مع بعض.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1138,8 +1144,8 @@
     },
     {
       "objective": "math.u18.choice.04",
-      "text": "Discuss this question with an adult: A container that holds more has a bigger... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «العلبة اللي بتشيل أكتر يبقى عندها… أكبر» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "At the sink, pour water from a jug into cups. Talk about which container holds more: it has the bigger capacity.",
+      "textAr": "عند الحوض صبّوا مية من إبريق في كوبايات. اتكلموا أنهي إناء بياخد أكتر: ده سعته أكبر.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1155,8 +1161,8 @@
     },
     {
       "objective": "math.u18.choice.05",
-      "text": "Discuss this question with an adult: Half an hour is... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «نص ساعة يعني…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Set a timer for 30 minutes of play. Tell your child that half an hour is 30 minutes.",
+      "textAr": "شغّلوا تايمر ٣٠ دقيقة للّعب. قولوا لطفلك إن نص ساعة يعني ٣٠ دقيقة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

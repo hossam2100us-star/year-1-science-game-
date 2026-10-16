@@ -633,6 +633,17 @@
       "id": "math_quiz_01.sticker",
       "word": "count on",
       "art": "math_label",
+      "picture": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 5,
+        "shown": [
+          1,
+          1,
+          1
+        ]
+      },
       "meaning": "Start with a number and add forward jumps.",
       "meaningSource": "adapted_from_big_idea",
       "sourcePages": [
@@ -658,8 +669,8 @@
   "goalActivities": [
     {
       "objective": "math.q01.01",
-      "text": "Discuss this question with an adult: How many dots? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام نقطة؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Draw 9 dots on paper. Your child counts them and crosses out each dot once, so none is counted twice.",
+      "textAr": "ارسموا ٩ نقط على ورقة. طفلك يعدّهم ويشطب كل نقطة مرة واحدة، عشان مايعدّش نقطة مرتين.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -672,8 +683,8 @@
     },
     {
       "objective": "math.q01.02",
-      "text": "Discuss this question with an adult: 1 more than 12 is...? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «واحد زيادة على ١٢ يبقى كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Count the steps of the stairs together. Stop on step 12 and ask where one more step takes you.",
+      "textAr": "عدّوا سلالم البيت مع بعض. اقفوا على السلمة ١٢ واسألوا طفلك سلمة كمان توصّلنا فين.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -686,8 +697,8 @@
     },
     {
       "objective": "math.q01.03",
-      "text": "Discuss this question with an adult: 7 take away 3 is...? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «٧ ناقص ٣ يبقى كام؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Put 7 spoons on the table and put 3 back in the drawer. Your child counts how many are left.",
+      "textAr": "حطّوا ٧ معالق على الترابيزة ورجّعوا ٣ في الدُّرج. طفلك يعدّ فاضل كام.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -700,8 +711,8 @@
     },
     {
       "objective": "math.q01.04",
-      "text": "Discuss this question with an adult: Name a flat shape with 3 sides. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «قول اسم شكل مسطح ليه ٣ أضلاع.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Hunt for triangles at home: a sandwich cut corner to corner, a roof in a drawing. Your child traces the 3 sides with a finger.",
+      "textAr": "دوّروا على مثلثات في البيت: سندوتش متقطّع من الركن للركن، أو سقف في رسمة. طفلك يمشّي صباعه على الـ٣ أضلاع.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -714,8 +725,8 @@
     },
     {
       "objective": "math.q01.05",
-      "text": "Discuss this question with an adult: Name a solid shape like a football. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «قول اسم مجسم شكله زي الكورة.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Collect a ball, an orange and a tin. Your child finds the ones that are round all over like a football: spheres.",
+      "textAr": "هاتوا كورة وبرتقانة وعلبة صفيح. طفلك يختار الحاجات اللي مدوّرة من كل ناحية زي الكورة: دي اسمها كرة.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -728,8 +739,8 @@
     },
     {
       "objective": "math.q01.06",
-      "text": "Discuss this question with an adult: The longest pictogram row shows the... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «أطول صف في الرسم بالصور بيورّينا…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Make a spoon chart: one row for each fruit your family likes, and one spoon for each person. The longest row shows the fruit most people chose.",
+      "textAr": "اعملوا رسم بالمعالق: صف لكل فاكهة بيحبها أهل البيت، ومعلقة لكل شخص. أطول صف بيوضّح الفاكهة اللي أكتر ناس اختاروها.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -742,8 +753,8 @@
     },
     {
       "objective": "math.q01.07",
-      "text": "Discuss this question with an adult: Choose the larger number. Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «اختار الرقم الأكبر.» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Write 15 and 18 on two cards. Your child finds both on a ruler or tape measure and says which is further along, so larger.",
+      "textAr": "اكتبوا ١٥ و١٨ على كارتين. طفلك يدوّر عليهم على مسطرة أو شريط قياس ويقول مين أبعد، يعني أكبر.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -756,8 +767,8 @@
     },
     {
       "objective": "math.q01.08",
-      "text": "Discuss this question with an adult: How many sweets are in an empty bag? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كام حتة حلاوة في كيس فاضي؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Show an empty bag or box and ask how many sweets are inside. Practise saying \"zero\" for nothing at all.",
+      "textAr": "وَرّوا طفلك كيس أو علبة فاضية واسألوه فيها كام حلاوة. اتمرّنوا تقولوا «صفر» لما مايكونش فيه حاجة خالص.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -770,8 +781,8 @@
     },
     {
       "objective": "math.q01.09",
-      "text": "Discuss this question with an adult: When do you usually sleep? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عادةً بتنام إمتى؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "At bedtime, look out of the window together and talk about why the sky is dark: we sleep at night.",
+      "textAr": "وقت النوم بصّوا من الشباك مع بعض واتكلموا ليه السما ضلمة: إحنا بننام بالليل.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -784,8 +795,8 @@
     },
     {
       "objective": "math.q01.10",
-      "text": "Discuss this question with an adult: What should you line up to compare two pencils? Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عشان نقارن قلمين، نحط إيه على نفس الخط؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Hold two pencils side by side with their ends on the edge of the table. Your child says which is longer, then tries again with the ends not lined up.",
+      "textAr": "امسكوا قلمين جنب بعض وطرفهم على حرف الترابيزة. طفلك يقول أنهي أطول، وبعدين جرّبوا من غير ما الأطراف تكون على خط واحد.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
