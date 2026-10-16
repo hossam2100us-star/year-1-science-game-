@@ -4,13 +4,21 @@ name: images
 # end to end, scans the images, and pushes them to GitHub Container
 # Registry (private, like the repository). The NAS runs the "trial" tag,
 # which only moves when a run is started by hand with "promote".
-# Pull requests run it only when the server or the package changes; the web
-# app itself is built by ci-mobile on every pull request (docs/RELEASE.md §2).
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'docs/**'
+      - 'reports/**'
+      - '**/*.md'
+  # A pull request runs this 40-minute job only when it changes the images.
   pull_request:
-    paths: ['backend/**', 'api/**', 'infrastructure/**', 'web/**', '.github/workflows/images.yml']
+    paths:
+      - 'backend/**'
+      - 'api/**'
+      - 'infrastructure/**'
+      - 'web/**'
+      - '.github/workflows/images.yml'
   workflow_dispatch:
     inputs:
       promote:
