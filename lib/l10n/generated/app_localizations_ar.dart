@@ -80,6 +80,12 @@ class AppLocalizationsAr extends AppLocalizations {
       'النجوم للمجهود والإكمال. تقييم الفهم بيتحسب من أول قرار قبل التلميح؛ التوقع واللعب الحر مش درجات.';
 
   @override
+  String get parentAreaMathsResultsRetry => 'جرّب تفتح نتايج الرياضيات تاني';
+
+  @override
+  String get parentAreaMathsGuideRetry => 'جرّب تفتح دليل الرياضيات تاني';
+
+  @override
   String get parentAreaTimeOnTheChildScreens => 'وقت الاستخدام';
 
   @override

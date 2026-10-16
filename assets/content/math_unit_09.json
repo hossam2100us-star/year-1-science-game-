@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_09",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Numbers to 20 - Tens and Ones",
+  "ar": "العشرات والآحاد",
+  "term": 2,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    32,
+    33,
+    34
+  ],
+  "introductionText": "Term 2 · Number\nNumbers to 20 — Tens and Ones\nThe Big Idea: Every number from 11 to 19 is one ten and some ones. 16 is one ten and 6\nones. We can also count in tens: 10, 20, 30...\nSay It Like This\nRead aloud\n\"Let's make 16. Here is a bundle of ten straws — that's one ten. Now add 6 single straws.\nTen and six make sixteen. Look at how we write it: the 1 means one ten, the 6 means six\nones. When we count in tens, every jump is a whole bundle: ten, twenty, thirty, forty,\nfifty.\"\nWatch Out For\nThe slip almost every child makes\n\"The 1 in 16 is just one.\" It isn't — it is a whole bundle of ten. Hold up the bundle every\ntime you point at the 1.\nWriting 61 for sixteen. Because we say the \"six\" first. Build it with straws: bundle first on\nthe left, loose straws on the right, then write it in the same order.\nTry It at Home\nGame 1 — Straw bundles (10 minutes)\nCount out 10 straws (or spaghetti sticks) and tie them with a hair elastic. Now call out a\nnumber between 11 and 20: he builds it with the bundle and loose straws. For 20, he\nneeds a second bundle. Ask: how could you make 20 with just loose straws? Which way is\nquicker to check?\nGame 2 — Family fingers (5 minutes)\nEach person holds up 10 fingers. Count in tens as each person joins: 10, 20, 30... How\nmany fingers with 4 people? Then start from a different number: he holds up 3 fingers\nand each new person adds ten: 3, 13, 23.\nCount in tens:\n10\n= 1 6\n20\n30\ntens ones\n40\n1 ten 6 ones 50\nPoint to the ten-stick while he says \"one ten\", then to each orange cube while he counts the ones. Then say\nthe tens column aloud together.\nMore examples to talk about\n• 20 is 2 tens and 0 ones. 10 is 1 ten and 0 ones — the zero holds the ones' place.\n• 11 is one ten and one one — its name doesn't sound like that, which is why it's hard.\n• Ten more than 5 is 15; ten more than 8 is 18. Only the tens digit changes.\n• Tricky: counting in tens from 4: 4, 14, 24, 34. The ones digit stays 4 every time!\n• To put numbers in order, compare the tens first, then the ones: 9, 12, 15, 20.\nKey Words\ntens ones digit bundle order estimate count in tens",
+  "sourceQuestions": [
+    {
+      "id": "math.u09.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "What number is this?",
+      "answerKeyText": "14",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u09.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "What number is this?",
+      "answerKeyText": "19",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u09.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "17 is ten and ones.",
+      "answerKeyText": "1 ten and 7 ones",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u09.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "20 is tens and ones.",
+      "answerKeyText": "2 tens and 0 ones",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u09.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Put these in order, smallest first: 15, 9, 20, 12",
+      "answerKeyText": "9, 12, 15, 20",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u09.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Count in tens: 10, 20, , 40,",
+      "answerKeyText": "30 and 50",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u09.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Count on in tens from 4: 4, 14, , 34",
+      "answerKeyText": "24",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u09.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Omar wrote sixteen as 61. Is he right? Write sixteen correctly.",
+      "answerKeyText": "No — 16. The ten is written first.",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u09.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "13 is...\n( 1 ten and 3 ones ) ( 13 tens ) ( 3 tens and 1 one )",
+      "answerKeyText": "1 ten and 3 ones",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u09.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Ten more than 5 is...\n( 50 ) ( 15 ) ( 6 )",
+      "answerKeyText": "15",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u09.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Count in tens: 10, 20, 30, ...\n( 40 ) ( 50 ) ( 31 )",
+      "answerKeyText": "40",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u09.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Which is in order, smallest first?\n( 4, 11, 18 ) ( 11, 4, 18 ) ( 18, 11, 4 )",
+      "answerKeyText": "4, 11, 18",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u09.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "The 1 in 18 means...\n( one ten ) ( just one ) ( eighteen )",
+      "answerKeyText": "one ten",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ],
+      "answerKeyPages": [
+        76
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

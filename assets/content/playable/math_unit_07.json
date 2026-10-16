@@ -1,0 +1,1270 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_07",
+  "subject": "maths",
+  "title": "Statistical Methods - Sorting Diagrams",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    25,
+    26,
+    27
+  ],
+  "steps": [
+    {
+      "id": "math_unit_07.step.001",
+      "kind": "explore",
+      "title": "Two sorting rules",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "A red car is red and has wheels. Which sorting group fits it?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "A green leaf is not red and has no wheels. Which group fits it?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Put ten in a sorting box: is ten less than ten?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Ask separately: is it red? Does it have wheels? Two yes answers mean both.",
+      "explanation": "Ask both sorting questions, including both and neither.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Two sorting rules",
+        "goal": "Ask both sorting questions, including both and neither.",
+        "scene": "workshop",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "A red car is red and has wheels. Which sorting group fits it?",
+            "choices": [
+              {
+                "id": "answer_3",
+                "label": "both"
+              },
+              {
+                "id": "answer_2",
+                "label": "wheels only"
+              },
+              {
+                "id": "answer_4",
+                "label": "neither"
+              },
+              {
+                "id": "answer_1",
+                "label": "red only"
+              }
+            ],
+            "correctId": "answer_3",
+            "feedback": "Both rules are true. A red car belongs in the overlap.",
+            "hint": "Ask separately: is it red? Does it have wheels? Two yes answers mean both.",
+            "visual": {
+              "type": "groups",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "Red? Yes"
+                },
+                {
+                  "type": "text",
+                  "text": "Wheels? Yes"
+                }
+              ]
+            },
+            "id": "explore_1"
+          },
+          {
+            "mode": "choose",
+            "prompt": "A green leaf is not red and has no wheels. Which group fits it?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "red only"
+              },
+              {
+                "id": "answer_3",
+                "label": "neither"
+              },
+              {
+                "id": "answer_2",
+                "label": "both"
+              }
+            ],
+            "correctId": "answer_3",
+            "feedback": "Neither rule is true. The green leaf belongs outside both hoops.",
+            "hint": "Neither means that both sorting questions have a no answer.",
+            "visual": {
+              "type": "groups",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "Red? No"
+                },
+                {
+                  "type": "text",
+                  "text": "Wheels? No"
+                }
+              ]
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Put ten in a sorting box: is ten less than ten?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "less than 10"
+              },
+              {
+                "id": "answer_2",
+                "label": "not less than 10"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Ten is equal to ten. It is not less than ten.",
+            "hint": "Less than means smaller. Equal is not smaller.",
+            "visual": {
+              "type": "text",
+              "text": "10"
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_07.step.002",
+      "kind": "tap-choice",
+      "title": "Both labels",
+      "prompt": "Which object belongs in both red and has wheels?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "blue ball",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "red apple",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "red car",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u07.main.01",
+      "hint": "Ask two questions: is it red? Does it have wheels?",
+      "explanation": "A red car is red and has wheels, so it fits both labels.",
+      "shortExplanation": "A red car is red and has wheels, so it fits both labels.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.main.01",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "the red car",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": []
+      }
+    },
+    {
+      "id": "math_unit_07.step.003",
+      "kind": "tap-choice",
+      "title": "The overlap",
+      "prompt": "Why does the red car belong in the overlap?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "It is red and has wheels.",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "It is only red.",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "It fits neither label.",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u07.main.02",
+      "hint": "Check the car against each label in turn.",
+      "explanation": "The overlap is for objects that fit both labels.",
+      "shortExplanation": "The overlap is for objects that fit both labels.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.main.02",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "Because it is red and it has wheels — it fits both labels.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": [
+          {
+            "item": "car",
+            "region": "both"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_07.step.004",
+      "kind": "drag-to-basket",
+      "title": "Neither label",
+      "prompt": "Choose the objects that fit neither red nor has wheels.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "red car",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "blue ball",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "green leaf",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_4",
+          "label": "red apple",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_2",
+          "choice_3"
+        ]
+      },
+      "assessed": true,
+      "objective": "math.u07.main.03",
+      "hint": "Find the things that are not red and have no wheels.",
+      "explanation": "The green leaf and blue ball are not red and have no wheels.",
+      "shortExplanation": "The green leaf and blue ball are not red and have no wheels.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.main.03",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "the green leaf or the blue ball — both are outside both hoops.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": []
+      }
+    },
+    {
+      "id": "math_unit_07.step.005",
+      "kind": "match-lines",
+      "title": "Carroll diagram",
+      "prompt": "Sort the numbers into the Carroll diagram.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "item_6",
+          "label": "18",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "item_3",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "item_7",
+          "label": "10",
+          "art": "math_label"
+        },
+        {
+          "id": "item_4",
+          "label": "15",
+          "art": "math_label"
+        },
+        {
+          "id": "item_5",
+          "label": "9",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "less than 10",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "not less than 10",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2",
+          "item_3": "target_1",
+          "item_4": "target_2",
+          "item_5": "target_1",
+          "item_6": "target_2",
+          "item_7": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u07.main.04",
+      "hint": "For each number ask: is it less than 10? Think about 10 itself.",
+      "explanation": "10 is not less than 10. It belongs with 12, 15 and 18.",
+      "shortExplanation": "10 is not less than 10. It belongs with 12, 15 and 18.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.main.04",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "less than 10: 3, 7, 9 • not less than 10: 12, 15, 18, 10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "mathVisual": {
+        "type": "carroll",
+        "columns": [
+          "less than 10",
+          "not less than 10"
+        ]
+      }
+    },
+    {
+      "id": "math_unit_07.step.006",
+      "kind": "tap-choice",
+      "title": "Children with cats",
+      "prompt": "How many children have a cat?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "6",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u07.main.05",
+      "hint": "Count the blocks in the cat column.",
+      "explanation": "Each block is one child. The cat column has 5.",
+      "shortExplanation": "Each block is one child. The cat column has 5.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.main.05",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our pets",
+        "rows": [
+          {
+            "label": "cat",
+            "value": 5
+          },
+          {
+            "label": "dog",
+            "value": 3
+          },
+          {
+            "label": "fish",
+            "value": 1
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    },
+    {
+      "id": "math_unit_07.step.007",
+      "kind": "tap-choice",
+      "title": "More cats than dogs",
+      "prompt": "How many more cats than dogs?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "1",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u07.main.06",
+      "hint": "Count both columns, then find the difference.",
+      "explanation": "There are 5 cats and 3 dogs. The difference is 2.",
+      "shortExplanation": "There are 5 cats and 3 dogs. The difference is 2.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.main.06",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "2",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our pets",
+        "rows": [
+          {
+            "label": "cat",
+            "value": 5
+          },
+          {
+            "label": "dog",
+            "value": 3
+          },
+          {
+            "label": "fish",
+            "value": 1
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    },
+    {
+      "id": "math_unit_07.step.008",
+      "kind": "tap-choice",
+      "title": "Fitting both labels",
+      "prompt": "An object that fits both labels belongs in the overlap.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "True",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "False",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u07.main.07",
+      "hint": "Where do the two hoops share space?",
+      "explanation": "Both labels are true in the overlap.",
+      "shortExplanation": "Both labels are true in the overlap.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.main.07",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "True",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": [
+          {
+            "item": "car",
+            "region": "both"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_07.step.009",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "Find or draw an object that is not red and has no wheels. Explain why it fits neither label.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Ask about each label separately. Both and neither are groups too.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.main.08",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "Anything that is not red and has no wheels, e.g. a yellow banana, a book.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "parentReview": {
+        "en": "Anything that is not red and has no wheels, e.g. a yellow banana, a book.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_07.step.010",
+      "kind": "tap-choice",
+      "title": "Venn overlap",
+      "prompt": "The overlap in a Venn diagram is for things that are...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "neither",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "both",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "only red",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u07.choice.01",
+      "hint": "The overlap is inside both hoops at once.",
+      "explanation": "The overlap is inside both hoops, so things there fit both labels.",
+      "shortExplanation": "The overlap is inside both hoops, so things there fit both labels.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.choice.01",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "both",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": [
+          {
+            "item": "apple",
+            "region": "left"
+          },
+          {
+            "item": "car",
+            "region": "both"
+          },
+          {
+            "item": "banana",
+            "region": "outside"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_07.step.011",
+      "kind": "tap-choice",
+      "title": "Where 10 goes",
+      "prompt": "Where does 10 go?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "not less than 10",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "less than 10",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u07.choice.02",
+      "hint": "Is 10 less than 10, or the same?",
+      "explanation": "10 is the same as 10, so it is not less than 10.",
+      "shortExplanation": "10 is the same as 10, so it is not less than 10.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.choice.02",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "not less than 10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "mathVisual": {
+        "type": "carroll",
+        "columns": [
+          "less than 10",
+          "not less than 10"
+        ],
+        "placed": {
+          "less than 10": [
+            "3",
+            "7"
+          ],
+          "not less than 10": [
+            "12",
+            "15"
+          ]
+        }
+      }
+    },
+    {
+      "id": "math_unit_07.step.012",
+      "kind": "tap-choice",
+      "title": "Outside the hoops",
+      "prompt": "Things that fit neither label go...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "outside the hoops",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "in the middle",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "nowhere",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u07.choice.03",
+      "hint": "If a thing fits no hoop, where can it go?",
+      "explanation": "Things that fit neither label go outside both hoops.",
+      "shortExplanation": "Things that fit neither label go outside both hoops.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.choice.03",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "outside the hoops",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": []
+      }
+    },
+    {
+      "id": "math_unit_07.step.013",
+      "kind": "tap-choice",
+      "title": "Each block",
+      "prompt": "In the pets block graph, each block stands for...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "one child",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "two children",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "ten children",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u07.choice.04",
+      "hint": "Read the words under the graph.",
+      "explanation": "Each block in the pets graph stands for one child.",
+      "shortExplanation": "Each block in the pets graph stands for one child.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.choice.04",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "one child",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our pets",
+        "rows": [
+          {
+            "label": "cat",
+            "value": 5
+          },
+          {
+            "label": "dog",
+            "value": 3
+          },
+          {
+            "label": "fish",
+            "value": 1
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    },
+    {
+      "id": "math_unit_07.step.014",
+      "kind": "tap-choice",
+      "title": "The tallest column",
+      "prompt": "The tallest column shows the...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "first one",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "most popular",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "least popular",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u07.choice.05",
+      "hint": "More blocks make a taller column.",
+      "explanation": "The tallest column has the most blocks, so it is most popular.",
+      "shortExplanation": "The tallest column has the most blocks, so it is most popular.",
+      "source": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "questionId": "math.u07.choice.05",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "most popular",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_07",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our pets",
+        "rows": [
+          {
+            "label": "cat",
+            "value": 5
+          },
+          {
+            "label": "dog",
+            "value": 3
+          },
+          {
+            "label": "fish",
+            "value": 1
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_07.sticker",
+      "word": "Venn diagram",
+      "art": "math_label",
+      "picture": {
+        "type": "venn",
+        "labels": [
+          "",
+          ""
+        ],
+        "items": [
+          {
+            "item": "car",
+            "region": "both"
+          }
+        ]
+      },
+      "meaning": "Sorting hoops with an overlap for things that fit both labels.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        25,
+        26,
+        27
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Make two overlapping loops with scarves: red and has wheels. Sort toys into red only, wheels only, both and neither. Sort number cards around 10.",
+      "textAr": "اعملوا دايرتين متداخلين بإيشاربين: واحدة «أحمر» وواحدة «ليه عجل». قسّموا اللعب: أحمر بس، ليه عجل بس، الاتنين، ولا ده ولا ده. وقسّموا كروت أرقام: أقل من ١٠ وأكتر من ١٠.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u07.main.01",
+      "text": "Make two string hoops on the floor: \"red\" and \"has wheels\". Your child puts a red toy car in the overlap.",
+      "textAr": "اعملوا دايرتين بخيط على الأرض: «أحمر» و«ليه عجل». طفلك يحط عربية لعبة حمرا في الجزء المشترك.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u07.main.02",
+      "text": "Ask your child where a red car goes and why: it is red and it has wheels.",
+      "textAr": "اسألوا طفلك العربية الحمرا تتحط فين وليه: علشان حمرا وليها عجل.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u07.main.03",
+      "text": "Find things that are not red and have no wheels (a green leaf, a blue ball). Put them outside both hoops.",
+      "textAr": "دوّروا على حاجات مش حمرا ومالهاش عجل (ورقة شجر خضرا، كورة زرقا). حطّوهم برّه الدايرتين.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u07.main.04",
+      "text": "Draw two columns: \"less than 10\" and \"not less than 10\". Your child sorts number cards from 1 to 20, thinking hard about 10.",
+      "textAr": "ارسموا عمودين: «أقل من ١٠» و«مش أقل من ١٠». طفلك يقسّم كروت أرقام من ١ لـ٢٠، ويفكّر كويس في الـ١٠.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u07.main.05",
+      "text": "Make a block graph of the pets your family and friends have. Your child counts the blocks in the cat column.",
+      "textAr": "اعملوا رسم بالمكعبات للحيوانات الأليفة عند العيلة والأصحاب. طفلك يعدّ مكعبات عمود القطط.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u07.main.06",
+      "text": "Put the cat and dog towers side by side. Your child counts how many extra blocks the taller tower has.",
+      "textAr": "حطّوا برج القطط وبرج الكلاب جنب بعض. طفلك يعدّ البرج الأطول فيه كام مكعب زيادة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u07.main.07",
+      "text": "Play a sorting game with two hoops. Each time something fits both labels, your child puts it in the overlap.",
+      "textAr": "العبوا لعبة تقسيم بدايرتين. كل ما حاجة تنفع للاتنين، طفلك يحطها في الجزء المشترك.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u07.choice.01",
+      "text": "Use two hoops, \"fruit\" and \"red\". Ask where a red apple goes and why.",
+      "textAr": "استخدموا دايرتين: «فاكهة» و«أحمر». اسألوا التفاحة الحمرا تتحط فين وليه.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u07.choice.02",
+      "text": "Write 10 on a card and ask: is it less than 10? Talk about why 10 is not less than 10.",
+      "textAr": "اكتبوا ١٠ على كارت واسألوا: هو أقل من ١٠؟ اتكلموا ليه ١٠ مش أقل من ١٠.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u07.choice.03",
+      "text": "With two hoops on the floor, give your child something that fits neither label. Where should it go?",
+      "textAr": "والدايرتين على الأرض، ادّوا طفلك حاجة ماتنفعش لأي واحدة فيهم. تتحط فين؟",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u07.choice.04",
+      "text": "Build a block graph where each block is one child. Your child adds a block for themself.",
+      "textAr": "ابنوا رسم بالمكعبات كل مكعب فيه لطفل واحد. طفلك يزوّد مكعب لنفسه.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u07.choice.05",
+      "text": "Vote on dinner with blocks. The tallest column shows the most popular choice.",
+      "textAr": "اعملوا تصويت على أكلة العشا بالمكعبات. أطول عمود بيوضّح الاختيار الأشهر.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

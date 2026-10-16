@@ -1,0 +1,244 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_18",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Time and Measurement - Clocks, Capacity and Tools",
+  "ar": "الساعة والسعة وأدوات القياس",
+  "term": 3,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    60,
+    61,
+    62,
+    63
+  ],
+  "introductionText": "Term 3 · Measure\nTime and Measurement — Clocks,\nCapacity and Tools\nThe Big Idea: On a clock, when the long hand points to 12 it is o'clock; when it points to 6\nit is half past. Capacity is how much a container holds.\nSay It Like This\nRead aloud\n\"A clock has two hands. The short hand tells us the hour. The long hand tells us the\nminutes. When the long hand points straight up to 12, it is something o'clock — look\nwhere the short hand points. When the long hand points straight down to 6, it is half past.\nHalf an hour is 30 minutes. A jug that holds more water has a bigger capacity.\"\nWatch Out For\nThe slip almost every child makes\nReading the hour wrongly at half past. At half past 3 the short hand is between 3 and 4.\nHe reads \"4\". Say: \"It has gone past 3 but hasn't reached 4 yet — so it's half past 3.\"\nTall means holds more. A tall thin glass can hold less than a short wide bowl. Only\npouring can tell.\nTry It at Home\nGame 1 — Paper-plate clock (15 minutes)\nWrite 1 to 12 round a paper plate. Cut a long and a short hand from card and fix them\nwith a split pin (or a pencil through the middle). Call out times — \"7 o'clock! half past 2!\"\n— and he sets the clock. Then connect to his day: what time is lunch? what time does\nschool finish?\nGame 2 — Cups of water (10 minutes, at the sink)\nUse one small cup as the measure. How many cups of water fill a mug? A bowl? A jug? He\nguesses first, then pours and counts. Put the containers in order from holds most to holds\nleast.\nminute hand\n12 12\n11 1 11 1\n10 2 10 2\nhour hand\n9 3 9 3\n8 4 8 4\n7 5 7 5 long = minutes\n6 6\nshort = hours\n3 o'clock half past 3\nlong hand on 12 long hand on 6\nPoint to the long hand on each clock, then the short hand. Ask what time each clock shows before reading\nthe label.\nruler\nscales tape measure\nlength jug\nmass long things\nwater\nTake the real tools out of the kitchen drawer and ask what each one measures.\nMore examples to talk about\n• At 12 o'clock both hands point straight up.\n• We measure a pencil with a ruler, a room with a tape measure, flour with scales, and\nwater with a jug.\n• A parcel on the scales: the bigger the number, the heavier the parcel.\n• Tricky: a tall thin glass may hold less than a wide mug — pour to check.\n• Tricky: 'half past' has nothing to do with halving the hour hand — the minute hand has\ngone half way round.\nKey Words\no'clock half past hour hand minute hand capacity holds more holds less ruler\nscales jug tape measure",
+  "sourceQuestions": [
+    {
+      "id": "math.u18.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "What time is it?\n12\n11 1\n10 2\n9 3\n8 4\n7 5\n6",
+      "answerKeyText": "4 o'clock",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u18.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "What time is it?\n12\n11 1\n10 2\n9 3\n8 4\n7 5\n6",
+      "answerKeyText": "half past 7",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u18.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Draw the hands to show 9 o'clock.\n12\n11 1\n10 2\n9 3\n8 4\n7 5\n6",
+      "answerKeyText": "Long (minute) hand pointing to 12, short (hour) hand pointing to 9.",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u18.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "What is the long hand on a clock called?",
+      "answerKeyText": "the minute hand",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u18.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "What would you use? Match with a line.\nmeasure a pencil scales\nweigh flour jug\nmeasure water ruler",
+      "answerKeyText": "pencil → ruler; flour → scales; water → jug",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u18.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "A jug holds 5 cups of water, a mug holds 2 cups, and a bowl holds 4 cups. Put them in\norder, holds most first.",
+      "answerKeyText": "jug, bowl, mug",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u18.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "What time do you have lunch? Draw it on the clock.\n12\n11 1\n10 2\n9 3\n8 4\n7 5\n6",
+      "answerKeyText": "Any real lunchtime shown correctly as o'clock or half past.",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u18.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "True or false? At half past, the long hand points to 6.",
+      "answerKeyText": "True",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u18.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "At 3 o'clock the long hand points to...\n( 12 ) ( 6 ) ( 3 )",
+      "answerKeyText": "12",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u18.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "At half past 5 the short hand is...\n( between 5 and 6 ) ( exactly on 5 ) ( on 12 )",
+      "answerKeyText": "between 5 and 6",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u18.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "To weigh a parcel, use...\n( a jug ) ( a ruler ) ( scales )",
+      "answerKeyText": "scales",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u18.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "A container that holds more has a bigger...\n( capacity ) ( corner ) ( clock )",
+      "answerKeyText": "capacity",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u18.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Half an hour is...\n( 30 minutes ) ( 60 minutes ) ( 15 minutes )",
+      "answerKeyText": "30 minutes",
+      "sourcePages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "answerKeyPages": [
+        81
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

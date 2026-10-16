@@ -79,6 +79,12 @@ void main() {
   Future<void> tap(WidgetTester t, String key) =>
       helpers.tapVisible(t, find.byKey(ValueKey(key)));
   Future<void> choose(WidgetTester t, String id) => tap(t, 'science-item-$id');
+  // A tap only chooses; Check sends the answer (teacher review 5).
+  Future<void> answer(WidgetTester t, String id) async {
+    await choose(t, id);
+    await tap(t, 'lessonCheck');
+  }
+
   Future<void> place(WidgetTester t, String id, String target) async {
     await choose(t, id);
     await tap(t, 'science-target-$target');
@@ -294,6 +300,8 @@ void main() {
       await tap(t, 'lessonNext');
       expect(current(store)['placements']['triangle'], 'beat');
       expect(current(store)['placements']['drum'], 'hit');
+      // Checking the same answer again is not a second try: change it.
+      await place(t, 'trumpet', 'hit');
       await helpers.tapVisible(t, find.text('Check my discovery'));
       expect(current(store)['outcome'], 'explained');
       expect(current(store)['needsCorrection'], true);
@@ -534,7 +542,7 @@ void main() {
       expect(current(store)['outcome'], isNull);
       expect(current(store), beforeListening);
       expect(find.byKey(const ValueKey('lessonNext')), findsNothing);
-      await choose(t, 'quieter_and_fainter');
+      await answer(t, 'quieter_and_fainter');
       expect(current(store)['outcome'], 'firstTry');
       await tap(t, 'sound-distance-listen');
       expect(audio.where((e) => e['name'] == 'drum').length, 3);
@@ -640,9 +648,11 @@ void main() {
         findsOneWidget,
       );
       await helpers.tapVisible(t, find.text('Check my discovery'));
+      // The same answer cannot be sent twice; the child changes it first.
+      await place(t, 'furthest_listener', 'annay');
       await helpers.tapVisible(t, find.text('Check my discovery'));
       expect(current(store)['needsCorrection'], true);
-      expect(current(store)['placements']['furthest_listener'], 'zara');
+      expect(current(store)['placements']['furthest_listener'], 'annay');
       expect(find.byKey(const ValueKey('lessonNext')), findsNothing);
       await tap(t, 'lessonPrevious');
       await tap(t, 'lessonNext');
@@ -670,7 +680,7 @@ void main() {
       expect(sticks.first['volume'], lessThan(sticks.last['volume']));
       expect(current(store)['selected'] ?? [], isEmpty);
       expect(current(store)['outcome'], isNull);
-      await choose(t, 'tap_harder');
+      await answer(t, 'tap_harder');
       expect(current(store)['outcome'], 'firstTry');
       expect(t.takeException(), isNull);
     },
@@ -688,7 +698,7 @@ void main() {
     expect(audio.map((e) => e['name']), ['stone', 'feather']);
     expect(current(store), before);
     expect(find.byKey(const ValueKey('lessonNext')), findsNothing);
-    await choose(t, 'stone_box');
+    await answer(t, 'stone_box');
     expect(current(store)['outcome'], 'firstTry');
     await tap(t, 'sound-listen-feather_box');
     expect(current(store)['outcome'], 'firstTry');
@@ -843,7 +853,7 @@ void main() {
     await t.ensureVisible(find.byKey(const ValueKey('science-item-ears')));
     await t.pump();
     await capture(t, key, 'phone-face');
-    await choose(t, 'ears');
+    await answer(t, 'ears');
     expect(find.byKey(const ValueKey('lessonNext')), findsOneWidget);
     expect(t.takeException(), isNull);
   });

@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_13",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Numbers to 20 - Odd, Even, Order and Money",
+  "ar": "الفردي والزوجي والترتيب والنقود",
+  "term": 3,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    45,
+    46,
+    47
+  ],
+  "introductionText": "Term 3 · Number\nNumbers to 20 — Odd, Even, Order and\nMoney\nThe Big Idea: Even numbers can be shared into pairs with nothing left over; odd numbers\nalways have one left over. 1st, 2nd, 3rd tell us a position. Coins and notes are how we\ncount money.\nSay It Like This\nRead aloud\n\"Let's pair up the socks. Every sock has a partner — 6 socks make 3 pairs. 6 is an even\nnumber. Now 7 socks: three pairs and one lonely sock. 7 is an odd number. Odd numbers\nalways have one left over. In a race, the first to finish is 1st, then 2nd, then 3rd. In Egypt\nwe pay with pounds and piastres. Some are coins and some are paper notes.\"\nWatch Out For\nThe slip almost every child makes\nThinking big numbers are even and small ones odd. Size has nothing to do with it: 2 is\neven, 19 is odd. The pairing test always decides.\nCounting coins instead of money. Three coins can be worth more than five coins. A 1-\npound coin is worth four 25-piastre coins. Always look at what is written on the coin.\nTry It at Home\nGame 1 — The shoe rack (5 minutes)\nCount the family's shoes by the door in twos: 2, 4, 6, 8... Is anyone's shoe missing? Then\ntake 7 spoons and try to pair them. Can you find an odd number that pairs up perfectly?\n(He can't — let him keep trying and discover why.)\nGame 2 — Toy car race and shop (10 minutes)\nRace three toy cars down a sloping book: who came 1st, 2nd, 3rd? Then set up a shop\nwith real coins from your purse. Price a biscuit at 50 piastres. Which coins could he pay\nwith? Let him sort all the coins by what is written on them.\nEven: every sock has a partner Odd: one is left over\n6 socks = 3 pairs 7 socks\nfirst, second, third\n1st\n2nd\n3rd\nAsk him to find the lonely sock, then point to each step of the podium and say the position.\n25 50 1 5 10\nEGP EGP\npiastres piastres pound\ncoins notes\nDrawn to show the idea, not exact copies — put your real coins and notes beside the page and match them.\nMore examples to talk about\n• Zero is even — nothing is left over! 20 is even too.\n• The even numbers go 2, 4, 6, 8, 10 — every other number on the track.\n• 15 can be broken up in many ways: 10 + 5, 9 + 6, 8 + 7, 12 + 3.\n• Tricky: a 10-pound note is one piece of paper but is worth two 5-pound notes.\n• Tricky: in the word SEIF, the 2nd letter is E and the 4th is F.\nKey Words\neven odd pair 1st 2nd 3rd position coin note pound piastre",
+  "sourceQuestions": [
+    {
+      "id": "math.u13.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Circle the even numbers: 2 5 8 11 14 17",
+      "answerKeyText": "2, 8, 14",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u13.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Is 7 odd or even?",
+      "answerKeyText": "odd — one is left over.",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u13.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Count in twos: 2, 4, , 8,",
+      "answerKeyText": "6 and 10",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u13.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "In a race Ali came 1st, Mona came 2nd and Omar came 3rd. Who came 2nd?",
+      "answerKeyText": "Mona",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u13.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Colour the 3rd star.",
+      "answerKeyText": "The third star from the left.",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u13.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "14 = 10 + 14 = 7 +",
+      "answerKeyText": "4 and 7",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u13.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Which coin is worth the most: a, b or c?\n50 1 25\npiastres pound piastres\na b c",
+      "answerKeyText": "b — the 1-pound coin.",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u13.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "You have 5 pairs of socks. How many socks is that?",
+      "answerKeyText": "10",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u13.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "Even numbers...\n( are all big ) ( always have one left over ) ( pair up with none left over )",
+      "answerKeyText": "pair up with none left over",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u13.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Which number is odd?\n( 12 ) ( 4 ) ( 9 )",
+      "answerKeyText": "9",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u13.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "The position after 2nd is...\n( 1st ) ( 3rd ) ( 4th )",
+      "answerKeyText": "3rd",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u13.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "In Egypt we pay with...\n( pounds and piastres ) ( only coins ) ( cubes )",
+      "answerKeyText": "pounds and piastres",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u13.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "12 = 10 +\n( 1 ) ( 2 ) ( 12 )",
+      "answerKeyText": "2",
+      "sourcePages": [
+        45,
+        46,
+        47
+      ],
+      "answerKeyPages": [
+        79
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

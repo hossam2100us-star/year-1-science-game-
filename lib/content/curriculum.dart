@@ -4,3 +4,6 @@
 /// curriculum. Stored attempts and journeys carry this ID, so adding a
 /// second school year or subject later cannot collide with Year 1 science.
 const currentCurriculum = 'y1.science';
+
+/// Maths uses the same progress tables with a separate curriculum namespace.
+const mathsCurriculum = 'y1.maths';

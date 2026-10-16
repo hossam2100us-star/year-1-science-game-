@@ -1,0 +1,822 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_quiz_02",
+  "subject": "maths",
+  "title": "Big Challenge: Term 2",
+  "quiz": true,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    44
+  ],
+  "steps": [
+    {
+      "id": "math_quiz_02.step.001",
+      "kind": "tap-choice",
+      "title": "Venn overlap",
+      "prompt": "What belongs where two Venn hoops overlap?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "things that fit both labels",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "only red things",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "things that fit neither label",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q02.01",
+      "hint": "The overlap is inside both hoops.",
+      "explanation": "The overlap satisfies both sorting rules.",
+      "shortExplanation": "The overlap satisfies both sorting rules.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.01",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "things that fit both labels",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "venn",
+        "labels": [
+          "red",
+          "has wheels"
+        ],
+        "items": []
+      }
+    },
+    {
+      "id": "math_quiz_02.step.002",
+      "kind": "tap-choice",
+      "title": "Colour pattern",
+      "prompt": "red, blue, red, blue... What comes next?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "red",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "green",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "blue",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q02.02",
+      "hint": "Say the colours aloud and find the part that repeats.",
+      "explanation": "The repeated part is red, blue.",
+      "shortExplanation": "The repeated part is red, blue.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.02",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "red",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "pattern",
+        "items": [
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "blue",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "height": 70
+          },
+          {
+            "type": "count",
+            "count": 1,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "blue",
+            "height": 70
+          },
+          {
+            "type": "missing",
+            "text": "?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_quiz_02.step.003",
+      "kind": "match-lines",
+      "title": "Tens and ones in 15",
+      "prompt": "15 has how many tens and ones?",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "ones",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "tens",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.q02.03",
+      "hint": "The first digit counts tens; the second counts ones.",
+      "explanation": "15 is one whole ten and five ones.",
+      "shortExplanation": "15 is one whole ten and five ones.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.03",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "1 ten and 5 ones",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 5,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "ones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_quiz_02.step.004",
+      "kind": "tap-choice",
+      "title": "Counting in tens",
+      "prompt": "Count in tens: 10, 20, ...?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "31",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "30",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "29",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.04",
+      "hint": "Add one more ten to 20.",
+      "explanation": "One more ten after 20 is 30.",
+      "shortExplanation": "One more ten after 20 is 30.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.04",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "30",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 40,
+        "markers": [
+          10,
+          20
+        ]
+      }
+    },
+    {
+      "id": "math_quiz_02.step.005",
+      "kind": "tap-choice",
+      "title": "Every day for a week",
+      "prompt": "Omar plays outside every day for one week. How many days is that?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "6",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.05",
+      "hint": "Say the days from Sunday to Saturday and count them.",
+      "explanation": "One week has seven days, from Sunday to Saturday.",
+      "shortExplanation": "One week has seven days, from Sunday to Saturday.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.05",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "7",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "cycle",
+        "labels": [
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat"
+        ]
+      }
+    },
+    {
+      "id": "math_quiz_02.step.006",
+      "kind": "tap-choice",
+      "title": "Balance rule",
+      "prompt": "On a balance, does the heavier side go up or down?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "up",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "down",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.06",
+      "hint": "Look at the balance. Which pan is lower?",
+      "explanation": "More mass makes that side go down.",
+      "shortExplanation": "More mass makes that side go down.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.06",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "down",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "balance",
+        "left": {
+          "count": 3
+        },
+        "right": {
+          "count": 1
+        },
+        "tilt": "left"
+      }
+    },
+    {
+      "id": "math_quiz_02.step.007",
+      "kind": "tap-choice",
+      "title": "Partner of 8",
+      "prompt": "8 + __ = 10. Find the missing partner.",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "1",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.07",
+      "hint": "Fill 8 spaces of a ten frame. How many are empty?",
+      "explanation": "Eight and two make ten.",
+      "shortExplanation": "Eight and two make ten.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.07",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "2",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 8,
+        "item": "dot",
+        "arrangement": "tenFrame"
+      }
+    },
+    {
+      "id": "math_quiz_02.step.008",
+      "kind": "tap-choice",
+      "title": "Difference of 7 and 10",
+      "prompt": "What is the difference between 7 and 10?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.08",
+      "hint": "Start on 7 and count the jumps to 10.",
+      "explanation": "Three forward jumps lead from seven to ten.",
+      "shortExplanation": "Three forward jumps lead from seven to ten.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.08",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "3",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 7,
+        "jumps": [
+          3
+        ],
+        "ask": "distance"
+      }
+    },
+    {
+      "id": "math_quiz_02.step.009",
+      "kind": "tap-choice",
+      "title": "Half of 8",
+      "prompt": "Half of 8 is...?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.09",
+      "hint": "Share 8 into two equal groups.",
+      "explanation": "Share eight equally into two groups of four.",
+      "shortExplanation": "Share eight equally into two groups of four.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.09",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 8,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
+    },
+    {
+      "id": "math_quiz_02.step.010",
+      "kind": "tap-choice",
+      "title": "Equal halves",
+      "prompt": "Two halves of the same whole can have different sizes.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "True",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "False",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q02.10",
+      "hint": "Can halves of the same whole be different sizes?",
+      "explanation": "Halves of the same whole are always equal.",
+      "shortExplanation": "Halves of the same whole are always equal.",
+      "source": {
+        "pages": [
+          44
+        ],
+        "questionId": "math.q02.10",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "False — halves are always equal.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_quiz_02.sticker",
+      "word": "count on",
+      "art": "math_label",
+      "picture": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 5,
+        "shown": [
+          1,
+          1,
+          1
+        ]
+      },
+      "meaning": "Start with a number and add forward jumps.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        44
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Revisit the home games for this term. Talk about how each answer was found.",
+      "textAr": "ارجعوا العبوا ألعاب البيت بتاعة الترم ده تاني، واتكلموا عن كل إجابة: وصلنالها إزاي؟",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.q02.01",
+      "text": "Make two hoops with string on the floor: \"red\" and \"toys\". A red toy goes in the overlap, because it fits both.",
+      "textAr": "اعملوا دايرتين بخيط على الأرض: «أحمر» و«لعب». أي لعبة حمرا تتحط في الجزء المشترك، لأنها تنفع للاتنين.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.02",
+      "text": "Make a red, blue, red, blue line with cups or blocks. Your child says the pattern aloud and adds the next one.",
+      "textAr": "اعملوا صف أحمر، أزرق، أحمر، أزرق بكوبايات أو مكعبات. طفلك يقول النمط بصوت عالي ويحط اللي بعده.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.03",
+      "text": "Bundle 10 pencils with a rubber band and put 5 loose ones beside them. Your child says: one ten and five ones make 15.",
+      "textAr": "اربطوا ١٠ أقلام بأستيك وحطّوا جنبهم ٥ أقلام سايبة. طفلك يقول: عشرة واحدة و٥ آحاد يبقوا ١٥.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.04",
+      "text": "Each family member holds up 10 fingers. Count the hands in tens: ten, twenty, thirty.",
+      "textAr": "كل واحد في البيت يرفع إيديه الاتنين: ١٠ صوابع. عدّوا بالعشرات: عشرة، عشرين، تلاتين.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.05",
+      "text": "Mark each day on a calendar for one week. Count the marks together: seven days, from Sunday to Saturday.",
+      "textAr": "علّموا على كل يوم في النتيجة لمدة أسبوع. عدّوا العلامات مع بعض: ٧ أيام، من الحد للسبت.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.06",
+      "text": "Make a balance with a coat hanger and two bags. Put something heavy in one bag and something light in the other, and watch which side goes down.",
+      "textAr": "اعملوا ميزان من شمّاعة هدوم وكيسين. حطّوا حاجة تقيلة في كيس وحاجة خفيفة في التاني، وشوفوا أنهي ناحية بتنزل.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.07",
+      "text": "Draw a ten frame (2 rows of 5 boxes) and put a dot in 8 boxes. Your child counts the empty boxes: the partner of 8 that makes 10.",
+      "textAr": "ارسموا إطار العشرة (صفّين في كل صف ٥ مربعات) وحطّوا نقطة في ٨ مربعات. طفلك يعدّ المربعات الفاضية: ده الرقم اللي مع ٨ يعمل ١٠.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.08",
+      "text": "Draw a number line on paper. Your child puts a finger on 7 and counts the jumps to 10.",
+      "textAr": "ارسموا خط أرقام على ورقة. طفلك يحط صباعه على ٧ ويعدّ النطّات لحد ١٠.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.09",
+      "text": "Share 8 biscuits fairly between two plates, one at a time. Count how many are on each plate.",
+      "textAr": "قسّموا ٨ بسكوتات بالعدل على طبقين، واحدة واحدة. عدّوا كام في كل طبق.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q02.10",
+      "text": "An adult cuts a slice of bread into a big piece and a small piece. Ask: are these halves? Then cut another slice into two equal halves and compare.",
+      "textAr": "الكبير يقطع حتة عيش لحتة كبيرة وحتة صغيرة، واسألوا طفلك: دول أنصاص؟ وبعدين اقطعوا حتة تانية لنصّين متساويين وقارنوا.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        44
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  },
+  "practiceUnitId": "math_unit_07"
+}

@@ -21,6 +21,8 @@
   "parentAreaEditingThisProfileKeepsProgress": "تغيير البيانات مش بيمسح التقدم. الاسم الأول والصورة والاختيارات بتفضل على الجهاز بس.",
   "parentAreaUnitAssessment": "تقييم كل وحدة",
   "parentAreaStarsRewardEffortAndCompletion": "النجوم للمجهود والإكمال. تقييم الفهم بيتحسب من أول قرار قبل التلميح؛ التوقع واللعب الحر مش درجات.",
+  "parentAreaMathsResultsRetry": "جرّب تفتح نتايج الرياضيات تاني",
+  "parentAreaMathsGuideRetry": "جرّب تفتح دليل الرياضيات تاني",
   "parentAreaTimeOnTheChildScreens": "وقت الاستخدام",
   "parentAreaNoTimeRecordedYet": "لسه مفيش وقت مسجل",
   "parentAreaMin": "دقيقة",

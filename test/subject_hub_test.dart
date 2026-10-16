@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flame/flame.dart';
 
 import 'dart:ui' as ui;
 
@@ -66,6 +67,10 @@ void main() {
   testWidgets(
     'Science opens from subjects and returns without changing progress',
     (t) async {
+      t.view.physicalSize = const Size(1280, 800);
+      t.view.devicePixelRatio = 1;
+      addTearDown(t.view.resetPhysicalSize);
+      addTearDown(t.view.resetDevicePixelRatio);
       helpers.testCatalog = await helpers.loadTestCatalog();
       for (final font in ['Nunito', 'Fredoka', 'Cairo']) {
         await (FontLoader(
@@ -85,6 +90,7 @@ void main() {
       );
       final before = store.data.toJson();
       final pictureKey = GlobalKey();
+      await t.runAsync(() => Flame.images.load('maths-islands-v2.webp'));
       await helpers.mount(
         t,
         RepaintBoundary(
@@ -100,6 +106,7 @@ void main() {
         ),
       );
       await t.pump(const Duration(milliseconds: 100));
+      await t.pumpAndSettle();
       await t.runAsync(() async {
         final image =
             await (pictureKey.currentContext!.findRenderObject()!
@@ -110,7 +117,7 @@ void main() {
         image.dispose();
       });
       expect(find.byKey(const ValueKey('subject-science')), findsOneWidget);
-      expect(find.text('Math'), findsNothing);
+      expect(find.byKey(const ValueKey('subject-maths')), findsOneWidget);
       await helpers.tapVisible(
         t,
         find.byKey(const ValueKey('subject-science')),

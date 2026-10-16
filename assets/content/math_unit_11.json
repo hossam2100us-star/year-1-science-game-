@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_11",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Addition and Subtraction - Pairs and Differences",
+  "ar": "مكملات العشرة والفرق",
+  "term": 2,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    38,
+    39,
+    40
+  ],
+  "introductionText": "Term 2 · Number\nAddition and Subtraction — Pairs and\nDifferences\nThe Big Idea: Pairs that make 10 are the most useful facts in maths. The difference\nbetween two numbers is how many steps it takes to get from the smaller one to the\nbigger one.\nSay It Like This\nRead aloud\n\"Hold up 10 fingers. Fold down 3. How many are still up? 7. So 3 and 7 are partners —\ntogether they make 10. The partners are: 1 and 9, 2 and 8, 3 and 7, 4 and 6, 5 and 5. To\nfind the difference between 6 and 9, put your finger on 6 and count on to 9: seven, eight,\nnine. Three jumps. The difference is 3.\"\nWatch Out For\nThe slip almost every child makes\nSilly answers nobody checks. He writes 6 + 3 = 19 and moves on. Teach him to estimate\nfirst: \"Both numbers are small — can the answer be nearly 20?\"\nCounting the start number when finding a difference. Same slip as Unit 2 — count the\njumps, not the numbers you touch.\nTry It at Home\nGame 1 — Shake and make ten (10 minutes)\nPut 10 dried beans in a cup: some white, some brown (or chickpeas and lentils). Shake\nand tip into an egg box, one per hole. \"How many white? How many brown? Say the\npair.\" Keep a list of every pair you find. Can you find a pair you haven't seen yet?\nGame 2 — What's under the cup? (5 minutes)\nCount out 10 beans together. While he closes his eyes, hide some under a cup. He counts\nwhat's left and works out how many are hiding. Lift the cup to check. Later, use 15 or 20\nbeans.\nPairs that make 10 in a ten frame\n9 + 1 = 10 7 + 3 = 10 5 + 5 = 10\nCover the orange dots with your hand and ask how many are hiding. Then do the same with the blue.\nMore examples to talk about\n• 10 + 0 = 10 and 0 + 10 = 10 are pairs too.\n• 5 + 5 is the only pair where both partners are the same.\n• If 3 + 2 = 5, then 13 + 2 = 15. The ones work the same way in the teens.\n• Tricky: the difference between 12 and 15 is 3 — the same as between 2 and 5.\n• Tricky: 9 + 8 must be close to 20, not close to 10. Estimating catches mistakes.\nKey Words\ntotal pairs make ten difference estimate number line",
+  "sourceQuestions": [
+    {
+      "id": "math.u11.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Fill in the partners: 6 + = 10 2 + = 10 + 5 = 10",
+      "answerKeyText": "4, 8, 5",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u11.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Look at the ten frame. 7 + = 10",
+      "answerKeyText": "3",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u11.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "3 + 2 = 4 + 1 =",
+      "answerKeyText": "5 and 5",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u11.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Use the number line. 12 + 3 =\n10 11 12 13 14 15 16 17 18 19 20",
+      "answerKeyText": "15",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u11.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Cross out 4 cubes. 16 take away 4 leaves",
+      "answerKeyText": "12",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u11.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "What is the difference between 5 and 9?",
+      "answerKeyText": "4",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u11.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Sam says 6 + 3 = 19. Is that sensible? What is the right answer?",
+      "answerKeyText": "No. Both numbers are small, so the answer can't be near 20. 6 + 3 = 9.",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u11.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "There are 10 beans. You can see 6. How many are hiding under the cup?",
+      "answerKeyText": "4",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u11.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "Which pair makes 10?\n( 6 and 4 ) ( 6 and 3 ) ( 5 and 4 )",
+      "answerKeyText": "6 and 4",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u11.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "The difference between 8 and 10 is...\n( 8 ) ( 2 ) ( 18 )",
+      "answerKeyText": "2",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u11.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "14 + 2 =\n( 12 ) ( 15 ) ( 16 )",
+      "answerKeyText": "16",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u11.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "9 + 1 =\n( 10 ) ( 8 ) ( 91 )",
+      "answerKeyText": "10",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u11.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "18 − 3 =\n( 15 ) ( 16 ) ( 21 )",
+      "answerKeyText": "15",
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

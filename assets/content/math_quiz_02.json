@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_quiz_02",
+  "kind": "quiz",
+  "subject": "maths",
+  "title": "Big Challenge: Term 2",
+  "ar": "تحدي الفصل الدراسي 2",
+  "term": 2,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    44
+  ],
+  "sourceQuestions": [
+    {
+      "id": "math.q02.01",
+      "category": "quiz",
+      "number": 1,
+      "sourceText": "In a Venn diagram, what goes where the hoops overlap?",
+      "answerKeyText": "things that fit both labels",
+      "sourcePages": [
+        44
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q02.02",
+      "category": "quiz",
+      "number": 2,
+      "sourceText": "What comes next? red, blue, red, blue,",
+      "answerKeyText": "red",
+      "sourcePages": [
+        44
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q02.03",
+      "category": "quiz",
+      "number": 3,
+      "sourceText": "15 is ten and ones.",
+      "answerKeyText": "1 ten and 5 ones",
+      "sourcePages": [
+        44
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q02.04",
+      "category": "quiz",
+      "number": 4,
+      "sourceText": "Count in tens: 10, 20,",
+      "answerKeyText": "30",
+      "sourcePages": [
+        44
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q02.05",
+      "category": "quiz",
+      "number": 5,
+      "sourceText": "How many days are in a week?",
+      "answerKeyText": "7",
+      "sourcePages": [
+        44
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q02.06",
+      "category": "quiz",
+      "number": 6,
+      "sourceText": "On a balance, does the heavier side go up or down?",
+      "answerKeyText": "down",
+      "sourcePages": [
+        44
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q02.07",
+      "category": "quiz",
+      "number": 7,
+      "sourceText": "8 + = 10",
+      "answerKeyText": "2",
+      "sourcePages": [
+        44
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q02.08",
+      "category": "quiz",
+      "number": 8,
+      "sourceText": "What is the difference between 7 and 10?",
+      "answerKeyText": "3",
+      "sourcePages": [
+        44
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q02.09",
+      "category": "quiz",
+      "number": 9,
+      "sourceText": "Half of 8 is",
+      "answerKeyText": "4",
+      "sourcePages": [
+        44
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q02.10",
+      "category": "quiz",
+      "number": 10,
+      "sourceText": "True or false? Two halves can be different sizes.",
+      "answerKeyText": "False — halves are always equal.",
+      "sourcePages": [
+        44
+      ],
+      "answerKeyPages": [
+        78
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "scoreBands": [
+    {
+      "min": 8,
+      "max": 10,
+      "label": "excellent"
+    },
+    {
+      "min": 5,
+      "max": 7,
+      "label": "keep practising"
+    },
+    {
+      "min": 0,
+      "max": 4,
+      "label": "play the games again"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

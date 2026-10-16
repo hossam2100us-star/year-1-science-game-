@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_quiz_03",
+  "subject": "maths",
+  "title": "Big Challenge: Term 3",
+  "quiz": true,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    64
+  ],
+  "steps": [
+    {
+      "id": "math_quiz_03.step.001",
+      "kind": "tap-choice",
+      "title": "An even number",
+      "prompt": "Choose the even number.",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 6,
+            "item": "sock",
+            "arrangement": "pairs",
+            "slots": 9
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "3",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 3,
+            "item": "sock",
+            "arrangement": "pairs",
+            "slots": 9
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 9,
+            "item": "sock",
+            "arrangement": "pairs",
+            "slots": 9
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q03.01",
+      "hint": "Which number makes pairs with none left over?",
+      "explanation": "Six makes three pairs with none left over.",
+      "shortExplanation": "Six makes three pairs with none left over.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.01",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "6",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_03.step.002",
+      "kind": "tap-choice",
+      "title": "After 2nd",
+      "prompt": "Which position comes after 2nd?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "1st",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "4th",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "3rd",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q03.02",
+      "hint": "Say first, second, then the next position.",
+      "explanation": "Third follows second.",
+      "shortExplanation": "Third follows second.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.02",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "3rd",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "pattern",
+        "items": [
+          {
+            "type": "text",
+            "text": "1st"
+          },
+          {
+            "type": "text",
+            "text": "2nd"
+          },
+          {
+            "type": "missing",
+            "text": "?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_quiz_03.step.003",
+      "kind": "tap-choice",
+      "title": "Double 4",
+      "prompt": "Double 4 is...?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "8",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q03.03",
+      "hint": "Add 4 and 4.",
+      "explanation": "Four and another four make eight.",
+      "shortExplanation": "Four and another four make eight.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.03",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "8",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 8,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
+    },
+    {
+      "id": "math_quiz_03.step.004",
+      "kind": "tap-choice",
+      "title": "Adding 6 and 11",
+      "prompt": "6 + 11 = ?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "17",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "18",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "16",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q03.04",
+      "hint": "Start on 11, the bigger number, and count on 6.",
+      "explanation": "Start at eleven and count on six to reach seventeen.",
+      "shortExplanation": "Start at eleven and count on six to reach seventeen.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.04",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "17 (start at 11, count on 6)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "from": 11,
+        "jumps": [
+          6
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_quiz_03.step.005",
+      "kind": "tap-choice",
+      "title": "Faces of a dice",
+      "prompt": "A dice is a cube. How many faces does a dice have?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q03.05",
+      "hint": "Count each flat face of a dice once.",
+      "explanation": "A dice is a cube, and a cube has six square faces.",
+      "shortExplanation": "A dice is a cube, and a cube has six square faces.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.05",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "6",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "cube"
+      }
+    },
+    {
+      "id": "math_quiz_03.step.006",
+      "kind": "tap-choice",
+      "title": "An upside-down triangle",
+      "prompt": "A triangle turns upside down. Is it still a triangle?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "no",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "yes",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q03.06",
+      "hint": "Count its sides and corners after turning.",
+      "explanation": "It still has three straight sides and three corners.",
+      "shortExplanation": "It still has three straight sides and three corners.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.06",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "Yes",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "label": "before"
+          },
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "rotation": 180,
+            "label": "upside down"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_quiz_03.step.007",
+      "kind": "tap-choice",
+      "title": "The most in a graph",
+      "prompt": "Which graph column shows the most?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "the first",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "the shortest",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "the tallest",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q03.07",
+      "hint": "More blocks make a taller column.",
+      "explanation": "The tallest column has the greatest count.",
+      "shortExplanation": "The tallest column has the greatest count.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.07",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "the tallest",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our pets",
+        "rows": [
+          {
+            "label": "cat",
+            "value": 5
+          },
+          {
+            "label": "dog",
+            "value": 3
+          },
+          {
+            "label": "fish",
+            "value": 1
+          }
+        ],
+        "style": "block",
+        "unit": "one child"
+      }
+    },
+    {
+      "id": "math_quiz_03.step.008",
+      "kind": "tap-choice",
+      "title": "Sharing 20 fairly",
+      "prompt": "Share 20 sweets fairly between 2 friends. How many does each friend get?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "10",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q03.08",
+      "hint": "Share 20 into two equal groups.",
+      "explanation": "Two equal groups of ten make twenty, so each friend gets ten.",
+      "shortExplanation": "Two equal groups of ten make twenty, so each friend gets ten.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.08",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 20,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
+    },
+    {
+      "id": "math_quiz_03.step.009",
+      "kind": "tap-choice",
+      "title": "Reading the clock",
+      "prompt": "What time does this clock show?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "12 o'clock",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "2 o'clock",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "half past 2",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q03.09",
+      "hint": "Look at the long hand first, then the short hand.",
+      "explanation": "The minute hand is on twelve; the hour hand is on two.",
+      "shortExplanation": "The minute hand is on twelve; the hour hand is on two.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.09",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "2 o'clock",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "clock",
+        "hour": 2,
+        "minute": 0
+      }
+    },
+    {
+      "id": "math_quiz_03.step.010",
+      "kind": "tap-choice",
+      "title": "Weighing flour",
+      "prompt": "What do we use to weigh flour?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "jug",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "jug"
+            ]
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "scales",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "scales"
+            ]
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "ruler",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "ruler"
+            ]
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q03.10",
+      "hint": "Which tool shows how heavy something is?",
+      "explanation": "Scales measure mass, so use them to weigh flour.",
+      "shortExplanation": "Scales measure mass, so use them to weigh flour.",
+      "source": {
+        "pages": [
+          64
+        ],
+        "questionId": "math.q03.10",
+        "answerKeyPages": [
+          82
+        ],
+        "answerKeyText": "scales",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "object",
+        "items": [
+          "flour"
+        ]
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_quiz_03.sticker",
+      "word": "count on",
+      "art": "math_label",
+      "picture": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 5,
+        "shown": [
+          1,
+          1,
+          1
+        ]
+      },
+      "meaning": "Start with a number and add forward jumps.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        64
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Revisit the home games for this term. Talk about how each answer was found.",
+      "textAr": "ارجعوا العبوا ألعاب البيت بتاعة الترم ده تاني، واتكلموا عن كل إجابة: وصلنالها إزاي؟",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.q03.01",
+      "text": "Pair up 6 socks, then try 3 and 9. Your child says which numbers pair up with none left over.",
+      "textAr": "اعملوا أزواج من ٦ شرابات، وبعدين جرّبوا ٣ و٩. طفلك يقول أنهي أرقام بتتقسّم أزواج من غير ما تفضل فردة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.02",
+      "text": "Line up three toys for a race. Your child gives them places, 1st, 2nd and 3rd, and says who comes after 2nd.",
+      "textAr": "صفّوا ٣ لعب كأنهم في سباق. طفلك يدّيهم الترتيب: الأول والتاني والتالت، ويقول مين بعد التاني.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.03",
+      "text": "Hold up 4 fingers on each hand. Your child counts all the fingers: double 4 is 8.",
+      "textAr": "ارفعوا ٤ صوابع في كل إيد. طفلك يعدّ الصوابع كلها: ضعف ٤ يبقى ٨.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.04",
+      "text": "Say 11 and keep it in your head, then count on 6 fingers: 12, 13, 14, 15, 16, 17.",
+      "textAr": "قولوا ١١ وخلّوه في دماغكم، وبعدين عدّوا ٦ على صوابعكم: ١٢، ١٣، ١٤، ١٥، ١٦، ١٧.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.05",
+      "text": "Hold a dice or a small box. Your child touches each flat face once while you count: six faces.",
+      "textAr": "امسكوا حجر زهر أو علبة صغيرة. طفلك يلمس كل وش مرة واحدة وإنتو بتعدّوا: ٦ وشوش.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.06",
+      "text": "An adult cuts a triangle from paper. Turn it round and upside down, and each time count its 3 sides and 3 corners: it is still a triangle.",
+      "textAr": "الكبير يقص مثلث من ورق. لفّوه واقلبوه، وفي كل مرة عدّوا الـ٣ أضلاع والـ٣ أركان: لسه مثلث.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.07",
+      "text": "Build a tower of blocks or cups for each person's favourite fruit. The tallest tower shows the most popular one.",
+      "textAr": "ابنوا برج مكعبات أو كوبايات لكل فاكهة بيحبها أهل البيت. أطول برج بيوضّح الفاكهة اللي اتختارت أكتر.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.08",
+      "text": "Share 20 spoons or pencils between two people, one each in turn. Count each share: 10 and 10.",
+      "textAr": "قسّموا ٢٠ معلقة أو قلم بين اتنين، واحد لكل واحد بالدور. عدّوا نصيب كل واحد: ١٠ و١٠.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.09",
+      "text": "Look at a clock together at 2 o'clock. Point to the long hand on 12 and the short hand on 2.",
+      "textAr": "بصّوا على الساعة مع بعض الساعة ٢. شاوروا على العقرب الطويل على ١٢ والقصير على ٢.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q03.10",
+      "text": "In the kitchen, weigh a bag of flour or rice on the scales together. Talk about why a ruler or a jug would not work.",
+      "textAr": "في المطبخ وزنوا كيس دقيق أو رز على الميزان مع بعض. اتكلموا ليه المسطرة أو الإبريق مش هينفعوا.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        64
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  },
+  "practiceUnitId": "math_unit_13"
+}

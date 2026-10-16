@@ -11,7 +11,7 @@ import '../content/lesson.dart';
 import 'spaced_review.dart';
 
 final lessonLibraryProvider = FutureProvider<LessonLibrary>(
-  (ref) => LessonLibrary.load(),
+  (ref) => LessonLibrary.loadAll(),
 );
 
 final storeProvider = Provider<ProgressStore>(
@@ -93,8 +93,15 @@ class AppController extends Notifier<AppData> {
       _childCommit((s) => s.copyWith(settings: settings));
   Future<void> photoPending(bool value) =>
       _childCommit((s) => s.copyWith(pendingPhoto: value));
-  Future<void> recordAttempt(UnitAttempt attempt) =>
-      _childCommit((s) => s.copyWith(attempts: [...s.attempts, attempt]));
+  Future<void> recordAttempt(
+    UnitAttempt attempt, {
+    String subject = 'science',
+  }) => _childCommit(
+    (s) => s.withSubjectProgress(
+      subject,
+      attempts: [...s.progressForSubject(subject).attempts, attempt],
+    ),
+  );
   Future<void> usage(DateTime start, DateTime end) => _childCommit(
     (s) => s.copyWith(dailySeconds: addUsage(s.dailySeconds, start, end)),
   );
@@ -111,7 +118,11 @@ class AppController extends Notifier<AppData> {
           )
         : s,
   );
-  Future<void> saveJourney(String id, Map<String, dynamic> journey) {
+  Future<void> saveJourney(
+    String id,
+    Map<String, dynamic> journey, {
+    String subject = 'science',
+  }) {
     if (LessonLibrary.availableIds.contains(id)) {
       // Lesson journeys must match the typed contract before they are
       // stored (AUD-003); a malformed one fails here, visibly.
@@ -122,9 +133,14 @@ class AppController extends Notifier<AppData> {
       );
     }
     return _childCommit((s) {
-      var next = s.copyWith(journeys: {...s.journeys, id: journey});
+      var next = s.withSubjectProgress(
+        subject,
+        journeys: {...s.progressForSubject(subject).journeys, id: journey},
+      );
       final library = ref.read(lessonLibraryProvider).value;
-      if (id.startsWith('unit_01.') && library != null) {
+      if (subject == 'science' &&
+          id.startsWith('unit_01.') &&
+          library != null) {
         next = next.copyWith(
           journeys: {
             ...next.journeys,
@@ -136,18 +152,23 @@ class AppController extends Notifier<AppData> {
     });
   }
 
-  Future<void> completeJourney(UnitAttempt attempt) => _childCommit((s) {
-    final journeys = Map<String, Map<String, dynamic>>.from(s.journeys)
+  Future<void> completeJourney(
+    UnitAttempt attempt, {
+    String subject = 'science',
+  }) => _childCommit((s) {
+    final progress = s.progressForSubject(subject);
+    final journeys = Map<String, Map<String, dynamic>>.from(progress.journeys)
       ..remove(attempt.unitId);
-    final exists = s.attempts.any(
+    final exists = progress.attempts.any(
       (a) => a.attemptId.isNotEmpty && a.attemptId == attempt.attemptId,
     );
-    var next = s.copyWith(
+    var next = s.withSubjectProgress(
+      subject,
       journeys: journeys,
-      attempts: exists ? s.attempts : [...s.attempts, attempt],
+      attempts: exists ? progress.attempts : [...progress.attempts, attempt],
     );
     final library = ref.read(lessonLibraryProvider).value;
-    if (library != null) {
+    if (subject == 'science' && library != null) {
       next = next.copyWith(
         journeys: {
           ...next.journeys,

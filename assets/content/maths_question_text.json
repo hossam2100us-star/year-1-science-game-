@@ -1,0 +1,1383 @@
+{
+  "_about": "Title, hint and (where rewritten) explanation for every assessed Maths question, read by scripts/build_maths_content.py (teacher review 5: one hint per unit, \"Maths discovery N\" titles, \"... is the answer.\" explanations). Keys are book question IDs.",
+  "math.u01.main.01": {
+    "title": "Counting apples",
+    "hint": "Touch each apple once and say one number for each.",
+    "home": "Put 8 apples or oranges in a row. Your child touches each one and says one number for each."
+  },
+  "math.u01.main.02": {
+    "title": "Counting stars",
+    "hint": "Touch each star once. Keep going until every star is counted.",
+    "home": "Draw 13 stars spread out on paper. Your child ticks each star as it is counted, so none is missed."
+  },
+  "math.u01.main.03": {
+    "title": "Number track gaps",
+    "hint": "Say the numbers in order. Which one is missing between its neighbours?",
+    "home": "Write 11 to 20 on a paper strip and cover a few numbers. Your child says the missing numbers."
+  },
+  "math.u01.main.04": {
+    "title": "Dot pictures",
+    "hint": "Count the dots in each picture, one dot at a time.",
+    "home": "Draw dot cards for 4, 6 and 10, and write the numbers on other cards. Your child matches each dot card to its number."
+  },
+  "math.u01.main.06": {
+    "title": "Spreading out",
+    "hint": "Were any cups added or taken away, or only moved?",
+    "home": "Put 6 cups close together and count them. Spread them out across the table and count again: still 6."
+  },
+  "math.u01.main.07": {
+    "title": "Writing twelve",
+    "hint": "Twelve is ten and two more. Look for a 1 and then a 2.",
+    "home": "Write 12, 21 and 2 on cards. Say \"twelve\" and ask your child to pick the right card: a 1, then a 2."
+  },
+  "math.u01.choice.01": {
+    "title": "The last number",
+    "hint": "Count three things aloud. What does your last number tell you?",
+    "explanation": "The last number you say tells how many there are altogether.",
+    "home": "Count 5 shoes together. Ask \"How many shoes?\" and help your child answer with the last number said."
+  },
+  "math.u01.choice.02": {
+    "title": "Just after 15",
+    "hint": "Say 15, then say the next counting number.",
+    "explanation": "Counting on one step from 15 gives 16.",
+    "home": "Count up the stairs or along a ruler. Stop at 15 and ask which number comes just after."
+  },
+  "math.u01.choice.03": {
+    "title": "A full ten frame",
+    "hint": "Count the empty spaces in the ten frame.",
+    "explanation": "A ten frame has 10 spaces, so 10 dots fill it.",
+    "home": "Draw a ten frame (2 rows of 5 boxes). Put a dot in each box and count: a full frame holds 10."
+  },
+  "math.u01.choice.04": {
+    "title": "Writing thirteen",
+    "hint": "Thirteen is ten and three. Which digit comes first?",
+    "explanation": "Thirteen is one ten and three ones, so we write 13.",
+    "home": "Write 13, 31 and 30 on cards. Say \"thirteen\" and your child picks 13: a ten and three."
+  },
+  "math.u01.choice.05": {
+    "title": "Spoons in a line",
+    "hint": "Were any spoons added or taken away?",
+    "explanation": "Only their places changed, so there are still 5 spoons.",
+    "home": "Put 5 spoons in a pile and count them. Lay them in a long line and count again: still 5."
+  },
+  "math.u02.main.01": {
+    "title": "One more, one less",
+    "hint": "One more is the next number; one less is the number before.",
+    "home": "Build a tower of 6 blocks. Add one and count. Then start with 10 and take one away."
+  },
+  "math.u02.main.02": {
+    "title": "Counting on",
+    "hint": "Start on 5, then make three jumps forward.",
+    "home": "Draw a number line from 0 to 10. Your child puts a finger on 5 and makes 3 jumps forward."
+  },
+  "math.u02.main.03": {
+    "title": "Counting back",
+    "hint": "Start on 9, then make four jumps back.",
+    "home": "On the same number line, start at 9 and make 4 jumps back, saying each number."
+  },
+  "math.u02.main.04": {
+    "title": "Adding two groups",
+    "hint": "Count the blue dots, then the orange dots. Do the groups join?",
+    "home": "Put 4 spoons and 3 forks together and count them all. Then write 4 + 3 = 7 and read it aloud."
+  },
+  "math.u02.main.05": {
+    "title": "Taking away cubes",
+    "hint": "Count 8 cubes, cover 3, then count the cubes left.",
+    "home": "Put 8 blocks in a line and take 3 away. Your child counts how many remain."
+  },
+  "math.u02.main.06": {
+    "title": "Words and signs",
+    "hint": "Add means +, take away means −, and equals means =.",
+    "home": "Tell a short story (\"4 birds, and 3 more come\") and help your child write it as 4 + 3 = 7. Then try a take-away story."
+  },
+  "math.u02.main.07": {
+    "title": "Cars drive away",
+    "hint": "Do the cars join the group or leave it?",
+    "home": "Park 8 toy cars and drive 4 away. Your child says the take-away sentence: 8 − 4 = 4."
+  },
+  "math.u02.main.08": {
+    "title": "How many more",
+    "hint": "Pair each of Ali's sweets with one of Mona's.",
+    "home": "Make a line of 7 spoons with a line of 4 underneath. Your child counts the spoons that have no partner."
+  },
+  "math.u02.choice.01": {
+    "title": "Picture of 2 + 3",
+    "hint": "Plus puts two groups together.",
+    "explanation": "2 + 3 means 2 and 3 more put together: 5 in all.",
+    "home": "Put 2 apples on a plate and add 3 more. Talk about how plus puts the groups together: 5 in all."
+  },
+  "math.u02.choice.02": {
+    "title": "Take away 2",
+    "hint": "Start on 6 and jump back twice.",
+    "explanation": "Two jumps back from 6 land on 4.",
+    "home": "Hold up 6 fingers and fold down 2. Count the fingers still up."
+  },
+  "math.u02.choice.03": {
+    "title": "Jumping to take away",
+    "hint": "Taking away makes a number smaller. Where are the smaller numbers?",
+    "explanation": "Taking away makes numbers smaller, so we jump backwards.",
+    "home": "Walk along the floor tiles: forwards when you add, backwards when you take away."
+  },
+  "math.u02.choice.04": {
+    "title": "One less than 8",
+    "hint": "Say the number that comes just before 8.",
+    "explanation": "One step back from 8 is 7.",
+    "home": "Put 8 cups in a row, take one away and count. Practise \"one less\" with other numbers too."
+  },
+  "math.u02.choice.05": {
+    "title": "Adding zero",
+    "hint": "Zero means nothing. What happens when you add nothing?",
+    "explanation": "Adding zero adds nothing, so 5 stays 5.",
+    "home": "Put 5 spoons on one plate and nothing on another. Put the plates together: adding zero changes nothing."
+  },
+  "math.u03.main.01": {
+    "title": "Naming flat shapes",
+    "hint": "Count the straight sides and the corners of each shape.",
+    "home": "Find a circle, a triangle, a square and a rectangle at home (a plate, half a sandwich, a tile, a door). Name each shape together."
+  },
+  "math.u03.main.02": {
+    "title": "Shape riddle",
+    "hint": "Which shapes have 4 corners? Which one has all its sides the same?",
+    "home": "Measure the sides of a square tile or paper with a piece of string. Your child checks that all 4 sides are the same."
+  },
+  "math.u03.main.03": {
+    "title": "Solid riddle",
+    "hint": "Think of a dice and count its square faces.",
+    "home": "Hold a dice or a cube-shaped box. Count its square faces, then its corners, together."
+  },
+  "math.u03.main.04": {
+    "title": "Triangle facts",
+    "hint": "Touch each side of a triangle, then each corner.",
+    "home": "Make a triangle with 3 straws or pencils on the table. Count the sides, then the corners."
+  },
+  "math.u03.main.05": {
+    "title": "Shapes that roll",
+    "hint": "A shape with a curved surface can roll.",
+    "home": "Gently roll a ball, a tin, a box and a dice on the floor. Sort them: rolls or does not roll."
+  },
+  "math.u03.main.06": {
+    "title": "Flat or solid",
+    "hint": "Could you hold it and turn it in your hand?",
+    "home": "Put solid things (a tin, a ball, a box) next to their outlines drawn on paper. Talk about which ones you can hold and which are flat."
+  },
+  "math.u03.main.07": {
+    "title": "Turning a square",
+    "hint": "Count its sides and corners after turning. Did they change?",
+    "home": "An adult cuts a paper square. Turn it onto a corner and check together: still 4 equal sides and 4 corners."
+  },
+  "math.u03.choice.01": {
+    "title": "A football",
+    "hint": "Is a football flat or solid? Is it round all over?",
+    "explanation": "A football is solid and round all over, like a sphere.",
+    "home": "Hold a football and an orange. Your child feels that they are round all over: both are spheres."
+  },
+  "math.u03.choice.02": {
+    "title": "A cereal box",
+    "hint": "Are all its faces squares, or are some long rectangles?",
+    "explanation": "A cereal box has rectangle faces, so it is a cuboid.",
+    "home": "Look at a cereal or tissue box. Count its faces together and see that some are long rectangles: it is a cuboid."
+  },
+  "math.u03.choice.03": {
+    "title": "Rectangle corners",
+    "hint": "Touch each corner of a rectangle and count.",
+    "explanation": "A rectangle has four corners, like a door.",
+    "home": "Draw round a book on paper. Your child counts the corners of the rectangle: 4."
+  },
+  "math.u03.choice.04": {
+    "title": "No corners",
+    "hint": "Run your finger round each shape. Which one never turns a corner?",
+    "explanation": "A circle is round all the way, so it has no corners.",
+    "home": "Draw round a cup and a box. Run a finger round each shape and find the one with no corners."
+  },
+  "math.u03.choice.05": {
+    "title": "A print in sand",
+    "hint": "Look at the flat end of a tin. What shape is it?",
+    "explanation": "The flat end of a tin is a circle.",
+    "home": "Press the bottom of a tin into play dough or sand, then lift it. Your child names the shape of the print."
+  },
+  "math.u04.main.01": {
+    "title": "Counting votes",
+    "hint": "Find the apple row and count its pictures once.",
+    "home": "Ask each family member for a favourite fruit and put one spoon in that fruit's row. Count the apple row."
+  },
+  "math.u04.main.02": {
+    "title": "The favourite",
+    "hint": "Which row has the most pictures?",
+    "home": "Look at your spoon chart. Your child finds the longest row: that fruit is the favourite."
+  },
+  "math.u04.main.03": {
+    "title": "The fewest",
+    "hint": "Which row has the fewest pictures?",
+    "home": "In the same chart, find the shortest row: the fruit the fewest people chose."
+  },
+  "math.u04.main.04": {
+    "title": "Two rows together",
+    "hint": "Count the banana pictures, then count on the orange ones.",
+    "home": "Count the banana row and the orange row, then count both rows together."
+  },
+  "math.u04.main.05": {
+    "title": "Everyone asked",
+    "hint": "Count every picture in every row once.",
+    "home": "Count every spoon in the chart: one spoon for each person asked."
+  },
+  "math.u04.main.06": {
+    "title": "Sorting by colour",
+    "hint": "Ask one question about each toy: is it red?",
+    "home": "Sort a few toys into two groups: red and not red. Your child explains where each toy goes and why."
+  },
+  "math.u04.main.07": {
+    "title": "Pet votes",
+    "hint": "Count how many children chose each pet.",
+    "home": "Ask family and friends which pet they like and draw one line for each answer: cat, dog or fish. Count each total."
+  },
+  "math.u04.choice.01": {
+    "title": "The picture key",
+    "hint": "Read the key under the pictogram.",
+    "explanation": "The key says each picture shows one person.",
+    "home": "Make a picture chart where each drawing is one person. Your child points to a drawing and says who it stands for."
+  },
+  "math.u04.choice.02": {
+    "title": "The longest row",
+    "hint": "More pictures make a row longer.",
+    "explanation": "The longest row has the most pictures, so it shows the most.",
+    "home": "Make two rows of cups for two drinks the family likes. The longer row shows the drink most people chose."
+  },
+  "math.u04.choice.03": {
+    "title": "Block graphs",
+    "hint": "Look at what each column is built from.",
+    "explanation": "A block graph is built from equal square blocks.",
+    "home": "Build a block graph with blocks or Lego: one block for each person's vote. Talk about how each column is built from equal blocks."
+  },
+  "math.u04.choice.04": {
+    "title": "Orange votes",
+    "hint": "Find the orange row and count its pictures.",
+    "explanation": "The orange row has three pictures, so 3 people chose orange.",
+    "home": "In your picture chart, your child counts the pictures in one row and says how many people chose that fruit."
+  },
+  "math.u04.choice.05": {
+    "title": "Fair pictograms",
+    "hint": "How can we compare the rows fairly?",
+    "explanation": "Same-size pictures in lines let us compare rows fairly.",
+    "home": "Make two rows of drawings, one spread out and one lined up. Talk about which one is fair to compare."
+  },
+  "math.u05.main.01": {
+    "title": "Number words",
+    "hint": "Say each word aloud, then find its number.",
+    "home": "Write eleven, fifteen and twenty on cards (in English) and 11, 15 and 20 on other cards. Match them together."
+  },
+  "math.u05.main.02": {
+    "title": "Counting back gaps",
+    "hint": "Count back one at a time: each number is one less.",
+    "home": "Count backwards from 20 together while walking down the stairs or clapping. Stop and ask your child for the next number."
+  },
+  "math.u05.main.03": {
+    "title": "Larger numbers",
+    "hint": "The larger number comes later when you count.",
+    "home": "Write pairs of numbers like 14 and 19, or 2 and 20. Your child finds both on a ruler and picks the one further along."
+  },
+  "math.u05.main.04": {
+    "title": "Smaller numbers",
+    "hint": "The smaller number comes first when you count.",
+    "home": "Build two towers, one of 6 blocks and one of 16. Your child points to the smaller number and the shorter tower."
+  },
+  "math.u05.main.05": {
+    "title": "An empty bowl",
+    "hint": "How many apples can you see in the bowl?",
+    "home": "Empty the fruit bowl together and ask how many apples are in it now. Write the number 0."
+  },
+  "math.u05.main.06": {
+    "title": "Guess, then count",
+    "hint": "Your guess does not have to match. Touch each dot once.",
+    "home": "Put some large pasta shapes on a plate. Your child guesses how many, then counts to see how close the guess was."
+  },
+  "math.u05.main.07": {
+    "title": "Counting on from 7",
+    "hint": "Start on 7 and make four jumps forward.",
+    "home": "Say 7, then count on 4 claps: 8, 9, 10, 11."
+  },
+  "math.u05.main.08": {
+    "title": "Counting back from 15",
+    "hint": "Start on 15 and make three jumps back.",
+    "home": "Stand on a tile you call 15 and take 3 steps back, saying 14, 13, 12."
+  },
+  "math.u05.choice.01": {
+    "title": "An empty basket",
+    "hint": "Look inside the basket. Is anything there?",
+    "explanation": "The basket is empty. Zero means nothing at all.",
+    "home": "Show an empty basket or bag and ask how many apples are in it. Say together: zero, nothing at all."
+  },
+  "math.u05.choice.02": {
+    "title": "The largest number",
+    "hint": "Which number would you say last when you count?",
+    "explanation": "17 comes after 9 and 12 when we count, so it is largest.",
+    "home": "Write 9, 12 and 17 on cards and put them in order on the table. Your child says which is largest."
+  },
+  "math.u05.choice.03": {
+    "title": "Just before 10",
+    "hint": "Count up to 10. Which number do you say just before it?",
+    "explanation": "9 comes just before 10 when we count.",
+    "home": "Count down for a rocket launch: 10, 9, 8... Stop and ask which number comes just before 10."
+  },
+  "math.u05.choice.04": {
+    "title": "A clever guess",
+    "hint": "It is a guess we make before we count.",
+    "explanation": "An estimate is a clever guess before we count.",
+    "home": "Before counting the socks in the laundry, guess the number together and call it an estimate. Then count to check."
+  },
+  "math.u05.choice.05": {
+    "title": "Counting back from 12",
+    "hint": "Each number is one less than the one before.",
+    "explanation": "One less than 11 is 10.",
+    "home": "Clap and count back from 12 together. Your child says the number after 11."
+  },
+  "math.u06.main.01": {
+    "title": "Breakfast time",
+    "hint": "Think about what you do soon after waking up.",
+    "home": "At breakfast, talk about the time of day: morning. Name things you do in the morning, the afternoon and the evening."
+  },
+  "math.u06.main.02": {
+    "title": "Sleep time",
+    "hint": "Is it light or dark when you go to bed?",
+    "home": "Draw a sun and a moon. Your child puts drawings of daily jobs (breakfast, school, sleep) under the right one."
+  },
+  "math.u06.main.03": {
+    "title": "A school day",
+    "hint": "What do you do first when the day starts?",
+    "home": "Draw three pictures: waking up, going to school, eating dinner. Your child puts them in order and tells the day as a story."
+  },
+  "math.u06.main.04": {
+    "title": "Which takes longer",
+    "hint": "Imagine doing each one. Which lasts all night?",
+    "home": "Compare brushing your teeth with a night's sleep, from bedtime to waking up. Talk about which takes longer."
+  },
+  "math.u06.main.05": {
+    "title": "Which is quicker",
+    "hint": "Which one is over in a moment?",
+    "home": "Blink, clap and hum a song. Your child says which one is over the quickest."
+  },
+  "math.u06.main.06": {
+    "title": "Comparing ribbons",
+    "hint": "Check the ribbons start at the same line, then compare the other ends.",
+    "home": "Lay three ribbons or strings side by side with one end lined up. Your child finds the longest and the shortest."
+  },
+  "math.u06.main.07": {
+    "title": "Fair comparing",
+    "hint": "What happens if one pencil starts further along?",
+    "home": "Compare two spoons, first with one end lined up and then with the ends apart. Talk about which way is fair."
+  },
+  "math.u06.choice.01": {
+    "title": "Moon and stars",
+    "hint": "When is the sky dark?",
+    "explanation": "We see the Moon and stars in the dark night sky.",
+    "home": "Look out of the window at night and find the Moon. Talk about when we see the Moon and the stars."
+  },
+  "math.u06.choice.02": {
+    "title": "Dinner time",
+    "hint": "Is dinner early or late in the day?",
+    "explanation": "Dinner is the meal we usually eat in the evening.",
+    "home": "At dinner, ask: is it morning, evening or the middle of the night? Look outside to check."
+  },
+  "math.u06.choice.03": {
+    "title": "The longest thing",
+    "hint": "Which one could you lie down on?",
+    "explanation": "A bed is longer than a shoe or a spoon.",
+    "home": "Lay a piece of string along a spoon, a shoe and a bed. Your child finds the longest."
+  },
+  "math.u06.choice.04": {
+    "title": "Lining up",
+    "hint": "Where should both things start?",
+    "explanation": "Lining up the ends gives both things the same start.",
+    "home": "Stand two pencils with their ends against a book. Your child says which is longer and why the ends must be together."
+  },
+  "math.u06.choice.05": {
+    "title": "Opposite of longer",
+    "hint": "If one ribbon is longer, the other one is…",
+    "explanation": "Shorter is the opposite of longer.",
+    "home": "Compare two scarves or ribbons. Say \"this one is longer\" and your child says the other one \"is shorter\"."
+  },
+  "math.q01.01": {
+    "title": "Counting dots",
+    "hint": "Touch each dot once and say one number for each.",
+    "home": "Draw 9 dots on paper. Your child counts them and crosses out each dot once, so none is counted twice."
+  },
+  "math.q01.02": {
+    "title": "One more than 12",
+    "hint": "Say 12, then the next number.",
+    "home": "Count the steps of the stairs together. Stop on step 12 and ask where one more step takes you."
+  },
+  "math.q01.03": {
+    "title": "Take away 3",
+    "hint": "Start on 7 and jump back three times.",
+    "home": "Put 7 spoons on the table and put 3 back in the drawer. Your child counts how many are left."
+  },
+  "math.q01.04": {
+    "title": "Three sides",
+    "hint": "Count the straight sides of each shape.",
+    "home": "Hunt for triangles at home: a sandwich cut corner to corner, a roof in a drawing. Your child traces the 3 sides with a finger."
+  },
+  "math.q01.05": {
+    "title": "Like a football",
+    "hint": "Is a football flat or solid? Round or with edges?",
+    "home": "Collect a ball, an orange and a tin. Your child finds the ones that are round all over like a football: spheres."
+  },
+  "math.q01.06": {
+    "title": "The longest row",
+    "hint": "More pictures make a longer row.",
+    "home": "Make a spoon chart: one row for each fruit your family likes, and one spoon for each person. The longest row shows the fruit most people chose."
+  },
+  "math.q01.07": {
+    "title": "The larger number",
+    "hint": "Which number comes later when you count?",
+    "home": "Write 15 and 18 on two cards. Your child finds both on a ruler or tape measure and says which is further along, so larger."
+  },
+  "math.q01.08": {
+    "title": "An empty bag",
+    "hint": "Empty means there is nothing inside.",
+    "home": "Show an empty bag or box and ask how many sweets are inside. Practise saying \"zero\" for nothing at all."
+  },
+  "math.q01.09": {
+    "title": "Sleep time",
+    "hint": "Is it light or dark when you go to bed?",
+    "home": "At bedtime, look out of the window together and talk about why the sky is dark: we sleep at night."
+  },
+  "math.q01.10": {
+    "title": "Comparing pencils",
+    "hint": "Where should both pencils start?",
+    "home": "Hold two pencils side by side with their ends on the edge of the table. Your child says which is longer, then tries again with the ends not lined up."
+  },
+  "math.u07.main.01": {
+    "title": "Both labels",
+    "hint": "Ask two questions: is it red? Does it have wheels?",
+    "home": "Make two string hoops on the floor: \"red\" and \"has wheels\". Your child puts a red toy car in the overlap."
+  },
+  "math.u07.main.02": {
+    "title": "The overlap",
+    "hint": "Check the car against each label in turn.",
+    "home": "Ask your child where a red car goes and why: it is red and it has wheels."
+  },
+  "math.u07.main.03": {
+    "title": "Neither label",
+    "hint": "Find the things that are not red and have no wheels.",
+    "home": "Find things that are not red and have no wheels (a green leaf, a blue ball). Put them outside both hoops."
+  },
+  "math.u07.main.04": {
+    "title": "Carroll diagram",
+    "hint": "For each number ask: is it less than 10? Think about 10 itself.",
+    "home": "Draw two columns: \"less than 10\" and \"not less than 10\". Your child sorts number cards from 1 to 20, thinking hard about 10."
+  },
+  "math.u07.main.05": {
+    "title": "Children with cats",
+    "hint": "Count the blocks in the cat column.",
+    "home": "Make a block graph of the pets your family and friends have. Your child counts the blocks in the cat column."
+  },
+  "math.u07.main.06": {
+    "title": "More cats than dogs",
+    "hint": "Count both columns, then find the difference.",
+    "home": "Put the cat and dog towers side by side. Your child counts how many extra blocks the taller tower has."
+  },
+  "math.u07.main.07": {
+    "title": "Fitting both labels",
+    "hint": "Where do the two hoops share space?",
+    "home": "Play a sorting game with two hoops. Each time something fits both labels, your child puts it in the overlap."
+  },
+  "math.u07.choice.01": {
+    "title": "Venn overlap",
+    "hint": "The overlap is inside both hoops at once.",
+    "explanation": "The overlap is inside both hoops, so things there fit both labels.",
+    "home": "Use two hoops, \"fruit\" and \"red\". Ask where a red apple goes and why."
+  },
+  "math.u07.choice.02": {
+    "title": "Where 10 goes",
+    "hint": "Is 10 less than 10, or the same?",
+    "explanation": "10 is the same as 10, so it is not less than 10.",
+    "home": "Write 10 on a card and ask: is it less than 10? Talk about why 10 is not less than 10."
+  },
+  "math.u07.choice.03": {
+    "title": "Outside the hoops",
+    "hint": "If a thing fits no hoop, where can it go?",
+    "explanation": "Things that fit neither label go outside both hoops.",
+    "home": "With two hoops on the floor, give your child something that fits neither label. Where should it go?"
+  },
+  "math.u07.choice.04": {
+    "title": "Each block",
+    "hint": "Read the words under the graph.",
+    "explanation": "Each block in the pets graph stands for one child.",
+    "home": "Build a block graph where each block is one child. Your child adds a block for themself."
+  },
+  "math.u07.choice.05": {
+    "title": "The tallest column",
+    "hint": "More blocks make a taller column.",
+    "explanation": "The tallest column has the most blocks, so it is most popular.",
+    "home": "Vote on dinner with blocks. The tallest column shows the most popular choice."
+  },
+  "math.u08.main.01": {
+    "title": "What comes next",
+    "hint": "Say the pattern aloud and find the part that repeats.",
+    "home": "Make a pattern with red and blue plates or cups. Your child says it aloud and puts the next one."
+  },
+  "math.u08.main.02": {
+    "title": "Shape pattern",
+    "hint": "Say the shapes aloud. Which part repeats?",
+    "home": "An adult cuts paper triangles and circles. Make \"triangle, triangle, circle\" again and again, and your child continues it."
+  },
+  "math.u08.main.03": {
+    "title": "Pattern gaps",
+    "hint": "Find red, blue, blue, then keep saying it.",
+    "home": "Clap and stamp a pattern like \"clap, stamp, stamp\". Stop, and your child does the next two."
+  },
+  "math.u08.main.05": {
+    "title": "Steps from the start",
+    "hint": "Step forward three times, then back once. Where are you now?",
+    "home": "Walk 3 steps forwards and 1 step back together. Count how many steps from the start you are."
+  },
+  "math.u08.main.06": {
+    "title": "Is a cube flat?",
+    "hint": "Could you hold a cube in your hand?",
+    "home": "Put a dice next to a paper square. Your child holds each and explains which one is solid."
+  },
+  "math.u08.main.07": {
+    "title": "Square and rectangle",
+    "hint": "Count the sides of each. Are all the sides the same length?",
+    "home": "Compare a square tile and a book. Count the sides and corners of each, then check which one has all sides equal."
+  },
+  "math.u08.main.08": {
+    "title": "Counting corners",
+    "hint": "Touch and count the corners of each shape.",
+    "home": "Draw a circle, a triangle, a square and a rectangle. Your child counts the corners of each and groups them."
+  },
+  "math.u08.choice.01": {
+    "title": "Colour pattern",
+    "hint": "Say the colours aloud. What came after yellow before?",
+    "explanation": "Red and yellow take turns, so red comes next.",
+    "home": "Line up red and yellow things in turn. Your child says what comes next."
+  },
+  "math.u08.choice.02": {
+    "title": "Square sides",
+    "hint": "Touch each side of a square and count.",
+    "explanation": "A square has four straight sides, all the same length.",
+    "home": "Fold a paper napkin into a square. Your child runs a finger along each side and counts: 4."
+  },
+  "math.u08.choice.03": {
+    "title": "Moving backwards",
+    "hint": "Your face looks forwards. Which way does your back face?",
+    "explanation": "Moving the way your back faces is moving backwards.",
+    "home": "Play robots: say \"forwards\", \"backwards\" or \"turn\", and your child moves that way."
+  },
+  "math.u08.choice.04": {
+    "title": "Turning",
+    "hint": "Did it get bigger, change colour, or point a new way?",
+    "explanation": "Turning changes the way something points or faces. Its size and colour stay the same.",
+    "home": "Point a toy car at the door, then turn it. Talk about what changed: only the way it faces."
+  },
+  "math.u08.choice.05": {
+    "title": "3D shapes",
+    "hint": "Think of a ball or a box. Could you pick them up?",
+    "explanation": "A 3D shape is solid, so you can pick it up.",
+    "home": "Collect solid things from the kitchen (a tin, a box, an orange). Your child holds each and says it is a 3D shape."
+  },
+  "math.u09.main.01": {
+    "title": "Ten and ones",
+    "hint": "Count the full ten, then count on the ones.",
+    "home": "Bundle 10 straws or pencils and put 4 loose ones beside them. Count on from ten: 11, 12, 13, 14."
+  },
+  "math.u09.main.02": {
+    "title": "More tens and ones",
+    "hint": "Start at 10, then count on each loose one.",
+    "home": "Show 10 fingers on your hands and 9 on your child's. Count on from ten to find 19."
+  },
+  "math.u09.main.03": {
+    "title": "Seventeen",
+    "hint": "The first digit counts tens; the second counts ones.",
+    "home": "Make 17 with a bundle of ten pencils and some loose ones. Your child says how many tens and how many ones."
+  },
+  "math.u09.main.04": {
+    "title": "Twenty",
+    "hint": "How many full tens make 20? Are any ones left over?",
+    "home": "Make two bundles of 10 pencils. Ask how many tens and how many loose ones: 2 tens and no ones."
+  },
+  "math.u09.main.05": {
+    "title": "Smallest first",
+    "hint": "Find the number with no tens first.",
+    "home": "Write 9, 12, 15 and 20 on cards and mix them up. Your child puts them in order, smallest first."
+  },
+  "math.u09.main.06": {
+    "title": "Counting in tens",
+    "hint": "Each step adds one more ten.",
+    "home": "Count in tens while jumping: 10, 20, 30, 40, 50. Leave a gap and let your child fill it."
+  },
+  "math.u09.main.07": {
+    "title": "Tens from 4",
+    "hint": "Add a ten each time. The ones digit stays the same.",
+    "home": "Start at 4 on a tape measure and jump in tens: 4, 14, 24, 34."
+  },
+  "math.u09.main.08": {
+    "title": "Writing sixteen",
+    "hint": "Sixteen is one ten and six ones. Which digit comes first?",
+    "home": "Write 16 and 61 on cards. Make 16 with a bundle of ten and 6 loose pencils, and see which card it matches."
+  },
+  "math.u09.choice.01": {
+    "title": "Tens in 13",
+    "hint": "How many full tens fit in 13? How many are left?",
+    "explanation": "13 is one full ten and three more ones.",
+    "home": "Make 13 with a bundle of ten and 3 loose pencils. Your child says: one ten and three ones."
+  },
+  "math.u09.choice.02": {
+    "title": "Ten more",
+    "hint": "Add a whole ten to 5.",
+    "explanation": "Ten more than 5 is one ten and five ones: 15.",
+    "home": "Put down 5 loose pencils and add a bundle of ten. Count on to find ten more than 5."
+  },
+  "math.u09.choice.03": {
+    "title": "Tens pattern",
+    "hint": "Each number is ten more than the one before.",
+    "explanation": "One more ten after 30 gives 40.",
+    "home": "Count everyone's fingers around the table in tens: 10, 20, 30, 40."
+  },
+  "math.u09.choice.04": {
+    "title": "In order",
+    "hint": "Check that each number is bigger than the one before.",
+    "explanation": "4, then 11, then 18: each number is bigger than the last.",
+    "home": "Write 4, 11 and 18 on cards. Your child lays them on a tape measure in order and reads them smallest first."
+  },
+  "math.u09.choice.05": {
+    "title": "The 1 in 18",
+    "hint": "In 18, the first digit counts tens.",
+    "explanation": "The 1 in 18 stands for one whole ten, the full ten frame.",
+    "home": "Make 18 with a bundle of ten and 8 loose pencils. Point to the 1 in 18 and to the bundle: both mean one ten."
+  },
+  "math.u10.main.01": {
+    "title": "Days in a week",
+    "hint": "Say the days from Sunday to Saturday and count them.",
+    "home": "Sing or say the days of the week together, holding up one finger for each day."
+  },
+  "math.u10.main.02": {
+    "title": "Neighbouring days",
+    "hint": "Say the days in order. Which comes after Monday?",
+    "home": "Write the days of the week on cards in a circle. Your child finds the day before and the day after a day you choose."
+  },
+  "math.u10.main.03": {
+    "title": "Months in a year",
+    "hint": "Say the months from January to December and count them.",
+    "home": "Look at a calendar and count the months together. Find the month of your child's birthday."
+  },
+  "math.u10.main.04": {
+    "title": "After January",
+    "hint": "Say the months in order, starting from January.",
+    "home": "Say the months in order together. Stop at a month and ask which one comes next."
+  },
+  "math.u10.main.05": {
+    "title": "Measuring with cubes",
+    "hint": "Count the cubes from one end of the pencil to the other.",
+    "home": "Measure a pencil or a spoon with blocks laid end to end, with no gaps. Count the blocks."
+  },
+  "math.u10.main.06": {
+    "title": "The heavier side",
+    "hint": "Which side of the balance went down?",
+    "home": "Hold something heavy in one hand and something light in the other, like a balance. Your child lowers the hand holding the heavier one."
+  },
+  "math.u10.main.07": {
+    "title": "Big and heavy",
+    "hint": "Think of a big pillow and a small stone.",
+    "home": "Hold a big pillow in one hand and a small stone in the other. Talk about which is bigger and which is heavier."
+  },
+  "math.u10.main.08": {
+    "title": "Heaviest first",
+    "hint": "Imagine lifting each one. Which is hardest to lift?",
+    "home": "With an adult's help, compare lifting a chair, a book and a tissue. Put them in order from heaviest to lightest."
+  },
+  "math.u10.choice.01": {
+    "title": "A year",
+    "hint": "Say the months from January to December.",
+    "explanation": "A year has 12 months, from January to December.",
+    "home": "Turn the pages of a calendar and count one page for each month: 12."
+  },
+  "math.u10.choice.02": {
+    "title": "Balance rule",
+    "hint": "Look at the balance. Which pan is lower?",
+    "explanation": "The heavier side pulls its pan down.",
+    "home": "Hang two bags on a coat hanger. Put a full can in one and an empty cup in the other, and watch which side goes down."
+  },
+  "math.u10.choice.03": {
+    "title": "Measuring fairly",
+    "hint": "Would gaps change how many cubes you count?",
+    "explanation": "Cubes must touch, with no gaps, to measure the whole length.",
+    "home": "Measure a book with blocks twice: once with gaps between them and once with none. Talk about which count is right."
+  },
+  "math.u10.choice.04": {
+    "title": "After Saturday",
+    "hint": "What happens to the week after Saturday?",
+    "explanation": "After Saturday the week starts again with Sunday.",
+    "home": "Lay the days of the week in a circle on the floor. Walk round it and find what comes after Saturday."
+  },
+  "math.u10.choice.05": {
+    "title": "The heaviest",
+    "hint": "Which one would be hardest to carry?",
+    "explanation": "A watermelon is much heavier than a grape or a strawberry.",
+    "home": "At the market or at home, hold a grape, a strawberry and a watermelon (with help). Talk about which is heaviest."
+  },
+  "math.u11.main.01": {
+    "title": "Partners of 10",
+    "hint": "Use a ten frame: how many spaces are still empty?",
+    "home": "Hold up 10 fingers and fold some down. Your child says how many are up and how many are down: together they always make 10."
+  },
+  "math.u11.main.02": {
+    "title": "Empty spaces",
+    "hint": "Fill 7 spaces, then count the empty ones.",
+    "home": "Draw a ten frame and fill 7 boxes. Your child counts the empty boxes needed to make 10."
+  },
+  "math.u11.main.03": {
+    "title": "The same total",
+    "hint": "Count on from the bigger number in each sum.",
+    "home": "Make 5 in different ways with blocks of two colours: 3 and 2, 4 and 1. Count each total."
+  },
+  "math.u11.main.04": {
+    "title": "Adding on a line",
+    "hint": "Start on 12 and make three jumps forward.",
+    "home": "On a tape measure, start at 12 and make 3 jumps forward with a finger."
+  },
+  "math.u11.main.05": {
+    "title": "Taking away 4",
+    "hint": "Count 16 cubes, cover 4, then count the cubes left.",
+    "home": "Make a line of 16 blocks, take 4 away and count what is left."
+  },
+  "math.u11.main.06": {
+    "title": "Difference of 5 and 9",
+    "hint": "Start on 5 and count the jumps to 9.",
+    "home": "Build towers of 5 and 9 blocks side by side. Your child counts the extra blocks on the taller one."
+  },
+  "math.u11.main.07": {
+    "title": "A sensible total",
+    "hint": "Is 6 + 3 small or big? Could it be near 20?",
+    "home": "Ask: can 6 and 3 make 19? Check on fingers: 6 on one hand and 3 on the other make 9."
+  },
+  "math.u11.main.08": {
+    "title": "Hidden beans",
+    "hint": "Count on from 6 up to 10.",
+    "home": "Hide some of 10 spoons under a towel and show the rest. Your child works out how many are hiding."
+  },
+  "math.u11.choice.01": {
+    "title": "Making 10",
+    "hint": "Check each pair on a ten frame.",
+    "explanation": "6 and 4 fill all ten spaces of a ten frame.",
+    "home": "Play \"make 10\" with fingers: you show 6, and your child shows the number that makes 10."
+  },
+  "math.u11.choice.02": {
+    "title": "Difference of 8 and 10",
+    "hint": "Start on 8 and count the jumps to 10.",
+    "explanation": "Two jumps go from 8 to 10, so the difference is 2.",
+    "home": "Count from 8 to 10 on your fingers: how many jumps is it?"
+  },
+  "math.u11.choice.03": {
+    "title": "Adding 2 to 14",
+    "hint": "Start on 14 and jump forward twice.",
+    "explanation": "Two jumps forward from 14 land on 16.",
+    "home": "Say 14 and count on 2 more steps on the stairs."
+  },
+  "math.u11.choice.04": {
+    "title": "Adding 1 to 9",
+    "hint": "What comes just after 9?",
+    "explanation": "One more than 9 is 10.",
+    "home": "Fill a ten frame with 9 and add one more. Talk about how one more than 9 makes 10."
+  },
+  "math.u11.choice.05": {
+    "title": "Taking 3 from 18",
+    "hint": "Start on 18 and jump back three times.",
+    "explanation": "Three jumps back from 18 land on 15.",
+    "home": "Start at 18 on a tape measure and make 3 jumps back."
+  },
+  "math.u12.main.01": {
+    "title": "Equal parts",
+    "hint": "Look at each cut. Are both parts the same size?",
+    "home": "Fold paper shapes in half and an adult cuts along the fold. Put the two parts on top of each other: do they match?"
+  },
+  "math.u12.main.02": {
+    "title": "Half of 6",
+    "hint": "Share 6 into two groups, one at a time.",
+    "home": "Share 6 biscuits between two plates, one at a time. Count each plate."
+  },
+  "math.u12.main.03": {
+    "title": "Half of 10",
+    "hint": "Share 10 into two groups, one at a time.",
+    "home": "Share 10 spoons between two people, one each in turn. Each person counts their share."
+  },
+  "math.u12.main.04": {
+    "title": "Sharing apples",
+    "hint": "Give one apple to each child in turn.",
+    "home": "Share 8 pieces of fruit between two children, one at a time, and check that both have the same."
+  },
+  "math.u12.main.05": {
+    "title": "What a half is",
+    "hint": "When we halve, how many equal parts are there?",
+    "home": "Fold a sheet of paper into two equal parts. Colour one part and call it one half."
+  },
+  "math.u12.main.06": {
+    "title": "The bigger half",
+    "hint": "Can two halves of the same thing be different sizes?",
+    "home": "An adult cuts a sandwich in two. If one part is bigger, talk about why the parts are not halves."
+  },
+  "math.u12.choice.01": {
+    "title": "Fair halves",
+    "hint": "Halves are two parts of the same size.",
+    "explanation": "Picture c has two equal parts, so they are halves. The others are not.",
+    "home": "Draw lines on some shapes, some through the middle and some not. Your child picks the shapes cut into two equal halves."
+  },
+  "math.u12.choice.02": {
+    "title": "Half of 4",
+    "hint": "Share 4 into two equal groups.",
+    "explanation": "Two and two make 4, so half of 4 is 2.",
+    "home": "Share 4 spoons between two cups. Your child counts how many are in each cup."
+  },
+  "math.u12.choice.03": {
+    "title": "Pizza halves",
+    "hint": "The pizza has two equal parts. What is one of them called?",
+    "explanation": "One of two equal parts is one half.",
+    "home": "When an adult cuts a pizza or a round loaf into two equal parts, ask your child to name each part: one half."
+  },
+  "math.u12.choice.04": {
+    "title": "Sharing 6",
+    "hint": "Give one to each person in turn until none are left.",
+    "explanation": "Sharing 6 fairly between 2 people gives 3 each.",
+    "home": "Share 6 toys between two people, one each in turn, and count each share."
+  },
+  "math.u12.choice.05": {
+    "title": "Cut into equal parts",
+    "hint": "Are all the pieces the same size?",
+    "explanation": "The square is cut into four equal parts. Equal parts of a whole are a fraction.",
+    "home": "Fold a paper square into 4 equal parts and open it. Your child checks that all the parts are the same size."
+  },
+  "math.q02.01": {
+    "title": "Venn overlap",
+    "hint": "The overlap is inside both hoops.",
+    "home": "Make two hoops with string on the floor: \"red\" and \"toys\". A red toy goes in the overlap, because it fits both."
+  },
+  "math.q02.02": {
+    "title": "Colour pattern",
+    "hint": "Say the colours aloud and find the part that repeats.",
+    "home": "Make a red, blue, red, blue line with cups or blocks. Your child says the pattern aloud and adds the next one."
+  },
+  "math.q02.03": {
+    "title": "Tens and ones in 15",
+    "hint": "The first digit counts tens; the second counts ones.",
+    "home": "Bundle 10 pencils with a rubber band and put 5 loose ones beside them. Your child says: one ten and five ones make 15."
+  },
+  "math.q02.04": {
+    "title": "Counting in tens",
+    "hint": "Add one more ten to 20.",
+    "home": "Each family member holds up 10 fingers. Count the hands in tens: ten, twenty, thirty."
+  },
+  "math.q02.05": {
+    "title": "Every day for a week",
+    "hint": "Say the days from Sunday to Saturday and count them.",
+    "home": "Mark each day on a calendar for one week. Count the marks together: seven days, from Sunday to Saturday."
+  },
+  "math.q02.06": {
+    "title": "Balance rule",
+    "hint": "Look at the balance. Which pan is lower?",
+    "home": "Make a balance with a coat hanger and two bags. Put something heavy in one bag and something light in the other, and watch which side goes down."
+  },
+  "math.q02.07": {
+    "title": "Partner of 8",
+    "hint": "Fill 8 spaces of a ten frame. How many are empty?",
+    "home": "Draw a ten frame (2 rows of 5 boxes) and put a dot in 8 boxes. Your child counts the empty boxes: the partner of 8 that makes 10."
+  },
+  "math.q02.08": {
+    "title": "Difference of 7 and 10",
+    "hint": "Start on 7 and count the jumps to 10.",
+    "home": "Draw a number line on paper. Your child puts a finger on 7 and counts the jumps to 10."
+  },
+  "math.q02.09": {
+    "title": "Half of 8",
+    "hint": "Share 8 into two equal groups.",
+    "home": "Share 8 biscuits fairly between two plates, one at a time. Count how many are on each plate."
+  },
+  "math.q02.10": {
+    "title": "Equal halves",
+    "hint": "Can halves of the same whole be different sizes?",
+    "home": "An adult cuts a slice of bread into a big piece and a small piece. Ask: are these halves? Then cut another slice into two equal halves and compare."
+  },
+  "math.u13.main.01": {
+    "title": "Even numbers",
+    "hint": "Can each number make pairs with none left over?",
+    "home": "Pair up socks or shoes for numbers like 2, 5, 8 and 11. Your child sorts the numbers into \"none left over\" and \"one left over\"."
+  },
+  "math.u13.main.02": {
+    "title": "Odd or even",
+    "hint": "Pair up 7 things. Is one left alone?",
+    "home": "Put out 7 socks and make pairs. Your child finds the sock left alone, so 7 is odd."
+  },
+  "math.u13.main.03": {
+    "title": "Counting in twos",
+    "hint": "Each number is two more than the one before.",
+    "home": "Count the shoes by the door in twos: 2, 4, 6, 8, 10."
+  },
+  "math.u13.main.04": {
+    "title": "Race positions",
+    "hint": "Who finished just after the one who came 1st?",
+    "home": "Have a short race with toys or family members. Say who came 1st, 2nd and 3rd."
+  },
+  "math.u13.main.05": {
+    "title": "Third from the left",
+    "hint": "Touch the stars from the left: first, second, third.",
+    "home": "Line up 5 toys. Your child points to the 1st, the 2nd and the 3rd from the left."
+  },
+  "math.u13.main.06": {
+    "title": "Parts of 14",
+    "hint": "What do you add to 10 to make 14? And to 7?",
+    "home": "Make 14 with blocks and split it in different ways: 10 and 4, 7 and 7. Count each part."
+  },
+  "math.u13.main.07": {
+    "title": "Coin values",
+    "hint": "Read the value on each coin, not its size.",
+    "home": "Look at real coins together (25 and 50 piastres and 1 pound). Read the number on each and find the one worth most."
+  },
+  "math.u13.main.08": {
+    "title": "Pairs of socks",
+    "hint": "Each pair has 2 socks. Count in twos.",
+    "home": "Put 5 pairs of socks on the bed and count every sock in twos."
+  },
+  "math.u13.choice.01": {
+    "title": "Pairs with none left",
+    "hint": "Make pairs of socks. Is one left alone?",
+    "explanation": "6 socks make 3 pairs with none left over, so 6 is even.",
+    "home": "Pair up 6 socks from the laundry. Your child checks whether any sock is left alone."
+  },
+  "math.u13.choice.02": {
+    "title": "An odd number",
+    "hint": "Pair up each number. Which one leaves one alone?",
+    "explanation": "9 makes four pairs with one left over, so it is odd.",
+    "home": "Try pairing 9, 12 and 4 spoons. Your child finds the number that leaves one spoon alone."
+  },
+  "math.u13.choice.03": {
+    "title": "After 2nd",
+    "hint": "Say first, second, then the next position.",
+    "explanation": "Third comes after second: 3rd.",
+    "home": "Queue toys in a line for a bus. Ask who is 2nd and who comes after them."
+  },
+  "math.u13.choice.04": {
+    "title": "Egyptian money",
+    "hint": "What are the coins and notes in Egypt called?",
+    "explanation": "In Egypt we pay with pounds and piastres.",
+    "home": "Look at coins and a note together and talk about pounds and piastres. Let your child hand over the money when you buy something small."
+  },
+  "math.u13.choice.05": {
+    "title": "Making 12",
+    "hint": "Start at 10. How many more make 12?",
+    "explanation": "Ten and two more make twelve.",
+    "home": "Make 12 with a bundle of ten pencils and 2 loose ones. Your child says: 12 is 10 and 2."
+  },
+  "math.u14.main.01": {
+    "title": "Doubles",
+    "hint": "A double is the same number added again.",
+    "home": "Use a mirror: put 2 blocks in front of it and count what you see. Try 5 too."
+  },
+  "math.u14.main.02": {
+    "title": "Bigger doubles",
+    "hint": "Add each number to itself.",
+    "home": "Count fingers in doubles: two hands of 5 make 10. Use blocks for double 7 and double 10."
+  },
+  "math.u14.main.03": {
+    "title": "Counting on from 8",
+    "hint": "Start on 8, the bigger number, and count on 3.",
+    "home": "Say 8 and count on 3 fingers. Then start at 3 instead, and talk about which was quicker."
+  },
+  "math.u14.main.04": {
+    "title": "Counting on from 12",
+    "hint": "Start on 12, the bigger number, and count on 5.",
+    "home": "Say 12 and count on 5 steps across the room."
+  },
+  "math.u14.main.05": {
+    "title": "More birds",
+    "hint": "Start on 8 and count on 4 more.",
+    "home": "Tell a story with toys: 8 toys are at a party and 4 more arrive. Count them all."
+  },
+  "math.u14.main.06": {
+    "title": "Counting back from 15",
+    "hint": "Start on 15 and jump back three times.",
+    "home": "Start at 15 and count back 3 claps: 14, 13, 12."
+  },
+  "math.u14.main.07": {
+    "title": "Difference of 13 and 17",
+    "hint": "Start on 13 and count the jumps to 17.",
+    "home": "On a tape measure, put one finger on 13 and another on 17. Count the jumps between them."
+  },
+  "math.u14.choice.01": {
+    "title": "Double 6",
+    "hint": "Add 6 and 6.",
+    "explanation": "Double 6 is 6 + 6, which is 12.",
+    "home": "Put 6 blocks on each of two plates. Count them all: double 6."
+  },
+  "math.u14.choice.02": {
+    "title": "The quickest start",
+    "hint": "Which start needs fewer jumps?",
+    "explanation": "Starting on the bigger number, 9, needs only two jumps.",
+    "home": "Ask: for 2 + 9, would you start counting from 2 or from 9? Try both on your fingers."
+  },
+  "math.u14.choice.03": {
+    "title": "Swapping numbers",
+    "hint": "Does the order of adding change the total?",
+    "explanation": "Swapping the numbers does not change the total: 3 + 7 is 10 too.",
+    "home": "Line up 7 red and 3 blue blocks, then turn the line round. Count both ways: still 10."
+  },
+  "math.u14.choice.04": {
+    "title": "Taking 2 from 20",
+    "hint": "Start on 20 and jump back twice.",
+    "explanation": "Two jumps back from 20 land on 18.",
+    "home": "Start at 20 on the stairs or a tape measure and go back 2."
+  },
+  "math.u14.choice.05": {
+    "title": "Double 8",
+    "hint": "Add 8 and 8.",
+    "explanation": "Double 8 is 8 + 8, which is 16.",
+    "home": "Build two towers of 8 blocks. Count them together: double 8."
+  },
+  "math.u15.main.01": {
+    "title": "Cube faces",
+    "hint": "Count each flat face of a dice once.",
+    "home": "Hold a dice or a cube-shaped box. Put a sticker on each face as you count: 6 faces."
+  },
+  "math.u15.main.02": {
+    "title": "Cube corners",
+    "hint": "Count the top corners, then the bottom corners.",
+    "home": "Count the corners of a cube-shaped box, touching each one once: 4 on top and 4 underneath."
+  },
+  "math.u15.main.03": {
+    "title": "Turned shapes",
+    "hint": "Count the sides of each. Did turning change them?",
+    "home": "Turn a box on its side and on its end. Ask each time: is it still the same shape?"
+  },
+  "math.u15.main.04": {
+    "title": "Cylinder faces",
+    "hint": "Look at a tin: how many flat ends does it have?",
+    "home": "Hold a tin and find its flat faces, top and bottom. Feel the curved side in between."
+  },
+  "math.u15.main.05": {
+    "title": "Solid pattern",
+    "hint": "Say the shapes aloud and find the part that repeats.",
+    "home": "Make a pattern with balls and boxes: ball, box, box, ball, box, box. Your child says what comes next."
+  },
+  "math.u15.main.07": {
+    "title": "Flat or curved faces",
+    "hint": "Does the shape have a curved surface that can roll?",
+    "home": "Collect a ball, a tin, a box and a party hat. Sort them: has a curved face, or only flat faces."
+  },
+  "math.u15.main.08": {
+    "title": "Robot routes",
+    "hint": "Choose a route and watch where the robot ends.",
+    "home": "Make a grid on the floor with chalk or tape. Your child gives you robot commands (forwards, turn right) to reach a toy."
+  },
+  "math.u15.choice.01": {
+    "title": "Turning a shape",
+    "hint": "Turn a triangle. Does it still have 3 sides?",
+    "explanation": "Turning does not change sides or corners, so the name stays.",
+    "home": "Turn a paper triangle in different ways. Each time, ask your child to name it."
+  },
+  "math.u15.choice.02": {
+    "title": "Cone corners",
+    "hint": "Where does a cone come to a point?",
+    "explanation": "A cone has one pointy corner at its top.",
+    "home": "Look at an ice cream cone or a party hat. Find its one pointy corner and its round flat face."
+  },
+  "math.u15.choice.03": {
+    "title": "Sphere faces",
+    "hint": "Is a ball flat anywhere?",
+    "explanation": "A sphere has one curved face all the way round.",
+    "home": "Roll an orange between your hands. Talk about how a sphere has one curved face and no corners."
+  },
+  "math.u15.choice.04": {
+    "title": "Cuboid faces",
+    "hint": "Count the faces of a box: top, bottom and the sides.",
+    "explanation": "A box shape has a top, a bottom and four sides: 6 faces.",
+    "home": "Count the faces of a tissue box, putting a hand on each one: 6."
+  },
+  "math.u15.choice.05": {
+    "title": "Triangle sides",
+    "hint": "Touch each straight side of a triangle.",
+    "explanation": "A triangle has three straight sides.",
+    "home": "Make a triangle with three spoons. Count the sides."
+  },
+  "math.u16.main.01": {
+    "title": "Children who walked",
+    "hint": "Find the walk column and count its blocks.",
+    "home": "Ask relatives or friends how they travel to school or work and make a block graph. Count the \"walk\" column."
+  },
+  "math.u16.main.02": {
+    "title": "The bus column",
+    "hint": "Find the bus column and count its blocks.",
+    "home": "In your block graph, count the bus column and write the number under it."
+  },
+  "math.u16.main.03": {
+    "title": "Most popular",
+    "hint": "Which column is the tallest?",
+    "home": "Your child finds the tallest column in your graph and says which way was most popular."
+  },
+  "math.u16.main.04": {
+    "title": "Least popular",
+    "hint": "Which column is the shortest?",
+    "home": "Find the shortest column and say which way was least popular."
+  },
+  "math.u16.main.05": {
+    "title": "Walk or car",
+    "hint": "Count both columns, then find the difference.",
+    "home": "Put two towers side by side and count how many more blocks the taller one has."
+  },
+  "math.u16.main.06": {
+    "title": "Everyone in the graph",
+    "hint": "Add the blocks in every column.",
+    "home": "Count every block in your graph to find how many people you asked altogether."
+  },
+  "math.u16.main.07": {
+    "title": "Corners or none",
+    "hint": "Run your finger round each shape. Does it turn a corner?",
+    "home": "Draw round a cup, a book, half a sandwich and an egg. Sort the drawings: has corners, or no corners."
+  },
+  "math.u16.choice.01": {
+    "title": "The tallest column",
+    "hint": "More blocks make a taller column.",
+    "explanation": "The tallest column has the most blocks.",
+    "home": "Your child builds the tallest tower for the family's favourite game. Talk about why it is the tallest."
+  },
+  "math.u16.choice.02": {
+    "title": "The car column",
+    "hint": "Find the car column and count its blocks.",
+    "explanation": "The car column has three blocks: 3 children.",
+    "home": "Count the car column in your graph, touching each block once."
+  },
+  "math.u16.choice.03": {
+    "title": "Bus and bike",
+    "hint": "Count the bus blocks, then count on the bike blocks.",
+    "explanation": "Four bus blocks and two bike blocks make six.",
+    "home": "Count two columns of your graph together and say the total."
+  },
+  "math.u16.choice.04": {
+    "title": "Graph titles",
+    "hint": "How do we know what a graph is about?",
+    "explanation": "The title tells us what the graph is about.",
+    "home": "Make a graph together and let your child write or draw its title at the top."
+  },
+  "math.u16.choice.05": {
+    "title": "An empty column",
+    "hint": "How many blocks are in the fish column?",
+    "explanation": "The fish column has no blocks, so zero children chose fish.",
+    "home": "Add a column to your graph that nobody chose. Your child says how many blocks it has: zero."
+  },
+  "math.u17.main.01": {
+    "title": "Writing a half",
+    "hint": "A half is 1 part out of 2.",
+    "home": "Fold a sheet of paper in half, colour one part and write ½ on it together."
+  },
+  "math.u17.main.02": {
+    "title": "Half of 20",
+    "hint": "Share 20 into two equal rows.",
+    "home": "Share 20 blocks into two equal rows. Count one row."
+  },
+  "math.u17.main.03": {
+    "title": "Half of 14",
+    "hint": "Share 14 into two equal groups.",
+    "home": "Share 14 spoons between two cups, one at a time, and count each cup."
+  },
+  "math.u17.main.04": {
+    "title": "Half of 12",
+    "hint": "Share 12 into two equal groups.",
+    "home": "Make two equal rows from 12 toys and count one row."
+  },
+  "math.u17.main.05": {
+    "title": "Half coloured",
+    "hint": "Is the coloured part one of two equal parts?",
+    "home": "Fold some shapes in half and colour one part; fold others into unequal parts. Your child picks the ones with one half coloured."
+  },
+  "math.u17.main.06": {
+    "title": "Two halves",
+    "hint": "Put two halves of a pizza back together.",
+    "home": "An adult cuts an apple in half. Put the halves back together: one whole apple."
+  },
+  "math.u17.main.07": {
+    "title": "Half a team",
+    "hint": "If one half is 5, what is the other half?",
+    "home": "Line up 5 toys as half a team. Your child makes the other half and counts the whole team."
+  },
+  "math.u17.choice.01": {
+    "title": "Showing ½",
+    "hint": "Do the two parts have to be the same size?",
+    "explanation": "½ is one of two equal parts, as in picture a.",
+    "home": "Draw shapes cut into 2 equal parts and into 2 unequal parts. Your child colours ½ only where the parts are equal."
+  },
+  "math.u17.choice.02": {
+    "title": "Half of 16",
+    "hint": "Share 16 into two equal groups.",
+    "explanation": "Eight and eight make 16, so half of 16 is 8.",
+    "home": "Share 16 pencils between two people, one each in turn, and count each share."
+  },
+  "math.u17.choice.03": {
+    "title": "Halves together",
+    "hint": "Put the two halves back together.",
+    "explanation": "Two halves together make one whole.",
+    "home": "Put the two halves of a paper circle together and talk about the whole circle they make."
+  },
+  "math.u17.choice.04": {
+    "title": "Half of 18",
+    "hint": "Share 18 into two equal groups.",
+    "explanation": "Nine and nine make 18, so half of 18 is 9.",
+    "home": "Make 18 with blocks in two equal rows. Count one row."
+  },
+  "math.u17.choice.05": {
+    "title": "Middle of a string",
+    "hint": "How could you make both parts exactly the same?",
+    "explanation": "Folding the ends together finds the middle exactly.",
+    "home": "Take a piece of string or ribbon, hold the two ends together and find the fold: that is the middle."
+  },
+  "math.u18.main.01": {
+    "title": "O'clock",
+    "hint": "Look at the long hand first, then the short hand.",
+    "home": "Set a toy or paper clock to 4 o'clock. Your child says where the long hand and the short hand point."
+  },
+  "math.u18.main.02": {
+    "title": "Half past",
+    "hint": "The long hand on 6 means half past. Where is the short hand?",
+    "home": "At half past seven, look at a clock together: the long hand points to 6 and the short hand is between 7 and 8."
+  },
+  "math.u18.main.04": {
+    "title": "Clock hands",
+    "hint": "Which hand moves quickly around the clock?",
+    "home": "Point to the two hands of a clock and name them: the long minute hand and the short hour hand."
+  },
+  "math.u18.main.05": {
+    "title": "Measuring tools",
+    "hint": "What do we measure: length, weight or water?",
+    "home": "In the kitchen, match tools to jobs: scales to weigh flour, a jug for water, a ruler for a pencil."
+  },
+  "math.u18.main.06": {
+    "title": "Holds the most",
+    "hint": "Compare how many cups each one holds.",
+    "home": "At the sink, fill a mug with water and pour it into a bowl and a jug. Count how many mugs each one holds."
+  },
+  "math.u18.main.08": {
+    "title": "The long hand at half past",
+    "hint": "Halfway around the clock, where is the long hand?",
+    "home": "Move the hands of a toy clock to half past. Your child shows that the long hand points to 6."
+  },
+  "math.u18.choice.01": {
+    "title": "3 o'clock",
+    "hint": "At any o'clock, where is the long hand?",
+    "explanation": "At o'clock the long hand always points to 12.",
+    "home": "At 3 o'clock, look at a clock and check where the long hand points: 12."
+  },
+  "math.u18.choice.02": {
+    "title": "Half past 5",
+    "hint": "After half an hour, has the short hand reached 6 yet?",
+    "explanation": "At half past 5 the short hand is halfway to 6.",
+    "home": "Set a toy clock to half past 5. Talk about why the short hand is between 5 and 6."
+  },
+  "math.u18.choice.03": {
+    "title": "Weighing",
+    "hint": "Which tool shows how heavy something is?",
+    "explanation": "Scales show how heavy a parcel is.",
+    "home": "Weigh a small parcel or a bag of fruit on the kitchen scales together."
+  },
+  "math.u18.choice.04": {
+    "title": "Capacity",
+    "hint": "What word means how much a container holds?",
+    "explanation": "Capacity means how much a container can hold.",
+    "home": "At the sink, pour water from a jug into cups. Talk about which container holds more: it has the bigger capacity."
+  },
+  "math.u18.choice.05": {
+    "title": "Half an hour",
+    "hint": "One hour is 60 minutes. What is half of 60?",
+    "explanation": "An hour is 60 minutes, so half an hour is 30.",
+    "home": "Set a timer for 30 minutes of play. Tell your child that half an hour is 30 minutes."
+  },
+  "math.q03.01": {
+    "title": "An even number",
+    "hint": "Which number makes pairs with none left over?",
+    "home": "Pair up 6 socks, then try 3 and 9. Your child says which numbers pair up with none left over."
+  },
+  "math.q03.02": {
+    "title": "After 2nd",
+    "hint": "Say first, second, then the next position.",
+    "home": "Line up three toys for a race. Your child gives them places, 1st, 2nd and 3rd, and says who comes after 2nd."
+  },
+  "math.q03.03": {
+    "title": "Double 4",
+    "hint": "Add 4 and 4.",
+    "home": "Hold up 4 fingers on each hand. Your child counts all the fingers: double 4 is 8."
+  },
+  "math.q03.04": {
+    "title": "Adding 6 and 11",
+    "hint": "Start on 11, the bigger number, and count on 6.",
+    "home": "Say 11 and keep it in your head, then count on 6 fingers: 12, 13, 14, 15, 16, 17."
+  },
+  "math.q03.05": {
+    "title": "Faces of a dice",
+    "hint": "Count each flat face of a dice once.",
+    "home": "Hold a dice or a small box. Your child touches each flat face once while you count: six faces."
+  },
+  "math.q03.06": {
+    "title": "An upside-down triangle",
+    "hint": "Count its sides and corners after turning.",
+    "home": "An adult cuts a triangle from paper. Turn it round and upside down, and each time count its 3 sides and 3 corners: it is still a triangle."
+  },
+  "math.q03.07": {
+    "title": "The most in a graph",
+    "hint": "More blocks make a taller column.",
+    "home": "Build a tower of blocks or cups for each person's favourite fruit. The tallest tower shows the most popular one."
+  },
+  "math.q03.08": {
+    "title": "Sharing 20 fairly",
+    "hint": "Share 20 into two equal groups.",
+    "home": "Share 20 spoons or pencils between two people, one each in turn. Count each share: 10 and 10."
+  },
+  "math.q03.09": {
+    "title": "Reading the clock",
+    "hint": "Look at the long hand first, then the short hand.",
+    "home": "Look at a clock together at 2 o'clock. Point to the long hand on 12 and the short hand on 2."
+  },
+  "math.q03.10": {
+    "title": "Weighing flour",
+    "hint": "Which tool shows how heavy something is?",
+    "home": "In the kitchen, weigh a bag of flour or rice on the scales together. Talk about why a ruler or a jug would not work."
+  },
+  "math.charts.01": {
+    "title": "Counting cars",
+    "hint": "Find the cars column and count its blocks.",
+    "home": "Put 4 toy cars in a box with a few other toys. Your child counts only the cars, touching each one once."
+  },
+  "math.charts.02": {
+    "title": "The most toys",
+    "hint": "Which column is the tallest?",
+    "home": "Make three short rows of toys (for example 4 cars, 2 balls and 3 dolls). Ask which row is longest and which toy there is most of."
+  },
+  "math.charts.03": {
+    "title": "All the toys",
+    "hint": "Add the blocks in every column.",
+    "home": "Sort 10 toys into small groups by kind. Your child counts each group, then all of them together, to find the total."
+  },
+  "math.charts.04": {
+    "title": "The best day",
+    "hint": "Which day's row has the most stars?",
+    "home": "For one week, draw a star on each day your child helps at home. At the end, find the day with the most stars."
+  },
+  "math.charts.05": {
+    "title": "Two days together",
+    "hint": "Count Monday's stars, then count on Tuesday's.",
+    "home": "Draw 3 stars for Monday and 1 for Tuesday. Your child counts both days together and says the total."
+  },
+  "math.charts.06": {
+    "title": "How many more stars",
+    "hint": "Count both rows, then find the difference.",
+    "home": "Line up 4 spoons for Wednesday and 2 for Sunday, side by side. Your child finds how many more are in the longer line."
+  },
+  "math.charts.07": {
+    "title": "Sparrows",
+    "hint": "Follow the top of the sparrows bar across to the numbers.",
+    "home": "Watch the birds from a window or balcony and draw one line for each bird you see. Count the lines for one kind of bird."
+  },
+  "math.charts.08": {
+    "title": "The fewest birds",
+    "hint": "Which bar is the shortest?",
+    "home": "Draw a simple bar for each kind of bird you saw. Your child points to the shortest bar and says which bird it is."
+  },
+  "math.charts.09": {
+    "title": "Pigeons and crows",
+    "hint": "Read both bars, then add them.",
+    "home": "Lay out 6 pencils for pigeons and 3 for crows. Your child adds the two groups, then counts them all to check."
+  }
+}

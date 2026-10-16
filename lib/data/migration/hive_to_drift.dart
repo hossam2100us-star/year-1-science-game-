@@ -186,6 +186,10 @@ class HiveToDriftMigration {
       attempts += child.attempts.length;
       objectives += child.attempts.fold(0, (n, a) => n + a.objectives.length);
       journeys += child.journeys.length;
+      final maths = child.progressForSubject('maths');
+      attempts += maths.attempts.length;
+      objectives += maths.attempts.fold(0, (n, a) => n + a.objectives.length);
+      journeys += maths.journeys.length;
       usage += child.dailySeconds.length;
       subjects += child.otherSubjects.length;
     }

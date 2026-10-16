@@ -1,0 +1,1329 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_03",
+  "subject": "maths",
+  "title": "Shapes, Direction and Movement",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    11,
+    12,
+    13,
+    14
+  ],
+  "steps": [
+    {
+      "id": "math_unit_03.step.001",
+      "kind": "explore",
+      "title": "Shape detectives",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Choose the flat shape with three straight sides.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Which whole object is a solid cube?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "This shape has turned. What is its name now?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Trace the sides with your finger and count them.",
+      "explanation": "Use sides, corners and flat or solid parts to recognise shapes.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Shape detectives",
+        "goal": "Use sides, corners and flat or solid parts to recognise shapes.",
+        "scene": "village",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "Choose the flat shape with three straight sides.",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "circle",
+                "visual": {
+                  "type": "shape",
+                  "shape": "circle"
+                }
+              },
+              {
+                "id": "answer_1",
+                "label": "triangle",
+                "visual": {
+                  "type": "shape",
+                  "shape": "triangle"
+                }
+              },
+              {
+                "id": "answer_3",
+                "label": "square",
+                "visual": {
+                  "type": "shape",
+                  "shape": "square"
+                }
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "A triangle has three straight sides and three corners.",
+            "hint": "Trace the sides with your finger and count them.",
+            "id": "explore_1"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Which whole object is a solid cube?",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "square",
+                "visual": {
+                  "type": "shape",
+                  "shape": "square"
+                }
+              },
+              {
+                "id": "answer_1",
+                "label": "cube",
+                "visual": {
+                  "type": "shape",
+                  "shape": "cube"
+                }
+              },
+              {
+                "id": "answer_3",
+                "label": "circle",
+                "visual": {
+                  "type": "shape",
+                  "shape": "circle"
+                }
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "The cube is solid. A square is the flat shape on each of its faces.",
+            "hint": "Look for a shape with depth, rather than only a flat drawing.",
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "This shape has turned. What is its name now?",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "square"
+              },
+              {
+                "id": "answer_3",
+                "label": "rectangle"
+              },
+              {
+                "id": "answer_1",
+                "label": "triangle"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "It is still a square. Turning leaves its four equal sides and four corners unchanged.",
+            "hint": "Count the sides and corners. Turning does not stretch the shape.",
+            "visual": {
+              "type": "shape",
+              "shape": "square",
+              "rotation": 45
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_03.step.002",
+      "kind": "match-lines",
+      "title": "Naming flat shapes",
+      "prompt": "Match each flat shape to its name.",
+      "options": [
+        {
+          "id": "item_1",
+          "label": "A",
+          "art": "math_label"
+        },
+        {
+          "id": "item_2",
+          "label": "B",
+          "art": "math_label"
+        },
+        {
+          "id": "item_3",
+          "label": "C",
+          "art": "math_label"
+        },
+        {
+          "id": "item_4",
+          "label": "D",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "circle",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "triangle",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "square",
+          "art": "math_label"
+        },
+        {
+          "id": "target_4",
+          "label": "rectangle",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2",
+          "item_3": "target_3",
+          "item_4": "target_4"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u03.main.01",
+      "hint": "Count the straight sides and the corners of each shape.",
+      "explanation": "Count straight sides and corners to name the shapes.",
+      "shortExplanation": "Count straight sides and corners to name the shapes.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.main.01",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "circle, triangle, square, rectangle",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "shape",
+            "shape": "circle",
+            "label": "A"
+          },
+          {
+            "type": "shape",
+            "shape": "triangle",
+            "label": "B"
+          },
+          {
+            "type": "shape",
+            "shape": "square",
+            "label": "C"
+          },
+          {
+            "type": "shape",
+            "shape": "rectangle",
+            "label": "D"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_03.step.003",
+      "kind": "tap-choice",
+      "title": "Shape riddle",
+      "prompt": "I have 4 corners and 4 equal sides. What am I?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "rectangle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "rectangle"
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "square",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square"
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "triangle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u03.main.02",
+      "hint": "Which shapes have 4 corners? Which one has all its sides the same?",
+      "explanation": "A square has 4 equal sides and 4 corners.",
+      "shortExplanation": "A square has 4 equal sides and 4 corners.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.main.02",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "square",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_03.step.004",
+      "kind": "tap-choice",
+      "title": "Solid riddle",
+      "prompt": "I have 6 square faces and 8 corners. What am I?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "sphere",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "sphere"
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "cube",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cube"
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "cylinder",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cylinder"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u03.main.03",
+      "hint": "Think of a dice and count its square faces.",
+      "explanation": "A cube has 6 square faces and 8 corners.",
+      "shortExplanation": "A cube has 6 square faces and 8 corners.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.main.03",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "cube",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_03.step.005",
+      "kind": "match-lines",
+      "title": "Triangle facts",
+      "prompt": "Complete the triangle facts.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "corners",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "sides",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "0",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "4",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_2",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u03.main.04",
+      "hint": "Touch each side of a triangle, then each corner.",
+      "explanation": "A triangle has 3 sides and 3 corners.",
+      "shortExplanation": "A triangle has 3 sides and 3 corners.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.main.04",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "3 sides and 3 corners",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "triangle"
+      }
+    },
+    {
+      "id": "math_unit_03.step.006",
+      "kind": "drag-to-basket",
+      "title": "Shapes that roll",
+      "prompt": "Choose all the shapes that can roll.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "sphere",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "sphere"
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "cube",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cube"
+          }
+        },
+        {
+          "id": "choice_4",
+          "label": "cuboid",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cuboid"
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "cylinder",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cylinder"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_1",
+          "choice_3"
+        ]
+      },
+      "assessed": true,
+      "objective": "math.u03.main.05",
+      "hint": "A shape with a curved surface can roll.",
+      "explanation": "Spheres and cylinders have curved parts that let them roll.",
+      "shortExplanation": "Spheres and cylinders have curved parts that let them roll.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.main.05",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "sphere and cylinder",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_03.step.007",
+      "kind": "match-lines",
+      "title": "Flat or solid",
+      "prompt": "Sort flat drawings and solid objects.",
+      "options": [
+        {
+          "id": "item_4",
+          "label": "triangle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle"
+          }
+        },
+        {
+          "id": "item_3",
+          "label": "tin",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cylinder"
+          }
+        },
+        {
+          "id": "item_2",
+          "label": "ball",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "sphere"
+          }
+        },
+        {
+          "id": "item_5",
+          "label": "dice",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cube"
+          }
+        },
+        {
+          "id": "item_1",
+          "label": "square",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square"
+          }
+        },
+        {
+          "id": "item_6",
+          "label": "circle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "Flat (2D)",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "Solid (3D)",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2",
+          "item_3": "target_2",
+          "item_4": "target_1",
+          "item_5": "target_2",
+          "item_6": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u03.main.06",
+      "hint": "Could you hold it and turn it in your hand?",
+      "explanation": "Flat drawings are 2D. Objects you can hold are 3D.",
+      "shortExplanation": "Flat drawings are 2D. Objects you can hold are 3D.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.main.06",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "2D: square, triangle, circle • 3D: ball, tin, dice",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_03.step.008",
+      "kind": "tap-choice",
+      "title": "Turning a square",
+      "prompt": "A square turned onto its corner is still a square.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "True",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "False",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u03.main.07",
+      "hint": "Count its sides and corners after turning. Did they change?",
+      "explanation": "Turning does not change its 4 equal sides or 4 corners.",
+      "shortExplanation": "Turning does not change its 4 equal sides or 4 corners.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.main.07",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "True. It still has 4 equal sides and 4 corners.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "shape",
+            "shape": "square",
+            "label": "square"
+          },
+          {
+            "type": "shape",
+            "shape": "square",
+            "rotation": 45,
+            "label": "on its corner"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_03.step.009",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "With an adult, draw a house using squares, rectangles and triangles. Count your triangles.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Count sides and corners; look for flat or curved faces.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.main.08",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "Any house built from the named shapes; the number of triangles must match his drawing.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true,
+      "parentReview": {
+        "en": "Any house built from the named shapes; the number of triangles must match his drawing.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_03.step.010",
+      "kind": "tap-choice",
+      "title": "A football",
+      "prompt": "A football is a...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "sphere",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "sphere"
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "circle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "cylinder",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cylinder"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u03.choice.01",
+      "hint": "Is a football flat or solid? Is it round all over?",
+      "explanation": "A football is solid and round all over, like a sphere.",
+      "shortExplanation": "A football is solid and round all over, like a sphere.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.choice.01",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "sphere",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 1,
+        "item": "ball",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_03.step.011",
+      "kind": "tap-choice",
+      "title": "A cereal box",
+      "prompt": "A cereal box is a...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "cone",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cone"
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "cuboid",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cuboid"
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "cube",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cube"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u03.choice.02",
+      "hint": "Are all its faces squares, or are some long rectangles?",
+      "explanation": "A cereal box has rectangle faces, so it is a cuboid.",
+      "shortExplanation": "A cereal box has rectangle faces, so it is a cuboid.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.choice.02",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "cuboid",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_03.step.012",
+      "kind": "tap-choice",
+      "title": "Rectangle corners",
+      "prompt": "A rectangle has...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "3 corners",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "no corners",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "4 corners",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u03.choice.03",
+      "hint": "Touch each corner of a rectangle and count.",
+      "explanation": "A rectangle has four corners, like a door.",
+      "shortExplanation": "A rectangle has four corners, like a door.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.choice.03",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "4 corners",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "math_unit_03.step.013",
+      "kind": "tap-choice",
+      "title": "No corners",
+      "prompt": "Which shape has no corners?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "square",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square"
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "triangle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle"
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "circle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u03.choice.04",
+      "hint": "Run your finger round each shape. Which one never turns a corner?",
+      "explanation": "A circle is round all the way, so it has no corners.",
+      "shortExplanation": "A circle is round all the way, so it has no corners.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.choice.04",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "circle",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_03.step.014",
+      "kind": "tap-choice",
+      "title": "A print in sand",
+      "prompt": "A tin pushed into sand leaves the print of a...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "square",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square"
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "triangle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle"
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "circle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u03.choice.05",
+      "hint": "Look at the flat end of a tin. What shape is it?",
+      "explanation": "The flat end of a tin is a circle.",
+      "shortExplanation": "The flat end of a tin is a circle.",
+      "source": {
+        "pages": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "questionId": "math.u03.choice.05",
+        "answerKeyPages": [
+          73
+        ],
+        "answerKeyText": "circle",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_03",
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "cylinder"
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_03.sticker",
+      "word": "side",
+      "art": "math_label",
+      "picture": {
+        "type": "shape",
+        "shape": "square"
+      },
+      "meaning": "An edge of a flat shape.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        11,
+        12,
+        13,
+        14
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Find safe objects shaped like a cube, cuboid, sphere, cylinder or cone. Predict which roll or stack, then test and trace flat faces.",
+      "textAr": "دوّروا في البيت على حاجات آمنة شكلها مكعب أو متوازي مستطيلات أو كورة أو أسطوانة أو مخروط. توقعوا أنهي هتتدحرج وأنهي تترص فوق بعض، وبعدين جرّبوا، وارسموا حوالين الوشوش المسطحة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u03.main.01",
+      "text": "Find a circle, a triangle, a square and a rectangle at home (a plate, half a sandwich, a tile, a door). Name each shape together.",
+      "textAr": "دوّروا في البيت على دايرة ومثلث ومربع ومستطيل (طبق، نص سندوتش، بلاطة، باب). سمّوا كل شكل مع بعض.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u03.main.02",
+      "text": "Measure the sides of a square tile or paper with a piece of string. Your child checks that all 4 sides are the same.",
+      "textAr": "قيسوا أضلاع بلاطة أو ورقة مربعة بحتة خيط. طفلك يتأكد إن الـ٤ أضلاع قد بعض.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u03.main.03",
+      "text": "Hold a dice or a cube-shaped box. Count its square faces, then its corners, together.",
+      "textAr": "امسكوا حجر زهر أو علبة شكلها مكعب. عدّوا وشوشها المربعة، وبعدين أركانها، مع بعض.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u03.main.04",
+      "text": "Make a triangle with 3 straws or pencils on the table. Count the sides, then the corners.",
+      "textAr": "اعملوا مثلث بـ٣ شفاطات أو أقلام على الترابيزة. عدّوا الأضلاع، وبعدين الأركان.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u03.main.05",
+      "text": "Gently roll a ball, a tin, a box and a dice on the floor. Sort them: rolls or does not roll.",
+      "textAr": "جرّبوا تدحرجوا كورة وعلبة صفيح وعلبة كرتون وحجر زهر على الأرض بالراحة. قسّموهم: بيتدحرج ومش بيتدحرج.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u03.main.06",
+      "text": "Put solid things (a tin, a ball, a box) next to their outlines drawn on paper. Talk about which ones you can hold and which are flat.",
+      "textAr": "حطّوا حاجات مجسّمة (علبة صفيح، كورة، علبة) جنب رسمتها على ورق. اتكلموا أنهي ينفع نمسكه وأنهي مسطّح.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u03.main.07",
+      "text": "An adult cuts a paper square. Turn it onto a corner and check together: still 4 equal sides and 4 corners.",
+      "textAr": "الكبير يقص مربع من ورق. لفّوه على ركنه واتأكدوا مع بعض: لسه ٤ أضلاع متساوية و٤ أركان.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u03.choice.01",
+      "text": "Hold a football and an orange. Your child feels that they are round all over: both are spheres.",
+      "textAr": "امسكوا كورة وبرتقانة. طفلك يحسّ إنهم مدوّرين من كل ناحية: الاتنين كرة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u03.choice.02",
+      "text": "Look at a cereal or tissue box. Count its faces together and see that some are long rectangles: it is a cuboid.",
+      "textAr": "بصّوا على علبة كورن فليكس أو مناديل. عدّوا وشوشها مع بعض، وشوفوا إن فيها مستطيلات طويلة: دي متوازي مستطيلات.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u03.choice.03",
+      "text": "Draw round a book on paper. Your child counts the corners of the rectangle: 4.",
+      "textAr": "ارسموا حوالين كتاب على ورقة. طفلك يعدّ أركان المستطيل: ٤.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u03.choice.04",
+      "text": "Draw round a cup and a box. Run a finger round each shape and find the one with no corners.",
+      "textAr": "ارسموا حوالين كوباية وعلبة. مشّوا صباعكم حوالين كل شكل ودوّروا على اللي مالوش أركان.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u03.choice.05",
+      "text": "Press the bottom of a tin into play dough or sand, then lift it. Your child names the shape of the print.",
+      "textAr": "اضغطوا قاع علبة صفيح في صلصال أو رمل وارفعوها. طفلك يقول شكل الأثر اسمه إيه.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

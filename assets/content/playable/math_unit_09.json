@@ -1,0 +1,1347 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_09",
+  "subject": "maths",
+  "title": "Numbers to 20 - Tens and Ones",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    32,
+    33,
+    34
+  ],
+  "steps": [
+    {
+      "id": "math_unit_09.step.001",
+      "kind": "explore",
+      "title": "Build tens and ones",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "One ten and four ones make which number?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Ten counters are ready. Add six extra ones to make sixteen.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Two complete tens have no extra ones. What number is that?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Start with ten, then count on the four extra ones.",
+      "explanation": "Keep a whole ten together, then add the extra ones.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Build tens and ones",
+        "goal": "Keep a whole ten together, then add the extra ones.",
+        "scene": "workshop",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "One ten and four ones make which number?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "14"
+              },
+              {
+                "id": "answer_3",
+                "label": "4"
+              },
+              {
+                "id": "answer_2",
+                "label": "41"
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "One whole ten and four extra ones make fourteen.",
+            "hint": "Start with ten, then count on the four extra ones.",
+            "visual": {
+              "type": "groups",
+              "items": [
+                {
+                  "type": "count",
+                  "count": 10,
+                  "item": "dot",
+                  "arrangement": "tenFrame",
+                  "label": "one ten"
+                },
+                {
+                  "type": "count",
+                  "count": 4,
+                  "item": "dot",
+                  "arrangement": "row",
+                  "label": "ones"
+                }
+              ]
+            },
+            "id": "explore_1"
+          },
+          {
+            "mode": "build",
+            "prompt": "Ten counters are ready. Add six extra ones to make sixteen.",
+            "target": 16,
+            "item": "counter",
+            "initialCount": 10,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Sixteen is one ten and six ones. The ten stays a whole group.",
+            "hint": "Keep the ten you started with. Count on six extra counters.",
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Two complete tens have no extra ones. What number is that?",
+            "choices": [
+              {
+                "id": "answer_3",
+                "label": "20"
+              },
+              {
+                "id": "answer_1",
+                "label": "2"
+              },
+              {
+                "id": "answer_2",
+                "label": "12"
+              }
+            ],
+            "correctId": "answer_3",
+            "feedback": "Two tens make twenty; there are zero extra ones.",
+            "hint": "Each full frame is ten. Count whole tens: ten, twenty.",
+            "visual": {
+              "type": "groups",
+              "items": [
+                {
+                  "type": "count",
+                  "count": 10,
+                  "item": "dot",
+                  "arrangement": "tenFrame"
+                },
+                {
+                  "type": "count",
+                  "count": 10,
+                  "item": "dot",
+                  "arrangement": "tenFrame"
+                }
+              ]
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_09.step.002",
+      "kind": "tap-choice",
+      "title": "Ten and ones",
+      "prompt": "What number do the ten and ones make?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "15",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "13",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "14",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u09.main.01",
+      "hint": "Count the full ten, then count on the ones.",
+      "explanation": "One ten and 4 ones make 14.",
+      "shortExplanation": "One ten and 4 ones make 14.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.01",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "14",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "arrangement": "tenFrame",
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 4,
+            "label": "ones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.003",
+      "kind": "tap-choice",
+      "title": "More tens and ones",
+      "prompt": "What number do the ten and ones make?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "18",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "19",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "20",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u09.main.02",
+      "hint": "Start at 10, then count on each loose one.",
+      "explanation": "One ten and 9 ones make 19.",
+      "shortExplanation": "One ten and 9 ones make 19.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.02",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "19",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "arrangement": "tenFrame",
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 9,
+            "label": "ones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.004",
+      "kind": "match-lines",
+      "title": "Seventeen",
+      "prompt": "Complete: 17 is __ ten and __ ones.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "ones",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "tens",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "7",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u09.main.03",
+      "hint": "The first digit counts tens; the second counts ones.",
+      "explanation": "The 1 is one ten; the 7 is seven ones.",
+      "shortExplanation": "The 1 is one ten; the 7 is seven ones.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.03",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "1 ten and 7 ones",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 7,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "ones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.005",
+      "kind": "match-lines",
+      "title": "Twenty",
+      "prompt": "Complete: 20 is __ tens and __ ones.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "ones",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "tens",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "0",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "2",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_2",
+          "item_2": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u09.main.04",
+      "hint": "How many full tens make 20? Are any ones left over?",
+      "explanation": "20 has 2 tens and no extra ones.",
+      "shortExplanation": "20 has 2 tens and no extra ones.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.04",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "2 tens and 0 ones",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "ten"
+          },
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "ten"
+          },
+          {
+            "type": "count",
+            "count": 0,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "ones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.006",
+      "kind": "order-sequence",
+      "title": "Smallest first",
+      "prompt": "Put the numbers in order, smallest first.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "15",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "20",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_4",
+          "label": "9",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "choice_4",
+          "choice_1",
+          "choice_2",
+          "choice_3"
+        ]
+      },
+      "assessed": true,
+      "objective": "math.u09.main.05",
+      "hint": "Find the number with no tens first.",
+      "explanation": "Compare the tens first, then the ones.",
+      "shortExplanation": "Compare the tens first, then the ones.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.05",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "9, 12, 15, 20",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20
+      }
+    },
+    {
+      "id": "math_unit_09.step.007",
+      "kind": "match-lines",
+      "title": "Counting in tens",
+      "prompt": "Count in tens and fill the gaps.",
+      "options": [
+        {
+          "id": "item_1",
+          "label": "10, 20, __, 40",
+          "art": "math_label"
+        },
+        {
+          "id": "item_2",
+          "label": "20, 30, 40, __",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "30",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "50",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u09.main.06",
+      "hint": "Each step adds one more ten.",
+      "explanation": "Counting in tens adds a whole ten each time.",
+      "shortExplanation": "Counting in tens adds a whole ten each time.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.06",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "30 and 50",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 50,
+        "markers": [
+          10,
+          20,
+          40
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.008",
+      "kind": "tap-choice",
+      "title": "Tens from 4",
+      "prompt": "Count on in tens: 4, 14, __, 34. What is missing?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "25",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "23",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "24",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u09.main.07",
+      "hint": "Add a ten each time. The ones digit stays the same.",
+      "explanation": "Adding ten to 14 gives 24. The ones stay 4.",
+      "shortExplanation": "Adding ten to 14 gives 24. The ones stay 4.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.07",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "24",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 40,
+        "markers": [
+          4,
+          14,
+          34
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.009",
+      "kind": "tap-choice",
+      "title": "Writing sixteen",
+      "prompt": "Omar wrote sixteen as 61. Choose sixteen.",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "16",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "61",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u09.main.08",
+      "hint": "Sixteen is one ten and six ones. Which digit comes first?",
+      "explanation": "Sixteen is one ten and six ones: 16.",
+      "shortExplanation": "Sixteen is one ten and six ones: 16.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.main.08",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "No — 16. The ten is written first.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 6,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "ones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.010",
+      "kind": "tap-choice",
+      "title": "Tens in 13",
+      "prompt": "13 is...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "3 tens and 1 one",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "1 ten and 3 ones",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "13 tens",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u09.choice.01",
+      "hint": "How many full tens fit in 13? How many are left?",
+      "explanation": "13 is one full ten and three more ones.",
+      "shortExplanation": "13 is one full ten and three more ones.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.choice.01",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "1 ten and 3 ones",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 3,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "ones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.011",
+      "kind": "tap-choice",
+      "title": "Ten more",
+      "prompt": "Ten more than 5 is...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "50",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "15",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u09.choice.02",
+      "hint": "Add a whole ten to 5.",
+      "explanation": "Ten more than 5 is one ten and five ones: 15.",
+      "shortExplanation": "Ten more than 5 is one ten and five ones: 15.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.choice.02",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "15",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 5,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "5"
+          },
+          {
+            "type": "text",
+            "text": "+",
+            "width": 40
+          },
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "ten more"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.012",
+      "kind": "tap-choice",
+      "title": "Tens pattern",
+      "prompt": "Count in tens: 10, 20, 30, ...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "50",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "31",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "40",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u09.choice.03",
+      "hint": "Each number is ten more than the one before.",
+      "explanation": "One more ten after 30 gives 40.",
+      "shortExplanation": "One more ten after 30 gives 40.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.choice.03",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "40",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 50,
+        "markers": [
+          10,
+          20,
+          30
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.013",
+      "kind": "tap-choice",
+      "title": "In order",
+      "prompt": "Which is in order, smallest first?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "4, 11, 18",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "11, 4, 18",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "18, 11, 4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u09.choice.04",
+      "hint": "Check that each number is bigger than the one before.",
+      "explanation": "4, then 11, then 18: each number is bigger than the last.",
+      "shortExplanation": "4, then 11, then 18: each number is bigger than the last.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.choice.04",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "4, 11, 18",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "markers": [
+          4,
+          11,
+          18
+        ]
+      }
+    },
+    {
+      "id": "math_unit_09.step.014",
+      "kind": "tap-choice",
+      "title": "The 1 in 18",
+      "prompt": "Look at 18 as tens and ones. What does the 1 in 18 stand for?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "just one",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "eighteen",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "one ten",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u09.choice.05",
+      "hint": "In 18, the first digit counts tens.",
+      "explanation": "The 1 in 18 stands for one whole ten, the full ten frame.",
+      "shortExplanation": "The 1 in 18 stands for one whole ten, the full ten frame.",
+      "source": {
+        "pages": [
+          32,
+          33,
+          34
+        ],
+        "questionId": "math.u09.choice.05",
+        "answerKeyPages": [
+          76
+        ],
+        "answerKeyText": "one ten",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_09",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 10,
+            "item": "dot",
+            "arrangement": "tenFrame",
+            "width": 190,
+            "height": 80,
+            "label": "one ten"
+          },
+          {
+            "type": "count",
+            "count": 8,
+            "item": "dot",
+            "arrangement": "row",
+            "width": 190,
+            "height": 80,
+            "label": "ones"
+          }
+        ]
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_09.sticker",
+      "word": "tens and ones",
+      "art": "math_label",
+      "picture": {
+        "type": "count",
+        "count": 14,
+        "item": "dot",
+        "arrangement": "row",
+        "color": "red",
+        "split": 10,
+        "color2": "blue"
+      },
+      "meaning": "16 is one ten and six ones.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        32,
+        33,
+        34
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Bundle ten safe large counters and add loose ones to build teen numbers. Make two bundles for 20 and practise counting whole tens.",
+      "textAr": "اربطوا ١٠ حتت كبيرة وآمنة في حزمة واحدة، وزوّدوا حتت سايبة عشان تعملوا الأرقام من ١١ لـ ١٩. اعملوا حزمتين عشان ٢٠، واتمرّنوا تعدّوا بالعشرات.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u09.main.01",
+      "text": "Bundle 10 straws or pencils and put 4 loose ones beside them. Count on from ten: 11, 12, 13, 14.",
+      "textAr": "اربطوا ١٠ شفاطات أو أقلام وحطّوا جنبهم ٤ سايبين. عدّوا من العشرة: ١١، ١٢، ١٣، ١٤.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.02",
+      "text": "Show 10 fingers on your hands and 9 on your child's. Count on from ten to find 19.",
+      "textAr": "افردوا ١٠ صوابع بإيديكم و٩ بإيدين طفلك. عدّوا من العشرة لحد ١٩.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.03",
+      "text": "Make 17 with a bundle of ten pencils and some loose ones. Your child says how many tens and how many ones.",
+      "textAr": "اعملوا ١٧ بربطة عشرة أقلام وأقلام سايبة. طفلك يقول كام عشرة وكام آحاد.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.04",
+      "text": "Make two bundles of 10 pencils. Ask how many tens and how many loose ones: 2 tens and no ones.",
+      "textAr": "اعملوا ربطتين كل واحدة ١٠ أقلام. اسألوا كام عشرة وكام سايبين: عشرتين ومافيش آحاد.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.05",
+      "text": "Write 9, 12, 15 and 20 on cards and mix them up. Your child puts them in order, smallest first.",
+      "textAr": "اكتبوا ٩ و١٢ و١٥ و٢٠ على كروت واخلطوهم. طفلك يرتّبهم من الأصغر للأكبر.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.06",
+      "text": "Count in tens while jumping: 10, 20, 30, 40, 50. Leave a gap and let your child fill it.",
+      "textAr": "عدّوا بالعشرات وإنتو بتنطّوا: ١٠، ٢٠، ٣٠، ٤٠، ٥٠. سيبوا رقم ناقص وطفلك يكمّله.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.07",
+      "text": "Start at 4 on a tape measure and jump in tens: 4, 14, 24, 34.",
+      "textAr": "ابدأوا من ٤ على شريط القياس وانطّوا بالعشرات: ٤، ١٤، ٢٤، ٣٤.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.main.08",
+      "text": "Write 16 and 61 on cards. Make 16 with a bundle of ten and 6 loose pencils, and see which card it matches.",
+      "textAr": "اكتبوا ١٦ و٦١ على كروت. اعملوا ١٦ بربطة عشرة و٦ أقلام سايبة، وشوفوا تطابق أنهي كارت.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.choice.01",
+      "text": "Make 13 with a bundle of ten and 3 loose pencils. Your child says: one ten and three ones.",
+      "textAr": "اعملوا ١٣ بربطة عشرة و٣ أقلام سايبة. طفلك يقول: عشرة واحدة و٣ آحاد.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.choice.02",
+      "text": "Put down 5 loose pencils and add a bundle of ten. Count on to find ten more than 5.",
+      "textAr": "حطّوا ٥ أقلام سايبة وزوّدوا ربطة عشرة. عدّوا عشان تعرفوا عشرة أكتر من ٥.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.choice.03",
+      "text": "Count everyone's fingers around the table in tens: 10, 20, 30, 40.",
+      "textAr": "عدّوا صوابع كل اللي على السفرة بالعشرات: ١٠، ٢٠، ٣٠، ٤٠.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.choice.04",
+      "text": "Write 4, 11 and 18 on cards. Your child lays them on a tape measure in order and reads them smallest first.",
+      "textAr": "اكتبوا ٤ و١١ و١٨ على كروت. طفلك يحطهم على شريط القياس بالترتيب ويقراهم من الأصغر.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u09.choice.05",
+      "text": "Make 18 with a bundle of ten and 8 loose pencils. Point to the 1 in 18 and to the bundle: both mean one ten.",
+      "textAr": "اعملوا ١٨ بربطة عشرة و٨ أقلام سايبة. شاوروا على الـ١ في ١٨ وعلى الربطة: الاتنين معناهم عشرة واحدة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        32,
+        33,
+        34
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

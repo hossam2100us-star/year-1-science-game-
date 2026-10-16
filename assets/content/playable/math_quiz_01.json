@@ -1,0 +1,816 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_quiz_01",
+  "subject": "maths",
+  "title": "Big Challenge: Term 1",
+  "quiz": true,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    24
+  ],
+  "steps": [
+    {
+      "id": "math_quiz_01.step.001",
+      "kind": "tap-choice",
+      "title": "Counting dots",
+      "prompt": "How many dots?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "10",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "8",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q01.01",
+      "hint": "Touch each dot once and say one number for each.",
+      "explanation": "Count each dot once: there are 9.",
+      "shortExplanation": "Count each dot once: there are 9.",
+      "source": {
+        "pages": [
+          24
+        ],
+        "questionId": "math.q01.01",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "9",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_01",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 9,
+        "item": "dot",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_quiz_01.step.002",
+      "kind": "tap-choice",
+      "title": "One more than 12",
+      "prompt": "1 more than 12 is...?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "13",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "14",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q01.02",
+      "hint": "Say 12, then the next number.",
+      "explanation": "One forward step from 12 reaches 13.",
+      "shortExplanation": "One forward step from 12 reaches 13.",
+      "source": {
+        "pages": [
+          24
+        ],
+        "questionId": "math.q01.02",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "13",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_01",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "from": 12,
+        "jumps": [
+          1
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_quiz_01.step.003",
+      "kind": "tap-choice",
+      "title": "Take away 3",
+      "prompt": "7 take away 3 is...?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q01.03",
+      "hint": "Start on 7 and jump back three times.",
+      "explanation": "Taking three away from seven leaves four.",
+      "shortExplanation": "Taking three away from seven leaves four.",
+      "source": {
+        "pages": [
+          24
+        ],
+        "questionId": "math.q01.03",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_01",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 7,
+        "jumps": [
+          -3
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_quiz_01.step.004",
+      "kind": "tap-choice",
+      "title": "Three sides",
+      "prompt": "Name a flat shape with 3 sides.",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "circle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "triangle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle"
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "square",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q01.04",
+      "hint": "Count the straight sides of each shape.",
+      "explanation": "A triangle has three straight sides.",
+      "shortExplanation": "A triangle has three straight sides.",
+      "source": {
+        "pages": [
+          24
+        ],
+        "questionId": "math.q01.04",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "triangle",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_01",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_01.step.005",
+      "kind": "tap-choice",
+      "title": "Like a football",
+      "prompt": "Name a solid shape like a football.",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "circle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "cylinder",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "cylinder"
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "sphere",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "sphere"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q01.05",
+      "hint": "Is a football flat or solid? Round or with edges?",
+      "explanation": "A football is solid and round like a sphere.",
+      "shortExplanation": "A football is solid and round like a sphere.",
+      "source": {
+        "pages": [
+          24
+        ],
+        "questionId": "math.q01.05",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "sphere",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_01",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 1,
+        "item": "ball",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_quiz_01.step.006",
+      "kind": "tap-choice",
+      "title": "The longest row",
+      "prompt": "The longest pictogram row shows the...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "first",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "most",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "least",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q01.06",
+      "hint": "More pictures make a longer row.",
+      "explanation": "The longest row has the most equal-size pictures.",
+      "shortExplanation": "The longest row has the most equal-size pictures.",
+      "source": {
+        "pages": [
+          24
+        ],
+        "questionId": "math.q01.06",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "most",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_01",
+      "adapted": true,
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our favourite fruit",
+        "rows": [
+          {
+            "label": "apple",
+            "value": 4
+          },
+          {
+            "label": "banana",
+            "value": 2
+          },
+          {
+            "label": "orange",
+            "value": 3
+          },
+          {
+            "label": "mango",
+            "value": 1
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one person"
+      }
+    },
+    {
+      "id": "math_quiz_01.step.007",
+      "kind": "tap-choice",
+      "title": "The larger number",
+      "prompt": "Choose the larger number.",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "15",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "18",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q01.07",
+      "hint": "Which number comes later when you count?",
+      "explanation": "18 comes after 15 on the number track.",
+      "shortExplanation": "18 comes after 15 on the number track.",
+      "source": {
+        "pages": [
+          24
+        ],
+        "questionId": "math.q01.07",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "18",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_01",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20,
+        "markers": [
+          15,
+          18
+        ]
+      }
+    },
+    {
+      "id": "math_quiz_01.step.008",
+      "kind": "tap-choice",
+      "title": "An empty bag",
+      "prompt": "How many sweets are in an empty bag?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "0",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "2",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q01.08",
+      "hint": "Empty means there is nothing inside.",
+      "explanation": "An empty bag contains zero sweets.",
+      "shortExplanation": "An empty bag contains zero sweets.",
+      "source": {
+        "pages": [
+          24
+        ],
+        "questionId": "math.q01.08",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "0 (zero)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_01",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 0,
+            "item": "counter",
+            "arrangement": "row",
+            "width": 260,
+            "height": 110,
+            "label": "an empty bag"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_quiz_01.step.009",
+      "kind": "tap-choice",
+      "title": "Sleep time",
+      "prompt": "When do you usually sleep?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "afternoon",
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "afternoon"
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "morning",
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "morning"
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "night",
+          "art": "math_label",
+          "visual": {
+            "type": "sky",
+            "time": "night"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.q01.09",
+      "hint": "Is it light or dark when you go to bed?",
+      "explanation": "We usually sleep at night.",
+      "shortExplanation": "We usually sleep at night.",
+      "source": {
+        "pages": [
+          24
+        ],
+        "questionId": "math.q01.09",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "night",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_01",
+      "adapted": true
+    },
+    {
+      "id": "math_quiz_01.step.010",
+      "kind": "tap-choice",
+      "title": "Comparing pencils",
+      "prompt": "What should you line up to compare two pencils?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "the middles",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "the colours",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "the ends",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.q01.10",
+      "hint": "Where should both pencils start?",
+      "explanation": "Start both pencils at the same line.",
+      "shortExplanation": "Start both pencils at the same line.",
+      "source": {
+        "pages": [
+          24
+        ],
+        "questionId": "math.q01.10",
+        "answerKeyPages": [
+          75
+        ],
+        "answerKeyText": "the ends (on the same starting line)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Challenge",
+      "playScene": "maths",
+      "theme": "math_quiz_01",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "ruler",
+            "units": 3,
+            "item": "pencil",
+            "label": "A"
+          },
+          {
+            "type": "ruler",
+            "units": 5,
+            "item": "pencil",
+            "label": "B"
+          }
+        ]
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_quiz_01.sticker",
+      "word": "count on",
+      "art": "math_label",
+      "picture": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 5,
+        "shown": [
+          1,
+          1,
+          1
+        ]
+      },
+      "meaning": "Start with a number and add forward jumps.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        24
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Revisit the home games for this term. Talk about how each answer was found.",
+      "textAr": "ارجعوا العبوا ألعاب البيت بتاعة الترم ده تاني، واتكلموا عن كل إجابة: وصلنالها إزاي؟",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        24
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.q01.01",
+      "text": "Draw 9 dots on paper. Your child counts them and crosses out each dot once, so none is counted twice.",
+      "textAr": "ارسموا ٩ نقط على ورقة. طفلك يعدّهم ويشطب كل نقطة مرة واحدة، عشان مايعدّش نقطة مرتين.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        24
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q01.02",
+      "text": "Count the steps of the stairs together. Stop on step 12 and ask where one more step takes you.",
+      "textAr": "عدّوا سلالم البيت مع بعض. اقفوا على السلمة ١٢ واسألوا طفلك سلمة كمان توصّلنا فين.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        24
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q01.03",
+      "text": "Put 7 spoons on the table and put 3 back in the drawer. Your child counts how many are left.",
+      "textAr": "حطّوا ٧ معالق على الترابيزة ورجّعوا ٣ في الدُّرج. طفلك يعدّ فاضل كام.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        24
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q01.04",
+      "text": "Hunt for triangles at home: a sandwich cut corner to corner, a roof in a drawing. Your child traces the 3 sides with a finger.",
+      "textAr": "دوّروا على مثلثات في البيت: سندوتش متقطّع من الركن للركن، أو سقف في رسمة. طفلك يمشّي صباعه على الـ٣ أضلاع.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        24
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q01.05",
+      "text": "Collect a ball, an orange and a tin. Your child finds the ones that are round all over like a football: spheres.",
+      "textAr": "هاتوا كورة وبرتقانة وعلبة صفيح. طفلك يختار الحاجات اللي مدوّرة من كل ناحية زي الكورة: دي اسمها كرة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        24
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q01.06",
+      "text": "Make a spoon chart: one row for each fruit your family likes, and one spoon for each person. The longest row shows the fruit most people chose.",
+      "textAr": "اعملوا رسم بالمعالق: صف لكل فاكهة بيحبها أهل البيت، ومعلقة لكل شخص. أطول صف بيوضّح الفاكهة اللي أكتر ناس اختاروها.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        24
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q01.07",
+      "text": "Write 15 and 18 on two cards. Your child finds both on a ruler or tape measure and says which is further along, so larger.",
+      "textAr": "اكتبوا ١٥ و١٨ على كارتين. طفلك يدوّر عليهم على مسطرة أو شريط قياس ويقول مين أبعد، يعني أكبر.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        24
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q01.08",
+      "text": "Show an empty bag or box and ask how many sweets are inside. Practise saying \"zero\" for nothing at all.",
+      "textAr": "وَرّوا طفلك كيس أو علبة فاضية واسألوه فيها كام حلاوة. اتمرّنوا تقولوا «صفر» لما مايكونش فيه حاجة خالص.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        24
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q01.09",
+      "text": "At bedtime, look out of the window together and talk about why the sky is dark: we sleep at night.",
+      "textAr": "وقت النوم بصّوا من الشباك مع بعض واتكلموا ليه السما ضلمة: إحنا بننام بالليل.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        24
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.q01.10",
+      "text": "Hold two pencils side by side with their ends on the edge of the table. Your child says which is longer, then tries again with the ends not lined up.",
+      "textAr": "امسكوا قلمين جنب بعض وطرفهم على حرف الترابيزة. طفلك يقول أنهي أطول، وبعدين جرّبوا من غير ما الأطراف تكون على خط واحد.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        24
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  },
+  "practiceUnitId": "math_unit_01"
+}

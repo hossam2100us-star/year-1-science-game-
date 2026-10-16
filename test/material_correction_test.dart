@@ -53,6 +53,15 @@ void main() {
       store.data.journeys[lesson.id]!['current'];
   Future<void> choose(WidgetTester t, String id) =>
       helpers.tapVisible(t, find.byKey(ValueKey('science-item-$id')));
+  // A tap only chooses; Check sends the answer, and the same answer cannot
+  // be sent twice (teacher review 5).
+  Future<void> check(WidgetTester t) =>
+      helpers.tapVisible(t, find.byKey(const ValueKey('lessonCheck')));
+  Future<void> submit(WidgetTester t, String id) async {
+    await choose(t, id);
+    await check(t);
+  }
+
   Future<void> place(WidgetTester t, String id, String target) async {
     await choose(t, id);
     await helpers.tapVisible(t, find.byKey(ValueKey('science-target-$target')));
@@ -175,6 +184,9 @@ void main() {
       final wrongTarget = step.targets
           .firstWhere((o) => o.id != answers[wrongId])
           .id;
+      final otherWrongTarget = step.targets
+          .firstWhere((o) => o.id != answers[wrongId] && o.id != wrongTarget)
+          .id;
       final boundaryKey = GlobalKey();
       await helpers.mount(
         t,
@@ -193,12 +205,14 @@ void main() {
       expect(current(store)['reviewItems'], [wrongId]);
       expect(current(store)['needsCorrection'], false);
       expect(current(store)['placements'][wrongId], wrongTarget);
+      // Check stays off until the answer changes: a second, different try.
+      await place(t, wrongId, otherWrongTarget);
       await helpers.tapVisible(t, find.text('Check my discovery'));
       expect(current(store)['outcome'], 'explained');
       expect(current(store)['needsCorrection'], true);
       expect(
         current(store)['placements'][wrongId],
-        wrongTarget,
+        otherWrongTarget,
       ); // Never auto-place the answer.
       expect(find.byKey(const ValueKey('lessonNext')), findsNothing);
       await helpers.tapVisible(t, find.text('Check my practice'));
@@ -245,8 +259,11 @@ void main() {
       await helpers.tapVisible(t, find.text('Check my discovery'));
       expect(current(store)['reviewItems'], isEmpty);
       expect(current(store)['selected'], [answers.first]);
+      final wrong = step.options.firstWhere((o) => !answers.contains(o.id)).id;
+      await choose(t, wrong);
       await helpers.tapVisible(t, find.text('Check my discovery'));
       expect(current(store)['needsCorrection'], true);
+      await choose(t, wrong);
       for (final id in answers.skip(1)) {
         await choose(t, id);
       }
@@ -261,12 +278,19 @@ void main() {
     (t) async {
       final store = startAt(9), step = lesson.steps[9];
       final answer = step.answer!['value'] as String;
-      final wrong = step.options.firstWhere((o) => o.id != answer).id;
+      final wrong = [
+        for (final o in step.options)
+          if (o.id != answer) o.id,
+      ];
       await helpers.mount(t, LessonPlayer(lesson: lesson), store);
-      await choose(t, wrong);
-      await choose(t, wrong);
+      await choose(t, wrong.first);
+      expect(current(store)['mistakes'] ?? 0, 0, reason: 'a tap only chooses');
+      await check(t);
+      await check(t);
+      expect(current(store)['mistakes'], 1, reason: 'the same answer twice');
+      await submit(t, wrong.last);
       expect(current(store)['needsCorrection'], true);
-      await choose(t, answer);
+      await submit(t, answer);
       expect(current(store)['needsCorrection'], false);
       expect(current(store)['outcome'], 'explained');
       expect(find.byKey(const ValueKey('lessonNext')), findsOneWidget);
@@ -279,8 +303,8 @@ void main() {
       final store = startAt(9), step = lesson.steps[9];
       final answer = step.answer!['value'] as String;
       await helpers.mount(t, LessonPlayer(lesson: lesson), store);
-      await choose(t, step.options.firstWhere((o) => o.id != answer).id);
-      await choose(t, answer);
+      await submit(t, step.options.firstWhere((o) => o.id != answer).id);
+      await submit(t, answer);
       expect(current(store)['outcome'], 'afterHint');
       expect(current(store)['needsCorrection'], false);
     },

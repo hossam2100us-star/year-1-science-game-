@@ -289,7 +289,51 @@ class AppData {
     activeChildId: activeChildId,
     savedChildren: savedChildren,
     quarantinedChildren: quarantinedChildren,
+    otherSubjects: {
+      for (final entry in otherSubjects.entries)
+        if (entry.key != 'maths') entry.key: entry.value,
+    },
   );
+
+  /// A typed view of one subject; Science keeps its existing accessors.
+  /// Shared child settings and identity remain those of this child.
+  AppData progressForSubject(String subject) {
+    if (subject == 'science') return this;
+    final record = otherSubjects[subject] ?? const <String, dynamic>{};
+    return copyWith(
+      attempts: (record['attempts'] as List? ?? const [])
+          .map((a) => UnitAttempt.fromJson(Map<String, dynamic>.from(a as Map)))
+          .toList(),
+      journeys: (record['journeys'] as Map? ?? const {}).map(
+        (k, v) => MapEntry(k as String, Map<String, dynamic>.from(v as Map)),
+      ),
+    );
+  }
+
+  /// Replaces only the selected subject's learning evidence and resume state.
+  AppData withSubjectProgress(
+    String subject, {
+    List<UnitAttempt>? attempts,
+    Map<String, Map<String, dynamic>>? journeys,
+  }) {
+    if (subject == 'science') {
+      return copyWith(attempts: attempts, journeys: journeys);
+    }
+    final progress = progressForSubject(subject);
+    return copyWith(
+      otherSubjects: {
+        ...otherSubjects,
+        subject: {
+          ...?otherSubjects[subject],
+          'attempts': [
+            for (final a in attempts ?? progress.attempts) a.toJson(),
+          ],
+          'journeys': journeys ?? progress.journeys,
+        },
+      },
+    );
+  }
+
   bool isComplete(String id) =>
       attempts.any((a) => a.unitId == id && a.completed);
 

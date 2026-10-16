@@ -1,0 +1,1114 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_12",
+  "subject": "maths",
+  "title": "Fractions - Halves",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    41,
+    42,
+    43
+  ],
+  "steps": [
+    {
+      "id": "math_unit_12.step.001",
+      "kind": "explore",
+      "title": "Share into fair halves",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Which picture shows two equal parts?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Eight apples are shared fairly by two children. Build one child's share.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "These two parts have different sizes. Are they halves?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Compare the two parts in each picture. Halves have the same size.",
+      "explanation": "Halves must be two equal parts of the same whole.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Share into fair halves",
+        "goal": "Halves must be two equal parts of the same whole.",
+        "scene": "orchard",
+        "tasks": [
+          {
+            "mode": "choose",
+            "prompt": "Which picture shows two equal parts?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "A",
+                "visual": {
+                  "type": "fraction",
+                  "shape": "circle",
+                  "parts": 2,
+                  "shaded": 1,
+                  "equal": true
+                }
+              },
+              {
+                "id": "answer_2",
+                "label": "B",
+                "visual": {
+                  "type": "fraction",
+                  "shape": "rectangle",
+                  "parts": 2,
+                  "shaded": 1,
+                  "equal": false
+                }
+              }
+            ],
+            "correctId": "answer_1",
+            "feedback": "A has two equal parts. B has a larger part and a smaller part, so they are not halves.",
+            "hint": "Compare the two parts in each picture. Halves have the same size.",
+            "id": "explore_1"
+          },
+          {
+            "mode": "build",
+            "prompt": "Eight apples are shared fairly by two children. Build one child's share.",
+            "target": 4,
+            "item": "apple",
+            "initialCount": 0,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Four apples for each child makes two equal groups: four and four.",
+            "hint": "Make two equal groups in your mind. One child must get the same number as the other.",
+            "visual": {
+              "type": "count",
+              "count": 8,
+              "item": "apple",
+              "arrangement": "row"
+            },
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "These two parts have different sizes. Are they halves?",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "yes"
+              },
+              {
+                "id": "answer_2",
+                "label": "no"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Halves of the same whole must be equal. Two unequal pieces are not halves.",
+            "hint": "Check equality, rather than only counting the two pieces.",
+            "visual": {
+              "type": "fraction",
+              "shape": "rectangle",
+              "parts": 2,
+              "shaded": 1,
+              "equal": false
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_12.step.002",
+      "kind": "drag-to-basket",
+      "title": "Equal parts",
+      "prompt": "Choose all shapes cut into two equal parts.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "circle",
+            "parts": 2,
+            "shaded": 0,
+            "equal": true
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 2,
+            "shaded": 0,
+            "equal": false
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "square",
+            "parts": 2,
+            "shaded": 0,
+            "equal": true,
+            "orientation": "diagonal"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_1",
+          "choice_3"
+        ]
+      },
+      "assessed": true,
+      "objective": "math.u12.main.01",
+      "hint": "Look at each cut. Are both parts the same size?",
+      "explanation": "Shapes a and c have equal parts. Shape b has unequal parts.",
+      "shortExplanation": "Shapes a and c have equal parts. Shape b has unequal parts.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.main.01",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "a and c. b is cut into two unequal parts.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_12.step.003",
+      "kind": "tap-choice",
+      "title": "Half of 6",
+      "prompt": "Half of 6 is...?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u12.main.02",
+      "hint": "Share 6 into two groups, one at a time.",
+      "explanation": "Sharing 6 equally between two groups gives 3 each.",
+      "shortExplanation": "Sharing 6 equally between two groups gives 3 each.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.main.02",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "3",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 6,
+        "item": "dot",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_12.step.004",
+      "kind": "tap-choice",
+      "title": "Half of 10",
+      "prompt": "Half of 10 is...?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u12.main.03",
+      "hint": "Share 10 into two groups, one at a time.",
+      "explanation": "Sharing 10 equally gives 5 in each group.",
+      "shortExplanation": "Sharing 10 equally gives 5 in each group.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.main.03",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 10,
+        "item": "dot",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_12.step.005",
+      "kind": "tap-choice",
+      "title": "Sharing apples",
+      "prompt": "Share 8 apples equally between 2 children. How many each?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u12.main.04",
+      "hint": "Give one apple to each child in turn.",
+      "explanation": "Two equal groups of 4 make 8 apples.",
+      "shortExplanation": "Two equal groups of 4 make 8 apples.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.main.04",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 8,
+        "item": "apple",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_12.step.006",
+      "kind": "tap-choice",
+      "title": "What a half is",
+      "prompt": "A half is one of how many equal parts?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u12.main.05",
+      "hint": "When we halve, how many equal parts are there?",
+      "explanation": "A half is one of two equal parts.",
+      "shortExplanation": "A half is one of two equal parts.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.main.05",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "2",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+      }
+    },
+    {
+      "id": "math_unit_12.step.007",
+      "kind": "tap-choice",
+      "title": "The bigger half",
+      "prompt": "It makes sense to ask for the bigger half.",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "False",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "True",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u12.main.06",
+      "hint": "Can two halves of the same thing be different sizes?",
+      "explanation": "Halves of the same whole must be the same size.",
+      "shortExplanation": "Halves of the same whole must be the same size.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.main.06",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "False. Halves are always the same size.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+      }
+    },
+    {
+      "id": "math_unit_12.step.008",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "With an adult, draw a line cutting a rectangle into two equal parts. Check both parts.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Share equally into two groups. The parts must match.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.main.07",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "A line straight down the middle, straight across the middle, or corner to corner — all\nmake halves.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true,
+      "parentReview": {
+        "en": "A line straight down the middle, straight across the middle, or corner to corner — all\nmake halves.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_12.step.009",
+      "kind": "story",
+      "title": "Try it at home",
+      "prompt": "Name something at home that you can share in half. Explain how both parts can be equal.",
+      "options": [],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Share equally into two groups. The parts must match.",
+      "explanation": "Try it with an adult. Talk about what you found.",
+      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.main.08",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "Any sensible answer: a sandwich, an orange, a cake, a pack of biscuits.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Try at home",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true,
+      "parentReview": {
+        "en": "Any sensible answer: a sandwich, an orange, a cake, a pack of biscuits.",
+        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      }
+    },
+    {
+      "id": "math_unit_12.step.010",
+      "kind": "tap-choice",
+      "title": "Fair halves",
+      "prompt": "Which shape is cut into two halves?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 2,
+            "shaded": 1,
+            "equal": false
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 4,
+            "shaded": 1,
+            "equal": true
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "circle",
+            "parts": 2,
+            "shaded": 1,
+            "equal": true
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u12.choice.01",
+      "hint": "Halves are two parts of the same size.",
+      "explanation": "Picture c has two equal parts, so they are halves. The others are not.",
+      "shortExplanation": "Picture c has two equal parts, so they are halves. The others are not.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.choice.01",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "equal",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_12.step.011",
+      "kind": "tap-choice",
+      "title": "Half of 4",
+      "prompt": "Half of 4 is...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "1",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u12.choice.02",
+      "hint": "Share 4 into two equal groups.",
+      "explanation": "Two and two make 4, so half of 4 is 2.",
+      "shortExplanation": "Two and two make 4, so half of 4 is 2.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.choice.02",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "2",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 4,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
+    },
+    {
+      "id": "math_unit_12.step.012",
+      "kind": "tap-choice",
+      "title": "Pizza halves",
+      "prompt": "A pizza cut into 2 equal parts: each part is...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "two halves",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "one whole",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "one half",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u12.choice.03",
+      "hint": "The pizza has two equal parts. What is one of them called?",
+      "explanation": "One of two equal parts is one half.",
+      "shortExplanation": "One of two equal parts is one half.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.choice.03",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "one half",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true,
+      "mathVisual": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+      }
+    },
+    {
+      "id": "math_unit_12.step.013",
+      "kind": "tap-choice",
+      "title": "Sharing 6",
+      "prompt": "Sharing 6 fairly between 2 people gives each...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "3",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u12.choice.04",
+      "hint": "Give one to each person in turn until none are left.",
+      "explanation": "Sharing 6 fairly between 2 people gives 3 each.",
+      "shortExplanation": "Sharing 6 fairly between 2 people gives 3 each.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.choice.04",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "3",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 6,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
+    },
+    {
+      "id": "math_unit_12.step.014",
+      "kind": "tap-choice",
+      "title": "Cut into equal parts",
+      "prompt": "Which shape is cut into equal parts?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 2,
+            "shaded": 1,
+            "equal": false
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "square",
+            "parts": 4,
+            "shaded": 1,
+            "equal": true
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u12.choice.05",
+      "hint": "Are all the pieces the same size?",
+      "explanation": "The square is cut into four equal parts. Equal parts of a whole are a fraction.",
+      "shortExplanation": "The square is cut into four equal parts. Equal parts of a whole are a fraction.",
+      "source": {
+        "pages": [
+          41,
+          42,
+          43
+        ],
+        "questionId": "math.u12.choice.05",
+        "answerKeyPages": [
+          78
+        ],
+        "answerKeyText": "equal parts of a whole",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_12",
+      "adapted": true
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_12.sticker",
+      "word": "half",
+      "art": "math_label",
+      "picture": {
+        "type": "fraction",
+        "shape": "circle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+      },
+      "meaning": "One of two equal parts.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        41,
+        42,
+        43
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Fold paper so the edges match to make halves. Share 6, 8 or 10 safe large counters equally between two plates and compare both groups.",
+      "textAr": "اطبقوا ورقة لحد ما الأطراف تيجي على بعض عشان تعملوا نصّين. وقسّموا ٦ أو ٨ أو ١٠ حتت كبيرة وآمنة بالتساوي على طبقين، وقارنوا المجموعتين.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u12.main.01",
+      "text": "Fold paper shapes in half and an adult cuts along the fold. Put the two parts on top of each other: do they match?",
+      "textAr": "اطّبقوا أشكال ورق نصّين، والكبير يقص على الطبقة. حطّوا الجزئين فوق بعض: متطابقين؟",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u12.main.02",
+      "text": "Share 6 biscuits between two plates, one at a time. Count each plate.",
+      "textAr": "قسّموا ٦ بسكوتات على طبقين، واحدة واحدة. عدّوا كل طبق.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u12.main.03",
+      "text": "Share 10 spoons between two people, one each in turn. Each person counts their share.",
+      "textAr": "قسّموا ١٠ معالق بين شخصين، واحدة لكل واحد بالدور. كل واحد يعدّ نصيبه.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u12.main.04",
+      "text": "Share 8 pieces of fruit between two children, one at a time, and check that both have the same.",
+      "textAr": "قسّموا ٨ حتت فاكهة بين طفلين، واحدة واحدة، واتأكدوا إن الاتنين معاهم نفس العدد.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u12.main.05",
+      "text": "Fold a sheet of paper into two equal parts. Colour one part and call it one half.",
+      "textAr": "اطّبقوا ورقة لجزئين متساويين. لوّنوا جزء واحد وسمّوه نص.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u12.main.06",
+      "text": "An adult cuts a sandwich in two. If one part is bigger, talk about why the parts are not halves.",
+      "textAr": "الكبير يقطع سندوتش لجزئين. لو جزء أكبر من التاني، اتكلموا ليه دول مش أنصاص.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u12.choice.01",
+      "text": "Draw lines on some shapes, some through the middle and some not. Your child picks the shapes cut into two equal halves.",
+      "textAr": "ارسموا خطوط على أشكال، شوية في النص وشوية لأ. طفلك يختار الأشكال المتقسّمة نصّين متساويين.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u12.choice.02",
+      "text": "Share 4 spoons between two cups. Your child counts how many are in each cup.",
+      "textAr": "قسّموا ٤ معالق على كوبايتين. طفلك يعدّ كام في كل كوباية.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u12.choice.03",
+      "text": "When an adult cuts a pizza or a round loaf into two equal parts, ask your child to name each part: one half.",
+      "textAr": "لما الكبير يقطع بيتزا أو رغيف عيش لجزئين متساويين، اسألوا طفلك كل جزء اسمه إيه: نص.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u12.choice.04",
+      "text": "Share 6 toys between two people, one each in turn, and count each share.",
+      "textAr": "قسّموا ٦ لعب بين شخصين، واحدة لكل واحد بالدور، وعدّوا نصيب كل واحد.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u12.choice.05",
+      "text": "Fold a paper square into 4 equal parts and open it. Your child checks that all the parts are the same size.",
+      "textAr": "اطّبقوا مربع ورق ٤ أجزاء متساوية وافتحوه. طفلك يتأكد إن كل الأجزاء قد بعض.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

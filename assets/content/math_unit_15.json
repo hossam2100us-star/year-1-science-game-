@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_15",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Shapes, Direction and Movement - Faces, Corners and Turns",
+  "ar": "الأوجه والأركان والدوران",
+  "term": 3,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    51,
+    52,
+    53
+  ],
+  "introductionText": "Term 3 · Geometry\nShapes, Direction and Movement —\nFaces, Corners and Turns\nThe Big Idea: A shape keeps its name however you turn it. We describe shapes by their\nsides, corners and faces.\nSay It Like This\nRead aloud\n\"Hold this triangle. Turn it round. Is it still a triangle? Yes! It still has 3 sides and 3 corners.\nTurning doesn't change a shape. A solid shape has faces — the flat parts you can put your\nhand on. A cube has 6 faces and 8 corners. A cylinder has 2 flat faces and one curved face\nthat goes all the way round.\"\nWatch Out For\nThe slip almost every child makes\nFaces and sides mixed up. Sides belong to flat (2D) shapes; faces belong to solid (3D)\nshapes. Let him press his palm flat on each face of a box as he counts.\nCounting the same corner twice. Put a small sticker (or dot of play dough) on each corner\nof a cube as he counts it.\nTry It at Home\nGame 1 — The feely bag (10 minutes)\nPut a dice, a tin, an orange, a small box and an ice-cream cone (or funnel) in a pillowcase.\nHe feels one without looking and describes it: \"It has flat faces... it has corners...\" You\nguess the shape. Then swap roles.\nGame 2 — Playground spotting (a walk)\nOn the way to the park, find shapes: wheels are circles, a slide ladder has rectangles, a\nfootball is a sphere, a traffic cone is a cone. Turn a road sign in your mind: is it still the\nsame shape upside down?\nTurn it — still a triangle, still a square\ncorner\nface\nsquare still a square 6 faces, 8 corners\nTurn the page round and ask if the triangles are still triangles. Then count the cube's faces on a real dice,\npressing each one.\nMore examples to talk about\n• A sphere has one curved face and no corners.\n• A cone has one flat face, one curved face and one pointy corner.\n• A cuboid has 6 faces, like a cube, but some are rectangles.\n• Tricky: a circle turned any amount looks exactly the same — try it with a plate.\n• A sequence can use 3D shapes too: ball, box, box, ball, box, box...\nKey Words\nface corner side flat curved turn sequence forwards backwards",
+  "sourceQuestions": [
+    {
+      "id": "math.u15.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "How many faces does a cube have?",
+      "answerKeyText": "6",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u15.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "How many corners does a cube have?",
+      "answerKeyText": "8",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u15.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Are these the same shape? Write yes or no.",
+      "answerKeyText": "Yes — both are triangles; one is just turned.",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u15.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "How many flat faces does a cylinder have?",
+      "answerKeyText": "2",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u15.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Continue the sequence: sphere, cube, cube, sphere, cube, cube,",
+      "answerKeyText": "sphere",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u15.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Name something in the playground that is shaped like a circle.",
+      "answerKeyText": "Any circle: a wheel, a swing seat top, the top of a bin, a clock.",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u15.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Sort: sphere, cube, cylinder, cuboid, cone, pyramid\nhas a curved face only flat faces",
+      "answerKeyText": "curved: sphere, cylinder, cone • only flat: cube, cuboid, pyramid",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u15.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "The robot faces up. Write the moves to get it to the star.",
+      "answerKeyText": "2 forwards, turn right, 2 forwards. (Also correct: turn right, 2 forwards, turn left, 2\nforwards.)",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u15.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "A shape that is turned round...\n( changes its name ) ( disappears ) ( keeps its name )",
+      "answerKeyText": "keeps its name",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u15.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "A cone has...\n( 4 corners ) ( 8 corners ) ( 1 pointy corner )",
+      "answerKeyText": "1 pointy corner",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u15.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "A sphere has...\n( 3 sides ) ( one curved face ) ( 6 flat faces )",
+      "answerKeyText": "one curved face",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u15.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "A cuboid has...\n( 4 faces ) ( 2 faces ) ( 6 faces )",
+      "answerKeyText": "6 faces",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u15.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "A triangle has...\n( 3 sides ) ( no sides ) ( 4 sides )",
+      "answerKeyText": "3 sides",
+      "sourcePages": [
+        51,
+        52,
+        53
+      ],
+      "answerKeyPages": [
+        80
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

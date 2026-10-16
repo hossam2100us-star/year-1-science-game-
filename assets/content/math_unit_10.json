@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_unit_10",
+  "kind": "unit",
+  "subject": "maths",
+  "title": "Time and Measurement - Days, Length and Mass",
+  "ar": "الأيام والطول والكتلة",
+  "term": 2,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    35,
+    36,
+    37
+  ],
+  "introductionText": "Term 2 · Measure\nTime and Measurement — Days, Length\nand Mass\nThe Big Idea: A week has 7 days and a year has 12 months. We measure length by\ncounting same-size cubes laid end to end, and compare mass with a balance: the heavier\nside goes down.\nSay It Like This\nRead aloud\n\"There are 7 days in a week: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday,\nSaturday — then Sunday comes round again. There are 12 months in a year, starting with\nJanuary and ending with December. A balance is like a see-saw. When Daddy sits on one\nend, that end goes down. The heavier thing always goes down.\"\nWatch Out For\nThe slip almost every child makes\n\"Bigger means heavier.\" A big pillow is lighter than a small stone. Put them on a coat-\nhanger balance and let the balance surprise him.\nLeaving gaps when measuring. Cubes must touch, end to end, starting exactly at the end\nof the object. A gap is a piece of length that nobody counted.\nTry It at Home\nGame 1 — The coat-hanger balance (10 minutes)\nHang a plastic bag on each end of a coat hanger and hang it from a door handle. Put an\napple in one bag and a potato in the other. He guesses which is heavier, then lets go and\nwatches. Then try three things — an onion, a spoon, a sock — and put them in order,\nheaviest first.\nGame 2 — How many bricks long? (10 minutes)\nUse Lego bricks, dice or sugar cubes — all the same size. Measure a spoon, a book and his\nshoe. He guesses first, then lines them up with no gaps. Then measure the same book\nwith your hand-spans and his. Why did we get different answers?\nThe heavier side goes DOWN\nMeasuring with cubes\nbig pillow\nabout 7 cubes long — no gaps!\nsmall stone\nAsk which object is heavier and how the balance shows it. Then count the cubes under the pencil with him.\nMore examples to talk about\n• In Egypt the weekend is Friday and Saturday. Ask him which days he goes to school.\n• February is the shortest month. His birthday is in one of the 12 months — which one?\n• A balloon is big and very light; a key is small and heavy for its size.\n• Tricky: hand-spans give different answers for different people. That's why we need\nsame-size units.\n• To find the heaviest of three, compare two, then compare the winner with the third.\nKey Words\nday week month year measure cube length heavy heavier heaviest\nlight balance mass",
+  "sourceQuestions": [
+    {
+      "id": "math.u10.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "How many days are in a week?",
+      "answerKeyText": "7",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u10.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Which day comes after Monday? Which day comes before Friday?",
+      "answerKeyText": "Tuesday and Thursday",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u10.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "How many months are in a year?",
+      "answerKeyText": "12",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u10.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Which month comes after January?",
+      "answerKeyText": "February",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u10.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "How many cubes long is the pencil?",
+      "answerKeyText": "6 cubes",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u10.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Look at the balance. Which is heavier, A or B?\nA\nB",
+      "answerKeyText": "B — its side went down.",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u10.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "True or false? A bigger thing is always heavier.",
+      "answerKeyText": "False. A big pillow is lighter than a small stone.",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u10.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Number these from heaviest (1) to lightest (3): a book a feather a chair",
+      "answerKeyText": "chair 1, book 2, feather 3",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u10.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "A year has...\n( 7 months ) ( 12 months ) ( 10 months )",
+      "answerKeyText": "12 months",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u10.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "On a balance, the heavier side goes...\n( sideways ) ( down ) ( up )",
+      "answerKeyText": "down",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u10.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "When measuring with cubes, leave...\n( big gaps ) ( no gaps ) ( one gap )",
+      "answerKeyText": "no gaps",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u10.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "The day after Saturday is...\n( Sunday ) ( Friday ) ( Monday )",
+      "answerKeyText": "Sunday",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.u10.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Which is the heaviest?\n( a strawberry ) ( a grape ) ( a watermelon )",
+      "answerKeyText": "a watermelon",
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "answerKeyPages": [
+        77
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

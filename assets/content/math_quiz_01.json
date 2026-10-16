@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "0.1.0",
+  "contentVersion": 2,
+  "id": "math_quiz_01",
+  "kind": "quiz",
+  "subject": "maths",
+  "title": "Big Challenge: Term 1",
+  "ar": "تحدي الفصل الدراسي 1",
+  "term": 1,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    24
+  ],
+  "sourceQuestions": [
+    {
+      "id": "math.q01.01",
+      "category": "quiz",
+      "number": 1,
+      "sourceText": "How many dots?",
+      "answerKeyText": "9",
+      "sourcePages": [
+        24
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q01.02",
+      "category": "quiz",
+      "number": 2,
+      "sourceText": "1 more than 12 is",
+      "answerKeyText": "13",
+      "sourcePages": [
+        24
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q01.03",
+      "category": "quiz",
+      "number": 3,
+      "sourceText": "7 take away 3 is",
+      "answerKeyText": "4",
+      "sourcePages": [
+        24
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q01.04",
+      "category": "quiz",
+      "number": 4,
+      "sourceText": "What is the name of a flat shape with 3 sides?",
+      "answerKeyText": "triangle",
+      "sourcePages": [
+        24
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q01.05",
+      "category": "quiz",
+      "number": 5,
+      "sourceText": "What is the name of a solid shape like a football?",
+      "answerKeyText": "sphere",
+      "sourcePages": [
+        24
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q01.06",
+      "category": "quiz",
+      "number": 6,
+      "sourceText": "In a pictogram, the longest row shows the",
+      "answerKeyText": "most",
+      "sourcePages": [
+        24
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q01.07",
+      "category": "quiz",
+      "number": 7,
+      "sourceText": "Circle the larger number: 18 15",
+      "answerKeyText": "18",
+      "sourcePages": [
+        24
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q01.08",
+      "category": "quiz",
+      "number": 8,
+      "sourceText": "How many sweets are in an empty bag?",
+      "answerKeyText": "0 (zero)",
+      "sourcePages": [
+        24
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q01.09",
+      "category": "quiz",
+      "number": 9,
+      "sourceText": "When do you go to sleep: morning or night?",
+      "answerKeyText": "night",
+      "sourcePages": [
+        24
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    },
+    {
+      "id": "math.q01.10",
+      "category": "quiz",
+      "number": 10,
+      "sourceText": "To compare two pencils fairly, what do you line up?",
+      "answerKeyText": "the ends (on the same starting line)",
+      "sourcePages": [
+        24
+      ],
+      "answerKeyPages": [
+        75
+      ],
+      "reviewStatus": "extracted_needs_game_adaptation"
+    }
+  ],
+  "scoreBands": [
+    {
+      "min": 8,
+      "max": 10,
+      "label": "excellent"
+    },
+    {
+      "min": 5,
+      "max": 7,
+      "label": "keep practising"
+    },
+    {
+      "min": 0,
+      "max": 4,
+      "label": "play the games again"
+    }
+  ],
+  "activities": [],
+  "playableQuestions": [],
+  "status": "source_draft"
+}

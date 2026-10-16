@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../content/catalog.dart';
 import '../core/diagnostics/app_log.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
@@ -237,6 +238,30 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                     ],
                   ),
                 if (_tab == 0)
+                  ref
+                      .watch(mathsCatalogProvider)
+                      .when(
+                        loading: () =>
+                            const Center(child: CircularProgressIndicator()),
+                        error: (error, stack) => OutlinedButton(
+                          onPressed: () => ref.invalidate(mathsCatalogProvider),
+                          child: Text(l.parentAreaMathsResultsRetry),
+                        ),
+                        data: (catalogue) => ParentSection(
+                          title: ar ? catalogue.arabic : catalogue.title,
+                          children: [
+                            Text(l.parentAreaStarsRewardEffortAndCompletion),
+                            const SizedBox(height: 12),
+                            for (final level in catalogue.levels)
+                              UnitReport(
+                                level: level,
+                                arabic: ar,
+                                subject: catalogue.subject,
+                              ),
+                          ],
+                        ),
+                      ),
+                if (_tab == 0)
                   ParentSection(
                     title: l.parentAreaTimeOnTheChildScreens,
                     children: [
@@ -312,6 +337,27 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                       Text(l.parentAreaBasedOnTheBookPage),
                     ],
                   ),
+                if (_tab == 2)
+                  ref
+                      .watch(mathsCatalogProvider)
+                      .when(
+                        loading: () =>
+                            const Center(child: CircularProgressIndicator()),
+                        error: (error, stack) => OutlinedButton(
+                          onPressed: () => ref.invalidate(mathsCatalogProvider),
+                          child: Text(l.parentAreaMathsGuideRetry),
+                        ),
+                        data: (catalogue) => ParentSection(
+                          title: ar ? catalogue.arabic : catalogue.title,
+                          children: [
+                            for (final rule in catalogue.parentRules)
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 14),
+                                child: Text(rule[ar ? 'ar' : 'en'] as String),
+                              ),
+                          ],
+                        ),
+                      ),
                 if (_tab == 1)
                   ParentSection(
                     title: l.parentAreaResetProgress,

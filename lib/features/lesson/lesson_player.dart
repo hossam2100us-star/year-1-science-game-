@@ -75,6 +75,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   late DiscoveryGame _game;
   final _scroll = ScrollController();
   Set<String> _selected = {};
+
+  /// The answer last sent with Check. Check stays off until the child
+  /// changes it, so a double tap on Check is never a second mistake.
+  String? _checked;
   Map<String, String> _placements = {};
   Set<String> _touched = {};
   Set<String> _reviewItems = {};
@@ -124,7 +128,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     final saved = widget.onPracticeComplete == null
-        ? ref.read(appProvider).journeys[widget.lesson.id]
+        ? ref
+              .read(appProvider)
+              .progressForSubject(widget.lesson.subject)
+              .journeys[widget.lesson.id]
         : null;
     _session = saved != null && LessonSession.canRestore(widget.lesson, saved)
         ? LessonSession.restore(widget.lesson, saved)
@@ -147,6 +154,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       current['light'] ?? LightProgress.fromLegacy(current).toJson(),
     );
     _selected = Set<String>.from(current['selected'] ?? []);
+    _checked = current['checked'] as String?;
     _placements = Map<String, String>.from(current['placements'] ?? {});
     _touched = Set<String>.from(current['touched'] ?? []);
     _reviewItems = Set<String>.from(current['reviewItems'] ?? []);
@@ -254,6 +262,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     'lab': Map<String, dynamic>.from(_lab),
     'light': Map<String, dynamic>.from(_light),
     'selected': _selected.toList(),
+    if (_checked != null) 'checked': _checked,
     'placements': Map<String, String>.from(_placements),
     'touched': _touched.toList(),
     'reviewItems': _reviewItems.toList(),
@@ -276,7 +285,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     snapshot['responses'] = Map<String, dynamic>.from(_session.responses);
     final writer = ref.read(appProvider.notifier);
     final task = _writes.then(
-      (_) => writer.saveJourney(widget.lesson.id, snapshot),
+      (_) => writer.saveJourney(
+        widget.lesson.id,
+        snapshot,
+        subject: widget.lesson.subject,
+      ),
     );
     _writes = task.catchError((Object error, StackTrace stack) {
       if (mounted) {
@@ -344,10 +357,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     } else {
       _selected = {id};
     }
+    // A tap only chooses; Check sends the answer, so an accidental tap is
+    // never a mistake in the parent report (teacher review 5, both subjects).
     _changed();
-    if (!step.isFree && !step.isMulti && !step.isOrder && !step.isMapping) {
-      _check();
-    }
   }
 
   void _place(String item, String target) {
@@ -366,7 +378,6 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
           : step.label(target),
     );
     _changed();
-    if (step.options.length == 1) _check();
   }
 
   Object? get _selection => StepRules.selection(step, _selected, _placements);
@@ -375,8 +386,28 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   String _assessmentFeedback() =>
       StepRules.assessmentFeedback(step, _engine, _selected, _placements);
 
+  /// The current answer, comparable with [_checked]. Order matters only
+  /// for ordering questions.
+  String get _answerKey => [
+    if (step.isOrder) ..._selected else ...(_selected.toList()..sort()),
+    '|',
+    ...(_placements.entries.map((e) => '${e.key}=${e.value}').toList()..sort()),
+  ].join(',');
+
+  bool get _canCheck =>
+      !_busy &&
+      _answerKey != _checked &&
+      (step.isMapping
+          ? _placements.length == step.options.length
+          : _selected.isNotEmpty &&
+                !(_science &&
+                    widget.lesson.id == 'unit_06' &&
+                    step.isOrder &&
+                    _selected.length != step.options.length));
+
   void _check() {
-    if (_busy || _answerLocked) return;
+    if (_busy || _answerLocked || !_canCheck) return;
+    _checked = _answerKey;
     if (_needsCorrection) {
       // This is practice after explanation. Never submit to the scoring engine.
       final corrected = matchesAnswer(step.answer!, _selection);
@@ -494,7 +525,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       if (widget.onPracticeComplete == null) {
         await ref
             .read(appProvider.notifier)
-            .saveJourney(widget.lesson.id, _session.toJson());
+            .saveJourney(
+              widget.lesson.id,
+              _session.toJson(),
+              subject: widget.lesson.subject,
+            );
       }
       _game.pauseEngine();
       _prepare();
@@ -538,7 +573,9 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
           if (mounted) Navigator.of(context).pop();
           return;
         }
-        await ref.read(appProvider.notifier).completeJourney(_session.result());
+        await ref
+            .read(appProvider.notifier)
+            .completeJourney(_session.result(), subject: widget.lesson.subject);
         if (mounted) {
           setState(() => _complete = true);
           _say(_resultText);
@@ -547,7 +584,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         if (widget.onPracticeComplete == null) {
           await ref
               .read(appProvider.notifier)
-              .saveJourney(widget.lesson.id, _session.toJson());
+              .saveJourney(
+                widget.lesson.id,
+                _session.toJson(),
+                subject: widget.lesson.subject,
+              );
         }
         _game.pauseEngine();
         _prepare();
@@ -1002,6 +1043,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     return math.max(base, button + 16);
   }
 
+  bool get _compactMathsControls =>
+      widget.lesson.subject == 'maths' &&
+      MediaQuery.sizeOf(context).width < 600 &&
+      MediaQuery.textScalerOf(context).scale(1) >= 1.5;
+
   Widget _controls() => Container(
     key: const ValueKey('lesson-controls'),
     height: _stripHeight,
@@ -1030,28 +1076,19 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
             icon: const Icon(Icons.volume_up_rounded),
           ),
         const SizedBox(width: 8),
-        if (!step.isFree &&
-            !_answerLocked &&
-            (step.isMulti || step.isOrder || step.isMapping))
+        if (!step.isFree && !_answerLocked && step.answer != null)
           FilledButton(
             style: FilledButton.styleFrom(
               minimumSize: const Size(64, 56),
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
               textStyle: const TextStyle(fontFamily: 'Nunito', fontSize: 18),
             ),
-            onPressed:
-                _busy ||
-                    (step.isMapping
-                        ? _placements.length != step.options.length
-                        : _selected.isEmpty ||
-                              (_science &&
-                                  widget.lesson.id == 'unit_06' &&
-                                  step.isOrder &&
-                                  _selected.length != step.options.length))
-                ? null
-                : _check,
+            key: const ValueKey('lessonCheck'),
+            onPressed: _canCheck ? _check : null,
             child: Text(
-              _needsCorrection
+              _compactMathsControls
+                  ? 'Check'
+                  : _needsCorrection
                   ? _correctionText('check')
                   : 'Check my discovery',
             ),
@@ -1066,7 +1103,13 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
             ),
             onPressed: _busy ? null : _next,
             icon: const Icon(Icons.arrow_forward_rounded),
-            label: Text(_busy ? 'Saving…' : 'Keep exploring'),
+            label: Text(
+              _busy
+                  ? 'Saving…'
+                  : _compactMathsControls
+                  ? 'Next'
+                  : 'Keep exploring',
+            ),
           ),
       ],
     ),
@@ -1171,8 +1214,12 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     onBack: _leave,
     onPractice: () => Navigator.of(context).pushReplacement(
       MaterialPageRoute<void>(
-        builder: (_) =>
-            LessonRoute(id: practiceUnitFor(_session.result().objectives)),
+        builder: (_) => LessonRoute(
+          id: widget.lesson.subject == 'science'
+              ? practiceUnitFor(_session.result().objectives)
+              : widget.lesson.json['practiceUnitId'] as String? ??
+                    widget.lesson.id,
+        ),
       ),
     ),
   );

@@ -1,6 +1,7 @@
 import '../../content/lesson.dart';
 import '../../games/question_engine.dart';
 import '../science/science_lab.dart';
+import '../maths/maths_workshop.dart';
 import 'scene_kind.dart';
 
 /// Pure assessment and progression rules for one lesson step (AUD-002).
@@ -106,6 +107,13 @@ abstract final class StepRules {
     if (alreadyCompleted) return true;
     final kind = SceneKind.of(step);
     final json = step.json;
+    if (kind == SceneKind.maths && json['mathWorkshop'] is Map) {
+      return freeDone &&
+          MathsWorkshop.isComplete(
+            Map<String, dynamic>.from(json['mathWorkshop']),
+            lab,
+          );
+    }
     if (kind.isScience && json['lab'] == 'distance') {
       return ScienceLab.distanceComplete(lab);
     }

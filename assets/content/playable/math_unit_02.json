@@ -1,0 +1,1236 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_02",
+  "subject": "maths",
+  "title": "Addition and Subtraction",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    8,
+    9,
+    10
+  ],
+  "steps": [
+    {
+      "id": "math_unit_02.step.001",
+      "kind": "explore",
+      "title": "Join and take away",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Tap the three beans once each. How many are in the starting group?",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Three beans are ready. Add two more beans, then check the new group.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Seven beans are ready. Take away two beans, then check what is left.",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each object once. A marked object has already been counted.",
+      "explanation": "See how adding and taking away change a group.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Join and take away",
+        "goal": "See how adding and taking away change a group.",
+        "scene": "orchard",
+        "tasks": [
+          {
+            "mode": "count",
+            "prompt": "Tap the three beans once each. How many are in the starting group?",
+            "count": 3,
+            "item": "bean",
+            "arrangement": "row",
+            "choices": [
+              {
+                "id": "answer_1",
+                "label": "2",
+                "value": 2
+              },
+              {
+                "id": "answer_2",
+                "label": "3",
+                "value": 3
+              },
+              {
+                "id": "answer_3",
+                "label": "4",
+                "value": 4
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "There are three beans to start with.",
+            "hint": "Tap each object once. A marked object has already been counted.",
+            "id": "explore_1"
+          },
+          {
+            "mode": "build",
+            "prompt": "Three beans are ready. Add two more beans, then check the new group.",
+            "target": 5,
+            "item": "bean",
+            "initialCount": 3,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Three beans and two more make five: 3 + 2 = 5.",
+            "hint": "Keep the three you started with. Add one, then one more.",
+            "id": "explore_2"
+          },
+          {
+            "mode": "build",
+            "prompt": "Seven beans are ready. Take away two beans, then check what is left.",
+            "target": 5,
+            "item": "bean",
+            "initialCount": 7,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Taking two away from seven leaves five: 7 - 2 = 5.",
+            "hint": "Remove one bean, then one more. Count only the beans that remain.",
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_02.step.002",
+      "kind": "match-lines",
+      "title": "One more, one less",
+      "prompt": "Find one more and one less.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "1 less than 10",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "1 more than 6",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "9",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u02.main.01",
+      "hint": "One more is the next number; one less is the number before.",
+      "explanation": "One more moves forward; one less moves back.",
+      "shortExplanation": "One more moves forward; one less moves back.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.01",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "7 and 9",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10
+      }
+    },
+    {
+      "id": "math_unit_02.step.003",
+      "kind": "tap-choice",
+      "title": "Counting on",
+      "prompt": "Start at 5 and count on 3. Where do you land?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "8",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.main.02",
+      "hint": "Start on 5, then make three jumps forward.",
+      "explanation": "Three forward jumps from 5 land on 8.",
+      "shortExplanation": "Three forward jumps from 5 land on 8.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.02",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "8",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 5,
+        "jumps": [
+          3
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_02.step.004",
+      "kind": "tap-choice",
+      "title": "Counting back",
+      "prompt": "Start at 9 and count back 4. Where do you land?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "5",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.main.03",
+      "hint": "Start on 9, then make four jumps back.",
+      "explanation": "Four backward jumps from 9 land on 5.",
+      "shortExplanation": "Four backward jumps from 9 land on 5.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.03",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 9,
+        "jumps": [
+          -4
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_02.step.005",
+      "kind": "tap-choice",
+      "title": "Adding two groups",
+      "prompt": "Choose the addition sentence for the two groups.",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "3 + 3 = 6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "4 + 3 = 7",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "4 - 3 = 1",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u02.main.04",
+      "hint": "Count the blue dots, then the orange dots. Do the groups join?",
+      "explanation": "Adding 4 blue dots and 3 orange dots makes 7.",
+      "shortExplanation": "Adding 4 blue dots and 3 orange dots makes 7.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.04",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "4 + 3 = 7",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 4,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "blue"
+          },
+          {
+            "type": "count",
+            "count": 3,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "orange"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_02.step.006",
+      "kind": "tap-choice",
+      "title": "Taking away cubes",
+      "prompt": "There are 8 cubes. Take away 3. How many remain?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.main.05",
+      "hint": "Count 8 cubes, cover 3, then count the cubes left.",
+      "explanation": "Taking 3 cubes from 8 leaves 5 cubes.",
+      "shortExplanation": "Taking 3 cubes from 8 leaves 5 cubes.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.05",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 8,
+        "item": "cube",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_02.step.007",
+      "kind": "match-lines",
+      "title": "Words and signs",
+      "prompt": "Match the words to the number sentence.",
+      "options": [
+        {
+          "id": "item_1",
+          "label": "4 add 3 equals 7",
+          "art": "math_label"
+        },
+        {
+          "id": "item_2",
+          "label": "7 take away 2 is 5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "4 + 3 = 7",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "7 - 2 = 5",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u02.main.06",
+      "hint": "Add means +, take away means −, and equals means =.",
+      "explanation": "Plus adds, minus takes away and equals means the same as.",
+      "shortExplanation": "Plus adds, minus takes away and equals means the same as.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.06",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "4 + 3 = 7 and 7 − 2 = 5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 4,
+            "item": "apple",
+            "arrangement": "row",
+            "width": 224,
+            "height": 90,
+            "label": "4"
+          },
+          {
+            "type": "text",
+            "text": "+",
+            "width": 40
+          },
+          {
+            "type": "count",
+            "count": 3,
+            "item": "apple",
+            "arrangement": "row",
+            "width": 224,
+            "height": 90,
+            "label": "3"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_02.step.008",
+      "kind": "tap-choice",
+      "title": "Cars drive away",
+      "prompt": "8 cars were parked. 4 drive away. Choose the correct sentence.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "8 + 4 = 12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "4 - 4 = 0",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "8 - 4 = 4",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.main.07",
+      "hint": "Do the cars join the group or leave it?",
+      "explanation": "The cars leave, so take 4 away from 8.",
+      "shortExplanation": "The cars leave, so take 4 away from 8.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.07",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "No. Cars drove away, so it is taking away: 8 − 4 = 4.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 8,
+        "item": "car",
+        "arrangement": "row",
+        "removed": 4
+      }
+    },
+    {
+      "id": "math_unit_02.step.009",
+      "kind": "tap-choice",
+      "title": "How many more",
+      "prompt": "Mona has 7 sweets. Ali has 4. How many more does Mona have?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.main.08",
+      "hint": "Pair each of Ali's sweets with one of Mona's.",
+      "explanation": "Match the sweets in pairs. Mona has 3 without partners.",
+      "shortExplanation": "Match the sweets in pairs. Mona has 3 without partners.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.main.08",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "3. If he says 7, line up 7 and 4 objects in pairs and count the ones without a partner.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 7,
+            "item": "dot",
+            "arrangement": "row",
+            "label": "Mona"
+          },
+          {
+            "type": "count",
+            "count": 4,
+            "item": "dot",
+            "arrangement": "row",
+            "label": "Ali"
+          }
+        ]
+      }
+    },
+    {
+      "id": "math_unit_02.step.010",
+      "kind": "tap-choice",
+      "title": "Picture of 2 + 3",
+      "prompt": "Which picture shows 2 + 3?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 5,
+            "item": "dot",
+            "arrangement": "row",
+            "removed": 3
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 3,
+            "item": "dot",
+            "arrangement": "row",
+            "slots": 5
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 5,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "split": 2,
+            "color2": "blue"
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u02.choice.01",
+      "hint": "Plus puts two groups together.",
+      "explanation": "2 + 3 means 2 and 3 more put together: 5 in all.",
+      "shortExplanation": "2 + 3 means 2 and 3 more put together: 5 in all.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.choice.01",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "add",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_02.step.011",
+      "kind": "tap-choice",
+      "title": "Take away 2",
+      "prompt": "6 take away 2 is...",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "8",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u02.choice.02",
+      "hint": "Start on 6 and jump back twice.",
+      "explanation": "Two jumps back from 6 land on 4.",
+      "shortExplanation": "Two jumps back from 6 land on 4.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.choice.02",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 6,
+        "item": "cube",
+        "arrangement": "row",
+        "removed": 2
+      }
+    },
+    {
+      "id": "math_unit_02.step.012",
+      "kind": "tap-choice",
+      "title": "Jumping to take away",
+      "prompt": "On a number line, taking away makes you jump...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "forwards",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "up",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "backwards",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u02.choice.03",
+      "hint": "Taking away makes a number smaller. Where are the smaller numbers?",
+      "explanation": "Taking away makes numbers smaller, so we jump backwards.",
+      "shortExplanation": "Taking away makes numbers smaller, so we jump backwards.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.choice.03",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "backwards",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10
+      }
+    },
+    {
+      "id": "math_unit_02.step.013",
+      "kind": "tap-choice",
+      "title": "One less than 8",
+      "prompt": "1 less than 8 is...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "7",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u02.choice.04",
+      "hint": "Say the number that comes just before 8.",
+      "explanation": "One step back from 8 is 7.",
+      "shortExplanation": "One step back from 8 is 7.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.choice.04",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "7",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 8,
+        "jumps": [
+          -1
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_02.step.014",
+      "kind": "tap-choice",
+      "title": "Adding zero",
+      "prompt": "5 + 0 =",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "6",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "0",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "5",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u02.choice.05",
+      "hint": "Zero means nothing. What happens when you add nothing?",
+      "explanation": "Adding zero adds nothing, so 5 stays 5.",
+      "shortExplanation": "Adding zero adds nothing, so 5 stays 5.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.choice.05",
+        "answerKeyPages": [
+          72
+        ],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 5,
+            "item": "apple",
+            "arrangement": "row",
+            "width": 280,
+            "height": 90,
+            "label": "5"
+          },
+          {
+            "type": "text",
+            "text": "+",
+            "width": 40
+          },
+          {
+            "type": "count",
+            "count": 0,
+            "item": "apple",
+            "arrangement": "row",
+            "width": 280,
+            "height": 90,
+            "label": "0"
+          }
+        ]
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_02.sticker",
+      "word": "add",
+      "art": "math_label",
+      "picture": {
+        "type": "count",
+        "count": 5,
+        "item": "dot",
+        "arrangement": "row",
+        "color": "red",
+        "split": 2,
+        "color2": "blue"
+      },
+      "meaning": "Put groups together to make more.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Make a floor number line with an adult. Start on a number and count forward or back by jumps. Compare two groups by pairing objects.",
+      "textAr": "اعملوا خط أرقام على الأرض مع حد كبير. اقفوا على رقم ونطّوا لقدّام أو لورا وانتوا بتعدّوا. وقارنوا مجموعتين بإنكم تحطوا كل حاجة قصاد حاجة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u02.main.01",
+      "text": "Build a tower of 6 blocks. Add one and count. Then start with 10 and take one away.",
+      "textAr": "ابنوا برج من ٦ مكعبات. زوّدوا واحد وعدّوا. وبعدين ابدأوا بـ١٠ وشيلوا واحد.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.02",
+      "text": "Draw a number line from 0 to 10. Your child puts a finger on 5 and makes 3 jumps forward.",
+      "textAr": "ارسموا خط أرقام من ٠ لـ١٠. طفلك يحط صباعه على ٥ وينطّ ٣ نطّات لقدّام.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.03",
+      "text": "On the same number line, start at 9 and make 4 jumps back, saying each number.",
+      "textAr": "على نفس خط الأرقام، ابدأوا من ٩ وانطّوا ٤ نطّات لورا، وقولوا كل رقم.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.04",
+      "text": "Put 4 spoons and 3 forks together and count them all. Then write 4 + 3 = 7 and read it aloud.",
+      "textAr": "حطّوا ٤ معالق و٣ شوك مع بعض وعدّوهم كلهم. وبعدين اكتبوا ٤ + ٣ = ٧ واقروها بصوت عالي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.05",
+      "text": "Put 8 blocks in a line and take 3 away. Your child counts how many remain.",
+      "textAr": "صفّوا ٨ مكعبات وشيلوا ٣. طفلك يعدّ فاضل كام.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.06",
+      "text": "Tell a short story (\"4 birds, and 3 more come\") and help your child write it as 4 + 3 = 7. Then try a take-away story.",
+      "textAr": "احكوا حكاية صغيرة («٤ عصافير وجه ٣ كمان») وساعدوا طفلك يكتبها ٤ + ٣ = ٧. وبعدين جرّبوا حكاية فيها طرح.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.07",
+      "text": "Park 8 toy cars and drive 4 away. Your child says the take-away sentence: 8 − 4 = 4.",
+      "textAr": "صفّوا ٨ عربيات لعبة وخلّوا ٤ يمشوا. طفلك يقول جملة الطرح: ٨ − ٤ = ٤.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.main.08",
+      "text": "Make a line of 7 spoons with a line of 4 underneath. Your child counts the spoons that have no partner.",
+      "textAr": "صفّوا ٧ معالق وتحتهم ٤. طفلك يعدّ المعالق اللي مالهاش زميل.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.choice.01",
+      "text": "Put 2 apples on a plate and add 3 more. Talk about how plus puts the groups together: 5 in all.",
+      "textAr": "حطّوا ٢ تفاح في طبق وزوّدوا ٣ كمان. اتكلموا إن علامة الزائد بتجمع المجموعات: ٥ كلهم.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.choice.02",
+      "text": "Hold up 6 fingers and fold down 2. Count the fingers still up.",
+      "textAr": "ارفعوا ٦ صوابع ونزّلوا ٢. عدّوا الصوابع اللي لسه مرفوعة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.choice.03",
+      "text": "Walk along the floor tiles: forwards when you add, backwards when you take away.",
+      "textAr": "امشوا على بلاط الأرض: لقدّام لما نجمع، ولورا لما نطرح.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.choice.04",
+      "text": "Put 8 cups in a row, take one away and count. Practise \"one less\" with other numbers too.",
+      "textAr": "صفّوا ٨ كوبايات، شيلوا واحدة وعدّوا. اتمرّنوا على «واحد أقل» بأرقام تانية كمان.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.choice.05",
+      "text": "Put 5 spoons on one plate and nothing on another. Put the plates together: adding zero changes nothing.",
+      "textAr": "حطّوا ٥ معالق في طبق والطبق التاني فاضي. حطّوا الطبقين مع بعض: جمع الصفر مش بيغيّر حاجة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

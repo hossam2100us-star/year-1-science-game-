@@ -169,7 +169,7 @@
                 "items": {
                   "type": "integer",
                   "minimum": 1,
-                  "maximum": 39
+                  "maximum": 83
                 }
               }
             }

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/models.dart';
 
@@ -29,23 +30,43 @@ class IslandInfo {
 
 class Catalog {
   Catalog.fromJson(Map<String, dynamic> j)
-    : islands = (j['islands'] as List)
+    : subject = j['subject'] as String? ?? 'science',
+      title = j['title'] as String? ?? 'Science',
+      arabic = j['ar'] as String? ?? 'العلوم',
+      welcome =
+          j['welcome'] as String? ??
+          'Welcome to our science islands. Tap Biology Island to explore.',
+      islands = (j['islands'] as List)
           .map((v) => IslandInfo.fromJson(Map<String, dynamic>.from(v)))
           .toList(),
       parentRules = List<Map<String, dynamic>>.from(j['parentRules']);
+  final String subject, title, arabic, welcome;
   final List<IslandInfo> islands;
   final List<Map<String, dynamic>> parentRules;
   Iterable<LevelInfo> get levels => islands.expand((i) => i.levels);
   bool islandUnlocked(int index, AppData data) =>
-      index == 0 || data.isAdventureComplete(islands[index - 1].levels.last.id);
+      index == 0 ||
+      data
+          .progressForSubject(subject)
+          .isAdventureComplete(islands[index - 1].levels.last.id);
   bool levelUnlocked(int islandIndex, int levelIndex, AppData data) =>
       islandUnlocked(islandIndex, data) &&
       (levelIndex == 0 ||
-          data.isAdventureComplete(
-            islands[islandIndex].levels[levelIndex - 1].id,
-          ));
+          data
+              .progressForSubject(subject)
+              .isAdventureComplete(
+                islands[islandIndex].levels[levelIndex - 1].id,
+              ));
   static Future<Catalog> load() async => Catalog.fromJson(
     jsonDecode(await rootBundle.loadString('assets/content/catalog.json'))
         as Map<String, dynamic>,
   );
+  static Future<Catalog> loadMaths() async => Catalog.fromJson(
+    jsonDecode(await rootBundle.loadString('assets/content/maths_catalog.json'))
+        as Map<String, dynamic>,
+  );
 }
+
+final mathsCatalogProvider = FutureProvider<Catalog>(
+  (ref) => Catalog.loadMaths(),
+);

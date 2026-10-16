@@ -198,6 +198,8 @@ void main() {
       }
       await helpers.tapVisible(t, find.text('Check my discovery'));
       expect(find.byKey(const ValueKey('review-item-stone')), findsOneWidget);
+      // A second try needs a different answer (teacher review 5).
+      await place(t, 'balloon', 'sink');
       await helpers.tapVisible(t, find.text('Check my discovery'));
       expect(current(store)['placements']['stone'], 'float');
       expect(current(store)['needsCorrection'], true);
@@ -206,6 +208,7 @@ void main() {
       await tap(t, 'lessonNext');
       expect(current(store)['needsCorrection'], true);
       await place(t, 'stone', 'sink');
+      await place(t, 'balloon', 'float');
       await helpers.tapVisible(t, find.text('Check my practice'));
       expect(current(store)['outcome'], 'explained');
       expect(current(store)['mistakes'], 2);

@@ -1,0 +1,1249 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "id": "math_unit_05",
+  "subject": "maths",
+  "title": "Numbers to 20 - Order and Zero",
+  "quiz": false,
+  "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a",
+  "sourcePages": [
+    18,
+    19,
+    20
+  ],
+  "steps": [
+    {
+      "id": "math_unit_05.step.001",
+      "kind": "explore",
+      "title": "Guess, check and compare",
+      "prompt": "Let us explore together!",
+      "options": [
+        {
+          "id": "explore_1",
+          "label": "Guess how many beans aloud first. Then tap each bean to check.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_2",
+          "label": "Three counters are ready. Take them all away to make zero.",
+          "art": "math_label"
+        },
+        {
+          "id": "explore_3",
+          "label": "Which group is larger: twelve or seventeen?",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Your guess is not scored. Tap each bean once to find the count.",
+      "explanation": "Use counting to check a guess; notice zero and larger numbers.",
+      "shortExplanation": "Make, count or compare the objects. Explain what changed.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Explore",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "minTouches": 3,
+      "mathWorkshop": {
+        "title": "Guess, check and compare",
+        "goal": "Use counting to check a guess; notice zero and larger numbers.",
+        "scene": "orchard",
+        "tasks": [
+          {
+            "mode": "count",
+            "prompt": "Guess how many beans aloud first. Then tap each bean to check.",
+            "count": 6,
+            "item": "bean",
+            "arrangement": "scattered",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "6",
+                "value": 6
+              },
+              {
+                "id": "answer_3",
+                "label": "7",
+                "value": 7
+              },
+              {
+                "id": "answer_1",
+                "label": "5",
+                "value": 5
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Your guess was a prediction. Counting shows six beans; a different guess is part of learning.",
+            "hint": "Your guess is not scored. Tap each bean once to find the count.",
+            "id": "explore_1"
+          },
+          {
+            "mode": "build",
+            "prompt": "Three counters are ready. Take them all away to make zero.",
+            "target": 0,
+            "item": "counter",
+            "initialCount": 3,
+            "arrangement": "row",
+            "maxCount": 20,
+            "feedback": "Zero means none. The tray is empty because all three counters were taken away.",
+            "hint": "Remove every counter. An empty tray shows zero.",
+            "id": "explore_2"
+          },
+          {
+            "mode": "choose",
+            "prompt": "Which group is larger: twelve or seventeen?",
+            "choices": [
+              {
+                "id": "answer_2",
+                "label": "17"
+              },
+              {
+                "id": "answer_1",
+                "label": "12"
+              }
+            ],
+            "correctId": "answer_2",
+            "feedback": "Seventeen is larger than twelve. Five more objects make the larger group.",
+            "hint": "Compare the groups, or count onward from twelve to seventeen.",
+            "visual": {
+              "type": "groups",
+              "items": [
+                {
+                  "type": "count",
+                  "count": 12,
+                  "item": "dot",
+                  "arrangement": "row",
+                  "label": "12"
+                },
+                {
+                  "type": "count",
+                  "count": 17,
+                  "item": "dot",
+                  "arrangement": "row",
+                  "label": "17"
+                }
+              ]
+            },
+            "id": "explore_3"
+          }
+        ]
+      },
+      "parentReview": {
+        "en": "Guided practice is ungraded. Completion records the child doing the activities, not a book-question score."
+      }
+    },
+    {
+      "id": "math_unit_05.step.002",
+      "kind": "match-lines",
+      "title": "Number words",
+      "prompt": "Match each number word to its number.",
+      "options": [
+        {
+          "id": "item_3",
+          "label": "twenty",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 20,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "split": 10,
+            "color2": "blue"
+          }
+        },
+        {
+          "id": "item_1",
+          "label": "eleven",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 11,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "split": 10,
+            "color2": "blue"
+          }
+        },
+        {
+          "id": "item_2",
+          "label": "fifteen",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 15,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "split": 10,
+            "color2": "blue"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "15",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "20",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2",
+          "item_3": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u05.main.01",
+      "hint": "Say each word aloud, then find its number.",
+      "explanation": "These words name the numbers 11, 15 and 20.",
+      "shortExplanation": "These words name the numbers 11, 15 and 20.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.main.01",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "11, 15, 20",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_05.step.003",
+      "kind": "match-lines",
+      "title": "Counting back gaps",
+      "prompt": "Count back and fill each gap.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "17, 16, __, 14",
+          "art": "math_label"
+        },
+        {
+          "id": "item_3",
+          "label": "14, __, 12",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "18, 17, __",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "13",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "15",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "16",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_3",
+          "item_2": "target_2",
+          "item_3": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u05.main.02",
+      "hint": "Count back one at a time: each number is one less.",
+      "explanation": "Counting back takes away one each time.",
+      "shortExplanation": "Counting back takes away one each time.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.main.02",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "16, 15, 13",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 12,
+        "end": 18
+      }
+    },
+    {
+      "id": "math_unit_05.step.004",
+      "kind": "match-lines",
+      "title": "Larger numbers",
+      "prompt": "Choose the larger number in each pair.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "8 or 11",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "14 or 19",
+          "art": "math_label"
+        },
+        {
+          "id": "item_3",
+          "label": "20 or 2",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "19",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "target_3",
+          "label": "20",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2",
+          "item_3": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u05.main.03",
+      "hint": "The larger number comes later when you count.",
+      "explanation": "The larger number is farther along the number track.",
+      "shortExplanation": "The larger number is farther along the number track.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.main.03",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "19, 11, 20",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20
+      }
+    },
+    {
+      "id": "math_unit_05.step.005",
+      "kind": "match-lines",
+      "title": "Smaller numbers",
+      "prompt": "Choose the smaller number in each pair.",
+      "options": [
+        {
+          "id": "item_2",
+          "label": "6 or 16",
+          "art": "math_label"
+        },
+        {
+          "id": "item_1",
+          "label": "13 or 10",
+          "art": "math_label"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "10",
+          "art": "math_label"
+        },
+        {
+          "id": "target_2",
+          "label": "6",
+          "art": "math_label"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "item_1": "target_1",
+          "item_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u05.main.04",
+      "hint": "The smaller number comes first when you count.",
+      "explanation": "The smaller number comes first on the number track.",
+      "shortExplanation": "The smaller number comes first on the number track.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.main.04",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "10, 6",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20
+      }
+    },
+    {
+      "id": "math_unit_05.step.006",
+      "kind": "tap-choice",
+      "title": "An empty bowl",
+      "prompt": "The fruit bowl is empty. How many apples are there?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "0",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "1",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u05.main.05",
+      "hint": "How many apples can you see in the bowl?",
+      "explanation": "Zero means there are no apples.",
+      "shortExplanation": "Zero means there are no apples.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.main.05",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "0 (zero)",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 0,
+        "item": "apple",
+        "arrangement": "row"
+      }
+    },
+    {
+      "id": "math_unit_05.step.007",
+      "kind": "tap-choice",
+      "title": "Guess, then count",
+      "prompt": "Make a guess aloud first. Then count the dots. How many are there?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "13",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "12",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u05.main.06",
+      "hint": "Your guess does not have to match. Touch each dot once.",
+      "explanation": "An estimate is a guess. Counting checks it: there are 12.",
+      "shortExplanation": "An estimate is a guess. Counting checks it: there are 12.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.main.06",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "Any sensible estimate; the count is 12.",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 12,
+        "item": "dot",
+        "arrangement": "scattered"
+      }
+    },
+    {
+      "id": "math_unit_05.step.008",
+      "kind": "tap-choice",
+      "title": "Counting on from 7",
+      "prompt": "Start at 7 and count on 4. Where do you land?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "10",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u05.main.07",
+      "hint": "Start on 7 and make four jumps forward.",
+      "explanation": "Four forward jumps from 7 land on 11.",
+      "shortExplanation": "Four forward jumps from 7 land on 11.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.main.07",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "11",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "from": 7,
+        "jumps": [
+          4
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_05.step.009",
+      "kind": "tap-choice",
+      "title": "Counting back from 15",
+      "prompt": "Start at 15 and count back 3. Where do you land?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "13",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u05.main.08",
+      "hint": "Start on 15 and make three jumps back.",
+      "explanation": "Three backward jumps from 15 land on 12.",
+      "shortExplanation": "Three backward jumps from 15 land on 12.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.main.08",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "12",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "from": 15,
+        "jumps": [
+          -3
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_05.step.010",
+      "kind": "tap-choice",
+      "title": "An empty basket",
+      "prompt": "How many apples are in the basket?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "0",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "10",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u05.choice.01",
+      "hint": "Look inside the basket. Is anything there?",
+      "explanation": "The basket is empty. Zero means nothing at all.",
+      "shortExplanation": "The basket is empty. Zero means nothing at all.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.choice.01",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "nothing",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true,
+      "mathVisual": {
+        "type": "object",
+        "items": [
+          "basket"
+        ],
+        "height": 150
+      }
+    },
+    {
+      "id": "math_unit_05.step.011",
+      "kind": "tap-choice",
+      "title": "The largest number",
+      "prompt": "Which number is the largest?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "17",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "12",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "9",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u05.choice.02",
+      "hint": "Which number would you say last when you count?",
+      "explanation": "17 comes after 9 and 12 when we count, so it is largest.",
+      "shortExplanation": "17 comes after 9 and 12 when we count, so it is largest.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.choice.02",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "17",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "markers": [
+          9,
+          12,
+          17
+        ]
+      }
+    },
+    {
+      "id": "math_unit_05.step.012",
+      "kind": "tap-choice",
+      "title": "Just before 10",
+      "prompt": "The number just before 10 is...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "11",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "1",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "9",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u05.choice.03",
+      "hint": "Count up to 10. Which number do you say just before it?",
+      "explanation": "9 comes just before 10 when we count.",
+      "shortExplanation": "9 comes just before 10 when we count.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.choice.03",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "9",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "from": 10,
+        "jumps": [
+          -1
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_05.step.013",
+      "kind": "tap-choice",
+      "title": "A clever guess",
+      "prompt": "A clever guess of how many, before we count, is called an...",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "answer",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "zero",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "estimate",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u05.choice.04",
+      "hint": "It is a guess we make before we count.",
+      "explanation": "An estimate is a clever guess before we count.",
+      "shortExplanation": "An estimate is a clever guess before we count.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.choice.04",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "estimate",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 14,
+        "item": "dot",
+        "arrangement": "scattered"
+      }
+    },
+    {
+      "id": "math_unit_05.step.014",
+      "kind": "tap-choice",
+      "title": "Counting back from 12",
+      "prompt": "Count back: 12, 11, ...",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "10",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "9",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "13",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u05.choice.05",
+      "hint": "Each number is one less than the one before.",
+      "explanation": "One less than 11 is 10.",
+      "shortExplanation": "One less than 11 is 10.",
+      "source": {
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "questionId": "math.u05.choice.05",
+        "answerKeyPages": [
+          74
+        ],
+        "answerKeyText": "10",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Discover",
+      "playScene": "maths",
+      "theme": "math_unit_05",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "from": 12,
+        "jumps": [
+          -2
+        ],
+        "ask": "landing"
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "math_unit_05.sticker",
+      "word": "zero",
+      "art": "math_label",
+      "picture": {
+        "type": "count",
+        "count": 0,
+        "item": "dot",
+        "arrangement": "row"
+      },
+      "meaning": "Nothing at all: the number 0.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        18,
+        19,
+        20
+      ]
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Guess how many safe large counters are in a jar, then count to check. Record the guess and count separately; guesses are not graded.",
+      "textAr": "خمّنوا كام حتة كبيرة وآمنة جوه برطمان، وبعدين عدّوا عشان تتأكدوا. اكتبوا التخمين لوحده والعدّ لوحده؛ التخمين مالوش درجات.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "math.u05.main.01",
+      "text": "Write eleven, fifteen and twenty on cards (in English) and 11, 15 and 20 on other cards. Match them together.",
+      "textAr": "اكتبوا الكلمات بالإنجليزي eleven وfifteen وtwenty على كروت، والأرقام ١١ و١٥ و٢٠ على كروت تانية. وصّلوهم مع بعض.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u05.main.02",
+      "text": "Count backwards from 20 together while walking down the stairs or clapping. Stop and ask your child for the next number.",
+      "textAr": "عدّوا بالعكس من ٢٠ مع بعض وإنتو نازلين السلم أو بتصقّفوا. اقفوا واسألوا طفلك الرقم اللي بعده.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u05.main.03",
+      "text": "Write pairs of numbers like 14 and 19, or 2 and 20. Your child finds both on a ruler and picks the one further along.",
+      "textAr": "اكتبوا أزواج أرقام زي ١٤ و١٩ أو ٢ و٢٠. طفلك يدوّر عليهم على المسطرة ويختار الأبعد.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u05.main.04",
+      "text": "Build two towers, one of 6 blocks and one of 16. Your child points to the smaller number and the shorter tower.",
+      "textAr": "ابنوا برجين، واحد ٦ مكعبات وواحد ١٦. طفلك يشاور على الرقم الأصغر والبرج الأقصر.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u05.main.05",
+      "text": "Empty the fruit bowl together and ask how many apples are in it now. Write the number 0.",
+      "textAr": "فضّوا طبق الفاكهة مع بعض واسألوا فيه كام تفاحة دلوقتي. اكتبوا رقم ٠.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u05.main.06",
+      "text": "Put some large pasta shapes on a plate. Your child guesses how many, then counts to see how close the guess was.",
+      "textAr": "حطّوا شوية مكرونة كبيرة على طبق. طفلك يخمّن عددهم، وبعدين يعدّهم عشان يشوف تخمينه كان قريب قد إيه.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u05.main.07",
+      "text": "Say 7, then count on 4 claps: 8, 9, 10, 11.",
+      "textAr": "قولوا ٧، وبعدين عدّوا ٤ تصقيفات: ٨، ٩، ١٠، ١١.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u05.main.08",
+      "text": "Stand on a tile you call 15 and take 3 steps back, saying 14, 13, 12.",
+      "textAr": "اقفوا على بلاطة سمّوها ١٥ وارجعوا ٣ خطوات لورا وإنتو بتقولوا ١٤، ١٣، ١٢.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u05.choice.01",
+      "text": "Show an empty basket or bag and ask how many apples are in it. Say together: zero, nothing at all.",
+      "textAr": "وَرّوا طفلك سبت أو كيس فاضي واسألوه فيه كام تفاحة. قولوا مع بعض: صفر، مافيش حاجة خالص.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u05.choice.02",
+      "text": "Write 9, 12 and 17 on cards and put them in order on the table. Your child says which is largest.",
+      "textAr": "اكتبوا ٩ و١٢ و١٧ على كروت ورتّبوهم على الترابيزة. طفلك يقول مين الأكبر.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u05.choice.03",
+      "text": "Count down for a rocket launch: 10, 9, 8... Stop and ask which number comes just before 10.",
+      "textAr": "اعملوا عدّ تنازلي لصاروخ: ١٠، ٩، ٨... اقفوا واسألوا إيه الرقم اللي قبل ١٠ على طول.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u05.choice.04",
+      "text": "Before counting the socks in the laundry, guess the number together and call it an estimate. Then count to check.",
+      "textAr": "قبل ما تعدّوا الشرابات في الغسيل، خمّنوا العدد مع بعض وسمّوه «تقدير». وبعدين عدّوا عشان تتأكدوا.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u05.choice.05",
+      "text": "Clap and count back from 12 together. Your child says the number after 11.",
+      "textAr": "صقّفوا وعدّوا بالعكس من ١٢ مع بعض. طفلك يقول الرقم اللي بعد ١١.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    }
+  ],
+  "parentNote": {
+    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
+    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+  }
+}

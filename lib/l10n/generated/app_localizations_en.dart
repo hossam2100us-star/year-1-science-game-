@@ -80,6 +80,13 @@ class AppLocalizationsEn extends AppLocalizations {
       'Stars reward effort and completion. Understanding uses first decisions before hints. Predictions and free play are not graded.';
 
   @override
+  String get parentAreaMathsResultsRetry =>
+      'Try opening the Maths results again';
+
+  @override
+  String get parentAreaMathsGuideRetry => 'Try opening the Maths guide again';
+
+  @override
   String get parentAreaTimeOnTheChildScreens => 'Time on the child screens';
 
   @override

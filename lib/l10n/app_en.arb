@@ -26,6 +26,8 @@
   "parentAreaEditingThisProfileKeepsProgress": "Editing this profile keeps progress. The first name, photo and preferences stay on this device.",
   "parentAreaUnitAssessment": "Unit assessment",
   "parentAreaStarsRewardEffortAndCompletion": "Stars reward effort and completion. Understanding uses first decisions before hints. Predictions and free play are not graded.",
+  "parentAreaMathsResultsRetry": "Try opening the Maths results again",
+  "parentAreaMathsGuideRetry": "Try opening the Maths guide again",
   "parentAreaTimeOnTheChildScreens": "Time on the child screens",
   "parentAreaNoTimeRecordedYet": "No time recorded yet",
   "parentAreaMin": "min",

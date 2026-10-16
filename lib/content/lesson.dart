@@ -80,6 +80,7 @@ class Lesson {
   final List<LessonStep> steps;
   String get id => json['id'];
   String get title => json['title'];
+  String get subject => json['subject'] as String? ?? 'science';
   bool get quiz => json['quiz'] == true;
   int get version => json['contentVersion'];
   List<Map<String, dynamic>> get stickers =>
@@ -93,7 +94,7 @@ class Lesson {
 class LessonLibrary {
   LessonLibrary(this.lessons);
   final Map<String, Lesson> lessons;
-  static const availableIds = [
+  static const scienceIds = [
     'unit_01',
     'unit_02',
     'unit_03',
@@ -108,12 +109,37 @@ class LessonLibrary {
     'unit_09',
     'quiz_04',
   ];
+  static const mathsIds = [
+    'math_unit_01',
+    'math_unit_02',
+    'math_unit_03',
+    'math_unit_04',
+    'math_unit_05',
+    'math_unit_06',
+    'math_quiz_01',
+    'math_unit_07',
+    'math_unit_08',
+    'math_unit_09',
+    'math_unit_10',
+    'math_unit_11',
+    'math_unit_12',
+    'math_quiz_02',
+    'math_unit_13',
+    'math_unit_14',
+    'math_unit_15',
+    'math_unit_16',
+    'math_unit_17',
+    'math_unit_18',
+    'math_quiz_03',
+    'math_charts',
+  ];
+  static const availableIds = [...scienceIds, ...mathsIds];
   static Future<LessonLibrary> load() async {
     final result = <String, Lesson>{};
     final arabic = Map<String, dynamic>.from(
       jsonDecode(await rootBundle.loadString('assets/content/parent_ar.json')),
     );
-    for (final id in availableIds) {
+    for (final id in scienceIds) {
       final json = Map<String, dynamic>.from(
         jsonDecode(
           await rootBundle.loadString('assets/content/playable/$id.json'),
@@ -123,6 +149,25 @@ class LessonLibrary {
       result[id] = Lesson(json);
     }
     return LessonLibrary(result);
+  }
+
+  static Future<LessonLibrary> loadMaths() async {
+    final entries = await Future.wait<MapEntry<String, Lesson>>(
+      mathsIds.map((id) async {
+        final json = Map<String, dynamic>.from(
+          jsonDecode(
+            await rootBundle.loadString('assets/content/playable/$id.json'),
+          ),
+        );
+        return MapEntry(id, Lesson(json));
+      }),
+    );
+    return LessonLibrary(Map.fromEntries(entries));
+  }
+
+  static Future<LessonLibrary> loadAll() async {
+    final libraries = await Future.wait<LessonLibrary>([load(), loadMaths()]);
+    return LessonLibrary({...libraries[0].lessons, ...libraries[1].lessons});
   }
 
   /// Adds `textAr`/`safetyAr` to the activities shown in the Arabic parent
