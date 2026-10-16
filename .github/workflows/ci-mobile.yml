@@ -1,15 +1,21 @@
 name: ci-mobile
 
-# Runner minutes (docs/RELEASE.md §2): a pull request runs once per push
-# (branches have no separate push run) and skips the Windows goldens and the
-# extra debug APK and App Bundle builds. A push to main and a manual run do
-# everything; run it by hand on the branch once before merging.
+# To save Actions minutes: a branch with an open pull request is checked
+# once (by the pull_request event, not again by its push), documentation-only
+# changes are skipped, and the slow jobs (Windows goldens and the release
+# builds) run only on main or when started by hand.
 on:
   push:
     branches: [main]
-    paths-ignore: ['docs/**', 'reports/**', '**/*.md']
+    paths-ignore:
+      - 'docs/**'
+      - 'reports/**'
+      - '**/*.md'
   pull_request:
-    paths-ignore: ['docs/**', 'reports/**', '**/*.md']
+    paths-ignore:
+      - 'docs/**'
+      - 'reports/**'
+      - '**/*.md'
   workflow_dispatch:
 
 permissions:
@@ -70,8 +76,7 @@ jobs:
   goldens:
     # Baselines in test/goldens were generated on Windows; compare on the
     # same OS so anti-aliasing differences cannot cause false failures.
-    # Windows minutes count double, so pull requests rely on the local
-    # golden run and the manual run before merging.
+    # Windows minutes bill double, so only on main or a manual run.
     if: github.event_name != 'pull_request'
     runs-on: windows-latest
     timeout-minutes: 30
@@ -110,6 +115,7 @@ jobs:
         run: python scripts/validate_maths_content.py --check-idempotence
 
   android-build:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     needs: analyze-and-test
@@ -125,10 +131,7 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           cache: true
       - run: flutter pub get --enforce-lockfile
-      # The obfuscated release APK below checks the Android build on every
-      # pull request; the debug APK and the App Bundle add about 10 minutes.
       - name: Debug APK
-        if: github.event_name != 'pull_request'
         run: flutter build apk --debug
       - name: Ephemeral release key (verification only, never published)
         run: |
@@ -143,7 +146,6 @@ jobs:
           keyPassword=ci-verify-only
           EOF
       - name: Release App Bundle (obfuscated)
-        if: github.event_name != 'pull_request'
         run: flutter build appbundle --release --obfuscate --split-debug-info=build/symbols
       - name: Release APK (obfuscated, per-ABI)
         run: flutter build apk --release --split-per-abi --obfuscate --split-debug-info=build/symbols
@@ -158,7 +160,6 @@ jobs:
           done
       - name: Build sizes
         run: |
-          shopt -s nullglob
           ls -l build/app/outputs/bundle/release/*.aab build/app/outputs/flutter-apk/*.apk | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Remove ephemeral key material
         if: always()
