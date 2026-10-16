@@ -376,14 +376,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get choiceTitle => 'أهلاً بيك! قبل ما نبدأ';
 
   @override
-  String get choiceBody =>
-      'ولي الأمر يختار اللعبة تحفظ تقدّم الأطفال فين. تقدر تغيّر الاختيار بعدين من ركن الأهل.';
+  String get loginBody =>
+      'سجّل دخول بحساب ولي الأمر عشان تشوف تقدّم الأطفال على كل أجهزتك، أو كمّل من غير إنترنت باللي محفوظ على الجهاز ده.';
 
   @override
-  String get choiceDeviceButton => 'العب على الجهاز ده بس';
+  String get loginOffline => 'كمّل من غير إنترنت';
 
   @override
-  String get choiceContinue => 'كمّل للعبة';
+  String get loginOfflineBody =>
+      'هتلعب بالأطفال والتقدّم المحفوظين على الجهاز ده. تقدر تسجّل دخول بعدين، من هنا أو من ركن الأهل.';
 
   @override
   String get accountNotNow => 'مش دلوقتي';

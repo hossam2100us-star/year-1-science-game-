@@ -23,26 +23,12 @@ class AccountPanel extends ConsumerStatefulWidget {
   ConsumerState<AccountPanel> createState() => _AccountPanelState();
 }
 
-enum _Form { signIn, create, forgot }
-
 class _AccountPanelState extends ConsumerState<AccountPanel> {
-  final _email = TextEditingController();
-  final _password = TextEditingController();
-  final _repeat = TextEditingController();
-  _Form _form = _Form.signIn;
   bool _busy = false;
   String? _error;
   String? _notice;
 
   AppLocalizations get l => parentStrings(widget.arabic);
-
-  @override
-  void dispose() {
-    _email.dispose();
-    _password.dispose();
-    _repeat.dispose();
-    super.dispose();
-  }
 
   /// Runs [action], showing what went wrong in words a parent understands.
   Future<void> _run(Future<void> Function() action) async {
@@ -61,15 +47,7 @@ class _AccountPanelState extends ConsumerState<AccountPanel> {
     }
   }
 
-  String _message(Object error) => switch (error) {
-    NetworkFailure() => l.accountErrorOffline,
-    ApiProblem(code: 'invalid_credentials') => l.accountErrorCredentials,
-    ApiProblem(code: 'password_breached') => l.accountErrorBreached,
-    ApiProblem(code: 'registration_closed') => l.accountErrorClosed,
-    ApiProblem(status: 429) => l.accountErrorBusy,
-    LinkException(problem: LinkProblem.name) => l.accountLinkName,
-    _ => l.accountErrorGeneric,
-  };
+  String _message(Object error) => accountErrorText(l, error);
 
   /// Dates and Material texts follow the parent's language, not the device's.
   @override
@@ -126,186 +104,29 @@ class _AccountPanelState extends ConsumerState<AccountPanel> {
 
   // ---- signing in ------------------------------------------------------------
 
-  bool _validEmail() {
-    final email = _email.text.trim();
-    final ok = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$').hasMatch(email);
-    if (!ok) setState(() => _error = l.accountEmailInvalid);
-    return ok;
-  }
-
-  Future<void> _signIn() async {
-    if (!_validEmail()) return;
-    await _run(() async {
-      await ref
-          .read(accountProvider.notifier)
-          .signIn(_email.text.trim(), _password.text);
-      _password.clear();
-    });
-  }
-
-  Future<void> _create() async {
-    if (!_validEmail()) return;
-    if (_password.text.length < 12) {
-      setState(() => _error = l.accountPasswordShort);
-      return;
-    }
-    if (_password.text != _repeat.text) {
-      setState(() => _error = l.accountPasswordsDiffer);
-      return;
-    }
-    await _run(() async {
-      final account = ref.read(accountProvider.notifier);
-      final email = _email.text.trim();
-      await account.register(email, _password.text);
-      try {
-        await account.signIn(email, _password.text);
-      } on ApiProblem catch (e) {
-        // The email already had an account with another password.
-        if (e.code != 'invalid_credentials') rethrow;
-        if (mounted) {
-          setState(() {
-            _form = _Form.signIn;
-            _notice = l.accountCreatedCheckEmail;
-          });
-        }
-      }
-      _password.clear();
-      _repeat.clear();
-    });
-  }
-
-  Future<void> _forgot() async {
-    if (!_validEmail()) return;
-    await _run(() async {
-      await ref
-          .read(accountProvider.notifier)
-          .forgotPassword(_email.text.trim());
-      if (mounted) {
-        setState(() {
-          _form = _Form.signIn;
-          _notice = l.accountForgotSent;
-        });
-      }
-    });
-  }
-
-  Widget _signInForm(BuildContext context) {
-    final creating = _form == _Form.create;
-    final forgetting = _form == _Form.forgot;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        ParentSection(
-          title: creating ? l.accountCreateTitle : l.accountSignInTitle,
-          children: [
-            if (ref.watch(syncProvider).failure == SyncFailure.signedOut)
-              Text(l.accountSyncSignedOut),
-            TextField(
-              key: const ValueKey('account-email'),
-              controller: _email,
-              keyboardType: TextInputType.emailAddress,
-              autofillHints: const [AutofillHints.email],
-              autocorrect: false,
-              decoration: InputDecoration(labelText: l.accountEmail),
-            ),
-            if (!forgetting) ...[
-              const SizedBox(height: 12),
-              TextField(
-                key: const ValueKey('account-password'),
-                controller: _password,
-                obscureText: true,
-                autocorrect: false,
-                enableSuggestions: false,
-                autofillHints: [
-                  creating ? AutofillHints.newPassword : AutofillHints.password,
-                ],
-                decoration: InputDecoration(
-                  labelText: l.accountPassword,
-                  helperText: creating ? l.accountPasswordRule : null,
-                ),
-              ),
-            ],
-            if (creating) ...[
-              const SizedBox(height: 12),
-              TextField(
-                key: const ValueKey('account-repeat'),
-                controller: _repeat,
-                obscureText: true,
-                autocorrect: false,
-                enableSuggestions: false,
-                decoration: InputDecoration(labelText: l.accountPasswordRepeat),
-              ),
-            ],
-            const SizedBox(height: 12),
-            if (_error != null) _Message(_error!, error: true),
-            if (_notice != null) _Message(_notice!),
-            Wrap(
-              spacing: 12,
-              runSpacing: 12,
-              children: [
-                FilledButton(
-                  key: const ValueKey('account-submit'),
-                  onPressed: _busy
-                      ? null
-                      : switch (_form) {
-                          _Form.signIn => _signIn,
-                          _Form.create => _create,
-                          _Form.forgot => _forgot,
-                        },
-                  child: Text(switch (_form) {
-                    _Form.signIn => l.accountSignIn,
-                    _Form.create => l.accountCreate,
-                    _Form.forgot => l.accountForgotSend,
-                  }),
-                ),
-                if (_form != _Form.create)
-                  TextButton(
-                    key: const ValueKey('account-to-create'),
-                    onPressed: () => setState(() {
-                      _form = _Form.create;
-                      _error = null;
-                    }),
-                    child: Text(l.accountCreate),
+  Widget _signInForm(BuildContext context) => Column(
+    crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: [
+      AccountSignInForm(arabic: widget.arabic),
+      ParentSection(
+        title: l.accountDeviceOnlyTitle,
+        children: [
+          Text(l.accountLeaveBody),
+          const SizedBox(height: 12),
+          if (_error != null) _Message(_error!, error: true),
+          OutlinedButton(
+            key: const ValueKey('account-leave'),
+            onPressed: _busy
+                ? null
+                : () => _run(
+                    () => ref.read(syncProvider.notifier).leaveAccount(),
                   ),
-                if (_form != _Form.signIn)
-                  TextButton(
-                    onPressed: () => setState(() {
-                      _form = _Form.signIn;
-                      _error = null;
-                    }),
-                    child: Text(l.accountHaveAccount),
-                  ),
-                if (_form == _Form.signIn)
-                  TextButton(
-                    onPressed: () => setState(() {
-                      _form = _Form.forgot;
-                      _error = null;
-                    }),
-                    child: Text(l.accountForgot),
-                  ),
-              ],
-            ),
-          ],
-        ),
-        ParentSection(
-          title: l.accountDeviceOnlyTitle,
-          children: [
-            Text(l.accountLeaveBody),
-            const SizedBox(height: 12),
-            OutlinedButton(
-              key: const ValueKey('account-leave'),
-              onPressed: _busy
-                  ? null
-                  : () => _run(
-                      () => ref.read(syncProvider.notifier).leaveAccount(),
-                    ),
-              child: Text(l.accountBackToDevice),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
+            child: Text(l.accountBackToDevice),
+          ),
+        ],
+      ),
+    ],
+  );
 
   // ---- signed in -------------------------------------------------------------
 
@@ -708,4 +529,228 @@ class _Message extends StatelessWidget {
       ),
     ),
   );
+}
+
+/// What went wrong with an account action, in words a parent understands.
+String accountErrorText(AppLocalizations l, Object error) => switch (error) {
+  NetworkFailure() => l.accountErrorOffline,
+  ApiProblem(code: 'invalid_credentials') => l.accountErrorCredentials,
+  ApiProblem(code: 'password_breached') => l.accountErrorBreached,
+  ApiProblem(code: 'registration_closed') => l.accountErrorClosed,
+  ApiProblem(status: 429) => l.accountErrorBusy,
+  LinkException(problem: LinkProblem.name) => l.accountLinkName,
+  _ => l.accountErrorGeneric,
+};
+
+enum _Form { signIn, create, forgot }
+
+/// Signing in, creating a parent account or asking for a new password: the
+/// parent area's account tab and the login page show the same form.
+class AccountSignInForm extends ConsumerStatefulWidget {
+  const AccountSignInForm({super.key, required this.arabic, this.prepare});
+  final bool arabic;
+
+  /// Runs before anything is sent to the server; false stops the action.
+  /// The login page uses it to turn the account on (after the consent).
+  final Future<bool> Function()? prepare;
+
+  @override
+  ConsumerState<AccountSignInForm> createState() => _AccountSignInFormState();
+}
+
+class _AccountSignInFormState extends ConsumerState<AccountSignInForm> {
+  final _email = TextEditingController();
+  final _password = TextEditingController();
+  final _repeat = TextEditingController();
+  _Form _form = _Form.signIn;
+  bool _busy = false;
+  String? _error;
+  String? _notice;
+
+  AppLocalizations get l => parentStrings(widget.arabic);
+
+  @override
+  void dispose() {
+    _email.dispose();
+    _password.dispose();
+    _repeat.dispose();
+    super.dispose();
+  }
+
+  Future<void> _run(Future<void> Function() action) async {
+    if (_busy) return;
+    setState(() {
+      _busy = true;
+      _error = null;
+      _notice = null;
+    });
+    try {
+      if (await widget.prepare?.call() ?? true) await action();
+    } on Object catch (error) {
+      if (mounted) setState(() => _error = accountErrorText(l, error));
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  bool _validEmail() {
+    final email = _email.text.trim();
+    final ok = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$').hasMatch(email);
+    if (!ok) setState(() => _error = l.accountEmailInvalid);
+    return ok;
+  }
+
+  Future<void> _signIn() async {
+    if (!_validEmail()) return;
+    await _run(() async {
+      await ref
+          .read(accountProvider.notifier)
+          .signIn(_email.text.trim(), _password.text);
+      _password.clear();
+    });
+  }
+
+  Future<void> _create() async {
+    if (!_validEmail()) return;
+    if (_password.text.length < 12) {
+      setState(() => _error = l.accountPasswordShort);
+      return;
+    }
+    if (_password.text != _repeat.text) {
+      setState(() => _error = l.accountPasswordsDiffer);
+      return;
+    }
+    await _run(() async {
+      final account = ref.read(accountProvider.notifier);
+      final email = _email.text.trim();
+      await account.register(email, _password.text);
+      try {
+        await account.signIn(email, _password.text);
+      } on ApiProblem catch (e) {
+        // The email already had an account with another password.
+        if (e.code != 'invalid_credentials') rethrow;
+        if (mounted) {
+          setState(() {
+            _form = _Form.signIn;
+            _notice = l.accountCreatedCheckEmail;
+          });
+        }
+      }
+      _password.clear();
+      _repeat.clear();
+    });
+  }
+
+  Future<void> _forgot() async {
+    if (!_validEmail()) return;
+    await _run(() async {
+      await ref
+          .read(accountProvider.notifier)
+          .forgotPassword(_email.text.trim());
+      if (mounted) {
+        setState(() {
+          _form = _Form.signIn;
+          _notice = l.accountForgotSent;
+        });
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final creating = _form == _Form.create;
+    final forgetting = _form == _Form.forgot;
+    return ParentSection(
+      title: creating ? l.accountCreateTitle : l.accountSignInTitle,
+      children: [
+        if (ref.watch(syncProvider).failure == SyncFailure.signedOut)
+          Text(l.accountSyncSignedOut),
+        TextField(
+          key: const ValueKey('account-email'),
+          controller: _email,
+          keyboardType: TextInputType.emailAddress,
+          autofillHints: const [AutofillHints.email],
+          autocorrect: false,
+          decoration: InputDecoration(labelText: l.accountEmail),
+        ),
+        if (!forgetting) ...[
+          const SizedBox(height: 12),
+          TextField(
+            key: const ValueKey('account-password'),
+            controller: _password,
+            obscureText: true,
+            autocorrect: false,
+            enableSuggestions: false,
+            autofillHints: [
+              creating ? AutofillHints.newPassword : AutofillHints.password,
+            ],
+            decoration: InputDecoration(
+              labelText: l.accountPassword,
+              helperText: creating ? l.accountPasswordRule : null,
+            ),
+          ),
+        ],
+        if (creating) ...[
+          const SizedBox(height: 12),
+          TextField(
+            key: const ValueKey('account-repeat'),
+            controller: _repeat,
+            obscureText: true,
+            autocorrect: false,
+            enableSuggestions: false,
+            decoration: InputDecoration(labelText: l.accountPasswordRepeat),
+          ),
+        ],
+        const SizedBox(height: 12),
+        if (_error != null) _Message(_error!, error: true),
+        if (_notice != null) _Message(_notice!),
+        Wrap(
+          spacing: 12,
+          runSpacing: 12,
+          children: [
+            FilledButton(
+              key: const ValueKey('account-submit'),
+              onPressed: _busy
+                  ? null
+                  : switch (_form) {
+                      _Form.signIn => _signIn,
+                      _Form.create => _create,
+                      _Form.forgot => _forgot,
+                    },
+              child: Text(switch (_form) {
+                _Form.signIn => l.accountSignIn,
+                _Form.create => l.accountCreate,
+                _Form.forgot => l.accountForgotSend,
+              }),
+            ),
+            if (_form != _Form.create)
+              TextButton(
+                key: const ValueKey('account-to-create'),
+                onPressed: () => setState(() {
+                  _form = _Form.create;
+                  _error = null;
+                }),
+                child: Text(l.accountCreate),
+              ),
+            if (_form != _Form.signIn)
+              TextButton(
+                onPressed: () => setState(() {
+                  _form = _Form.signIn;
+                  _error = null;
+                }),
+                child: Text(l.accountHaveAccount),
+              ),
+            if (_form == _Form.signIn)
+              TextButton(
+                onPressed: () => setState(() {
+                  _form = _Form.forgot;
+                  _error = null;
+                }),
+                child: Text(l.accountForgot),
+              ),
+          ],
+        ),
+      ],
+    );
+  }
 }

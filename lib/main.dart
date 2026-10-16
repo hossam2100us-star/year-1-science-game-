@@ -26,6 +26,7 @@ import 'features/onboarding/profile_editor.dart';
 import 'features/world/subject_hub.dart';
 import 'features/onboarding/child_chooser.dart';
 import 'parent/account_choice.dart';
+import 'parent/login_page.dart';
 import 'parent/parent_gate.dart';
 import 'startup/startup_problem.dart';
 import 'startup/storage_bootstrap.dart';
@@ -163,12 +164,19 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
   DateTime? _last;
   int _sessionSeconds = 0;
   bool _childChosen = false;
+
+  /// Past the login page for this run: signed in, or chose to continue
+  /// without the Internet (the page comes back next time the app opens).
+  bool _pastLogin = false;
   bool _parent = false, _resumed = true, _breakOpen = false, _exitOpen = false;
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _controller = ref.read(appProvider.notifier);
+    // A saved session goes straight in; a sign-in that ends later (signed out
+    // in the parent area, or the session expired) never interrupts play.
+    _pastLogin = ref.read(accountProvider).signedIn;
     ref.read(narrationProvider).initialize();
     _timer = Timer.periodic(const Duration(seconds: 10), (_) => _tick());
   }
@@ -351,17 +359,22 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
         (_) => unawaited(_offerToSave(added)),
       );
     });
-    // Asked once on builds with accounts, before anything else (ADR-0002).
-    final askChoice =
-        ref.watch(accountProvider.select((a) => a.available && !a.chosen)) &&
+    ref.listen(accountProvider.select((a) => a.signedIn), (previous, next) {
+      if (next && !_pastLogin) setState(() => _pastLogin = true);
+    });
+    // On builds with accounts, each time the app opens until a parent signs
+    // in: sign in, or continue without the Internet (ADR-0002).
+    final askLogin =
+        !_pastLogin &&
+        ref.watch(accountProvider.select((a) => a.available && !a.signedIn)) &&
         ref.watch(syncProvider.select((s) => s.supported));
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, result) {
         if (!didPop) _exit();
       },
-      child: askChoice
-          ? const AccountChoice()
+      child: askLogin
+          ? LoginPage(onOffline: () => setState(() => _pastLogin = true))
           : ref.watch(appProvider).profile == null
           ? const ProfileEditor()
           : !_childChosen
