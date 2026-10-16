@@ -116,6 +116,17 @@ jobs:
     timeout-minutes: 45
     needs: analyze-and-test
     steps:
+      # The debug APK, the App Bundle and the per-ABI release APKs are built
+      # one after another; with the Maths pictures the runner's disk filled
+      # up ("No space left on device", 16 October). Tools this job never
+      # uses are removed first; the Android SDK stays.
+      - name: Free disk space on the runner
+        run: |
+          df -h / | tail -1
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/share/boost \
+            /usr/share/swift /opt/hostedtoolcache/CodeQL
+          sudo docker image prune --all --force > /dev/null || true
+          df -h / | tail -1
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
