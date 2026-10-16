@@ -954,16 +954,16 @@
       "id": "math_unit_04.step.012",
       "kind": "tap-choice",
       "title": "Block graphs",
-      "prompt": "A block graph is made of...",
+      "prompt": "Look at the graph. What is it made of?",
       "options": [
         {
           "id": "choice_2",
-          "label": "only circles",
+          "label": "only words",
           "art": "math_label"
         },
         {
           "id": "choice_1",
-          "label": "only words",
+          "label": "only circles",
           "art": "math_label"
         },
         {
@@ -979,7 +979,7 @@
       },
       "assessed": true,
       "objective": "math.u04.choice.03",
-      "hint": "Look at a block graph: what is each column built from?",
+      "hint": "Look at what each column is built from.",
       "explanation": "A block graph is built from equal square blocks.",
       "shortExplanation": "A block graph is built from equal square blocks.",
       "source": {
@@ -1350,8 +1350,8 @@
     },
     {
       "objective": "math.u04.choice.03",
-      "text": "Discuss this question with an adult: A block graph is made of... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الرسم البياني بالمكعبات معمول من…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: Look at the graph. What is it made of? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «بُص على الرسم البياني. معمول من إيه؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

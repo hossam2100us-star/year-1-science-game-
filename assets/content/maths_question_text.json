@@ -82,9 +82,9 @@
     "hint": "Pair each of Ali's sweets with one of Mona's."
   },
   "math.u02.choice.01": {
-    "title": "The plus sign",
-    "hint": "What do we do with two groups when we see +?",
-    "explanation": "The plus sign means add: it joins two groups together."
+    "title": "Picture of 2 + 3",
+    "hint": "Plus puts two groups together.",
+    "explanation": "2 + 3 means 2 and 3 more put together: 5 in all."
   },
   "math.u02.choice.02": {
     "title": "Take away 2",
@@ -199,7 +199,7 @@
   },
   "math.u04.choice.03": {
     "title": "Block graphs",
-    "hint": "Look at a block graph: what is each column built from?",
+    "hint": "Look at what each column is built from.",
     "explanation": "A block graph is built from equal square blocks."
   },
   "math.u04.choice.04": {
@@ -245,9 +245,9 @@
     "hint": "Start on 15 and make three jumps back."
   },
   "math.u05.choice.01": {
-    "title": "Zero",
-    "hint": "How many sweets are in an empty bag?",
-    "explanation": "Zero means nothing: an empty group."
+    "title": "An empty basket",
+    "hint": "Look inside the basket. Is anything there?",
+    "explanation": "The basket is empty. Zero means nothing at all."
   },
   "math.u05.choice.02": {
     "title": "The largest number",
@@ -460,8 +460,8 @@
   },
   "math.u08.choice.04": {
     "title": "Turning",
-    "hint": "Turn around on the spot. What changes?",
-    "explanation": "When you turn, you stay in place but face a new way."
+    "hint": "Did it get bigger, change colour, or point a new way?",
+    "explanation": "Turning changes the way something points or faces. Its size and colour stay the same."
   },
   "math.u08.choice.05": {
     "title": "3D shapes",
@@ -523,7 +523,7 @@
   "math.u09.choice.05": {
     "title": "The 1 in 18",
     "hint": "In 18, the first digit counts tens.",
-    "explanation": "The 1 in 18 stands for one whole ten."
+    "explanation": "The 1 in 18 stands for one whole ten, the full ten frame."
   },
   "math.u10.main.01": {
     "title": "Days in a week",
@@ -665,8 +665,8 @@
   },
   "math.u12.choice.01": {
     "title": "Fair halves",
-    "hint": "Would it be fair if one part were bigger?",
-    "explanation": "Halves must be equal, so each part is the same size."
+    "hint": "Halves are two parts of the same size.",
+    "explanation": "Picture c has two equal parts, so they are halves. The others are not."
   },
   "math.u12.choice.02": {
     "title": "Half of 4",
@@ -684,9 +684,9 @@
     "explanation": "Sharing 6 fairly between 2 people gives 3 each."
   },
   "math.u12.choice.05": {
-    "title": "Fractions",
-    "hint": "Think of a cake cut into equal pieces.",
-    "explanation": "A fraction names equal parts of one whole."
+    "title": "Cut into equal parts",
+    "hint": "Are all the pieces the same size?",
+    "explanation": "The square is cut into four equal parts. Equal parts of a whole are a fraction."
   },
   "math.q02.01": {
     "title": "Venn overlap",
@@ -761,9 +761,9 @@
     "hint": "Each pair has 2 socks. Count in twos."
   },
   "math.u13.choice.01": {
-    "title": "What even means",
-    "hint": "Try pairing up 6 counters. Is any left over?",
-    "explanation": "Even numbers make pairs with none left over."
+    "title": "Pairs with none left",
+    "hint": "Make pairs of socks. Is one left alone?",
+    "explanation": "6 socks make 3 pairs with none left over, so 6 is even."
   },
   "math.u13.choice.02": {
     "title": "An odd number",
@@ -937,12 +937,12 @@
   "math.u16.choice.04": {
     "title": "Graph titles",
     "hint": "How do we know what a graph is about?",
-    "explanation": "A title tells us what the graph is about."
+    "explanation": "The title tells us what the graph is about."
   },
   "math.u16.choice.05": {
     "title": "An empty column",
     "hint": "How many blocks are in the fish column?",
-    "explanation": "No blocks means zero: nobody chose it."
+    "explanation": "The fish column has no blocks, so zero children chose fish."
   },
   "math.u17.main.01": {
     "title": "Writing a half",
@@ -973,9 +973,9 @@
     "hint": "If one half is 5, what is the other half?"
   },
   "math.u17.choice.01": {
-    "title": "What ½ means",
+    "title": "Showing ½",
     "hint": "Do the two parts have to be the same size?",
-    "explanation": "½ means one of two equal parts."
+    "explanation": "½ is one of two equal parts, as in picture a."
   },
   "math.u17.choice.02": {
     "title": "Half of 16",

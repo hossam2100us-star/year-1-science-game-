@@ -1056,34 +1056,34 @@
       "id": "math_unit_08.step.013",
       "kind": "tap-choice",
       "title": "Turning",
-      "prompt": "Turning means...",
+      "prompt": "The triangle turned. What changed?",
       "options": [
         {
           "id": "choice_1",
-          "label": "walking a long way",
+          "label": "its size",
           "art": "math_label"
         },
         {
           "id": "choice_3",
-          "label": "changing the way you face",
+          "label": "its colour",
           "art": "math_label"
         },
         {
           "id": "choice_2",
-          "label": "jumping up",
+          "label": "the way it points",
           "art": "math_label"
         }
       ],
       "targets": [],
       "answer": {
         "type": "single",
-        "value": "choice_3"
+        "value": "choice_2"
       },
       "assessed": true,
       "objective": "math.u08.choice.04",
-      "hint": "Turn around on the spot. What changes?",
-      "explanation": "When you turn, you stay in place but face a new way.",
-      "shortExplanation": "When you turn, you stay in place but face a new way.",
+      "hint": "Did it get bigger, change colour, or point a new way?",
+      "explanation": "Turning changes the way something points or faces. Its size and colour stay the same.",
+      "shortExplanation": "Turning changes the way something points or faces. Its size and colour stay the same.",
       "source": {
         "pages": [
           28,
@@ -1396,8 +1396,8 @@
     },
     {
       "objective": "math.u08.choice.04",
-      "text": "Discuss this question with an adult: Turning means... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «اللفّ معناه…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: The triangle turned. What changed? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «المثلث لفّ. إيه اللي اتغيّر؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

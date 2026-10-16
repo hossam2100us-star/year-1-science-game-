@@ -1033,34 +1033,34 @@
       "id": "math_unit_16.step.013",
       "kind": "tap-choice",
       "title": "Graph titles",
-      "prompt": "Every graph needs a...",
+      "prompt": "Which part of this graph tells us what it is about?",
       "options": [
         {
           "id": "choice_2",
-          "label": "rubber",
+          "label": "the colours",
           "art": "math_label"
         },
         {
           "id": "choice_3",
-          "label": "colour",
+          "label": "the title",
           "art": "math_label"
         },
         {
           "id": "choice_1",
-          "label": "title",
+          "label": "the blocks",
           "art": "math_label"
         }
       ],
       "targets": [],
       "answer": {
         "type": "single",
-        "value": "choice_1"
+        "value": "choice_3"
       },
       "assessed": true,
       "objective": "math.u16.choice.04",
       "hint": "How do we know what a graph is about?",
-      "explanation": "A title tells us what the graph is about.",
-      "shortExplanation": "A title tells us what the graph is about.",
+      "explanation": "The title tells us what the graph is about.",
+      "shortExplanation": "The title tells us what the graph is about.",
       "source": {
         "pages": [
           54,
@@ -1108,34 +1108,34 @@
       "id": "math_unit_16.step.014",
       "kind": "tap-choice",
       "title": "An empty column",
-      "prompt": "A column with no blocks means...",
+      "prompt": "Look at the fish column. How many children chose fish?",
       "options": [
         {
           "id": "choice_3",
-          "label": "zero",
+          "label": "10",
           "art": "math_label"
         },
         {
           "id": "choice_2",
-          "label": "ten",
+          "label": "0",
           "art": "math_label"
         },
         {
           "id": "choice_1",
-          "label": "one",
+          "label": "1",
           "art": "math_label"
         }
       ],
       "targets": [],
       "answer": {
         "type": "single",
-        "value": "choice_3"
+        "value": "choice_2"
       },
       "assessed": true,
       "objective": "math.u16.choice.05",
       "hint": "How many blocks are in the fish column?",
-      "explanation": "No blocks means zero: nobody chose it.",
-      "shortExplanation": "No blocks means zero: nobody chose it.",
+      "explanation": "The fish column has no blocks, so zero children chose fish.",
+      "shortExplanation": "The fish column has no blocks, so zero children chose fish.",
       "source": {
         "pages": [
           54,
@@ -1370,8 +1370,8 @@
     },
     {
       "objective": "math.u16.choice.04",
-      "text": "Discuss this question with an adult: Every graph needs a... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «كل رسم بياني لازم يكون ليه…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: Which part of this graph tells us what it is about? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي جزء في الرسم البياني بيقولنا هو عن إيه؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1386,8 +1386,8 @@
     },
     {
       "objective": "math.u16.choice.05",
-      "text": "Discuss this question with an adult: A column with no blocks means... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «عمود مافيهوش ولا مكعب معناه…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: Look at the fish column. How many children chose fish? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «بُص على عمود السمك. كام طفل اختار السمك؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

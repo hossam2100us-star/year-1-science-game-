@@ -607,23 +607,44 @@
     {
       "id": "math_unit_17.step.010",
       "kind": "tap-choice",
-      "title": "What ½ means",
-      "prompt": "½ means...",
+      "title": "Showing ½",
+      "prompt": "Which picture shows ½?",
       "options": [
         {
-          "id": "choice_2",
-          "label": "twelve",
-          "art": "math_label"
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "circle",
+            "parts": 2,
+            "shaded": 1,
+            "equal": true
+          }
         },
         {
-          "id": "choice_1",
-          "label": "one of two equal parts",
-          "art": "math_label"
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 2,
+            "shaded": 1,
+            "equal": false
+          }
         },
         {
           "id": "choice_3",
-          "label": "one of two parts of any size",
-          "art": "math_label"
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 4,
+            "shaded": 1,
+            "equal": true
+          }
         }
       ],
       "targets": [],
@@ -634,8 +655,8 @@
       "assessed": true,
       "objective": "math.u17.choice.01",
       "hint": "Do the two parts have to be the same size?",
-      "explanation": "½ means one of two equal parts.",
-      "shortExplanation": "½ means one of two equal parts.",
+      "explanation": "½ is one of two equal parts, as in picture a.",
+      "shortExplanation": "½ is one of two equal parts, as in picture a.",
       "source": {
         "pages": [
           57,
@@ -653,14 +674,7 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_17",
-      "adapted": true,
-      "mathVisual": {
-        "type": "fraction",
-        "shape": "circle",
-        "parts": 2,
-        "shaded": 1,
-        "equal": true
-      }
+      "adapted": true
     },
     {
       "id": "math_unit_17.step.011",
@@ -1044,8 +1058,8 @@
     },
     {
       "objective": "math.u17.choice.01",
-      "text": "Discuss this question with an adult: ½ means... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «علامة النص معناها…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: Which picture shows ½? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي صورة بتوضّح ½؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

@@ -1019,34 +1019,34 @@
       "id": "math_unit_09.step.014",
       "kind": "tap-choice",
       "title": "The 1 in 18",
-      "prompt": "The 1 in 18 means...",
+      "prompt": "Look at 18 as tens and ones. What does the 1 in 18 stand for?",
       "options": [
         {
           "id": "choice_3",
-          "label": "eighteen",
+          "label": "just one",
           "art": "math_label"
         },
         {
           "id": "choice_1",
-          "label": "one ten",
+          "label": "eighteen",
           "art": "math_label"
         },
         {
           "id": "choice_2",
-          "label": "just one",
+          "label": "one ten",
           "art": "math_label"
         }
       ],
       "targets": [],
       "answer": {
         "type": "single",
-        "value": "choice_1"
+        "value": "choice_2"
       },
       "assessed": true,
       "objective": "math.u09.choice.05",
       "hint": "In 18, the first digit counts tens.",
-      "explanation": "The 1 in 18 stands for one whole ten.",
-      "shortExplanation": "The 1 in 18 stands for one whole ten.",
+      "explanation": "The 1 in 18 stands for one whole ten, the full ten frame.",
+      "shortExplanation": "The 1 in 18 stands for one whole ten, the full ten frame.",
       "source": {
         "pages": [
           32,
@@ -1316,8 +1316,8 @@
     },
     {
       "objective": "math.u09.choice.05",
-      "text": "Discuss this question with an adult: The 1 in 18 means... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الـ ١ في ١٨ معناها…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: Look at 18 as tens and ones. What does the 1 in 18 stand for? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «بُص على ١٨ عشرات وآحاد. الـ ١ في ١٨ معناها إيه؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

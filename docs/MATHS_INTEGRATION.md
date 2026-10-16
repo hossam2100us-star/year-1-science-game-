@@ -205,3 +205,24 @@ The 13 questions about real objects (a spoon, a bed, a feather, scales, a
 jug...) use the everyday objects atlas `maths-things-v1.webp`
 (docs/MATHS_ART_V2.md). The validator fails if a graded question has no
 picture (`AWAITING_ART` in `scripts/validate_maths_content.py` is empty).
+
+## Choices, repeats and definition questions (teacher review 5, 14 October 2026)
+
+- **Two choices.** 22 questions had only two choices. Five now have a useful
+  third one with its picture (breakfast in the evening, a night's sleep as
+  something not quick...). New choices are added last, so answers already
+  saved keep their IDs. The other 17 stay as pairs: true or false, yes or
+  no, odd or even, up or down, the two hands of a clock, two pans, two
+  numbers to compare.
+- **Repeats.** Three term-challenge questions repeated a unit question word
+  for word. They now ask for the same book answer in a new example (a week
+  of playing outside, the faces of a dice, sharing 20 sweets). The other
+  three repeats already show another clock, chart or numbers.
+- **Definitions.** On the owner's choice, the 11 questions that asked what a
+  word means ("Fraction means...", "Zero means...", "Every graph needs
+  a...") ask about their picture instead ("Which shape is cut into equal
+  parts?", "How many apples are in the basket?", "Which part of this graph
+  tells us what it is about?"). They are in `WORD_QUESTIONS` in
+  `scripts/build_maths_content.py`; each step's `source` still holds the
+  book's question and answer. Questions about facts ("A triangle has...")
+  are unchanged: they already show the shape.

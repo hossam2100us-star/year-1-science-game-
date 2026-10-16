@@ -732,35 +732,35 @@
     {
       "id": "math_unit_13.step.010",
       "kind": "tap-choice",
-      "title": "What even means",
-      "prompt": "Even numbers...",
+      "title": "Pairs with none left",
+      "prompt": "Put these 6 socks in pairs. How many are left over?",
       "options": [
         {
           "id": "choice_3",
-          "label": "pair up with none left over",
+          "label": "2",
           "art": "math_label"
         },
         {
           "id": "choice_2",
-          "label": "always have one left over",
+          "label": "0",
           "art": "math_label"
         },
         {
           "id": "choice_1",
-          "label": "are all big",
+          "label": "1",
           "art": "math_label"
         }
       ],
       "targets": [],
       "answer": {
         "type": "single",
-        "value": "choice_3"
+        "value": "choice_2"
       },
       "assessed": true,
       "objective": "math.u13.choice.01",
-      "hint": "Try pairing up 6 counters. Is any left over?",
-      "explanation": "Even numbers make pairs with none left over.",
-      "shortExplanation": "Even numbers make pairs with none left over.",
+      "hint": "Make pairs of socks. Is one left alone?",
+      "explanation": "6 socks make 3 pairs with none left over, so 6 is even.",
+      "shortExplanation": "6 socks make 3 pairs with none left over, so 6 is even.",
       "source": {
         "pages": [
           45,
@@ -1223,8 +1223,8 @@
     },
     {
       "objective": "math.u13.choice.01",
-      "text": "Discuss this question with an adult: Even numbers... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الأرقام الزوجية…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: Put these 6 socks in pairs. How many are left over? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «رتّب ٦ شرابات أزواج. كام فردة هتفضل لوحدها؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

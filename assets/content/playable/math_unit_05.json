@@ -699,35 +699,35 @@
     {
       "id": "math_unit_05.step.010",
       "kind": "tap-choice",
-      "title": "Zero",
-      "prompt": "Zero means...",
+      "title": "An empty basket",
+      "prompt": "How many apples are in the basket?",
       "options": [
         {
           "id": "choice_2",
-          "label": "one",
+          "label": "0",
           "art": "math_label"
         },
         {
           "id": "choice_1",
-          "label": "nothing",
+          "label": "1",
           "art": "math_label"
         },
         {
           "id": "choice_3",
-          "label": "ten",
+          "label": "10",
           "art": "math_label"
         }
       ],
       "targets": [],
       "answer": {
         "type": "single",
-        "value": "choice_1"
+        "value": "choice_2"
       },
       "assessed": true,
       "objective": "math.u05.choice.01",
-      "hint": "How many sweets are in an empty bag?",
-      "explanation": "Zero means nothing: an empty group.",
-      "shortExplanation": "Zero means nothing: an empty group.",
+      "hint": "Look inside the basket. Is anything there?",
+      "explanation": "The basket is empty. Zero means nothing at all.",
+      "shortExplanation": "The basket is empty. Zero means nothing at all.",
       "source": {
         "pages": [
           18,
@@ -747,18 +747,11 @@
       "theme": "math_unit_05",
       "adapted": true,
       "mathVisual": {
-        "type": "groups",
+        "type": "object",
         "items": [
-          {
-            "type": "count",
-            "count": 0,
-            "item": "apple",
-            "arrangement": "row",
-            "width": 260,
-            "height": 110,
-            "label": "no apples"
-          }
-        ]
+          "basket"
+        ],
+        "height": 150
       }
     },
     {
@@ -1164,8 +1157,8 @@
     },
     {
       "objective": "math.u05.choice.01",
-      "text": "Discuss this question with an adult: Zero means... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «صفر معناه…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: How many apples are in the basket? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «فيه كام تفاحة في السَّبَت؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

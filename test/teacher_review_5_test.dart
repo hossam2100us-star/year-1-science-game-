@@ -723,6 +723,37 @@ void main() {
     }
   });
 
+  // Section 1: questions that asked what a word means ("Fraction means...")
+  // now ask about a picture; the book's answer stays in the step's source.
+  test('definition questions ask about their picture', () {
+    const ids = [
+      'math.u02.choice.01',
+      'math.u04.choice.03',
+      'math.u05.choice.01',
+      'math.u08.choice.04',
+      'math.u09.choice.05',
+      'math.u12.choice.01',
+      'math.u12.choice.05',
+      'math.u13.choice.01',
+      'math.u16.choice.04',
+      'math.u16.choice.05',
+      'math.u17.choice.01',
+    ];
+    for (final id in ids) {
+      final step = assessed().firstWhere((s) => s.objective == id);
+      expect(step.prompt, isNot(matches(RegExp(r'means|must be|needs a'))));
+      expect(step.prompt, endsWith('?'), reason: id);
+      expect(step.json['source']['answerKeyText'], isNotEmpty, reason: id);
+    }
+    final words = [
+      for (final step in assessed())
+        if (RegExp(r'\.\.\.$|…$').hasMatch(step.prompt) &&
+            RegExp(r' means\b').hasMatch(step.prompt))
+          step.objective,
+    ];
+    expect(words, isEmpty);
+  });
+
   // Section 5: one hint for a whole unit, "Maths discovery N" titles and
   // explanations that began "... is the answer."
   test('every Maths question has its own title, hint and reason', () {

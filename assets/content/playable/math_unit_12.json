@@ -577,22 +577,43 @@
       "id": "math_unit_12.step.010",
       "kind": "tap-choice",
       "title": "Fair halves",
-      "prompt": "Halves must be...",
+      "prompt": "Which shape is cut into two halves?",
       "options": [
         {
-          "id": "choice_2",
-          "label": "different sizes",
-          "art": "math_label"
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 2,
+            "shaded": 1,
+            "equal": false
+          }
         },
         {
-          "id": "choice_1",
-          "label": "big",
-          "art": "math_label"
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 4,
+            "shaded": 1,
+            "equal": true
+          }
         },
         {
           "id": "choice_3",
-          "label": "equal",
-          "art": "math_label"
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "circle",
+            "parts": 2,
+            "shaded": 1,
+            "equal": true
+          }
         }
       ],
       "targets": [],
@@ -602,9 +623,9 @@
       },
       "assessed": true,
       "objective": "math.u12.choice.01",
-      "hint": "Would it be fair if one part were bigger?",
-      "explanation": "Halves must be equal, so each part is the same size.",
-      "shortExplanation": "Halves must be equal, so each part is the same size.",
+      "hint": "Halves are two parts of the same size.",
+      "explanation": "Picture c has two equal parts, so they are halves. The others are not.",
+      "shortExplanation": "Picture c has two equal parts, so they are halves. The others are not.",
       "source": {
         "pages": [
           41,
@@ -622,28 +643,7 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_12",
-      "adapted": true,
-      "mathVisual": {
-        "type": "groups",
-        "items": [
-          {
-            "type": "fraction",
-            "shape": "circle",
-            "parts": 2,
-            "shaded": 1,
-            "equal": true,
-            "label": "halves"
-          },
-          {
-            "type": "fraction",
-            "shape": "rectangle",
-            "parts": 2,
-            "shaded": 1,
-            "equal": false,
-            "label": "not halves"
-          }
-        ]
-      }
+      "adapted": true
     },
     {
       "id": "math_unit_12.step.011",
@@ -824,35 +824,53 @@
     {
       "id": "math_unit_12.step.014",
       "kind": "tap-choice",
-      "title": "Fractions",
-      "prompt": "Fraction means...",
+      "title": "Cut into equal parts",
+      "prompt": "Which shape is cut into equal parts?",
       "options": [
         {
-          "id": "choice_3",
-          "label": "any pieces",
-          "art": "math_label"
-        },
-        {
           "id": "choice_1",
-          "label": "equal parts of a whole",
-          "art": "math_label"
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 2,
+            "shaded": 1,
+            "equal": false
+          }
         },
         {
           "id": "choice_2",
-          "label": "a very big number",
-          "art": "math_label"
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "square",
+            "parts": 4,
+            "shaded": 1,
+            "equal": true
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle"
+          }
         }
       ],
       "targets": [],
       "answer": {
         "type": "single",
-        "value": "choice_1"
+        "value": "choice_2"
       },
       "assessed": true,
       "objective": "math.u12.choice.05",
-      "hint": "Think of a cake cut into equal pieces.",
-      "explanation": "A fraction names equal parts of one whole.",
-      "shortExplanation": "A fraction names equal parts of one whole.",
+      "hint": "Are all the pieces the same size?",
+      "explanation": "The square is cut into four equal parts. Equal parts of a whole are a fraction.",
+      "shortExplanation": "The square is cut into four equal parts. Equal parts of a whole are a fraction.",
       "source": {
         "pages": [
           41,
@@ -870,14 +888,7 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_12",
-      "adapted": true,
-      "mathVisual": {
-        "type": "fraction",
-        "shape": "rectangle",
-        "parts": 4,
-        "shaded": 1,
-        "equal": true
-      }
+      "adapted": true
     }
   ],
   "stickers": [
@@ -1010,8 +1021,8 @@
     },
     {
       "objective": "math.u12.choice.01",
-      "text": "Discuss this question with an adult: Halves must be... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الأنصاص لازم تكون…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: Which shape is cut into two halves? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي شكل متقسّم نصّين؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1074,8 +1085,8 @@
     },
     {
       "objective": "math.u12.choice.05",
-      "text": "Discuss this question with an adult: Fraction means... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «الكسر معناه…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: Which shape is cut into equal parts? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي شكل متقسّم لأجزاء متساوية؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

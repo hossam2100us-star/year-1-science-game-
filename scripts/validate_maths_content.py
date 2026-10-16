@@ -29,7 +29,7 @@ REVIEW5_PICTURES={'math_quiz_01':[4,5,6],'math_quiz_02':[6],'math_quiz_03':[7],'
 # in every question).
 AWAITING_ART=set()
 # Everyday objects in maths-things-v1.webp, and the counting objects.
-THINGS={'spoon','shoe','bed','toothbrush','football','alarm clock','grape','watermelon',
+THINGS={'basket','spoon','shoe','bed','toothbrush','football','alarm clock','grape','watermelon',
     'strawberry','feather','book','chair','pillow','stone','jug','mug','bowl','scales','ruler',
     'parcel','flour','school bag','dinner','glass of water','string','open eye','closed eye','pencil'}
 FREE_QUESTIONS = {'math.u01.main.05','math.u01.main.08','math.u03.main.08',

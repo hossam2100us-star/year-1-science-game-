@@ -653,35 +653,58 @@
     {
       "id": "math_unit_02.step.010",
       "kind": "tap-choice",
-      "title": "The plus sign",
-      "prompt": "The sign + means...",
+      "title": "Picture of 2 + 3",
+      "prompt": "Which picture shows 2 + 3?",
       "options": [
         {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 5,
+            "item": "dot",
+            "arrangement": "row",
+            "removed": 3
+          }
+        },
+        {
           "id": "choice_2",
-          "label": "add",
-          "art": "math_label"
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 3,
+            "item": "dot",
+            "arrangement": "row",
+            "slots": 5
+          }
         },
         {
           "id": "choice_3",
-          "label": "is the same as",
-          "art": "math_label"
-        },
-        {
-          "id": "choice_1",
-          "label": "take away",
-          "art": "math_label"
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 5,
+            "item": "dot",
+            "arrangement": "row",
+            "color": "red",
+            "split": 2,
+            "color2": "blue"
+          }
         }
       ],
       "targets": [],
       "answer": {
         "type": "single",
-        "value": "choice_2"
+        "value": "choice_3"
       },
       "assessed": true,
       "objective": "math.u02.choice.01",
-      "hint": "What do we do with two groups when we see +?",
-      "explanation": "The plus sign means add: it joins two groups together.",
-      "shortExplanation": "The plus sign means add: it joins two groups together.",
+      "hint": "Plus puts two groups together.",
+      "explanation": "2 + 3 means 2 and 3 more put together: 5 in all.",
+      "shortExplanation": "2 + 3 means 2 and 3 more put together: 5 in all.",
       "source": {
         "pages": [
           8,
@@ -699,35 +722,7 @@
       "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_02",
-      "adapted": true,
-      "mathVisual": {
-        "type": "groups",
-        "items": [
-          {
-            "type": "count",
-            "count": 2,
-            "item": "apple",
-            "arrangement": "row",
-            "width": 168,
-            "height": 90,
-            "label": "2"
-          },
-          {
-            "type": "text",
-            "text": "+",
-            "width": 40
-          },
-          {
-            "type": "count",
-            "count": 3,
-            "item": "apple",
-            "arrangement": "row",
-            "width": 168,
-            "height": 90,
-            "label": "3"
-          }
-        ]
-      }
+      "adapted": true
     },
     {
       "id": "math_unit_02.step.011",
@@ -1146,8 +1141,8 @@
     },
     {
       "objective": "math.u02.choice.01",
-      "text": "Discuss this question with an adult: The sign + means... Use safe objects or drawings and explain the reasoning.",
-      "textAr": "اتكلّم مع طفلك في السؤال ده: «علامة الزائد معناها…» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
+      "text": "Discuss this question with an adult: Which picture shows 2 + 3? Use safe objects or drawings and explain the reasoning.",
+      "textAr": "اتكلّم مع طفلك في السؤال ده: «أنهي صورة بتوضّح ٢ + ٣؟» استخدموا حاجات آمنة من البيت أو ارسموا، وخلّي طفلك يشرح هو فكّر إزاي.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
