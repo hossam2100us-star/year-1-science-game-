@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:drift_flutter/drift_flutter.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,6 +18,7 @@ import 'core/usage_buffer.dart';
 import 'core/widgets.dart';
 import 'data/account/account_controller.dart';
 import 'data/db/app_database.dart';
+import 'data/db/connection.dart';
 import 'data/drift_progress_store.dart';
 import 'data/sync/sync_controller.dart';
 import 'data/sync/sync_store.dart';
@@ -52,10 +52,12 @@ Future<void> _launch(Widget app) async {
   final ProgressStore store;
   switch (await openProgressStore(
     openHive: HiveProgressStore.open,
-    // The web build keeps the Hive store until the web database ships (M4).
-    openDatabase: kIsWeb
-        ? null
-        : () => AppDatabase(driftDatabase(name: 'science_adventure')),
+    // The web runs the same SQLite database in the browser (web/sqlite3.wasm
+    // and web/drift_worker.js), so a parent account and sync work there too.
+    openDatabase: () => AppDatabase(appDatabaseConnection()),
+    openFallbackDatabase: kIsWeb
+        ? () => AppDatabase(appDatabaseConnection(fallback: true))
+        : null,
   )) {
     case StorageReady(store: final ready):
       store = ready;
@@ -85,7 +87,7 @@ Future<void> _launch(Widget app) async {
   if (store case DriftProgressStore(:final db, :final deviceId)) {
     account = await AccountSetup.load(DatabaseAccountPrefs(db), deviceId);
   } else {
-    // Web (and the Hive fallback): the browser cookie is the session.
+    // The Hive fallback (the database could not open): nothing is kept.
     account = await AccountSetup.load(MemoryAccountPrefs(), Ids.uuidV7());
   }
   runApp(

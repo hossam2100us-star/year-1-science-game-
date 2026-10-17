@@ -71,6 +71,11 @@ flutter build apk --release --split-per-abi --obfuscate --split-debug-info=build
 * Upload the `.aab` to Google Play; attach per-ABI `.apk` files to a GitHub
   Release only if sideloading is needed. Never commit APK/AAB files.
 
+The web build includes the browser database files `web/sqlite3.wasm` and
+`web/drift_worker.js` (ADR-0019). When `drift` or `sqlite3` is upgraded,
+download the matching `sqlite3.wasm` from the sqlite3.dart release and run
+`scripts/build_drift_worker.ps1`.
+
 CI builds a release AAB and per-ABI APKs with a throwaway key on every push to
 `main` (and on a manual run) to prove the release configuration works; that key is generated per run and
 deleted, and those builds are never distributed.

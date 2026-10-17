@@ -28,6 +28,8 @@ class RefusingDatabase extends AppDatabase {
 }
 
 void main() {
+  // Two databases are open at once in the fallback tests.
+  driftRuntimeOptions.dontWarnAboutMultipleDatabases = true;
   late Directory dir;
   late HiveProgressStore hive;
   late AppDatabase db;
@@ -117,11 +119,87 @@ void main() {
     expect(result, isA<StorageUnreadable>());
   });
 
-  test('web keeps the Hive store', () async {
+  test('without a database the Hive store is used', () async {
     final result = await openProgressStore(
       openHive: () async => hive,
       openDatabase: null,
     );
     expect((result as StorageReady).store, same(hive));
+  });
+
+  group('the other way to open the database (browsers)', () {
+    // Fails on the first query, like the browser database when its worker
+    // cannot load sqlite3.wasm.
+    AppDatabase unreachable() =>
+        AppDatabase(LazyDatabase(() => throw StateError('Failed to fetch')));
+
+    test('used when the usual way fails; the save is copied there', () async {
+      final result = await openProgressStore(
+        openHive: () async => hive,
+        openDatabase: unreachable,
+        openFallbackDatabase: () => db,
+      );
+      final ready = result as StorageReady;
+      expect(ready.store, isA<DriftProgressStore>());
+      expect(ready.migrated!.children, 1);
+      expect(ready.store.read().profile!.name, 'Nour');
+      expect(hive.migratedToDatabase, isTrue);
+    });
+
+    test('later launches find the copy that way without Hive', () async {
+      await openProgressStore(
+        openHive: () async => hive,
+        openDatabase: () => db,
+      );
+      final result = await openProgressStore(
+        openHive: () async => throw StateError('Hive must not be opened'),
+        openDatabase: unreachable,
+        openFallbackDatabase: () => db,
+      );
+      expect((result as StorageReady).store, isA<DriftProgressStore>());
+      expect(result.migrated, isNull);
+    });
+
+    test('not tried when the usual way works', () async {
+      final result = await openProgressStore(
+        openHive: () async => hive,
+        openDatabase: () => db,
+        openFallbackDatabase: () => fail('the usual way worked'),
+      );
+      expect((result as StorageReady).store, isA<DriftProgressStore>());
+    });
+
+    test('both fail before migration: play on the Hive save', () async {
+      final result = await openProgressStore(
+        openHive: () async => hive,
+        openDatabase: unreachable,
+        openFallbackDatabase: unreachable,
+      );
+      expect((result as StorageReady).store, same(hive));
+    });
+
+    test(
+      'both fail after migration: report, never show older progress',
+      () async {
+        await hive.markMigratedToDatabase();
+        final result = await openProgressStore(
+          openHive: () async => hive,
+          openDatabase: unreachable,
+          openFallbackDatabase: unreachable,
+        );
+        expect(result, isA<StorageFailed>());
+      },
+    );
+
+    test('no copy that way after migration: report instead of copying the '
+        'older Hive save again', () async {
+      await hive.markMigratedToDatabase();
+      final result = await openProgressStore(
+        openHive: () async => hive,
+        openDatabase: unreachable,
+        openFallbackDatabase: () => db,
+      );
+      expect(result, isA<StorageFailed>());
+    });
   });
 }
