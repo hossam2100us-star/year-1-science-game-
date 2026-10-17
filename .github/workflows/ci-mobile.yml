@@ -195,6 +195,15 @@ jobs:
         run: flutter pub get --enforce-lockfile
       - if: steps.web.outputs.present == 'true'
         run: flutter build web --release --no-web-resources-cdn --no-wasm-dry-run
+      - uses: actions/setup-node@v4
+        if: steps.web.outputs.present == 'true'
+        with:
+          node-version: '22'
+      # Teacher review 6: what a child does in the first launch must survive
+      # closing and reopening the browser, with IndexedDB and with OPFS.
+      - name: First launch survives a browser restart (Chrome)
+        if: steps.web.outputs.present == 'true'
+        run: node tool/web/first_launch_check.mjs build/web
       - name: Web bundle size
         if: steps.web.outputs.present == 'true'
         run: du -sh build/web | tee -a "$GITHUB_STEP_SUMMARY"

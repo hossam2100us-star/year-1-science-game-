@@ -27,6 +27,30 @@ class RefusingDatabase extends AppDatabase {
   );
 }
 
+/// Applies the outermost COMMIT and then reports an error, like drift 2.35.1
+/// on OPFS (teacher review 6).
+class ErrorAfterCommit extends QueryInterceptor {
+  var _depth = 0;
+
+  @override
+  TransactionExecutor beginTransaction(QueryExecutor parent) {
+    _depth++;
+    return super.beginTransaction(parent);
+  }
+
+  @override
+  Future<void> commitTransaction(TransactionExecutor inner) async {
+    await inner.send();
+    if (--_depth == 0) throw StateError('Future already completed');
+  }
+
+  @override
+  Future<void> rollbackTransaction(TransactionExecutor inner) async {
+    _depth--;
+    await inner.rollback();
+  }
+}
+
 void main() {
   // Two databases are open at once in the fallback tests.
   driftRuntimeOptions.dontWarnAboutMultipleDatabases = true;
@@ -109,6 +133,27 @@ void main() {
       expect(hive.migratedToDatabase, isFalse);
     },
   );
+
+  test('an error after the copy was committed: play on the copy, so this '
+      "launch's progress is kept (review 6)", () async {
+    final copied = AppDatabase(
+      NativeDatabase.memory().interceptWith(ErrorAfterCommit()),
+    );
+    final first = await openProgressStore(
+      openHive: () async => hive,
+      openDatabase: () => copied,
+    );
+    final store = (first as StorageReady).store;
+    expect(store, isA<DriftProgressStore>());
+    expect(store.read().profile!.name, 'Nour');
+    expect(hive.migratedToDatabase, isTrue);
+
+    final next = await openProgressStore(
+      openHive: () async => throw StateError('Hive must not be opened'),
+      openDatabase: () => copied,
+    );
+    expect((next as StorageReady).store.read().profile!.name, 'Nour');
+  });
 
   test('an unreadable Hive save goes to the recovery screen', () async {
     await hive.box.put('data', 'garbage');
