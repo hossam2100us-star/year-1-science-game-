@@ -42,7 +42,7 @@ const pem = privateKey.export({ type: 'pkcs8', format: 'pem' }).toString();
 const dbPassword = randomBytes(24).toString('base64url');
 const keyId = `k${new Date().toISOString().slice(0, 10).replaceAll('-', '')}`;
 const header = [
-  '# Science Adventure settings. PRIVATE: holds secrets.',
+  '# My School Adventures settings. PRIVATE: holds secrets.',
   '# Never commit, never send by chat or email. Keep a copy with the NAS backups.',
   '',
 ];
@@ -73,7 +73,7 @@ const api = [
   '# (an "App password" from your Google account, not your normal password;',
   '# write @ in the address as %40).',
   'SMTP_URL=',
-  'EMAIL_FROM=Science Adventure <YOUR_ADDRESS@gmail.com>',
+  'EMAIL_FROM=My School Adventures <YOUR_ADDRESS@gmail.com>',
   '',
   '# Optional: only these addresses may create accounts (comma separated).',
   '# Empty = anyone who has the link.',
