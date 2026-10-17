@@ -151,6 +151,62 @@ class MathsStage extends StatelessWidget {
     );
   }
 
+  /// Charts are tall: on a wide screen (a tablet held sideways, a computer)
+  /// their answers sit beside the chart instead of below it, so the child
+  /// never scrolls to answer (teacher review 6).
+  bool _answersBeside(double width) =>
+      width >= 900 &&
+      _diagram?['type'] == 'chart' &&
+      !_carroll &&
+      !step.isMapping &&
+      !step.isOrder;
+
+  Widget _diagramBox() => Container(
+    padding: const EdgeInsets.all(12),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(18),
+    ),
+    child: _picture(Map<String, dynamic>.from(_diagram!)),
+  );
+
+  /// The answer cards in rows, or one under another when [stacked].
+  Widget _answers(
+    BuildContext context,
+    double maxWidth, {
+    bool stacked = false,
+  }) {
+    final large = MediaQuery.textScalerOf(context).scale(1) >= 1.5;
+    final pictures = (step.json['options'] as List).any(
+      (o) => (o as Map)['visual'] is Map,
+    );
+    // Short answers share one row on a tablet; answers with a picture need
+    // more room each.
+    final columns = stacked
+        ? 1
+        : math.min(
+            step.options.length,
+            large
+                ? (maxWidth < 650 ? 1 : 2)
+                : maxWidth < 450
+                ? 1
+                : maxWidth < 900
+                ? 2
+                : pictures
+                ? 3
+                : 4,
+          );
+    final width = (maxWidth - (columns - 1) * 12) / columns;
+    return Wrap(
+      spacing: 12,
+      runSpacing: 12,
+      alignment: WrapAlignment.center,
+      children: [
+        for (final option in step.options) _option(context, option, width),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) => Container(
     padding: const EdgeInsets.all(16),
@@ -158,16 +214,17 @@ class MathsStage extends StatelessWidget {
       color: const Color(0xFFFFF1D5),
       borderRadius: BorderRadius.circular(24),
     ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        // The setting is decoration: on a short screen (a tablet between its
-        // system bars) it is a strip, so the diagram and every answer fit
-        // without scrolling more often, and a chart leaves no room for it.
-        if (!((step.json['mathVisual'] as Map?)?['type'] == 'chart' &&
-            DiscoveryWorld.usableHeight(context) < 760))
-          LayoutBuilder(
-            builder: (context, box) => ClipRRect(
+    child: LayoutBuilder(
+      builder: (context, box) => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // The setting is decoration: on a short screen (a tablet between
+          // its system bars) it is a strip, so the diagram and every answer
+          // fit without scrolling more often, and a chart leaves no room for
+          // it.
+          if (!(_diagram?['type'] == 'chart' &&
+              DiscoveryWorld.usableHeight(context) < 760))
+            ClipRRect(
               borderRadius: BorderRadius.circular(18),
               child: SizedBox(
                 width: double.infinity,
@@ -177,97 +234,74 @@ class MathsStage extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        const SizedBox(height: 16),
-        if (_diagram case final Map<String, dynamic> diagram
-            when !_carroll) ...[
-          Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(18),
-            ),
-            child: _picture(Map<String, dynamic>.from(diagram)),
-          ),
           const SizedBox(height: 16),
-        ],
-        if (step.isOrder)
-          const Padding(
-            padding: EdgeInsets.only(bottom: 12),
-            child: Text(
-              'Tap in order. Tap a chosen card again to move it.',
-              textAlign: TextAlign.center,
-            ),
-          ),
-        if (step.isMapping && !locked)
-          const Padding(
-            padding: EdgeInsets.only(bottom: 12),
-            child: Text(
-              'Choose a card, then choose where it belongs.',
-              textAlign: TextAlign.center,
-            ),
-          ),
-        LayoutBuilder(
-          builder: (context, box) {
-            final large = MediaQuery.textScalerOf(context).scale(1) >= 1.5;
-            final pictures = (step.json['options'] as List).any(
-              (o) => (o as Map)['visual'] is Map,
-            );
-            // Short answers share one row on a tablet; answers with a
-            // picture need more room each.
-            final columns = math.min(
-              step.options.length,
-              large
-                  ? (box.maxWidth < 650 ? 1 : 2)
-                  : box.maxWidth < 450
-                  ? 1
-                  : box.maxWidth < 900
-                  ? 2
-                  : pictures
-                  ? 3
-                  : 4,
-            );
-            final width = (box.maxWidth - (columns - 1) * 12) / columns;
-            return Wrap(
+          if (_answersBeside(box.maxWidth))
+            Row(
+              children: [
+                Expanded(flex: 3, child: _diagramBox()),
+                const SizedBox(width: 16),
+                Expanded(
+                  flex: 2,
+                  child: LayoutBuilder(
+                    builder: (context, side) =>
+                        _answers(context, side.maxWidth, stacked: true),
+                  ),
+                ),
+              ],
+            )
+          else ...[
+            if (_diagram != null && !_carroll) ...[
+              _diagramBox(),
+              const SizedBox(height: 16),
+            ],
+            if (step.isOrder)
+              const Padding(
+                padding: EdgeInsets.only(bottom: 12),
+                child: Text(
+                  'Tap in order. Tap a chosen card again to move it.',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            if (step.isMapping && !locked)
+              const Padding(
+                padding: EdgeInsets.only(bottom: 12),
+                child: Text(
+                  'Choose a card, then choose where it belongs.',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            _answers(context, box.maxWidth),
+          ],
+          if (_carroll) ...[
+            const SizedBox(height: 16),
+            _carrollTable(),
+          ] else if (step.isMapping) ...[
+            const SizedBox(height: 16),
+            Wrap(
               spacing: 12,
               runSpacing: 12,
               alignment: WrapAlignment.center,
               children: [
-                for (final option in step.options)
-                  _option(context, option, width),
+                for (final target in step.targets)
+                  FilledButton.tonal(
+                    key: ValueKey('maths-target-${target.id}'),
+                    onPressed: locked || selected.isEmpty
+                        ? null
+                        : () => onPlace(selected.first, target.id),
+                    child: Text(target.label, textAlign: TextAlign.center),
+                  ),
               ],
-            );
-          },
-        ),
-        if (_carroll) ...[
-          const SizedBox(height: 16),
-          _carrollTable(),
-        ] else if (step.isMapping) ...[
-          const SizedBox(height: 16),
-          Wrap(
-            spacing: 12,
-            runSpacing: 12,
-            alignment: WrapAlignment.center,
-            children: [
-              for (final target in step.targets)
-                FilledButton.tonal(
-                  key: ValueKey('maths-target-${target.id}'),
-                  onPressed: locked || selected.isEmpty
-                      ? null
-                      : () => onPlace(selected.first, target.id),
-                  child: Text(target.label, textAlign: TextAlign.center),
-                ),
-            ],
-          ),
+            ),
+          ],
+          if (step.isOrder && selected.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            Text(
+              selected.map(step.label).join(' → '),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ],
-        if (step.isOrder && selected.isNotEmpty) ...[
-          const SizedBox(height: 16),
-          Text(
-            selected.map(step.label).join(' → '),
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ],
+      ),
     ),
   );
 }
