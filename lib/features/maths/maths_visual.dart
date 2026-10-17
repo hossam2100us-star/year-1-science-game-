@@ -118,7 +118,9 @@ class MathsVisual extends StatelessWidget {
       child: SizedBox(
         height: height,
         width: double.infinity,
-        child: const {'count', 'clock', 'ruler', 'venn'}.contains(type)
+        child: type == 'robot'
+            ? RobotRoutes(data: data)
+            : const {'count', 'clock', 'ruler', 'venn'}.contains(type)
             ? GameImage(
                 asset: mathsObjectAsset,
                 builder: (context, image) =>
@@ -990,7 +992,10 @@ class _MathsPainter extends CustomPainter {
   }
 
   /// A robot on a grid with the way it faces, a star, and the routes the
-  /// child has chosen (data['show']), each drawn from the same start.
+  /// child has chosen (data['show']), each drawn from the same start. The
+  /// robot drives along data['robotRoute'] (the route chosen last) as far
+  /// as data['robotProgress'] (0 to 1), drawing that route as it goes
+  /// (teacher review 6); without one it waits at the start.
   void _robot(Canvas canvas, Size size) {
     final cols = (data['cols'] as num? ?? 4).toInt();
     final rows = (data['rows'] as num? ?? 5).toInt();
@@ -1026,24 +1031,50 @@ class _MathsPainter extends CustomPainter {
     final first = math.max(0, facings.indexOf('${data['facing'] ?? 'up'}'));
     final routes = Map<String, dynamic>.from(data['routes'] as Map? ?? {});
     final shown = (data['show'] as List? ?? const []).cast<String>();
-    const colours = [Color(0xFF2170B5), Color(0xFFE88A2E), Color(0xFF794D91)];
-    for (final (i, label) in shown.indexed) {
+    // Where the robot is and which way it faces (in quarter turns clockwise
+    // from up) at the start and after each instruction of a route.
+    List<(Offset, double)> poses(String label) {
       var facing = first;
+      var turned = first.toDouble();
       var at = start;
-      final points = [at];
+      final out = [(at, turned)];
       for (final move in (routes[label] as List? ?? const []).cast<String>()) {
         switch (move) {
           case 'R':
             facing = (facing + 1) % 4;
+            turned += 1;
           case 'L':
             facing = (facing + 3) % 4;
+            turned -= 1;
           case 'F':
             at += moves[facing];
-            points.add(at);
           case 'B':
             at -= moves[facing];
-            points.add(at);
         }
+        out.add((at, turned));
+      }
+      return out;
+    }
+
+    final driving = data['robotRoute'] as String?;
+    final progress = ((data['robotProgress'] as num?) ?? 1).toDouble().clamp(
+      0.0,
+      1.0,
+    );
+    var robot = (start, first.toDouble());
+    const colours = [Color(0xFF2170B5), Color(0xFFE88A2E), Color(0xFF794D91)];
+    for (final (i, label) in shown.indexed) {
+      final steps = poses(label);
+      var points = [for (final (at, _) in steps) at];
+      if (label == driving) {
+        // The part driven so far, ending where the robot is now.
+        final t = progress * (steps.length - 1);
+        final k = math.min(t.floor(), math.max(0, steps.length - 2));
+        final f = steps.length < 2 ? 0.0 : t - k;
+        final (a, turnA) = steps[k];
+        final (b, turnB) = steps[math.min(k + 1, steps.length - 1)];
+        robot = (Offset.lerp(a, b, f)!, turnA + (turnB - turnA) * f);
+        points = [...points.take(k + 1), robot.$1];
       }
       // Routes along the same cells sit side by side, not on top.
       final shift = const Offset(1, 1) * ((i - (shown.length - 1) / 2) * 5);
@@ -1064,11 +1095,17 @@ class _MathsPainter extends CustomPainter {
           ..strokeCap = StrokeCap.round
           ..strokeJoin = StrokeJoin.round,
       );
-      canvas.drawCircle(centre(points.last) + shift, 6, _paint(colour));
+      if (label != driving || progress == 1) {
+        canvas.drawCircle(centre(points.last) + shift, 6, _paint(colour));
+      }
     }
-    // The star stays visible on top of routes that reach it.
-    _star(canvas, centre(point('star')), cell * .32, const Color(0xFFE6B746));
-    final home = centre(start);
+    // The star stays visible on top of routes that reach it, and beside the
+    // robot once the robot has driven onto it.
+    const gold = Color(0xFFE6B746);
+    final star = point('star');
+    final reached = (robot.$1 - star).distance < .05;
+    if (!reached) _star(canvas, centre(star), cell * .32, gold);
+    final home = centre(robot.$1);
     final body = Rect.fromCenter(
       center: home,
       width: cell * .58,
@@ -1077,7 +1114,9 @@ class _MathsPainter extends CustomPainter {
     final rounded = RRect.fromRectAndRadius(body, Radius.circular(cell * .12));
     canvas.drawRRect(rounded, _material(const Color(0xFF6E8FA8), body));
     canvas.drawRRect(rounded, _paint(dark, stroke: true));
-    final ahead = moves[first], across = Offset(-ahead.dy, ahead.dx);
+    final angle = robot.$2 * math.pi / 2;
+    final ahead = Offset(math.sin(angle), -math.cos(angle));
+    final across = Offset(-ahead.dy, ahead.dx);
     Offset at(double forward, double side) =>
         home + ahead * (cell * forward) + across * (cell * side);
     final tip = at(.2, 0), back1 = at(-.08, .14), back2 = at(-.08, -.14);
@@ -1089,6 +1128,9 @@ class _MathsPainter extends CustomPainter {
         ..close(),
       _paint(Colors.white),
     );
+    if (reached) {
+      _star(canvas, home + Offset(cell * .3, -cell * .3), cell * .2, gold);
+    }
   }
 
   /// A winners' podium: 2nd on the left, 1st in the middle and highest,
@@ -1699,4 +1741,76 @@ class CarrollTable extends StatelessWidget {
       ),
     );
   }
+}
+
+/// The robot grid: when the child chooses a route, the robot drives it, one
+/// instruction at a time, before anything is checked (teacher review 6). A
+/// route chosen earlier (a resumed question) is shown already driven.
+class RobotRoutes extends StatefulWidget {
+  const RobotRoutes({super.key, required this.data});
+  final Map<String, dynamic> data;
+
+  @override
+  State<RobotRoutes> createState() => _RobotRoutesState();
+}
+
+class _RobotRoutesState extends State<RobotRoutes>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _drive = AnimationController(
+    vsync: this,
+    value: 1,
+  );
+  String? _route;
+
+  List<String> _shown(Map<String, dynamic> data) =>
+      (data['show'] as List? ?? const []).cast<String>();
+
+  @override
+  void initState() {
+    super.initState();
+    _route = _shown(widget.data).lastOrNull;
+  }
+
+  @override
+  void didUpdateWidget(RobotRoutes old) {
+    super.didUpdateWidget(old);
+    final before = _shown(old.data);
+    final now = _shown(widget.data);
+    final added = [
+      for (final label in now)
+        if (!before.contains(label)) label,
+    ];
+    if (added.isNotEmpty) {
+      _route = added.last;
+      final steps =
+          ((widget.data['routes'] as Map?)?[_route] as List?)?.length ?? 1;
+      _drive.duration = Duration(milliseconds: 500 * math.max(1, steps));
+      if (MediaQuery.disableAnimationsOf(context)) {
+        _drive.value = 1;
+      } else {
+        _drive.forward(from: 0);
+      }
+    } else if (!now.contains(_route)) {
+      _route = now.lastOrNull;
+      _drive.value = 1;
+    }
+  }
+
+  @override
+  void dispose() {
+    _drive.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => AnimatedBuilder(
+    animation: _drive,
+    builder: (context, _) => CustomPaint(
+      painter: _MathsPainter({
+        ...widget.data,
+        'robotRoute': ?_route,
+        'robotProgress': _drive.value,
+      }),
+    ),
+  );
 }
