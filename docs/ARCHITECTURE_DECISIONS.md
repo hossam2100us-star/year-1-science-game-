@@ -444,3 +444,18 @@ the web. The web bundle grows by about 1.1 MB (`sqlite3.wasm` 0.75 MB,
 `drift_worker.js` 0.36 MB, both gzipped by nginx). No server or nginx
 change: the existing CSP already allows `'wasm-unsafe-eval'`,
 `worker-src 'self'` and same-origin fetches.
+
+**Teacher review 6 (17 October).** In a browser where drift picked OPFS with
+navigator locks (`opfsLocks`, a cross-origin isolated page), everything from
+the first launch was lost after a restart. drift 2.35.1 threw
+`Future already completed` after COMMIT when a transaction was nested (the
+migration writes through the store's own transaction), so the app believed
+the copy had failed and played that session on Hive, while the database
+already said the copy was complete and was used from the next launch on.
+Fixed by drift 2.35.2 ("Fix OPFS file systems not supporting nested
+transactions") and, in `openProgressStore`, by playing on the database
+whenever it says the copy is complete, even if an error was reported.
+`tool/web/first_launch_check.mjs` repeats the reviewer's steps in headless
+Chrome (new profile, onboarding, close, reopen) with IndexedDB and with
+OPFS, in CI after the web build. The NAS page is not cross-origin isolated,
+so Chrome there uses IndexedDB, which was not affected.

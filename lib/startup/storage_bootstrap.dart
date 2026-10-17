@@ -103,6 +103,19 @@ Future<StorageOpening> openProgressStore({
     AppLog.info('startup', 'Saved progress moved to the local database');
     return StorageReady(await DriftProgressStore.open(db), migrated: report);
   } catch (error, stack) {
+    // An error can follow a copy that was committed (drift 2.35.1 threw after
+    // COMMIT on OPFS, teacher review 6). The database then says the copy is
+    // complete and the next launch plays on it, so this launch must too:
+    // progress saved to Hive now would never be seen again.
+    if (await _copied(db)) {
+      AppLog.warning(
+        'startup',
+        'The database copy reported an error after completing',
+        error,
+        stack,
+      );
+      return _afterCompletedCopy(hive, db);
+    }
     AppLog.error(
       'startup',
       'Database copy failed; using the old save',
@@ -111,6 +124,35 @@ Future<StorageOpening> openProgressStore({
     );
     await _close(db);
     return StorageReady(hive);
+  }
+}
+
+Future<bool> _copied(AppDatabase db) async {
+  try {
+    return await HiveToDriftMigration.completedIn(db);
+  } catch (_) {
+    return false;
+  }
+}
+
+Future<StorageOpening> _afterCompletedCopy(
+  HiveProgressStore hive,
+  AppDatabase db,
+) async {
+  try {
+    if (!hive.migratedToDatabase) await hive.markMigratedToDatabase();
+  } catch (error, stack) {
+    // The database already says the copy is complete; this mark only
+    // freezes the old save, so play continues without it.
+    AppLog.warning('startup', 'Freezing the old save failed', error, stack);
+  }
+  try {
+    return StorageReady(await DriftProgressStore.open(db));
+  } catch (error, stack) {
+    AppLog.error('startup', 'Opening the copied database failed', error, stack);
+    await _close(db);
+    // Hive is now older than the database: report instead of playing on it.
+    return StorageFailed(error);
   }
 }
 
