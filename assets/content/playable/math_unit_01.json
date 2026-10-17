@@ -89,7 +89,7 @@
             ],
             "correctId": "answer_2",
             "feedback": "You counted each apple once. Seven is the last count, so there are seven apples altogether.",
-            "hint": "Tap each object once. A marked object has already been counted.",
+            "hint": "You counted them all. The last number you said tells how many.",
             "id": "explore_1"
           },
           {

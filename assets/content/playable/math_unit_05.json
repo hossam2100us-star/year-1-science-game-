@@ -87,7 +87,7 @@
             ],
             "correctId": "answer_2",
             "feedback": "Your guess was a prediction. Counting shows six beans; a different guess is part of learning.",
-            "hint": "Your guess is not scored. Tap each bean once to find the count.",
+            "hint": "Your guess is not scored. The last number you counted tells how many.",
             "id": "explore_1"
           },
           {
