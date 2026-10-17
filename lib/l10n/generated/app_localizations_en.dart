@@ -42,6 +42,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get parentAreaGuide => 'Guide';
 
   @override
+  String get parentAreaChildrenOnDevice => 'Children on this device';
+
+  @override
   String get parentAreaChildAndAppearance => 'Child and appearance';
 
   @override

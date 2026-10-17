@@ -42,6 +42,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get parentAreaGuide => 'دليل الاستخدام';
 
   @override
+  String get parentAreaChildrenOnDevice => 'الأطفال على الجهاز ده';
+
+  @override
   String get parentAreaChildAndAppearance => 'بيانات الطفل وشكل اللعبة';
 
   @override

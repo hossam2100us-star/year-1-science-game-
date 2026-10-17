@@ -7,8 +7,6 @@ import '../../core/mascot.dart';
 import '../../core/widgets.dart';
 import '../../parent/parent_gate.dart';
 import 'profile_editor.dart';
-import '../../l10n/parent_strings.dart';
-import '../../data/sync/sync_controller.dart';
 
 class ChildChooser extends ConsumerStatefulWidget {
   const ChildChooser({
@@ -24,60 +22,6 @@ class ChildChooser extends ConsumerStatefulWidget {
 
 class _ChildChooserState extends ConsumerState<ChildChooser> {
   bool busy = false;
-  Future<void> remove(String id, String name) async {
-    if (busy) return;
-    setState(() => busy = true);
-    widget.onParentChanged(true);
-    try {
-      await ref.read(narrationProvider).stop();
-      if (!mounted ||
-          !await parentGate(
-            context,
-            gender: ref.read(appProvider).profile?.gender,
-          ) ||
-          !mounted) {
-        return;
-      }
-      // Follows the parent's language setting instead of always Arabic
-      // (AUD-011).
-      final arabic = ref.read(appProvider).settings.arabic;
-      final l = parentStrings(arabic);
-      final confirmed = await showDialog<bool>(
-        context: context,
-        builder: (dialog) => Directionality(
-          textDirection: arabic ? TextDirection.rtl : TextDirection.ltr,
-          child: AlertDialog(
-            title: Text(l.childChooserDeleteTitle(name)),
-            content: Text(
-              ref.read(syncProvider).linked.contains(id)
-                  ? '${l.childChooserDeleteBody}\n\n${l.childChooserDeleteLinked}'
-                  : l.childChooserDeleteBody,
-            ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(dialog, false),
-                child: Text(l.childChooserCancel),
-              ),
-              FilledButton(
-                key: const ValueKey('confirm-delete-child'),
-                onPressed: () => Navigator.pop(dialog, true),
-                child: Text(l.childChooserDeleteConfirm),
-              ),
-            ],
-          ),
-        ),
-      );
-      if (confirmed == true && mounted) {
-        await ref.read(appProvider.notifier).removeChild(id);
-      }
-    } catch (error, stack) {
-      if (mounted) showSaveError(context, error, stack);
-    } finally {
-      widget.onParentChanged(false);
-      if (mounted) setState(() => busy = false);
-    }
-  }
-
   Future<void> choose(String id) async {
     if (busy) return;
     setState(() => busy = true);
@@ -196,12 +140,6 @@ class _ChildChooserState extends ConsumerState<ChildChooser> {
               ),
             ),
           ),
-        ),
-        TextButton.icon(
-          key: ValueKey('delete-child-$id'),
-          onPressed: busy ? null : () => remove(id, profile.name),
-          icon: const Icon(Icons.delete_outline),
-          label: const Text('Delete profile • Grown-ups'),
         ),
       ],
     ),

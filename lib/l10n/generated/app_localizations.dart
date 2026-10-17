@@ -158,6 +158,12 @@ abstract class AppLocalizations {
   /// **'Guide'**
   String get parentAreaGuide;
 
+  /// No description provided for @parentAreaChildrenOnDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Children on this device'**
+  String get parentAreaChildrenOnDevice;
+
   /// No description provided for @parentAreaChildAndAppearance.
   ///
   /// In en, this message translates to:

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:science_adventure/core/models.dart';
 import 'package:science_adventure/core/storage.dart';
-import 'package:science_adventure/features/onboarding/child_chooser.dart';
+import 'package:science_adventure/parent/children_section.dart';
 import 'package:science_adventure/l10n/parent_strings.dart';
 
 import 'setup_screen_test.dart' as helpers;
@@ -56,15 +56,17 @@ void main() {
       );
       await helpers.mount(
         t,
-        ChildChooser(onSelected: () {}, onParentChanged: (_) {}),
+        Scaffold(
+          body: SingleChildScrollView(
+            child: ChildrenOnDevice(arabic: store.data.settings.arabic),
+          ),
+        ),
         store,
       );
       await helpers.tapVisible(
         t,
         find.byKey(const ValueKey('delete-child-local-child')),
       );
-      await t.enterText(find.byType(TextField), helpers.gateAnswer(t));
-      await helpers.tapVisible(t, find.text('كمّل • Continue'));
       await t.pump(const Duration(milliseconds: 500));
       expect(find.text("Delete Nour's profile?"), findsOneWidget);
       expect(find.text('Cancel'), findsOneWidget);
