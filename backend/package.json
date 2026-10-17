@@ -2,7 +2,7 @@
   "name": "science-adventure-api",
   "version": "0.1.0",
   "private": true,
-  "description": "Parent accounts and progress sync for Science Adventure",
+  "description": "Parent accounts and progress sync for My School Adventures",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=22.12"

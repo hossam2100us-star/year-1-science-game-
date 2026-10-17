@@ -1,6 +1,6 @@
-# Science Adventure API
+# My School Adventures API
 
-Parent accounts and offline-first progress sync for the Science Adventure
+Parent accounts and offline-first progress sync for the My School Adventures
 app. The contract is [`../api/openapi.yaml`](../api/openapi.yaml); design
 decisions are ADR-0011 to ADR-0016 in
 [`../docs/ARCHITECTURE_DECISIONS.md`](../docs/ARCHITECTURE_DECISIONS.md) and

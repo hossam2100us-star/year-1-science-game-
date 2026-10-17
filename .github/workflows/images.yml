@@ -89,7 +89,7 @@ jobs:
           sed -i 's|^SMTP_URL=.*|SMTP_URL=smtp://127.0.0.1:2525|; s|^EMAIL_FROM=.*|EMAIL_FROM=CI <ci@example.test>|' api.env
           docker compose up -d --wait --wait-timeout 180
           curl -fsS http://127.0.0.1:8480/healthz
-          curl -fsS http://127.0.0.1:8480/ | grep -q 'Science Adventure'
+          curl -fsS http://127.0.0.1:8480/ | grep -q 'My School Adventures'
           curl -fsS http://127.0.0.1:8480/download/ | grep -q 'science-adventure.apk'
           headers="$(curl -fsSI http://127.0.0.1:8480/)"
           echo "$headers" | grep -qi "content-security-policy: default-src 'self'"

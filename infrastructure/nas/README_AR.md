@@ -1,4 +1,6 @@
-# تشغيل Science Adventure على الـ Synology NAS (تجربة خاصة)
+# تشغيل «مغامراتي في المدرسة» (My School Adventures) على الـ Synology NAS (تجربة خاصة)
+
+اسم التطبيق كان Science Adventure لحد 17 أكتوبر 2026. الأسماء التقنية (المشروع `science-adventure` والصور والقاعدة) فضلت زي ما هي عشان التحديث ما يبوّظش حاجة.
 
 الدليل ده بيجهّز اللعبة على الـNAS بتاعك عشان أصحابك يلعبوا من بيوتهم:
 - **على المتصفح** من أي جهاز (حتى الآيفون).
@@ -83,7 +85,7 @@
 3. افتح `api.env` بـ **Text Editor** وكمّل:
    - `SMTP_URL=smtps://hossam2100us%40gmail.com:XXXXXXXXXXXXXXXX@smtp.gmail.com:465`
      (الـ16 حرف من الخطوة 3 **من غير مسافات**، وعلامة @ اللي في الإيميل بتتكتب `%40`)
-   - `EMAIL_FROM=Science Adventure <hossam2100us@gmail.com>`
+   - `EMAIL_FROM=My School Adventures <hossam2100us@gmail.com>`
    - `GOOGLE_CLIENT_IDS=` هنملاها بعدين لما نجهّز الدخول بجوجل.
 
 ## الخطوة 7 — تشغيل المشروع

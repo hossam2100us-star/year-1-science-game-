@@ -3,7 +3,7 @@
 > **ملخص لولي الأمر:** دي المراجعة الرابعة من عين مدرس، ومعاها مقارنة بالمراجعات التلاتة اللي فاتت. أغلب ملاحظات المراجعة التالتة اتصلحت. المطلوب دلوقتي ٤ حاجات أساسية: صورة الفيشة، وعلامة الإيد اللي تحت الشاشة، ومكان الزرار اللي بيتغير، واسم المكان في Water world. الملف ده مكتوب بالإنجليزي عشان المطور يشتغل منه على طول.
 
 Fourth teaching review of Science Adventure, following
-[LATEST_TEACHER_REVIEW_2026_10_04.md](LATEST_TEACHER_REVIEW_2026_10_04.md).
+`LATEST_TEACHER_REVIEW_2026_10_04.md` (removed on 17 October 2026; in Git history).
 Each item below names what was observed, where it lives in the code, and what to change.
 
 ## How this was tested

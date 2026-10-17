@@ -21,14 +21,14 @@ export class EmailService {
     const link = `${this.config.publicWebUrl}/account/verify-email#token=${token}`;
     this.dispatch(
       to,
-      'تأكيد الإيميل • Confirm your email — Science Adventure',
+      'تأكيد الإيميل • Confirm your email — My School Adventures',
       [
-        'أهلًا! اضغط على اللينك ده عشان تأكد إيميلك في Science Adventure:',
+        'أهلًا! اضغط على اللينك ده عشان تأكد إيميلك في «مغامراتي في المدرسة»:',
         link,
         'اللينك شغال 24 ساعة. لو انت ما عملتش حساب، تجاهل الرسالة دي.',
       ],
       [
-        'Hello! Open this link to confirm your email for Science Adventure:',
+        'Hello! Open this link to confirm your email for My School Adventures:',
         link,
         'The link works for 24 hours. If you did not create an account, ignore this message.',
       ],
@@ -39,7 +39,7 @@ export class EmailService {
     const link = `${this.config.publicWebUrl}/account/forgot-password`;
     this.dispatch(
       to,
-      'محاولة تسجيل • Sign-up attempt — Science Adventure',
+      'محاولة تسجيل • Sign-up attempt — My School Adventures',
       [
         'حد حاول يعمل حساب جديد بالإيميل ده، بس الإيميل ده عنده حساب بالفعل.',
         'لو ده انت ونسيت كلمة السر، تقدر تغيّرها من هنا:',
@@ -59,7 +59,7 @@ export class EmailService {
     const link = `${this.config.publicWebUrl}/account/reset-password#token=${token}`;
     this.dispatch(
       to,
-      'تغيير كلمة السر • Reset your password — Science Adventure',
+      'تغيير كلمة السر • Reset your password — My School Adventures',
       [
         'اضغط على اللينك ده عشان تختار كلمة سر جديدة:',
         link,
@@ -76,7 +76,7 @@ export class EmailService {
   passwordChanged(to: string): void {
     this.dispatch(
       to,
-      'كلمة السر اتغيرت • Password changed — Science Adventure',
+      'كلمة السر اتغيرت • Password changed — My School Adventures',
       [
         'كلمة سر حسابك اتغيرت، وكل الأجهزة التانية اتعمل لها خروج.',
         'لو مش انت اللي غيّرتها، غيّرها فورًا من "نسيت كلمة السر".',
@@ -91,7 +91,7 @@ export class EmailService {
   securityAlert(to: string): void {
     this.dispatch(
       to,
-      'تنبيه أمان • Security alert — Science Adventure',
+      'تنبيه أمان • Security alert — My School Adventures',
       [
         'لاحظنا استخدام مفتاح دخول قديم لحسابك، فعملنا خروج للجهاز ده كإجراء أمان.',
         'لو ده غريب عليك، غيّر كلمة السر.',
@@ -107,7 +107,7 @@ export class EmailService {
     const day = when.toISOString().slice(0, 10);
     this.dispatch(
       to,
-      'طلب مسح الحساب • Account deletion — Science Adventure',
+      'طلب مسح الحساب • Account deletion — My School Adventures',
       [
         `حسابك وكل بيانات الأطفال هيتمسحوا نهائيًا يوم ${day}.`,
         'لو غيّرت رأيك، سجّل دخول قبل الميعاد ده والمسح هيتلغي.',
@@ -122,7 +122,7 @@ export class EmailService {
   deletionCancelled(to: string): void {
     this.dispatch(
       to,
-      'إلغاء مسح الحساب • Deletion cancelled — Science Adventure',
+      'إلغاء مسح الحساب • Deletion cancelled — My School Adventures',
       ['سجّلت دخول، فطلب مسح الحساب اتلغى. بياناتك زي ما هي.'],
       ['You signed in, so the account deletion was cancelled. Your data is unchanged.'],
     );

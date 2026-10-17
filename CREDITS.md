@@ -1,5 +1,7 @@
 # Asset and content credits
 
+Some entries below point to prompt and review documents in `docs/` that were removed on 17 October 2026 to keep the repository small; they remain in Git history (for example `git show db49bdb:docs/PLANT_LAB_ART.md`).
+
 ## Ourselves review — 26 September 2026
 
 `lib/features/biology/body_scene.dart`, `biology_art.dart` and `shoe_measure.dart`
@@ -129,6 +131,18 @@ the socket untouched). The magenta background was removed with
 tools/images/cutout.mjs (lossless), part of the empty space between the boy and
 the wall was cut so the gap is about the boy's width, and the result was
 encoded once as WebP (quality 80, alpha 90) at 1024×708, 83 KB.
+
+## App icon — 17 October 2026 (new name, My School Adventures)
+
+tools/images/app-icon-v1.webp (1024×1024) shows Zizo, the app's own owl guide,
+on a floating adventure island with a school, number balloons, a rocket and a
+rainbow. The owner chose it from three Canva AI images generated in the owner's
+Canva account with a rendering of the in-app owl (lib/core/mascot.dart) as the
+reference. Exported full size from the owner's working design (page "App icon
+v1"); the white rounded corners of the generated image were filled with the
+sky colour. tools/images/app-icons.mjs renders the Android launcher icons
+(legacy, round and adaptive) and the web icons from it; the favicon shows only
+Zizo's face. It replaces the flask drawn in code. No third-party artwork was used.
 
 ## Socket safety picture — 17 October 2026 (teacher review 6)
 
