@@ -1,5 +1,7 @@
 # Asset and content credits
 
+Some entries below point to prompt and review documents in `docs/` that were removed on 17 October 2026 to keep the repository small; they remain in Git history (for example `git show db49bdb:docs/PLANT_LAB_ART.md`).
+
 ## Ourselves review — 26 September 2026
 
 `lib/features/biology/body_scene.dart`, `biology_art.dart` and `shoe_measure.dart`

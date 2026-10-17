@@ -59,11 +59,8 @@ def apply_child_feedback(book, *, strict=False, directory=OVERRIDES):
     return len(set(overrides) & set(steps))
 
 
-if __name__ == '__main__':
-    for path in sorted((ROOT / 'assets/content/playable').glob('*.json')):
-        book = json.loads(path.read_text(encoding='utf-8'))
-        count = apply_child_feedback(book, strict=True)
-        from refine_latest_teacher_review import refine_latest_teacher_review
-        refine_latest_teacher_review(book)
-        path.write_text(json.dumps(book, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-        print(f'{book["id"]}: {count} editorial entries applied')
+
+# The editorial overrides in scripts/child_feedback/ are already applied to the
+# playable content; scripts/validate_playable.py checks them on every CI run.
+# The one-off command that applied them (with refine_latest_teacher_review.py)
+# was removed on 17 October 2026 and is in Git history.

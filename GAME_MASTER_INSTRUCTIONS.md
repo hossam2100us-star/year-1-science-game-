@@ -1,5 +1,7 @@
 # تعليمات مشروع Science Adventure — المرجع المجمّع
 
+> اسم التطبيق بقى «مغامراتي في المدرسة • My School Adventures» من 17 أكتوبر 2026، لأنه بقى فيه أكتر من مادة. الملف ده مرجع تاريخي من سبتمبر، وبعض المستندات اللي بيشاور عليها في docs اتمسحت في 17 أكتوبر وموجودة في تاريخ Git.
+
 تاريخ التجميع: 24 سبتمبر 2026  
 المشروع: `E:\seif-science-game`  
 الفئة العمرية: 6–7 سنين  
@@ -544,7 +546,7 @@ flutter build appbundle --release --obfuscate --split-debug-info=output/symbols/
 
 ### حدود التحقق
 
-نتائج كل تشغيل واختبار توثق في docs/CODE_REVIEW_REMEDIATION.md. نجاح الاختبارات أو المتصفح لا يثبت نجاح الوظائف على تابلت فعلي، ولا يثبت الجودة التربوية أو البصرية لكل نشاط.
+نتائج كل تشغيل واختبار كانت بتتوثق في docs/CODE_REVIEW_REMEDIATION.md (اتمسح في 17 أكتوبر 2026، وموجود في تاريخ Git)، ودلوقتي في docs/TEST_REPORT.md. نجاح الاختبارات أو المتصفح لا يثبت نجاح الوظائف على تابلت فعلي، ولا يثبت الجودة التربوية أو البصرية لكل نشاط.
 
 ## 29. تشغيل المعاينة أثناء التطوير
 
@@ -574,14 +576,8 @@ flutter build appbundle --release --obfuscate --split-debug-info=output/symbols/
 
 - [الكتاب](curriculum/Science_Made_Simple.pdf)
 - [قرارات المنتج السابقة](docs/PRODUCT_DECISIONS.md) — فيها بنود قديمة؛ تعديلات ولي الأمر المجمعة هنا تتقدم عليها عند التعارض.
-- [مراجعة المحتوى](docs/CONTENT_AUDIT.md)
 - [شكل بيانات المحتوى](docs/CONTENT_SCHEMA.md)
 - [توثيق البنية السابق](docs/ARCHITECTURE.md) — بعض وصف حالة التنفيذ فيه يرجع للمرحلة 1.
-- [تصور Alive or Not Alive](docs/UNIT_01_PLAY_CONCEPT.md)
-- [رسومات الحديقة](docs/GARDEN_ART_PROMPT.md)
-- [رسومات الجزر والفاصوليا](docs/ISLANDS_AND_BEAN_ART.md)
-- [رسمة أجزاء النبتة](docs/PLANT_LAB_ART.md)
-- [رسومات تجربة الضوء](docs/LIGHT_TEST_ART.md)
 - [مصادر الأصول والتراخيص](CREDITS.md)
 - [README السابق](README.md) — معلوماته عن APK المرحلة 1 تاريخية، مش التسليم النهائي الحالي.
 
@@ -607,7 +603,7 @@ flutter build appbundle --release --obfuscate --split-debug-info=output/symbols/
 وكل كويز 10 أسئلة. المجموع وقت هذه المرحلة كان 194 نشاط عبر الوحدات والكويزات الـ13.
 اتضافت تجارب توقع وحركة وصوت ومغناطيس ورسم، ورسومات أصلية محلية، ومعاينة
 مستقلة تحفظ تقدم الطفل الأساسي. التفاصيل وحدود التحقق في
-`docs/REMAINING_ISLANDS_REVIEW.md`.
+`docs/REMAINING_ISLANDS_REVIEW.md` (اتمسح في 17 أكتوبر 2026، وموجود في تاريخ Git).
 
 الخطوة دي لا تعني إن منطقة المهارات والشهادة والتصدير ومراجعة أجهزة Android
 والـAPK النهائي خلصوا. الحالة التاريخية في قسم 28 سابقة للتعديلات دي.
