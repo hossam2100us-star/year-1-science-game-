@@ -130,6 +130,19 @@ tools/images/cutout.mjs (lossless), part of the empty space between the boy and
 the wall was cut so the gap is about the boy's width, and the result was
 encoded once as WebP (quality 80, alpha 90) at 1024×708, 83 KB.
 
+## Socket safety picture — 17 October 2026 (teacher review 6)
+
+assets/images/electric-safety-socket-v4.webp replaces electric-safety-socket-v3.webp
+(in Git history): the teacher found the wall drawn as a separate torn piece and
+a socket that looked like a light switch. Generated with Canva AI image
+generation in the owner's Canva account, from v3 on a flat magenta background
+as the reference, with the prompt written for this change (same mother and
+boy, one whole wall with a skirting board, a white socket with two round holes
+and nothing plugged in). Exported full size from the owner's working design
+(page "Socket safety v4"), the magenta background removed with
+tools/images/cutout.mjs (lossless), and encoded once as WebP (quality 80,
+alpha 90) at 1024×662, 64 KB. No third-party or book artwork was used.
+
 ## Maths bird pictures — 12 October 2026 (teacher review 5)
 
 assets/images/maths-birds-v1.webp: a pigeon, a house sparrow and a hooded crow
