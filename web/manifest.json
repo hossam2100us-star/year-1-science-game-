@@ -1,11 +1,11 @@
 {
-  "name": "Science Adventure",
-  "short_name": "Science",
+  "name": "My School Adventures",
+  "short_name": "My School",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#FFF8EC",
   "theme_color": "#FFF8EC",
-  "description": "A Year 1 science game for young children.",
+  "description": "Year 1 science and maths games for young children.",
   "orientation": "any",
   "prefer_related_applications": false,
   "icons": [

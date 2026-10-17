@@ -125,7 +125,7 @@ Confirm that the certificate appears under **Control Panel → Security → Cert
    2-Step Verification must be on. He creates "Science Adventure NAS".
 5. He opens `api.env` in Notepad and fills in, typing the secret himself:
    - `SMTP_URL=smtps://hossam2100us%40gmail.com:<16 letters, no spaces>@smtp.gmail.com:465`
-   - `EMAIL_FROM=Science Adventure <hossam2100us@gmail.com>`
+   - `EMAIL_FROM=My School Adventures <hossam2100us@gmail.com>`
 
    Leave `SIGNUP_ALLOWED_EMAILS` and `GOOGLE_CLIENT_IDS` empty. Do not touch any other line.
 
@@ -239,9 +239,9 @@ selects this task and presses **Run**. Data is kept.
 Needs the working HTTPS name from Phase 1.
 
 1. At `https://console.cloud.google.com` the owner creates a project
-   "Science Adventure".
+   "My School Adventures".
 2. **Google Auth Platform → Branding**:
-   - app name "Science Adventure"
+   - app name "My School Adventures"
    - support email `hossam2100us@gmail.com`
    - Audience **External**
    - publish to **In production** (only the basic `openid email profile` scopes are used)

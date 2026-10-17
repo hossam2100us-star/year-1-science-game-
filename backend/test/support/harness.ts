@@ -24,7 +24,7 @@ export function testConfig(overrides: Record<string, string> = {}): AppConfig {
     JWT_KEY_ID: 'test-key',
     PUBLIC_WEB_URL: 'https://science.test',
     EMAIL_TRANSPORT: 'memory',
-    EMAIL_FROM: 'Science Adventure <test@science.test>',
+    EMAIL_FROM: 'My School Adventures <test@science.test>',
     CONSENT_VERSION: CONSENT,
     BREACHED_PASSWORD_CHECK: 'false',
     COOKIE_SECURE: 'false',

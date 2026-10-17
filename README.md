@@ -1,25 +1,25 @@
-# Science Adventure
+# مغامراتي في المدرسة • My School Adventures
 
-لعبة علوم للأطفال على موبايل وتابلت أندرويد وفي المتصفح. اللعب كله بيشتغل من غير إنترنت، وحساب ولي الأمر اختياري (التفاصيل في «حساب ولي الأمر والإنترنت» تحت).
+مغامرات تعليمية لأطفال سنة أولى ابتدائي (6–7 سنين) على موبايل وتابلت أندرويد وفي المتصفح، وكل مادة ليها جزرها ودروسها. اللعب كله بيشتغل من غير إنترنت، وحساب ولي الأمر اختياري (التفاصيل في «حساب ولي الأمر والإنترنت» تحت). اسم التطبيق كان Science Adventure لحد 17 أكتوبر 2026، ولما بقى فيه أكتر من مادة اتغيّر. الأسماء التقنية (الباكدج `com.scienceadventure.app` وقاعدة البيانات) فضلت زي ما هي، عشان التقدم المحفوظ وتحديثات الأندرويد تفضل شغالة.
 
-الرياضيات متاحة كمان من شاشة اختيار المادة: ١٨ وحدة، ٣ تحديات للفصول الدراسية، ومهارات الرسوم البيانية، من كتاب Maths Made Simple المرفق. بتستخدم نفس خريطة الجزر وشاشة الدروس والتقارير، وتقدمها محفوظ لوحده لكل طفل. تفاصيل الإضافة وفحوصها في [تقرير دمج الرياضيات](docs/MATHS_INTEGRATION.md)، ومراجع الأسئلة في [مراجعة محتوى الرياضيات](docs/MATHS_CONTENT_AUDIT.md).
+**المواد:**
+- **العلوم:** 9 وحدات و4 كويزات من كتاب Science Made Simple.
+- **الرياضيات:** 18 وحدة، و3 تحديات للفصول الدراسية، ومهارات الرسوم البيانية، من كتاب Maths Made Simple. تفاصيل الإضافة في [تقرير دمج الرياضيات](docs/MATHS_INTEGRATION.md)، ومراجع الأسئلة في [مراجعة محتوى الرياضيات](docs/MATHS_CONTENT_AUDIT.md).
 
-**تنزيل النسخة:** ملفات APK وAAB الموقّعة بتتنشر في صفحة [GitHub Releases](../../releases) للمستودع، ومش بتتحفظ جوه Git. تقدر كمان تبنيها بنفسك من الكود بالخطوات في [docs/RELEASE.md](docs/RELEASE.md). كل تعديل بيتفحص تلقائيًا في GitHub Actions (تحليل الكود، الاختبارات، بناء أندرويد، فحص الأمان).
+المواد كلها بتستخدم نفس خريطة الجزر وشاشة الدروس والتقارير، وتقدّم كل مادة محفوظ لوحده لكل طفل.
+
+**تنزيل النسخة:** ملفات APK بتتنشر في صفحة التحميل على سيرفر العيلة، ومش بتتحفظ جوه Git. تقدر كمان تبنيها بنفسك من الكود بالخطوات في [docs/RELEASE.md](docs/RELEASE.md). كل تعديل بيتفحص تلقائيًا في GitHub Actions (تحليل الكود، الاختبارات، بناء أندرويد والويب، فحص الأمان).
 
 أول مرة: اسم الطفل، ولد أو بنت، ثم ثعلب أو أرنب أو قطة، أو صورة يختارها ولي الأمر من الجهاز. زيزو للولد وزيزي للبنت. الألوان بتتغير تلقائيًا، وممكن تغييرها من ركن الأهل. الصورة عمرها ما بتخرج من الجهاز. باقي البيانات بتفضل على الجهاز بس، إلا لو ولي الأمر اختار حساب وحفظ الطفل فيه.
 
-اتنفذ كمان: خريطة الجزر، حفظ الإعدادات، القراءة الإنجليزية المحلية ومساعدة تثبيت الصوت، بوابة الأهل، الإعدادات عربي RTL وإنجليزي، وتذكير الراحة. تقارير الوحدات جاهزة لاستقبال نتائج اللعب في المراحل الجاية؛ حاليًا بتقول بوضوح إن لسه مفيش نتيجة.
-
-[خطوات تجربة المرحلة ١](docs/PHASE_1_TRY.md) • [نتائج الفحص وحدود التجربة](docs/PHASE_1_REPORT.md)
-
 ## الملفات المهمة
 
-- [قرارات المشروع](docs/PRODUCT_DECISIONS.md)
-- [مراجعة الكتاب والوحدات التسعة](docs/CONTENT_AUDIT.md)
+- [قرارات المعمارية (ADR)](docs/ARCHITECTURE_DECISIONS.md)
+- [قرارات المنتج](docs/PRODUCT_DECISIONS.md)
 - [شكل ملفات المحتوى](docs/CONTENT_SCHEMA.md)
-- [تصور لعبة حي ولا غير حي](docs/UNIT_01_PLAY_CONCEPT.md)
-- [متابعة المرحلة 0](docs/PHASE_0_CHECKLIST.md)
-- [نتائج الفحوص والصلاحيات الفعلية](docs/PHASE_0_REPORT.md)
+- [البناء والنشر](docs/RELEASE.md)
+- [نتائج الاختبارات](docs/TEST_REPORT.md)
+- مراجعات المدرس: [الرابعة](docs/TEACHER_REVIEW_2026_10_09.md) • [الخامسة](docs/TEACHER_REVIEW_2026_10_12.md) • [السادسة](docs/TEACHER_REVIEW_2026_10_17.md)
 - [مصادر الأصول](CREDITS.md)
 
 ## تثبيت APK التجريبي بعد تسليمه
@@ -122,7 +122,7 @@ flutter run --no-hot
 
 ## حساب ولي الأمر والإنترنت
 
-أول ما التطبيق يتفتح بيسأل مرة واحدة: «العب على الجهاز ده بس» أو «حساب ولي الأمر». الاختيار ده يتغير بعدين من ركن الأهل.
+في النسخ اللي معاها سيرفر، كل مرة التطبيق يتفتح، لحد ما ولي الأمر يسجّل دخول، بتظهر صفحة الدخول: تسجيل دخول بحساب ولي الأمر، أو «كمّل من غير إنترنت» على اللي محفوظ على الجهاز. الاختيار ده يتغير بعدين من ركن الأهل.
 
 - **على الجهاز ده بس (الافتراضي):** التطبيق مش بيتصل بالإنترنت خالص. مفيش أي طلب شبكة، وكل البيانات على الجهاز.
 - **حساب ولي الأمر:** محتاج بوابة الأهل، والموافقة على 3 نقط، وإيميل وكلمة سر. الحساب بيتحفظ على سيرفر العيلة (Synology). اللي بيتبعت:
@@ -140,7 +140,7 @@ flutter run --no-hot
 
 Parent accounts are optional: by default the app makes no network request at all (device-only mode has no network client). A parent who chooses an account saves children in it one by one; photos never leave the device (see "حساب ولي الأمر والإنترنت" above, ADR-0002 and ADR-0018). Install files (APK/AAB) are published as GitHub Release assets or on the family server's download page and are never committed; build them from source with the steps in docs/RELEASE.md. CI (.github/workflows) runs analysis, tests, Android builds and security scans on every push. Physical-device testing remains pending.
 
-Implemented: first-name onboarding, boy/girl selection, three original cartoon avatars or an optional local photo, matching Zizo/Zizi guide, gender-based default palette with parent override, responsive islands, local Fredoka/Nunito/Cairo fonts, Riverpod, SQLite (Drift, also in the browser), offline English flutter_tts, parent gate, Arabic RTL/English parent settings, foreground usage tracking, and gentle breaks. Android TTS does not reliably identify voice gender; parents can audition and choose installed voices. All visible curriculum levels are explicitly marked as future activities. No test scores are fabricated. Flame mini-games begin in Phase 2.
+Implemented: first-name onboarding, boy/girl selection, three original cartoon avatars or an optional local photo, matching Zizo/Zizi guide, gender-based default palette with parent override, responsive islands, local Fredoka/Nunito/Cairo fonts, Riverpod, SQLite (Drift, also in the browser), offline English flutter_tts, parent gate, Arabic RTL/English parent settings, foreground usage tracking, and gentle breaks. Android TTS does not reliably identify voice gender; parents can audition and choose installed voices. No test scores are fabricated.
 
 The browser preview is an additional UI preview with separate browser-local data and narration disabled. Use the APK to test native photo selection, persisted Android data and offline speech.
 

@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Science Adventure API
+  title: My School Adventures API
   version: 1.0.0
   summary: Parent accounts and offline-first progress sync.
   description: |
@@ -768,7 +768,7 @@ components:
           type: string
           minLength: 1
           maxLength: 40
-          description: Required when the Google account has no Science Adventure account yet.
+          description: Required when the Google account has no account here yet.
     DeleteAccountRequest:
       description: The password, or a Google sign-in from the last 10 minutes for accounts without a password.
       oneOf:

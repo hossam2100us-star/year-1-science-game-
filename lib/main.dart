@@ -141,7 +141,7 @@ class _ScienceAdventureAppState extends ConsumerState<ScienceAdventureApp> {
     // background and never block play (device-only: they do nothing).
     ref.listen(syncProvider, (_, _) {});
     return MaterialApp(
-      title: 'Science Adventure',
+      title: 'My School Adventures',
       debugShowCheckedModeBanner: false,
       theme: adventureTheme(data.profile),
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
