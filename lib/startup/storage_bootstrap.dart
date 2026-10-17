@@ -38,26 +38,39 @@ class StorageFailed extends StorageOpening {
 ///   into SQLite in one verified transaction, then play on SQLite;
 /// * the copy fails → play on Hive for this session (nothing is lost) and
 ///   retry next launch;
-/// * web → Hive until the web database ships (M4).
+/// * web → the same, with SQLite in the browser (sqlite3.wasm, a web worker)
+///   and the earlier Hive save copied into it once. If the browser's usual
+///   way fails, [openFallbackDatabase] opens the same data another way
+///   before giving up on the database.
 Future<StorageOpening> openProgressStore({
   required Future<HiveProgressStore> Function() openHive,
   required AppDatabase Function()? openDatabase,
+  AppDatabase Function()? openFallbackDatabase,
 }) async {
   AppDatabase? db;
+  var fallback = false;
   if (openDatabase != null) {
-    try {
-      db = openDatabase();
-      if (await HiveToDriftMigration.completedIn(db)) {
-        return StorageReady(await DriftProgressStore.open(db));
+    final ways = [openDatabase, ?openFallbackDatabase];
+    Object? failure;
+    for (final open in ways) {
+      fallback = open != openDatabase;
+      try {
+        db = open();
+        if (await HiveToDriftMigration.completedIn(db)) {
+          return StorageReady(await DriftProgressStore.open(db));
+        }
+        failure = null;
+        break;
+      } catch (error, stack) {
+        AppLog.error('startup', 'Opening the database failed', error, stack);
+        await _close(db);
+        db = null;
+        failure = error;
       }
-    } catch (error, stack) {
-      AppLog.error('startup', 'Opening the database failed', error, stack);
-      await _close(db);
-      // Before migration Hive still holds the only copy, so it can be used;
-      // after migration this branch is not reached.
-      db = null;
-      return _hiveOnly(openHive, failedDatabase: error);
     }
+    // Before migration Hive still holds the only copy, so it can be used;
+    // after migration _hiveOnly reports the problem instead.
+    if (failure != null) return _hiveOnly(openHive, failedDatabase: failure);
   }
 
   final HiveProgressStore hive;
@@ -75,6 +88,15 @@ Future<StorageOpening> openProgressStore({
     return StorageUnreadable(hive);
   }
   if (db == null) return StorageReady(hive);
+  if (fallback && hive.migratedToDatabase) {
+    // The other way found no copied save where the usual way keeps it (for
+    // example OPFS): copying the older Hive save again would hide newer
+    // progress, so report it and try the usual way next launch.
+    await _close(db);
+    return StorageFailed(
+      StateError('The saved progress is not in this browser storage'),
+    );
+  }
 
   try {
     final report = await HiveToDriftMigration(hive, db).run();

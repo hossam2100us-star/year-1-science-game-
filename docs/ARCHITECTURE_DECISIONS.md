@@ -109,7 +109,7 @@ child UI should change, moving child strings to ARB as well.
 
 ## ADR-0005 — Local persistence target: Drift + SQLite (replaces the Hive blob)
 
-**Status:** implemented in M2 (Android; web follows in M4).
+**Status:** implemented in M2 (Android) and for the web in ADR-0019.
 
 **Context.** AUD-004 / AUD-021: the whole app state (all children, base64
 photos) is one Hive string rewritten on every interaction and every 10 s;
@@ -404,6 +404,43 @@ children the parent did not choose (ADR-0002, REC-02, REC-03).
 **Consequences.** Database schema 2 (outbox `put`). Two devices playing the
 same lesson at the same moment: completed attempts are never lost, but the
 in-progress state of that lesson follows the later save while the lesson
-stays open on both. The web build keeps its own storage and has no sync
-yet. Tests run the two-device scenarios against an in-memory server and,
+stays open on both. The web build got the same database and sync in
+ADR-0019. Tests run the two-device scenarios against an in-memory server and,
 locally, against the real backend (`test/sync/live_backend_test.dart`).
+
+---
+
+## ADR-0019 — SQLite in the browser
+
+**Status:** accepted; implemented on `feature/web-accounts`.
+
+**Context.** The web app kept the Hive store, so it had no outbox: the
+login page, parent accounts and sync were Android only (ADR-0018). Parents
+in the trial use the web app on the Synology too.
+
+**Decision.**
+- The web build opens the same Drift database as Android, with drift's
+  WebAssembly build: `web/sqlite3.wasm` (sqlite3.dart release 3.7.0,
+  matching `sqlite3` in `pubspec.lock`) and `web/drift_worker.js`, compiled
+  from `tool/web/drift_worker.dart` by `scripts/build_drift_worker.ps1`.
+  Both are rebuilt when drift or sqlite3 is upgraded.
+- drift chooses the storage (OPFS or IndexedDB, in a shared worker so tabs
+  share one database). If that fails, the app opens the same IndexedDB data
+  without the shared worker (`lib/data/db/connection_web.dart`); tabs are
+  then not coordinated, so this is only a fallback. An embedded Chromium
+  whose shared worker could not fetch `sqlite3.wasm` needed it. Data is
+  never kept only in memory.
+- The first launch copies the browser's Hive save into SQLite with the
+  same verified migration as Android (ADR-0005); Hive stays as a frozen
+  backup. If the fallback finds no copy although Hive is marked as copied
+  (the copy lives in storage only the usual way reaches), the app reports
+  it instead of copying the older Hive save again.
+- Same rules as Android otherwise: device-only by default, the account is
+  the parent's choice, the refresh token is the HttpOnly cookie (never in
+  browser storage), photos are not synced.
+
+**Consequences.** The login page, the parent account tab and sync work on
+the web. The web bundle grows by about 1.1 MB (`sqlite3.wasm` 0.75 MB,
+`drift_worker.js` 0.36 MB, both gzipped by nginx). No server or nginx
+change: the existing CSP already allows `'wasm-unsafe-eval'`,
+`worker-src 'self'` and same-origin fetches.

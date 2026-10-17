@@ -213,9 +213,9 @@ Commit: `aadaef5`
 
 ### AUD-021 — hive upstream maintenance
 Status: **PARTIALLY FIXED** (M2)
-Android plays on SQLite after the one-time migration; Hive is read only to
-migrate and is kept frozen as a backup (ADR-0005). The `hive` dependency
-remains until the web build gets its database (M4) and the backup period
+Android and the web play on SQLite after the one-time migration (the web
+since ADR-0019); Hive is read only to migrate and is kept frozen as a
+backup (ADR-0005). The `hive` dependency remains until the backup period
 (two releases) ends.
 
 ### AUD-022 — README links an untracked APK

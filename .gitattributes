@@ -18,3 +18,6 @@
 *.toml text eol=lf
 Dockerfile text eol=lf
 *.conf text eol=lf
+*.wasm binary
+# Compiled from tool/web/drift_worker.dart (scripts/build_drift_worker.ps1).
+web/drift_worker.js linguist-generated -diff
