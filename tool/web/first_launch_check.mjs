@@ -105,6 +105,11 @@ async function launch(profile, url, act) {
       }
     });
     await page.send('Runtime.enable');
+    // The page is 1280×800 whatever the window size of headless Chrome on
+    // this OS (as in the review).
+    await page.send('Emulation.setDeviceMetricsOverride', {
+      width: 1280, height: 800, deviceScaleFactor: 1, mobile: false,
+    });
     await page.send('Page.navigate', { url });
 
     const evaluate = async (expression) =>
@@ -132,13 +137,23 @@ async function launch(profile, url, act) {
       for (let attempt = 1; ; attempt++) {
         await waitFor(label);
         await sleep(400);
-        const at = await evaluate(`(() => {
+        const where = () => evaluate(`(() => {
           const all = Array.from(document.querySelectorAll('flt-semantics, input'));
           const e = all.find(e => (e.getAttribute('aria-label') || '').trim() === ${JSON.stringify(label)})
             || all.find(e => !e.children.length && e.textContent.trim() === ${JSON.stringify(label)});
           const r = e.getBoundingClientRect();
-          return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
+          return { x: r.x + r.width / 2, y: r.y + r.height / 2, view: innerHeight };
         })()`);
+        // Below the page's edge: scroll it up with the mouse wheel first.
+        let at = await where();
+        for (let i = 0; i < 5 && (at.y > at.view - 20 || at.y < 20); i++) {
+          await page.send('Input.dispatchMouseEvent', {
+            type: 'mouseWheel', x: 640, y: 400, deltaX: 0, deltaY: at.y - at.view / 2,
+          });
+          await sleep(500);
+          at = await where();
+        }
+        delete at.view;
         for (const type of ['mousePressed', 'mouseReleased']) {
           await page.send('Input.dispatchMouseEvent', { type, ...at, button: 'left', clickCount: 1 });
         }
@@ -210,7 +225,10 @@ for (const [name, isolated] of [['IndexedDB', false], ['OPFS (cross-origin isola
     failed = true;
   } finally {
     server.close();
-    rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+    // Best effort: Chrome's helpers may still be writing as it closes.
+    try {
+      rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+    } catch {}
   }
 }
 process.exit(failed ? 1 : 0);
