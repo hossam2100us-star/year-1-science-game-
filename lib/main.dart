@@ -364,6 +364,13 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
     ref.listen(accountProvider.select((a) => a.signedIn), (previous, next) {
       if (next && !_pastLogin) setState(() => _pastLogin = true);
     });
+    // The playing child was deleted in the parent area (or from the account
+    // elsewhere): the next child is now active, so the children choose again.
+    ref.listen(appProvider.select((d) => d.activeChildId), (previous, next) {
+      if (previous != next && _childChosen) {
+        setState(() => _childChosen = false);
+      }
+    });
     // On builds with accounts, each time the app opens until a parent signs
     // in: sign in, or continue without the Internet (ADR-0002).
     final askLogin =

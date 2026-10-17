@@ -11,6 +11,7 @@ import '../core/widgets.dart';
 import '../data/account/account_controller.dart';
 import '../data/sync/sync_controller.dart';
 import 'account_panel.dart';
+import 'children_section.dart';
 import 'voice_settings.dart';
 import '../features/onboarding/profile_editor.dart';
 import 'parent_gate.dart';
@@ -227,6 +228,7 @@ class _ParentAreaState extends ConsumerState<ParentArea> {
                       ),
                     ],
                   ),
+                if (_tab == 1) ChildrenOnDevice(arabic: ar),
                 if (_tab == 0)
                   ParentSection(
                     title: l.parentAreaUnitAssessment,

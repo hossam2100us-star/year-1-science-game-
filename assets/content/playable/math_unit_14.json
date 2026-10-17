@@ -87,7 +87,7 @@
             ],
             "correctId": "answer_2",
             "feedback": "Our first group has three beans.",
-            "hint": "Tap each object once. A marked object has already been counted.",
+            "hint": "You counted them all. The last number you said tells how many.",
             "id": "explore_1"
           },
           {

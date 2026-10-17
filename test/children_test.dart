@@ -163,44 +163,7 @@ void main() {
       );
     },
   );
-  testWidgets(
-    'Deleting requires parent gate and confirmation; cancel preserves data',
-    (t) async {
-      helpers.testCatalog = (await t.runAsync(helpers.loadTestCatalog))!;
-      final store = MemoryProgressStore(family());
-      await helpers.mount(
-        t,
-        ChildChooser(onSelected: () {}, onParentChanged: (_) {}),
-        store,
-      );
-      Future<void> openDelete() async {
-        await helpers.tapVisible(
-          t,
-          find.byKey(const ValueKey('delete-child-second')),
-        );
-        expect(
-          find.byKey(const ValueKey('confirm-delete-child')),
-          findsNothing,
-        );
-        await t.enterText(find.byType(TextField), helpers.gateAnswer(t));
-        await helpers.tapVisible(t, find.text('كمّل • Continue'));
-        await t.pumpAndSettle();
-      }
-
-      await openDelete();
-      await helpers.tapVisible(t, find.text('إلغاء'));
-      expect(store.data.childRecords.length, 2);
-      await openDelete();
-      await helpers.tapVisible(
-        t,
-        find.byKey(const ValueKey('confirm-delete-child')),
-      );
-      await t.pumpAndSettle();
-      expect(store.data.profile!.name, 'Nour');
-      expect(store.data.childRecords.containsKey('second'), isFalse);
-      expect(t.takeException(), isNull);
-    },
-  );
+  // Deleting a profile is in the parent area: test/parent/children_section_test.dart.
   testWidgets('Chooser selects the intended child and gates adding another', (
     t,
   ) async {

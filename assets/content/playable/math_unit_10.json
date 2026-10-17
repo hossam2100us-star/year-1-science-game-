@@ -510,7 +510,7 @@
       "id": "math_unit_10.step.007",
       "kind": "tap-choice",
       "title": "The heavier side",
-      "prompt": "On this balance, B is down and A is up. Which is heavier?",
+      "prompt": "Look at the balance. Which side is heavier, A or B?",
       "options": [
         {
           "id": "choice_1",

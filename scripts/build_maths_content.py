@@ -61,7 +61,8 @@ SAFETY_AR = 'لازم شخص كبير يكون موجود. خلّي الحاجا
 
 def dump(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    # LF on every OS, as in Git (.gitattributes), so a Windows build changes nothing.
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
 
 
 def clean(text):
@@ -256,12 +257,21 @@ def practice_choices(labels,correct,visuals=None):
     return choices,correct_id
 
 
+# Before counting (the workshop's own hint) and after a wrong number: the
+# choices appear only once every object is counted, so a wrong number means
+# the last count was not taken as the answer (teacher review 6).
+COUNT_TAP_HINT='Tap each object once. A marked object has already been counted.'
+COUNT_LAST_HINT='You counted them all. The last number you said tells how many.'
+# The workshop's own hint where its first count needs a different start.
+WORKSHOP_START_HINTS={'math_unit_05':'Your guess is not scored. Tap each bean once to find the count.'}
+
+
 def count_practice(prompt,total,item,feedback,*,arrangement='row',hint=None):
     choices,correct_id=practice_choices([max(0,total-1),total,total+1],total)
     for choice in choices: choice['value']=int(choice['label'])
     return {'mode':'count','prompt':prompt,'count':total,'item':item,'arrangement':arrangement,
         'choices':choices,'correctId':correct_id,'feedback':feedback,
-        'hint':hint or 'Tap each object once. A marked object has already been counted.'}
+        'hint':hint or COUNT_LAST_HINT}
 
 
 def build_practice(prompt,target,item,feedback,*,initial=0,arrangement='row',visual=None,hint=None):
@@ -311,7 +321,7 @@ def guided_workshops():
         choose_practice('Which fruit has the most votes?',['apple','banana','mango'],'apple','Apple has the most pictures, so it has the most votes.',visual=fruit,hint='Compare equal-size pictures from the same starting line.'),
     ]),
     5:('Guess, check and compare','Use counting to check a guess; notice zero and larger numbers.','orchard',[
-        count_practice('Guess how many beans aloud first. Then tap each bean to check.',6,'bean','Your guess was a prediction. Counting shows six beans; a different guess is part of learning.',arrangement='scattered',hint='Your guess is not scored. Tap each bean once to find the count.'),
+        count_practice('Guess how many beans aloud first. Then tap each bean to check.',6,'bean','Your guess was a prediction. Counting shows six beans; a different guess is part of learning.',arrangement='scattered',hint='Your guess is not scored. The last number you counted tells how many.'),
         build_practice('Three counters are ready. Take them all away to make zero.',0,'counter','Zero means none. The tray is empty because all three counters were taken away.',initial=3,hint='Remove every counter. An empty tray shows zero.'),
         choose_practice('Which group is larger: twelve or seventeen?',[12,17],17,'Seventeen is larger than twelve. Five more objects make the larger group.',visual=groups({**count(12),'label':'12'},{**count(17),'label':'17'}),hint='Compare the groups, or count onward from twelve to seventeen.'),
     ]),
@@ -772,7 +782,7 @@ def unit_specs():
         number('How many months are in a year?',12,explanation='A year has 12 months, from January to December.'),
         single('Which month comes after January?','February',['March','February','December'],explanation='February is the month after January.'),
         number('How many cubes long is the pencil?',6,{'type':'ruler','units':6,'unit':'cube','item':'pencil'},'Six equal cubes cover the pencil length with no gaps.'),
-        single('On this balance, B is down and A is up. Which is heavier?','B',['A','B'],balance(1,3,'A','B'),explanation='The heavier side goes down, so B is heavier.'),
+        single('Look at the balance. Which side is heavier, A or B?','B',['A','B'],balance(1,3,'A','B'),explanation='The heavier side goes down, so B is heavier.'),
         tf('A bigger object is always heavier.',False,'A large pillow can be lighter than a small stone.'),
         ordered('Put these in order, heaviest first.',['chair','book','feather'],explanation='A typical chair is heavier than a book, and a feather is lightest.'),
     ],
@@ -1084,7 +1094,7 @@ def build():
             steps.append({'id':f'{ident}.step.001','kind':'explore','title':workshop['title'],
                 'prompt':'Help Owl count the apples.' if ident=='math_unit_01' else 'Let us explore together!',
                 'options':options,'targets':[],'answer':None,'assessed':False,'objective':'',
-                'hint':workshop['tasks'][0]['hint'],'explanation':workshop['goal'],'shortExplanation':'Make, count or compare the objects. Explain what changed.',
+                'hint':WORKSHOP_START_HINTS.get(ident) or (COUNT_TAP_HINT if workshop['tasks'][0]['mode']=='count' else workshop['tasks'][0]['hint']),'explanation':workshop['goal'],'shortExplanation':'Make, count or compare the objects. Explain what changed.',
                 'source':source_ref(draft),'scene':'workshop','section':'Explore','playScene':'maths','theme':ident,
                 'minTouches':len(options),'mathWorkshop':workshop,
                 'parentReview':{'en':'Guided practice is ungraded. Completion records the child doing the activities, not a book-question score.'}})

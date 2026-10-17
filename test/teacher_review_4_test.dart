@@ -115,10 +115,11 @@ void main() {
     tablet(t);
     await open(t, 'unit_07.step.001');
     expect(discoveries(t), 'Discoveries 0 / 3');
-    // T4-1 and review 5: no hand at the socket, the child well away from it.
+    // T4-1 and reviews 5–6: no hand at the socket, the child well away from
+    // it, one whole wall and a socket that looks like a socket.
     expect(
       t.widget<IllustratedArt>(find.byType(IllustratedArt)).asset,
-      'electric-safety-socket-v3.webp',
+      'electric-safety-socket-v4.webp',
     );
     await t.tap(find.byType(IllustratedArt));
     await t.pump(const Duration(milliseconds: 300));

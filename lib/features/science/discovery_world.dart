@@ -115,11 +115,12 @@ class DiscoveryWorld extends StatelessWidget {
                     children: [
                       Positioned.fill(
                         // The socket rule has its own picture: no hand is
-                        // near the socket (teacher review 4). The other two
+                        // near the socket, on one whole wall (teacher
+                        // reviews 4 and 6). The other two
                         // rules are panels of the shared picture.
                         child: index == 0
                             ? const IllustratedArt(
-                                asset: 'electric-safety-socket-v3.webp',
+                                asset: 'electric-safety-socket-v4.webp',
                               )
                             : IllustratedArt(
                                 asset: 'electric-safety-v1.webp',
