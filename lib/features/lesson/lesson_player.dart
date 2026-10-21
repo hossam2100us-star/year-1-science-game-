@@ -397,7 +397,16 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   bool get _canCheck =>
       !_busy &&
       _answerKey != _checked &&
-      (step.isMapping
+      (step.isNumber
+          ? (_placements['answer'] ?? '').isNotEmpty
+          : step.isSentence
+          ? [
+              'a',
+              'op',
+              'b',
+              'c',
+            ].every((k) => (_placements[k] ?? '').isNotEmpty)
+          : step.isMapping
           ? _placements.length == step.options.length
           : _selected.isNotEmpty &&
                 !(_science &&
@@ -739,6 +748,19 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       return;
     }
     _selected = items.toSet();
+    _changed();
+  }
+
+  @override
+  void write(Map<String, String> slots) {
+    if (_busy || _answerLocked || !step.isWritten) return;
+    const allowed = {'answer', 'a', 'op', 'b', 'c'};
+    if (!allowed.containsAll(slots.keys)) return;
+    _reviewItems.removeWhere((k) => slots[k] != _placements[k]);
+    _placements = {
+      for (final e in slots.entries)
+        if (e.value.isNotEmpty) e.key: e.value,
+    };
     _changed();
   }
 

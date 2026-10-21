@@ -14,7 +14,9 @@ abstract final class StepRules {
     LessonStep step,
     Set<String> selected,
     Map<String, String> placements,
-  ) => step.isMapping
+  ) => step.isNumber
+      ? placements['answer']
+      : step.isMapping || step.isSentence
       ? placements
       : step.isMulti || step.isOrder
       ? selected.toList()
@@ -64,6 +66,18 @@ abstract final class StepRules {
     Map<String, String> placements,
   ) {
     final expected = step.answer!['value'];
+    if (step.isNumber) {
+      return matchesAnswer(step.answer!, placements['answer'])
+          ? <String>{}
+          : {'answer'};
+    }
+    if (step.isSentence) {
+      if (sentenceMatches(Map.from(expected as Map), placements)) return {};
+      return {
+        for (final key in ['a', 'op', 'b', 'c'])
+          if ((placements[key] ?? '') != '${expected[key]}') key,
+      };
+    }
     if (step.isMapping) {
       return (expected as Map).keys
           .cast<String>()
@@ -79,6 +93,11 @@ abstract final class StepRules {
   /// The correct answer for the items under review, in words.
   static String answerReference(LessonStep step, Set<String> reviewItems) {
     final expected = step.answer!['value'];
+    if (step.isNumber) return '$expected';
+    if (step.isSentence) {
+      final e = Map<String, dynamic>.from(expected as Map);
+      return '${e['a']} ${e['op'] == '-' ? '−' : '+'} ${e['b']} = ${e['c']}';
+    }
     if (expected is Map) {
       return expected.entries
           .where((e) => reviewItems.contains(e.key))

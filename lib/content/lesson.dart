@@ -43,6 +43,16 @@ class LessonStep {
   bool get isMapping => answer?['type'] == 'mapping';
   bool get isMulti => answer?['type'] == 'set';
   bool get isOrder => answer?['type'] == 'sequence';
+
+  /// The child writes a number with the number pad (Maths worksheets).
+  bool get isNumber => answer?['type'] == 'number';
+
+  /// The child builds a number sentence: number, sign, number, result.
+  bool get isSentence => answer?['type'] == 'sentence';
+
+  /// Written answers live in the placements: `answer` for a number,
+  /// `a`, `op`, `b` and `c` for a number sentence.
+  bool get isWritten => isNumber || isSentence;
   bool get isFree => [
     'explore',
     'story',
