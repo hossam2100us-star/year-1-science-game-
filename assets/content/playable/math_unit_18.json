@@ -288,17 +288,51 @@
     },
     {
       "id": "math_unit_18.step.004",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "Draw the hands for 9 o'clock on paper with an adult. Long hand on 12, short hand on 9.",
-      "options": [],
+      "kind": "tap-choice",
+      "title": "Nine o'clock",
+      "prompt": "Which clock shows 9 o'clock?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "clock",
+            "hour": 9,
+            "minute": 0
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "clock",
+            "hour": 9,
+            "minute": 30
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "clock",
+            "hour": 3,
+            "minute": 0
+          }
+        }
+      ],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Find the long hand first; compare how much each container holds.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u18.main.03",
+      "hint": "At o'clock, the long hand points to 12.",
+      "explanation": "At 9 o'clock the long hand points to 12 and the short hand points to 9.",
+      "shortExplanation": "At 9 o'clock the long hand points to 12 and the short hand points to 9.",
       "source": {
         "pages": [
           60,
@@ -314,14 +348,10 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_18",
-      "adapted": true,
-      "parentReview": {
-        "en": "Long (minute) hand pointing to 12, short (hour) hand pointing to 9.",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
-      }
+      "adapted": true
     },
     {
       "id": "math_unit_18.step.005",
@@ -541,17 +571,51 @@
     },
     {
       "id": "math_unit_18.step.008",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "Tell an adult your lunchtime. Draw it on a paper clock and check the hands together.",
-      "options": [],
+      "kind": "tap-choice",
+      "title": "Lunchtime",
+      "prompt": "Lunch is at half past 12. Which clock shows lunchtime?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "clock",
+            "hour": 12,
+            "minute": 0
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "clock",
+            "hour": 12,
+            "minute": 30
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "clock",
+            "hour": 6,
+            "minute": 0
+          }
+        }
+      ],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Find the long hand first; compare how much each container holds.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u18.main.07",
+      "hint": "Half past: the long hand points to 6.",
+      "explanation": "Half past 12: the long hand points to 6, the short hand between 12 and 1.",
+      "shortExplanation": "Half past 12: the long hand points to 6, the short hand between 12 and 1.",
       "source": {
         "pages": [
           60,
@@ -567,14 +631,10 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_18",
-      "adapted": true,
-      "parentReview": {
-        "en": "Any real lunchtime shown correctly as o'clock or half past.",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
-      }
+      "adapted": true
     },
     {
       "id": "math_unit_18.step.009",
@@ -1024,6 +1084,23 @@
       "adapted": true
     },
     {
+      "objective": "math.u18.main.03",
+      "text": "Draw a clock on paper. Your child draws the hands for 9 o'clock: long hand on 12, short hand on 9.",
+      "textAr": "ارسموا ساعة على ورقة. طفلك يرسم العقارب للساعة ٩: الطويل على ١٢ والقصير على ٩.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
       "objective": "math.u18.main.04",
       "text": "Point to the two hands of a clock and name them: the long minute hand and the short hour hand.",
       "textAr": "شاوروا على عقربين الساعة وسمّوهم: الطويل عقرب الدقايق، والقصير عقرب الساعات.",
@@ -1061,6 +1138,23 @@
       "objective": "math.u18.main.06",
       "text": "At the sink, fill a mug with water and pour it into a bowl and a jug. Count how many mugs each one holds.",
       "textAr": "عند الحوض املوا مج مية وصبّوه في سلطانية وفي إبريق. عدّوا كل واحد بياخد كام مج.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.main.07",
+      "text": "Ask your child what time lunch is. Show it on a paper clock and check the hands together.",
+      "textAr": "اسألوا طفلكم الغدا الساعة كام. ارسموها على ساعة ورق واتأكدوا من العقارب مع بعض.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1178,7 +1272,7 @@
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }

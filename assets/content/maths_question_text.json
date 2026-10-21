@@ -1,5 +1,5 @@
 {
-  "_about": "Title, hint and (where rewritten) explanation for every assessed Maths question, read by scripts/build_maths_content.py (teacher review 5: one hint per unit, \"Maths discovery N\" titles, \"... is the answer.\" explanations). Keys are book question IDs.",
+  "_about": "Title, hint and (where rewritten) explanation for every assessed Maths question, read by scripts/build_maths_content.py (teacher review 5: one hint per unit, \"Maths discovery N\" titles, \"... is the answer.\" explanations). Keys are book question IDs. Since 21 October 2026 also the 15 former \"Try it at home\" questions and the worksheet questions (IDs with .sheet.).",
   "math.u01.main.01": {
     "title": "Counting apples",
     "hint": "Touch each apple once and say one number for each.",
@@ -1379,5 +1379,170 @@
     "title": "Pigeons and crows",
     "hint": "Read both bars, then add them.",
     "home": "Lay out 6 pencils for pigeons and 3 for crows. Your child adds the two groups, then counts them all to check."
+  },
+  "math.u01.main.05": {
+    "title": "Count the circles",
+    "hint": "Touch each circle once. The last number you say is how many.",
+    "home": "Draw 9 circles on paper together. Your child counts them, touching each one once, and checks there are not 10."
+  },
+  "math.u01.main.08": {
+    "title": "Toy cars in a room",
+    "hint": "Count each car once, even when the cars are spread out.",
+    "home": "Count something real in your child's room together, such as toy cars or books. Ask: what did you count, and how many?"
+  },
+  "math.u03.main.08": {
+    "title": "Triangles in a house",
+    "hint": "Look at the roof and the flags. Count every shape with three sides.",
+    "home": "Draw a house together using squares, rectangles and triangles. Count the triangles together."
+  },
+  "math.u04.main.08": {
+    "title": "Colour votes",
+    "hint": "Each circle is one vote. Count all the circles.",
+    "home": "Ask 4 family members their favourite colour. Your child draws one circle of the same size for each vote."
+  },
+  "math.u06.main.08": {
+    "title": "Afternoon time",
+    "hint": "Afternoon comes after lunch. Breakfast is in the morning.",
+    "home": "Your child draws something they do in the afternoon and tells you about it."
+  },
+  "math.u07.main.08": {
+    "title": "Not red, no wheels",
+    "hint": "Ask two questions: is it red? Does it have wheels? Two no answers mean outside.",
+    "home": "Find something at home that is not red and has no wheels. Ask your child why it fits neither label."
+  },
+  "math.u08.main.04": {
+    "title": "A pattern that repeats",
+    "hint": "Find the part that repeats. Does it come again and again?",
+    "home": "Make a repeating pattern with two kinds of objects, such as spoons and cups. Repeat the part at least twice."
+  },
+  "math.u12.main.07": {
+    "title": "One fair cut",
+    "hint": "Equal parts are the same size. Look for the line through the middle.",
+    "home": "Draw a rectangle on paper. Your child draws one line that cuts it into two equal parts and checks both parts."
+  },
+  "math.u12.main.08": {
+    "title": "A fair share",
+    "hint": "Half for each friend: both groups must have the same number.",
+    "home": "Share a snack in half with your child, such as an orange or a pack of biscuits. Check that both parts are equal."
+  },
+  "math.u14.main.08": {
+    "title": "A story for 6 + 4",
+    "hint": "Adding joins two groups. Which story ends with more?",
+    "home": "Make up a story for 6 + 4 = 10 together and act it out with small toys."
+  },
+  "math.u15.main.06": {
+    "title": "Circle hunt",
+    "hint": "A circle is round and has no corners.",
+    "home": "At the playground, look for circle shapes together: a wheel, a swing seat, the top of a bin."
+  },
+  "math.u16.main.08": {
+    "title": "A question for the graph",
+    "hint": "The graph shows how the children came to school.",
+    "home": "Look at a graph together. Your child asks you a question about it, and you both use the graph to check the answer."
+  },
+  "math.u17.main.08": {
+    "title": "Cake halves",
+    "hint": "Two halves are the same size.",
+    "home": "Draw a cake together. Your child draws one line that divides it into two equal halves."
+  },
+  "math.u18.main.03": {
+    "title": "Nine o'clock",
+    "hint": "At o'clock, the long hand points to 12.",
+    "home": "Draw a clock on paper. Your child draws the hands for 9 o'clock: long hand on 12, short hand on 9."
+  },
+  "math.u18.main.07": {
+    "title": "Lunchtime",
+    "hint": "Half past: the long hand points to 6.",
+    "home": "Ask your child what time lunch is. Show it on a paper clock and check the hands together."
+  },
+  "math.u02.sheet.01": {
+    "title": "Jump forward",
+    "hint": "Start on the dot. Make 3 jumps forward, one number at a time.",
+    "home": "Draw a number line from 0 to 10. Your child puts a toy on 4 and hops it forward 3."
+  },
+  "math.u02.sheet.02": {
+    "title": "Jump back",
+    "hint": "Start on 9. Make 4 jumps back.",
+    "home": "On the number line, put the toy on 9 and hop it back 4. Where does it land?"
+  },
+  "math.u02.sheet.03": {
+    "title": "Count on to add",
+    "hint": "Say 6, then count on two more: 7, 8.",
+    "home": "Hold up 6 fingers. Your child counts on 2 more to find 6 + 2."
+  },
+  "math.u02.sheet.04": {
+    "title": "Count back to take away",
+    "hint": "Say 8, then count back three: 7, 6, 5.",
+    "home": "Put 8 spoons in a row. Take 3 away one at a time, counting back each time."
+  },
+  "math.u02.sheet.05": {
+    "title": "Five and four more",
+    "hint": "Start at 5 and make four jumps forward.",
+    "home": "Play a board game: from square 5, move 4 squares and say where you land."
+  },
+  "math.u02.sheet.06": {
+    "title": "Apple story",
+    "hint": "More apples join the group, so use plus.",
+    "home": "Tell a joining story with real fruit, then write its number sentence together."
+  },
+  "math.u11.sheet.01": {
+    "title": "Back from 17",
+    "hint": "Start on 17. Make 4 jumps back.",
+    "home": "Make a number line from 10 to 20 on the floor with tape. Your child stands on 17 and hops back 4."
+  },
+  "math.u11.sheet.02": {
+    "title": "Jumps between",
+    "hint": "Count the jumps from 11 to 15, not the numbers.",
+    "home": "Put one finger on 11 and one on 15 on a ruler. Count the jumps between them together."
+  },
+  "math.u11.sheet.03": {
+    "title": "Back from 16",
+    "hint": "Say 16, then count back three.",
+    "home": "Count back from 16 together while taking away 3 small toys."
+  },
+  "math.u11.sheet.04": {
+    "title": "Back from 19",
+    "hint": "Say 19, then count back four.",
+    "home": "Practise counting back from 19 on the stairs, one step at a time."
+  },
+  "math.u11.sheet.05": {
+    "title": "On from 12",
+    "hint": "Say 12, then count on five.",
+    "home": "Your child says 12, then counts on 5 more with claps."
+  },
+  "math.u11.sheet.06": {
+    "title": "Hopping story",
+    "hint": "Hopping back means taking away.",
+    "home": "Play a hopping game on the floor number line and say the number sentence for each hop."
+  },
+  "math.u14.sheet.01": {
+    "title": "On from 11",
+    "hint": "Start on 11. Make 5 jumps forward.",
+    "home": "On a number line from 10 to 20, your child starts on 11 and hops forward 5."
+  },
+  "math.u14.sheet.02": {
+    "title": "Count on from 9",
+    "hint": "Say 9, then count on six.",
+    "home": "Keep 9 in your heads and count on 6 claps together."
+  },
+  "math.u14.sheet.03": {
+    "title": "Bigger number first",
+    "hint": "Start with 9, the bigger number, then count on 4.",
+    "home": "With two groups of toys, ask your child which number to start from to count on quickly."
+  },
+  "math.u14.sheet.04": {
+    "title": "Start with 14",
+    "hint": "Which number is bigger, 3 or 14? Start there.",
+    "home": "Write 3 + 14 and 14 + 3. Talk about why both have the same answer."
+  },
+  "math.u14.sheet.05": {
+    "title": "Double seven",
+    "hint": "Double means the same number twice: 7 and 7.",
+    "home": "Make two equal rows of 7 buttons and count them all."
+  },
+  "math.u14.sheet.06": {
+    "title": "Skipping story",
+    "hint": "Before lunch and after lunch join together, so use plus.",
+    "home": "Count rope skips before and after a break, then write the number sentence together."
   }
 }

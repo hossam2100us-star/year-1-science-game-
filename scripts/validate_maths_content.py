@@ -32,10 +32,23 @@ AWAITING_ART=set()
 THINGS={'basket','spoon','shoe','bed','toothbrush','football','alarm clock','grape','watermelon',
     'strawberry','feather','book','chair','pillow','stone','jug','mug','bowl','scales','ruler',
     'parcel','flour','school bag','dinner','glass of water','string','open eye','closed eye','pencil'}
-FREE_QUESTIONS = {'math.u01.main.05','math.u01.main.08','math.u03.main.08',
+# The 15 drawing and "Try it at home" questions are answered in the app since
+# 21 October 2026 (owner request); their home task is the goal activity.
+FORMER_HOME_QUESTIONS = {'math.u01.main.05','math.u01.main.08','math.u03.main.08',
     'math.u04.main.08','math.u06.main.08','math.u07.main.08','math.u08.main.04',
     'math.u12.main.07','math.u12.main.08','math.u14.main.08','math.u15.main.06',
     'math.u16.main.08','math.u17.main.08','math.u18.main.03','math.u18.main.07'}
+# Worksheet questions (number line, written sums, number sentences) at the
+# end of the addition and subtraction units; not from the book.
+WORKSHEET_UNITS = {2:6, 11:6, 14:6}
+SUM = re.compile(r'(\d+) ([+-]) (\d+) = \?')
+
+
+def written_value(step):
+    """The number a written answer must be: a sum in the prompt, or the
+    landing (or distance) of a number line's jumps."""
+    answer=step['answer']
+    return int(answer['value']) if answer['type']=='number' else int(answer['value']['c'])
 
 
 def read(path):
@@ -99,7 +112,7 @@ def audit_visuals(book):
                 assert isinstance(visual['tickStep'],int) and visual['tickStep']>0
                 assert visual.get('axisMax',max(r['value'] for r in visual['rows'])) % visual['tickStep']==0
         elif kind=='shape':
-            assert visual['shape'] in ['circle','oval','triangle','square','rectangle','cube','cuboid','sphere','cylinder','cone','pyramid','car']
+            assert visual['shape'] in ['circle','oval','triangle','square','rectangle','cube','cuboid','sphere','cylinder','cone','pyramid','car','house']
         elif kind=='fraction':
             assert visual['parts'] in [2,4] and 0<=visual['shaded']<=visual['parts']
             assert isinstance(visual['equal'],bool)
@@ -277,7 +290,7 @@ def audit(check_idempotence=False,pdf_path=None):
     books={ident:read(CONTENT/'playable'/f'{ident}.json') for ident in EXPECTED_IDS}
     arabic=read(CONTENT/'maths_parent_ar.json')
     question_text=read(CONTENT/'maths_question_text.json')
-    question_ids=set(); step_ids=set(); free_ids=set(); assessed=0; total_steps=0; workshops=[]; numeric_positions=[]
+    question_ids=set(); step_ids=set(); free_ids=set(); sheet_ids=set(); assessed=0; total_steps=0; workshops=[]; numeric_positions=[]
     source_hash={d['sourceSha256'] for d in drafts.values()}; assert len(source_hash)==1
     for ident,book in books.items():
         draft=drafts[ident]; jsonschema.validate(book,schema)
@@ -304,18 +317,34 @@ def audit(check_idempotence=False,pdf_path=None):
             assert step['playScene']=='maths'
             assert step['source']['sourceSha256']==draft['sourceSha256']
             qid=step['source']['questionId']
-            if qid:
+            if qid and '.sheet.' in qid:
+                unit=int(ident[-2:])
+                assert ident.startswith('math_unit_') and unit in WORKSHEET_UNITS,(step['id'],'worksheet unit')
+                assert qid.startswith(f'math.u{unit:02d}.sheet.') and step['section']=='Practice'
+                assert step['source']['answerKeyPages']==[] and step['assessed'] and step['objective']==qid
+                assert step['kind'] in ('number-entry','number-sentence'),(step['id'],'worksheet kind')
+                sheet_ids.add(qid)
+            elif qid:
                 assert qid in records; covered.add(qid)
                 assert step['source']['answerKeyText']==records[qid]['answerKeyText']
+            if step['answer'] and step['answer']['type'] in ('number','sentence'):
+                assert step['kind']==('number-entry' if step['answer']['type']=='number' else 'number-sentence')
+                assert step['options']==[] and 0<=written_value(step)<=20,(step['id'],'written answer')
+                if step['answer']['type']=='sentence':
+                    s=step['answer']['value']; a,b,c=int(s['a']),int(s['b']),int(s['c'])
+                    assert s['op'] in '+-' and c==(a+b if s['op']=='+' else a-b),(step['id'],'sentence sum')
+                if (m:=SUM.search(step['prompt'])):
+                    a,op,b=int(m[1]),m[2],int(m[3])
+                    assert written_value(step)==(a+b if op=='+' else a-b),(step['id'],'written sum')
             if step['assessed']:
                 assessed+=1; assert step['objective']==qid
-                assert step['answer'] is not None and qid not in FREE_QUESTIONS
+                assert step['answer'] is not None
                 if step['answer']['type']=='single' and all(o['label'].isdigit() for o in step['options']):
                     numeric_positions.append(next(i for i,o in enumerate(step['options']) if o['id']==step['answer']['value']))
                 if step['answer']['type']=='sequence':
                     assert [o['id'] for o in step['options']]!=step['answer']['value'],(step['id'],'sequence already solved')
             elif qid:
-                free_ids.add(qid); assert step['kind']=='story' and step['answer'] is None
+                free_ids.add(qid); assert step['kind']=='story' and step['answer'] is None,(step['id'],'ungraded book question')
                 assert step['objective']=='' and step['parentReview']['en']==records[qid]['answerKeyText']
             assert all(1<=p<=83 for p in step['source']['pages']+step['source']['answerKeyPages'])
             assert len(step['shortExplanation'].split())<=16
@@ -357,12 +386,20 @@ def audit(check_idempotence=False,pdf_path=None):
                 for move in visual['jumps']:
                     at+=move; assert visual['start']<=at<=visual['end'],(step['id'],'jump off the line')
                 expected=at if visual['ask']=='landing' else abs(at-visual['from'])
-                labels={o['id']:o['label'] for o in step['options']}
-                assert labels[step['answer']['value']]==str(expected),(step['id'],'number line answer')
+                if step['answer']['type'] in ('number','sentence'):
+                    assert written_value(step)==expected,(step['id'],'number line answer')
+                else:
+                    labels={o['id']:o['label'] for o in step['options']}
+                    assert labels[step['answer']['value']]==str(expected),(step['id'],'number line answer')
             if visual.get('type')=='carroll' and step['answer']['type']=='mapping':
                 assert visual['columns']==[t['label'] for t in step['targets']],(step['id'],'carroll')
-    assert len(question_ids)==273 and free_ids==FREE_QUESTIONS and assessed==258 and total_steps==292
-    assert len([k for k in question_text if not k.startswith('_')])==258
+    sheets=sum(WORKSHEET_UNITS.values())
+    assert len(question_ids)==273 and not free_ids and len(sheet_ids)==sheets
+    assert assessed==273+sheets and total_steps==292+sheets
+    assert len([k for k in question_text if not k.startswith('_')])==273+sheets
+    for ident,book in books.items():
+        former={s['objective'] for s in book['steps'] if s['objective'] in FORMER_HOME_QUESTIONS}
+        assert all(s['assessed'] and s['title']!='Try it at home' for s in book['steps'] if s['objective'] in former)
     # Teacher review 5: these questions talked about something not shown.
     for ident,numbers in REVIEW5_PICTURES.items():
         for n in numbers:
@@ -403,7 +440,7 @@ def audit(check_idempotence=False,pdf_path=None):
         assert all_paths==list(CONTENT.rglob('*.json')),'Build changed the content file inventory'
         assert all(hashlib.sha256(p.read_bytes()).hexdigest()==digest for p,digest in before.items()),'Build is not idempotent or touched protected content'
         print('PASS repeat build is byte-for-byte identical; all existing Science content is unchanged.')
-    print(f'PASS Maths: 18 units, 3 quizzes, 9 chart questions; {len(question_ids)} sources, {assessed} assessed, 15 ungraded, {total_steps} steps; 19 workshops and 57 guided tasks.')
+    print(f'PASS Maths: 18 units, 3 quizzes, 9 chart questions; {len(question_ids)} sources and {len(sheet_ids)} worksheet questions, {assessed} assessed, 0 ungraded, {total_steps} steps; 19 workshops and 57 guided tasks.')
 
 
 if __name__=='__main__':

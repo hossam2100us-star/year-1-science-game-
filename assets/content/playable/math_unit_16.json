@@ -746,17 +746,36 @@
     },
     {
       "id": "math_unit_16.step.009",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "Ask an adult your own question about this graph. Use the graph to check your answer.",
-      "options": [],
+      "kind": "tap-choice",
+      "title": "A question for the graph",
+      "prompt": "Which question can this graph answer?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "How many children walk to school?",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "What colour is the school bus?",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "How old is the teacher?",
+          "art": "math_label"
+        }
+      ],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Read the labels. Count blocks and compare the columns.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u16.main.08",
+      "hint": "The graph shows how the children came to school.",
+      "explanation": "The graph shows how children came to school, so it tells how many walk: 6.",
+      "shortExplanation": "The graph shows how children came to school, so it tells how many walk: 6.",
       "source": {
         "pages": [
           54,
@@ -771,7 +790,7 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_16",
       "adapted": true,
@@ -798,10 +817,6 @@
         ],
         "style": "block",
         "unit": "one child"
-      },
-      "parentReview": {
-        "en": "Any question the graph can answer, with the correct answer from the graph.",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
       }
     },
     {
@@ -1327,6 +1342,22 @@
       "adapted": true
     },
     {
+      "objective": "math.u16.main.08",
+      "text": "Look at a graph together. Your child asks you a question about it, and you both use the graph to check the answer.",
+      "textAr": "بصّوا على رسم بياني مع بعض. طفلك يسألك سؤال عنه، وتستخدموا الرسم مع بعض عشان تتأكدوا من الإجابة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
       "objective": "math.u16.choice.01",
       "text": "Your child builds the tallest tower for the family's favourite game. Talk about why it is the tallest.",
       "textAr": "طفلك يبني أطول برج للعبة المفضلة عند العيلة. اتكلموا ليه هو الأطول.",
@@ -1408,7 +1439,7 @@
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }

@@ -969,6 +969,269 @@
         ],
         "ask": "landing"
       }
+    },
+    {
+      "id": "math_unit_11.step.015",
+      "kind": "number-entry",
+      "title": "Back from 17",
+      "prompt": "Start at 17. Jump back 4. Where do you land?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 13
+      },
+      "assessed": true,
+      "objective": "math.u11.sheet.01",
+      "hint": "Start on 17. Make 4 jumps back.",
+      "explanation": "From 17, four jumps back: 16, 15, 14, 13. So 17 - 4 = 13.",
+      "shortExplanation": "From 17, four jumps back: 16, 15, 14, 13. So 17 - 4 = 13.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.sheet.01",
+        "answerKeyPages": [],
+        "answerKeyText": "13",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20,
+        "from": 17,
+        "jumps": [
+          -4
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_11.step.016",
+      "kind": "number-entry",
+      "title": "Jumps between",
+      "prompt": "How many jumps from 11 to 15?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 4
+      },
+      "assessed": true,
+      "objective": "math.u11.sheet.02",
+      "hint": "Count the jumps from 11 to 15, not the numbers.",
+      "explanation": "From 11 to 15 is four jumps: 12, 13, 14, 15. The difference is 4.",
+      "shortExplanation": "From 11 to 15 is four jumps: 12, 13, 14, 15. The difference is 4.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.sheet.02",
+        "answerKeyPages": [],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20,
+        "from": 11,
+        "jumps": [
+          4
+        ],
+        "ask": "distance"
+      }
+    },
+    {
+      "id": "math_unit_11.step.017",
+      "kind": "number-entry",
+      "title": "Back from 16",
+      "prompt": "16 - 3 = ?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 13
+      },
+      "assessed": true,
+      "objective": "math.u11.sheet.03",
+      "hint": "Say 16, then count back three.",
+      "explanation": "Start at 16 and count back three: 15, 14, 13. So 16 - 3 = 13.",
+      "shortExplanation": "Start at 16 and count back three: 15, 14, 13. So 16 - 3 = 13.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.sheet.03",
+        "answerKeyPages": [],
+        "answerKeyText": "13",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20,
+        "from": 16,
+        "jumps": [
+          -3
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_11.step.018",
+      "kind": "number-entry",
+      "title": "Back from 19",
+      "prompt": "19 - 4 = ?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 15
+      },
+      "assessed": true,
+      "objective": "math.u11.sheet.04",
+      "hint": "Say 19, then count back four.",
+      "explanation": "Start at 19 and count back four: 18, 17, 16, 15. So 19 - 4 = 15.",
+      "shortExplanation": "Start at 19 and count back four: 18, 17, 16, 15.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.sheet.04",
+        "answerKeyPages": [],
+        "answerKeyText": "15",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20,
+        "from": 19,
+        "jumps": [
+          -4
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_11.step.019",
+      "kind": "number-entry",
+      "title": "On from 12",
+      "prompt": "12 + 5 = ?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 17
+      },
+      "assessed": true,
+      "objective": "math.u11.sheet.05",
+      "hint": "Say 12, then count on five.",
+      "explanation": "Start at 12 and count on five: 13, 14, 15, 16, 17. So 12 + 5 = 17.",
+      "shortExplanation": "Start at 12 and count on five: 13, 14, 15, 16, 17.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.sheet.05",
+        "answerKeyPages": [],
+        "answerKeyText": "17",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20,
+        "from": 12,
+        "jumps": [
+          5
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_11.step.020",
+      "kind": "number-sentence",
+      "title": "Hopping story",
+      "prompt": "In a hopping game, Sami starts on 14 and hops back 6. Write the number sentence.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "sentence",
+        "value": {
+          "a": "14",
+          "op": "-",
+          "b": "6",
+          "c": "8"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u11.sheet.06",
+      "hint": "Hopping back means taking away.",
+      "explanation": "Hopping back takes away: 14 - 6 = 8. Sami lands on 8.",
+      "shortExplanation": "Hopping back takes away: 14 - 6 = 8. Sami lands on 8.",
+      "source": {
+        "pages": [
+          38,
+          39,
+          40
+        ],
+        "questionId": "math.u11.sheet.06",
+        "answerKeyPages": [],
+        "answerKeyText": "14 - 6 = 8",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_11",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "from": 14,
+        "jumps": [
+          -6
+        ],
+        "ask": "landing"
+      }
     }
   ],
   "stickers": [
@@ -1219,10 +1482,106 @@
         2
       ],
       "adapted": true
+    },
+    {
+      "objective": "math.u11.sheet.01",
+      "text": "Make a number line from 10 to 20 on the floor with tape. Your child stands on 17 and hops back 4.",
+      "textAr": "اعملوا خط أعداد من ١٠ لـ٢٠ على الأرض بشريط لاصق. طفلك يقف على ١٧ وينطّ ٤ لورا.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.sheet.02",
+      "text": "Put one finger on 11 and one on 15 on a ruler. Count the jumps between them together.",
+      "textAr": "حطّوا صباع على ١١ وصباع على ١٥ على مسطرة. عدّوا النطّات اللي بينهم مع بعض.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.sheet.03",
+      "text": "Count back from 16 together while taking away 3 small toys.",
+      "textAr": "عدّوا لورا من ١٦ مع بعض وانتوا بتشيلوا ٣ لعب صغيرة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.sheet.04",
+      "text": "Practise counting back from 19 on the stairs, one step at a time.",
+      "textAr": "اتمرّنوا على العدّ لورا من ١٩ على السلم، سلمة سلمة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.sheet.05",
+      "text": "Your child says 12, then counts on 5 more with claps.",
+      "textAr": "طفلك يقول ١٢، وبعدين يعدّ ٥ زيادة وهو بيسقف.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u11.sheet.06",
+      "text": "Play a hopping game on the floor number line and say the number sentence for each hop.",
+      "textAr": "العبوا لعبة النطّ على خط الأعداد اللي على الأرض، وقولوا الجملة الحسابية لكل نطّة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        38,
+        39,
+        40
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }

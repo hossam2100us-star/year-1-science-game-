@@ -47,7 +47,13 @@ class MathsVisual extends StatelessWidget {
                   MathsVisual(
                     data: {
                       ...item,
-                      if (item['type'] == 'count') 'slots': slots,
+                      // An answer card may ask for room for more counters, so
+                      // every answer shows one counter size.
+                      if (item['type'] == 'count')
+                        'slots': math.max(
+                          slots,
+                          (item['slots'] as num? ?? 0).toInt(),
+                        ),
                     },
                   ),
                   if (item['label'] != null)
@@ -160,7 +166,15 @@ class _Chart extends StatelessWidget {
   const _Chart({required this.data});
   final Map<String, dynamic> data;
 
-  String? _categoryArt(String label) => switch (label.toLowerCase()) {
+  /// A row's picture, shown only when every row has one (teacher review 7:
+  /// only "car" had a picture in the walk, bus, car, bike chart).
+  String? _categoryArt(String label) {
+    final rows = (data['rows'] as List).cast<Map<String, dynamic>>();
+    if (rows.any((row) => _art('${row['label']}') == null)) return null;
+    return _art(label);
+  }
+
+  String? _art(String label) => switch (label.toLowerCase()) {
     'apple' => 'apple',
     'banana' => 'banana',
     'orange' => 'orange',
@@ -1591,6 +1605,79 @@ class _MathsPainter extends CustomPainter {
             wheel,
             r.height * .06,
             _paint(const Color(0xFFB9C3C9)),
+          );
+        }
+      case 'house':
+        // A house built from flat shapes: a square wall, a triangle roof, a
+        // rectangle door, two square windows and two triangle flags, so the
+        // child counts 3 triangles (the book's "draw a house" question).
+        final wall = Rect.fromLTRB(
+          r.left + r.width * .2,
+          r.top + r.height * .45,
+          r.right - r.width * .2,
+          r.bottom,
+        );
+        void draw(Path path, Color c) {
+          canvas.drawPath(path, _material(c, path.getBounds()));
+          canvas.drawPath(path, edge);
+        }
+
+        Path triangle(Offset top, double w, double h) => Path()
+          ..moveTo(top.dx, top.dy)
+          ..lineTo(top.dx + w / 2, top.dy + h)
+          ..lineTo(top.dx - w / 2, top.dy + h)
+          ..close();
+        draw(Path()..addRect(wall), const Color(0xFFF4D9A6));
+        draw(
+          triangle(
+            Offset(r.center.dx, r.top + r.height * .18),
+            wall.width * 1.3,
+            r.height * .27,
+          ),
+          const Color(0xFFD9534F),
+        );
+        for (final x in [r.left + r.width * .07, r.right - r.width * .07]) {
+          // A garden flag on a pole beside the house, pointing towards it.
+          final side = x < r.center.dx ? 1.0 : -1.0;
+          final top = Offset(x, r.top + r.height * .08);
+          canvas.drawLine(
+            top,
+            Offset(x, r.bottom),
+            _paint(dark, stroke: true)..strokeWidth = 3,
+          );
+          draw(
+            Path()
+              ..moveTo(top.dx, top.dy)
+              ..lineTo(top.dx + side * r.width * .11, top.dy + r.height * .08)
+              ..lineTo(top.dx, top.dy + r.height * .16)
+              ..close(),
+            const Color(0xFFE6B746),
+          );
+        }
+        draw(
+          Path()..addRect(
+            Rect.fromLTWH(
+              wall.center.dx - wall.width * .11,
+              wall.bottom - wall.height * .48,
+              wall.width * .22,
+              wall.height * .48,
+            ),
+          ),
+          const Color(0xFF8A5A3B),
+        );
+        for (final x in [.24, .76]) {
+          draw(
+            Path()..addRect(
+              Rect.fromCenter(
+                center: Offset(
+                  wall.left + wall.width * x,
+                  wall.top + wall.height * .35,
+                ),
+                width: wall.width * .2,
+                height: wall.width * .2,
+              ),
+            ),
+            const Color(0xFFBFE3F5),
           );
         }
       case 'oval':

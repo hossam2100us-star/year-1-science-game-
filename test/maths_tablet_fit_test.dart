@@ -95,9 +95,11 @@ void main() {
           final options = find.byWidgetPredicate(
             (widget) =>
                 widget.key is ValueKey<String> &&
-                (widget.key! as ValueKey<String>).value.startsWith(
+                // Answer cards, or the number pad of a written answer.
+                [
                   'maths-option-',
-                ),
+                  'number-key-',
+                ].any((widget.key! as ValueKey<String>).value.startsWith),
           );
           if (options.evaluate().isEmpty) continue;
           questions++;

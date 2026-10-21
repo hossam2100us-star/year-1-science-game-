@@ -570,17 +570,57 @@
     },
     {
       "id": "math_unit_17.step.009",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "With an adult, draw a cake and one line that divides it into two equal halves.",
-      "options": [],
+      "kind": "tap-choice",
+      "title": "Cake halves",
+      "prompt": "Which cake is cut into two equal halves?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "circle",
+            "parts": 2,
+            "shaded": 0,
+            "equal": false
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "circle",
+            "parts": 2,
+            "shaded": 0,
+            "equal": true
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "circle",
+            "parts": 4,
+            "shaded": 0,
+            "equal": true
+          }
+        }
+      ],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "One half is one of two equal parts. Share the group equally.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u17.main.08",
+      "hint": "Two halves are the same size.",
+      "explanation": "In b one line goes through the middle, so both halves are the same size.",
+      "shortExplanation": "In b one line goes through the middle, so both halves are the same size.",
       "source": {
         "pages": [
           57,
@@ -595,14 +635,10 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_17",
-      "adapted": true,
-      "parentReview": {
-        "en": "Any cake with one line making two equal parts.",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
-      }
+      "adapted": true
     },
     {
       "id": "math_unit_17.step.010",
@@ -1064,6 +1100,22 @@
       "adapted": true
     },
     {
+      "objective": "math.u17.main.08",
+      "text": "Draw a cake together. Your child draws one line that divides it into two equal halves.",
+      "textAr": "ارسموا تورتة مع بعض. طفلك يرسم خط واحد يقسمها لنصين متساويين.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        57,
+        58,
+        59
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
       "objective": "math.u17.choice.01",
       "text": "Draw shapes cut into 2 equal parts and into 2 unequal parts. Your child colours ½ only where the parts are equal.",
       "textAr": "ارسموا أشكال متقسّمة جزئين متساويين وأشكال جزئين مش متساويين. طفلك يلوّن ½ بس في اللي أجزاؤه متساوية.",
@@ -1145,7 +1197,7 @@
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }
