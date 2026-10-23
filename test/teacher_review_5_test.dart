@@ -572,9 +572,10 @@ void main() {
         if (!pictured(step)) step.objective,
     ];
     expect(without, isEmpty);
-    // 258 book questions, the 15 former "Try it at home" questions and the
-    // 18 worksheet questions (owner request, 21 October).
-    expect(assessed().where(pictured), hasLength(291));
+    // 258 book questions, the 15 former "Try it at home" questions, the
+    // 18 worksheet questions (owner request, 21 October) and 20 class-book
+    // questions (23 October).
+    expect(assessed().where(pictured), hasLength(311));
   });
 
   testWidgets('questions about real things show those things', (t) async {
@@ -785,9 +786,9 @@ void main() {
         arabic.add(activity['textAr']);
       }
     }
-    // One per goal: 273 book questions and 18 worksheet questions.
-    expect(english, hasLength(291));
-    expect(arabic, hasLength(291));
+    // One per goal: 273 book, 18 worksheet and 20 class-book questions.
+    expect(english, hasLength(311));
+    expect(arabic, hasLength(311));
   });
 
   // Section 5: one hint for a whole unit, "Maths discovery N" titles and

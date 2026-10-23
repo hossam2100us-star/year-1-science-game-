@@ -24,9 +24,9 @@ for file in sorted((ROOT/'assets/content/playable').glob('*.json')):
   for field,text in overrides.get(step['id'],{}).items():
    assert step[field]==text,(file,step['id'],'editorial feedback was overwritten')
   qid=step['source']['questionId']
-  # Maths worksheet questions are not from the book; validate_maths_content.py
-  # checks their sums and number lines.
-  worksheet=bool(qid) and '.sheet.' in qid
+  # Maths worksheet and class-book questions are not from the companion;
+  # validate_maths_content.py checks them.
+  worksheet=bool(qid) and ('.sheet.' in qid or '.book.' in qid)
   if qid and not worksheet:
    covered.add(qid);assert qid in originals,(file,qid)
    assert step['source']['answerKeyText']==originals[qid]['answerKeyText']

@@ -737,6 +737,74 @@ WORKSHEETS={
 }
 
 
+def grid(start,moves,facing='up',cols=4,rows=4):
+    """A robot on a class-book grid: columns A, B, C... and rows 1, 2, 3...
+    counted from the bottom. start is a square name such as 'B2'; moves
+    (F, B, L, R) are the question's instructions, which the validator
+    follows to check the answer square."""
+    col=ord(start[0])-65; row=rows-int(start[1:])
+    return {'type':'grid','cols':cols,'rows':rows,'start':[col,row],'facing':facing,'labels':True,'moves':moves}
+
+
+def place(where,furniture='table'):
+    """A ball above, under, in front of or behind a table or a box."""
+    return {'type':'place','place':where,'thing':furniture,'color':'red'}
+
+
+def table(headings,rows):
+    return {'type':'table','headings':list(headings),'rows':[list(r) for r in rows]}
+
+
+TRANSPORT=table(['Transport','Children'],[['Car',3],['Bus',4],['Bike',2],['Walk',2]])
+NAMES=table(['Transport','Children'],[['Car','Ali, Mona, Omar'],['Bike','Sara, Yusuf']])
+
+
+# Owner request (23 October 2026): topics in the class book (Cambridge
+# Primary Mathematics Learner's Book 1, second edition) that the parent
+# companion leaves out. Book pages: unit 8 pp. 73-78 (pentagon, hexagon,
+# position words, grid squares), unit 15 pp. 161-167 (triangular prism,
+# square-based pyramid, rotating shapes, turning on a grid), unit 16
+# pp. 170-171 (lists and tables), unit 18 p. 189 (measuring tools, units).
+# The questions are ours; their IDs use `.book.`.
+BOOK={
+    8:[
+        single('What is this shape called?','pentagon',['pentagon','hexagon','square'],shape('pentagon',color='blue'),'It has 5 straight sides and 5 corners, so it is a pentagon.'),
+        write_number('How many straight sides does a hexagon have?',6,shape('hexagon',color='red'),'Count each side once: a hexagon has 6 straight sides and 6 corners.'),
+        single('Where is the ball?','above the table',['above the table','under the table','next to the table'],place('above'),'The ball is higher than the table top, so it is above the table.'),
+        single('Where is the ball?','under the table',['on the table','under the table','above the table'],place('under'),'The table top is over the ball, so the ball is under the table.'),
+        single('Where is the ball?','behind the box',['in front of the box','behind the box','next to the box'],place('behind','box'),'The box hides part of the ball, so the ball is behind the box.'),
+        single('The robot is in square B2. It goes 2 squares forwards. Which square is it in now?','B4',['B4','D2','B3'],grid('B2','FF'),'Forwards is up the grid: B2, then B3, then B4.'),
+    ],
+    15:[
+        single('What is this 3D shape called?','triangular prism',['triangular prism','pyramid','cuboid'],shape('prism',color='green'),'Its two ends are triangles joined by rectangles, so it is a triangular prism.'),
+        write_number('How many faces does a triangular prism have?',5,shape('prism',color='green'),'It has 2 triangle faces at the ends and 3 rectangle faces: 5 faces.'),
+        write_number('A square-based pyramid has a square at the bottom and triangles on the sides. How many faces does it have?',5,shape('pyramid',color='orange'),'1 square face and 4 triangle faces make 5 faces.'),
+        multiple('Which shapes look the same after a quarter turn?',['square','circle','rectangle'],['square','circle'],explanation='A square and a circle look the same when turned. A long rectangle stands up and looks different.',option_visuals={'square':shape('square',color='blue',height=70),'circle':shape('circle',color='green',height=70),'rectangle':shape('rectangle',color='orange',height=70)}),
+        single('The robot is in square A1, facing up. It turns right, then goes 2 squares forwards. Which square is it in now?','C1',['C1','A3','B2'],grid('A1','RFF'),'After turning right it faces along the row: A1, then B1, then C1.'),
+        single('Which shape has 6 straight sides?','hexagon',['pentagon','hexagon','triangle'],explanation='A hexagon has 6 straight sides; a pentagon has 5 and a triangle 3.',option_visuals={'pentagon':shape('pentagon',color='blue',height=70),'hexagon':shape('hexagon',color='red',height=70),'triangle':shape('triangle',color='yellow',height=70)}),
+    ],
+    16:[
+        write_number('Look at the table. How many children came to school by bus?',4,TRANSPORT,'Find Bus in the first column: the number next to it is 4.'),
+        single('Look at the table. How did most children come to school?','Bus',['Car','Bus','Bike','Walk'],TRANSPORT,'Bus has 4 children, more than any other row.'),
+        write_number('Look at the list. How many children came by car?',3,NAMES,'There are 3 names next to Car: Ali, Mona and Omar.'),
+        write_number('Look at the table. How many children are there altogether?',11,TRANSPORT,'Add the numbers: 3 + 4 + 2 + 2 = 11 children.'),
+    ],
+    18:[
+        single('Which tool tells you how hot it is today?','thermometer',['thermometer','ruler','scales'],explanation='A thermometer measures how hot or cold it is.',option_visuals={'thermometer':shape('thermometer',height=110),'ruler':thing('ruler',height=90),'scales':thing('scales',height=90)}),
+        single('Which tool measures how much water a watering can holds?','measuring jug',['measuring jug','thermometer','ruler'],explanation='A measuring jug has a scale for how much water it holds.',option_visuals={'measuring jug':shape('measuringJug',height=110),'thermometer':shape('thermometer',height=110),'ruler':thing('ruler',height=90)}),
+        single('Which tool measures how long a book is?','ruler',['scales','ruler','measuring jug'],explanation='A ruler measures length, so we use it for how long a book is.',option_visuals={'scales':thing('scales',height=90),'ruler':thing('ruler',height=90),'measuring jug':shape('measuringJug',height=110)}),
+        single("Ali's parcel is 3 hand spans long. Sara's parcel is 20 cubes long. Whose parcel is longer?","we cannot tell yet",["Ali's parcel","Sara's parcel","we cannot tell yet"],groups({**thing('parcel',height=110),'label':'Ali: 3 hand spans'},{**thing('parcel',height=110),'label':'Sara: 20 cubes'}),explanation='Hand spans and cubes are different sizes. Measure both parcels the same way first.'),
+    ],
+}
+
+
+def book_record(draft,unit,index,spec):
+    """A class-book topic question: the companion has no page for it."""
+    key=spec['correct']
+    text=', '.join(key) if isinstance(key,list) else str(key)
+    return {'id':f'math.u{unit:02d}.book.{index:02d}','sourcePages':draft['sourcePages'],'answerKeyPages':[],'answerKeyText':text}
+
+
 def sheet_record(draft,unit,index,spec):
     """A worksheet question's own record: no book page, the sum is its key."""
     key=spec['correct']
@@ -1070,7 +1138,7 @@ def playable_step(draft,record,spec,index,hint,explanation):
         'assessed':True,'objective':record['id'],
         'hint':words.get('hint') or spec.get('hint') or hint,'explanation':text,'shortExplanation':short,
         'source':source_ref(draft,record),'scene':'workshop',
-        'section':'Practice' if '.sheet.' in record['id'] else 'Challenge' if draft['kind']=='quiz' else 'Discover',
+        'section':'Practice' if '.sheet.' in record['id'] or '.book.' in record['id'] else 'Challenge' if draft['kind']=='quiz' else 'Discover',
         'playScene':'maths','theme':draft['id'],'adapted':True}
     if visual: step['mathVisual']=visual
     if options:
@@ -1168,6 +1236,8 @@ def build():
         if ident.startswith('math_unit_'):
             for i,spec in enumerate(WORKSHEETS.get(unit,[]),1):
                 steps.append(playable_step(draft,sheet_record(draft,unit,i,spec),spec,len(steps)+1,hint,''))
+            for i,spec in enumerate(BOOK.get(unit,[]),1):
+                steps.append(playable_step(draft,book_record(draft,unit,i,spec),spec,len(steps)+1,hint,''))
         # One home activity per goal, written for its question (teacher
         # review 5: every goal had the same "Discuss this question" text).
         goals=[{'objective':s['objective'],'text':question_text()[s['objective']]['home'],

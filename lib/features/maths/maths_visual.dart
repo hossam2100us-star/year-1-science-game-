@@ -107,7 +107,10 @@ class MathsVisual extends StatelessWidget {
         (data['height'] as num?)?.toDouble() ??
         switch (type) {
           'numberLine' => 100.0,
-          'robot' => 230.0,
+          'robot' || 'grid' => 230.0,
+          'place' => 180.0,
+          'table' =>
+            44.0 * ((data['rows'] as List? ?? const []).length + 1) + 8,
           'venn' => 190.0,
           'balance' => 184.0,
           'sky' => 140.0,
@@ -149,6 +152,9 @@ class MathsVisual extends StatelessWidget {
     'sky' => 'The sky',
     'venn' => 'A Venn diagram with two overlapping hoops',
     'robot' => 'A robot and a star on a grid',
+    'grid' => 'A robot on a grid with lettered columns and numbered rows',
+    'place' => 'A ball and a piece of furniture',
+    'table' => 'A table of information',
     'cycle' => 'Names in order around a circle',
     'podium' => 'A winners podium with first, second and third places',
     _ => 'Maths diagram',
@@ -492,8 +498,12 @@ class _MathsPainter extends CustomPainter {
         _sky(canvas, size);
       case 'venn':
         _venn(canvas, size);
-      case 'robot':
+      case 'robot' || 'grid':
         _robot(canvas, size);
+      case 'place':
+        _place(canvas, size);
+      case 'table':
+        _table(canvas, size);
       case 'cycle':
         _cycle(canvas, size);
       case 'podium':
@@ -1013,11 +1023,36 @@ class _MathsPainter extends CustomPainter {
   void _robot(Canvas canvas, Size size) {
     final cols = (data['cols'] as num? ?? 4).toInt();
     final rows = (data['rows'] as num? ?? 5).toInt();
-    final cell = math.min((size.width - 8) / cols, (size.height - 8) / rows);
-    final origin = Offset(
-      (size.width - cell * cols) / 2,
-      (size.height - cell * rows) / 2,
+    // A grid like the class book's: columns A, B, C... along the bottom and
+    // rows 1, 2, 3... up the side, counted from the bottom.
+    final labelled = data['labels'] == true;
+    final pad = labelled ? 26.0 : 0.0;
+    final cell = math.min(
+      (size.width - 8 - pad) / cols,
+      (size.height - 8 - pad) / rows,
     );
+    final origin = Offset(
+      (size.width - cell * cols + pad) / 2,
+      (size.height - cell * rows - pad) / 2,
+    );
+    if (labelled) {
+      for (var c = 0; c < cols; c++) {
+        _text(
+          canvas,
+          String.fromCharCode(65 + c),
+          origin + Offset((c + .5) * cell, rows * cell + 14),
+          size: 18,
+        );
+      }
+      for (var r = 0; r < rows; r++) {
+        _text(
+          canvas,
+          '${rows - r}',
+          origin + Offset(-14, (r + .5) * cell),
+          size: 18,
+        );
+      }
+    }
     Offset centre(Offset p) => origin + (p + const Offset(.5, .5)) * cell;
     Offset point(String key) {
       final p = (data[key] as List).cast<num>();
@@ -1116,9 +1151,12 @@ class _MathsPainter extends CustomPainter {
     // The star stays visible on top of routes that reach it, and beside the
     // robot once the robot has driven onto it.
     const gold = Color(0xFFE6B746);
-    final star = point('star');
-    final reached = (robot.$1 - star).distance < .05;
-    if (!reached) _star(canvas, centre(star), cell * .32, gold);
+    // A class-book grid has no star.
+    final hasStar = data['star'] != null;
+    final reached = hasStar && (robot.$1 - point('star')).distance < .05;
+    if (hasStar && !reached) {
+      _star(canvas, centre(point('star')), cell * .32, gold);
+    }
     final home = centre(robot.$1);
     final body = Rect.fromCenter(
       center: home,
@@ -1144,6 +1182,96 @@ class _MathsPainter extends CustomPainter {
     );
     if (reached) {
       _star(canvas, home + Offset(cell * .3, -cell * .3), cell * .2, gold);
+    }
+  }
+
+  /// A ball above, under, in front of or behind a table or a box (class
+  /// book unit 8: words for position).
+  void _place(Canvas canvas, Size size) {
+    final place = '${data['place']}';
+    final table = data['thing'] != 'box';
+    final floor = size.height - 10;
+    final w = math.min(size.width * .5, 220.0);
+    final left = (size.width - w) / 2;
+    final top = floor - size.height * .45;
+    final ballRadius = math.min(size.width, size.height) * .13;
+    final wood = const Color(0xFFB98552);
+    void ball(Offset at, {double scale = 1}) {
+      final rect = Rect.fromCircle(center: at, radius: ballRadius * scale);
+      canvas.drawCircle(at, ballRadius * scale, _material(_color, rect));
+      canvas.drawCircle(at, ballRadius * scale, _paint(dark, stroke: true));
+    }
+
+    void furniture() {
+      if (table) {
+        final board = Rect.fromLTWH(left, top, w, 14);
+        canvas.drawRect(board, _material(wood, board));
+        canvas.drawRect(board, _paint(dark, stroke: true));
+        for (final x in [left + 10, left + w - 22]) {
+          final leg = Rect.fromLTRB(x, top + 14, x + 12, floor);
+          canvas.drawRect(leg, _paint(wood));
+          canvas.drawRect(leg, _paint(dark, stroke: true));
+        }
+      } else {
+        final box = Rect.fromLTRB(left, top, left + w, floor);
+        canvas.drawRect(box, _material(const Color(0xFFD9A15B), box));
+        canvas.drawRect(box, _paint(dark, stroke: true));
+      }
+    }
+
+    canvas.drawLine(
+      Offset(8, floor),
+      Offset(size.width - 8, floor),
+      _paint(dark, stroke: true),
+    );
+    switch (place) {
+      case 'behind':
+        // Drawn first, so the box hides its lower part and the edge of the
+        // box cuts across it: it is behind, not on top.
+        ball(Offset(left + w - ballRadius * .2, top + ballRadius * .35));
+        furniture();
+      case 'in front':
+        furniture();
+        ball(Offset(left + w * .5, floor - ballRadius * 1.3), scale: 1.3);
+      case 'under':
+        furniture();
+        ball(Offset(left + w / 2, floor - ballRadius));
+      case 'next to':
+        furniture();
+        ball(Offset(left + w + ballRadius * 2, floor - ballRadius));
+      default: // above
+        furniture();
+        ball(Offset(left + w / 2, top - ballRadius * 2.4));
+    }
+  }
+
+  /// A small table of information: a heading row, then one row per item.
+  void _table(Canvas canvas, Size size) {
+    final headings = (data['headings'] as List).cast<Object>();
+    final rows = (data['rows'] as List).cast<List<Object?>>();
+    const rowHeight = 44.0;
+    final width = math.min(size.width - 8, 460.0);
+    final left = (size.width - width) / 2;
+    final columns = headings.length;
+    for (var r = 0; r <= rows.length; r++) {
+      final cells = r == 0 ? headings : rows[r - 1];
+      for (var c = 0; c < columns; c++) {
+        final rect = Rect.fromLTWH(
+          left + c * width / columns,
+          4 + r * rowHeight,
+          width / columns,
+          rowHeight,
+        );
+        canvas.drawRect(
+          rect,
+          _paint(r == 0 ? const Color(0xFFE3F0D6) : const Color(0xFFFFFAEE)),
+        );
+        canvas.drawRect(
+          rect,
+          _paint(const Color(0xFFA47745), stroke: true)..strokeWidth = 1.5,
+        );
+        _text(canvas, '${cells[c]}', rect.center, size: r == 0 ? 19 : 21);
+      }
     }
   }
 
@@ -1546,6 +1674,112 @@ class _MathsPainter extends CustomPainter {
       case 'square':
         canvas.drawRect(r, fill);
         canvas.drawRect(r, edge);
+      case 'pentagon' || 'hexagon':
+        final sides = shape == 'pentagon' ? 5 : 6;
+        final radius = r.shortestSide / 2;
+        final path = Path();
+        for (var i = 0; i < sides; i++) {
+          final angle = -math.pi / 2 + i * 2 * math.pi / sides;
+          final point =
+              r.center + Offset(math.cos(angle), math.sin(angle)) * radius;
+          if (i == 0) {
+            path.moveTo(point.dx, point.dy);
+          } else {
+            path.lineTo(point.dx, point.dy);
+          }
+        }
+        path.close();
+        canvas.drawPath(path, fill);
+        canvas.drawPath(path, edge);
+      case 'prism':
+        // A triangular prism lying down, like a tent: two triangle ends
+        // joined by rectangles.
+        final depth = Offset(r.width * .55, -r.height * .22);
+        final a = Offset(r.left, r.bottom);
+        final b = Offset(r.left + r.width * .45, r.bottom);
+        final c = Offset(r.left + r.width * .225, r.top + r.height * .38);
+        Path poly(List<Offset> points) {
+          final path = Path()..moveTo(points.first.dx, points.first.dy);
+          for (final p in points.skip(1)) {
+            path.lineTo(p.dx, p.dy);
+          }
+          return path..close();
+        }
+
+        final roof = poly([c, b, b + depth, c + depth]);
+        final front = poly([a, b, c]);
+        canvas.drawPath(roof, _material(Color.lerp(color, dark, .2)!, r));
+        canvas.drawPath(roof, edge);
+        canvas.drawPath(front, fill);
+        canvas.drawPath(front, edge);
+      case 'thermometer':
+        final tube = RRect.fromRectAndRadius(
+          Rect.fromCenter(
+            center: Offset(r.center.dx, r.top + r.height * .42),
+            width: r.width * .2,
+            height: r.height * .8,
+          ),
+          Radius.circular(r.width * .1),
+        );
+        final bulb = Offset(r.center.dx, r.bottom - r.width * .17);
+        canvas.drawRRect(tube, _paint(Colors.white));
+        canvas.drawRRect(tube, edge);
+        const red = Color(0xFFD0504B);
+        canvas.drawRect(
+          Rect.fromLTRB(
+            r.center.dx - r.width * .05,
+            r.top + r.height * .35,
+            r.center.dx + r.width * .05,
+            bulb.dy,
+          ),
+          _paint(red),
+        );
+        canvas.drawCircle(bulb, r.width * .17, _paint(red));
+        canvas.drawCircle(bulb, r.width * .17, edge);
+        for (var i = 0; i < 6; i++) {
+          final y = r.top + r.height * (.12 + i * .11);
+          canvas.drawLine(
+            Offset(tube.right + 3, y),
+            Offset(tube.right + r.width * .12, y),
+            _paint(dark, stroke: true)..strokeWidth = 2,
+          );
+        }
+      case 'measuringJug':
+        final body = Path()
+          ..moveTo(r.left + r.width * .18, r.top + r.height * .1)
+          ..lineTo(r.left + r.width * .72, r.top + r.height * .1)
+          ..lineTo(r.left + r.width * .68, r.bottom)
+          ..lineTo(r.left + r.width * .22, r.bottom)
+          ..close();
+        canvas.save();
+        canvas.clipPath(body);
+        canvas.drawRect(
+          Rect.fromLTRB(r.left, r.top + r.height * .45, r.right, r.bottom),
+          _paint(const Color(0xFF8CC8EE)),
+        );
+        canvas.restore();
+        canvas.drawPath(body, edge);
+        // The handle and the scale that make it a measuring jug.
+        canvas.drawArc(
+          Rect.fromLTWH(
+            r.left + r.width * .62,
+            r.top + r.height * .25,
+            r.width * .3,
+            r.height * .45,
+          ),
+          -math.pi / 2,
+          math.pi,
+          false,
+          _paint(dark, stroke: true)..strokeWidth = 5,
+        );
+        for (var i = 0; i < 4; i++) {
+          final y = r.top + r.height * (.25 + i * .18);
+          canvas.drawLine(
+            Offset(r.left + r.width * .24, y),
+            Offset(r.left + r.width * .36, y),
+            _paint(dark, stroke: true)..strokeWidth = 2,
+          );
+        }
       case 'pyramid':
         final apex = Offset(r.center.dx, r.top);
         final left = Offset(r.left, r.bottom - r.height * .15);

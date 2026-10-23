@@ -41,6 +41,9 @@ FORMER_HOME_QUESTIONS = {'math.u01.main.05','math.u01.main.08','math.u03.main.08
 # Worksheet questions (number line, written sums, number sentences) at the
 # end of the addition and subtraction units; not from the book.
 WORKSHEET_UNITS = {2:6, 11:6, 14:6}
+# Class-book topics the parent companion leaves out (owner request,
+# 23 October 2026): pentagons, position words, grids, prisms, tables, tools.
+BOOK_UNITS = {8:6, 15:6, 16:4, 18:4}
 SUM = re.compile(r'(\d+) ([+-]) (\d+) = \?')
 
 
@@ -81,7 +84,7 @@ def expect(books,qid,value):
 
 def visuals(value):
     if isinstance(value,dict):
-        if 'type' in value and value['type'] in {'count','shape','clock','chart','numberLine','pattern','fraction','groups','money','ruler','text','missing','balance','sky','venn','robot','carroll','cycle','podium','object'}:
+        if 'type' in value and value['type'] in {'count','shape','clock','chart','numberLine','pattern','fraction','groups','money','ruler','text','missing','balance','sky','venn','robot','carroll','cycle','podium','object','grid','place','table'}:
             yield value
         for child in value.values(): yield from visuals(child)
     elif isinstance(value,list):
@@ -112,7 +115,7 @@ def audit_visuals(book):
                 assert isinstance(visual['tickStep'],int) and visual['tickStep']>0
                 assert visual.get('axisMax',max(r['value'] for r in visual['rows'])) % visual['tickStep']==0
         elif kind=='shape':
-            assert visual['shape'] in ['circle','oval','triangle','square','rectangle','cube','cuboid','sphere','cylinder','cone','pyramid','car','house']
+            assert visual['shape'] in ['circle','oval','triangle','square','rectangle','cube','cuboid','sphere','cylinder','cone','pyramid','car','house','pentagon','hexagon','prism','thermometer','measuringJug']
         elif kind=='fraction':
             assert visual['parts'] in [2,4] and 0<=visual['shaded']<=visual['parts']
             assert isinstance(visual['equal'],bool)
@@ -136,6 +139,13 @@ def audit_visuals(book):
             assert visual['facing'] in ROBOT_FACINGS and visual['routes']
             assert all(0<=visual[k][0]<visual['cols'] and 0<=visual[k][1]<visual['rows'] for k in ['start','star'])
             assert all(set(route)<={'F','B','L','R'} for route in visual['routes'].values())
+        elif kind=='grid':
+            assert visual['facing'] in ROBOT_FACINGS and visual['labels'] is True and set(visual['moves'])<={'F','B','L','R'}
+            assert 0<=visual['start'][0]<visual['cols'] and 0<=visual['start'][1]<visual['rows']
+        elif kind=='place':
+            assert visual['place'] in ['above','under','in front','behind','next to'] and visual['thing'] in ['table','box']
+        elif kind=='table':
+            assert len(visual['headings'])==2 and visual['rows'] and all(len(r)==2 for r in visual['rows'])
         elif kind=='carroll':
             assert len(visual['columns'])>=2
             assert set(visual.get('placed',{}))<=set(visual['columns'])
@@ -290,7 +300,7 @@ def audit(check_idempotence=False,pdf_path=None):
     books={ident:read(CONTENT/'playable'/f'{ident}.json') for ident in EXPECTED_IDS}
     arabic=read(CONTENT/'maths_parent_ar.json')
     question_text=read(CONTENT/'maths_question_text.json')
-    question_ids=set(); step_ids=set(); free_ids=set(); sheet_ids=set(); assessed=0; total_steps=0; workshops=[]; numeric_positions=[]
+    question_ids=set(); step_ids=set(); free_ids=set(); sheet_ids=set(); book_ids=set(); assessed=0; total_steps=0; workshops=[]; numeric_positions=[]
     source_hash={d['sourceSha256'] for d in drafts.values()}; assert len(source_hash)==1
     for ident,book in books.items():
         draft=drafts[ident]; jsonschema.validate(book,schema)
@@ -324,6 +334,12 @@ def audit(check_idempotence=False,pdf_path=None):
                 assert step['source']['answerKeyPages']==[] and step['assessed'] and step['objective']==qid
                 assert step['kind'] in ('number-entry','number-sentence'),(step['id'],'worksheet kind')
                 sheet_ids.add(qid)
+            elif qid and '.book.' in qid:
+                unit=int(ident[-2:])
+                assert ident.startswith('math_unit_') and unit in BOOK_UNITS,(step['id'],'class book unit')
+                assert qid.startswith(f'math.u{unit:02d}.book.') and step['section']=='Practice'
+                assert step['source']['answerKeyPages']==[] and step['assessed'] and step['objective']==qid
+                book_ids.add(qid)
             elif qid:
                 assert qid in records; covered.add(qid)
                 assert step['source']['answerKeyText']==records[qid]['answerKeyText']
@@ -379,6 +395,12 @@ def audit(check_idempotence=False,pdf_path=None):
                 value=step['answer']['value']
                 # One answer (a string) or several (a list).
                 assert reach=={labels[i] for i in (value if isinstance(value,list) else [value])},(step['id'],'robot answer')
+            if visual.get('type')=='grid':
+                # The answer is the square the instructions lead to.
+                x,y=robot_end(visual,visual['moves'])
+                assert 0<=x<visual['cols'] and 0<=y<visual['rows'],(step['id'],'off the grid')
+                labels={o['id']:o['label'] for o in step['options']}
+                assert labels[step['answer']['value']]==f"{chr(65+x)}{visual['rows']-y}",(step['id'],'grid answer')
             if visual.get('type')=='numberLine' and 'from' in visual:
                 # Jumps stay on the line; where they land (or how far they go)
                 # is the correct answer.
@@ -393,8 +415,9 @@ def audit(check_idempotence=False,pdf_path=None):
                     assert labels[step['answer']['value']]==str(expected),(step['id'],'number line answer')
             if visual.get('type')=='carroll' and step['answer']['type']=='mapping':
                 assert visual['columns']==[t['label'] for t in step['targets']],(step['id'],'carroll')
-    sheets=sum(WORKSHEET_UNITS.values())
-    assert len(question_ids)==273 and not free_ids and len(sheet_ids)==sheets
+    sheets=sum(WORKSHEET_UNITS.values())+sum(BOOK_UNITS.values())
+    assert len(question_ids)==273 and not free_ids and len(sheet_ids)+len(book_ids)==sheets
+    assert len(book_ids)==sum(BOOK_UNITS.values())
     assert assessed==273+sheets and total_steps==292+sheets
     assert len([k for k in question_text if not k.startswith('_')])==273+sheets
     for ident,book in books.items():
@@ -440,7 +463,7 @@ def audit(check_idempotence=False,pdf_path=None):
         assert all_paths==list(CONTENT.rglob('*.json')),'Build changed the content file inventory'
         assert all(hashlib.sha256(p.read_bytes()).hexdigest()==digest for p,digest in before.items()),'Build is not idempotent or touched protected content'
         print('PASS repeat build is byte-for-byte identical; all existing Science content is unchanged.')
-    print(f'PASS Maths: 18 units, 3 quizzes, 9 chart questions; {len(question_ids)} sources and {len(sheet_ids)} worksheet questions, {assessed} assessed, 0 ungraded, {total_steps} steps; 19 workshops and 57 guided tasks.')
+    print(f'PASS Maths: 18 units, 3 quizzes, 9 chart questions; {len(question_ids)} sources and {len(sheet_ids)} worksheet and {len(book_ids)} class-book questions, {assessed} assessed, 0 ungraded, {total_steps} steps; 19 workshops and 57 guided tasks.')
 
 
 if __name__=='__main__':

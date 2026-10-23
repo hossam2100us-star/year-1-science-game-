@@ -1,5 +1,5 @@
 {
-  "_about": "Title, hint and (where rewritten) explanation for every assessed Maths question, read by scripts/build_maths_content.py (teacher review 5: one hint per unit, \"Maths discovery N\" titles, \"... is the answer.\" explanations). Keys are book question IDs. Since 21 October 2026 also the 15 former \"Try it at home\" questions and the worksheet questions (IDs with .sheet.).",
+  "_about": "Title, hint and (where rewritten) explanation for every assessed Maths question, read by scripts/build_maths_content.py (teacher review 5: one hint per unit, \"Maths discovery N\" titles, \"... is the answer.\" explanations). Keys are book question IDs. Since 21 October 2026 also the 15 former \"Try it at home\" questions and the worksheet questions (IDs with .sheet.). Since 23 October 2026 also class-book topics the companion leaves out (IDs with .book.).",
   "math.u01.main.01": {
     "title": "Counting apples",
     "hint": "Touch each apple once and say one number for each.",
@@ -1544,5 +1544,105 @@
     "title": "Skipping story",
     "hint": "Before lunch and after lunch join together, so use plus.",
     "home": "Count rope skips before and after a break, then write the number sentence together."
+  },
+  "math.u08.book.01": {
+    "title": "Name the pentagon",
+    "hint": "Count the straight sides. A pentagon has 5.",
+    "home": "Draw a house: a square with a pointed roof. Count its 5 sides together. It is a pentagon."
+  },
+  "math.u08.book.02": {
+    "title": "Hexagon sides",
+    "hint": "Touch each straight side once as you count.",
+    "home": "Look at a honeycomb picture or a hexagon nut. Count the 6 sides of one shape together."
+  },
+  "math.u08.book.03": {
+    "title": "Above the table",
+    "hint": "Is the ball higher than the table top, or lower?",
+    "home": "Hold a toy above the table, then put it under the table. Your child says where it is each time."
+  },
+  "math.u08.book.04": {
+    "title": "Under the table",
+    "hint": "Look at the table top. Is the ball over it or below it?",
+    "home": "Play hide and seek with a teddy: under the bed, under the table, under a chair. Say \"under\" each time."
+  },
+  "math.u08.book.05": {
+    "title": "Behind the box",
+    "hint": "Part of the ball is hidden. What is hiding it?",
+    "home": "Put a ball behind a box, then in front of it. Your child says \"behind\" or \"in front of\"."
+  },
+  "math.u08.book.06": {
+    "title": "Squares on a grid",
+    "hint": "Find B along the bottom and 2 up the side. Then move up one square at a time.",
+    "home": "Draw a 4 by 4 grid with A to D along the bottom and 1 to 4 up the side. Move a coin and name its square."
+  },
+  "math.u15.book.01": {
+    "title": "A tent shape",
+    "hint": "Look at the ends. Two triangles joined by rectangles make a prism.",
+    "home": "Fold a card into a tent. Count its faces together: 2 triangles and 3 rectangles."
+  },
+  "math.u15.book.02": {
+    "title": "Prism faces",
+    "hint": "Count the 2 triangle ends, then the 3 rectangle sides.",
+    "home": "Find a triangle-shaped chocolate box or make a paper tent. Put a sticker on each face as you count."
+  },
+  "math.u15.book.03": {
+    "title": "Pyramid faces",
+    "hint": "Count 1 square at the bottom and 4 triangles on the sides.",
+    "home": "Look at a picture of the Pyramids of Giza. Count the square base and the 4 triangle sides."
+  },
+  "math.u15.book.04": {
+    "title": "Turning shapes",
+    "hint": "Picture each shape turned onto its side. Does it look the same?",
+    "home": "Cut out a square and a long rectangle. Turn each a quarter turn and talk about which looks the same."
+  },
+  "math.u15.book.05": {
+    "title": "Turn and move",
+    "hint": "Turn first. Then count the squares one at a time.",
+    "home": "Give your child instructions like a robot: turn right, 2 steps forwards. Then swap turns."
+  },
+  "math.u15.book.06": {
+    "title": "Six sides",
+    "hint": "Count the sides of each shape. Which one has 6?",
+    "home": "Make shapes with straws or sticks: a triangle, a pentagon and a hexagon. Count the sides of each."
+  },
+  "math.u16.book.01": {
+    "title": "Read the table",
+    "hint": "Find Bus in the first column. Read the number next to it.",
+    "home": "Ask the family how they travel to school or work. Write a table together and read it back."
+  },
+  "math.u16.book.02": {
+    "title": "Most in the table",
+    "hint": "Look at the numbers. Which one is the largest?",
+    "home": "Make a table of the fruit at home. Ask which fruit there is most of."
+  },
+  "math.u16.book.03": {
+    "title": "Count a list",
+    "hint": "Count the names next to Car, one at a time.",
+    "home": "Write a list of who likes tea and who likes juice. Count the names in each part."
+  },
+  "math.u16.book.04": {
+    "title": "Table total",
+    "hint": "Add all the numbers in the table: 3 + 4 + 2 + 2.",
+    "home": "Count the cups, plates and spoons on the table. Write them in a table and add them up."
+  },
+  "math.u18.book.01": {
+    "title": "How hot is it?",
+    "hint": "One tool has a red line that goes up when it is hot.",
+    "home": "Look at a thermometer together, or the temperature on a phone. Talk about hot and cold days."
+  },
+  "math.u18.book.02": {
+    "title": "Measuring water",
+    "hint": "Which tool has a scale for water?",
+    "home": "Fill a measuring jug at the sink. Pour it into cups and talk about how much water it holds."
+  },
+  "math.u18.book.03": {
+    "title": "How long is it?",
+    "hint": "Which tool measures length?",
+    "home": "Measure a book and a spoon with a ruler. Which one is longer?"
+  },
+  "math.u18.book.04": {
+    "title": "Same units",
+    "hint": "Is a hand span the same size as a cube?",
+    "home": "Measure a table with your hand spans and your child measures it with theirs. Why are the numbers different?"
   }
 }

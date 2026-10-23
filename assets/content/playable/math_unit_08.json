@@ -1344,6 +1344,330 @@
           }
         ]
       }
+    },
+    {
+      "id": "math_unit_08.step.015",
+      "kind": "tap-choice",
+      "title": "Name the pentagon",
+      "prompt": "What is this shape called?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "hexagon",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "pentagon",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "square",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u08.book.01",
+      "hint": "Count the straight sides. A pentagon has 5.",
+      "explanation": "It has 5 straight sides and 5 corners, so it is a pentagon.",
+      "shortExplanation": "It has 5 straight sides and 5 corners, so it is a pentagon.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.book.01",
+        "answerKeyPages": [],
+        "answerKeyText": "pentagon",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "pentagon",
+        "color": "blue"
+      }
+    },
+    {
+      "id": "math_unit_08.step.016",
+      "kind": "number-entry",
+      "title": "Hexagon sides",
+      "prompt": "How many straight sides does a hexagon have?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 6
+      },
+      "assessed": true,
+      "objective": "math.u08.book.02",
+      "hint": "Touch each straight side once as you count.",
+      "explanation": "Count each side once: a hexagon has 6 straight sides and 6 corners.",
+      "shortExplanation": "Count each side once: a hexagon has 6 straight sides and 6 corners.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.book.02",
+        "answerKeyPages": [],
+        "answerKeyText": "6",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "hexagon",
+        "color": "red"
+      }
+    },
+    {
+      "id": "math_unit_08.step.017",
+      "kind": "tap-choice",
+      "title": "Above the table",
+      "prompt": "Where is the ball?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "above the table",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "under the table",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "next to the table",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u08.book.03",
+      "hint": "Is the ball higher than the table top, or lower?",
+      "explanation": "The ball is higher than the table top, so it is above the table.",
+      "shortExplanation": "The ball is higher than the table top, so it is above the table.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.book.03",
+        "answerKeyPages": [],
+        "answerKeyText": "above the table",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true,
+      "mathVisual": {
+        "type": "place",
+        "place": "above",
+        "thing": "table",
+        "color": "red"
+      }
+    },
+    {
+      "id": "math_unit_08.step.018",
+      "kind": "tap-choice",
+      "title": "Under the table",
+      "prompt": "Where is the ball?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "above the table",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "under the table",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "on the table",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u08.book.04",
+      "hint": "Look at the table top. Is the ball over it or below it?",
+      "explanation": "The table top is over the ball, so the ball is under the table.",
+      "shortExplanation": "The table top is over the ball, so the ball is under the table.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.book.04",
+        "answerKeyPages": [],
+        "answerKeyText": "under the table",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true,
+      "mathVisual": {
+        "type": "place",
+        "place": "under",
+        "thing": "table",
+        "color": "red"
+      }
+    },
+    {
+      "id": "math_unit_08.step.019",
+      "kind": "tap-choice",
+      "title": "Behind the box",
+      "prompt": "Where is the ball?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "next to the box",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "in front of the box",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "behind the box",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u08.book.05",
+      "hint": "Part of the ball is hidden. What is hiding it?",
+      "explanation": "The box hides part of the ball, so the ball is behind the box.",
+      "shortExplanation": "The box hides part of the ball, so the ball is behind the box.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.book.05",
+        "answerKeyPages": [],
+        "answerKeyText": "behind the box",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true,
+      "mathVisual": {
+        "type": "place",
+        "place": "behind",
+        "thing": "box",
+        "color": "red"
+      }
+    },
+    {
+      "id": "math_unit_08.step.020",
+      "kind": "tap-choice",
+      "title": "Squares on a grid",
+      "prompt": "The robot is in square B2. It goes 2 squares forwards. Which square is it in now?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "D2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "B4",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "B3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u08.book.06",
+      "hint": "Find B along the bottom and 2 up the side. Then move up one square at a time.",
+      "explanation": "Forwards is up the grid: B2, then B3, then B4.",
+      "shortExplanation": "Forwards is up the grid: B2, then B3, then B4.",
+      "source": {
+        "pages": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "questionId": "math.u08.book.06",
+        "answerKeyPages": [],
+        "answerKeyText": "B4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_08",
+      "adapted": true,
+      "mathVisual": {
+        "type": "grid",
+        "cols": 4,
+        "rows": 4,
+        "start": [
+          1,
+          2
+        ],
+        "facing": "up",
+        "labels": true,
+        "moves": "FF"
+      }
     }
   ],
   "stickers": [
@@ -1629,6 +1953,108 @@
       "objective": "math.u08.choice.05",
       "text": "Collect solid things from the kitchen (a tin, a box, an orange). Your child holds each and says it is a 3D shape.",
       "textAr": "هاتوا حاجات مجسّمة من المطبخ (علبة صفيح، علبة كرتون، برتقانة). طفلك يمسك كل واحدة ويقول إنها شكل ثلاثي الأبعاد.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.book.01",
+      "text": "Draw a house: a square with a pointed roof. Count its 5 sides together. It is a pentagon.",
+      "textAr": "ارسموا بيت: مربع وفوقه سقف مدبب. عدّوا الـ5 أضلاع مع بعض، ده شكل خماسي.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.book.02",
+      "text": "Look at a honeycomb picture or a hexagon nut. Count the 6 sides of one shape together.",
+      "textAr": "بصّوا على صورة خلية نحل أو صامولة سداسية، وعدّوا الـ6 أضلاع بتوع الشكل مع بعض.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.book.03",
+      "text": "Hold a toy above the table, then put it under the table. Your child says where it is each time.",
+      "textAr": "امسك لعبة فوق الترابيزة، وبعدين حطها تحتها. طفلك يقول هي فين كل مرة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.book.04",
+      "text": "Play hide and seek with a teddy: under the bed, under the table, under a chair. Say \"under\" each time.",
+      "textAr": "العبوا استغماية بدبدوب: تحت السرير، تحت الترابيزة، تحت الكرسي. قولوا «تحت» كل مرة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.book.05",
+      "text": "Put a ball behind a box, then in front of it. Your child says \"behind\" or \"in front of\".",
+      "textAr": "حط كورة ورا كرتونة، وبعدين قدّامها. طفلك يقول «ورا» أو «قدّام».",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u08.book.06",
+      "text": "Draw a 4 by 4 grid with A to D along the bottom and 1 to 4 up the side. Move a coin and name its square.",
+      "textAr": "ارسموا شبكة 4 في 4، تحت الحروف من A لـ D وعلى الجنب الأرقام من 1 لـ 4. حرّكوا عملة وقولوا اسم المربع.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
