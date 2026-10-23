@@ -80,7 +80,7 @@
 2. ارفع جواه:
    - `docker-compose.yml` (من الفولدر ده في المشروع)
    - `db.env` و`api.env` (أنا هجهّزهم بعد ما تبعتلي الاسم، **ودول سريين**)
-   - فولدر `downloads` (فيه `index.html`، وأنا هحط جنبه `science-adventure.apk`)
+   - فولدر `downloads` (فيه `index.html` و`version.json`، وأنا هحط جنبهم `science-adventure.apk`). مع كل APK جديد بيترفع `version.json` الجديد **في الآخر**، لأنه هو اللي بيخلّي البرنامج على الموبايلات يقول إن فيه نسخة جديدة.
    - واعمل جوه `science-adventure` فولدرين فاضيين: `backups`، و`data` وجواه `postgres` (Container Manager مش بيعملهم لوحده، والتشغيل بيفشل من غيرهم)
 3. افتح `api.env` بـ **Text Editor** وكمّل:
    - `SMTP_URL=smtps://hossam2100us%40gmail.com:XXXXXXXXXXXXXXXX@smtp.gmail.com:465`

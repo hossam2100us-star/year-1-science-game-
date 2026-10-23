@@ -7,6 +7,7 @@ import '../data/account/account_controller.dart';
 import '../l10n/parent_strings.dart';
 import 'account_panel.dart';
 import 'parent_section.dart';
+import 'update_banner.dart';
 
 /// The first page each time the app opens until a parent signs in (owner's
 /// decision, 16 October 2026): sign in to the parent account, or continue
@@ -83,6 +84,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       return ParentPage(
         arabic: arabic,
         children: [
+          const UpdateBanner(),
           Wrap(
             spacing: 16,
             runSpacing: 12,
@@ -107,6 +109,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     return ParentPage(
       arabic: arabic,
       children: [
+        const UpdateBanner(),
         title,
         const SizedBox(height: 12),
         Text(l.loginBody),

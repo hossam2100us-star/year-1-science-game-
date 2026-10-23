@@ -164,6 +164,30 @@ abstract class AppLocalizations {
   /// **'Children on this device'**
   String get parentAreaChildrenOnDevice;
 
+  /// No description provided for @parentAreaUpdatesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'App updates'**
+  String get parentAreaUpdatesTitle;
+
+  /// No description provided for @parentAreaUpdatesCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'Look for a new version when the app opens'**
+  String get parentAreaUpdatesCheck;
+
+  /// No description provided for @parentAreaUpdatesNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Only the newest version number is read from the family server. Nothing about your children is sent.'**
+  String get parentAreaUpdatesNote;
+
+  /// No description provided for @parentAreaVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'This version: {name}'**
+  String parentAreaVersion(String name);
+
   /// No description provided for @parentAreaChildAndAppearance.
   ///
   /// In en, this message translates to:
@@ -467,7 +491,7 @@ abstract class AppLocalizations {
   /// No description provided for @voiceSettingsMenuNamesVaryInstallingVoice.
   ///
   /// In en, this message translates to:
-  /// **'Menu names vary. Installing voice data in system settings needs internet once; the game has no internet permission.'**
+  /// **'Menu names vary. Installing voice data in system settings needs internet once; after that the voices work offline.'**
   String get voiceSettingsMenuNamesVaryInstallingVoice;
 
   /// No description provided for @unitReportOpenUnitForPractice.
@@ -732,7 +756,7 @@ abstract class AppLocalizations {
   /// No description provided for @accountDeviceOnlyBody.
   ///
   /// In en, this message translates to:
-  /// **'Children and their progress are saved on this device only. The app does not connect to the Internet.'**
+  /// **'Children and their progress are saved on this device only. Nothing about them is sent; the app only looks for a new version, which you can turn off in Settings.'**
   String get accountDeviceOnlyBody;
 
   /// No description provided for @accountWhyTitle.

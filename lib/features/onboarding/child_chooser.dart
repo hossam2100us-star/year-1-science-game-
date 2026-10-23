@@ -6,6 +6,7 @@ import '../../core/providers.dart';
 import '../../core/mascot.dart';
 import '../../core/widgets.dart';
 import '../../parent/parent_gate.dart';
+import '../../parent/update_banner.dart';
 import 'profile_editor.dart';
 
 class ChildChooser extends ConsumerStatefulWidget {
@@ -71,6 +72,7 @@ class _ChildChooserState extends ConsumerState<ChildChooser> {
         maxWidth: 950,
         child: Column(
           children: [
+            const UpdateBanner(),
             if (Navigator.of(context).canPop())
               Align(
                 alignment: Alignment.centerLeft,

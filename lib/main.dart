@@ -22,6 +22,7 @@ import 'data/db/connection.dart';
 import 'data/drift_progress_store.dart';
 import 'data/sync/sync_controller.dart';
 import 'data/sync/sync_store.dart';
+import 'data/update/app_update.dart';
 import 'features/onboarding/profile_editor.dart';
 import 'features/world/subject_hub.dart';
 import 'features/onboarding/child_chooser.dart';
@@ -181,6 +182,8 @@ class _AdventureHomeState extends ConsumerState<AdventureHome>
     _pastLogin = ref.read(accountProvider).signedIn;
     ref.read(narrationProvider).initialize();
     _timer = Timer.periodic(const Duration(seconds: 10), (_) => _tick());
+    // A newer APK on the family server? Never waited for (ADR-0020).
+    unawaited(ref.read(updateProvider.notifier).start());
   }
 
   late final AppController _controller;

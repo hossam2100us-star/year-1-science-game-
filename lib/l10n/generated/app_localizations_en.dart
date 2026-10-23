@@ -45,6 +45,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get parentAreaChildrenOnDevice => 'Children on this device';
 
   @override
+  String get parentAreaUpdatesTitle => 'App updates';
+
+  @override
+  String get parentAreaUpdatesCheck =>
+      'Look for a new version when the app opens';
+
+  @override
+  String get parentAreaUpdatesNote =>
+      'Only the newest version number is read from the family server. Nothing about your children is sent.';
+
+  @override
+  String parentAreaVersion(String name) {
+    return 'This version: $name';
+  }
+
+  @override
   String get parentAreaChildAndAppearance => 'Child and appearance';
 
   @override
@@ -217,7 +233,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get voiceSettingsMenuNamesVaryInstallingVoice =>
-      'Menu names vary. Installing voice data in system settings needs internet once; the game has no internet permission.';
+      'Menu names vary. Installing voice data in system settings needs internet once; after that the voices work offline.';
 
   @override
   String get unitReportOpenUnitForPractice => 'Open unit for practice';
@@ -399,7 +415,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get accountDeviceOnlyBody =>
-      'Children and their progress are saved on this device only. The app does not connect to the Internet.';
+      'Children and their progress are saved on this device only. Nothing about them is sent; the app only looks for a new version, which you can turn off in Settings.';
 
   @override
   String get accountWhyTitle => 'A parent account';
