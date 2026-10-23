@@ -319,3 +319,22 @@ Findings and what changed in the package afterwards:
   - `downloads/science-adventure.apk` with its `.sha256`, and `downloads/version.json` (9, 0.6.1), uploaded last;
   - 0.6.0 moved to `previous/0.6.0+8`;
   - symbols in `symbols/0.6.1+9`.
+
+## School years, stage 1 (ADR-0021), 2026-10-23
+
+- App:
+  - `flutter analyze --fatal-infos` and `dart format` are clean.
+  - 553 tests pass, including:
+    - `test/school_years_test.dart`: the list of years, the child's year, the subjects screen, the parent area;
+    - `test/sync/school_year_sync_test.dart`: a server from before school years, the year on two devices, Year 2 progress;
+    - the schema 2 → 3 upgrade in `test/data/schema_migration_test.dart`.
+  - Goldens: the subjects screen (tablet and phone) and parent Settings were updated after a visual check. The only change is the new year line; the phone image still shows Maths loading, as before.
+- Server:
+  - 37 unit and 78 end-to-end tests pass on a real PostgreSQL 17. Two of the end-to-end tests are new: the school year through sync and through the children API.
+  - The new migration applies, and `prisma migrate diff` finds no difference.
+  - Type check, lint, Prettier and the OpenAPI lint are clean.
+- Emulator, in-place upgrade from 0.6.1 (schema 2, release key, x86_64 build):
+  - The child, and Maths unit 1 at step 6 / 14 with its answer, are kept.
+  - The subjects screen shows "Year 1 • سنة أولى".
+  - Settings shows the school year with the note that other years will appear there.
+  - No errors in the log.

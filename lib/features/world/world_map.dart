@@ -79,7 +79,7 @@ class _WorldMapState extends ConsumerState<WorldMap> {
     final data = ref.watch(appProvider),
         profile = data.profile!,
         catalog = widget.catalogue ?? ref.watch<Catalog>(catalogProvider),
-        progress = data.progressForSubject(catalog.subject);
+        progress = data.progressForSubject(catalog.progressKey);
     return Scaffold(
       backgroundColor: const Color(0xFFD4ECE9),
       body: SafeArea(
@@ -205,7 +205,7 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                       onPressed: () => Navigator.of(context).push(
                         MaterialPageRoute<void>(
                           builder: (_) =>
-                              StickerAlbum(subject: catalog.subject),
+                              StickerAlbum(subject: catalog.progressKey),
                         ),
                       ),
                       icon: const Icon(Icons.auto_awesome_rounded),
@@ -330,7 +330,7 @@ class IslandScreen extends ConsumerWidget {
     final catalog = catalogue ?? ref.watch<Catalog>(catalogProvider),
         island = catalog.islands[index],
         data = ref.watch(appProvider),
-        progress = data.progressForSubject(catalog.subject);
+        progress = data.progressForSubject(catalog.progressKey);
     final color = Color(island.color),
         locked = !preview && !catalog.islandUnlocked(index, data);
     return Scaffold(

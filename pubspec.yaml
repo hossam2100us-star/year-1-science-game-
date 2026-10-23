@@ -37,6 +37,8 @@ flutter:
   assets:
     - assets/content/catalog.json
     - assets/content/maths_catalog.json
+    # The school years and their subjects (ADR-0021).
+    - assets/content/years.json
     # Arabic for the parent report's activities (teacher review 4, T4-5e).
     - assets/content/parent_ar.json
     - assets/content/playable/

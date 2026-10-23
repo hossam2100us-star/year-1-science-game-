@@ -34,6 +34,7 @@ class SyncOutbox {
     'gender': profile.gender.name,
     'avatar': profile.avatar,
     'palette': profile.palette.name,
+    'schoolYear': profile.schoolYear,
   };
 
   static Map<String, dynamic> attemptPayload(
@@ -116,8 +117,16 @@ class SyncOutbox {
     'entity': 'child',
     'op': 'create',
     'id': childId,
-    'payload': {...fields, 'settings': settings},
+    'payload': {..._withoutYearOne(fields), 'settings': settings},
   });
+
+  /// A child in Year 1 is created without `schoolYear`: servers from before
+  /// school years refuse fields they do not know, and every server takes a
+  /// child without one as Year 1 (ADR-0021). A changed year is always sent.
+  static Map<String, dynamic> _withoutYearOne(Map<String, dynamic> fields) => {
+    for (final e in fields.entries)
+      if (!(e.key == 'schoolYear' && e.value == 'y1')) e.key: e.value,
+  };
 
   Future<void> childPatch(
     String childId, {
@@ -132,10 +141,10 @@ class SyncOutbox {
     baseVersion,
     fold: (create) => {
       ...create,
-      'payload': {
+      'payload': _withoutYearOne({
         ...Map<String, dynamic>.from(create['payload'] as Map),
         ...changed,
-      },
+      }),
     },
     create: childKey(childId),
   );

@@ -101,6 +101,21 @@ class AppLocalizationsAr extends AppLocalizations {
   String get parentAreaMathsResultsRetry => 'جرّب تفتح نتايج الرياضيات تاني';
 
   @override
+  String get parentAreaSchoolYear => 'السنة الدراسية';
+
+  @override
+  String parentAreaSchoolYearOnlyOne(String year) {
+    return '$year. السنين الدراسية التانية هتظهر هنا لما تتضاف.';
+  }
+
+  @override
+  String get parentAreaSchoolYearNote =>
+      'كل سنة تقدّمها محفوظ لوحده، والطفل يقدر يرجع للسنين اللي فاتت يراجع.';
+
+  @override
+  String get parentAreaResultsRetry => 'جرّب تفتح النتايج دي تاني';
+
+  @override
   String get parentAreaMathsGuideRetry => 'جرّب تفتح دليل الرياضيات تاني';
 
   @override

@@ -50,12 +50,15 @@ export const DisplayName = z
   .max(24)
   .regex(/^[\p{L}\p{M} '’-]*$/u, 'only letters, spaces, hyphens and apostrophes');
 export const Avatar = z.number().int().min(0).max(2);
+/** `y1`, `y2`, ... (ADR-0021). Apps from before school years send none. */
+export const SchoolYear = z.string().regex(/^y[0-9]{1,2}$/);
 
 export const ChildFields = z.strictObject({
   displayName: DisplayName,
   gender: Gender,
   avatar: Avatar,
   palette: Palette,
+  schoolYear: SchoolYear.optional(),
 });
 export type ChildFields = z.infer<typeof ChildFields>;
 
@@ -65,6 +68,7 @@ export const ChildPatch = z
     gender: Gender.optional(),
     avatar: Avatar.optional(),
     palette: Palette.optional(),
+    schoolYear: SchoolYear.optional(),
   })
   .refine((p) => Object.keys(p).length > 0, { message: 'at least one field' });
 export type ChildPatch = z.infer<typeof ChildPatch>;
@@ -206,6 +210,7 @@ export const UpdateChildRequest = z
     gender: Gender.optional(),
     avatar: Avatar.optional(),
     palette: Palette.optional(),
+    schoolYear: SchoolYear.optional(),
     baseVersion: z.number().int().min(1),
   })
   .refine((p) => Object.keys(p).length > 1, { message: 'at least one field' });

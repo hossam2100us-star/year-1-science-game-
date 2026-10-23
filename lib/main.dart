@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'content/catalog.dart';
+import 'content/school_years.dart';
 import 'core/design.dart';
 import 'core/diagnostics/app_log.dart';
 import 'core/ids.dart';
@@ -84,6 +85,14 @@ Future<void> _launch(Widget app) async {
     );
     return;
   }
+  // The school years (ADR-0021). Year 1 is built in, so a problem with the
+  // list never stops the app.
+  var years = SchoolYears.builtIn;
+  try {
+    years = await SchoolYears.load();
+  } catch (error, stack) {
+    AppLog.error('startup', 'Reading the school years failed', error, stack);
+  }
   final AccountSetup account;
   if (store case DriftProgressStore(:final db, :final deviceId)) {
     account = await AccountSetup.load(DatabaseAccountPrefs(db), deviceId);
@@ -96,6 +105,7 @@ Future<void> _launch(Widget app) async {
       overrides: [
         storeProvider.overrideWithValue(store),
         catalogProvider.overrideWithValue(catalog),
+        schoolYearsProvider.overrideWithValue(years),
         accountSetupProvider.overrideWithValue(account),
       ],
       child: app,

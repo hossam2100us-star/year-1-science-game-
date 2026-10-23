@@ -82,7 +82,13 @@ class SyncStore {
   static const lastSyncKey = 'sync.last';
   static const issuesKey = 'sync.issues';
 
-  static const _childFields = ['displayName', 'gender', 'avatar', 'palette'];
+  static const _childFields = [
+    'displayName',
+    'gender',
+    'avatar',
+    'palette',
+    'schoolYear',
+  ];
 
   /// The name rules of the server contract (`DisplayName`).
   static final _syncableName = RegExp(r"^[\p{L}\p{M} '’\-]*$", unicode: true);
@@ -210,12 +216,14 @@ class SyncStore {
     // If the account already has this child (linked before), the create
     // changes nothing there: these settings replace the account's.
     await outbox.settingsReplace(id, settings);
+    // Every curriculum the child has played (Year 1 Science first).
+    final others = (await progress.curricula(id)).toList()
+      ..remove(currentCurriculum)
+      ..sort();
     final attempts = [
       ...await progress.attemptRows(id),
-      ...await ProgressRepository(
-        db,
-        curriculum: mathsCurriculum,
-      ).attemptRows(id),
+      for (final curriculum in others)
+        ...await ProgressRepository(db, curriculum: curriculum).attemptRows(id),
     ];
     for (final a in attempts) {
       await outbox.attemptCreate(
@@ -258,6 +266,7 @@ class SyncStore {
     'gender': row.gender,
     'avatar': row.avatar,
     'palette': row.palette,
+    'schoolYear': row.schoolYear,
   };
 
   Future<void> _setChild(String id, ChildrenCompanion values) =>
@@ -647,6 +656,10 @@ class SyncStore {
               gender: Value(data['gender'] as String),
               avatar: Value(data['avatar'] as int),
               palette: Value(data['palette'] as String),
+              // A server older than school years sends none: Year 1.
+              schoolYear: Value(
+                ChildProfile.schoolYearFrom(data['schoolYear']),
+              ),
               sortOrder: (last.read(db.children.sortOrder.max()) ?? -1) + 1,
               version: Value(version),
               syncStatus: const Value('linked'),
@@ -674,8 +687,10 @@ class SyncStore {
     final keep = _localFields(pending);
     final local = _fieldsOf(row);
     final next = {
-      for (final f in _childFields) f: keep.contains(f) ? local[f] : data[f],
+      for (final f in _childFields)
+        f: keep.contains(f) || !data.containsKey(f) ? local[f] : data[f],
     };
+    next['schoolYear'] = ChildProfile.schoolYearFrom(next['schoolYear']);
     final differs = _childFields.any((f) => next[f] != local[f]);
     await _setChild(
       id,
@@ -685,6 +700,7 @@ class SyncStore {
         gender: Value(next['gender'] as String),
         avatar: Value(next['avatar'] as int),
         palette: Value(next['palette'] as String),
+        schoolYear: Value(next['schoolYear'] as String),
       ),
     );
     return differs;

@@ -435,7 +435,8 @@ export class SyncService {
         SELECT 'child' AS entity, c.change_seq, jsonb_build_object(
             'id', c.id, 'version', c.version, 'deleted', c.deleted_at IS NOT NULL,
             'data', CASE WHEN c.deleted_at IS NULL THEN jsonb_build_object(
-              'displayName', c.display_name, 'gender', c.gender, 'avatar', c.avatar, 'palette', c.palette) END
+              'displayName', c.display_name, 'gender', c.gender, 'avatar', c.avatar, 'palette', c.palette,
+              'schoolYear', COALESCE(c.school_year, 'y1')) END
           ) AS payload
         FROM child_profiles c WHERE c.user_id = ${userId}::uuid AND c.change_seq > ${since}
         UNION ALL

@@ -86,6 +86,18 @@ class $ChildrenTable extends Children with TableInfo<$ChildrenTable, ChildRow> {
     requiredDuringInsert: false,
     defaultValue: const Constant('automatic'),
   );
+  static const VerificationMeta _schoolYearMeta = const VerificationMeta(
+    'schoolYear',
+  );
+  @override
+  late final GeneratedColumn<String> schoolYear = GeneratedColumn<String>(
+    'school_year',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('y1'),
+  );
   static const VerificationMeta _pendingPhotoMeta = const VerificationMeta(
     'pendingPhoto',
   );
@@ -156,6 +168,7 @@ class $ChildrenTable extends Children with TableInfo<$ChildrenTable, ChildRow> {
     gender,
     avatar,
     palette,
+    schoolYear,
     pendingPhoto,
     sortOrder,
     version,
@@ -218,6 +231,12 @@ class $ChildrenTable extends Children with TableInfo<$ChildrenTable, ChildRow> {
       context.handle(
         _paletteMeta,
         palette.isAcceptableOrUnknown(data['palette']!, _paletteMeta),
+      );
+    }
+    if (data.containsKey('school_year')) {
+      context.handle(
+        _schoolYearMeta,
+        schoolYear.isAcceptableOrUnknown(data['school_year']!, _schoolYearMeta),
       );
     }
     if (data.containsKey('pending_photo')) {
@@ -294,6 +313,10 @@ class $ChildrenTable extends Children with TableInfo<$ChildrenTable, ChildRow> {
         DriftSqlType.string,
         data['${effectivePrefix}palette'],
       )!,
+      schoolYear: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}school_year'],
+      )!,
       pendingPhoto: attachedDatabase.typeMapping.read(
         DriftSqlType.bool,
         data['${effectivePrefix}pending_photo'],
@@ -336,6 +359,10 @@ class ChildRow extends DataClass implements Insertable<ChildRow> {
   final String gender;
   final int avatar;
   final String palette;
+
+  /// The school year the parent chose (`y1`, `y2`, ...; ADR-0021). Added in
+  /// schema 3; children saved before are in Year 1.
+  final String schoolYear;
   final bool pendingPhoto;
   final int sortOrder;
   final int version;
@@ -349,6 +376,7 @@ class ChildRow extends DataClass implements Insertable<ChildRow> {
     required this.gender,
     required this.avatar,
     required this.palette,
+    required this.schoolYear,
     required this.pendingPhoto,
     required this.sortOrder,
     required this.version,
@@ -367,6 +395,7 @@ class ChildRow extends DataClass implements Insertable<ChildRow> {
     map['gender'] = Variable<String>(gender);
     map['avatar'] = Variable<int>(avatar);
     map['palette'] = Variable<String>(palette);
+    map['school_year'] = Variable<String>(schoolYear);
     map['pending_photo'] = Variable<bool>(pendingPhoto);
     map['sort_order'] = Variable<int>(sortOrder);
     map['version'] = Variable<int>(version);
@@ -386,6 +415,7 @@ class ChildRow extends DataClass implements Insertable<ChildRow> {
       gender: Value(gender),
       avatar: Value(avatar),
       palette: Value(palette),
+      schoolYear: Value(schoolYear),
       pendingPhoto: Value(pendingPhoto),
       sortOrder: Value(sortOrder),
       version: Value(version),
@@ -407,6 +437,7 @@ class ChildRow extends DataClass implements Insertable<ChildRow> {
       gender: serializer.fromJson<String>(json['gender']),
       avatar: serializer.fromJson<int>(json['avatar']),
       palette: serializer.fromJson<String>(json['palette']),
+      schoolYear: serializer.fromJson<String>(json['schoolYear']),
       pendingPhoto: serializer.fromJson<bool>(json['pendingPhoto']),
       sortOrder: serializer.fromJson<int>(json['sortOrder']),
       version: serializer.fromJson<int>(json['version']),
@@ -425,6 +456,7 @@ class ChildRow extends DataClass implements Insertable<ChildRow> {
       'gender': serializer.toJson<String>(gender),
       'avatar': serializer.toJson<int>(avatar),
       'palette': serializer.toJson<String>(palette),
+      'schoolYear': serializer.toJson<String>(schoolYear),
       'pendingPhoto': serializer.toJson<bool>(pendingPhoto),
       'sortOrder': serializer.toJson<int>(sortOrder),
       'version': serializer.toJson<int>(version),
@@ -441,6 +473,7 @@ class ChildRow extends DataClass implements Insertable<ChildRow> {
     String? gender,
     int? avatar,
     String? palette,
+    String? schoolYear,
     bool? pendingPhoto,
     int? sortOrder,
     int? version,
@@ -454,6 +487,7 @@ class ChildRow extends DataClass implements Insertable<ChildRow> {
     gender: gender ?? this.gender,
     avatar: avatar ?? this.avatar,
     palette: palette ?? this.palette,
+    schoolYear: schoolYear ?? this.schoolYear,
     pendingPhoto: pendingPhoto ?? this.pendingPhoto,
     sortOrder: sortOrder ?? this.sortOrder,
     version: version ?? this.version,
@@ -473,6 +507,9 @@ class ChildRow extends DataClass implements Insertable<ChildRow> {
       gender: data.gender.present ? data.gender.value : this.gender,
       avatar: data.avatar.present ? data.avatar.value : this.avatar,
       palette: data.palette.present ? data.palette.value : this.palette,
+      schoolYear: data.schoolYear.present
+          ? data.schoolYear.value
+          : this.schoolYear,
       pendingPhoto: data.pendingPhoto.present
           ? data.pendingPhoto.value
           : this.pendingPhoto,
@@ -495,6 +532,7 @@ class ChildRow extends DataClass implements Insertable<ChildRow> {
           ..write('gender: $gender, ')
           ..write('avatar: $avatar, ')
           ..write('palette: $palette, ')
+          ..write('schoolYear: $schoolYear, ')
           ..write('pendingPhoto: $pendingPhoto, ')
           ..write('sortOrder: $sortOrder, ')
           ..write('version: $version, ')
@@ -513,6 +551,7 @@ class ChildRow extends DataClass implements Insertable<ChildRow> {
     gender,
     avatar,
     palette,
+    schoolYear,
     pendingPhoto,
     sortOrder,
     version,
@@ -530,6 +569,7 @@ class ChildRow extends DataClass implements Insertable<ChildRow> {
           other.gender == this.gender &&
           other.avatar == this.avatar &&
           other.palette == this.palette &&
+          other.schoolYear == this.schoolYear &&
           other.pendingPhoto == this.pendingPhoto &&
           other.sortOrder == this.sortOrder &&
           other.version == this.version &&
@@ -545,6 +585,7 @@ class ChildrenCompanion extends UpdateCompanion<ChildRow> {
   final Value<String> gender;
   final Value<int> avatar;
   final Value<String> palette;
+  final Value<String> schoolYear;
   final Value<bool> pendingPhoto;
   final Value<int> sortOrder;
   final Value<int> version;
@@ -559,6 +600,7 @@ class ChildrenCompanion extends UpdateCompanion<ChildRow> {
     this.gender = const Value.absent(),
     this.avatar = const Value.absent(),
     this.palette = const Value.absent(),
+    this.schoolYear = const Value.absent(),
     this.pendingPhoto = const Value.absent(),
     this.sortOrder = const Value.absent(),
     this.version = const Value.absent(),
@@ -574,6 +616,7 @@ class ChildrenCompanion extends UpdateCompanion<ChildRow> {
     this.gender = const Value.absent(),
     this.avatar = const Value.absent(),
     this.palette = const Value.absent(),
+    this.schoolYear = const Value.absent(),
     this.pendingPhoto = const Value.absent(),
     required int sortOrder,
     this.version = const Value.absent(),
@@ -592,6 +635,7 @@ class ChildrenCompanion extends UpdateCompanion<ChildRow> {
     Expression<String>? gender,
     Expression<int>? avatar,
     Expression<String>? palette,
+    Expression<String>? schoolYear,
     Expression<bool>? pendingPhoto,
     Expression<int>? sortOrder,
     Expression<int>? version,
@@ -607,6 +651,7 @@ class ChildrenCompanion extends UpdateCompanion<ChildRow> {
       if (gender != null) 'gender': gender,
       if (avatar != null) 'avatar': avatar,
       if (palette != null) 'palette': palette,
+      if (schoolYear != null) 'school_year': schoolYear,
       if (pendingPhoto != null) 'pending_photo': pendingPhoto,
       if (sortOrder != null) 'sort_order': sortOrder,
       if (version != null) 'version': version,
@@ -624,6 +669,7 @@ class ChildrenCompanion extends UpdateCompanion<ChildRow> {
     Value<String>? gender,
     Value<int>? avatar,
     Value<String>? palette,
+    Value<String>? schoolYear,
     Value<bool>? pendingPhoto,
     Value<int>? sortOrder,
     Value<int>? version,
@@ -639,6 +685,7 @@ class ChildrenCompanion extends UpdateCompanion<ChildRow> {
       gender: gender ?? this.gender,
       avatar: avatar ?? this.avatar,
       palette: palette ?? this.palette,
+      schoolYear: schoolYear ?? this.schoolYear,
       pendingPhoto: pendingPhoto ?? this.pendingPhoto,
       sortOrder: sortOrder ?? this.sortOrder,
       version: version ?? this.version,
@@ -672,6 +719,9 @@ class ChildrenCompanion extends UpdateCompanion<ChildRow> {
     if (palette.present) {
       map['palette'] = Variable<String>(palette.value);
     }
+    if (schoolYear.present) {
+      map['school_year'] = Variable<String>(schoolYear.value);
+    }
     if (pendingPhoto.present) {
       map['pending_photo'] = Variable<bool>(pendingPhoto.value);
     }
@@ -703,6 +753,7 @@ class ChildrenCompanion extends UpdateCompanion<ChildRow> {
           ..write('gender: $gender, ')
           ..write('avatar: $avatar, ')
           ..write('palette: $palette, ')
+          ..write('schoolYear: $schoolYear, ')
           ..write('pendingPhoto: $pendingPhoto, ')
           ..write('sortOrder: $sortOrder, ')
           ..write('version: $version, ')
@@ -4425,6 +4476,7 @@ typedef $$ChildrenTableCreateCompanionBuilder = ChildrenCompanion Function({
   Value<String> gender,
   Value<int> avatar,
   Value<String> palette,
+  Value<String> schoolYear,
   Value<bool> pendingPhoto,
   required int sortOrder,
   Value<int> version,
@@ -4440,6 +4492,7 @@ typedef $$ChildrenTableUpdateCompanionBuilder = ChildrenCompanion Function({
   Value<String> gender,
   Value<int> avatar,
   Value<String> palette,
+  Value<String> schoolYear,
   Value<bool> pendingPhoto,
   Value<int> sortOrder,
   Value<int> version,
@@ -4602,6 +4655,11 @@ class $$ChildrenTableFilterComposer
 
   ColumnFilters<String> get palette => $composableBuilder(
     column: $table.palette,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get schoolYear => $composableBuilder(
+    column: $table.schoolYear,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -4825,6 +4883,11 @@ class $$ChildrenTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get schoolYear => $composableBuilder(
+    column: $table.schoolYear,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<bool> get pendingPhoto => $composableBuilder(
     column: $table.pendingPhoto,
     builder: (column) => ColumnOrderings(column),
@@ -4884,6 +4947,11 @@ class $$ChildrenTableAnnotationComposer
 
   GeneratedColumn<String> get palette =>
       $composableBuilder(column: $table.palette, builder: (column) => column);
+
+  GeneratedColumn<String> get schoolYear => $composableBuilder(
+    column: $table.schoolYear,
+    builder: (column) => column,
+  );
 
   GeneratedColumn<bool> get pendingPhoto => $composableBuilder(
     column: $table.pendingPhoto,
@@ -5097,6 +5165,7 @@ class $$ChildrenTableTableManager
                 Value<String> gender = const Value.absent(),
                 Value<int> avatar = const Value.absent(),
                 Value<String> palette = const Value.absent(),
+                Value<String> schoolYear = const Value.absent(),
                 Value<bool> pendingPhoto = const Value.absent(),
                 Value<int> sortOrder = const Value.absent(),
                 Value<int> version = const Value.absent(),
@@ -5111,6 +5180,7 @@ class $$ChildrenTableTableManager
                 gender: gender,
                 avatar: avatar,
                 palette: palette,
+                schoolYear: schoolYear,
                 pendingPhoto: pendingPhoto,
                 sortOrder: sortOrder,
                 version: version,
@@ -5127,6 +5197,7 @@ class $$ChildrenTableTableManager
                 Value<String> gender = const Value.absent(),
                 Value<int> avatar = const Value.absent(),
                 Value<String> palette = const Value.absent(),
+                Value<String> schoolYear = const Value.absent(),
                 Value<bool> pendingPhoto = const Value.absent(),
                 required int sortOrder,
                 Value<int> version = const Value.absent(),
@@ -5141,6 +5212,7 @@ class $$ChildrenTableTableManager
                 gender: gender,
                 avatar: avatar,
                 palette: palette,
+                schoolYear: schoolYear,
                 pendingPhoto: pendingPhoto,
                 sortOrder: sortOrder,
                 version: version,

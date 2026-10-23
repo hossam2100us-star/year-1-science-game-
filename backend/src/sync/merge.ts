@@ -62,12 +62,16 @@ export function mergeFields<T extends Record<string, unknown>>(
   return { next, applied, conflicts, overwritten };
 }
 
-/** Child profile: name and gender are identity; avatar and colours are low value. */
+/**
+ * Child profile: name and gender are identity; avatar, colours and the
+ * school year (a parent's later choice wins, ADR-0021) are low value.
+ */
 export const CHILD_RULES = {
   displayName: 'identity',
   gender: 'identity',
   avatar: 'lastReceived',
   palette: 'lastReceived',
+  schoolYear: 'lastReceived',
 } as const satisfies Record<string, FieldRule>;
 
 /** Settings are all low value: the later change wins and the old value is audited. */

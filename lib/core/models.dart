@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import '../content/curriculum.dart';
 import 'adventure_progress.dart';
 import 'ids.dart';
 
@@ -17,18 +18,29 @@ class ChildProfile {
     this.avatar = 0,
     this.photo,
     this.palette = PaletteChoice.automatic,
+    this.schoolYear = 'y1',
   });
   final String name;
   final ChildGender gender;
   final int avatar;
   final Uint8List? photo;
   final PaletteChoice palette;
-  ChildProfile copyWith({String? name, ChildGender? gender}) => ChildProfile(
+
+  /// The school year the parent chose (`y1`, `y2`, ...; ADR-0021). Children
+  /// saved before years existed are in Year 1.
+  final String schoolYear;
+  ChildProfile copyWith({
+    String? name,
+    ChildGender? gender,
+    PaletteChoice? palette,
+    String? schoolYear,
+  }) => ChildProfile(
     name: name ?? this.name,
     gender: gender ?? this.gender,
     avatar: avatar,
     photo: photo,
-    palette: palette,
+    palette: palette ?? this.palette,
+    schoolYear: schoolYear ?? this.schoolYear,
   );
   String get guideName => gender == ChildGender.girl ? 'Zizi' : 'Zizo';
   String get greeting =>
@@ -39,7 +51,13 @@ class ChildProfile {
     'avatar': avatar,
     'photo': photo == null ? null : base64Encode(photo!),
     'palette': palette.name,
+    'schoolYear': schoolYear,
   };
+
+  /// A school year ID as saved, or Year 1 when it is missing or not one.
+  static String schoolYearFrom(Object? value) =>
+      value is String && schoolYearPattern.hasMatch(value) ? value : 'y1';
+
   factory ChildProfile.fromJson(Map<String, dynamic> json) => ChildProfile(
     name: json['name'] as String? ?? '',
     gender: ChildGender.values.byName(json['gender'] as String? ?? 'boy'),
@@ -48,6 +66,7 @@ class ChildProfile {
     palette: PaletteChoice.values.byName(
       json['palette'] as String? ?? 'automatic',
     ),
+    schoolYear: schoolYearFrom(json['schoolYear']),
   );
 }
 
@@ -290,8 +309,10 @@ class AppData {
     savedChildren: savedChildren,
     quarantinedChildren: quarantinedChildren,
     otherSubjects: {
+      // Every subject's progress goes (Year 1 Maths, later years); other
+      // saved records stay.
       for (final entry in otherSubjects.entries)
-        if (entry.key != 'maths') entry.key: entry.value,
+        if (curriculumOfKey(entry.key) == null) entry.key: entry.value,
     },
   );
 

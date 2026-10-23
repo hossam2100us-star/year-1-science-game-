@@ -39,6 +39,17 @@
   "parentAreaUnitAssessment": "Unit assessment",
   "parentAreaStarsRewardEffortAndCompletion": "Stars reward effort and completion. Understanding uses first decisions before hints. Predictions and free play are not graded.",
   "parentAreaMathsResultsRetry": "Try opening the Maths results again",
+  "parentAreaSchoolYear": "School year",
+  "parentAreaSchoolYearOnlyOne": "{year}. Other school years will appear here when they are added.",
+  "@parentAreaSchoolYearOnlyOne": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "parentAreaSchoolYearNote": "Each year keeps its own progress. The child can still go back to earlier years to review.",
+  "parentAreaResultsRetry": "Try opening these results again",
   "parentAreaMathsGuideRetry": "Try opening the Maths guide again",
   "parentAreaTimeOnTheChildScreens": "Time on the child screens",
   "parentAreaNoTimeRecordedYet": "No time recorded yet",

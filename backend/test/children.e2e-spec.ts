@@ -35,6 +35,31 @@ describe('Children, settings and reports', () => {
     expect(list.body.items).toHaveLength(1);
   });
 
+  it('answers with the school year: Year 1 unless the parent chose another (ADR-0021)', async () => {
+    const body = childBody();
+    const created = await h.call('POST', '/api/v1/children', { token: p.token, body });
+    expect(created.body).toMatchObject({ id: body.id, schoolYear: 'y1' });
+    const moved = await h.call('PATCH', `/api/v1/children/${body.id}`, {
+      token: p.token,
+      body: { schoolYear: 'y2', baseVersion: 1 },
+    });
+    expect(moved.status).toBe(200);
+    expect(moved.body).toMatchObject({ schoolYear: 'y2', displayName: 'Nour', version: 2 });
+    const bad = await h.call('PATCH', `/api/v1/children/${body.id}`, {
+      token: p.token,
+      body: { schoolYear: 'second', baseVersion: 2 },
+    });
+    expect(bad.status).toBe(400);
+    const second = childBody();
+    const made = await h.call('POST', '/api/v1/children', {
+      token: p.token,
+      body: { ...second, schoolYear: 'y3' },
+    });
+    expect(made.status).toBe(201);
+    const list = await h.call('GET', '/api/v1/children', { token: p.token });
+    expect(list.body.items.map((c: { schoolYear: string }) => c.schoolYear)).toEqual(['y2', 'y3']);
+  });
+
   it('creates default settings with the child, or the settings given', async () => {
     const a = childBody();
     await h.call('POST', '/api/v1/children', { token: p.token, body: a });

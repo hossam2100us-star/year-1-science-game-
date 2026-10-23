@@ -499,3 +499,53 @@ page view (time, the first three parts of the IP address, the path). The
 in-app text about device-only mode and the README now say that the app
 looks for a new version. The banner first appears once families have an
 APK with the check (0.6.1) and a newer `version.json` is published.
+
+---
+
+## ADR-0021 — School years above the subjects
+
+**Status:** accepted (owner decisions, 23 October 2026); stage 1 (the app
+and server ready for more years, no new content) on `feature/school-years`.
+
+**Context.** The app has Year 1 Science and Maths. The owner wants room for
+later school years, with the current content under Year 1. Progress was
+already kept per curriculum (`y1.science`, `y1.maths`; AUD-023) on the
+device and on the server.
+
+**Decision.**
+- *The list of years.* `assets/content/years.json` lists each year (`y1`,
+  `y2`, ...) with its subjects: a curriculum ID `<year>.<kind>` (kind
+  `science` or `maths`, which decides how the lessons look) and its catalog
+  file. Year 1 is also built into the app (`SchoolYears.builtIn`, kept equal
+  to the file by a test), so a problem with the file never stops the app.
+- *Progress.* Year 1 keeps the keys it always had in the app's data
+  (`science` in the main fields, `maths` among the other subjects), so no
+  saved progress moves. Every later curriculum is kept under its own ID
+  (`y2.science`) in the same tables, synced like Year 1 Maths. A catalog or
+  lesson of a later year names its `curriculum`; Year 1 ones do not need to.
+  Lesson IDs stay unique across all years (later years use a prefix such as
+  `y2_unit_01`). Rows of a curriculum an older app does not know stay
+  stored and are never deleted by it.
+- *The child's year* (`ChildProfile.schoolYear`) is chosen by the parent in
+  the parent area. Children saved before school years are in Year 1. With
+  one year in the app it is only shown ("Year 1 • سنة أولى" on the child's
+  subjects screen and in Settings); the choice appears by itself when a
+  second year is listed. A year set by a newer app that this one does not
+  have shows the nearest earlier year.
+- *Earlier years.* A child in Year 2 or later can open "Earlier years •
+  السنين اللي فاتت" to review; each year keeps its own progress, and the
+  parent's results show the child's year first, then the earlier ones.
+- *Database.* Schema 3 adds `children.school_year` (default `y1`); every row
+  is kept. The server adds a nullable `child_profiles.school_year` (null:
+  Year 1) with a check, accepts `schoolYear` on create and patch (optional),
+  always answers with it, and lets the later change win (like the colours).
+- *Compatibility.* The server refuses fields it does not know, so the app
+  sends `schoolYear` only when it is not Year 1, or when it changes. Year 1
+  children therefore keep syncing with a server from before school years,
+  and apps from before school years keep working with the new server.
+
+**Consequences.** Adding a year needs only content: the catalogs and lesson
+files with their curriculum, and an entry in `years.json` (see
+`docs/CONTENT_SCHEMA.md`). Update the family server before the first APK
+that lets a parent choose a later year. The app's guide tab still shows
+Year 1's guides; a later year adds its own with its content.

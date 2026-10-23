@@ -30,6 +30,7 @@ class ChildRepository {
           gender: Value((profile?.gender ?? ChildGender.boy).name),
           avatar: Value(profile?.avatar ?? 0),
           palette: Value((profile?.palette ?? PaletteChoice.automatic).name),
+          schoolYear: Value(profile?.schoolYear ?? 'y1'),
           pendingPhoto: Value(pendingPhoto),
           sortOrder: sortOrder,
           updatedAt: DateTime.now().toUtc(),
@@ -235,6 +236,22 @@ class ProgressRepository {
       );
     }
     return result;
+  }
+
+  /// Every curriculum this child has attempts or journeys in (any
+  /// repository can answer; it does not filter by its own curriculum).
+  Future<Set<String>> curricula(String childId) async {
+    final attempts = db.selectOnly(db.unitAttempts, distinct: true)
+      ..addColumns([db.unitAttempts.curriculum])
+      ..where(db.unitAttempts.childId.equals(childId));
+    final journeys = db.selectOnly(db.journeys, distinct: true)
+      ..addColumns([db.journeys.curriculum])
+      ..where(db.journeys.childId.equals(childId));
+    return {
+      for (final row in await attempts.get())
+        row.read(db.unitAttempts.curriculum)!,
+      for (final row in await journeys.get()) row.read(db.journeys.curriculum)!,
+    };
   }
 
   Future<void> putJourney(

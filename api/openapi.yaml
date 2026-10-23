@@ -855,6 +855,13 @@ components:
     Palette:
       type: string
       enum: [automatic, ocean, berry, forest]
+    SchoolYear:
+      type: string
+      pattern: '^y[0-9]{1,2}$'
+      examples: [y1]
+      description: >-
+        The school year the parent chose (ADR-0021). Optional when sent: a
+        child without one is in Year 1, and responses always include it.
     DisplayName:
       type: string
       maxLength: 24
@@ -868,6 +875,7 @@ components:
         gender: { $ref: '#/components/schemas/Gender' }
         avatar: { type: integer, minimum: 0, maximum: 2 }
         palette: { $ref: '#/components/schemas/Palette' }
+        schoolYear: { $ref: '#/components/schemas/SchoolYear' }
     ChildPatch:
       type: object
       minProperties: 1
@@ -876,6 +884,7 @@ components:
         gender: { $ref: '#/components/schemas/Gender' }
         avatar: { type: integer, minimum: 0, maximum: 2 }
         palette: { $ref: '#/components/schemas/Palette' }
+        schoolYear: { $ref: '#/components/schemas/SchoolYear' }
     Settings:
       type: object
       required: [arabic, breakMinutes, sound, music, narration, volume, boyVoice, girlVoice]

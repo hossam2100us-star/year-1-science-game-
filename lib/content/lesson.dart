@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
+import 'curriculum.dart';
+
 class PictureItem {
   PictureItem.fromJson(Map<String, dynamic> j)
     : id = j['id'],
@@ -91,6 +93,13 @@ class Lesson {
   String get id => json['id'];
   String get title => json['title'];
   String get subject => json['subject'] as String? ?? 'science';
+
+  /// Year 1 lessons name only their subject; later years also carry their
+  /// curriculum (`y2.science`, ADR-0021).
+  String get curriculum => json['curriculum'] as String? ?? 'y1.$subject';
+
+  /// Where this lesson's attempts and journeys are kept in the app's data.
+  String get progressKey => progressKeyOf(curriculum);
   bool get quiz => json['quiz'] == true;
   int get version => json['contentVersion'];
   List<Map<String, dynamic>> get stickers =>

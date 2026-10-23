@@ -110,6 +110,9 @@ model ChildProfile {
   gender      String?
   avatar      Int?
   palette     String?
+  /// The school year the parent chose (`y1`, `y2`, ...; ADR-0021). Null on a
+  /// tombstone and on children saved before school years: Year 1.
+  schoolYear  String?   @map("school_year")
   version     Int       @default(1)
   changeSeq   BigInt    @default(0) @map("change_seq")
   createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
