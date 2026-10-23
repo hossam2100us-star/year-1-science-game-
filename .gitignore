@@ -28,3 +28,6 @@ test/goldens/failures/
 
 # Node tooling
 node_modules/
+
+# Owner's school books (copyrighted scans and guides): never commit them.
+curriculum/**/*.pdf
