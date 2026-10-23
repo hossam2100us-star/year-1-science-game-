@@ -642,17 +642,54 @@
     },
     {
       "id": "math_unit_06.step.009",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "With an adult, draw something you do in the afternoon. Tell them about it.",
-      "options": [],
+      "kind": "tap-choice",
+      "title": "Afternoon time",
+      "prompt": "It is the afternoon. Which of these do you do in the afternoon?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "sleep in bed",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "bed"
+            ]
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "play in the park after lunch",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "football"
+            ]
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "eat breakfast",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "bowl"
+            ]
+          }
+        }
+      ],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Think about your day, or line up the ends before comparing.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u06.main.08",
+      "hint": "Afternoon comes after lunch. Breakfast is in the morning.",
+      "explanation": "After lunch is the afternoon. We eat breakfast in the morning and sleep at night.",
+      "shortExplanation": "After lunch is the afternoon. We eat breakfast in the morning and sleep at night.",
       "source": {
         "pages": [
           21,
@@ -667,13 +704,13 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_06",
       "adapted": true,
-      "parentReview": {
-        "en": "Any real afternoon activity: coming home, lunch, playing, homework.",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      "mathVisual": {
+        "type": "sky",
+        "time": "afternoon"
       }
     },
     {
@@ -1153,6 +1190,22 @@
       "adapted": true
     },
     {
+      "objective": "math.u06.main.08",
+      "text": "Your child draws something they do in the afternoon and tells you about it.",
+      "textAr": "خلّي طفلك يرسم حاجة بيعملها بعد الضهر ويحكيلك عنها.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        21,
+        22,
+        23
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
       "objective": "math.u06.choice.01",
       "text": "Look out of the window at night and find the Moon. Talk about when we see the Moon and the stars.",
       "textAr": "بصّوا من الشباك بالليل ودوّروا على القمر. اتكلموا إمتى بنشوف القمر والنجوم.",
@@ -1234,7 +1287,7 @@
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }

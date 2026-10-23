@@ -28,9 +28,35 @@ bool matchesAnswer(Map<String, dynamic> answer, dynamic value) {
       return expected.entries.every(
         (e) => canonical(value[e.key]) == canonical(e.value),
       );
+    case 'number':
+      return value is String && int.tryParse(value) == expected;
+    case 'sentence':
+      return value is Map && sentenceMatches(Map.from(expected), value);
     default:
       throw FormatException('Unknown answer type: ${answer['type']}');
   }
+}
+
+/// A written number sentence: the same numbers, sign and result. An
+/// addition may be written either way round (9 + 6 = 15 or 6 + 9 = 15).
+bool sentenceMatches(
+  Map<Object?, Object?> expected,
+  Map<Object?, Object?> value,
+) {
+  String at(Map<Object?, Object?> m, String key) => '${m[key] ?? ''}'.trim();
+  final same = [
+    'a',
+    'op',
+    'b',
+    'c',
+  ].every((k) => at(value, k) == at(expected, k));
+  final swapped =
+      at(expected, 'op') == '+' &&
+      at(value, 'op') == '+' &&
+      at(value, 'a') == at(expected, 'b') &&
+      at(value, 'b') == at(expected, 'a') &&
+      at(value, 'c') == at(expected, 'c');
+  return same || swapped;
 }
 
 class QuestionEngine {

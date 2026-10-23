@@ -431,17 +431,20 @@
     },
     {
       "id": "math_unit_01.step.006",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "With an adult, draw 9 circles on paper. Count them together.",
+      "kind": "number-entry",
+      "title": "Count the circles",
+      "prompt": "Count the circles. Write how many there are.",
       "options": [],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Touch each object once, then remember the last number.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "number",
+        "value": 9
+      },
+      "assessed": true,
+      "objective": "math.u01.main.05",
+      "hint": "Touch each circle once. The last number you say is how many.",
+      "explanation": "Count each circle once. The last number you say is 9, so there are 9 circles.",
+      "shortExplanation": "Count each circle once. The last number you say is 9, so there are 9 circles.",
       "source": {
         "pages": [
           4,
@@ -457,13 +460,15 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_01",
       "adapted": true,
-      "parentReview": {
-        "en": "Nine circles. Count them with him; check he didn't draw 10.",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      "mathVisual": {
+        "type": "count",
+        "count": 9,
+        "item": "dot",
+        "arrangement": "row"
       }
     },
     {
@@ -620,17 +625,20 @@
     },
     {
       "id": "math_unit_01.step.009",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "Count something in your room with an adult. What did you count, and how many?",
+      "kind": "number-entry",
+      "title": "Toy cars in a room",
+      "prompt": "Sara counted the toy cars in her room. How many toy cars are there?",
       "options": [],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Touch each object once, then remember the last number.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "number",
+        "value": 7
+      },
+      "assessed": true,
+      "objective": "math.u01.main.08",
+      "hint": "Count each car once, even when the cars are spread out.",
+      "explanation": "Sara counts each car once, even when they are spread out. There are 7 toy cars.",
+      "shortExplanation": "Sara counts each car once, even when they are spread out. There are 7 toy cars.",
       "source": {
         "pages": [
           4,
@@ -646,13 +654,15 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_01",
       "adapted": true,
-      "parentReview": {
-        "en": "Any real object and a correct count, e.g. \"I counted my cars, there were 9.\"",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      "mathVisual": {
+        "type": "count",
+        "count": 7,
+        "item": "car",
+        "arrangement": "scattered"
       }
     },
     {
@@ -1094,6 +1104,23 @@
       "adapted": true
     },
     {
+      "objective": "math.u01.main.05",
+      "text": "Draw 9 circles on paper together. Your child counts them, touching each one once, and checks there are not 10.",
+      "textAr": "ارسموا ٩ دواير على ورقة مع بعض. طفلك يعدّهم وهو بيلمس كل دايرة مرة واحدة، ويتأكد إنهم مش ١٠.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
       "objective": "math.u01.main.06",
       "text": "Put 6 cups close together and count them. Spread them out across the table and count again: still 6.",
       "textAr": "حطّوا ٦ كوبايات جنب بعض وعدّوهم. فرّقوهم على الترابيزة وعدّوا تاني: لسه ٦.",
@@ -1114,6 +1141,23 @@
       "objective": "math.u01.main.07",
       "text": "Write 12, 21 and 2 on cards. Say \"twelve\" and ask your child to pick the right card: a 1, then a 2.",
       "textAr": "اكتبوا ١٢ و٢١ و٢ على كروت. قولوا «اتناشر» وطفلك يختار الكارت الصح: ١ وبعده ٢.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u01.main.08",
+      "text": "Count something real in your child's room together, such as toy cars or books. Ask: what did you count, and how many?",
+      "textAr": "عدّوا حاجة حقيقية في أوضة طفلك مع بعض، زي العربيات اللعب أو الكتب. اسأله: عدّيت إيه، وكام؟",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
@@ -1214,7 +1258,7 @@
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }

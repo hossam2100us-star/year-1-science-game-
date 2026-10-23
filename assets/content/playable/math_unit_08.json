@@ -515,17 +515,177 @@
     },
     {
       "id": "math_unit_08.step.005",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "Make your own repeating pattern with two shapes on paper. Repeat the part at least twice.",
-      "options": [],
+      "kind": "tap-choice",
+      "title": "A pattern that repeats",
+      "prompt": "Which row is a repeating pattern of two shapes?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "pattern",
+            "items": [
+              {
+                "type": "shape",
+                "shape": "circle",
+                "color": "red",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "square",
+                "color": "blue",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "square",
+                "color": "blue",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "triangle",
+                "color": "yellow",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "circle",
+                "color": "red",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "triangle",
+                "color": "yellow",
+                "height": 40,
+                "width": 40
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "pattern",
+            "items": [
+              {
+                "type": "shape",
+                "shape": "circle",
+                "color": "red",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "square",
+                "color": "blue",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "circle",
+                "color": "red",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "square",
+                "color": "blue",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "circle",
+                "color": "red",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "square",
+                "color": "blue",
+                "height": 40,
+                "width": 40
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "pattern",
+            "items": [
+              {
+                "type": "shape",
+                "shape": "triangle",
+                "color": "yellow",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "circle",
+                "color": "red",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "circle",
+                "color": "red",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "square",
+                "color": "blue",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "triangle",
+                "color": "yellow",
+                "height": 40,
+                "width": 40
+              },
+              {
+                "type": "shape",
+                "shape": "square",
+                "color": "blue",
+                "height": 40,
+                "width": 40
+              }
+            ]
+          }
+        }
+      ],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Say the repeating part aloud. Turning changes where you face.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u08.main.04",
+      "hint": "Find the part that repeats. Does it come again and again?",
+      "explanation": "In b the part circle, square comes again and again: it repeats three times.",
+      "shortExplanation": "In b the part circle, square comes again and again: it repeats three times.",
       "source": {
         "pages": [
           28,
@@ -541,14 +701,10 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_08",
-      "adapted": true,
-      "parentReview": {
-        "en": "Any pattern where a part clearly repeats at least twice.",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
-      }
+      "adapted": true
     },
     {
       "id": "math_unit_08.step.006",
@@ -1317,6 +1473,23 @@
       "adapted": true
     },
     {
+      "objective": "math.u08.main.04",
+      "text": "Make a repeating pattern with two kinds of objects, such as spoons and cups. Repeat the part at least twice.",
+      "textAr": "اعملوا نمط بيتكرر من نوعين حاجات، زي معالق وكبايات. كرروا الجزء مرتين على الأقل.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
       "objective": "math.u08.main.05",
       "text": "Walk 3 steps forwards and 1 step back together. Count how many steps from the start you are.",
       "textAr": "امشوا ٣ خطوات لقدّام وخطوة لورا مع بعض. عدّوا إنتو بعيد عن البداية كام خطوة.",
@@ -1471,7 +1644,7 @@
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }

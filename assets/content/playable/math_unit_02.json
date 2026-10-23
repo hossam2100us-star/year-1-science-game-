@@ -977,6 +977,287 @@
           }
         ]
       }
+    },
+    {
+      "id": "math_unit_02.step.015",
+      "kind": "number-entry",
+      "title": "Jump forward",
+      "prompt": "Start at 4 on the number line. Jump forward 3. Where do you land?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 7
+      },
+      "assessed": true,
+      "objective": "math.u02.sheet.01",
+      "hint": "Start on the dot. Make 3 jumps forward, one number at a time.",
+      "explanation": "From 4, three jumps forward: 5, 6, 7. So 4 + 3 = 7.",
+      "shortExplanation": "From 4, three jumps forward: 5, 6, 7. So 4 + 3 = 7.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.sheet.01",
+        "answerKeyPages": [],
+        "answerKeyText": "7",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 4,
+        "jumps": [
+          3
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_02.step.016",
+      "kind": "number-entry",
+      "title": "Jump back",
+      "prompt": "Start at 9. Jump back 4. Where do you land?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 5
+      },
+      "assessed": true,
+      "objective": "math.u02.sheet.02",
+      "hint": "Start on 9. Make 4 jumps back.",
+      "explanation": "From 9, four jumps back: 8, 7, 6, 5. So 9 - 4 = 5.",
+      "shortExplanation": "From 9, four jumps back: 8, 7, 6, 5. So 9 - 4 = 5.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.sheet.02",
+        "answerKeyPages": [],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 9,
+        "jumps": [
+          -4
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_02.step.017",
+      "kind": "number-entry",
+      "title": "Count on to add",
+      "prompt": "6 + 2 = ?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 8
+      },
+      "assessed": true,
+      "objective": "math.u02.sheet.03",
+      "hint": "Say 6, then count on two more: 7, 8.",
+      "explanation": "Start at 6 and count on two: 7, 8. So 6 + 2 = 8.",
+      "shortExplanation": "Start at 6 and count on two: 7, 8. So 6 + 2 = 8.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.sheet.03",
+        "answerKeyPages": [],
+        "answerKeyText": "8",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 6,
+        "jumps": [
+          2
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_02.step.018",
+      "kind": "number-entry",
+      "title": "Count back to take away",
+      "prompt": "8 - 3 = ?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 5
+      },
+      "assessed": true,
+      "objective": "math.u02.sheet.04",
+      "hint": "Say 8, then count back three: 7, 6, 5.",
+      "explanation": "Start at 8 and count back three: 7, 6, 5. So 8 - 3 = 5.",
+      "shortExplanation": "Start at 8 and count back three: 7, 6, 5. So 8 - 3 = 5.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.sheet.04",
+        "answerKeyPages": [],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 8,
+        "jumps": [
+          -3
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_02.step.019",
+      "kind": "number-entry",
+      "title": "Five and four more",
+      "prompt": "5 + 4 = ?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 9
+      },
+      "assessed": true,
+      "objective": "math.u02.sheet.05",
+      "hint": "Start at 5 and make four jumps forward.",
+      "explanation": "Start at 5 and count on four: 6, 7, 8, 9. So 5 + 4 = 9.",
+      "shortExplanation": "Start at 5 and count on four: 6, 7, 8, 9.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.sheet.05",
+        "answerKeyPages": [],
+        "answerKeyText": "9",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 10,
+        "from": 5,
+        "jumps": [
+          4
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_02.step.020",
+      "kind": "number-sentence",
+      "title": "Apple story",
+      "prompt": "Omar has 5 apples. He picks 3 more. Write the number sentence.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "sentence",
+        "value": {
+          "a": "5",
+          "op": "+",
+          "b": "3",
+          "c": "8"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u02.sheet.06",
+      "hint": "More apples join the group, so use plus.",
+      "explanation": "More apples join the group, so we add: 5 + 3 = 8 apples.",
+      "shortExplanation": "More apples join the group, so we add: 5 + 3 = 8 apples.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10
+        ],
+        "questionId": "math.u02.sheet.06",
+        "answerKeyPages": [],
+        "answerKeyText": "5 + 3 = 8",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_02",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 5,
+            "item": "apple",
+            "arrangement": "row",
+            "width": 280,
+            "height": 90,
+            "label": "5"
+          },
+          {
+            "type": "text",
+            "text": "+",
+            "width": 40
+          },
+          {
+            "type": "count",
+            "count": 3,
+            "item": "apple",
+            "arrangement": "row",
+            "width": 280,
+            "height": 90,
+            "label": "3"
+          }
+        ]
+      }
     }
   ],
   "stickers": [
@@ -1227,10 +1508,106 @@
         2
       ],
       "adapted": true
+    },
+    {
+      "objective": "math.u02.sheet.01",
+      "text": "Draw a number line from 0 to 10. Your child puts a toy on 4 and hops it forward 3.",
+      "textAr": "ارسموا خط أعداد من ٠ لـ١٠. طفلك يحط لعبة على ٤ ويخليها تنطّ ٣ نطّات لقدّام.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.sheet.02",
+      "text": "On the number line, put the toy on 9 and hop it back 4. Where does it land?",
+      "textAr": "على خط الأعداد، حطّوا اللعبة على ٩ وخلّوها تنطّ ٤ لورا. وقعت فين؟",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.sheet.03",
+      "text": "Hold up 6 fingers. Your child counts on 2 more to find 6 + 2.",
+      "textAr": "ارفعوا ٦ صوابع. طفلك يعدّ ٢ زيادة عشان يلاقي ٦ + ٢.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.sheet.04",
+      "text": "Put 8 spoons in a row. Take 3 away one at a time, counting back each time.",
+      "textAr": "حطّوا ٨ معالق في صف. شيلوا ٣ واحدة واحدة، وعدّوا لورا كل مرة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.sheet.05",
+      "text": "Play a board game: from square 5, move 4 squares and say where you land.",
+      "textAr": "العبوا لعبة سلّم وتعبان: من مربع ٥، اتحركوا ٤ مربعات وقولوا وقفتوا فين.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u02.sheet.06",
+      "text": "Tell a joining story with real fruit, then write its number sentence together.",
+      "textAr": "احكوا حكاية فيها حاجة بتزيد بفاكهة حقيقية، واكتبوا الجملة الحسابية بتاعتها مع بعض.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }

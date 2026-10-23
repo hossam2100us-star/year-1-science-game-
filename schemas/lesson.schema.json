@@ -61,7 +61,9 @@
               "free-pair",
               "free-plant",
               "science-lab",
-              "free-measure"
+              "free-measure",
+              "number-entry",
+              "number-sentence"
             ]
           },
           "prompt": {
@@ -147,7 +149,9 @@
                       "single",
                       "set",
                       "sequence",
-                      "mapping"
+                      "mapping",
+                      "number",
+                      "sentence"
                     ]
                   }
                 }

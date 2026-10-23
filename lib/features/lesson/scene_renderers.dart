@@ -56,6 +56,9 @@ abstract interface class LessonSceneHost {
   void sceneSpoke(String text);
   void reorder(List<String> items);
   void reorderSlots(Map<String, String> slots);
+
+  /// A written answer (number pad, number sentence) replaces the slots.
+  void write(Map<String, String> slots);
   Future<void> saveLab(Map<String, dynamic> data, bool complete);
   Future<void> saveLight(Map<String, dynamic> value);
   Future<void> finishLight();
@@ -111,6 +114,7 @@ class _MathsRenderer extends SceneRenderer {
           locked: host.answerLocked || host.freeDone || host.busy,
           onItem: host.item,
           onPlace: host.place,
+          onWrite: host.write,
           lab: host.lab,
           onSaveLab: host.saveLab,
           onSay: host.say,

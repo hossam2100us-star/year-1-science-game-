@@ -766,17 +766,20 @@
     },
     {
       "id": "math_unit_04.step.009",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "Ask 4 people their favourite colour with an adult. Draw one equal-size circle for each vote.",
+      "kind": "number-entry",
+      "title": "Colour votes",
+      "prompt": "Four friends voted for their favourite colour. Each circle is one vote. How many votes are there altogether?",
       "options": [],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Read the labels and count one picture for each vote.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "number",
+        "value": 4
+      },
+      "assessed": true,
+      "objective": "math.u04.main.08",
+      "hint": "Each circle is one vote. Count all the circles.",
+      "explanation": "There is one equal circle for each vote: 2 + 1 + 1 = 4 votes.",
+      "shortExplanation": "There is one equal circle for each vote: 2 + 1 + 1 = 4 votes.",
       "source": {
         "pages": [
           15,
@@ -791,13 +794,29 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_04",
       "adapted": true,
-      "parentReview": {
-        "en": "Four circles in total, same size, lined up in rows by colour.",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      "mathVisual": {
+        "type": "chart",
+        "title": "Our favourite colours",
+        "rows": [
+          {
+            "label": "red",
+            "value": 2
+          },
+          {
+            "label": "blue",
+            "value": 1
+          },
+          {
+            "label": "green",
+            "value": 1
+          }
+        ],
+        "style": "pictogram",
+        "unit": "one vote"
       }
     },
     {
@@ -1323,6 +1342,22 @@
       "adapted": true
     },
     {
+      "objective": "math.u04.main.08",
+      "text": "Ask 4 family members their favourite colour. Your child draws one circle of the same size for each vote.",
+      "textAr": "اسألوا ٤ من العيلة عن لونهم المفضل. طفلك يرسم دايرة بنفس الحجم لكل صوت.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
       "objective": "math.u04.choice.01",
       "text": "Make a picture chart where each drawing is one person. Your child points to a drawing and says who it stands for.",
       "textAr": "اعملوا رسم بالصور كل صورة فيه لشخص واحد. طفلك يشاور على صورة ويقول دي مين.",
@@ -1404,7 +1439,7 @@
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }

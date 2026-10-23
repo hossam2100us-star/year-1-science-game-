@@ -654,17 +654,53 @@
     },
     {
       "id": "math_unit_07.step.009",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "Find or draw an object that is not red and has no wheels. Explain why it fits neither label.",
-      "options": [],
+      "kind": "tap-choice",
+      "title": "Not red, no wheels",
+      "prompt": "Which one is not red and has no wheels?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "red car",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "car",
+            "color": "red"
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "red apple",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 1,
+            "item": "apple",
+            "arrangement": "row"
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "banana",
+          "art": "math_label",
+          "visual": {
+            "type": "count",
+            "count": 1,
+            "item": "banana",
+            "arrangement": "row"
+          }
+        }
+      ],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Ask about each label separately. Both and neither are groups too.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u07.main.08",
+      "hint": "Ask two questions: is it red? Does it have wheels? Two no answers mean outside.",
+      "explanation": "A banana is yellow and has no wheels, so it goes outside both hoops.",
+      "shortExplanation": "A banana is yellow and has no wheels, so it goes outside both hoops.",
       "source": {
         "pages": [
           25,
@@ -679,14 +715,10 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_07",
-      "adapted": true,
-      "parentReview": {
-        "en": "Anything that is not red and has no wheels, e.g. a yellow banana, a book.",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
-      }
+      "adapted": true
     },
     {
       "id": "math_unit_07.step.010",
@@ -1183,6 +1215,22 @@
       "adapted": true
     },
     {
+      "objective": "math.u07.main.08",
+      "text": "Find something at home that is not red and has no wheels. Ask your child why it fits neither label.",
+      "textAr": "دوّروا على حاجة في البيت مش حمرا وملهاش عجل. اسألوا طفلك ليه مش داخلة في أي مجموعة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
       "objective": "math.u07.choice.01",
       "text": "Use two hoops, \"fruit\" and \"red\". Ask where a red apple goes and why.",
       "textAr": "استخدموا دايرتين: «فاكهة» و«أحمر». اسألوا التفاحة الحمرا تتحط فين وليه.",
@@ -1264,7 +1312,7 @@
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }

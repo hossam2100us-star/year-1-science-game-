@@ -11,8 +11,10 @@ completion, parent gate and report widgets remain in use.
 The addition is data driven. A separate Maths catalogue describes four islands
 (three terms and Chart Skills). Eighteen units, three ten-question challenges
 and Chart Skills use the existing playable JSON contract. The 273 book
-questions become 292 activities: 258 assessments, 15 ungraded personal/drawing
-tasks, and 19 explorations. Source drafts retain the original question and
+questions became 292 activities: 258 assessments, 15 ungraded personal/drawing
+tasks, and 19 explorations. Since 21 October 2026 every one of the 273 is
+answered in the app, and 18 worksheet questions follow them: 310 steps, 291
+assessed (see "Questions answered in the app" below). Source drafts retain the original question and
 Answer Key references; the source PDF and its personal certificate are not
 bundled. See [content audit](MATHS_CONTENT_AUDIT.md) for pagination, provenance,
 adaptation decisions and the book's half-past clock illustration discrepancy.
@@ -241,3 +243,48 @@ picture (`AWAITING_ART` in `scripts/validate_maths_content.py` is empty).
   Each word now has a small picture of its own (`STICKER_PICTURES` in
   `scripts/build_maths_content.py`): three apples for "count", half a circle
   for "half", seven socks for "odd", a jug for "capacity"...
+
+## Questions answered in the app; worksheet questions (owner request, 21 October 2026)
+
+- **No more "Try it at home".** The 15 book questions that asked the child to
+  draw or count something at home, with nothing to do in the app, are now
+  questions answered in the app with the same skill and the book's answer key:
+  - count 9 circles by touch and write 9;
+  - count toy cars in a room;
+  - count the triangles in a house built from shapes (a new `house` shape);
+  - total four colour votes, one circle per vote;
+  - choose the afternoon activity;
+  - choose what is not red and has no wheels;
+  - choose the row that repeats two shapes;
+  - choose the cut that makes two equal parts, the fair share of 6 oranges,
+    the story that matches 6 + 4 = 10, the circle-shaped object, the question
+    the school graph can answer, the cake cut into halves;
+  - choose the clock that shows 9 o'clock, then half past 12.
+
+  They are graded like the other book questions. Each one's original at-home
+  task is now its goal's home activity in the parent report (English and
+  Egyptian Arabic, for the owner to review).
+- **Worksheet questions** close units 2, 11 and 14 (six each, section
+  "Practice", IDs `math.uNN.sheet.NN`, not from the book):
+  - start on the number line and jump forward or back (the jumps are a
+    learning aid), then write where you land;
+  - written sums such as 16 - 3 = ? or 3 + 14 = ? (start with the bigger
+    number);
+  - a double;
+  - a story where the child writes the number sentence (5 + 3 = 8; 14 - 6 = 8;
+    8 + 7 = 15, where 7 + 8 = 15 is right too).
+- **Written answers.** Two new answer types:
+  - `number`: kind `number-entry`, the child writes with a big number pad;
+  - `sentence`: kind `number-sentence`, number boxes, a + or − sign and the
+    pad.
+
+  Both keep the answer in the step's placements (`answer`, or `a`, `op`, `b`,
+  `c`), so saving, sync, resuming and Choose-then-Check work as before. On a
+  wide screen the pad sits beside the number line or picture so everything
+  fits a 1280×800 tablet (test/maths_tablet_fit_test.dart now checks the pad).
+- **Saved games.** Step IDs did not change and the content version stays 2.
+  A journey saved past an old "Try it at home" step continues; that step
+  simply has no score in that attempt (test/maths_written_answers_test.dart).
+- **Teacher review 7.** In the walk, bus, car, bike chart only "car" had a
+  picture under its bar; a chart now shows row pictures only when every row
+  has one.

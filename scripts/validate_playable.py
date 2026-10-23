@@ -24,7 +24,10 @@ for file in sorted((ROOT/'assets/content/playable').glob('*.json')):
   for field,text in overrides.get(step['id'],{}).items():
    assert step[field]==text,(file,step['id'],'editorial feedback was overwritten')
   qid=step['source']['questionId']
-  if qid:
+  # Maths worksheet questions are not from the book; validate_maths_content.py
+  # checks their sums and number lines.
+  worksheet=bool(qid) and '.sheet.' in qid
+  if qid and not worksheet:
    covered.add(qid);assert qid in originals,(file,qid)
    assert step['source']['answerKeyText']==originals[qid]['answerKeyText']
   for related in step.get('relatedSources', []):
@@ -52,6 +55,8 @@ for file in sorted((ROOT/'assets/content/playable').glob('*.json')):
     if answer['type']=='sequence':assert set(value)==set(options)
    elif answer['type']=='mapping':
     assert set(value)==set(options) and set(value.values())<=set(targets)
+   elif answer['type']=='number':assert isinstance(value,int) and not options
+   elif answer['type']=='sentence':assert set(value)=={'a','op','b','c'} and not options
   else: assert not step['assessed']
   if step['kind']=='predict-then-reveal':
    assert not step['assessed'] and step['frames']

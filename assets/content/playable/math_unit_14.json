@@ -586,17 +586,36 @@
     },
     {
       "id": "math_unit_14.step.009",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "Tell an adult your own number story for 6 + 4 = 10. Act it out with safe objects.",
-      "options": [],
+      "kind": "tap-choice",
+      "title": "A story for 6 + 4",
+      "prompt": "Which story matches 6 + 4 = 10?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "6 birds sit on a tree. 6 more come. Now there are 12.",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "6 birds sit on a tree. 4 fly away. Now there are 2.",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "6 birds sit on a tree. 4 more come. Now there are 10.",
+          "art": "math_label"
+        }
+      ],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Start with the bigger number. A double adds the same number again.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u14.main.08",
+      "hint": "Adding joins two groups. Which story ends with more?",
+      "explanation": "Adding joins two groups: 6 birds and 4 more make 10 birds.",
+      "shortExplanation": "Adding joins two groups: 6 birds and 4 more make 10 birds.",
       "source": {
         "pages": [
           48,
@@ -611,13 +630,37 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_14",
       "adapted": true,
-      "parentReview": {
-        "en": "Any story where 6 things and 4 more things are joined to make 10, e.g. \"6 cars were\nparked, 4 more came, now there are 10.\"",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "count",
+            "count": 6,
+            "item": "bird",
+            "arrangement": "row",
+            "width": 280,
+            "height": 150,
+            "label": "6"
+          },
+          {
+            "type": "text",
+            "text": "+",
+            "width": 40
+          },
+          {
+            "type": "count",
+            "count": 4,
+            "item": "bird",
+            "arrangement": "row",
+            "width": 280,
+            "height": 150,
+            "label": "4"
+          }
+        ]
       }
     },
     {
@@ -937,6 +980,267 @@
         "color": "red",
         "color2": "blue"
       }
+    },
+    {
+      "id": "math_unit_14.step.015",
+      "kind": "number-entry",
+      "title": "On from 11",
+      "prompt": "Start at 11. Jump forward 5. Where do you land?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 16
+      },
+      "assessed": true,
+      "objective": "math.u14.sheet.01",
+      "hint": "Start on 11. Make 5 jumps forward.",
+      "explanation": "From 11, five jumps forward: 12, 13, 14, 15, 16. So 11 + 5 = 16.",
+      "shortExplanation": "From 11, five jumps forward: 12, 13, 14, 15, 16. So 11 + 5 = 16.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.sheet.01",
+        "answerKeyPages": [],
+        "answerKeyText": "16",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20,
+        "from": 11,
+        "jumps": [
+          5
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_14.step.016",
+      "kind": "number-entry",
+      "title": "Count on from 9",
+      "prompt": "9 + 6 = ? Start at 9 and count on.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 15
+      },
+      "assessed": true,
+      "objective": "math.u14.sheet.02",
+      "hint": "Say 9, then count on six.",
+      "explanation": "Start at 9 and count on six: 10, 11, 12, 13, 14, 15. So 9 + 6 = 15.",
+      "shortExplanation": "Start at 9 and count on six: 10, 11, 12, 13, 14, 15.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.sheet.02",
+        "answerKeyPages": [],
+        "answerKeyText": "15",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "from": 9,
+        "jumps": [
+          6
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_14.step.017",
+      "kind": "number-entry",
+      "title": "Bigger number first",
+      "prompt": "4 + 9 = ? Start with the bigger number.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 13
+      },
+      "assessed": true,
+      "objective": "math.u14.sheet.03",
+      "hint": "Start with 9, the bigger number, then count on 4.",
+      "explanation": "Start at 9, the bigger number, and count on four: 10, 11, 12, 13. So 4 + 9 = 13.",
+      "shortExplanation": "Start at 9, the bigger number, and count on four: 10, 11, 12, 13.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.sheet.03",
+        "answerKeyPages": [],
+        "answerKeyText": "13",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "from": 9,
+        "jumps": [
+          4
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_14.step.018",
+      "kind": "number-entry",
+      "title": "Start with 14",
+      "prompt": "3 + 14 = ? Start with the bigger number.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 17
+      },
+      "assessed": true,
+      "objective": "math.u14.sheet.04",
+      "hint": "Which number is bigger, 3 or 14? Start there.",
+      "explanation": "Start at 14 and count on three: 15, 16, 17. So 3 + 14 = 17.",
+      "shortExplanation": "Start at 14 and count on three: 15, 16, 17. So 3 + 14 = 17.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.sheet.04",
+        "answerKeyPages": [],
+        "answerKeyText": "17",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 10,
+        "end": 20,
+        "from": 14,
+        "jumps": [
+          3
+        ],
+        "ask": "landing"
+      }
+    },
+    {
+      "id": "math_unit_14.step.019",
+      "kind": "number-entry",
+      "title": "Double seven",
+      "prompt": "Double 7: 7 + 7 = ?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 14
+      },
+      "assessed": true,
+      "objective": "math.u14.sheet.05",
+      "hint": "Double means the same number twice: 7 and 7.",
+      "explanation": "Two equal rows of 7 make 14. Double 7 is 14.",
+      "shortExplanation": "Two equal rows of 7 make 14. Double 7 is 14.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.sheet.05",
+        "answerKeyPages": [],
+        "answerKeyText": "14",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true,
+      "mathVisual": {
+        "type": "count",
+        "count": 14,
+        "item": "dot",
+        "arrangement": "double",
+        "color": "red",
+        "color2": "blue"
+      }
+    },
+    {
+      "id": "math_unit_14.step.020",
+      "kind": "number-sentence",
+      "title": "Skipping story",
+      "prompt": "Rana skips with her rope 8 times before lunch and 7 times after lunch. Write the number sentence for all her skips.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "sentence",
+        "value": {
+          "a": "8",
+          "op": "+",
+          "b": "7",
+          "c": "15"
+        }
+      },
+      "assessed": true,
+      "objective": "math.u14.sheet.06",
+      "hint": "Before lunch and after lunch join together, so use plus.",
+      "explanation": "Before lunch and after lunch join together, so we add: 8 + 7 = 15 skips.",
+      "shortExplanation": "Before lunch and after lunch join together, so we add: 8 + 7 = 15 skips.",
+      "source": {
+        "pages": [
+          48,
+          49,
+          50
+        ],
+        "questionId": "math.u14.sheet.06",
+        "answerKeyPages": [],
+        "answerKeyText": "8 + 7 = 15",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_14",
+      "adapted": true,
+      "mathVisual": {
+        "type": "numberLine",
+        "start": 0,
+        "end": 20,
+        "from": 8,
+        "jumps": [
+          7
+        ],
+        "ask": "landing"
+      }
     }
   ],
   "stickers": [
@@ -1092,6 +1396,22 @@
       "adapted": true
     },
     {
+      "objective": "math.u14.main.08",
+      "text": "Make up a story for 6 + 4 = 10 together and act it out with small toys.",
+      "textAr": "ألّفوا حكاية لـ ٦ + ٤ = ١٠ مع بعض، ومثّلوها بلعب صغيرة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
       "objective": "math.u14.choice.01",
       "text": "Put 6 blocks on each of two plates. Count them all: double 6.",
       "textAr": "حطّوا ٦ مكعبات في كل طبق من طبقين. عدّوهم كلهم: ضعف ٦.",
@@ -1170,10 +1490,106 @@
         2
       ],
       "adapted": true
+    },
+    {
+      "objective": "math.u14.sheet.01",
+      "text": "On a number line from 10 to 20, your child starts on 11 and hops forward 5.",
+      "textAr": "على خط أعداد من ١٠ لـ٢٠، طفلك يبدأ من ١١ وينطّ ٥ لقدّام.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.sheet.02",
+      "text": "Keep 9 in your heads and count on 6 claps together.",
+      "textAr": "احفظوا ٩ في دماغكم وعدّوا ٦ سقفات زيادة مع بعض.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.sheet.03",
+      "text": "With two groups of toys, ask your child which number to start from to count on quickly.",
+      "textAr": "بمجموعتين لعب، اسألوا طفلك يبدأ العدّ من أنهي رقم عشان يعدّ لقدّام بسرعة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.sheet.04",
+      "text": "Write 3 + 14 and 14 + 3. Talk about why both have the same answer.",
+      "textAr": "اكتبوا ٣ + ١٤ و١٤ + ٣. اتكلموا ليه الاتنين ليهم نفس الإجابة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.sheet.05",
+      "text": "Make two equal rows of 7 buttons and count them all.",
+      "textAr": "اعملوا صفين متساويين من ٧ زراير وعدّوهم كلهم.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u14.sheet.06",
+      "text": "Count rope skips before and after a break, then write the number sentence together.",
+      "textAr": "عدّوا نطّات الحبل قبل الراحة وبعدها، واكتبوا الجملة الحسابية مع بعض.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        48,
+        49,
+        50
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }

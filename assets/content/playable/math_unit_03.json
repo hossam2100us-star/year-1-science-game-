@@ -721,17 +721,20 @@
     },
     {
       "id": "math_unit_03.step.009",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "With an adult, draw a house using squares, rectangles and triangles. Count your triangles.",
+      "kind": "number-entry",
+      "title": "Triangles in a house",
+      "prompt": "This house is made of squares, rectangles and triangles. How many triangles can you find?",
       "options": [],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Count sides and corners; look for flat or curved faces.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "number",
+        "value": 3
+      },
+      "assessed": true,
+      "objective": "math.u03.main.08",
+      "hint": "Look at the roof and the flags. Count every shape with three sides.",
+      "explanation": "The roof is a triangle and the two flags beside the house are triangles: 3 triangles.",
+      "shortExplanation": "The roof is a triangle and the two flags beside the house are triangles: 3 triangles.",
       "source": {
         "pages": [
           11,
@@ -747,13 +750,14 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_03",
       "adapted": true,
-      "parentReview": {
-        "en": "Any house built from the named shapes; the number of triangles must match his drawing.",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
+      "mathVisual": {
+        "type": "shape",
+        "shape": "house",
+        "height": 260
       }
     },
     {
@@ -1237,6 +1241,23 @@
       "adapted": true
     },
     {
+      "objective": "math.u03.main.08",
+      "text": "Draw a house together using squares, rectangles and triangles. Count the triangles together.",
+      "textAr": "ارسموا بيت مع بعض من مربعات ومستطيلات ومثلثات. عدّوا المثلثات مع بعض.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
       "objective": "math.u03.choice.01",
       "text": "Hold a football and an orange. Your child feels that they are round all over: both are spheres.",
       "textAr": "امسكوا كورة وبرتقانة. طفلك يحسّ إنهم مدوّرين من كل ناحية: الاتنين كرة.",
@@ -1323,7 +1344,7 @@
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }

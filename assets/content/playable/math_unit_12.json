@@ -503,17 +503,57 @@
     },
     {
       "id": "math_unit_12.step.008",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "With an adult, draw a line cutting a rectangle into two equal parts. Check both parts.",
-      "options": [],
+      "kind": "tap-choice",
+      "title": "One fair cut",
+      "prompt": "Which line cuts the rectangle into two equal parts?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 2,
+            "shaded": 0,
+            "equal": false
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 4,
+            "shaded": 0,
+            "equal": true
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "fraction",
+            "shape": "rectangle",
+            "parts": 2,
+            "shaded": 0,
+            "equal": true
+          }
+        }
+      ],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Share equally into two groups. The parts must match.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u12.main.07",
+      "hint": "Equal parts are the same size. Look for the line through the middle.",
+      "explanation": "In c the line goes down the middle, so the two parts are the same size.",
+      "shortExplanation": "In c the line goes down the middle, so the two parts are the same size.",
       "source": {
         "pages": [
           41,
@@ -528,28 +568,118 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_12",
-      "adapted": true,
-      "parentReview": {
-        "en": "A line straight down the middle, straight across the middle, or corner to corner — all\nmake halves.",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
-      }
+      "adapted": true
     },
     {
       "id": "math_unit_12.step.009",
-      "kind": "story",
-      "title": "Try it at home",
-      "prompt": "Name something at home that you can share in half. Explain how both parts can be equal.",
-      "options": [],
+      "kind": "tap-choice",
+      "title": "A fair share",
+      "prompt": "Two friends share 6 oranges in half. Which picture shows a fair share?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a",
+          "art": "math_label",
+          "visual": {
+            "type": "groups",
+            "items": [
+              {
+                "type": "count",
+                "count": 3,
+                "item": "orange",
+                "arrangement": "row",
+                "slots": 5,
+                "width": 165,
+                "height": 80,
+                "label": "Ali"
+              },
+              {
+                "type": "count",
+                "count": 3,
+                "item": "orange",
+                "arrangement": "row",
+                "slots": 5,
+                "width": 165,
+                "height": 80,
+                "label": "Mona"
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "b",
+          "art": "math_label",
+          "visual": {
+            "type": "groups",
+            "items": [
+              {
+                "type": "count",
+                "count": 4,
+                "item": "orange",
+                "arrangement": "row",
+                "slots": 5,
+                "width": 165,
+                "height": 80,
+                "label": "Ali"
+              },
+              {
+                "type": "count",
+                "count": 2,
+                "item": "orange",
+                "arrangement": "row",
+                "slots": 5,
+                "width": 165,
+                "height": 80,
+                "label": "Mona"
+              }
+            ]
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "c",
+          "art": "math_label",
+          "visual": {
+            "type": "groups",
+            "items": [
+              {
+                "type": "count",
+                "count": 5,
+                "item": "orange",
+                "arrangement": "row",
+                "slots": 5,
+                "width": 165,
+                "height": 80,
+                "label": "Ali"
+              },
+              {
+                "type": "count",
+                "count": 1,
+                "item": "orange",
+                "arrangement": "row",
+                "slots": 5,
+                "width": 165,
+                "height": 80,
+                "label": "Mona"
+              }
+            ]
+          }
+        }
+      ],
       "targets": [],
-      "answer": null,
-      "assessed": false,
-      "objective": "",
-      "hint": "Share equally into two groups. The parts must match.",
-      "explanation": "Try it with an adult. Talk about what you found.",
-      "shortExplanation": "Try it with an adult. Talk about what you found.",
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u12.main.08",
+      "hint": "Half for each friend: both groups must have the same number.",
+      "explanation": "Half of 6 is 3. Each friend gets 3 oranges, so both parts are equal.",
+      "shortExplanation": "Half of 6 is 3. Each friend gets 3 oranges, so both parts are equal.",
       "source": {
         "pages": [
           41,
@@ -564,14 +694,10 @@
         "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
       },
       "scene": "workshop",
-      "section": "Try at home",
+      "section": "Discover",
       "playScene": "maths",
       "theme": "math_unit_12",
-      "adapted": true,
-      "parentReview": {
-        "en": "Any sensible answer: a sandwich, an orange, a cake, a pack of biscuits.",
-        "note": "Discuss with an adult; this personal or drawing response is not automatically graded."
-      }
+      "adapted": true
     },
     {
       "id": "math_unit_12.step.010",
@@ -1027,6 +1153,38 @@
       "adapted": true
     },
     {
+      "objective": "math.u12.main.07",
+      "text": "Draw a rectangle on paper. Your child draws one line that cuts it into two equal parts and checks both parts.",
+      "textAr": "ارسموا مستطيل على ورقة. طفلك يرسم خط واحد يقسمه لجزئين متساويين، ويتأكد من الجزئين.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u12.main.08",
+      "text": "Share a snack in half with your child, such as an orange or a pack of biscuits. Check that both parts are equal.",
+      "textAr": "اقسموا حاجة تتاكل نصين مع طفلك، زي برتقانة أو باكو بسكوت. اتأكدوا إن الجزئين متساويين.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        41,
+        42,
+        43
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
       "objective": "math.u12.choice.01",
       "text": "Draw lines on some shapes, some through the middle and some not. Your child picks the shapes cut into two equal halves.",
       "textAr": "ارسموا خطوط على أشكال، شوية في النص وشوية لأ. طفلك يختار الأشكال المتقسّمة نصّين متساويين.",
@@ -1108,7 +1266,7 @@
     }
   ],
   "parentNote": {
-    "en": "Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.",
-    "ar": "الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات."
+    "en": "Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات."
   }
 }

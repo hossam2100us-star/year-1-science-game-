@@ -242,8 +242,29 @@ def ordered(prompt,values,visual=None,explanation=None):
             'choices':[str(v) for v in values[1:]+values[:1]],'visual':visual,'explanation':explanation}
 
 
-def free(prompt,visual=None):
-    return {'type':'free','prompt':prompt,'visual':visual,'explanation':'Try it with an adult. Talk about what you found.'}
+def write_number(prompt,n,visual=None,explanation=None,hint=None):
+    """The child writes the answer with the number pad, as on a worksheet."""
+    return {'type':'number','prompt':prompt,'correct':n,'visual':visual,'explanation':explanation,'hint':hint}
+
+
+def sentence(prompt,a,op,b,visual=None,explanation=None,hint=None):
+    """The child writes the number sentence for a story: a, + or -, b and the result."""
+    c=a+b if op=='+' else a-b
+    assert 0<=c<=20,(prompt,c)
+    return {'type':'sentence','prompt':prompt,'correct':{'a':str(a),'op':op,'b':str(b),'c':str(c)},
+            'visual':visual,'explanation':explanation,'hint':hint}
+
+
+def row_of(*names):
+    """A short row of coloured shapes for an answer card (a pattern to judge)."""
+    colour={'circle':'red','square':'blue','triangle':'yellow'}
+    return {'type':'pattern','items':[shape(n,color=colour[n],height=40,width=40) for n in names]}
+
+
+def share(*parts,item='orange'):
+    """Groups shared between two friends, for a fair (equal) share."""
+    # One orange size in every answer: room for the largest share (5).
+    return groups(*[{**count(n,item),'slots':5,'width':165,'height':80,'label':name} for n,name in zip(parts,['Ali','Mona'])])
 
 
 def stable_order(items,key):
@@ -683,6 +704,46 @@ COLOURED={'a':{'type':'fraction','shape':'circle','parts':2,'shaded':1,'equal':T
           'c':{'type':'fraction','shape':'rectangle','parts':2,'shaded':1,'equal':True}}
 
 
+# Owner request (21 October 2026): worksheet-style practice at the end of the
+# addition and subtraction units. The child jumps along the number line (a
+# learning aid) and writes the answer with the number pad, or writes the
+# number sentence for a story. These are not book questions; their IDs use
+# `.sheet.` and their answer key is the arithmetic itself.
+WORKSHEETS={
+    2:[
+        write_number('Start at 4 on the number line. Jump forward 3. Where do you land?',7,jumps(0,10,4,[3]),'From 4, three jumps forward: 5, 6, 7. So 4 + 3 = 7.'),
+        write_number('Start at 9. Jump back 4. Where do you land?',5,jumps(0,10,9,[-4]),'From 9, four jumps back: 8, 7, 6, 5. So 9 - 4 = 5.'),
+        write_number('6 + 2 = ?',8,jumps(0,10,6,[2]),'Start at 6 and count on two: 7, 8. So 6 + 2 = 8.'),
+        write_number('8 - 3 = ?',5,jumps(0,10,8,[-3]),'Start at 8 and count back three: 7, 6, 5. So 8 - 3 = 5.'),
+        write_number('5 + 4 = ?',9,jumps(0,10,5,[4]),'Start at 5 and count on four: 6, 7, 8, 9. So 5 + 4 = 9.'),
+        sentence('Omar has 5 apples. He picks 3 more. Write the number sentence.',5,'+',3,plus(5,3,'apple'),'More apples join the group, so we add: 5 + 3 = 8 apples.'),
+    ],
+    11:[
+        write_number('Start at 17. Jump back 4. Where do you land?',13,jumps(10,20,17,[-4]),'From 17, four jumps back: 16, 15, 14, 13. So 17 - 4 = 13.'),
+        write_number('How many jumps from 11 to 15?',4,jumps(10,20,11,[4],ask='distance'),'From 11 to 15 is four jumps: 12, 13, 14, 15. The difference is 4.'),
+        write_number('16 - 3 = ?',13,jumps(10,20,16,[-3]),'Start at 16 and count back three: 15, 14, 13. So 16 - 3 = 13.'),
+        write_number('19 - 4 = ?',15,jumps(10,20,19,[-4]),'Start at 19 and count back four: 18, 17, 16, 15. So 19 - 4 = 15.'),
+        write_number('12 + 5 = ?',17,jumps(10,20,12,[5]),'Start at 12 and count on five: 13, 14, 15, 16, 17. So 12 + 5 = 17.'),
+        sentence('In a hopping game, Sami starts on 14 and hops back 6. Write the number sentence.',14,'-',6,jumps(0,20,14,[-6]),'Hopping back takes away: 14 - 6 = 8. Sami lands on 8.'),
+    ],
+    14:[
+        write_number('Start at 11. Jump forward 5. Where do you land?',16,jumps(10,20,11,[5]),'From 11, five jumps forward: 12, 13, 14, 15, 16. So 11 + 5 = 16.'),
+        write_number('9 + 6 = ? Start at 9 and count on.',15,jumps(0,20,9,[6]),'Start at 9 and count on six: 10, 11, 12, 13, 14, 15. So 9 + 6 = 15.'),
+        write_number('4 + 9 = ? Start with the bigger number.',13,jumps(0,20,9,[4]),'Start at 9, the bigger number, and count on four: 10, 11, 12, 13. So 4 + 9 = 13.'),
+        write_number('3 + 14 = ? Start with the bigger number.',17,jumps(10,20,14,[3]),'Start at 14 and count on three: 15, 16, 17. So 3 + 14 = 17.'),
+        write_number('Double 7: 7 + 7 = ?',14,double(7),'Two equal rows of 7 make 14. Double 7 is 14.'),
+        sentence('Rana skips with her rope 8 times before lunch and 7 times after lunch. Write the number sentence for all her skips.',8,'+',7,jumps(0,20,8,[7]),'Before lunch and after lunch join together, so we add: 8 + 7 = 15 skips.'),
+    ],
+}
+
+
+def sheet_record(draft,unit,index,spec):
+    """A worksheet question's own record: no book page, the sum is its key."""
+    key=spec['correct']
+    text=f"{key['a']} {key['op']} {key['b']} = {key['c']}" if spec['type']=='sentence' else str(key)
+    return {'id':f'math.u{unit:02d}.sheet.{index:02d}','sourcePages':draft['sourcePages'],'answerKeyPages':[],'answerKeyText':text}
+
+
 def unit_specs():
     """Reviewed accessible adaptations; drawings and personal responses are ungraded."""
     return {
@@ -691,10 +752,10 @@ def unit_specs():
         number('Count the stars. How many are there?',13,count(13,'star'), 'Counting each star once gives 13 stars.'),
         mapping('Fill the gaps in the number track.', [('11, 12, __, 14','13'),('14, 15, __, 17','16'),('17, __, 19, 20','18')], [13,16,18],line(11,20), 'The missing numbers are 13, 16 and 18.'),
         mapping('Match each dot picture to its number.', [('A','4'),('B','6'),('C','10')],[4,6,10],groups({**count(4),'label':'A'},{**count(6),'label':'B'},{**count(10,arrangement='tenFrame'),'label':'C'}), 'The pictures show 4, 6 and 10 dots.'),
-        free('With an adult, draw 9 circles on paper. Count them together.'),
+        write_number('Count the circles. Write how many there are.',9,count(9),'Count each circle once. The last number you say is 9, so there are 9 circles.'),
         tf('Sara spreads out 6 cups. Now there are more than 6 cups.',False,'Moving the cups does not change how many there are.'),
         single('Choose the number twelve.','12',['21','12','2','20'],explanation='Twelve is ten and two, written 12.'),
-        free('Count something in your room with an adult. What did you count, and how many?'),
+        write_number('Sara counted the toy cars in her room. How many toy cars are there?',7,count(7,'car','scattered'),'Sara counts each car once, even when they are spread out. There are 7 toy cars.'),
     ],
     2:[
         mapping('Find one more and one less.', [('1 more than 6','7'),('1 less than 10','9')],[7,9],line(0,10),'One more moves forward; one less moves back.'),
@@ -714,7 +775,7 @@ def unit_specs():
         multiple('Choose all the shapes that can roll.',['sphere','cube','cylinder','cuboid'],['sphere','cylinder'],explanation='Spheres and cylinders have curved parts that let them roll.',option_visuals={s:shape(s) for s in ['sphere','cube','cylinder','cuboid']}),
         mapping('Sort flat drawings and solid objects.', [('square','Flat (2D)'),('ball','Solid (3D)'),('tin','Solid (3D)'),('triangle','Flat (2D)'),('dice','Solid (3D)'),('circle','Flat (2D)')],['Flat (2D)','Solid (3D)'],explanation='Flat drawings are 2D. Objects you can hold are 3D.'),
         tf('A square turned onto its corner is still a square.',True,'Turning does not change its 4 equal sides or 4 corners.'),
-        free('With an adult, draw a house using squares, rectangles and triangles. Count your triangles.'),
+        write_number('This house is made of squares, rectangles and triangles. How many triangles can you find?',3,shape('house',height=260),'The roof is a triangle and the two flags beside the house are triangles: 3 triangles.'),
     ],
     4:[
         number('How many people chose apple?',4,FRUIT,'One picture represents one person. The apple row has 4.'),
@@ -724,7 +785,7 @@ def unit_specs():
         number('How many people were asked altogether?',10,FRUIT,'Add all the rows: 4 + 2 + 3 + 1 = 10.'),
         mapping('Sort the toys by colour.', [('red car','red'),('blue ball','not red'),('red ball','red'),('green car','not red')],['red','not red'],explanation='Red objects go in red. Every other colour goes in not red.'),
         mapping('Sara, Laila and Nour chose cat. Omar chose dog. Adam chose fish. Match each pet to its total.', [('cat','3'),('dog','1'),('fish','1')],[1,3,5],explanation='Count each vote once: 3 cats, 1 dog and 1 fish.'),
-        free('Ask 4 people their favourite colour with an adult. Draw one equal-size circle for each vote.'),
+        write_number('Four friends voted for their favourite colour. Each circle is one vote. How many votes are there altogether?',4,chart('Our favourite colours',[('red',2),('blue',1),('green',1)],'pictogram','one vote'),'There is one equal circle for each vote: 2 + 1 + 1 = 4 votes.'),
     ],
     5:[
         mapping('Match each number word to its number.', [('eleven','11'),('fifteen','15'),('twenty','20')],[11,15,20],explanation='These words name the numbers 11, 15 and 20.'),
@@ -744,7 +805,7 @@ def unit_specs():
         single('Which takes a shorter time?','a blink',['a blink','a football match','a night\'s sleep'],explanation='A blink takes a very short time.'),
         mapping('Compare the ribbons. Choose the longest and shortest.', [('longest','b'),('shortest','c')],['a','b','c'],groups({'type':'ruler','units':5,'item':'ribbon','label':'a'},{'type':'ruler','units':7,'item':'ribbon','label':'b'},{'type':'ruler','units':3,'item':'ribbon','label':'c'}),'Start at the same line. Ribbon b is longest and c shortest.'),
         tf('To compare two pencils, put their ends on the same line.',True,'Lining up the ends makes the length comparison fair.'),
-        free('With an adult, draw something you do in the afternoon. Tell them about it.'),
+        single('It is the afternoon. Which of these do you do in the afternoon?','play in the park after lunch',['eat breakfast','play in the park after lunch','sleep in bed'],sky('afternoon'),'After lunch is the afternoon. We eat breakfast in the morning and sleep at night.',option_visuals={'eat breakfast':thing('bowl'),'play in the park after lunch':thing('football'),'sleep in bed':thing('bed')}),
     ],
     7:[
         single('Which object belongs in both red and has wheels?','red car',['red car','red apple','blue ball'],explanation='A red car is red and has wheels, so it fits both labels.'),
@@ -754,13 +815,13 @@ def unit_specs():
         number('How many children have a cat?',5,PETS,'Each block is one child. The cat column has 5.'),
         number('How many more cats than dogs?',2,PETS,'There are 5 cats and 3 dogs. The difference is 2.'),
         tf('An object that fits both labels belongs in the overlap.',True,'Both labels are true in the overlap.'),
-        free('Find or draw an object that is not red and has no wheels. Explain why it fits neither label.'),
+        single('Which one is not red and has no wheels?','banana',['red car','red apple','banana'],explanation='A banana is yellow and has no wheels, so it goes outside both hoops.',option_visuals={'red car':shape('car',color='red'),'red apple':count(1,'apple'),'banana':count(1,'banana')}),
     ],
     8:[
         single('What comes next in the pattern?','red circle',['red circle','blue square','yellow triangle'],{'type':'pattern','items':[shape('circle',color='red'),shape('square',color='blue'),shape('circle',color='red'),shape('square',color='blue')]},'The repeating part is red circle, blue square.',option_visuals={'red circle':shape('circle',color='red'),'blue square':shape('square',color='blue'),'yellow triangle':shape('triangle',color='yellow')}),
         single('What comes next in this pattern?','triangle',['triangle','circle','square'],{'type':'pattern','items':[shape('triangle',color='yellow'),shape('triangle',color='yellow'),shape('circle',color='green')]*2},'Two triangles and a circle repeat. The next shape is a triangle.',option_visuals={s:shape(s) for s in ['triangle','circle','square']}),
         mapping('Fill the next two gaps: red, blue, blue, red, blue, blue, __, __.', [('first gap','red'),('second gap','blue')],['red','blue'],explanation='The repeating part is red, blue, blue.'),
-        free('Make your own repeating pattern with two shapes on paper. Repeat the part at least twice.'),
+        single('Which row is a repeating pattern of two shapes?','b',['a','b','c'],explanation='In b the part circle, square comes again and again: it repeats three times.',option_visuals={'a':row_of('circle','square','square','triangle','circle','triangle'),'b':row_of('circle','square','circle','square','circle','square'),'c':row_of('triangle','circle','circle','square','triangle','square')}),
         number('Walk 3 steps forwards and 1 backwards. How many steps from the start?',2,jumps(0,4,0,[3,-1]),'Three forwards and one backwards leaves 2 steps forwards.'),
         tf('A cube is a flat 2D shape.',False,'A cube is solid, so it is a 3D shape.',shape('cube')),
         mapping('Compare a square and a rectangle.', [('They each have 4 sides and 4 corners.','same'),('Only the square must have 4 equal sides.','different')],['same','different'],groups(shape('square'),shape('rectangle')),'Both have 4 sides. A square has all 4 sides equal.'),
@@ -803,8 +864,8 @@ def unit_specs():
         number('Share 8 apples equally between 2 children. How many each?',4,count(8,'apple'),'Two equal groups of 4 make 8 apples.'),
         number('A half is one of how many equal parts?',2,explanation='A half is one of two equal parts.'),
         tf('It makes sense to ask for the bigger half.',False,'Halves of the same whole must be the same size.'),
-        free('With an adult, draw a line cutting a rectangle into two equal parts. Check both parts.'),
-        free('Name something at home that you can share in half. Explain how both parts can be equal.'),
+        single('Which line cuts the rectangle into two equal parts?','c',['a','b','c'],explanation='In c the line goes down the middle, so the two parts are the same size.',option_visuals={'a':{'type':'fraction','shape':'rectangle','parts':2,'shaded':0,'equal':False},'b':{'type':'fraction','shape':'rectangle','parts':4,'shaded':0,'equal':True},'c':{'type':'fraction','shape':'rectangle','parts':2,'shaded':0,'equal':True}}),
+        single('Two friends share 6 oranges in half. Which picture shows a fair share?','a',['a','b','c'],explanation='Half of 6 is 3. Each friend gets 3 oranges, so both parts are equal.',option_visuals={'a':share(3,3),'b':share(4,2),'c':share(5,1)}),
     ],
     13:[
         multiple('Choose all the even numbers.',['2','5','8','11','14','17'],['2','8','14'],explanation='2, 8 and 14 make pairs with none left over.'),
@@ -824,7 +885,7 @@ def unit_specs():
         number('8 birds are in a tree. 4 more come. How many now?',12,groups(count(8,'bird'),count(4,'bird')),'Adding 4 birds to 8 gives 12 birds.'),
         number('Count back: 15 - 3 = ?',12,jumps(10,20,15,[-3]),'Count back three jumps from 15: 14, 13, 12.'),
         number('What is the difference between 13 and 17?',4,jumps(10,20,13,[4],ask='distance'),'There are 4 jumps from 13 to 17.'),
-        free('Tell an adult your own number story for 6 + 4 = 10. Act it out with safe objects.'),
+        single('Which story matches 6 + 4 = 10?','6 birds sit on a tree. 4 more come. Now there are 10.',['6 birds sit on a tree. 4 more come. Now there are 10.','6 birds sit on a tree. 4 fly away. Now there are 2.','6 birds sit on a tree. 6 more come. Now there are 12.'],plus(6,4,'bird'),'Adding joins two groups: 6 birds and 4 more make 10 birds.'),
     ],
     15:[
         number('How many faces does a cube have?',6,shape('cube'),'A cube has 6 square faces.'),
@@ -832,7 +893,7 @@ def unit_specs():
         single('Are these the same shape?','yes',['yes','no'],groups(shape('triangle'),shape('triangle',rotation=180)),'Both are triangles. Turning does not change the shape.'),
         number('How many flat faces does a cylinder have?',2,shape('cylinder'),'A cylinder has two flat circular faces.'),
         single('sphere, cube, cube, sphere, cube, cube... What comes next?','sphere',['sphere','cube','cone'],explanation='The repeating part is sphere, cube, cube.',option_visuals={s:shape(s) for s in ['sphere','cube','cone']}),
-        free('With an adult, name something in a playground that has the shape of a circle.'),
+        single('Which of these has the shape of a circle?','the clock',['the clock','the book','the ruler'],explanation='A clock face is round like a circle. A book and a ruler are rectangles.',option_visuals={'the clock':thing('alarm clock'),'the book':thing('book'),'the ruler':thing('ruler')}),
         mapping('Sort the solid shapes by their faces.', [(s,'has a curved face' if s in ['sphere','cylinder','cone'] else 'only flat faces') for s in ['sphere','cube','cylinder','cuboid','cone','pyramid']],['has a curved face','only flat faces'],explanation='Sphere, cylinder and cone have curved faces; the other shapes have only flat faces.'),
         multiple('The robot faces up. Choose both routes that reach the star two spaces up and two right.', ['2 forwards, turn right, 2 forwards','turn right, 2 forwards, turn left, 2 forwards','2 backwards, turn right, 2 forwards'],['2 forwards, turn right, 2 forwards','turn right, 2 forwards, turn left, 2 forwards'],robot({'2 forwards, turn right, 2 forwards':['F','F','R','F','F'],'turn right, 2 forwards, turn left, 2 forwards':['R','F','F','L','F','F'],'2 backwards, turn right, 2 forwards':['B','B','R','F','F']}),explanation='Both selected routes finish two spaces up and two right of the start.'),
     ],
@@ -844,7 +905,7 @@ def unit_specs():
         number('How many more walked than came by car?',3,SCHOOL,'Six walked and 3 came by car. The difference is 3.'),
         number('How many children are in the graph altogether?',15,SCHOOL,'Add the columns: 6 + 4 + 3 + 2 = 15.'),
         mapping('Sort the flat shapes by their corners.', [('circle','has no corners'),('square','has corners'),('triangle','has corners'),('oval','has no corners')],['has corners','has no corners'],explanation='Square and triangle have corners; circle and oval have none.'),
-        free('Ask an adult your own question about this graph. Use the graph to check your answer.',SCHOOL),
+        single('Which question can this graph answer?','How many children walk to school?',['How many children walk to school?','What colour is the school bus?','How old is the teacher?'],SCHOOL,'The graph shows how children came to school, so it tells how many walk: 6.'),
     ],
     17:[
         single('Choose how to write one half.','½',['½','12','2/1'],explanation='One over two means one of two equal parts.'),
@@ -854,16 +915,16 @@ def unit_specs():
         multiple('Choose all shapes with one half coloured.',['a','b','c'],['a','c'],explanation='a and c have half coloured. b has only one of four equal parts coloured.',option_visuals=COLOURED),
         single('Two halves make one...','whole',['whole','half','quarter'],explanation='Putting two equal halves together makes the whole again.'),
         number('Half a team is 5 children. How many are in the whole team?',10,explanation='Five children are one half. Another five make the whole team of 10.'),
-        free('With an adult, draw a cake and one line that divides it into two equal halves.'),
+        single('Which cake is cut into two equal halves?','b',['a','b','c'],explanation='In b one line goes through the middle, so both halves are the same size.',option_visuals={'a':{'type':'fraction','shape':'circle','parts':2,'shaded':0,'equal':False},'b':{'type':'fraction','shape':'circle','parts':2,'shaded':0,'equal':True},'c':{'type':'fraction','shape':'circle','parts':4,'shaded':0,'equal':True}}),
     ],
     18:[
         single('What time does this clock show?','4 o\'clock',['3 o\'clock','4 o\'clock','half past 4'],{'type':'clock','hour':4,'minute':0},'The long hand is on 12 and the short hand is on 4.'),
         single('What time does this clock show?','half past 7',['7 o\'clock','half past 7','half past 8'],{'type':'clock','hour':7,'minute':30},'The long hand is on 6. The short hand is between 7 and 8.'),
-        free('Draw the hands for 9 o\'clock on paper with an adult. Long hand on 12, short hand on 9.'),
+        single('Which clock shows 9 o\'clock?','a',['a','b','c'],explanation='At 9 o\'clock the long hand points to 12 and the short hand points to 9.',option_visuals={'a':clock(9,0),'b':clock(9,30),'c':clock(3,0)}),
         single('What is the long hand called?','minute hand',['hour hand','minute hand'],explanation='The long hand shows minutes.'),
         mapping('Match each measuring job to its tool.', [('measure a pencil','ruler'),('weigh flour','scales'),('measure water','jug')],['ruler','scales','jug'],explanation='A ruler measures length, scales measure mass, and a jug measures water.'),
         ordered('Jug holds 5 cups, bowl 4 and mug 2. Put them in order, holds most first.',['jug','bowl','mug'],explanation='Compare capacity: 5 cups, then 4 cups, then 2 cups.'),
-        free('Tell an adult your lunchtime. Draw it on a paper clock and check the hands together.'),
+        single('Lunch is at half past 12. Which clock shows lunchtime?','b',['a','b','c'],explanation='Half past 12: the long hand points to 6, the short hand between 12 and 1.',option_visuals={'a':clock(12,0),'b':clock(12,30),'c':clock(6,0)}),
         tf('At half past, the long hand points to 6.',True,'The minute hand has travelled halfway around the clock.'),
     ]}
 
@@ -977,37 +1038,41 @@ def short_explanation(text,limit=16):
 
 def playable_step(draft,record,spec,index,hint,explanation):
     options=[]; targets=[]; answer=None
-    pictures=PICTURES.get(record['id'],{}) if spec['type']!='free' else {}
+    pictures=PICTURES.get(record['id'],{})
     assert not (pictures.get('visual') and spec.get('visual')),(record['id'],'two pictures')
     labels=[str(p[0]) for p in spec['pairs']] if spec['type']=='mapping' else spec.get('choices',[])
     assert set(pictures.get('options',{}))<=set(labels),(record['id'],'picture for a missing answer')
     option_visuals={**pictures.get('options',{}),**spec.get('optionVisuals',{})}
     visual=spec.get('visual') or pictures.get('visual')
     if pictures: PICTURED.add(record['id'])
-    kind={'single':'tap-choice','set':'drag-to-basket','mapping':'match-lines','sequence':'order-sequence','free':'story'}[spec['type']]
-    if spec['type']=='mapping':
+    kind={'single':'tap-choice','set':'drag-to-basket','mapping':'match-lines','sequence':'order-sequence',
+        'number':'number-entry','sentence':'number-sentence'}[spec['type']]
+    if spec['type']=='number':
+        answer={'type':'number','value':int(spec['correct'])}
+    elif spec['type']=='sentence':
+        answer={'type':'sentence','value':spec['correct']}
+    elif spec['type']=='mapping':
         targets=[{'id':f'target_{i+1}','label':str(t),'art':'math_label'} for i,t in enumerate(spec['targets'])]
         ids={t['label']:t['id'] for t in targets}
         options=[{'id':f'item_{i+1}','label':str(label),'art':'math_label',**({'visual':option_visuals[str(label)]} if str(label) in option_visuals else {})} for i,(label,_) in enumerate(spec['pairs'])]
         answer={'type':'mapping','value':{options[i]['id']:ids[str(v)] for i,(_,v) in enumerate(spec['pairs'])}}
-    elif spec['type']!='free':
+    else:
         options=[{'id':f'choice_{i+1}','label':str(label),'art':'math_label',**({'visual':option_visuals[label]} if label in option_visuals else {})} for i,label in enumerate(spec['choices'])]
         ids={o['label']:o['id'] for o in options}
         answer={'type':spec['type'],'value':ids[spec['correct']] if spec['type']=='single' else [ids[v] for v in spec['correct']]}
     # Teacher review 5: a title, a hint and a reason of its own for every
     # assessed question (assets/content/maths_question_text.json).
-    words=question_text()[record['id']] if answer else {}
+    words=question_text()[record['id']]
     text=words.get('explanation') or spec.get('explanation') or explanation
     short=short_explanation(text)
-    step={'id':f'{draft["id"]}.step.{index:03d}','kind':kind,'title':('Try it at home' if spec['type']=='free' else words['title']),
+    step={'id':f'{draft["id"]}.step.{index:03d}','kind':kind,'title':words['title'],
         'prompt':spec['prompt'],'options':options,'targets':targets,'answer':answer,
-        'assessed':answer is not None,'objective':record['id'] if answer else '',
+        'assessed':True,'objective':record['id'],
         'hint':words.get('hint') or spec.get('hint') or hint,'explanation':text,'shortExplanation':short,
-        'source':source_ref(draft,record),'scene':'workshop','section':'Try at home' if spec['type']=='free' else ('Challenge' if draft['kind']=='quiz' else 'Discover'),
+        'source':source_ref(draft,record),'scene':'workshop',
+        'section':'Practice' if '.sheet.' in record['id'] else 'Challenge' if draft['kind']=='quiz' else 'Discover',
         'playScene':'maths','theme':draft['id'],'adapted':True}
     if visual: step['mathVisual']=visual
-    if not answer:
-        step['parentReview']={'en':record['answerKeyText'],'note':'Discuss with an adult; this personal or drawing response is not automatically graded.'}
     if options:
         if all(re.fullmatch(r'[A-Za-z]',o['label']) for o in options):
             # Letters name pictures labelled a, b, c: keep them in that order
@@ -1100,6 +1165,9 @@ def build():
                 'parentReview':{'en':'Guided practice is ungraded. Completion records the child doing the activities, not a book-question score.'}})
         for record,spec in zip(records,adapted):
             steps.append(playable_step(draft,record,spec,len(steps)+1,hint,'Look carefully at the groups and explain how you found your answer.'))
+        if ident.startswith('math_unit_'):
+            for i,spec in enumerate(WORKSHEETS.get(unit,[]),1):
+                steps.append(playable_step(draft,sheet_record(draft,unit,i,spec),spec,len(steps)+1,hint,''))
         # One home activity per goal, written for its question (teacher
         # review 5: every goal had the same "Discuss this question" text).
         goals=[{'objective':s['objective'],'text':question_text()[s['objective']]['home'],
@@ -1110,8 +1178,8 @@ def build():
             'stickers':[{'id':f'{ident}.sticker','word':word,'art':'math_label','picture':STICKER_PICTURES[word],'meaning':meaning,
                 'meaningSource':'adapted_from_big_idea','sourcePages':draft['sourcePages']}],
             'homeActivities':[{'text':home,'textAr':arabic['home'][ident],'safety':SAFETY,'safetyAr':arabic['safety'][SAFETY],'pages':draft['sourcePages'],'safetyPages':[2],'adapted':True}],
-            'goalActivities':goals,'parentNote':{'en':'Drawing and personal answers are discussed with an adult and are not automatically graded. Estimate first; a guess is not a scored answer.',
-                'ar':'الرسم والإجابات الشخصية بنتناقش فيها مع شخص كبير ومش بنقيّمها تلقائيًا. التوقع الأول مش إجابة عليها درجات.'}}
+            'goalActivities':goals,'parentNote':{'en':'Every question is answered in the app; each goal has a home activity to try together. Estimate first; a guess is not a scored answer.',
+                'ar':'كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط تعملوه مع بعض في البيت. التوقع الأول مش إجابة عليها درجات.'}}
         if quiz: book['practiceUnitId']=f'math_unit_{(int(ident[-2:])-1)*6+1:02d}'
         visual_units(book)
         dump(CONTENT/'playable'/f'{ident}.json',book)

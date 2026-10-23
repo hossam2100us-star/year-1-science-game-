@@ -7,6 +7,7 @@ import '../science/discovery_world.dart';
 import 'maths_art.dart';
 import 'maths_visual.dart';
 import 'number_line_jumps.dart';
+import 'number_pad.dart';
 import 'tap_counter.dart';
 
 /// Maths supplies its own diagrams; navigation, feedback, marking and saved
@@ -22,6 +23,7 @@ class MathsStage extends StatelessWidget {
     required this.locked,
     required this.onItem,
     required this.onPlace,
+    this.onWrite,
     this.lab = const {},
     this.onSaveLab,
     this.onSay,
@@ -34,6 +36,9 @@ class MathsStage extends StatelessWidget {
   final bool locked;
   final ValueChanged<String> onItem;
   final void Function(String item, String target) onPlace;
+
+  /// A written answer (number pad, number sentence).
+  final ValueChanged<Map<String, String>>? onWrite;
 
   /// Counting marks and number line jumps: learning aids saved with the
   /// step, never part of the answer.
@@ -154,12 +159,32 @@ class MathsStage extends StatelessWidget {
   /// Charts are tall: on a wide screen (a tablet held sideways, a computer)
   /// their answers sit beside the chart instead of below it, so the child
   /// never scrolls to answer (teacher review 6).
+  /// A written answer (number pad) sits beside its number line or picture
+  /// too, for the same reason.
   bool _answersBeside(double width) =>
       width >= 900 &&
-      _diagram?['type'] == 'chart' &&
+      (_diagram?['type'] == 'chart' || (step.isWritten && _diagram != null)) &&
       !_carroll &&
       !step.isMapping &&
       !step.isOrder;
+
+  Widget _written() => step.isNumber
+      ? WrittenNumber(
+          key: ValueKey('written-${step.id}'),
+          value: placements['answer'] ?? '',
+          locked: locked,
+          review: reviewItems.contains('answer'),
+          onSay: onSay,
+          onChanged: (value) => onWrite?.call({'answer': value}),
+        )
+      : NumberSentence(
+          key: ValueKey('sentence-${step.id}'),
+          slots: placements,
+          locked: locked,
+          review: reviewItems,
+          onSay: onSay,
+          onChanged: (slots) => onWrite?.call(slots),
+        );
 
   Widget _diagramBox() => Container(
     padding: const EdgeInsets.all(12),
@@ -242,10 +267,12 @@ class MathsStage extends StatelessWidget {
                 const SizedBox(width: 16),
                 Expanded(
                   flex: 2,
-                  child: LayoutBuilder(
-                    builder: (context, side) =>
-                        _answers(context, side.maxWidth, stacked: true),
-                  ),
+                  child: step.isWritten
+                      ? _written()
+                      : LayoutBuilder(
+                          builder: (context, side) =>
+                              _answers(context, side.maxWidth, stacked: true),
+                        ),
                 ),
               ],
             )
@@ -270,7 +297,7 @@ class MathsStage extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-            _answers(context, box.maxWidth),
+            if (step.isWritten) _written() else _answers(context, box.maxWidth),
           ],
           if (_carroll) ...[
             const SizedBox(height: 16),
