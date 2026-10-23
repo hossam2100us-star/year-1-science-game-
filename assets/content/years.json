@@ -1,0 +1,19 @@
+{
+  "years": [
+    {
+      "id": "y1",
+      "title": "Year 1",
+      "ar": "سنة أولى",
+      "subjects": [
+        {
+          "curriculum": "y1.science",
+          "catalog": "assets/content/catalog.json"
+        },
+        {
+          "curriculum": "y1.maths",
+          "catalog": "assets/content/maths_catalog.json"
+        }
+      ]
+    }
+  ]
+}

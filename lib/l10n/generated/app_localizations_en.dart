@@ -103,6 +103,21 @@ class AppLocalizationsEn extends AppLocalizations {
       'Try opening the Maths results again';
 
   @override
+  String get parentAreaSchoolYear => 'School year';
+
+  @override
+  String parentAreaSchoolYearOnlyOne(String year) {
+    return '$year. Other school years will appear here when they are added.';
+  }
+
+  @override
+  String get parentAreaSchoolYearNote =>
+      'Each year keeps its own progress. The child can still go back to earlier years to review.';
+
+  @override
+  String get parentAreaResultsRetry => 'Try opening these results again';
+
+  @override
   String get parentAreaMathsGuideRetry => 'Try opening the Maths guide again';
 
   @override

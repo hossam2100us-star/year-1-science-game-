@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../content/curriculum.dart';
 import '../../core/providers.dart';
 import '../../core/widgets.dart';
 import '../../games/science_art.dart';
@@ -8,6 +9,8 @@ import '../maths/maths_visual.dart';
 
 class StickerAlbum extends ConsumerWidget {
   const StickerAlbum({super.key, this.subject = 'science'});
+
+  /// The progress key of the subject (`science`, `maths`, `y2.science`).
   final String subject;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,7 +30,7 @@ class StickerAlbum extends ConsumerWidget {
             ),
             const SizedBox(height: 16),
             StoryPanel(
-              text: subject == 'science'
+              text: subjectKindOf(subject) == 'science'
                   ? 'My science words! Finish a unit to earn its stickers. Tap an earned sticker to listen.'
                   : 'My maths words! Finish a unit to earn its stickers. Tap an earned sticker to listen.',
             ),
@@ -44,7 +47,7 @@ class StickerAlbum extends ConsumerWidget {
                     final words = <String, Map<String, dynamic>>{};
                     final earned = <String>{};
                     for (final lesson in library.lessons.values.where(
-                      (lesson) => lesson.subject == subject,
+                      (lesson) => lesson.progressKey == subject,
                     )) {
                       for (final sticker in lesson.stickers) {
                         words[sticker['id']] = sticker;
@@ -91,7 +94,7 @@ class StickerAlbum extends ConsumerWidget {
                               child: Column(
                                 children: [
                                   if (earned.contains(entry.key))
-                                    if (subject == 'science')
+                                    if (subjectKindOf(subject) == 'science')
                                       SciencePicture(art: entry.key)
                                     // Each Maths word has its own picture
                                     // (teacher review 5: all showed one icon).

@@ -27,6 +27,7 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
   final _photos = PhotoService();
   ChildGender _gender = ChildGender.boy;
   PaletteChoice _palette = PaletteChoice.automatic;
+  String _schoolYear = 'y1';
   int _avatar = 0, _step = 0;
   Uint8List? _photo;
   bool _busy = false;
@@ -54,6 +55,7 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
       _name.text = p.name;
       _gender = p.gender;
       _palette = p.palette;
+      _schoolYear = p.schoolYear;
       _avatar = p.avatar;
       _photo = p.photo;
     }
@@ -97,6 +99,7 @@ class _ProfileEditorState extends ConsumerState<ProfileEditor> {
     avatar: _avatar,
     photo: _photo,
     palette: _palette,
+    schoolYear: _schoolYear,
   );
   Future<void> _recover() async {
     setState(() => _busy = true);

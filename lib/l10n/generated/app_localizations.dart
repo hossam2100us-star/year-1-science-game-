@@ -260,6 +260,30 @@ abstract class AppLocalizations {
   /// **'Try opening the Maths results again'**
   String get parentAreaMathsResultsRetry;
 
+  /// No description provided for @parentAreaSchoolYear.
+  ///
+  /// In en, this message translates to:
+  /// **'School year'**
+  String get parentAreaSchoolYear;
+
+  /// No description provided for @parentAreaSchoolYearOnlyOne.
+  ///
+  /// In en, this message translates to:
+  /// **'{year}. Other school years will appear here when they are added.'**
+  String parentAreaSchoolYearOnlyOne(String year);
+
+  /// No description provided for @parentAreaSchoolYearNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Each year keeps its own progress. The child can still go back to earlier years to review.'**
+  String get parentAreaSchoolYearNote;
+
+  /// No description provided for @parentAreaResultsRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try opening these results again'**
+  String get parentAreaResultsRetry;
+
   /// No description provided for @parentAreaMathsGuideRetry.
   ///
   /// In en, this message translates to:

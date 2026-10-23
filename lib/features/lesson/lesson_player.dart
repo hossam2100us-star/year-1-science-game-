@@ -130,7 +130,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     final saved = widget.onPracticeComplete == null
         ? ref
               .read(appProvider)
-              .progressForSubject(widget.lesson.subject)
+              .progressForSubject(widget.lesson.progressKey)
               .journeys[widget.lesson.id]
         : null;
     _session = saved != null && LessonSession.canRestore(widget.lesson, saved)
@@ -288,7 +288,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
       (_) => writer.saveJourney(
         widget.lesson.id,
         snapshot,
-        subject: widget.lesson.subject,
+        subject: widget.lesson.progressKey,
       ),
     );
     _writes = task.catchError((Object error, StackTrace stack) {
@@ -537,7 +537,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
             .saveJourney(
               widget.lesson.id,
               _session.toJson(),
-              subject: widget.lesson.subject,
+              subject: widget.lesson.progressKey,
             );
       }
       _game.pauseEngine();
@@ -584,7 +584,10 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
         }
         await ref
             .read(appProvider.notifier)
-            .completeJourney(_session.result(), subject: widget.lesson.subject);
+            .completeJourney(
+              _session.result(),
+              subject: widget.lesson.progressKey,
+            );
         if (mounted) {
           setState(() => _complete = true);
           _say(_resultText);
@@ -596,7 +599,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
               .saveJourney(
                 widget.lesson.id,
                 _session.toJson(),
-                subject: widget.lesson.subject,
+                subject: widget.lesson.progressKey,
               );
         }
         _game.pauseEngine();

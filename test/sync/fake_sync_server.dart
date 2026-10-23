@@ -25,8 +25,18 @@ class FakeSyncServer {
   bool loseNextAnswer = false;
   bool emailVerified = true;
 
+  /// False: a server from before school years (ADR-0021), which refuses a
+  /// child change that names one and never sends one.
+  bool knowsSchoolYears = true;
+
   static const _identity = {'displayName', 'gender'};
-  static const _childKeys = ['displayName', 'gender', 'avatar', 'palette'];
+  List<String> get _childKeys => [
+    'displayName',
+    'gender',
+    'avatar',
+    'palette',
+    if (knowsSchoolYears) 'schoolYear',
+  ];
 
   Future<http.Response> handle(http.Request r) async {
     requests.add('${r.method} ${r.url.path}');
@@ -89,6 +99,7 @@ class FakeSyncServer {
       'gender': 'girl',
       'avatar': 1,
       'palette': 'automatic',
+      if (knowsSchoolYears) 'schoolYear': 'y1',
       'version': 1,
       'changeSeq': _next(),
     };
@@ -133,10 +144,18 @@ class FakeSyncServer {
 
   Map<String, dynamic> _dispatch(String device, Map<String, dynamic> m) {
     final payload = Map<String, dynamic>.from(m['payload'] as Map? ?? {});
+    if (!knowsSchoolYears &&
+        m['entity'] == 'child' &&
+        payload.containsKey('schoolYear')) {
+      return _rejected('validation_failed');
+    }
     switch ((m['entity'], m['op'])) {
       case ('child', 'create'):
         final id = m['id'] as String;
-        final fields = {for (final k in _childKeys) k: payload[k]};
+        final fields = {
+          for (final k in _childKeys)
+            k: k == 'schoolYear' ? payload[k] ?? 'y1' : payload[k],
+        };
         final own = children[id];
         if (own != null) {
           if (own['deleted'] == true) return _rejected('child_deleted');

@@ -26,7 +26,6 @@ class DriftProgressStore implements ProgressStore {
     : children = ChildRepository(db),
       settings = SettingsRepository(db),
       progress = ProgressRepository(db),
-      mathsProgress = ProgressRepository(db, curriculum: mathsCurriculum),
       quarantine = QuarantineRepository(db),
       outbox = SyncOutbox(db);
 
@@ -37,7 +36,16 @@ class DriftProgressStore implements ProgressStore {
   final ChildRepository children;
   final SettingsRepository settings;
   final ProgressRepository progress;
-  final ProgressRepository mathsProgress;
+  final _curricula = <String, ProgressRepository>{};
+
+  /// The progress tables of one curriculum (Year 1 Maths, later years).
+  ProgressRepository _progressOf(String curriculum) =>
+      curriculum == currentCurriculum
+      ? progress
+      : _curricula.putIfAbsent(
+          curriculum,
+          () => ProgressRepository(db, curriculum: curriculum),
+        );
   final QuarantineRepository quarantine;
   final SyncOutbox outbox;
 
@@ -56,7 +64,8 @@ class DriftProgressStore implements ProgressStore {
 
   // Legacy/Hive Maths records are normalized on their next save, without
   // changing the child's in-memory record or the existing database schema.
-  Set<String> _mathsNeedsNormalization = {};
+  // Entries are `childId/progressKey`.
+  Set<String> _needsNormalization = {};
 
   static const deviceKey = 'device.id';
   static const activeChildKey = 'child.active';
@@ -77,7 +86,7 @@ class DriftProgressStore implements ProgressStore {
     final rows = await children.all();
     final family = <String, Map<String, dynamic>>{};
     _otherUsage = {};
-    _mathsNeedsNormalization = {};
+    _needsNormalization = {};
     for (final row in rows) {
       family[row.id] = await _childRecord(row);
     }
@@ -129,24 +138,34 @@ class DriftProgressStore implements ProgressStore {
     _otherUsage[row.id] = others;
     final attempts = await progress.attempts(row.id);
     final subjects = await progress.subjects(row.id);
-    final maths = subjects['maths'];
-    final mathsAttempts = await mathsProgress.attempts(row.id);
-    final mathsJourneys = await mathsProgress.journeys(row.id);
-    final legacyMaths =
-        maths != null &&
-        (maths.containsKey('attempts') || maths.containsKey('journeys'));
-    if (legacyMaths) _mathsNeedsNormalization.add(row.id);
-    if (maths != null || mathsAttempts.isNotEmpty || mathsJourneys.isNotEmpty) {
-      subjects['maths'] = {
-        ...?maths,
-        'attempts':
-            legacyMaths && mathsAttempts.isEmpty && mathsJourneys.isEmpty
-            ? maths['attempts'] ?? []
-            : [for (final a in mathsAttempts) a.toJson()],
-        'journeys':
-            legacyMaths && mathsAttempts.isEmpty && mathsJourneys.isEmpty
-            ? maths['journeys'] ?? <String, dynamic>{}
-            : mathsJourneys,
+    // Year 1 Maths and every later curriculum keep their progress in the
+    // progress tables under their curriculum ID (ADR-0021). Rows of a
+    // curriculum this version does not know stay stored, unread.
+    final keys = {
+      for (final c in await progress.curricula(row.id))
+        if (c != currentCurriculum && curriculumOfKey(progressKeyOf(c)) != null)
+          progressKeyOf(c),
+      for (final key in subjects.keys)
+        if (key != 'science' && curriculumOfKey(key) != null) key,
+    };
+    for (final key in keys) {
+      final repo = _progressOf(curriculumOfKey(key)!);
+      final record = subjects[key];
+      final stored = await repo.attempts(row.id);
+      final storedJourneys = await repo.journeys(row.id);
+      final legacy =
+          record != null &&
+          (record.containsKey('attempts') || record.containsKey('journeys'));
+      if (legacy) _needsNormalization.add('${row.id}/$key');
+      final useLegacy = legacy && stored.isEmpty && storedJourneys.isEmpty;
+      subjects[key] = {
+        ...?record,
+        'attempts': useLegacy
+            ? record['attempts'] ?? []
+            : [for (final a in stored) a.toJson()],
+        'journeys': useLegacy
+            ? record['journeys'] ?? <String, dynamic>{}
+            : storedJourneys,
       };
     }
     return {
@@ -158,6 +177,7 @@ class DriftProgressStore implements ProgressStore {
               'avatar': row.avatar,
               'photo': photo == null ? null : base64Encode(photo),
               'palette': row.palette,
+              'schoolYear': row.schoolYear,
             }
           : null,
       'settings': await settings.get(row.id) ?? const AppSettings().toJson(),
@@ -221,7 +241,7 @@ class DriftProgressStore implements ProgressStore {
     _snapshots = next;
     _savedRaw = nextRaw;
     _data = data;
-    _mathsNeedsNormalization = {};
+    _needsNormalization = {};
   }
 
   Future<void> _writeChild(
@@ -330,17 +350,21 @@ class DriftProgressStore implements ProgressStore {
         await sync?.usagePut(id, day, local < 0 ? 0 : local);
       }
     }
-    await _writeMathsProgress(id, before, after, sync);
+    for (final key in {...?before?.subjects.keys, ...after.subjects.keys}) {
+      if (key != 'science' && curriculumOfKey(key) != null) {
+        await _writeSubjectProgress(id, key, before, after, sync);
+      }
+    }
     for (final key in {...?before?.subjects.keys, ...after.subjects.keys}) {
       final value = after.subjects[key];
       if (value == null) {
         await progress.deleteSubject(id, key);
-      } else if (key == 'maths') {
-        final metadata = _mathsMetadata(after.subjectJson[key]!);
+      } else if (curriculumOfKey(key) != null) {
+        final metadata = _subjectMetadata(after.subjectJson[key]!);
         final previous = before?.subjectJson[key];
-        if (_mathsNeedsNormalization.contains(id) ||
+        if (_needsNormalization.contains('$id/$key') ||
             previous == null ||
-            canonicalJson(_mathsMetadata(previous)) !=
+            canonicalJson(_subjectMetadata(previous)) !=
                 canonicalJson(metadata)) {
           await progress.putSubject(id, key, metadata);
         }
@@ -350,43 +374,47 @@ class DriftProgressStore implements ProgressStore {
     }
   }
 
-  static Map<String, dynamic> _mathsMetadata(Map<String, dynamic> record) => {
+  /// A subject record without its attempts and journeys, which live in the
+  /// progress tables.
+  static Map<String, dynamic> _subjectMetadata(Map<String, dynamic> record) => {
     for (final entry in record.entries)
       if (entry.key != 'attempts' && entry.key != 'journeys')
         entry.key: entry.value,
   };
 
-  Future<void> _writeMathsProgress(
+  /// Writes the attempts and journeys of one curriculum other than Year 1
+  /// Science (kept in the main fields) to its progress tables.
+  Future<void> _writeSubjectProgress(
     String childId,
+    String key,
     _ChildSnapshot? before,
     _ChildSnapshot after,
     SyncOutbox? sync,
   ) async {
-    final oldRecord = before?.subjectJson['maths'];
-    final record = after.subjectJson['maths'];
-    final normalize = _mathsNeedsNormalization.contains(childId);
+    final curriculum = curriculumOfKey(key)!;
+    final repo = _progressOf(curriculum);
+    final oldRecord = before?.subjectJson[key];
+    final record = after.subjectJson[key];
+    final normalize = _needsNormalization.contains('$childId/$key');
     if (oldRecord == null && record == null && !normalize) return;
-    if (before?.subjects['maths'] == after.subjects['maths'] && !normalize) {
+    if (before?.subjects[key] == after.subjects[key] && !normalize) {
       return;
     }
     AppData view(Map<String, dynamic>? value) =>
-        AppData(otherSubjects: {'maths': ?value}).progressForSubject('maths');
+        AppData(otherSubjects: {key: ?value}).progressForSubject(key);
     final previous = view(oldRecord);
     final next = view(record);
     if (normalize ||
         canonicalJson([for (final a in previous.attempts) a.toJson()]) !=
             canonicalJson([for (final a in next.attempts) a.toJson()])) {
-      final change = await mathsProgress.replaceAttempts(
-        childId,
-        next.attempts,
-      );
+      final change = await repo.replaceAttempts(childId, next.attempts);
       if (sync != null) {
         for (final (id: attemptId, :attempt) in change.added) {
           await sync.attemptCreate(
             childId,
             attemptId,
             SyncOutbox.attemptPayload(
-              mathsCurriculum,
+              curriculum,
               unitId: attempt.unitId,
               contentVersion: attempt.contentVersion,
               completed: attempt.completed,
@@ -404,20 +432,20 @@ class DriftProgressStore implements ProgressStore {
         }
       }
     }
-    for (final key in {...previous.journeys.keys, ...next.journeys.keys}) {
-      final value = next.journeys[key];
+    for (final journey in {...previous.journeys.keys, ...next.journeys.keys}) {
+      final value = next.journeys[journey];
       if (value == null) {
-        await mathsProgress.deleteJourney(childId, key);
-        await sync?.journeyDelete(childId, mathsCurriculum, key);
+        await repo.deleteJourney(childId, journey);
+        await sync?.journeyDelete(childId, curriculum, journey);
       } else if (normalize ||
-          canonicalJson(previous.journeys[key]) != canonicalJson(value)) {
-        await mathsProgress.putJourney(childId, key, value);
+          canonicalJson(previous.journeys[journey]) != canonicalJson(value)) {
+        await repo.putJourney(childId, journey, value);
         await sync?.journeyPut(
           childId,
-          mathsCurriculum,
-          key,
+          curriculum,
+          journey,
           value,
-          baseVersion: await mathsProgress.journeyVersion(childId, key),
+          baseVersion: await repo.journeyVersion(childId, journey),
         );
       }
     }

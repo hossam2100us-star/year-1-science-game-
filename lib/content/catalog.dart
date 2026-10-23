@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/models.dart';
+import 'curriculum.dart';
 
 class LevelInfo {
   LevelInfo.fromJson(Map<String, dynamic> j)
@@ -31,6 +32,9 @@ class IslandInfo {
 class Catalog {
   Catalog.fromJson(Map<String, dynamic> j)
     : subject = j['subject'] as String? ?? 'science',
+      curriculum =
+          j['curriculum'] as String? ??
+          'y1.${j['subject'] as String? ?? 'science'}',
       title = j['title'] as String? ?? 'Science',
       arabic = j['ar'] as String? ?? 'العلوم',
       welcome =
@@ -41,19 +45,26 @@ class Catalog {
           .toList(),
       parentRules = List<Map<String, dynamic>>.from(j['parentRules']);
   final String subject, title, arabic, welcome;
+
+  /// The year and subject (`y1.science`); Year 1 catalogs name only their
+  /// subject (ADR-0021).
+  final String curriculum;
   final List<IslandInfo> islands;
+
+  /// Where this subject's progress is kept in the app's data.
+  String get progressKey => progressKeyOf(curriculum);
   final List<Map<String, dynamic>> parentRules;
   Iterable<LevelInfo> get levels => islands.expand((i) => i.levels);
   bool islandUnlocked(int index, AppData data) =>
       index == 0 ||
       data
-          .progressForSubject(subject)
+          .progressForSubject(progressKey)
           .isAdventureComplete(islands[index - 1].levels.last.id);
   bool levelUnlocked(int islandIndex, int levelIndex, AppData data) =>
       islandUnlocked(islandIndex, data) &&
       (levelIndex == 0 ||
           data
-              .progressForSubject(subject)
+              .progressForSubject(progressKey)
               .isAdventureComplete(
                 islands[islandIndex].levels[levelIndex - 1].id,
               ));

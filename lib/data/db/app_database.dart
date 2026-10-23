@@ -21,6 +21,10 @@ class Children extends Table {
   TextColumn get gender => text().withDefault(const Constant('boy'))();
   IntColumn get avatar => integer().withDefault(const Constant(0))();
   TextColumn get palette => text().withDefault(const Constant('automatic'))();
+
+  /// The school year the parent chose (`y1`, `y2`, ...; ADR-0021). Added in
+  /// schema 3; children saved before are in Year 1.
+  TextColumn get schoolYear => text().withDefault(const Constant('y1'))();
   BoolColumn get pendingPhoto => boolean().withDefault(const Constant(false))();
   IntColumn get sortOrder => integer()();
   IntColumn get version => integer().withDefault(const Constant(0))();
@@ -225,7 +229,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase(super.e);
 
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 3;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -236,6 +240,11 @@ class AppDatabase extends _$AppDatabase {
         // a constraint in place, so drift copies the table: every row is
         // kept, inside the migration's transaction.
         await m.alterTable(TableMigration(outbox));
+      }
+      if (from < 3) {
+        // A new column with a default: every child row is kept as it is
+        // and reads as Year 1.
+        await m.addColumn(children, children.schoolYear);
       }
     },
     beforeOpen: (details) async {
