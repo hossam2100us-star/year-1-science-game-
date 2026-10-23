@@ -153,7 +153,9 @@ final accountProvider = NotifierProvider<AccountController, AccountState>(
 );
 
 /// Owns the API client. In device-only mode there is no client object at
-/// all, so no code path can make a network request.
+/// all, so no account code path can make a network request. The one other
+/// request is the update check, which reads only the newest version number
+/// and which the parent can turn off (ADR-0020).
 class AccountController extends Notifier<AccountState> {
   ApiClient? _client;
 

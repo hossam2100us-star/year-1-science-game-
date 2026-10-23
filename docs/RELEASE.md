@@ -126,6 +126,23 @@ local progress on that device is lost), so switch before real use begins.
 4. Upload the AAB to Play (internal → closed → staged production).
 5. Optionally create a GitHub Release with the per-ABI APKs and a changelog.
 
+### Family server (private trial)
+
+The trial APK is uploaded to the NAS `downloads` folder
+(`/volume1/docker/science-adventure/downloads`) as
+`science-adventure.apk`, with its `.sha256` and `index.html`. Upload the
+new `version.json` **last**, once the APK is in place, because it is what
+makes installed apps show "A new version is ready" (ADR-0020):
+
+```json
+{"versionCode": 9, "versionName": "0.6.1", "page": "/download/"}
+```
+
+`versionCode` and `versionName` are the `pubspec.yaml` version (`name+code`).
+The repository copy is `infrastructure/nas/downloads/version.json`; keep it
+in step with the APK on the server. A `versionCode` higher than the APK
+actually there would send families to a page with the old version.
+
 ## 6. Device testing (REC-04) — owner action
 
 No device or emulator was available while preparing this guide. Before a

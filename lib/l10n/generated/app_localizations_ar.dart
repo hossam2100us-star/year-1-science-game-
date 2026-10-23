@@ -45,6 +45,21 @@ class AppLocalizationsAr extends AppLocalizations {
   String get parentAreaChildrenOnDevice => 'الأطفال على الجهاز ده';
 
   @override
+  String get parentAreaUpdatesTitle => 'تحديثات البرنامج';
+
+  @override
+  String get parentAreaUpdatesCheck => 'دوّر على نسخة جديدة لما البرنامج يفتح';
+
+  @override
+  String get parentAreaUpdatesNote =>
+      'بيتقري رقم آخر نسخة بس من سيرفر العيلة، ومش بيتبعت أي حاجة عن أطفالك.';
+
+  @override
+  String parentAreaVersion(String name) {
+    return 'النسخة دي: $name';
+  }
+
+  @override
   String get parentAreaChildAndAppearance => 'بيانات الطفل وشكل اللعبة';
 
   @override
@@ -216,7 +231,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get voiceSettingsMenuNamesVaryInstallingVoice =>
-      'أسماء القوايم ممكن تختلف. تنزيل الصوت من إعدادات الجهاز محتاج إنترنت مرة واحدة؛ اللعبة نفسها مفيهاش إذن إنترنت.';
+      'أسماء القوايم ممكن تختلف. تنزيل الصوت من إعدادات الجهاز محتاج إنترنت مرة واحدة، وبعدها الأصوات بتشتغل من غير إنترنت.';
 
   @override
   String get unitReportOpenUnitForPractice => 'افتح الوحدة للتدريب';
@@ -397,7 +412,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get accountDeviceOnlyBody =>
-      'الأطفال وتقدّمهم محفوظين على الجهاز ده بس، واللعبة مش بتتصل بالإنترنت.';
+      'الأطفال وتقدّمهم محفوظين على الجهاز ده بس، ومش بيتبعت عنهم أي حاجة. البرنامج بيدوّر بس على نسخة جديدة، وده تقدر تقفله من الإعدادات.';
 
   @override
   String get accountWhyTitle => 'حساب ولي الأمر';

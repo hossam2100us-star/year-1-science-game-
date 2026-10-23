@@ -41,7 +41,8 @@ the parent able to choose to use the app on the device only.
 **Decision.**
 * Accounts belong to the parent; children never have credentials.
 * First launch (behind the parent gate) offers **"This device only"**
-  (default; no network calls at all) or **"Parent account"** (sync).
+  (default; no network calls at all; since ADR-0020, except the Android
+  update check) or **"Parent account"** (sync).
 * Child photos are never synced by default (REC-03).
 * Production builds keep account creation **disabled** until the owner
   supplies the approved privacy notice and parental-consent text
@@ -459,3 +460,42 @@ whenever it says the copy is complete, even if an error was reported.
 Chrome (new profile, onboarding, close, reopen) with IndexedDB and with
 OPFS, in CI after the web build. The NAS page is not cross-origin isolated,
 so Chrome there uses IndexedDB, which was not affected.
+
+---
+
+## ADR-0020 — The Android app looks for a newer version
+
+**Status:** accepted (owner decision, 21 October 2026); implemented on
+`feature/update-check`.
+
+**Context.** Trial families install the APK from the family server's
+download page, so nothing tells them when a newer APK is there. The owner
+asked the app to look for one when it opens and tell the user. This
+changes ADR-0002's promise that "this device only" makes no network
+request; the owner chose to check always and amend the promise.
+
+**Decision.**
+- Android builds that know the family server read
+  `<server>/download/version.json` once, each time the app opens:
+  `{"versionCode": 9, "versionName": "0.6.1", "page": "/download/"}`. The
+  file is uploaded next to the APK with each release (docs/RELEASE.md). The
+  request is a plain GET with no account token, cookie, device ID or child
+  data, and in every mode, device-only included. It is the only request
+  device-only mode makes.
+- A higher `versionCode` than the installed app's shows a banner at the top
+  of the start screens (the login page and the child chooser). "Update"
+  asks the parent gate, then opens the download page in the browser; the
+  APK is installed the usual way, so the app needs no install permission.
+  "Later" hides the banner until a newer version than the one dismissed.
+- Only a page on the family server itself (same scheme and host) is ever
+  opened. A missing or broken file, no network or a slow server (6 s)
+  means "no update"; play never waits for the check.
+- The parent area's Settings has a switch that turns the check off (stored
+  on the device, `update.check`) and shows the installed version.
+- The web app is always current, so it has no check.
+
+**Consequences.** The server's access log records the request like any
+page view (time, the first three parts of the IP address, the path). The
+in-app text about device-only mode and the README now say that the app
+looks for a new version. The banner first appears once families have an
+APK with the check (0.6.1) and a newer `version.json` is published.

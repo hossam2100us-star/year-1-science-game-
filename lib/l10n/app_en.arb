@@ -11,6 +11,17 @@
   "parentAreaSettings": "Settings",
   "parentAreaGuide": "Guide",
   "parentAreaChildrenOnDevice": "Children on this device",
+  "parentAreaUpdatesTitle": "App updates",
+  "parentAreaUpdatesCheck": "Look for a new version when the app opens",
+  "parentAreaUpdatesNote": "Only the newest version number is read from the family server. Nothing about your children is sent.",
+  "parentAreaVersion": "This version: {name}",
+  "@parentAreaVersion": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "parentAreaChildAndAppearance": "Child and appearance",
   "parentAreaScientistGuide": "Scientist guide: {guideName}",
   "@parentAreaScientistGuide": {
@@ -76,7 +87,7 @@
   "voiceSettingsCheckVoicesAgain": "Check voices again",
   "voiceSettingsIfNoVoiceIsAvailable": "If no voice is available, use the tablet settings once:",
   "voiceSettings1OpenDeviceSettings2": "1. Open device Settings.\n2. Search for Text-to-speech.\n3. Open the speech engine settings.\n4. Choose Install voice data.\n5. Download English.\n6. Return and tap Check voices again.",
-  "voiceSettingsMenuNamesVaryInstallingVoice": "Menu names vary. Installing voice data in system settings needs internet once; the game has no internet permission.",
+  "voiceSettingsMenuNamesVaryInstallingVoice": "Menu names vary. Installing voice data in system settings needs internet once; after that the voices work offline.",
   "unitReportOpenUnitForPractice": "Open unit for practice",
   "unitReportLearningSoFarUnitIn": "Learning so far — unit in progress:",
   "unitReportIndependentThisTime": "Independent this time",
@@ -211,7 +222,7 @@
   "loginOfflineBody": "Play with the children and progress saved on this device. You can sign in later, here or in the parent area.",
   "accountNotNow": "Not now",
   "accountDeviceOnlyTitle": "This device only",
-  "accountDeviceOnlyBody": "Children and their progress are saved on this device only. The app does not connect to the Internet.",
+  "accountDeviceOnlyBody": "Children and their progress are saved on this device only. Nothing about them is sent; the app only looks for a new version, which you can turn off in Settings.",
   "accountWhyTitle": "A parent account",
   "accountWhyBody": "With a parent account, the children you choose appear with their progress on your other devices and on the website. You can stop at any time; nothing is deleted from this device.",
   "accountUseAccount": "Set up a parent account",

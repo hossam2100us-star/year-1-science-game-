@@ -51,6 +51,8 @@ Arabic**, simply, one step at a time; he is not technical. Technical names
   - `README_AR.md`: the owner's Arabic guide. **Read it first.** It is the
     procedure, and this prompt is how you execute it.
   - `downloads/index.html`: the APK download page (the developer adds the APK later).
+  - `downloads/version.json`: the newest APK version; installed apps read it
+    to offer an update (ADR-0020). Uploaded last with each new APK.
 - Images (private, GitHub Container Registry):
   `ghcr.io/hossam2100us-star/science-adventure-api:trial` and `…-web:trial`.
 - Networking: only the `web` container publishes a port, on the NAS itself:

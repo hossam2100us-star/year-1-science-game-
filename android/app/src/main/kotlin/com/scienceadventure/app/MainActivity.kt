@@ -1,6 +1,10 @@
 package com.scienceadventure.app
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
 import android.media.MediaPlayer
+import android.net.Uri
+import android.os.Build
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -30,6 +34,35 @@ class MainActivity : FlutterActivity() {
                         result.error("invalid_sound", "Unknown sound", null)
                     } else {
                         play(name!!, call.argument<Double>("volume") ?: 0.3, result)
+                    }
+                }
+                else -> result.notImplemented()
+            }
+        }
+        // The update check (ADR-0020): this app's version, and the family
+        // server's download page opened in the browser (https only).
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "science_adventure/app").setMethodCallHandler { call, result ->
+            when (call.method) {
+                "version" -> {
+                    val info = packageManager.getPackageInfo(packageName, 0)
+                    val code = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                        info.longVersionCode
+                    } else {
+                        @Suppress("DEPRECATION") info.versionCode.toLong()
+                    }
+                    result.success(mapOf("code" to code, "name" to (info.versionName ?: "")))
+                }
+                "openUrl" -> {
+                    val uri = Uri.parse(call.argument<String>("url") ?: "")
+                    if (uri.scheme != "https" || uri.host.isNullOrEmpty()) {
+                        result.error("invalid_url", "Only https pages can be opened", null)
+                    } else {
+                        try {
+                            startActivity(Intent(Intent.ACTION_VIEW, uri).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                            result.success(true)
+                        } catch (e: ActivityNotFoundException) {
+                            result.success(false)
+                        }
                     }
                 }
                 else -> result.notImplemented()
