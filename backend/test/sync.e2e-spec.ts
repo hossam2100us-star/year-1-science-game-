@@ -255,6 +255,38 @@ describe('Offline-first sync (§12, §14)', () => {
       expect(row).toMatchObject({ palette: 'berry', avatar: 2, displayName: 'Nour' });
     });
 
+    it('keeps the school year: Year 1 when an app sends none, the later choice wins (ADR-0021)', async () => {
+      const childOf = async () => {
+        const { changes } = await pullAll(web);
+        return changes.find((c) => c.entity === 'child' && c.id === childId)!;
+      };
+      expect(await childOf()).toMatchObject({ data: { displayName: 'Nour', schoolYear: 'y1' } });
+      let row = await h.prisma.childProfile.findUniqueOrThrow({ where: { id: childId } });
+      expect(row.schoolYear).toBeNull();
+
+      const [a] = await push(phone, [patchChild({ schoolYear: 'y2' }, { schoolYear: 'y1' }, 1)]);
+      expect(a).toMatchObject({ status: 'applied', version: 2 });
+      // Made offline on the other device against version 1: the later one wins.
+      const [b] = await push(web, [patchChild({ schoolYear: 'y3' }, { schoolYear: 'y1' }, 1)]);
+      expect(b).toMatchObject({ status: 'applied', version: 3 });
+      expect(await childOf()).toMatchObject({ data: { schoolYear: 'y3' }, version: 3 });
+
+      const [bad] = await push(phone, [patchChild({ schoolYear: 'Year 2' }, {}, 3)]);
+      expect(bad).toMatchObject({ status: 'rejected' });
+      const second = uuidv7();
+      const [made] = await push(phone, [createChild(second, { schoolYear: 'y2' })]);
+      expect(made).toMatchObject({ status: 'applied' });
+      row = await h.prisma.childProfile.findUniqueOrThrow({ where: { id: second } });
+      expect(row.schoolYear).toBe('y2');
+      // The same child sent again by an app from before school years.
+      const [again] = await push(web, [createChild(second)]);
+      expect(again).toMatchObject({ status: 'duplicate' });
+
+      await push(phone, [{ mutationId: uuidv7(), entity: 'child', op: 'delete', id: second }]);
+      row = await h.prisma.childProfile.findUniqueOrThrow({ where: { id: second } });
+      expect(row.schoolYear).toBeNull();
+    });
+
     it('never silently overwrites a name: the second rename is a conflict with the server copy', async () => {
       await push(web, [patchChild({ displayName: 'Nouran' }, { displayName: 'Nour' }, 1)]);
       const [r] = await push(phone, [

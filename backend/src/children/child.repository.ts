@@ -22,12 +22,14 @@ export function isLive<T extends ChildProfile>(row: T | null): row is T & LiveFi
   return row !== null && row.deletedAt === null;
 }
 
-export function childFields(row: LiveChild): ChildFields {
+export function childFields(row: LiveChild): Required<ChildFields> {
   return {
     displayName: row.displayName,
     gender: row.gender,
     avatar: row.avatar,
     palette: row.palette,
+    // Saved before school years (or by an app that sent none): Year 1.
+    schoolYear: row.schoolYear ?? 'y1',
   };
 }
 
@@ -127,6 +129,7 @@ export class ChildRepository {
         gender: null,
         avatar: null,
         palette: null,
+        schoolYear: null,
         deletedAt: new Date(),
         version: { increment: 1 },
       },
