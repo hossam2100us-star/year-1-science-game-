@@ -295,3 +295,27 @@ Findings and what changed in the package afterwards:
   - `downloads/science-adventure.apk`, with its `.sha256` and the renamed download page;
   - 0.5.2 moved to `previous/0.5.2+7`;
   - symbols in `symbols/0.6.0+8`.
+
+## Trial release 0.6.1 (versionCode 9), 2026-10-23
+
+- Built from `chore/release-0.6.1` (main `e712a7f` with the version set to 0.6.1+9). Includes:
+  - Maths: every question inside the app, the number pad and the worksheet questions (PR #13);
+  - the update check and its banner (PR #14, ADR-0020);
+  - pypdf 6.21.1 for the curriculum script (security scan).
+- Same command as 0.6.0 (ARM only, obfuscated, `API_BASE_URL=https://school.hmsfamily.synology.me`).
+- The APK:
+  - 50.9 MB (53,406,193 bytes), SHA-256 `1faf1b7d…fcb9b4c1`;
+  - upload key `a8:03:33:…:74:12:79`, version 0.6.1 (9);
+  - permissions: `INTERNET` and Android's internal receiver permission only, as in 0.6.0;
+  - no app class names in either packaged library;
+  - native libraries the same as 0.6.0 (one small `x86_64` plugin library, as before).
+- Checks before the release: PRs #13 and #14 merged together on a scratch copy, 537 tests, 5 goldens, analyze, format and both content validators pass; full `ci-mobile` green on each PR.
+- **Upgrade 0.6.0 → 0.6.1 in place** on the emulator. Both were built for x86_64 from their commits with the same key:
+  1. In 0.6.0: a new child, Maths unit 1 played to step 6 of 14, the old "Try it at home" step, then the app closed.
+  2. After `adb install -r`: the login page opens. "Continue without the Internet" shows the child; unit 1 reopens at 6 / 14, now the new "Count the circles" question with the number pad. 9 is accepted with its explanation.
+  - A unit test now covers the same case (`test/maths_written_answers_test.dart`).
+- Update check on the emulator (debug build against a stand-in server on the PC): the banner shows, "Update" asks the parent gate, "Later" lasts across restarts, Settings shows the version, one request per launch. Opening the download page in the browser was not tested there (the stand-in server is http; the app opens https pages only). It is checked once 0.6.1 and `version.json` are on the family server.
+- Staged in `C:\Users\hossa\ScienceAdventure-NAS`:
+  - `downloads/science-adventure.apk` with its `.sha256`, and `downloads/version.json` (9, 0.6.1), uploaded last;
+  - 0.6.0 moved to `previous/0.6.0+8`;
+  - symbols in `symbols/0.6.1+9`.
