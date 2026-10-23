@@ -144,6 +144,35 @@ void main() {
     expect(results[lesson.steps[1].objective], DecisionOutcome.firstTry);
   });
 
+  test('a child who stopped on the old "Try it at home" step gets the new '
+      'question there', () {
+    final lesson = maths.lessons['math_unit_01']!;
+    final step = lesson.steps[5];
+    expect(step.id, 'math_unit_01.step.006');
+    expect(step.isNumber, isTrue);
+    final saved = {
+      'version': lesson.version,
+      'attemptId': 'old-attempt',
+      'index': 5,
+      'stepId': step.id,
+      'responses': {
+        for (final s in lesson.steps.take(5))
+          s.id: {'completed': true, 'outcome': 'firstTry'},
+      },
+      'current': <String, dynamic>{},
+    };
+    expect(LessonSession.canRestore(lesson, saved), isTrue);
+    final session = LessonSession.restore(lesson, saved);
+    expect(session.step.id, step.id);
+    // Step 1 explores (no objective); steps 2-5 keep their results.
+    expect(session.result().objectives.keys.toSet(), {
+      for (final s in lesson.steps.take(5))
+        if (s.assessed) s.objective,
+    });
+    expect(session.result().objectives, hasLength(4));
+    expect(session.result().objectives.containsKey(step.objective), isFalse);
+  });
+
   group('the child writes the answer', () {
     Future<MemoryProgressStore> open(WidgetTester t, String stepId) async {
       t.view.physicalSize = const Size(1280, 800);
