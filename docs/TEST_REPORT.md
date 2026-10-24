@@ -350,3 +350,23 @@ Findings and what changed in the package afterwards:
   - `test/maths_class_book_test.dart`, which renders every new question on a 1280x800 screen;
   - the tablet fit test, which covers the new questions too.
 - Review images (`--dart-define=REVIEW_IMAGES=true`) were checked by eye. Two drawings were redrawn after the check: the prism, and the ball behind the box.
+
+## Dependency advisories, 2026-10-24
+
+The security scan failed on every branch after new advisories were published:
+
+| Package | Advisory | Was | Now | How |
+|---|---|---|---|---|
+| zod | GHSA-mrhx-c7xc-m3w5 (high) | 4.6.5 | 4.6.6 | direct dependency |
+| nodemailer | GHSA-85x2-q946-cp5h, GHSA-8c8m-p3m8-cjg8, GHSA-m943-m63m-w62w | 10.0.14 | 10.1.4 | direct dependency |
+| multer | GHSA-q7qp-rjg7-q26m (high) | 2.4.0 | 2.5.0 | npm `overrides`: `@nestjs/platform-express` pins 2.4.0 exactly |
+| body-parser | GHSA-27r3-jxmh-p828 (high) | 2.3.0 | 2.4.0 | lockfile update inside express's `^2.3.0` |
+| fast-uri | GHSA-333x-w4r6-6crp, GHSA-w74x-v6f9-j3xg, GHSA-wjr9-j795-jxcr, GHSA-xhq7-xmqj-769h | 3.1.8 | 3.1.9 | lockfile update inside ajv's `^3.0.1` |
+| pypdf | GHSA-6c7f-9265-g8fw, GHSA-gmh7-3g9r-mjh5, GHSA-jr96-gvgh-j3r4 (high) | 6.21.1 | 6.21.2 | `scripts/requirements-content.txt` |
+
+The accepted sprintf-js entry (GHSA-hp3w-g68c-fv3c) was removed from
+`backend/osv-scanner.toml` because the advisory was withdrawn.
+
+- Server: `npm audit` finds 0 vulnerabilities. Type check and lint are clean, the build passes, and 37 unit and 78 end-to-end tests pass on a real PostgreSQL 17.
+- Content: with pypdf 6.21.2, `validate_maths_content.py --check-idempotence` (the repeat build is byte-for-byte identical) and `validate_playable.py` pass.
+- The app itself has no changed packages. pypdf is used only by the content scripts on the PC.
