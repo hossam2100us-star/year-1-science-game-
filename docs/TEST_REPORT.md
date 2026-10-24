@@ -339,6 +339,18 @@ Findings and what changed in the package afterwards:
   - Settings shows the school year with the note that other years will appear there.
   - No errors in the log.
 
+## Maths class-book topics, 2026-10-23
+
+- 20 new graded questions in units 8, 15, 16 and 18 (docs/MATHS_INTEGRATION.md).
+- Content checks:
+  - `validate_maths_content.py --check-idempotence` passes: 311 graded, 330 steps. It also checks the grid answers by following each question's moves;
+  - `validate_playable.py` passes.
+- `flutter analyze --fatal-infos` and `dart format` are clean.
+- 555 tests and the 5 goldens pass, including:
+  - `test/maths_class_book_test.dart`, which renders every new question on a 1280x800 screen;
+  - the tablet fit test, which covers the new questions too.
+- Review images (`--dart-define=REVIEW_IMAGES=true`) were checked by eye. Two drawings were redrawn after the check: the prism, and the ball behind the box.
+
 ## Dependency advisories, 2026-10-24
 
 The security scan failed on every branch after new advisories were published:

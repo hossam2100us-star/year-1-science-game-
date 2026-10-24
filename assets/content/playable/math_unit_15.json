@@ -1038,6 +1038,334 @@
         "type": "shape",
         "shape": "triangle"
       }
+    },
+    {
+      "id": "math_unit_15.step.015",
+      "kind": "tap-choice",
+      "title": "A tent shape",
+      "prompt": "What is this 3D shape called?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "triangular prism",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "cuboid",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "pyramid",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u15.book.01",
+      "hint": "Look at the ends. Two triangles joined by rectangles make a prism.",
+      "explanation": "Its two ends are triangles joined by rectangles, so it is a triangular prism.",
+      "shortExplanation": "Its two ends are triangles joined by rectangles, so it is a triangular prism.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.book.01",
+        "answerKeyPages": [],
+        "answerKeyText": "triangular prism",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "prism",
+        "color": "green"
+      }
+    },
+    {
+      "id": "math_unit_15.step.016",
+      "kind": "number-entry",
+      "title": "Prism faces",
+      "prompt": "How many faces does a triangular prism have?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 5
+      },
+      "assessed": true,
+      "objective": "math.u15.book.02",
+      "hint": "Count the 2 triangle ends, then the 3 rectangle sides.",
+      "explanation": "It has 2 triangle faces at the ends and 3 rectangle faces: 5 faces.",
+      "shortExplanation": "It has 2 triangle faces at the ends and 3 rectangle faces: 5 faces.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.book.02",
+        "answerKeyPages": [],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "prism",
+        "color": "green"
+      }
+    },
+    {
+      "id": "math_unit_15.step.017",
+      "kind": "number-entry",
+      "title": "Pyramid faces",
+      "prompt": "A square-based pyramid has a square at the bottom and triangles on the sides. How many faces does it have?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 5
+      },
+      "assessed": true,
+      "objective": "math.u15.book.03",
+      "hint": "Count 1 square at the bottom and 4 triangles on the sides.",
+      "explanation": "1 square face and 4 triangle faces make 5 faces.",
+      "shortExplanation": "1 square face and 4 triangle faces make 5 faces.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.book.03",
+        "answerKeyPages": [],
+        "answerKeyText": "5",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true,
+      "mathVisual": {
+        "type": "shape",
+        "shape": "pyramid",
+        "color": "orange"
+      }
+    },
+    {
+      "id": "math_unit_15.step.018",
+      "kind": "drag-to-basket",
+      "title": "Turning shapes",
+      "prompt": "Which shapes look the same after a quarter turn?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "rectangle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "rectangle",
+            "color": "orange",
+            "height": 70
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "square",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "square",
+            "color": "blue",
+            "height": 70
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "circle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "circle",
+            "color": "green",
+            "height": 70
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_1",
+          "choice_2"
+        ]
+      },
+      "assessed": true,
+      "objective": "math.u15.book.04",
+      "hint": "Picture each shape turned onto its side. Does it look the same?",
+      "explanation": "A square and a circle look the same when turned. A long rectangle stands up and looks different.",
+      "shortExplanation": "A square and a circle look the same when turned.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.book.04",
+        "answerKeyPages": [],
+        "answerKeyText": "square, circle",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_15.step.019",
+      "kind": "tap-choice",
+      "title": "Turn and move",
+      "prompt": "The robot is in square A1, facing up. It turns right, then goes 2 squares forwards. Which square is it in now?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "B2",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "C1",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "A3",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u15.book.05",
+      "hint": "Turn first. Then count the squares one at a time.",
+      "explanation": "After turning right it faces along the row: A1, then B1, then C1.",
+      "shortExplanation": "After turning right it faces along the row: A1, then B1, then C1.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.book.05",
+        "answerKeyPages": [],
+        "answerKeyText": "C1",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true,
+      "mathVisual": {
+        "type": "grid",
+        "cols": 4,
+        "rows": 4,
+        "start": [
+          0,
+          3
+        ],
+        "facing": "up",
+        "labels": true,
+        "moves": "RFF"
+      }
+    },
+    {
+      "id": "math_unit_15.step.020",
+      "kind": "tap-choice",
+      "title": "Six sides",
+      "prompt": "Which shape has 6 straight sides?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "triangle",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "triangle",
+            "color": "yellow",
+            "height": 70
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "pentagon",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "pentagon",
+            "color": "blue",
+            "height": 70
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "hexagon",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "hexagon",
+            "color": "red",
+            "height": 70
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u15.book.06",
+      "hint": "Count the sides of each shape. Which one has 6?",
+      "explanation": "A hexagon has 6 straight sides; a pentagon has 5 and a triangle 3.",
+      "shortExplanation": "A hexagon has 6 straight sides; a pentagon has 5 and a triangle 3.",
+      "source": {
+        "pages": [
+          51,
+          52,
+          53
+        ],
+        "questionId": "math.u15.book.06",
+        "answerKeyPages": [],
+        "answerKeyText": "hexagon",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_15",
+      "adapted": true
     }
   ],
   "stickers": [
@@ -1272,6 +1600,102 @@
       "objective": "math.u15.choice.05",
       "text": "Make a triangle with three spoons. Count the sides.",
       "textAr": "اعملوا مثلث بـ٣ معالق. عدّوا الأضلاع.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.book.01",
+      "text": "Fold a card into a tent. Count its faces together: 2 triangles and 3 rectangles.",
+      "textAr": "اطبقوا كارت على شكل خيمة، وعدّوا الأوجه مع بعض: مثلثين و3 مستطيلات.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.book.02",
+      "text": "Find a triangle-shaped chocolate box or make a paper tent. Put a sticker on each face as you count.",
+      "textAr": "دوّروا على علبة شوكولاتة مثلثة أو اعملوا خيمة ورق، وحطوا ستيكر على كل وش وانتو بتعدّوا.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.book.03",
+      "text": "Look at a picture of the Pyramids of Giza. Count the square base and the 4 triangle sides.",
+      "textAr": "بصّوا على صورة أهرامات الجيزة، وعدّوا القاعدة المربعة والـ4 جوانب المثلثة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.book.04",
+      "text": "Cut out a square and a long rectangle. Turn each a quarter turn and talk about which looks the same.",
+      "textAr": "قصّوا مربع ومستطيل طويل من الورق. لفّوا كل واحد ربع لفة، واتكلموا مين فيهم شكله زي ما هو.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.book.05",
+      "text": "Give your child instructions like a robot: turn right, 2 steps forwards. Then swap turns.",
+      "textAr": "ادّي طفلك أوامر زي الروبوت: لف يمين، خطوتين لقدّام. وبعدين بدّلوا الأدوار.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        51,
+        52,
+        53
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u15.book.06",
+      "text": "Make shapes with straws or sticks: a triangle, a pentagon and a hexagon. Count the sides of each.",
+      "textAr": "اعملوا أشكال بالشفاطات أو الأعواد: مثلث وخماسي وسداسي، وعدّوا أضلاع كل واحد.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

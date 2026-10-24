@@ -288,3 +288,36 @@ picture (`AWAITING_ART` in `scripts/validate_maths_content.py` is empty).
 - **Teacher review 7.** In the walk, bus, car, bike chart only "car" had a
   picture under its bar; a chart now shows row pictures only when every row
   has one.
+
+## Class-book topics (owner request, 23 October 2026)
+
+The owner added the school's own books (Cambridge Primary Mathematics
+Learner's Book 1 and Workbook 1, second edition) to the local `curriculum/`
+folder. It is git-ignored: the scans are copyrighted and are never committed.
+Their 18 units and 3 terms match the app. A few topics in the class book are
+missing from the parent companion the app was built from, so they were
+missing from the app too. There are now 20 graded questions for them, written
+by us (IDs `math.uNN.book.NN`, section Practice, after the unit's existing
+steps):
+
+| Unit | Class book pages | Questions |
+|---|---|---|
+| 8 | 73–78 | pentagon, hexagon; above, under, behind; a square on a grid (B2, forwards) |
+| 15 | 161–167 | triangular prism, prism and pyramid faces, shapes after a quarter turn, turn and move on a grid, six sides |
+| 16 | 170–171 | reading a table and a list, the most, the total |
+| 18 | 189 | thermometer, measuring jug, ruler; different units cannot be compared |
+
+New pictures are drawn by the app:
+- pentagon, hexagon, prism, thermometer and measuring jug shapes;
+- a `grid` with columns A, B, C… and rows 1, 2, 3… counted from the bottom.
+  The validator follows the question's moves and checks the answer square;
+- a `place` picture (a ball above, under, in front of or behind a table or
+  box);
+- a small `table`.
+
+Each question has a title, a hint and a home activity in English and
+Egyptian Arabic. Totals: 273 companion questions, 18 worksheet questions,
+20 class-book questions, so 311 graded and 330 steps. The content version
+stays 2. Saved journeys keep their places, and a finished unit stays finished;
+the new questions appear the next time the unit is played. Still deliberately
+different from the class book: money uses Egyptian coins, not cents.

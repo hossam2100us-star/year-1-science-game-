@@ -1007,6 +1007,282 @@
         "hour": 3,
         "minute": 30
       }
+    },
+    {
+      "id": "math_unit_18.step.015",
+      "kind": "tap-choice",
+      "title": "How hot is it?",
+      "prompt": "Which tool tells you how hot it is today?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "scales",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "scales"
+            ],
+            "height": 90
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "thermometer",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "thermometer",
+            "height": 110
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "ruler",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "ruler"
+            ],
+            "height": 90
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u18.book.01",
+      "hint": "One tool has a red line that goes up when it is hot.",
+      "explanation": "A thermometer measures how hot or cold it is.",
+      "shortExplanation": "A thermometer measures how hot or cold it is.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.book.01",
+        "answerKeyPages": [],
+        "answerKeyText": "thermometer",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_18.step.016",
+      "kind": "tap-choice",
+      "title": "Measuring water",
+      "prompt": "Which tool measures how much water a watering can holds?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "thermometer",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "thermometer",
+            "height": 110
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "ruler",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "ruler"
+            ],
+            "height": 90
+          }
+        },
+        {
+          "id": "choice_1",
+          "label": "measuring jug",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "measuringJug",
+            "height": 110
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "math.u18.book.02",
+      "hint": "Which tool has a scale for water?",
+      "explanation": "A measuring jug has a scale for how much water it holds.",
+      "shortExplanation": "A measuring jug has a scale for how much water it holds.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.book.02",
+        "answerKeyPages": [],
+        "answerKeyText": "measuring jug",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_18.step.017",
+      "kind": "tap-choice",
+      "title": "How long is it?",
+      "prompt": "Which tool measures how long a book is?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "scales",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "scales"
+            ],
+            "height": 90
+          }
+        },
+        {
+          "id": "choice_2",
+          "label": "ruler",
+          "art": "math_label",
+          "visual": {
+            "type": "object",
+            "items": [
+              "ruler"
+            ],
+            "height": 90
+          }
+        },
+        {
+          "id": "choice_3",
+          "label": "measuring jug",
+          "art": "math_label",
+          "visual": {
+            "type": "shape",
+            "shape": "measuringJug",
+            "height": 110
+          }
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u18.book.03",
+      "hint": "Which tool measures length?",
+      "explanation": "A ruler measures length, so we use it for how long a book is.",
+      "shortExplanation": "A ruler measures length, so we use it for how long a book is.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.book.03",
+        "answerKeyPages": [],
+        "answerKeyText": "ruler",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true
+    },
+    {
+      "id": "math_unit_18.step.018",
+      "kind": "tap-choice",
+      "title": "Same units",
+      "prompt": "Ali's parcel is 3 hand spans long. Sara's parcel is 20 cubes long. Whose parcel is longer?",
+      "options": [
+        {
+          "id": "choice_3",
+          "label": "we cannot tell yet",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "Ali's parcel",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_2",
+          "label": "Sara's parcel",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "math.u18.book.04",
+      "hint": "Is a hand span the same size as a cube?",
+      "explanation": "Hand spans and cubes are different sizes. Measure both parcels the same way first.",
+      "shortExplanation": "Hand spans and cubes are different sizes. Measure both parcels the same way first.",
+      "source": {
+        "pages": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "questionId": "math.u18.book.04",
+        "answerKeyPages": [],
+        "answerKeyText": "we cannot tell yet",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_18",
+      "adapted": true,
+      "mathVisual": {
+        "type": "groups",
+        "items": [
+          {
+            "type": "object",
+            "items": [
+              "parcel"
+            ],
+            "height": 110,
+            "label": "Ali: 3 hand spans"
+          },
+          {
+            "type": "object",
+            "items": [
+              "parcel"
+            ],
+            "height": 110,
+            "label": "Sara: 20 cubes"
+          }
+        ]
+      }
     }
   ],
   "stickers": [
@@ -1257,6 +1533,74 @@
       "objective": "math.u18.choice.05",
       "text": "Set a timer for 30 minutes of play. Tell your child that half an hour is 30 minutes.",
       "textAr": "شغّلوا تايمر ٣٠ دقيقة للّعب. قولوا لطفلك إن نص ساعة يعني ٣٠ دقيقة.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.book.01",
+      "text": "Look at a thermometer together, or the temperature on a phone. Talk about hot and cold days.",
+      "textAr": "بصّوا على ترمومتر مع بعض، أو على درجة الحرارة في الموبايل، واتكلموا عن الأيام الحر والبرد.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.book.02",
+      "text": "Fill a measuring jug at the sink. Pour it into cups and talk about how much water it holds.",
+      "textAr": "املوا كوب مدرّج عند الحوض، وصبّوه في كبايات، واتكلموا هو شايل مية قد إيه.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.book.03",
+      "text": "Measure a book and a spoon with a ruler. Which one is longer?",
+      "textAr": "قيسوا كتاب ومعلقة بالمسطرة. مين فيهم أطول؟",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u18.book.04",
+      "text": "Measure a table with your hand spans and your child measures it with theirs. Why are the numbers different?",
+      "textAr": "قيس الترابيزة بشبرك، وطفلك يقيسها بشبره. ليه الرقمين مختلفين؟",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [

@@ -1189,6 +1189,251 @@
         "style": "block",
         "unit": "one child"
       }
+    },
+    {
+      "id": "math_unit_16.step.015",
+      "kind": "number-entry",
+      "title": "Read the table",
+      "prompt": "Look at the table. How many children came to school by bus?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 4
+      },
+      "assessed": true,
+      "objective": "math.u16.book.01",
+      "hint": "Find Bus in the first column. Read the number next to it.",
+      "explanation": "Find Bus in the first column: the number next to it is 4.",
+      "shortExplanation": "Find Bus in the first column: the number next to it is 4.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.book.01",
+        "answerKeyPages": [],
+        "answerKeyText": "4",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "table",
+        "headings": [
+          "Transport",
+          "Children"
+        ],
+        "rows": [
+          [
+            "Car",
+            3
+          ],
+          [
+            "Bus",
+            4
+          ],
+          [
+            "Bike",
+            2
+          ],
+          [
+            "Walk",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "math_unit_16.step.016",
+      "kind": "tap-choice",
+      "title": "Most in the table",
+      "prompt": "Look at the table. How did most children come to school?",
+      "options": [
+        {
+          "id": "choice_2",
+          "label": "Bus",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_3",
+          "label": "Bike",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_1",
+          "label": "Car",
+          "art": "math_label"
+        },
+        {
+          "id": "choice_4",
+          "label": "Walk",
+          "art": "math_label"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "math.u16.book.02",
+      "hint": "Look at the numbers. Which one is the largest?",
+      "explanation": "Bus has 4 children, more than any other row.",
+      "shortExplanation": "Bus has 4 children, more than any other row.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.book.02",
+        "answerKeyPages": [],
+        "answerKeyText": "Bus",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "table",
+        "headings": [
+          "Transport",
+          "Children"
+        ],
+        "rows": [
+          [
+            "Car",
+            3
+          ],
+          [
+            "Bus",
+            4
+          ],
+          [
+            "Bike",
+            2
+          ],
+          [
+            "Walk",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "math_unit_16.step.017",
+      "kind": "number-entry",
+      "title": "Count a list",
+      "prompt": "Look at the list. How many children came by car?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 3
+      },
+      "assessed": true,
+      "objective": "math.u16.book.03",
+      "hint": "Count the names next to Car, one at a time.",
+      "explanation": "There are 3 names next to Car: Ali, Mona and Omar.",
+      "shortExplanation": "There are 3 names next to Car: Ali, Mona and Omar.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.book.03",
+        "answerKeyPages": [],
+        "answerKeyText": "3",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "table",
+        "headings": [
+          "Transport",
+          "Children"
+        ],
+        "rows": [
+          [
+            "Car",
+            "Ali, Mona, Omar"
+          ],
+          [
+            "Bike",
+            "Sara, Yusuf"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "math_unit_16.step.018",
+      "kind": "number-entry",
+      "title": "Table total",
+      "prompt": "Look at the table. How many children are there altogether?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 11
+      },
+      "assessed": true,
+      "objective": "math.u16.book.04",
+      "hint": "Add all the numbers in the table: 3 + 4 + 2 + 2.",
+      "explanation": "Add the numbers: 3 + 4 + 2 + 2 = 11 children.",
+      "shortExplanation": "Add the numbers: 3 + 4 + 2 + 2 = 11 children.",
+      "source": {
+        "pages": [
+          54,
+          55,
+          56
+        ],
+        "questionId": "math.u16.book.04",
+        "answerKeyPages": [],
+        "answerKeyText": "11",
+        "sourceSha256": "a993a1009d3c529ea12c575a2310e67142bb023c45a63c47bac48d221e96019a"
+      },
+      "scene": "workshop",
+      "section": "Practice",
+      "playScene": "maths",
+      "theme": "math_unit_16",
+      "adapted": true,
+      "mathVisual": {
+        "type": "table",
+        "headings": [
+          "Transport",
+          "Children"
+        ],
+        "rows": [
+          [
+            "Car",
+            3
+          ],
+          [
+            "Bus",
+            4
+          ],
+          [
+            "Bike",
+            2
+          ],
+          [
+            "Walk",
+            2
+          ]
+        ]
+      }
     }
   ],
   "stickers": [
@@ -1425,6 +1670,70 @@
       "objective": "math.u16.choice.05",
       "text": "Add a column to your graph that nobody chose. Your child says how many blocks it has: zero.",
       "textAr": "زوّدوا عمود في الرسم محدش اختاره. طفلك يقول فيه كام مكعب: صفر.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.book.01",
+      "text": "Ask the family how they travel to school or work. Write a table together and read it back.",
+      "textAr": "اسألوا العيلة بيروحوا المدرسة أو الشغل إزاي، واكتبوا جدول مع بعض واقروه.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.book.02",
+      "text": "Make a table of the fruit at home. Ask which fruit there is most of.",
+      "textAr": "اعملوا جدول بالفاكهة اللي في البيت، واسأل طفلك أنهي فاكهة عندكم منها أكتر.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.book.03",
+      "text": "Write a list of who likes tea and who likes juice. Count the names in each part.",
+      "textAr": "اكتبوا قايمة مين بيحب الشاي ومين بيحب العصير، وعدّوا الأسامي في كل جزء.",
+      "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
+      "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
+      "pages": [
+        54,
+        55,
+        56
+      ],
+      "safetyPages": [
+        2
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "math.u16.book.04",
+      "text": "Count the cups, plates and spoons on the table. Write them in a table and add them up.",
+      "textAr": "عدّوا الكبايات والأطباق والمعالق اللي على الترابيزة، واكتبوهم في جدول واجمعوهم.",
       "safety": "An adult supervises. Keep small objects away from younger children. An adult handles scissors. Use water at the sink, away from electrical items.",
       "safetyAr": "لازم شخص كبير يكون موجود. خلّي الحاجات الصغيرة بعيد عن الأطفال الأصغر، والكبير يمسك المقص. أنشطة المية تكون عند الحوض وبعيد عن الكهرباء.",
       "pages": [
