@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_quiz_03",
+  "subject": "english",
+  "title": "Big Challenge: Term 3",
+  "quiz": true,
+  "sourcePages": [
+    45
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_quiz_03.step.001",
+      "kind": "tap-choice",
+      "title": "The setting",
+      "prompt": "What is the setting of a story?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "where the story happens",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "who the story is about",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "how the story ends",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.q3.01",
+      "hint": "Home, school and the park can be settings.",
+      "explanation": "The setting is where the story happens.",
+      "shortExplanation": "The setting is where the story happens.",
+      "source": {
+        "pages": [
+          45
+        ],
+        "questionId": "eng.q3.01",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "Where the story happens",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_03"
+    },
+    {
+      "id": "eng_quiz_03.step.002",
+      "kind": "tap-choice",
+      "title": "Ruby's Worry",
+      "prompt": "Ruby's Worry got smaller when she … about it.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "hid",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "talked",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "cried",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q3.02",
+      "hint": "What did she do with her new friend?",
+      "explanation": "Ruby talked about her Worry, and it got smaller.",
+      "shortExplanation": "Ruby talked about her Worry, and it got smaller.",
+      "source": {
+        "pages": [
+          45
+        ],
+        "questionId": "eng.q3.02",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "talked",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_03"
+    },
+    {
+      "id": "eng_quiz_03.step.003",
+      "kind": "tap-choice",
+      "title": "Stomped and grumbled",
+      "prompt": "Katie Morag stomped and grumbled. How did she feel?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "happy",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "cross",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "sleepy",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q3.03",
+      "hint": "How do you walk when you are cross?",
+      "explanation": "Stomping and grumbling show that Katie Morag was cross.",
+      "shortExplanation": "Stomping and grumbling show that Katie Morag was cross.",
+      "source": {
+        "pages": [
+          45
+        ],
+        "questionId": "eng.q3.03",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "Cross / angry",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_03"
+    },
+    {
+      "id": "eng_quiz_03.step.004",
+      "kind": "letter-entry",
+      "title": "More than one fox",
+      "prompt": "Two fox… Write the ending.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "es"
+      },
+      "assessed": true,
+      "objective": "eng.q3.04",
+      "hint": "Fox ends with x, like box.",
+      "explanation": "Fox ends with x, so two foxes. Box works the same: boxes.",
+      "shortExplanation": "Fox ends with x, so two foxes. Box works the same: boxes.",
+      "source": {
+        "pages": [
+          45
+        ],
+        "questionId": "eng.q3.04",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "boxes",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_03",
+      "letters": {
+        "before": "fox",
+        "after": "",
+        "tiles": [
+          "e",
+          "s",
+          "x"
+        ],
+        "say": "foxes"
+      },
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "fox",
+          "fox"
+        ]
+      }
+    },
+    {
+      "id": "eng_quiz_03.step.005",
+      "kind": "tap-choice",
+      "title": "Clap elephant",
+      "prompt": "How many syllables are in elephant?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "2",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "3",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "4",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q3.05",
+      "hint": "Use the chin trick: el-e-phant.",
+      "explanation": "El-e-phant has three claps, so it has 3 syllables.",
+      "shortExplanation": "El-e-phant has three claps, so it has 3 syllables.",
+      "source": {
+        "pages": [
+          45
+        ],
+        "questionId": "eng.q3.05",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "3",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_03",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "elephant"
+        ]
+      }
+    },
+    {
+      "id": "eng_quiz_03.step.006",
+      "kind": "tap-choice",
+      "title": "Find the adjective",
+      "prompt": "The golden crocodile swims. Which word is the adjective?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "golden",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "crocodile",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "swims",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.q3.06",
+      "hint": "Which word tells us what the crocodile is like?",
+      "explanation": "Golden describes the crocodile, so it is the adjective.",
+      "shortExplanation": "Golden describes the crocodile, so it is the adjective.",
+      "source": {
+        "pages": [
+          45
+        ],
+        "questionId": "eng.q3.06",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "golden",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_03",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "The golden crocodile swims."
+      }
+    },
+    {
+      "id": "eng_quiz_03.step.007",
+      "kind": "tap-choice",
+      "title": "Rhymes with goat",
+      "prompt": "Which word rhymes with goat?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "gate",
+          "art": "eng_word",
+          "picture": "gate"
+        },
+        {
+          "id": "choice_2",
+          "label": "boat",
+          "art": "eng_word",
+          "picture": "boat"
+        },
+        {
+          "id": "choice_3",
+          "label": "got",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q3.07",
+      "hint": "Goat ends with oat.",
+      "explanation": "Goat and boat both end with oat, so they rhyme.",
+      "shortExplanation": "Goat and boat both end with oat, so they rhyme.",
+      "source": {
+        "pages": [
+          45
+        ],
+        "questionId": "eng.q3.07",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "stoat (or boat, coat if he says any rhyming word — give the mark)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_03"
+    },
+    {
+      "id": "eng_quiz_03.step.008",
+      "kind": "tap-choice",
+      "title": "The back cover",
+      "prompt": "The words on the back cover that tell you what a book is about are the…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "caption",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "blurb",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "heading",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q3.08",
+      "hint": "Turn a book over and read it.",
+      "explanation": "The blurb is on the back cover and tells you what the book is about.",
+      "shortExplanation": "The blurb is on the back cover and tells you what the book is about.",
+      "source": {
+        "pages": [
+          45
+        ],
+        "questionId": "eng.q3.08",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "The blurb",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_03",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "book"
+        ]
+      }
+    },
+    {
+      "id": "eng_quiz_03.step.009",
+      "kind": "tap-choice",
+      "title": "Refill the bottle",
+      "prompt": "Refilling your water bottle is…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "reduce",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "reuse",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "recycle",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q3.09",
+      "hint": "You use the same bottle again.",
+      "explanation": "Refilling the same bottle is reuse: using it again.",
+      "shortExplanation": "Refilling the same bottle is reuse: using it again.",
+      "source": {
+        "pages": [
+          45
+        ],
+        "questionId": "eng.q3.09",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "reuse",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_03",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "bottle"
+        ]
+      }
+    },
+    {
+      "id": "eng_quiz_03.step.010",
+      "kind": "tap-choice",
+      "title": "How long is a label?",
+      "prompt": "Is a label usually one or two words, or a long sentence?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "one or two words",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "a long sentence",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.q3.10",
+      "hint": "Labels are tiny and point with a line.",
+      "explanation": "A label is usually one or two words.",
+      "shortExplanation": "A label is usually one or two words.",
+      "source": {
+        "pages": [
+          45
+        ],
+        "questionId": "eng.q3.10",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "One or two words",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_03",
+      "englishVisual": {
+        "type": "bookPage",
+        "highlight": "label"
+      }
+    }
+  ],
+  "stickers": [],
+  "goalActivities": [
+    {
+      "objective": "eng.q3.01",
+      "text": "Name the setting of your favourite cartoon together. Could a story happen in your kitchen?",
+      "textAr": "قولوا مكان أحداث الكارتون اللي بتحبوه مع بعض. ممكن قصة تحصل في مطبخكم؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        45
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q3.02",
+      "text": "Have a short \"talk about it\" time at bedtime: each of you says one small worry and one happy thing.",
+      "textAr": "خلّوا فيه وقت قصير قبل النوم \"نتكلم عنها\": كل واحد يقول حاجة صغيرة قلقاه وحاجة فرّحته.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        45
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q3.03",
+      "text": "Act out feeling verbs and guess the feeling: stomp (cross), skip (happy), tiptoe (scared).",
+      "textAr": "مثّلوا أفعال مشاعر وخمّنوا الإحساس: stomp (متضايق)، skip (مبسوط)، tiptoe (خايف).",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        45
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q3.04",
+      "text": "Find words that end in x together: box, fox, six. Say two of each: two boxes, two foxes.",
+      "textAr": "دوّروا على كلمات آخرها x مع بعض: box و fox و six. وقولوا اتنين من كل واحدة: two boxes و two foxes.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        45
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q3.05",
+      "text": "Clap the names of animals at the zoo or in a book: el-e-phant, gi-raffe, li-on.",
+      "textAr": "صقفوا أسامي الحيوانات في جنينة الحيوانات أو في كتاب: el-e-phant و gi-raffe و li-on.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        45
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q3.06",
+      "text": "Say a sentence about an animal and your child adds a describing word: The ___ lion roars.",
+      "textAr": "قول جملة عن حيوان وطفلك يزوّد كلمة وصف: The ___ lion roars.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        45
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q3.07",
+      "text": "Make an oat rhyme chain together: goat, boat, coat, float, stoat. How long can you go?",
+      "textAr": "اعملوا سلسلة قوافي oat مع بعض: goat و boat و coat و float و stoat. توصلوا لحد فين؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        45
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q3.08",
+      "text": "Write a one-sentence blurb together for your child's favourite book.",
+      "textAr": "اكتبوا مع بعض نبذة من جملة واحدة للكتاب اللي طفلك بيحبه.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        45
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q3.09",
+      "text": "Give your child a water bottle of their own to refill each day. Each time, say: we are reusing it!",
+      "textAr": "ادّي طفلك إزازة مية بتاعته يملاها كل يوم، وكل مرة قولوا: we are reusing it!",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        45
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q3.10",
+      "text": "Label things in your child's room with sticky notes: bed, door, window. One or two words each!",
+      "textAr": "حطّوا ورق لاصق بأسامي الحاجات في أوضة طفلك: bed و door و window. كلمة أو كلمتين بس لكل واحدة!",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        45
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Look again at any question your child found hard and play that unit's home game once more, then try again in a week.",
+      "textAr": "ارجعوا للأسئلة اللي كانت صعبة على طفلك، والعبوا لعبة البيت بتاعة الوحدة دي تاني، وجرّبوا تاني بعد أسبوع.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        45
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "practiceUnitId": "eng_unit_07"
+}

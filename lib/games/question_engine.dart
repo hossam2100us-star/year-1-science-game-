@@ -32,6 +32,9 @@ bool matchesAnswer(Map<String, dynamic> answer, dynamic value) {
       return value is String && int.tryParse(value) == expected;
     case 'sentence':
       return value is Map && sentenceMatches(Map.from(expected), value);
+    case 'word':
+      // Spelling is exact: a capital letter or a missing sound is the point.
+      return value is String && value == expected;
     default:
       throw FormatException('Unknown answer type: ${answer['type']}');
   }

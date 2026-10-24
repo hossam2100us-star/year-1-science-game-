@@ -119,6 +119,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get parentAreaMathsGuideRetry => 'جرّب تفتح دليل الرياضيات تاني';
 
   @override
+  String get parentAreaGuideRetry => 'جرّب تفتح الدليل ده تاني';
+
+  @override
   String get parentAreaTimeOnTheChildScreens => 'وقت الاستخدام';
 
   @override

@@ -121,6 +121,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get parentAreaMathsGuideRetry => 'Try opening the Maths guide again';
 
   @override
+  String get parentAreaGuideRetry => 'Try opening this guide again';
+
+  @override
   String get parentAreaTimeOnTheChildScreens => 'Time on the child screens';
 
   @override

@@ -1,0 +1,1176 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_09",
+  "subject": "english",
+  "title": "Information Books",
+  "quiz": false,
+  "sourcePages": [
+    40,
+    41,
+    42,
+    43,
+    44
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_unit_09.step.001",
+      "kind": "explore",
+      "title": "Reduce, reuse, recycle",
+      "prompt": "Tap each card to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "Reduce: use less. Take a cloth bag to the shop.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Reuse: use it again. Fill your water bottle again and again.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "Recycle: break it down and make something new. Old bottles can become a jumper!",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Three R words help our planet: reduce, reuse and recycle.",
+      "shortExplanation": "Three R words help our planet: reduce, reuse and recycle.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_09",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "bottle",
+          "bag",
+          "recycling bin"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_09.step.002",
+      "kind": "explore",
+      "title": "Helpers in an information book",
+      "prompt": "Tap each card to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "The heading at the top tells us what the page is about.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "A caption is a sentence under a picture that tells us about it.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "A label is one or two words with a line pointing to something.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "An information book tells true facts, with headings, captions and labels to help us.",
+      "shortExplanation": "An information book tells true facts, with headings, captions and labels to help us.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_09",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "bookPage",
+        "highlight": "heading"
+      }
+    },
+    {
+      "id": "eng_unit_09.step.003",
+      "kind": "match-lines",
+      "title": "The three Rs",
+      "prompt": "Match each word to what it means.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Reduce",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Reuse",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Recycle",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "use the same thing again",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "break it down and make something new",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "use less, buy fewer things",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_3",
+          "choice_2": "target_1",
+          "choice_3": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u09.main.01",
+      "hint": "Reuse has use in it: use it again.",
+      "explanation": "Reduce is use less, reuse is use it again, recycle is make it into something new.",
+      "shortExplanation": "Reduce is use less, reuse is use it again, recycle is make it into something new.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.main.01",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "Reduce – use less, buy fewer things • Reuse – use the same thing again • Recycle – break it down and make something new",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_09"
+    },
+    {
+      "id": "eng_unit_09.step.004",
+      "kind": "tap-choice",
+      "title": "Under the picture",
+      "prompt": "A sentence under a picture that tells us about it is called a…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "label",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "caption",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "blurb",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u09.main.02",
+      "hint": "Look at the outlined part of the page.",
+      "explanation": "A caption is a sentence under a picture.",
+      "shortExplanation": "A caption is a sentence under a picture.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.main.02",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "caption",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_09",
+      "englishVisual": {
+        "type": "bookPage",
+        "highlight": "caption"
+      }
+    },
+    {
+      "id": "eng_unit_09.step.005",
+      "kind": "tap-choice",
+      "title": "The blurb",
+      "prompt": "Where do we find the blurb?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "on the back cover",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "on the contents page",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "on the first page of the story",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u09.main.03",
+      "hint": "Turn the book over.",
+      "explanation": "The blurb is on the back cover. It tells us what the book is about.",
+      "shortExplanation": "The blurb is on the back cover. It tells us what the book is about.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.main.03",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "On the back cover",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_09",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "book"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_09.step.006",
+      "kind": "tap-choice",
+      "title": "The contents page",
+      "prompt": "What do we use a contents page for?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "to colour in",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "to find which page to go to",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "to end the story",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u09.main.04",
+      "hint": "It is near the start and has page numbers.",
+      "explanation": "A contents page shows what is inside and which page to go to.",
+      "shortExplanation": "A contents page shows what is inside and which page to go to.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.main.04",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "To find where things are in the book / which page to go to.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_09"
+    },
+    {
+      "id": "eng_unit_09.step.007",
+      "kind": "drag-to-basket",
+      "title": "Reduce, reuse or recycle?",
+      "prompt": "Is each one reduce, reuse or recycle?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Filling your water bottle again and again.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Putting cans in the recycling bin.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Buying fewer plastic bags.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "reduce",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "reuse",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "recycle",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_2",
+          "choice_2": "target_3",
+          "choice_3": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u09.main.05",
+      "hint": "Using the same thing again is reuse. Using less is reduce.",
+      "explanation": "Refilling a bottle is reuse, the recycling bin is recycle, fewer bags is reduce.",
+      "shortExplanation": "Refilling a bottle is reuse, the recycling bin is recycle, fewer bags is reduce.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.main.05",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "a reuse • b recycle • c reduce",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_09"
+    },
+    {
+      "id": "eng_unit_09.step.008",
+      "kind": "tap-choice",
+      "title": "Plastic in the sea",
+      "prompt": "Why is a plastic bag dangerous for a turtle?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "It keeps the turtle warm.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "The turtle can think it is food and eat it.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Turtles like to play with bags.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u09.main.06",
+      "hint": "What does a floating bag look like to a turtle?",
+      "explanation": "A plastic bag looks like food, so a turtle can eat it or get tangled.",
+      "shortExplanation": "A plastic bag looks like food, so a turtle can eat it or get tangled.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.main.06",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "It can eat it because it looks like food, or get tangled in it.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_09",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "turtle",
+          "bag"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_09.step.009",
+      "kind": "drag-to-basket",
+      "title": "True or false?",
+      "prompt": "Is each sentence true or false?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "An information book tells true facts.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "A label is usually a long story.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "True",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "False",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u09.main.07",
+      "hint": "How long is a label?",
+      "explanation": "An information book tells true facts. A label is only one or two words.",
+      "shortExplanation": "An information book tells true facts. A label is only one or two words.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.main.07",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "a T • b F — a label is one or two words.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_09"
+    },
+    {
+      "id": "eng_unit_09.step.010",
+      "kind": "tap-choice",
+      "title": "A good label",
+      "prompt": "Which one is a good label for a picture of a pencil pot?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "pencil pot",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "I made this pencil pot from an old bottle, and it holds all my pencils.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "The End",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u09.main.08",
+      "hint": "A label is tiny: one or two words.",
+      "explanation": "Pencil pot is a good label: just two words. The long sentence is a caption.",
+      "shortExplanation": "Pencil pot is a good label: just two words. The long sentence is a caption.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.main.08",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "A drawing of something made from a bottle (pencil pot, plant pot, bird feeder…), a short label (one or two words with a line) and a caption sentence underneath.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_09",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "pencil pot"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_09.step.011",
+      "kind": "tap-choice",
+      "title": "An information book",
+      "prompt": "An information book tells us…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "made-up stories",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "true facts",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "rhymes",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u09.choice.01",
+      "hint": "Story books are made up. Information books are…?",
+      "explanation": "An information book tells us true facts about the world.",
+      "shortExplanation": "An information book tells us true facts about the world.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.choice.01",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "true facts",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_09"
+    },
+    {
+      "id": "eng_unit_09.step.012",
+      "kind": "tap-choice",
+      "title": "A caption",
+      "prompt": "A caption is…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "the price of the book",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "a sentence about a picture",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "the back cover",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u09.choice.02",
+      "hint": "Look under a picture.",
+      "explanation": "A caption is a sentence about a picture.",
+      "shortExplanation": "A caption is a sentence about a picture.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.choice.02",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "a sentence about a picture",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_09",
+      "englishVisual": {
+        "type": "bookPage",
+        "highlight": "caption"
+      }
+    },
+    {
+      "id": "eng_unit_09.step.013",
+      "kind": "tap-choice",
+      "title": "A can in the bin",
+      "prompt": "Putting a can in the recycling bin is…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "reducing",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "reusing",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "recycling",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u09.choice.03",
+      "hint": "The can will be broken down and made into something new.",
+      "explanation": "Putting a can in the recycling bin is recycling.",
+      "shortExplanation": "Putting a can in the recycling bin is recycling.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.choice.03",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "recycling",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_09",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "can",
+          "recycling bin"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_09.step.014",
+      "kind": "tap-choice",
+      "title": "Where is the blurb?",
+      "prompt": "The blurb is on the…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "contents page",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "back cover",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "first page of the story",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u09.choice.04",
+      "hint": "Turn the book over.",
+      "explanation": "The blurb is on the back cover.",
+      "shortExplanation": "The blurb is on the back cover.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.choice.04",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "back cover",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_09",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "book"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_09.step.015",
+      "kind": "tap-choice",
+      "title": "A label",
+      "prompt": "A label is usually…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a whole page",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "a long story",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "one or two words",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u09.choice.05",
+      "hint": "Labels are tiny, with a line pointing.",
+      "explanation": "A label is usually one or two words.",
+      "shortExplanation": "A label is usually one or two words.",
+      "source": {
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "questionId": "eng.u09.choice.05",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "one or two words",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_09",
+      "englishVisual": {
+        "type": "bookPage",
+        "highlight": "label"
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "eng_unit_09.sticker",
+      "word": "recycle",
+      "art": "eng_word",
+      "picture": {
+        "type": "picture",
+        "items": [
+          "bottle"
+        ]
+      },
+      "meaning": "Break a thing down and make something new.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "eng.u09.main.01",
+      "text": "Turn an old plastic bottle into a pencil pot together (you do the cutting) and say: we reused it!",
+      "textAr": "حوّلوا إزازة بلاستيك قديمة لمقلمة مع بعض (انت اللي تقص)، وقولوا: we reused it!",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u09.main.02",
+      "text": "Look at a newspaper or a magazine together and find a picture with a caption. Read the caption aloud.",
+      "textAr": "بصّوا على جرنال أو مجلة مع بعض ولاقوا صورة تحتها تعليق، واقروا التعليق بصوت عالي.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u09.main.03",
+      "text": "Take a book or a cereal box off the shelf. Your child finds the title on the front and the blurb on the back.",
+      "textAr": "خدوا كتاب أو علبة كورن فليكس من الرف، وطفلك يلاقي العنوان قدام والنبذة ورا.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u09.main.04",
+      "text": "Use the contents page of an information book together to jump straight to one page. Ask: why is it useful?",
+      "textAr": "استعملوا صفحة الفهرس في كتاب معلومات مع بعض عشان تروحوا لصفحة على طول. واسألوا: مفيدة ليه؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u09.main.05",
+      "text": "Go round the house and find one way to reduce, one way to reuse and one thing to recycle.",
+      "textAr": "لفّوا في البيت ولاقوا طريقة نقلّل بيها، وطريقة نستعمل بيها حاجة تاني، وحاجة نعيد تدويرها.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u09.main.06",
+      "text": "Look at a picture of a sea turtle together. Talk about what you can do with plastic bags so they never reach the sea.",
+      "textAr": "بصّوا على صورة سلحفاة بحرية مع بعض، واتكلموا ممكن تعملوا إيه بالأكياس البلاستيك عشان متوصلش للبحر أبدًا.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u09.main.07",
+      "text": "Play true or false with facts about animals: a cat has four legs (true), a fish can fly (false).",
+      "textAr": "العبوا صح ولا غلط بمعلومات عن الحيوانات: القطة ليها أربع رجلين (صح)، السمكة بتطير (غلط).",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u09.main.08",
+      "text": "Fold two sheets of paper into a mini information book about your kitchen. Each page gets a heading, a drawing with labels and a caption.",
+      "textAr": "اطبقوا ورقتين واعملوا كتاب معلومات صغير عن المطبخ. كل صفحة فيها عنوان، ورسمة عليها أسامي، وتعليق تحتها.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u09.choice.01",
+      "text": "At the library or bookshop, find one story book and one information book. How can you tell them apart?",
+      "textAr": "في المكتبة لاقوا كتاب قصة وكتاب معلومات. تفرّقوا بينهم إزاي؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u09.choice.02",
+      "text": "Print or draw a family photo and write a caption under it together: Our trip to the beach.",
+      "textAr": "اطبعوا أو ارسموا صورة للعيلة واكتبوا تعليق تحتها مع بعض: Our trip to the beach.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u09.choice.03",
+      "text": "Wash an empty can together and put it in the recycling. Talk about what it could become.",
+      "textAr": "اغسلوا علبة فاضية مع بعض وحطوها في إعادة التدوير، واتكلموا ممكن تبقى إيه.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u09.choice.04",
+      "text": "Read the blurb of a new book before you start it. Ask: does it make you want to read the book?",
+      "textAr": "اقروا نبذة كتاب جديد قبل ما تبدأوه، واسألوا: خلّتك عايز تقرا الكتاب؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u09.choice.05",
+      "text": "Draw a picture of your pet or a toy and add labels with lines: ear, tail, eye.",
+      "textAr": "ارسموا صورة لحيوانكم الأليف أو لعبة، وحطّوا أسامي بخطوط: ear و tail و eye.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Sort clean rubbish together into paper, metal, plastic and food. Before each one, ask: which pile do you think? What could we reuse instead?",
+      "textAr": "قسّموا زبالة نضيفة مع بعض: ورق، معدن، بلاستيك، أكل. قبل كل حاجة اسألوا: تفتكر تروح أنهي كومة؟ وإيه اللي ممكن نستعمله تاني بدل ما نرميه؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ]
+}

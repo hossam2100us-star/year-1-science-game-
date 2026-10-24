@@ -1,0 +1,1242 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_02",
+  "subject": "english",
+  "title": "Recounts",
+  "quiz": false,
+  "sourcePages": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_unit_02.step.001",
+      "kind": "explore",
+      "title": "Seif's day",
+      "prompt": "Tap each part of the recount to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "First, I went to school.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Then, I played football with my friends.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "At last, I came home and ate my dinner.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "A recount tells what really happened, in order, with time words like First and Then.",
+      "shortExplanation": "A recount tells what really happened, in order, with time words like First and Then.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_02",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "story",
+        "title": "My day",
+        "text": "A true recount, told in order.",
+        "picture": "school bag"
+      }
+    },
+    {
+      "id": "eng_unit_02.step.002",
+      "kind": "explore",
+      "title": "Time machine words",
+      "prompt": "Tap each card to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "A recount is true, and it has already happened.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "The little ending ed sends a word into the past: walk, walked. Play, played.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "A noun is a person, a place or a thing. A verb is a doing word.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Past verbs often end in ed. Nouns are things; verbs are doing words.",
+      "shortExplanation": "Past verbs often end in ed. Nouns are things; verbs are doing words.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_02",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Yesterday, I walked to the park."
+      }
+    },
+    {
+      "id": "eng_unit_02.step.003",
+      "kind": "tap-choice",
+      "title": "Capital letters",
+      "prompt": "Tap the words that need a capital letter.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "i",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "went",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "to",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "cairo",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_5",
+          "label": "with",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_6",
+          "label": "sara.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_1",
+          "choice_4",
+          "choice_6"
+        ]
+      },
+      "assessed": true,
+      "objective": "eng.u02.main.01",
+      "hint": "Find the word I, the name of a place and the name of a person.",
+      "explanation": "I, Cairo and Sara need capitals: the word I, a place and a name.",
+      "shortExplanation": "I, Cairo and Sara need capitals: the word I, a place and a name.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.main.01",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "I went to Cairo with Sara. (I, Cairo and Sara all need capitals.)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_02",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "i went to cairo with sara."
+      }
+    },
+    {
+      "id": "eng_unit_02.step.004",
+      "kind": "match-lines",
+      "title": "Time words",
+      "prompt": "Match each part of the recount to its time word.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "I brushed my teeth.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "I got into bed.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "I fell asleep.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "First",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "Then",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "At last",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2",
+          "choice_3": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u02.main.02",
+      "hint": "What do you do first at bedtime, and what happens at the very end?",
+      "explanation": "First I brushed my teeth, then I got into bed, and at last I fell asleep.",
+      "shortExplanation": "First I brushed my teeth, then I got into bed, and at last I fell asleep.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.main.02",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "First … Then … At last",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_02"
+    },
+    {
+      "id": "eng_unit_02.step.005",
+      "kind": "tap-choice",
+      "title": "It already happened",
+      "prompt": "Tap the three verbs that tell us it has already happened.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "go",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "went",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "walk",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "walked",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_5",
+          "label": "helps",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_6",
+          "label": "helped",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_2",
+          "choice_4",
+          "choice_6"
+        ]
+      },
+      "assessed": true,
+      "objective": "eng.u02.main.03",
+      "hint": "Say each one after Yesterday: Yesterday we went…",
+      "explanation": "Went, walked and helped tell us it already happened.",
+      "shortExplanation": "Went, walked and helped tell us it already happened.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.main.03",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "a went • b walked • c helped",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_02"
+    },
+    {
+      "id": "eng_unit_02.step.006",
+      "kind": "letter-entry",
+      "title": "Add ed",
+      "prompt": "Yesterday I play… football. Write the ending.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "ed"
+      },
+      "assessed": true,
+      "objective": "eng.u02.main.04",
+      "hint": "It already happened. Which ending sends a word into the past?",
+      "explanation": "Yesterday I played football. The ending ed means it already happened.",
+      "shortExplanation": "Yesterday I played football. The ending ed means it already happened.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.main.04",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "plays, playing, played • jumps, jumping, jumped",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_02",
+      "letters": {
+        "before": "play",
+        "after": "",
+        "tiles": [
+          "d",
+          "e",
+          "g",
+          "i",
+          "n",
+          "s"
+        ],
+        "say": "played"
+      },
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Yesterday I play__ football."
+      }
+    },
+    {
+      "id": "eng_unit_02.step.007",
+      "kind": "letter-entry",
+      "title": "Add ing",
+      "prompt": "I am jump… right now. Write the ending.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "ing"
+      },
+      "assessed": true,
+      "objective": "eng.u02.main.04",
+      "hint": "It is happening now, after I am.",
+      "explanation": "I am jumping. The ending ing means it is happening now.",
+      "shortExplanation": "I am jumping. The ending ing means it is happening now.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.main.04",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "plays, playing, played • jumps, jumping, jumped",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_02",
+      "letters": {
+        "before": "jump",
+        "after": "",
+        "tiles": [
+          "d",
+          "e",
+          "g",
+          "i",
+          "n",
+          "s"
+        ],
+        "say": "jumping"
+      },
+      "englishVisual": {
+        "type": "sentence",
+        "text": "I am jump___ right now."
+      }
+    },
+    {
+      "id": "eng_unit_02.step.008",
+      "kind": "drag-to-basket",
+      "title": "Noun or verb?",
+      "prompt": "Is each word a noun or a verb?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "dog",
+          "art": "eng_word",
+          "picture": "dog"
+        },
+        {
+          "id": "choice_2",
+          "label": "run",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "school",
+          "art": "eng_word",
+          "picture": "school"
+        },
+        {
+          "id": "choice_4",
+          "label": "jump",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_5",
+          "label": "apple",
+          "art": "eng_word",
+          "picture": "apple"
+        },
+        {
+          "id": "choice_6",
+          "label": "swim",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "Noun",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "Verb",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2",
+          "choice_3": "target_1",
+          "choice_4": "target_2",
+          "choice_5": "target_1",
+          "choice_6": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u02.main.05",
+      "hint": "Can you do it? Then it is a verb. Can you point to it? Then it is a noun.",
+      "explanation": "Dog, school and apple are nouns. Run, jump and swim are doing words, verbs.",
+      "shortExplanation": "Dog, school and apple are nouns. Run, jump and swim are doing words, verbs.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.main.05",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "Nouns: dog, school, apple • Verbs: run, jump, swim",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_02"
+    },
+    {
+      "id": "eng_unit_02.step.009",
+      "kind": "tap-choice",
+      "title": "Join with and",
+      "prompt": "I like juice. I like milk. Which one joins them with and?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "I like juice and milk.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "I like juice. and milk.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "I like and juice milk.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u02.main.06",
+      "hint": "And goes between the two things you like.",
+      "explanation": "And joins two ideas in one sentence: I like juice and milk.",
+      "shortExplanation": "And joins two ideas in one sentence: I like juice and milk.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.main.06",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "I like juice and milk. (\"I like juice and I like milk.\" is also right.)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_02"
+    },
+    {
+      "id": "eng_unit_02.step.010",
+      "kind": "drag-to-basket",
+      "title": "True or false?",
+      "prompt": "Is each sentence true or false?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "A recount tells about something that has already happened.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "A recount uses time words like First and Then.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "A recount is about a monster who lives in the washing machine.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "True",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "False",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_1",
+          "choice_3": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u02.main.07",
+      "hint": "Is a monster in the washing machine real?",
+      "explanation": "A recount is true and uses time words. A monster story is fantasy, not a recount.",
+      "shortExplanation": "A recount is true and uses time words. A monster story is fantasy, not a recount.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.main.07",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "a T • b T • c F — that is a fantasy story, not a recount.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_02"
+    },
+    {
+      "id": "eng_unit_02.step.011",
+      "kind": "order-sequence",
+      "title": "Yesterday, I…",
+      "prompt": "Tap the words in order to make a sentence about yesterday.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "played",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "the",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Yesterday,",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "park.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_5",
+          "label": "I",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_6",
+          "label": "in",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "choice_3",
+          "choice_5",
+          "choice_1",
+          "choice_6",
+          "choice_2",
+          "choice_4"
+        ]
+      },
+      "assessed": true,
+      "objective": "eng.u02.main.08",
+      "hint": "Start with Yesterday and a comma, then I.",
+      "explanation": "Yesterday, I played in the park. Played tells us it already happened.",
+      "shortExplanation": "Yesterday, I played in the park. Played tells us it already happened.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.main.08",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "Two true sentences about yesterday, with past verbs (went, played, ate) and capital letters and full stops.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_02"
+    },
+    {
+      "id": "eng_unit_02.step.012",
+      "kind": "tap-choice",
+      "title": "What is a recount?",
+      "prompt": "A recount tells about something that…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "will happen tomorrow",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "has already happened",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "could never happen",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u02.choice.01",
+      "hint": "Think of telling Mum about your day at school.",
+      "explanation": "A recount tells about something that has already happened.",
+      "shortExplanation": "A recount tells about something that has already happened.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.choice.01",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "has already happened",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_02"
+    },
+    {
+      "id": "eng_unit_02.step.013",
+      "kind": "tap-choice",
+      "title": "Always a capital",
+      "prompt": "Which word always has a capital letter?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "the",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "and",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "I",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u02.choice.02",
+      "hint": "It is the word for me.",
+      "explanation": "When it means me, I is always a capital letter.",
+      "shortExplanation": "When it means me, I is always a capital letter.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.choice.02",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "I",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_02"
+    },
+    {
+      "id": "eng_unit_02.step.014",
+      "kind": "tap-choice",
+      "title": "Yesterday",
+      "prompt": "Yesterday I … over the rope.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "jumped",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "jumping",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "jumps",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u02.choice.03",
+      "hint": "Yesterday means it already happened.",
+      "explanation": "Yesterday I jumped over the rope. Jumped ends in ed for the past.",
+      "shortExplanation": "Yesterday I jumped over the rope. Jumped ends in ed for the past.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.choice.03",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "jumped",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_02",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Yesterday I ___ over the rope."
+      }
+    },
+    {
+      "id": "eng_unit_02.step.015",
+      "kind": "tap-choice",
+      "title": "What is a noun?",
+      "prompt": "A noun is…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a doing word",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "a person, place or thing",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "a full stop",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u02.choice.04",
+      "hint": "Mum, school and ball are all nouns.",
+      "explanation": "A noun is a person, a place or a thing: Mum, school, ball.",
+      "shortExplanation": "A noun is a person, a place or a thing: Mum, school, ball.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.choice.04",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "a person, place or thing",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_02"
+    },
+    {
+      "id": "eng_unit_02.step.016",
+      "kind": "tap-choice",
+      "title": "The word Then",
+      "prompt": "The word Then is a…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "name",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "place",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "time word",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u02.choice.05",
+      "hint": "It tells us when something happened in a recount.",
+      "explanation": "Then is a time word. It tells us what happened next.",
+      "shortExplanation": "Then is a time word. It tells us what happened next.",
+      "source": {
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "questionId": "eng.u02.choice.05",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "time word",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_02"
+    }
+  ],
+  "stickers": [
+    {
+      "id": "eng_unit_02.sticker",
+      "word": "recount",
+      "art": "eng_word",
+      "picture": {
+        "type": "picture",
+        "items": [
+          "postcard"
+        ]
+      },
+      "meaning": "Telling something true that already happened.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "eng.u02.main.01",
+      "text": "Make a postcard from a cereal box. Your child writes two sentences about a real day out and colours each capital letter.",
+      "textAr": "اعملوا كارت بوستال من علبة كورن فليكس. طفلك يكتب جملتين عن يوم حقيقي خرجتوا فيه، ويلوّن كل حرف كبير.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u02.main.02",
+      "text": "At bedtime, tell the steps together: First…, Then…, At last…. Your child holds up a finger for each one.",
+      "textAr": "وقت النوم احكوا الخطوات مع بعض: First… و Then… و At last…. وطفلك يرفع صباع مع كل واحدة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u02.main.03",
+      "text": "Play \"yesterday\": you say a doing word, like walk or jump, and your child says it as if it was yesterday: walked, jumped.",
+      "textAr": "العبوا \"yesterday\": تقول فعل زي walk أو jump، وطفلك يقوله كأنه حصل امبارح: walked و jumped.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u02.main.04",
+      "text": "Walk across the room and say: I walk. Seif walks. I am walking. Stop: I walked! Then your child does it with jump, hop and clap.",
+      "textAr": "امشي في الأوضة وقول: I walk. Seif walks. I am walking. وقّف: I walked! وبعدين طفلك يعملها مع jump و hop و clap.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u02.main.05",
+      "text": "Make word cards: dog, run, school, jump, apple, swim. Sort them into things and doing words, then make silly sentences: The dog swims.",
+      "textAr": "اعملوا كروت كلمات: dog و run و school و jump و apple و swim. قسموها حاجات وأفعال، وبعدين اعملوا جمل تضحّك: The dog swims.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u02.main.06",
+      "text": "At breakfast, make long sentences with and: I like bread and cheese. Mum likes tea and Dad likes coffee.",
+      "textAr": "على الفطار اعملوا جمل طويلة بـ and: I like bread and cheese. Mum likes tea and Dad likes coffee.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u02.main.07",
+      "text": "Tell your child one true thing and one made-up thing about your day. They guess which one is the recount.",
+      "textAr": "احكي لطفلك حاجة حقيقية وحاجة متألفة عن يومك، وهو يخمّن أنهي واحدة هي الـ recount.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u02.main.08",
+      "text": "Your child tells you two things they did yesterday. Write them together, starting with Yesterday, I…, with capital letters and full stops.",
+      "textAr": "طفلك يحكيلك حاجتين عملهم امبارح، واكتبوهم مع بعض وابدأوا بـ Yesterday, I…، بحروف كبيرة ونقط.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u02.choice.01",
+      "text": "When your child comes home, ask: what happened today? Then say: you just did a recount!",
+      "textAr": "لما طفلك يرجع البيت اسأله: حصل إيه النهارده؟ وبعدين قوله: إنت لسه عامل recount!",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u02.choice.02",
+      "text": "Write a few sentences with I in them. Your child hunts for every I and checks it is a capital.",
+      "textAr": "اكتب كام جملة فيها I، وطفلك يدوّر على كل I ويتأكد إنها حرف كبير.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u02.choice.03",
+      "text": "Jump over a rope or a line on the floor. After each jump your child says: I jumped!",
+      "textAr": "نطوا فوق حبل أو خط على الأرض، وبعد كل نطة طفلك يقول: I jumped!",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u02.choice.04",
+      "text": "Play noun hunt in the house: your child touches five things and names them. Each one is a noun.",
+      "textAr": "العبوا تدوير على الأسماء في البيت: طفلك يلمس خمس حاجات ويقول اسمها، كل واحدة فيهم noun.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u02.choice.05",
+      "text": "Tell a short recount together and clap every time you hear a time word: First, Then, Next, At last.",
+      "textAr": "احكوا recount قصيرة مع بعض، وصقفوا كل ما تسمعوا كلمة وقت: First و Then و Next و At last.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Every evening at dinner, your child tells their day on three fingers: First…, Then…, At last…. Repeat their past verbs back with a smile.",
+      "textAr": "كل يوم على العشا، طفلك يحكي يومه على تلات صوابع: First… و Then… و At last…. وانت كرر الأفعال الماضية وراه وانت مبتسم.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ]
+}

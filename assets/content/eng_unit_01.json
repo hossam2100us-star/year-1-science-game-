@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_01",
+  "subject": "english",
+  "kind": "unit",
+  "term": 1,
+  "title": "Fantasy Stories",
+  "ar": "القصص الخيالية",
+  "sourcePages": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.u01.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Say each word, then write the missing sounds. tr__ (it grows in the garden), h__ (you wear it on your head), c__ (you wear it when it is cold), s__ (you wear it on your foot)",
+      "answerKeyText": "tree • hat • coat • sock",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u01.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Circle the words with the oa sound. boat pop goat hat road loaf say",
+      "answerKeyText": "boat, goat, road, loaf",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u01.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Could it really happen? Write R for real or F for fantasy. a A boy plays football in the park. b A purple monster lives in the washing machine. c There are mountains made of ice cream. d Mum puts the clothes in the washing machine.",
+      "answerKeyText": "a R • b F • c F • d R",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u01.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Write this sentence again with a capital letter and a full stop. the cat sat on the mat",
+      "answerKeyText": "The cat sat on the mat.",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u01.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Put the words in the right order to make a sentence. jumped Aqsa cloud onto the",
+      "answerKeyText": "Aqsa jumped onto the cloud.",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u01.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Write beginning, middle or end. a Aqsa wakes up in her own bed. b Aqsa falls into the washing machine. c The mother plopper cropper chases Aqsa.",
+      "answerKeyText": "a end • b beginning • c middle",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u01.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Make each word mean \"more than one\". Write it in the right box. cat box dish dog bus bird (add s / add es)",
+      "answerKeyText": "add s: cats, dogs, birds • add es: boxes, dishes, buses",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u01.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Draw your own fantasy creature. Give it a name, and write one sentence about it. Remember the capital letter and the full stop!",
+      "answerKeyText": "Any creature that could not be real, with a name. The sentence must start with a capital letter and end with a full stop.",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u01.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "A fantasy story is about things that ( happen every day ) ( could not happen in real life ) ( happened to me yesterday )",
+      "answerKeyText": "could not happen in real life",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u01.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Aqsa fell into the ( bath ) ( fridge ) ( washing machine )",
+      "answerKeyText": "washing machine",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u01.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "A sentence ends with a ( full stop ) ( capital letter ) ( comma )",
+      "answerKeyText": "full stop",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u01.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "More than one fox is ( foxs ) ( foxes ) ( fox )",
+      "answerKeyText": "foxes",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u01.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "The main character in Aqsa's Adventures is ( the green cloud ) ( Mum ) ( Aqsa )",
+      "answerKeyText": "Aqsa",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    }
+  ]
+}

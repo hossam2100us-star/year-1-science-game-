@@ -36,9 +36,21 @@ void main() {
     }
     expect(
       seen,
-      SceneKind.values.toSet()..remove(SceneKind.maths),
+      SceneKind.values.toSet()
+        ..remove(SceneKind.maths)
+        ..remove(SceneKind.english),
       reason: 'all Science kinds are in use',
     );
+  });
+
+  test('every English step uses the English scene', () async {
+    final english = await LessonLibrary.loadEnglish();
+    expect(english.lessons, hasLength(LessonLibrary.englishIds.length));
+    for (final lesson in english.lessons.values) {
+      for (final step in lesson.steps) {
+        expect(SceneKind.of(step), SceneKind.english, reason: step.id);
+      }
+    }
   });
 
   test('every Maths step uses the Maths scene', () async {

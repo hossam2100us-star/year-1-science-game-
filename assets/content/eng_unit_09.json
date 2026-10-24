@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_09",
+  "subject": "english",
+  "kind": "unit",
+  "term": 3,
+  "title": "Information Books",
+  "ar": "كتب المعلومات",
+  "sourcePages": [
+    40,
+    41,
+    42,
+    43,
+    44
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.u09.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Draw a line to match each word to its meaning. Reduce Reuse Recycle / use the same thing again, break it down and make something new, use less, buy fewer things",
+      "answerKeyText": "Reduce – use less, buy fewer things • Reuse – use the same thing again • Recycle – break it down and make something new",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u09.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "A sentence under a picture that tells us about it is called a ___.",
+      "answerKeyText": "caption",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u09.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Where do we find the blurb?",
+      "answerKeyText": "On the back cover",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u09.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "What do we use a contents page for?",
+      "answerKeyText": "To find where things are in the book / which page to go to.",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u09.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Write reduce, reuse or recycle. a Filling your water bottle again and again. b Putting cans in the recycling bin. c Buying fewer plastic bags.",
+      "answerKeyText": "a reuse • b recycle • c reduce",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u09.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Why is a plastic bag dangerous for a turtle?",
+      "answerKeyText": "It can eat it because it looks like food, or get tangled in it.",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u09.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "True or false? Write T or F. a An information book tells true facts. b A label is usually a long story.",
+      "answerKeyText": "a T • b F — a label is one or two words.",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u09.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "On the back of this page, draw something you could make from a reused plastic bottle. Give it a label and write a caption under it.",
+      "answerKeyText": "A drawing of something made from a bottle (pencil pot, plant pot, bird feeder…), a short label (one or two words with a line) and a caption sentence underneath.",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u09.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "An information book tells us ( made-up stories ) ( true facts ) ( rhymes )",
+      "answerKeyText": "true facts",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u09.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "A caption is ( a sentence about a picture ) ( the price of the book ) ( the back cover )",
+      "answerKeyText": "a sentence about a picture",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u09.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Putting a can in the recycling bin is ( reducing ) ( reusing ) ( recycling )",
+      "answerKeyText": "recycling",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u09.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "The blurb is on the ( back cover ) ( contents page ) ( first page of the story )",
+      "answerKeyText": "back cover",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u09.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "A label is usually ( a whole page ) ( one or two words ) ( a long story )",
+      "answerKeyText": "one or two words",
+      "sourcePages": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    }
+  ]
+}

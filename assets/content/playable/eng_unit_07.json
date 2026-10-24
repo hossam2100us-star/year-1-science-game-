@@ -1,0 +1,1279 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_07",
+  "subject": "english",
+  "title": "Stories with Familiar Settings",
+  "quiz": false,
+  "sourcePages": [
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_unit_07.step.001",
+      "kind": "explore",
+      "title": "Story time: Not So Fast, Songololo",
+      "prompt": "Tap each part of the story to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "Beginning. Shepherd goes shopping in the town with his old granny, Gogo. His old tackies, his trainers, have holes in them.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Middle. Gogo walks slowly with her stick. In a shop window, Shepherd sees shiny new red tackies.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "End. Gogo buys the red tackies for him. Shepherd feels so proud!",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "The setting is where a story happens: at home, at school, in the park.",
+      "shortExplanation": "The setting is where a story happens: at home, at school, in the park.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_07",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "story",
+        "title": "Not So Fast, Songololo",
+        "text": "A story set at the shops, from South Africa.",
+        "picture": "shoe"
+      }
+    },
+    {
+      "id": "eng_unit_07.step.002",
+      "kind": "explore",
+      "title": "More stories in places we know",
+      "prompt": "Tap each story to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "Shark in the Park. Timothy looks through his new telescope and shouts: a shark! But at last the shark fin is only a cat's ear.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Mr Gumpy's Outing. Children and animals go on Mr Gumpy's boat. They kick and flap and squabble, and the boat tips over! Then they all go home for tea.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "Ruby's Worry. Ruby's small Worry grows bigger every day. When she talks about it with a friend, it shrinks until it is gone.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_4",
+          "label": "Katie Morag and the Tiresome Ted. Katie Morag is cross about her new baby sister, so she throws her teddy into the sea.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "We can tell how a character feels from what they do and say.",
+      "shortExplanation": "We can tell how a character feels from what they do and say.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_07",
+      "minTouches": 4,
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "telescope",
+          "boat",
+          "teddy"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_07.step.003",
+      "kind": "explore",
+      "title": "Feeling detectives",
+      "prompt": "Tap each card to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "If someone grins, they are happy.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "If someone sobs, they are sad.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "If someone shakes, they are scared.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "What a character does gives us a clue about how they feel.",
+      "shortExplanation": "What a character does gives us a clue about how they feel.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_07",
+      "minTouches": 3
+    },
+    {
+      "id": "eng_unit_07.step.004",
+      "kind": "drag-to-basket",
+      "title": "Where is it set?",
+      "prompt": "Where is each story set?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "The children sit at desks and the teacher reads to them.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Gogo buys bananas and looks at shoes in a window.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Timothy looks at the swings and the slide.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "home",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "school",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "park",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_4",
+          "label": "shops",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_2",
+          "choice_2": "target_4",
+          "choice_3": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u07.main.01",
+      "hint": "Look for clues: desks, shoes in a window, swings.",
+      "explanation": "Desks mean school, a shop window means the shops, and swings mean the park.",
+      "shortExplanation": "Desks mean school, a shop window means the shops, and swings mean the park.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.main.01",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "a school • b shops • c park",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_07"
+    },
+    {
+      "id": "eng_unit_07.step.005",
+      "kind": "tap-choice",
+      "title": "The new red tackies",
+      "prompt": "Who bought Shepherd his new red tackies?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Timothy",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Mum",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Gogo",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u07.main.02",
+      "hint": "He went shopping with his old granny.",
+      "explanation": "Gogo, his granny, bought Shepherd the new red tackies.",
+      "shortExplanation": "Gogo, his granny, bought Shepherd the new red tackies.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.main.02",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "Gogo (his granny)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_07",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "shoe"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_07.step.006",
+      "kind": "tap-choice",
+      "title": "Shark in the Park",
+      "prompt": "What did Timothy really see through his telescope?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a shark",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "a cat",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "a fish",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u07.main.03",
+      "hint": "The shark fin was really an ear.",
+      "explanation": "It was only a cat. Its ear looked like a shark fin.",
+      "shortExplanation": "It was only a cat. Its ear looked like a shark fin.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.main.03",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "A cat (its ear looked like a shark fin)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_07",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "telescope"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_07.step.007",
+      "kind": "tap-choice",
+      "title": "Ruby's Worry",
+      "prompt": "What made Ruby's Worry shrink?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "hiding it",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "talking about it",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "running away",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u07.main.04",
+      "hint": "What did Ruby do with the boy she met?",
+      "explanation": "When Ruby talked about her Worry, it shrank until it was gone.",
+      "shortExplanation": "When Ruby talked about her Worry, it shrank until it was gone.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.main.04",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "She talked about it / told someone about her Worry.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_07"
+    },
+    {
+      "id": "eng_unit_07.step.008",
+      "kind": "drag-to-basket",
+      "title": "Feeling verbs",
+      "prompt": "Does each verb show happy, sad or scared?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "grinned",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "sobbed",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "shook",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "laughed",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_5",
+          "label": "cried",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_6",
+          "label": "whispered",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "happy",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "sad",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "scared",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2",
+          "choice_3": "target_3",
+          "choice_4": "target_1",
+          "choice_5": "target_2",
+          "choice_6": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u07.main.05",
+      "hint": "Act each word out. What face do you make?",
+      "explanation": "Grinned and laughed are happy, sobbed and cried are sad, shook and whispered are scared.",
+      "shortExplanation": "Grinned and laughed are happy, sobbed and cried are sad, shook and whispered are scared.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.main.05",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "happy: grinned, laughed • sad: sobbed, cried • scared: shook, whispered",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_07"
+    },
+    {
+      "id": "eng_unit_07.step.009",
+      "kind": "tap-choice",
+      "title": "Names with titles",
+      "prompt": "Which sentence is written the right way?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Uncle arjun jumped in the boat.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Uncle Arjun jumped in the boat.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "uncle Arjun jumped in the boat.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u07.main.06",
+      "hint": "Uncle is part of the name, so it needs a capital too.",
+      "explanation": "Uncle Arjun needs two capitals, and the sentence ends with a full stop.",
+      "shortExplanation": "Uncle Arjun needs two capitals, and the sentence ends with a full stop.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.main.06",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "Uncle Arjun jumped in the boat.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_07",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "boat"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_07.step.010",
+      "kind": "drag-to-basket",
+      "title": "Add s or es",
+      "prompt": "More than one: does each word add s or es?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "dish",
+          "art": "eng_word",
+          "picture": "dish"
+        },
+        {
+          "id": "choice_2",
+          "label": "mug",
+          "art": "eng_word",
+          "picture": "mug"
+        },
+        {
+          "id": "choice_3",
+          "label": "bush",
+          "art": "eng_word",
+          "picture": "bush"
+        },
+        {
+          "id": "choice_4",
+          "label": "bottle",
+          "art": "eng_word",
+          "picture": "bottle"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "add s",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "add es",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_2",
+          "choice_2": "target_1",
+          "choice_3": "target_2",
+          "choice_4": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u07.main.07",
+      "hint": "Words ending in sh add es. Clap dish-es.",
+      "explanation": "Dish and bush end with sh, so they add es. Mug and bottle add s.",
+      "shortExplanation": "Dish and bush end with sh, so they add es. Mug and bottle add s.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.main.07",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "dishes • mugs • bushes • bottles",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_07"
+    },
+    {
+      "id": "eng_unit_07.step.011",
+      "kind": "order-sequence",
+      "title": "A story in the park",
+      "prompt": "Tap the three parts of this park story in order.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "The dog ran away after a ball!",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Sam found the dog by the slide, and they went home.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Sam went to the park with his dog.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "choice_3",
+          "choice_1",
+          "choice_2"
+        ]
+      },
+      "assessed": true,
+      "objective": "eng.u07.main.08",
+      "hint": "How does it start, what goes wrong, and how does it finish?",
+      "explanation": "It starts at the park, the dog runs away, and Sam finds him at the end.",
+      "shortExplanation": "It starts at the park, the dog runs away, and Sam finds him at the end.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.main.08",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "Three lines that follow on: something happens at the start, a problem or adventure in the middle, and a finish at the end — all in a park.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_07"
+    },
+    {
+      "id": "eng_unit_07.step.012",
+      "kind": "tap-choice",
+      "title": "The setting",
+      "prompt": "The setting of a story is…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "the name of the story",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "where the story happens",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "the last page",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u07.choice.01",
+      "hint": "Home, school and the park are settings.",
+      "explanation": "The setting is where the story happens.",
+      "shortExplanation": "The setting is where the story happens.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.choice.01",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "where the story happens",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_07"
+    },
+    {
+      "id": "eng_unit_07.step.013",
+      "kind": "tap-choice",
+      "title": "Old tackies",
+      "prompt": "Shepherd's old tackies had…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "lights",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "holes",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "wheels",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u07.choice.02",
+      "hint": "Why did he need new ones?",
+      "explanation": "Shepherd's old tackies had holes, so Gogo bought him new ones.",
+      "shortExplanation": "Shepherd's old tackies had holes, so Gogo bought him new ones.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.choice.02",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "holes",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_07",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "shoe"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_07.step.014",
+      "kind": "tap-choice",
+      "title": "Mr Gumpy's boat",
+      "prompt": "In Mr Gumpy's Outing, the boat…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "sailed far away",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "got stuck in the mud",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "tipped over",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u07.choice.03",
+      "hint": "Everyone fell in the water!",
+      "explanation": "They did not behave, so the boat tipped over and everyone fell in.",
+      "shortExplanation": "They did not behave, so the boat tipped over and everyone fell in.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.choice.03",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "tipped over",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_07",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "boat"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_07.step.015",
+      "kind": "tap-choice",
+      "title": "Katie Morag",
+      "prompt": "Katie Morag threw her teddy into the…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "bin",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "garden",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "sea",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u07.choice.04",
+      "hint": "She lives on an island.",
+      "explanation": "Katie Morag was so cross that she threw her teddy into the sea.",
+      "shortExplanation": "Katie Morag was so cross that she threw her teddy into the sea.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.choice.04",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "sea",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_07",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "teddy"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_07.step.016",
+      "kind": "tap-choice",
+      "title": "He sobbed",
+      "prompt": "He sobbed. How did he feel?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "happy",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "sad",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "sleepy",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u07.choice.05",
+      "hint": "Sobbing is a kind of crying.",
+      "explanation": "Sobbed is a kind of crying, so he felt sad.",
+      "shortExplanation": "Sobbed is a kind of crying, so he felt sad.",
+      "source": {
+        "pages": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "questionId": "eng.u07.choice.05",
+        "answerKeyPages": [
+          53,
+          54
+        ],
+        "answerKeyText": "sad",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_07"
+    }
+  ],
+  "stickers": [
+    {
+      "id": "eng_unit_07.sticker",
+      "word": "setting",
+      "art": "eng_word",
+      "picture": {
+        "type": "picture",
+        "items": [
+          "park"
+        ]
+      },
+      "meaning": "Where a story happens.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "eng.u07.main.01",
+      "text": "Read a picture book together and find the setting on the first page: where does the story happen?",
+      "textAr": "اقروا كتاب صور مع بعض، ولاقوا مكان القصة في أول صفحة: القصة بتحصل فين؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u07.main.02",
+      "text": "Talk about a time someone in the family bought or made something special for your child. How did they feel?",
+      "textAr": "اتكلموا عن مرة حد من العيلة اشترى أو عمل حاجة مميزة لطفلك. حس بإيه ساعتها؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u07.main.03",
+      "text": "Make a telescope from a kitchen-roll tube. Hide a toy so only a small part shows, and your child guesses what it is.",
+      "textAr": "اعملوا تلسكوب من رول المطبخ الفاضي. خبّوا لعبة ويبان منها حتة صغيرة بس، وطفلك يخمّن هي إيه.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u07.main.04",
+      "text": "Decorate a worry box. Each of you draws one small worry and talks about it together. Ask: what happened to Ruby's Worry?",
+      "textAr": "زيّنوا علبة للقلق. كل واحد يرسم حاجة صغيرة قلقاه، واتكلموا عنها مع بعض. واسألوا: قلق روبي حصله إيه؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u07.main.05",
+      "text": "Use more feeling words during the day: cross, worried, excited, proud. Ask your child to show each one with their face.",
+      "textAr": "استعملوا كلمات مشاعر أكتر طول اليوم: cross و worried و excited و proud. وخلّي طفلك يورّيك كل واحدة بوشّه.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u07.main.06",
+      "text": "Write the names of family members with their titles: Uncle Ali, Auntie Mona, Granny. Check both capitals.",
+      "textAr": "اكتبوا أسامي العيلة بألقابهم: Uncle Ali و Auntie Mona و Granny. واتأكدوا من الحرفين الكبار.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u07.main.07",
+      "text": "Count things at dinner: two mugs, three dishes, four bottles. Clap each word and listen for the extra es.",
+      "textAr": "عدّوا حاجات على العشا: two mugs و three dishes و four bottles. وصقفوا مع كل كلمة واسمعوا الـ es الزيادة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u07.main.08",
+      "text": "Plan a park story together on three fingers: the beginning, a problem in the middle, and the end. Then your child draws it.",
+      "textAr": "خطّطوا قصة في الجنينة على تلات صوابع: البداية، ومشكلة في النص، والنهاية. وبعدين طفلك يرسمها.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u07.choice.01",
+      "text": "On a walk, stop and say: this could be the setting of a story. What could happen here?",
+      "textAr": "وانتو ماشيين، وقّفوا وقولوا: ده ممكن يبقى مكان قصة. إيه اللي ممكن يحصل هنا؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u07.choice.02",
+      "text": "Look at your shoes together. Are any old or worn? Talk about why we need new shoes sometimes.",
+      "textAr": "بصّوا على جزمكم مع بعض. فيه حاجة قديمة أو مدبّلة؟ واتكلموا ليه بنحتاج جزمة جديدة ساعات.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u07.choice.03",
+      "text": "Float a bowl in the sink and put small toys in it one by one. When does it tip over?",
+      "textAr": "عوّموا طبق في الحوض وحطوا فيه لعب صغيرة واحدة واحدة. إمتى يتقلب؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u07.choice.04",
+      "text": "Ask: was Katie Morag really cross with Ted? Who was she really cross with? Let your child explain.",
+      "textAr": "اسأل: كاتي موراج كانت زعلانة من الدبدوب بجد؟ ولا زعلانة من مين؟ وسيب طفلك يشرح.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u07.choice.05",
+      "text": "Read a story and look for feeling clues together: grinned, sobbed, stomped. What does each one tell you?",
+      "textAr": "اقروا قصة ودوّروا على علامات المشاعر مع بعض: grinned و sobbed و stomped. كل واحدة بتقول إيه؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Play \"Where am I?\": describe a place without naming it (\"I can hear a bell. I can see desks.\") and your child guesses the setting. Then swap.",
+      "textAr": "العبوا \"أنا فين؟\": اوصف مكان من غير ما تقول اسمه (\"سامع جرس، وشايف ديسكات\") وطفلك يخمّن المكان. وبعدين بدّلوا.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ]
+}

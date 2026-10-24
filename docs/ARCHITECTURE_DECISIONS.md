@@ -549,3 +549,46 @@ files with their curriculum, and an entry in `years.json` (see
 `docs/CONTENT_SCHEMA.md`). Update the family server before the first APK
 that lets a parent choose a later year. The app's guide tab still shows
 Year 1's guides; a later year adds its own with its content.
+
+## ADR-0022 — English, the third Year 1 subject
+
+**Status:** accepted (owner decisions, 23 October 2026); on
+`feature/english-subject`.
+
+**Context.** The owner added the school's English books and the family's
+parent companion "English Made Easy" (9 units, 3 term quizzes, chart
+skills, 155 questions with an answer key) to the local `curriculum/`
+folder. English is the first subject added since school years (ADR-0021).
+
+**Decision.**
+- *A new subject kind* `english`: curriculum `y1.english`, catalog
+  `assets/content/english_catalog.json`, lessons `eng_unit_01`–`09`,
+  `eng_quiz_01`–`03`, `eng_charts`. Its progress is kept under its own ID
+  (`y1.english`), like every curriculum after Year 1 Science and Maths;
+  nothing already saved moves. The server already accepts the ID, so it
+  needs no change.
+- *Content* is built by `scripts/build_english_content.py` from the
+  companion's questions, recorded by hand in `scripts/english_content/`
+  (the PDF is copyrighted and never committed). The stories are the
+  companion's own short retellings. Every question is answered in the app;
+  a writing or drawing task becomes a graded question on the same skill,
+  and the task itself is the goal's home activity (English and Egyptian
+  Arabic).
+- *A new written answer*: kind `letter-entry`, answer type `word`. The child
+  spells a word or its missing sounds with letter tiles; the spelling must
+  be exact. The tiles are in alphabetical order and include at least one
+  spare, so they never spell the answer out.
+- *Sound.* The device voice reads whole words and sentences: a card reads
+  itself when tapped, and a spelling question has a button that reads the
+  whole word. Isolated letter sounds are never spoken (owner decision); the
+  tiles are silent.
+- *Screens.* `EnglishStage` (scene kind `english`) shows word and sentence
+  cards, sorting targets, ordering, letter tiles and the Maths number pad
+  for chart questions, with the same Check, feedback, marking and saving as
+  every subject. Story steps read one part per tap.
+
+**Consequences.** `scripts/validate_english_content.py` runs in CI next to
+the Maths one. The subjects screen shows three cards (three in a row on a
+wide screen). The parent area's guide tab shows each subject's guide of the
+child's year. A later year's English would use `y2.english` and its own
+catalog.

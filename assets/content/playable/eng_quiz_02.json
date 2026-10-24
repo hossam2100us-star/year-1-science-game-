@@ -1,0 +1,674 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_quiz_02",
+  "subject": "english",
+  "title": "Big Challenge: Term 2",
+  "quiz": true,
+  "sourcePages": [
+    30
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_quiz_02.step.001",
+      "kind": "tap-choice",
+      "title": "A story opener",
+      "prompt": "Which one is a story opener?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Long ago",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Wash your hands",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "The end",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.q2.01",
+      "hint": "How do old stories start?",
+      "explanation": "Long ago is a story opener, like Once upon a time.",
+      "shortExplanation": "Long ago is a story opener, like Once upon a time.",
+      "source": {
+        "pages": [
+          30
+        ],
+        "questionId": "eng.q2.01",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "Any story opener, e.g. Once upon a time",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_02"
+    },
+    {
+      "id": "eng_quiz_02.step.002",
+      "kind": "tap-choice",
+      "title": "The thirsty one",
+      "prompt": "Who drank all the water in the land?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Kangaroo",
+          "art": "eng_word",
+          "picture": "kangaroo"
+        },
+        {
+          "id": "choice_2",
+          "label": "Tiddalik",
+          "art": "eng_word",
+          "picture": "frog"
+        },
+        {
+          "id": "choice_3",
+          "label": "Platypus",
+          "art": "eng_word",
+          "picture": "platypus"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q2.02",
+      "hint": "He was a very thirsty frog.",
+      "explanation": "Tiddalik the frog drank all the water in the land.",
+      "shortExplanation": "Tiddalik the frog drank all the water in the land.",
+      "source": {
+        "pages": [
+          30
+        ],
+        "questionId": "eng.q2.02",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "Tiddalik (the frog)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_02"
+    },
+    {
+      "id": "eng_quiz_02.step.003",
+      "kind": "tap-choice",
+      "title": "Join with and",
+      "prompt": "The lion is big. The lion is proud. Which one joins them?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "The lion is big and proud.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "The lion and big is proud.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "The lion is big. and proud.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.q2.03",
+      "hint": "And goes between big and proud.",
+      "explanation": "The lion is big and proud. And joins the two ideas.",
+      "shortExplanation": "The lion is big and proud. And joins the two ideas.",
+      "source": {
+        "pages": [
+          30
+        ],
+        "questionId": "eng.q2.03",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "The lion is big and proud.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_02",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "lion"
+        ]
+      }
+    },
+    {
+      "id": "eng_quiz_02.step.004",
+      "kind": "tap-choice",
+      "title": "Is there a verb?",
+      "prompt": "The water everywhere. Does this sentence have a verb?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Yes",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "No",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q2.04",
+      "hint": "What did the water do? Nothing is said.",
+      "explanation": "There is no doing word, so The water everywhere has no verb.",
+      "shortExplanation": "There is no doing word, so The water everywhere has no verb.",
+      "source": {
+        "pages": [
+          30
+        ],
+        "questionId": "eng.q2.04",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "No",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_02",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "The water everywhere."
+      }
+    },
+    {
+      "id": "eng_quiz_02.step.005",
+      "kind": "tap-choice",
+      "title": "The bossy verb",
+      "prompt": "Wash your hands before lunch. Which word is the bossy verb?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "hands",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Wash",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "lunch",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q2.05",
+      "hint": "Which word tells you what to do?",
+      "explanation": "Wash tells you what to do, so it is the bossy verb.",
+      "shortExplanation": "Wash tells you what to do, so it is the bossy verb.",
+      "source": {
+        "pages": [
+          30
+        ],
+        "questionId": "eng.q2.05",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "Wash",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_02",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Wash your hands before lunch."
+      }
+    },
+    {
+      "id": "eng_quiz_02.step.006",
+      "kind": "drag-to-basket",
+      "title": "a or an?",
+      "prompt": "Do we say a or an?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "egg",
+          "art": "eng_word",
+          "picture": "egg"
+        },
+        {
+          "id": "choice_2",
+          "label": "cake",
+          "art": "eng_word",
+          "picture": "cake"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "a",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "an",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_2",
+          "choice_2": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.q2.06",
+      "hint": "Which one starts with a vowel sound?",
+      "explanation": "We say an egg and a cake. Egg starts with a vowel sound.",
+      "shortExplanation": "We say an egg and a cake. Egg starts with a vowel sound.",
+      "source": {
+        "pages": [
+          30
+        ],
+        "questionId": "eng.q2.06",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "an egg, a cake",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_02"
+    },
+    {
+      "id": "eng_quiz_02.step.007",
+      "kind": "tap-choice",
+      "title": "The last step",
+      "prompt": "Which time word can start the last step?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "First",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Next",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Finally",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.q2.07",
+      "hint": "Which word means at the very end?",
+      "explanation": "Finally starts the last step of instructions.",
+      "shortExplanation": "Finally starts the last step of instructions.",
+      "source": {
+        "pages": [
+          30
+        ],
+        "questionId": "eng.q2.07",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "Finally (or \"At last\")",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_02"
+    },
+    {
+      "id": "eng_quiz_02.step.008",
+      "kind": "tap-choice",
+      "title": "Rhymes with pool",
+      "prompt": "Which word rhymes with pool?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "park",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "school",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "pot",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q2.08",
+      "hint": "Pool ends with ool.",
+      "explanation": "Pool and school both end with ool, so they rhyme.",
+      "shortExplanation": "Pool and school both end with ool, so they rhyme.",
+      "source": {
+        "pages": [
+          30
+        ],
+        "questionId": "eng.q2.08",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "cool, school, fool, tool",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_02"
+    },
+    {
+      "id": "eng_quiz_02.step.009",
+      "kind": "tap-choice",
+      "title": "Yesterday it…",
+      "prompt": "Yesterday, it…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "snowing",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "snowed",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q2.09",
+      "hint": "Yesterday means it already happened.",
+      "explanation": "Yesterday it snowed. Ed tells us it already happened.",
+      "shortExplanation": "Yesterday it snowed. Ed tells us it already happened.",
+      "source": {
+        "pages": [
+          30
+        ],
+        "questionId": "eng.q2.09",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "snowed",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_02",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Yesterday, it ___."
+      }
+    },
+    {
+      "id": "eng_quiz_02.step.010",
+      "kind": "tap-choice",
+      "title": "Drip and drop",
+      "prompt": "Do drip and drop rhyme, or start the same?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "They rhyme.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "They start the same.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q2.10",
+      "hint": "Listen to the start: dr, dr.",
+      "explanation": "Drip and drop both start with dr, but they end differently.",
+      "shortExplanation": "Drip and drop both start with dr, but they end differently.",
+      "source": {
+        "pages": [
+          30
+        ],
+        "questionId": "eng.q2.10",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "They start the same",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_02"
+    }
+  ],
+  "stickers": [],
+  "goalActivities": [
+    {
+      "objective": "eng.q2.01",
+      "text": "Start a bedtime story with a new opener each night: Long ago… One day… There once was…",
+      "textAr": "ابدأ حدوتة النوم بجملة بداية جديدة كل ليلة: Long ago… و One day… و There once was…",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        30
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q2.02",
+      "text": "Ask your child to retell Tiddalik to someone in the family, with a sponge as the frog.",
+      "textAr": "خلّي طفلك يحكي قصة Tiddalik لحد من العيلة، وإسفنجة تبقى الضفدعة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        30
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q2.03",
+      "text": "Describe a toy with two words joined by and: The car is red and fast. The bear is soft and brown.",
+      "textAr": "اوصفوا لعبة بكلمتين بينهم and: The car is red and fast. The bear is soft and brown.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        30
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q2.04",
+      "text": "Fix sentences with no verb together: The water everywhere becomes The water splashed everywhere.",
+      "textAr": "صلّحوا جمل من غير فعل مع بعض: The water everywhere تبقى The water splashed everywhere.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        30
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q2.05",
+      "text": "Before lunch, your child gives the family a bossy instruction: Wash your hands! Sit down!",
+      "textAr": "قبل الغدا، طفلك يدي العيلة أمر: Wash your hands! و Sit down!",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        30
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q2.06",
+      "text": "Hold up things from the kitchen one at a time. Your child says a or an before each one.",
+      "textAr": "ارفعوا حاجات من المطبخ واحدة واحدة، وطفلك يقول a ولا an قبل كل واحدة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        30
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q2.07",
+      "text": "When you finish a job together, your child says the last step with Finally: Finally, put it away.",
+      "textAr": "لما تخلصوا شغلانة مع بعض، طفلك يقول آخر خطوة بـ Finally: Finally, put it away.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        30
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q2.08",
+      "text": "Play rhyme tennis with pool: cool, school, tool… Who gets stuck first?",
+      "textAr": "العبوا تنس القوافي بكلمة pool: cool و school و tool… مين يقف الأول؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        30
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q2.09",
+      "text": "Talk about yesterday's weather with ed words: it rained, it snowed, it stopped.",
+      "textAr": "اتكلموا عن جو امبارح بكلمات فيها ed: it rained و it snowed و it stopped.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        30
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q2.10",
+      "text": "Let a tap drip into a bowl and listen: drip, drop. Say more pairs that start the same: tick, tock.",
+      "textAr": "سيبوا حنفية تنقّط في طبق واسمعوا: drip و drop. وقولوا كلمات تانية بتبدأ زي بعض: tick و tock.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        30
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Look again at any question your child found hard and play that unit's home game once more, then try again in a week.",
+      "textAr": "ارجعوا للأسئلة اللي كانت صعبة على طفلك، والعبوا لعبة البيت بتاعة الوحدة دي تاني، وجرّبوا تاني بعد أسبوع.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        30
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "practiceUnitId": "eng_unit_04"
+}

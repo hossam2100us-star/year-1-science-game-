@@ -1,0 +1,1253 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_01",
+  "subject": "english",
+  "title": "Fantasy Stories",
+  "quiz": false,
+  "sourcePages": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_unit_01.step.001",
+      "kind": "explore",
+      "title": "Story time: Aqsa's Adventures",
+      "prompt": "Tap each part of the story to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "Beginning. Aqsa finds a purple, furry monster called Blipblop. He is wearing her Mum's yellow coat, a red hat and black socks.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Middle. Aqsa slips into the washing machine and falls into Blipblopia, a land of ice-cream mountains and a lemonade river. She chases a little plopper cropper. Then the big mother plopper cropper chases her!",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "End. A soft green cloud saves her. She falls asleep on it, and wakes up in her own bed. Was it a dream?",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "A fantasy story could not really happen. It has a beginning, middle and end.",
+      "shortExplanation": "A fantasy story could not really happen. It has a beginning, middle and end.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_01",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "story",
+        "title": "Aqsa's Adventures",
+        "text": "A story with a beginning, a middle and an end.",
+        "picture": "monster"
+      }
+    },
+    {
+      "id": "eng_unit_01.step.002",
+      "kind": "explore",
+      "title": "Sentences",
+      "prompt": "Tap each card to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "A sentence starts with a capital letter, like the engine at the front of a train.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "A sentence ends with a full stop, the last carriage that says stop.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "Names, and the word I, start with a capital letter too.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Every sentence starts with a capital letter and ends with a full stop.",
+      "shortExplanation": "Every sentence starts with a capital letter and ends with a full stop.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_01",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "sentence",
+        "text": "The cat sat on the mat."
+      }
+    },
+    {
+      "id": "eng_unit_01.step.003",
+      "kind": "letter-entry",
+      "title": "Missing sounds",
+      "prompt": "It grows in the garden. Write the missing sounds.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "ee"
+      },
+      "assessed": true,
+      "objective": "eng.u01.main.01",
+      "hint": "Say tree slowly: t-r-ee. Two letters make the last sound.",
+      "explanation": "Tree ends with the ee sound, written with two letters: e and e.",
+      "shortExplanation": "Tree ends with the ee sound, written with two letters: e and e.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.main.01",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "tree • hat • coat • sock",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_01",
+      "letters": {
+        "before": "tr",
+        "after": "",
+        "tiles": [
+          "a",
+          "e",
+          "e",
+          "o"
+        ],
+        "say": "tree"
+      },
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "tree"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_01.step.004",
+      "kind": "letter-entry",
+      "title": "Missing sounds",
+      "prompt": "You wear it when it is cold. Write the missing sounds.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "oat"
+      },
+      "assessed": true,
+      "objective": "eng.u01.main.01",
+      "hint": "Say coat slowly: c-oa-t. The middle sound has two letters.",
+      "explanation": "Coat is c, oa, t. The oa sound is written with two letters.",
+      "shortExplanation": "Coat is c, oa, t. The oa sound is written with two letters.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.main.01",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "tree • hat • coat • sock",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_01",
+      "letters": {
+        "before": "c",
+        "after": "",
+        "tiles": [
+          "a",
+          "e",
+          "k",
+          "o",
+          "t"
+        ],
+        "say": "coat"
+      },
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "coat"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_01.step.005",
+      "kind": "tap-choice",
+      "title": "The oa sound",
+      "prompt": "Tap all the words with the oa sound, like in boat.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "boat",
+          "art": "eng_word",
+          "picture": "boat"
+        },
+        {
+          "id": "choice_2",
+          "label": "pop",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "goat",
+          "art": "eng_word",
+          "picture": "goat"
+        },
+        {
+          "id": "choice_4",
+          "label": "hat",
+          "art": "eng_word",
+          "picture": "hat"
+        },
+        {
+          "id": "choice_5",
+          "label": "road",
+          "art": "eng_word",
+          "picture": "road"
+        },
+        {
+          "id": "choice_6",
+          "label": "loaf",
+          "art": "eng_word",
+          "picture": "loaf"
+        },
+        {
+          "id": "choice_7",
+          "label": "say",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_1",
+          "choice_3",
+          "choice_5",
+          "choice_6"
+        ]
+      },
+      "assessed": true,
+      "objective": "eng.u01.main.02",
+      "hint": "Tap a word to hear it. Listen for oa in the middle.",
+      "explanation": "Boat, goat, road and loaf all have the oa sound in the middle.",
+      "shortExplanation": "Boat, goat, road and loaf all have the oa sound in the middle.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.main.02",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "boat, goat, road, loaf",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_01"
+    },
+    {
+      "id": "eng_unit_01.step.006",
+      "kind": "drag-to-basket",
+      "title": "Real or fantasy?",
+      "prompt": "Could it really happen? Put each sentence in Real or Fantasy.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "A boy plays football in the park.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "A purple monster lives in the washing machine.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "There are mountains made of ice cream.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "Mum puts the clothes in the washing machine.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "Real",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "Fantasy",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2",
+          "choice_3": "target_2",
+          "choice_4": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u01.main.03",
+      "hint": "Ask: could this happen in our home or our street?",
+      "explanation": "A boy and Mum can really do these things. Monsters and ice-cream mountains are fantasy.",
+      "shortExplanation": "A boy and Mum can really do these things. Monsters and ice-cream mountains are fantasy.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.main.03",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "a R • b F • c F • d R",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_01"
+    },
+    {
+      "id": "eng_unit_01.step.007",
+      "kind": "tap-choice",
+      "title": "Capital letter and full stop",
+      "prompt": "Which sentence is written the right way?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "the cat sat on the mat.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "The cat sat on the mat",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "The cat sat on the mat.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u01.main.04",
+      "hint": "Look at the first letter and at the very end.",
+      "explanation": "It starts with a capital T and ends with a full stop.",
+      "shortExplanation": "It starts with a capital T and ends with a full stop.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.main.04",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "The cat sat on the mat.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_01"
+    },
+    {
+      "id": "eng_unit_01.step.008",
+      "kind": "order-sequence",
+      "title": "Make a sentence",
+      "prompt": "Tap the words in order to make a sentence.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "jumped",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Aqsa",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "cloud.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "onto",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_5",
+          "label": "the",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "choice_2",
+          "choice_1",
+          "choice_4",
+          "choice_5",
+          "choice_3"
+        ]
+      },
+      "assessed": true,
+      "objective": "eng.u01.main.05",
+      "hint": "Who is the sentence about? Start with her name.",
+      "explanation": "Aqsa jumped onto the cloud. It starts with a name and ends with a full stop.",
+      "shortExplanation": "Aqsa jumped onto the cloud. It starts with a name and ends with a full stop.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.main.05",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "Aqsa jumped onto the cloud.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_01"
+    },
+    {
+      "id": "eng_unit_01.step.009",
+      "kind": "drag-to-basket",
+      "title": "Beginning, middle or end?",
+      "prompt": "Where does each part of Aqsa's story go?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Aqsa wakes up in her own bed.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Aqsa falls into the washing machine.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "The mother plopper cropper chases Aqsa.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "Beginning",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "Middle",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "End",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_3",
+          "choice_2": "target_1",
+          "choice_3": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u01.main.06",
+      "hint": "What happens first, and how does the story finish?",
+      "explanation": "Aqsa falls in at the beginning, is chased in the middle, wakes at the end.",
+      "shortExplanation": "Aqsa falls in at the beginning, is chased in the middle, wakes at the end.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.main.06",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "a end • b beginning • c middle",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_01"
+    },
+    {
+      "id": "eng_unit_01.step.010",
+      "kind": "drag-to-basket",
+      "title": "Add s or es",
+      "prompt": "More than one: does each word add s or es?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "cat",
+          "art": "eng_word",
+          "picture": "cat"
+        },
+        {
+          "id": "choice_2",
+          "label": "box",
+          "art": "eng_word",
+          "picture": "box"
+        },
+        {
+          "id": "choice_3",
+          "label": "dish",
+          "art": "eng_word",
+          "picture": "dish"
+        },
+        {
+          "id": "choice_4",
+          "label": "dog",
+          "art": "eng_word",
+          "picture": "dog"
+        },
+        {
+          "id": "choice_5",
+          "label": "bus",
+          "art": "eng_word",
+          "picture": "bus"
+        },
+        {
+          "id": "choice_6",
+          "label": "bird",
+          "art": "eng_word",
+          "picture": "bird"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "add s",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "add es",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2",
+          "choice_3": "target_2",
+          "choice_4": "target_1",
+          "choice_5": "target_2",
+          "choice_6": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u01.main.07",
+      "hint": "Say two of each and clap: box-es has an extra clap.",
+      "explanation": "Words ending in s, x, sh or ch add es: boxes, dishes, buses.",
+      "shortExplanation": "Words ending in s, x, sh or ch add es: boxes, dishes, buses.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.main.07",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "add s: cats, dogs, birds • add es: boxes, dishes, buses",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_01"
+    },
+    {
+      "id": "eng_unit_01.step.011",
+      "kind": "tap-choice",
+      "title": "My fantasy creature",
+      "prompt": "Which sentence is about a fantasy creature, and written the right way?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "My dragon can fly to the Moon.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "my dragon can fly to the Moon.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "My cat drinks milk.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u01.main.08",
+      "hint": "It must be something that could not be real, with a capital letter and a full stop.",
+      "explanation": "A dragon on the Moon is fantasy, with a capital and a full stop.",
+      "shortExplanation": "A dragon on the Moon is fantasy, with a capital and a full stop.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.main.08",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "Any creature that could not be real, with a name. The sentence must start with a capital letter and end with a full stop.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_01"
+    },
+    {
+      "id": "eng_unit_01.step.012",
+      "kind": "tap-choice",
+      "title": "What is a fantasy story?",
+      "prompt": "A fantasy story is about things that…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "happen every day",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "could not happen in real life",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "happened to me yesterday",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u01.choice.01",
+      "hint": "Think of a monster in the washing machine.",
+      "explanation": "A fantasy story is about things that could not happen in real life.",
+      "shortExplanation": "A fantasy story is about things that could not happen in real life.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.choice.01",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "could not happen in real life",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_01",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "monster"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_01.step.013",
+      "kind": "tap-choice",
+      "title": "Where did Aqsa fall?",
+      "prompt": "Aqsa fell into the…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "bath",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "fridge",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "washing machine",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u01.choice.02",
+      "hint": "She looked inside the place where clothes are washed.",
+      "explanation": "Aqsa slipped into the washing machine and fell into Blipblopia.",
+      "shortExplanation": "Aqsa slipped into the washing machine and fell into Blipblopia.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.choice.02",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "washing machine",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_01",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "monster"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_01.step.014",
+      "kind": "tap-choice",
+      "title": "The end of a sentence",
+      "prompt": "A sentence ends with a…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "full stop",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "capital letter",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "comma",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u01.choice.03",
+      "hint": "It is the last carriage of the train. It says stop.",
+      "explanation": "A sentence ends with a full stop.",
+      "shortExplanation": "A sentence ends with a full stop.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.choice.03",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "full stop",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_01",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "We ate rice for dinner."
+      }
+    },
+    {
+      "id": "eng_unit_01.step.015",
+      "kind": "tap-choice",
+      "title": "More than one fox",
+      "prompt": "More than one fox is…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "foxs",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "foxes",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "fox",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u01.choice.04",
+      "hint": "Fox ends with x. Clap fox-es.",
+      "explanation": "Fox ends with x, so more than one is foxes.",
+      "shortExplanation": "Fox ends with x, so more than one is foxes.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.choice.04",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "foxes",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_01",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "fox",
+          "fox"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_01.step.016",
+      "kind": "tap-choice",
+      "title": "The main character",
+      "prompt": "Who is the main character in Aqsa's Adventures?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "the green cloud",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Mum",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Aqsa",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u01.choice.05",
+      "hint": "The story is mostly about this person.",
+      "explanation": "The story is mostly about Aqsa, so she is the main character.",
+      "shortExplanation": "The story is mostly about Aqsa, so she is the main character.",
+      "source": {
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "questionId": "eng.u01.choice.05",
+        "answerKeyPages": [
+          51
+        ],
+        "answerKeyText": "Aqsa",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_01"
+    }
+  ],
+  "stickers": [
+    {
+      "id": "eng_unit_01.sticker",
+      "word": "fantasy",
+      "art": "eng_word",
+      "picture": {
+        "type": "picture",
+        "items": [
+          "monster"
+        ]
+      },
+      "meaning": "A story about things that could not happen in real life.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "eng.u01.main.01",
+      "text": "Say a word slowly and tap the table once for each sound: h-a-t, s-o-ck, c-oa-t, t-r-ee. Then your child writes it, one sound for each tap.",
+      "textAr": "قول كلمة ببطء واخبط على الترابيزة مرة مع كل صوت: h-a-t و s-o-ck و c-oa-t و t-r-ee. وبعدين طفلك يكتبها، صوت مع كل خبطة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u01.main.02",
+      "text": "Find oa words together: boat, goat, road, toad, loaf. Write each one and colour the o and a in the same colour.",
+      "textAr": "دوّروا على كلمات فيها oa مع بعض: boat و goat و road و toad و loaf. اكتبوا كل كلمة ولوّنوا الـ o والـ a بنفس اللون.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u01.main.03",
+      "text": "Play spoon and fork: you say a sentence. If it could really happen your child lifts the spoon; if it could never happen, the fork.",
+      "textAr": "العبوا لعبة المعلقة والشوكة: تقول جملة، لو ممكن تحصل بجد طفلك يرفع المعلقة، ولو مستحيل تحصل يرفع الشوكة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u01.main.04",
+      "text": "Write a short sentence with no capital and no full stop. Your child is the teacher and fixes it with a coloured pencil.",
+      "textAr": "اكتب جملة قصيرة من غير حرف كبير ولا نقطة، وطفلك يبقى المدرّس ويصلّحها بقلم ملوّن.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u01.main.05",
+      "text": "Write the words of a short sentence on little papers and mix them up. Your child puts them in order and reads the sentence.",
+      "textAr": "اكتبوا كلمات جملة قصيرة على ورق صغير ولخبطوها، وطفلك يرتبها ويقرا الجملة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u01.main.06",
+      "text": "Retell a story your child knows, pointing to your head for the beginning, your tummy for the middle and your feet for the end.",
+      "textAr": "احكوا قصة طفلك عارفها، وشاوروا على الراس للبداية، والبطن للنص، والرجلين للنهاية.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u01.main.07",
+      "text": "Put out one spoon, then two: two spoons. One box, then two: two boxes. Clap each word and listen for the extra part.",
+      "textAr": "حط معلقة وبعدين اتنين: two spoons. علبة وبعدين اتنين: two boxes. صقفوا مع كل كلمة واسمعوا الجزء الزيادة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u01.main.08",
+      "text": "Your child draws a fantasy creature and gives it a name. Write one sentence about it together, with a capital letter and a full stop.",
+      "textAr": "طفلك يرسم كائن خيالي ويسمّيه، واكتبوا جملة واحدة عنه مع بعض، بحرف كبير في الأول ونقطة في الآخر.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u01.choice.01",
+      "text": "Look at a picture book together and find one thing that could happen and one thing that could not.",
+      "textAr": "بصّوا على كتاب صور مع بعض، ولاقوا حاجة ممكن تحصل وحاجة مستحيل تحصل.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u01.choice.02",
+      "text": "Retell Aqsa's story while you load the washing machine together. Ask: what did she find inside?",
+      "textAr": "احكوا قصة أقصى وانتو بتحطوا الهدوم في الغسالة مع بعض، واسألوا: لقت إيه جوه؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u01.choice.03",
+      "text": "Read a page of a book together. Your child taps each full stop and you both take a little breath.",
+      "textAr": "اقروا صفحة من كتاب مع بعض، وطفلك يخبط على كل نقطة وانتو الاتنين تاخدوا نفس صغير.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u01.choice.04",
+      "text": "Say \"two\" before words that end in s, x, sh or ch: two boxes, two dishes, two foxes. Clap the extra part.",
+      "textAr": "قولوا \"two\" قبل كلمات آخرها s أو x أو sh أو ch: two boxes و two dishes و two foxes. وصقفوا للجزء الزيادة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u01.choice.05",
+      "text": "After a story or a cartoon, ask: who was it mostly about? That is the main character.",
+      "textAr": "بعد قصة أو كارتون اسألوا: كانت أغلبها عن مين؟ ده البطل.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Read a bedtime story together. Stop at the end of each part and ask: is this the beginning, the middle or the end? Could it really happen?",
+      "textAr": "اقروا قصة قبل النوم مع بعض. وقّفوا في آخر كل جزء واسألوا: ده أولها ولا نصّها ولا آخرها؟ ينفع تحصل بجد؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ]
+}

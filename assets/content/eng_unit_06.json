@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_06",
+  "subject": "english",
+  "kind": "unit",
+  "term": 2,
+  "title": "Simple Rhyming Poems",
+  "ar": "قصائد على قافية",
+  "sourcePages": [
+    26,
+    27,
+    28,
+    29
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.u06.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Draw a line to join the words that rhyme. hot cool sun bees / fun spot trees pool",
+      "answerKeyText": "hot – spot • cool – pool • sun – fun • bees – trees",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.u06.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Do the words rhyme, or start the same? Write each pair in the right box. drip – drop, puddles – huddles, splish – splash, play – stay",
+      "answerKeyText": "Rhyme: puddles – huddles, play – stay • Start the same: drip – drop, splish – splash",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.u06.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Circle the verbs that end with ing. a We are going to the park. b Mum is bringing a picnic.",
+      "answerKeyText": "a going • b bringing",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.u06.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Circle the correct verb. a Yesterday, it raining / rained. b Tomorrow, it will be snowing / snowed. c Stop / Stopped shouting!",
+      "answerKeyText": "a rained • b snowing • c Stop",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.u06.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Finish the poem with a rhyming word. It is hot in the sun, I'm having some ___. I'll go in the pool, to keep myself ___.",
+      "answerKeyText": "fun • cool",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.u06.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Finish the storm line with an ing verb: The thunder is ___.",
+      "answerKeyText": "Any ing verb that suits thunder: booming, crashing, banging, rumbling",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.u06.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Read: \"The thunder crashed. Sara hid under the blanket and held her teddy tight.\" How does Sara feel?",
+      "answerKeyText": "Scared / frightened — she hid and held her teddy tight.",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.u06.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Write your own two-line poem about rain or sun.",
+      "answerKeyText": "Two lines about rain or sun. Extra praise if the last words rhyme.",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.u06.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "Which pair rhymes? ( drip – drop ) ( cool – pool ) ( sun – rain )",
+      "answerKeyText": "cool – pool",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.u06.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "\"Splish, splash\" are two words that ( start the same ) ( mean the same ) ( are names )",
+      "answerKeyText": "start the same",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.u06.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "A good listener ( talks at the same time ) ( looks away ) ( looks at the person talking )",
+      "answerKeyText": "looks at the person talking",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.u06.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Yesterday, we ___ in the puddles. ( jumping ) ( jumped ) ( jump )",
+      "answerKeyText": "jumped",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.u06.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "In \"Mum is bringing a picnic\", the ing verb is ( bringing ) ( picnic ) ( Mum )",
+      "answerKeyText": "bringing",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    }
+  ]
+}

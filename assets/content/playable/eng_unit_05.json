@@ -1,0 +1,1296 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_05",
+  "subject": "english",
+  "title": "Instructions",
+  "quiz": false,
+  "sourcePages": [
+    22,
+    23,
+    24,
+    25
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_unit_05.step.001",
+      "kind": "explore",
+      "title": "How to make a cup of juice",
+      "prompt": "Tap each step to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "1. Get a cup.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "2. Pour the juice.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "3. Add a straw.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_4",
+          "label": "4. Drink it!",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Instructions tell us how to do something, step by step, in the right order.",
+      "shortExplanation": "Instructions tell us how to do something, step by step, in the right order.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_05",
+      "minTouches": 4,
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "cup",
+          "juice",
+          "straw"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_05.step.002",
+      "kind": "explore",
+      "title": "Bossy verbs",
+      "prompt": "Tap each card to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "Some words are bossy. They tell you what to do: Sit down. Wash your hands.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Instructions must be in order. We use numbers, or First, Next, Then, Finally.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "Many instructions start with a list called You will need.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Instructions start with bossy verbs and go in order: First, Next, Then, Finally.",
+      "shortExplanation": "Instructions start with bossy verbs and go in order: First, Next, Then, Finally.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_05",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Wash your hands."
+      }
+    },
+    {
+      "id": "eng_unit_05.step.003",
+      "kind": "tap-choice",
+      "title": "Find the bossy verb",
+      "prompt": "Put toothpaste on it. Which word is the bossy verb?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Put",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "toothpaste",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "it",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u05.main.01",
+      "hint": "Which word tells you what to do?",
+      "explanation": "Put is the bossy verb. It tells you what to do.",
+      "shortExplanation": "Put is the bossy verb. It tells you what to do.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.main.01",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "a Pick (up) • b Put • c Spit (out)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_05",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Put toothpaste on it."
+      }
+    },
+    {
+      "id": "eng_unit_05.step.004",
+      "kind": "tap-choice",
+      "title": "Find the bossy verb",
+      "prompt": "Spit out the toothpaste. Which word is the bossy verb?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "the",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Spit",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "toothpaste",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u05.main.01",
+      "hint": "Bossy verbs usually come first.",
+      "explanation": "Spit is the bossy verb. It comes first and tells you what to do.",
+      "shortExplanation": "Spit is the bossy verb. It comes first and tells you what to do.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.main.01",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "a Pick (up) • b Put • c Spit (out)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_05",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Spit out the toothpaste."
+      }
+    },
+    {
+      "id": "eng_unit_05.step.005",
+      "kind": "drag-to-basket",
+      "title": "a or an?",
+      "prompt": "Do we say a or an?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "apple",
+          "art": "eng_word",
+          "picture": "apple"
+        },
+        {
+          "id": "choice_2",
+          "label": "party",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "egg",
+          "art": "eng_word",
+          "picture": "egg"
+        },
+        {
+          "id": "choice_4",
+          "label": "sweet",
+          "art": "eng_word",
+          "picture": "sweet"
+        },
+        {
+          "id": "choice_5",
+          "label": "orange",
+          "art": "eng_word",
+          "picture": "orange"
+        },
+        {
+          "id": "choice_6",
+          "label": "present",
+          "art": "eng_word",
+          "picture": "present"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "a",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "an",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_2",
+          "choice_2": "target_1",
+          "choice_3": "target_2",
+          "choice_4": "target_1",
+          "choice_5": "target_2",
+          "choice_6": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u05.main.02",
+      "hint": "Does the word start with a, e, i, o or u? Say it aloud: an apple.",
+      "explanation": "Apple, egg and orange start with a vowel sound, so we say an.",
+      "shortExplanation": "Apple, egg and orange start with a vowel sound, so we say an.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.main.02",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "an apple • a party • an egg • a sweet • an orange • a present",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_05"
+    },
+    {
+      "id": "eng_unit_05.step.006",
+      "kind": "order-sequence",
+      "title": "Juice in order",
+      "prompt": "Tap the steps in the right order.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Drink it!",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Get a cup.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Add a straw.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "Pour the juice.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "choice_2",
+          "choice_4",
+          "choice_3",
+          "choice_1"
+        ]
+      },
+      "assessed": true,
+      "objective": "eng.u05.main.03",
+      "hint": "What do you need before you can pour?",
+      "explanation": "First get a cup, then pour the juice, add a straw and drink it.",
+      "shortExplanation": "First get a cup, then pour the juice, add a straw and drink it.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.main.03",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "Get a cup 1 • Pour the juice 2 • Add a straw 3 • Drink it! 4",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_05"
+    },
+    {
+      "id": "eng_unit_05.step.007",
+      "kind": "match-lines",
+      "title": "How to do it",
+      "prompt": "Which ly word fits each instruction?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "… carry the glass of water.",
+          "art": "eng_word",
+          "picture": "glass of water"
+        },
+        {
+          "id": "choice_2",
+          "label": "… close the door. The baby is asleep.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "Carefully",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "Quietly",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u05.main.04",
+      "hint": "How do you carry water? How do you close a door when a baby sleeps?",
+      "explanation": "Carry the water carefully, and close the door quietly when the baby is asleep.",
+      "shortExplanation": "Carry the water carefully, and close the door quietly when the baby is asleep.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.main.04",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "a Carefully • b Quietly",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_05"
+    },
+    {
+      "id": "eng_unit_05.step.008",
+      "kind": "tap-choice",
+      "title": "Is it an instruction?",
+      "prompt": "Tap the two instructions.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Wash your hands.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "The cat is black.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Shut the door.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "I like cake.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_1",
+          "choice_3"
+        ]
+      },
+      "assessed": true,
+      "objective": "eng.u05.main.05",
+      "hint": "An instruction tells you what to do.",
+      "explanation": "Wash your hands and Shut the door tell you what to do.",
+      "shortExplanation": "Wash your hands and Shut the door tell you what to do.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.main.05",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "Instructions: a and c",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_05"
+    },
+    {
+      "id": "eng_unit_05.step.009",
+      "kind": "match-lines",
+      "title": "Cross the road",
+      "prompt": "Match each step to its time word.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "find a safe place to cross.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "stand near the kerb.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "look both ways.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "cross when nothing is coming.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "First",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "Next",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "Then",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_4",
+          "label": "Finally",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2",
+          "choice_3": "target_3",
+          "choice_4": "target_4"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u05.main.06",
+      "hint": "What do you do before you look both ways?",
+      "explanation": "First find a safe place, next stand near the kerb, then look, finally cross.",
+      "shortExplanation": "First find a safe place, next stand near the kerb, then look, finally cross.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.main.06",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "First • Next • Then • Finally",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_05"
+    },
+    {
+      "id": "eng_unit_05.step.010",
+      "kind": "tap-choice",
+      "title": "A bossy verb",
+      "prompt": "… the ball. Which bossy verb fits?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Happy",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Kick",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Ball",
+          "art": "eng_word",
+          "picture": "ball"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u05.main.07",
+      "hint": "What can you do to a ball?",
+      "explanation": "Kick the ball. Kick is a bossy verb.",
+      "shortExplanation": "Kick the ball. Kick is a bossy verb.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.main.07",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "For example: Kick / Throw the ball • Hang up your coat • Shut / Open the door",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_05"
+    },
+    {
+      "id": "eng_unit_05.step.011",
+      "kind": "tap-choice",
+      "title": "A bossy verb",
+      "prompt": "… up your coat. Which bossy verb fits?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Hang",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Coat",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Red",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u05.main.07",
+      "hint": "What do you do with your coat when you come home?",
+      "explanation": "Hang up your coat. Hang is a bossy verb.",
+      "shortExplanation": "Hang up your coat. Hang is a bossy verb.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.main.07",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "For example: Kick / Throw the ball • Hang up your coat • Shut / Open the door",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_05",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "coat"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_05.step.012",
+      "kind": "order-sequence",
+      "title": "Wash your hands",
+      "prompt": "Tap the steps for washing your hands in order.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Rub on soap.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Rinse and dry your hands.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Wet your hands.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "sequence",
+        "value": [
+          "choice_3",
+          "choice_1",
+          "choice_2"
+        ]
+      },
+      "assessed": true,
+      "objective": "eng.u05.main.08",
+      "hint": "What do you do before you rub on soap?",
+      "explanation": "Wet your hands, rub on soap, then rinse and dry. Each starts with a bossy verb.",
+      "shortExplanation": "Wet your hands, rub on soap, then rinse and dry. Each starts with a bossy verb.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.main.08",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "Three numbered steps in order, each starting with a bossy verb — e.g. 1 Wet your hands. 2 Rub on soap. 3 Rinse and dry your hands.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_05"
+    },
+    {
+      "id": "eng_unit_05.step.013",
+      "kind": "tap-choice",
+      "title": "Mix the eggs",
+      "prompt": "In Mix the eggs, the word Mix is a…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "noun",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "bossy verb",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "time word",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u05.choice.01",
+      "hint": "Mix tells you what to do.",
+      "explanation": "Mix tells you what to do, so it is a bossy verb.",
+      "shortExplanation": "Mix tells you what to do, so it is a bossy verb.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.choice.01",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "bossy verb",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_05",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Mix the eggs."
+      }
+    },
+    {
+      "id": "eng_unit_05.step.014",
+      "kind": "tap-choice",
+      "title": "a or an?",
+      "prompt": "We write an before…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "cake",
+          "art": "eng_word",
+          "picture": "cake"
+        },
+        {
+          "id": "choice_2",
+          "label": "egg",
+          "art": "eng_word",
+          "picture": "egg"
+        },
+        {
+          "id": "choice_3",
+          "label": "tin",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u05.choice.02",
+      "hint": "Which one starts with a vowel sound?",
+      "explanation": "Egg starts with a vowel sound, so we say an egg.",
+      "shortExplanation": "Egg starts with a vowel sound, so we say an egg.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.choice.02",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "egg",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_05"
+    },
+    {
+      "id": "eng_unit_05.step.015",
+      "kind": "tap-choice",
+      "title": "The list",
+      "prompt": "The list of things you need is called…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Dear Diary",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "You will need",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "The End",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u05.choice.03",
+      "hint": "It comes before the steps in a recipe.",
+      "explanation": "The list of things you need is called You will need.",
+      "shortExplanation": "The list of things you need is called You will need.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.choice.03",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "You will need",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_05"
+    },
+    {
+      "id": "eng_unit_05.step.016",
+      "kind": "tap-choice",
+      "title": "In order",
+      "prompt": "Instructions must be in the…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "wrong order",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "any order",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "right order",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u05.choice.04",
+      "hint": "Can you eat the sandwich before you make it?",
+      "explanation": "Instructions must be in the right order, or they would be silly.",
+      "shortExplanation": "Instructions must be in the right order, or they would be silly.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.choice.04",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "right order",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_05"
+    },
+    {
+      "id": "eng_unit_05.step.017",
+      "kind": "tap-choice",
+      "title": "Slowly",
+      "prompt": "The word slowly tells us…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "where to do it",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "how to do it",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "who does it",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u05.choice.05",
+      "hint": "Walk slowly. How do you walk?",
+      "explanation": "Slowly tells us how to do it. Words ending in ly tell us how.",
+      "shortExplanation": "Slowly tells us how to do it. Words ending in ly tell us how.",
+      "source": {
+        "pages": [
+          22,
+          23,
+          24,
+          25
+        ],
+        "questionId": "eng.u05.choice.05",
+        "answerKeyPages": [
+          52,
+          53
+        ],
+        "answerKeyText": "how to do it",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "kitchen",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_05"
+    }
+  ],
+  "stickers": [
+    {
+      "id": "eng_unit_05.sticker",
+      "word": "bossy verb",
+      "art": "eng_word",
+      "picture": {
+        "type": "picture",
+        "items": [
+          "cup"
+        ]
+      },
+      "meaning": "A verb that tells you what to do: Wash your hands.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "eng.u05.main.01",
+      "text": "Brush teeth together and say each step as an instruction: Pick up your toothbrush. Put toothpaste on it. Brush. Spit.",
+      "textAr": "اغسلوا سنانكم مع بعض وقولوا كل خطوة كأنها أمر: Pick up your toothbrush و Put toothpaste on it و Brush و Spit.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u05.main.02",
+      "text": "Fill a shopping basket from the kitchen: an egg, an apple, an onion, a tomato, a spoon. Your child says a or an for each one.",
+      "textAr": "املوا سلة من المطبخ: an egg و an apple و an onion و a tomato و a spoon. وطفلك يقول a ولا an لكل حاجة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u05.main.03",
+      "text": "Cut four steps of a recipe apart on paper and mix them up. Your child puts them back in order, then you follow them together.",
+      "textAr": "قصّوا أربع خطوات من وصفة على ورق ولخبطوها، وطفلك يرتبها، وبعدين تعملوها مع بعض.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u05.main.04",
+      "text": "Give instructions with ly words and your child acts them out: Walk slowly. Clap quickly. Carry the cup carefully.",
+      "textAr": "ادّي تعليمات فيها كلمات ly وطفلك يمثّلها: Walk slowly و Clap quickly و Carry the cup carefully.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u05.main.05",
+      "text": "Go on a hunt for instruction signs: on a door, a bottle, a lift. Read the bossy verb together.",
+      "textAr": "دوّروا على لافتات فيها تعليمات: على باب، أو إزازة، أو أسانسير. واقروا الفعل الآمر مع بعض.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u05.main.06",
+      "text": "When you cross a road together, your child says the steps: First… Next… Then… Finally….",
+      "textAr": "لما تعدّوا الشارع مع بعض، طفلك يقول الخطوات: First… و Next… و Then… و Finally….",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u05.main.07",
+      "text": "Play \"the boss says\": your child gives you bossy instructions, like Jump! Sit down! Touch your nose!",
+      "textAr": "العبوا \"الريّس بيقول\": طفلك يديك أوامر زي Jump! و Sit down! و Touch your nose!",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u05.main.08",
+      "text": "Your child tells you three numbered steps for washing hands while you both do it at the sink.",
+      "textAr": "طفلك يقولك تلات خطوات بالأرقام لغسيل الإيدين وانتو الاتنين بتعملوها عند الحوض.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u05.choice.01",
+      "text": "Make something simple together, like a fruit salad. Your child reads or says each bossy verb: Cut, Mix, Eat.",
+      "textAr": "اعملوا حاجة سهلة مع بعض زي سلطة فواكه، وطفلك يقرا أو يقول كل فعل آمر: Cut و Mix و Eat.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u05.choice.02",
+      "text": "Say \"a apple\" aloud together: it is hard to say! That is why we say an apple.",
+      "textAr": "قولوا \"a apple\" بصوت عالي مع بعض: صعبة! عشان كده بنقول an apple.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u05.choice.03",
+      "text": "Before baking or making a craft, write a You will need list together and tick each thing as you find it.",
+      "textAr": "قبل ما تعملوا كيكة أو شغل يدوي، اكتبوا ليستة You will need مع بعض، وعلّموا على كل حاجة لما تلاقوها.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u05.choice.04",
+      "text": "Read a recipe in the wrong order and ask your child what goes wrong. Then read it the right way.",
+      "textAr": "اقرا وصفة بترتيب غلط واسأل طفلك إيه اللي هيبوظ، وبعدين اقراها صح.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u05.choice.05",
+      "text": "Walk across the room slowly, then quickly, then quietly. Your child says the ly word each time.",
+      "textAr": "امشوا في الأوضة ببطء، وبعدين بسرعة، وبعدين بهدوء، وطفلك يقول كلمة الـ ly كل مرة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Be a robot parent who does exactly what you are told. Your child gives you instructions to make a jam sandwich. Forget a step, and the robot gets it wrong!",
+      "textAr": "اعمل نفسك روبوت بيعمل اللي يتقاله بالظبط، وطفلك يديك تعليمات تعمل ساندوتش مربى. لو نسي خطوة، الروبوت يغلط!",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ]
+}

@@ -17,7 +17,7 @@ class YearSubject {
   /// The subject's islands and units (`assets/content/...catalog.json`).
   final String catalogAsset;
 
-  /// `science` or `maths`: how its lessons and pictures look.
+  /// `science`, `maths` or `english`: how its lessons and pictures look.
   String get kind => subjectKindOf(curriculum);
 
   /// Where its progress is kept in the app's data.
@@ -73,6 +73,10 @@ class SchoolYears {
         YearSubject(
           curriculum: mathsCurriculum,
           catalogAsset: 'assets/content/maths_catalog.json',
+        ),
+        YearSubject(
+          curriculum: englishCurriculum,
+          catalogAsset: 'assets/content/english_catalog.json',
         ),
       ],
     ),

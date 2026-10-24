@@ -12,6 +12,10 @@
         {
           "curriculum": "y1.maths",
           "catalog": "assets/content/maths_catalog.json"
+        },
+        {
+          "curriculum": "y1.english",
+          "catalog": "assets/content/english_catalog.json"
         }
       ]
     }

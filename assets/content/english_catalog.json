@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "subject": "english",
+  "curriculum": "y1.english",
+  "title": "English",
+  "ar": "الإنجليزي",
+  "welcome": "Welcome to English Island! Start with a story in Term 1.",
+  "sourcePages": [
+    2,
+    3
+  ],
+  "islands": [
+    {
+      "title": "English Island: Term 1",
+      "ar": "جزيرة الإنجليزي: الفصل 1",
+      "color": "FF3E7FC1",
+      "levels": [
+        {
+          "id": "eng_unit_01",
+          "title": "Fantasy Stories",
+          "ar": "القصص الخيالية"
+        },
+        {
+          "id": "eng_unit_02",
+          "title": "Recounts",
+          "ar": "حكي اللي حصل"
+        },
+        {
+          "id": "eng_unit_03",
+          "title": "Traditional Rhymes",
+          "ar": "الأغاني والأناشيد القديمة"
+        },
+        {
+          "id": "eng_quiz_01",
+          "title": "Big Challenge: Term 1",
+          "ar": "تحدي الفصل الدراسي 1",
+          "quiz": true
+        }
+      ]
+    },
+    {
+      "title": "English Island: Term 2",
+      "ar": "جزيرة الإنجليزي: الفصل 2",
+      "color": "FFD9822B",
+      "levels": [
+        {
+          "id": "eng_unit_04",
+          "title": "Traditional Tales",
+          "ar": "الحكايات الشعبية"
+        },
+        {
+          "id": "eng_unit_05",
+          "title": "Instructions",
+          "ar": "التعليمات"
+        },
+        {
+          "id": "eng_unit_06",
+          "title": "Simple Rhyming Poems",
+          "ar": "قصائد على قافية"
+        },
+        {
+          "id": "eng_quiz_02",
+          "title": "Big Challenge: Term 2",
+          "ar": "تحدي الفصل الدراسي 2",
+          "quiz": true
+        }
+      ]
+    },
+    {
+      "title": "English Island: Term 3",
+      "ar": "جزيرة الإنجليزي: الفصل 3",
+      "color": "FF3E9B5A",
+      "levels": [
+        {
+          "id": "eng_unit_07",
+          "title": "Stories with Familiar Settings",
+          "ar": "قصص في أماكن نعرفها"
+        },
+        {
+          "id": "eng_unit_08",
+          "title": "Animal Poems",
+          "ar": "قصائد الحيوانات"
+        },
+        {
+          "id": "eng_unit_09",
+          "title": "Information Books",
+          "ar": "كتب المعلومات"
+        },
+        {
+          "id": "eng_quiz_03",
+          "title": "Big Challenge: Term 3",
+          "ar": "تحدي الفصل الدراسي 3",
+          "quiz": true
+        }
+      ]
+    },
+    {
+      "title": "Chart Skills Island",
+      "ar": "جزيرة مهارات الرسوم",
+      "color": "FF5B4BA8",
+      "levels": [
+        {
+          "id": "eng_charts",
+          "title": "Chart Skills",
+          "ar": "مهارات قراءة الرسوم"
+        }
+      ]
+    }
+  ],
+  "parentRules": [
+    {
+      "en": "Ten to fifteen minutes is enough. Stop while your child is still enjoying it.",
+      "ar": "عشر لربع ساعة كفاية. وقّفوا وطفلك لسه مبسوط.",
+      "sourcePage": 2
+    },
+    {
+      "en": "Let your child say it first: ask \"What do you think?\" before you explain.",
+      "ar": "سيب طفلك يقول الأول: اسأله \"إنت رأيك إيه؟\" قبل ما تشرح.",
+      "sourcePage": 2
+    },
+    {
+      "en": "Say words, do not just spell them: say the word, stretch the sounds, clap it, then write it.",
+      "ar": "قولوا الكلمات، متتهجّوهاش بس: قول الكلمة، مطّ أصواتها، صقّفها، وبعدين اكتبها.",
+      "sourcePage": 2
+    },
+    {
+      "en": "Praise the effort, not the neatness: \"You listened for every sound!\"",
+      "ar": "امدح المجهود مش الخط الحلو: \"إنت سمعت كل صوت!\"",
+      "sourcePage": 2
+    },
+    {
+      "en": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "ar": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "sourcePage": 3
+    }
+  ]
+}

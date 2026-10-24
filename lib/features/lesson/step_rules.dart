@@ -14,7 +14,7 @@ abstract final class StepRules {
     LessonStep step,
     Set<String> selected,
     Map<String, String> placements,
-  ) => step.isNumber
+  ) => step.isNumber || step.isWord
       ? placements['answer']
       : step.isMapping || step.isSentence
       ? placements
@@ -66,7 +66,7 @@ abstract final class StepRules {
     Map<String, String> placements,
   ) {
     final expected = step.answer!['value'];
-    if (step.isNumber) {
+    if (step.isNumber || step.isWord) {
       return matchesAnswer(step.answer!, placements['answer'])
           ? <String>{}
           : {'answer'};
@@ -94,6 +94,10 @@ abstract final class StepRules {
   static String answerReference(LessonStep step, Set<String> reviewItems) {
     final expected = step.answer!['value'];
     if (step.isNumber) return '$expected';
+    if (step.isWord) {
+      final word = step.json['letters'] as Map? ?? const {};
+      return '${word['before'] ?? ''}$expected${word['after'] ?? ''}';
+    }
     if (step.isSentence) {
       final e = Map<String, dynamic>.from(expected as Map);
       return '${e['a']} ${e['op'] == '-' ? '−' : '+'} ${e['b']} = ${e['c']}';

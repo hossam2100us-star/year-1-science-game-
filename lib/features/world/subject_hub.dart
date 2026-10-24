@@ -11,6 +11,7 @@ import '../../parent/parent_gate.dart';
 import '../../parent/parent_area.dart';
 import 'world_map.dart';
 import '../onboarding/child_chooser.dart';
+import '../english/english_art.dart';
 import '../maths/maths_art.dart';
 
 /// Only published subjects appear here; adding one must not unlock empty content.
@@ -147,12 +148,21 @@ class YearSubjects extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) => LayoutBuilder(
     builder: (context, box) {
-      final cardWidth = box.maxWidth >= 700
-          ? (box.maxWidth - 24) / 2
-          : box.maxWidth;
+      // Three subjects share one row on a wide screen, two on a tablet
+      // held upright; the last card stays centred on its own row.
+      final columns = box.maxWidth >= 900
+          ? 3
+          : box.maxWidth >= 700
+          ? 2
+          : 1;
+      final perRow = columns < year.subjects.length
+          ? columns
+          : year.subjects.length;
+      final cardWidth = (box.maxWidth - (perRow - 1) * 24) / perRow;
       return Wrap(
         spacing: 24,
         runSpacing: 24,
+        alignment: WrapAlignment.center,
         children: [
           for (final subject in year.subjects)
             SizedBox(
@@ -195,23 +205,31 @@ class _SubjectEntry extends ConsumerWidget {
     );
   }
 
-  Widget _card(BuildContext context, WidgetRef ref, Catalog catalogue) {
-    final science = subject.kind == 'science';
-    return _SubjectCard(
-      subject: subject.progressKey,
-      title: catalogue.title,
-      color: science ? const Color(0xFFE0F0E7) : const Color(0xFFE7EDF7),
-      onTap: () => _openWorld(context, ref, catalogue),
-      illustration: science
-          ? Image.asset(
-              'assets/images/islands-v2.webp',
-              height: 230,
-              fit: BoxFit.contain,
-              excludeFromSemantics: true,
-            )
-          : const SizedBox(height: 230, width: 460, child: MathsIslandArt()),
-    );
-  }
+  Widget _card(BuildContext context, WidgetRef ref, Catalog catalogue) =>
+      _SubjectCard(
+        subject: subject.progressKey,
+        title: catalogue.title,
+        color: switch (subject.kind) {
+          'science' => const Color(0xFFE0F0E7),
+          'english' => const Color(0xFFFBEBD9),
+          _ => const Color(0xFFE7EDF7),
+        },
+        onTap: () => _openWorld(context, ref, catalogue),
+        illustration: switch (subject.kind) {
+          'science' => Image.asset(
+            'assets/images/islands-v2.webp',
+            height: 230,
+            fit: BoxFit.contain,
+            excludeFromSemantics: true,
+          ),
+          'english' => const SizedBox(
+            height: 230,
+            width: 460,
+            child: EnglishIslandArt(),
+          ),
+          _ => const SizedBox(height: 230, width: 460, child: MathsIslandArt()),
+        },
+      );
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -226,11 +244,11 @@ class _SubjectEntry extends ConsumerWidget {
           error: (error, stack) => Center(
             child: FilledButton(
               onPressed: () => ref.invalidate(subjectCatalogProvider(subject)),
-              child: Text(
-                subject.kind == 'science'
-                    ? 'Try opening Science again'
-                    : 'Try opening Maths again',
-              ),
+              child: Text(switch (subject.kind) {
+                'science' => 'Try opening Science again',
+                'english' => 'Try opening English again',
+                _ => 'Try opening Maths again',
+              }),
             ),
           ),
         );

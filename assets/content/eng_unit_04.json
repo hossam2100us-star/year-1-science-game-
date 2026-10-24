@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_04",
+  "subject": "english",
+  "kind": "unit",
+  "term": 2,
+  "title": "Traditional Tales",
+  "ar": "الحكايات الشعبية",
+  "sourcePages": [
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.u04.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Join the two sentences with and. Tiger is hungry. Tiger is cross. → Tiger is hungry ___",
+      "answerKeyText": "Tiger is hungry and cross.",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.u04.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Does the sentence have a verb? Tick the correct ones and cross the wrong ones. a Tiddalik drank the water. b The water everywhere. c Kangaroo boxed his shadow. d Wombat about the water.",
+      "answerKeyText": "a ✓ • b ✗ (no verb) • c ✓ • d ✗ (no verb)",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.u04.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Draw a line from each animal to what it did. Tiddalik Kookaburra Kangaroo Platypus / told jokes, boxed his shadow, got cross and looked silly, drank all the water",
+      "answerKeyText": "Tiddalik – drank all the water • Kookaburra – told jokes • Kangaroo – boxed his shadow • Platypus – got cross and looked silly",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.u04.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "How did the man feel when Tiger grabbed him?",
+      "answerKeyText": "Scared / frightened (\"surprised\" or \"sad\" show good thinking too)",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.u04.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Who tricked Tiger back into the trap?",
+      "answerKeyText": "Rabbit",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.u04.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Finish the sentence with a story opener. ___, there was a thirsty frog.",
+      "answerKeyText": "Any opener: Once upon a time, Long ago, Long, long ago, One day",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.u04.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Write the verb from each sentence. They all end in ed. a The lion roared. b The water gushed. c The cat pounced.",
+      "answerKeyText": "a roared • b gushed • c pounced",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.u04.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "What lesson does Tiddalik the Thirsty Frog teach us?",
+      "answerKeyText": "A good answer says we should share and not keep everything for ourselves.",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.u04.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "Traditional tales are ( true news reports ) ( very old stories told again and again ) ( lists of instructions )",
+      "answerKeyText": "very old stories told again and again",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.u04.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "\"Once upon a time\" is a ( story opener ) ( verb ) ( rhyme )",
+      "answerKeyText": "story opener",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.u04.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Tiddalik laughed when he saw ( a big fish ) ( the sun ) ( Platypus looking silly )",
+      "answerKeyText": "Platypus looking silly",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.u04.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "In the lion story, the lion was saved by ( the little mouse ) ( the hunters ) ( the tiger )",
+      "answerKeyText": "the little mouse",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.u04.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Which one is a sentence with a verb? ( The frog in the pond. ) ( A big green frog. ) ( The frog jumped. )",
+      "answerKeyText": "The frog jumped.",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    }
+  ]
+}

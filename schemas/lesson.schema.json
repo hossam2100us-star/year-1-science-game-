@@ -63,7 +63,8 @@
               "science-lab",
               "free-measure",
               "number-entry",
-              "number-sentence"
+              "number-sentence",
+              "letter-entry"
             ]
           },
           "prompt": {
@@ -151,7 +152,8 @@
                       "sequence",
                       "mapping",
                       "number",
-                      "sentence"
+                      "sentence",
+                      "word"
                     ]
                   }
                 }

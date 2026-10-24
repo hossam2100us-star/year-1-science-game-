@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_quiz_01",
+  "subject": "english",
+  "kind": "quiz",
+  "term": 1,
+  "title": "Big Challenge: Term 1",
+  "ar": "تحدي الفصل الدراسي 1",
+  "sourcePages": [
+    16
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.q1.01",
+      "category": "quiz",
+      "number": 1,
+      "sourceText": "Is this real or fantasy? \"A monster lives inside the washing machine.\"",
+      "answerKeyText": "Fantasy",
+      "sourcePages": [
+        16
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.q1.02",
+      "category": "quiz",
+      "number": 2,
+      "sourceText": "What goes at the end of every sentence?",
+      "answerKeyText": "A full stop",
+      "sourcePages": [
+        16
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.q1.03",
+      "category": "quiz",
+      "number": 3,
+      "sourceText": "Write the word that means more than one box.",
+      "answerKeyText": "boxes",
+      "sourcePages": [
+        16
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.q1.04",
+      "category": "quiz",
+      "number": 4,
+      "sourceText": "Which part of a story is it when Aqsa wakes up in bed — beginning, middle or end?",
+      "answerKeyText": "The end",
+      "sourcePages": [
+        16
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.q1.05",
+      "category": "quiz",
+      "number": 5,
+      "sourceText": "Write this correctly: i visited dubai.",
+      "answerKeyText": "I visited Dubai.",
+      "sourcePages": [
+        16
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.q1.06",
+      "category": "quiz",
+      "number": 6,
+      "sourceText": "Change the verb so it has already happened: We play in the park. → We ___ in the park.",
+      "answerKeyText": "played",
+      "sourcePages": [
+        16
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.q1.07",
+      "category": "quiz",
+      "number": 7,
+      "sourceText": "Write a time word that could start a recount.",
+      "answerKeyText": "Any of: First, Yesterday, Last week, On Monday, Then",
+      "sourcePages": [
+        16
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.q1.08",
+      "category": "quiz",
+      "number": 8,
+      "sourceText": "Write a word that rhymes with ten.",
+      "answerKeyText": "Any rhyme: hen, pen, men, when (a made-up rhyme like \"zen\" is fine too)",
+      "sourcePages": [
+        16
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.q1.09",
+      "category": "quiz",
+      "number": 9,
+      "sourceText": "Write the number name for 7.",
+      "answerKeyText": "seven",
+      "sourcePages": [
+        16
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    },
+    {
+      "id": "eng.q1.10",
+      "category": "quiz",
+      "number": 10,
+      "sourceText": "Circle the noun: run school jump",
+      "answerKeyText": "school",
+      "sourcePages": [
+        16
+      ],
+      "answerKeyPages": [
+        52
+      ]
+    }
+  ]
+}

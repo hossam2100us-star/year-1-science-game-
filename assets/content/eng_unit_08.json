@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_08",
+  "subject": "english",
+  "kind": "unit",
+  "term": 3,
+  "title": "Animal Poems",
+  "ar": "قصائد الحيوانات",
+  "sourcePages": [
+    36,
+    37,
+    38,
+    39
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.u08.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Clap each word. Write how many syllables. cat monkey elephant alligator",
+      "answerKeyText": "cat 1 • monkey 2 • elephant 3 • alligator 4",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u08.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Write an animal name that rhymes. goat – moose – seal –",
+      "answerKeyText": "goat – stoat • moose – goose • seal – eel",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u08.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Circle the adjective (describing word). a the big hippo b a stripy zebra c a hairy spider",
+      "answerKeyText": "a big • b stripy • c hairy",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u08.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Draw a line from each animal to a verb that fits. monkey snake frog lion / hops roars swings slides",
+      "answerKeyText": "monkey – swings • snake – slides • frog – hops • lion – roars",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u08.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Is it a quiet verb or a noisy verb? Write Q or N. whispering roaring rustling crashing",
+      "answerKeyText": "whispering Q • roaring N • rustling Q • crashing N",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u08.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Finish each word with sp, dr or cr. _ider _op (a drop of rain) _awl",
+      "answerKeyText": "spider • drop • crawl",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u08.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Write an adjective for each animal. a ___ crocodile a ___ lion",
+      "answerKeyText": "Any describing word, e.g. a golden / green / hungry crocodile, a big / proud / hairy lion",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u08.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Write a three-line animal list poem. Each line: an animal and what it does.",
+      "answerKeyText": "Three lines, each an animal and a verb (e.g. Monkeys swing. Snakes slide. Frogs hop.). Adjectives are a bonus.",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u08.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "How many syllables are in tiger? ( 1 ) ( 2 ) ( 5 )",
+      "answerKeyText": "2",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u08.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "An adjective ( describes a thing ) ( is a doing word ) ( is a full stop )",
+      "answerKeyText": "describes a thing",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u08.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Which word rhymes with goose? ( goat ) ( mouse ) ( moose )",
+      "answerKeyText": "moose",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u08.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "To make a poem interesting to listen to, read it with ( a loud, soft, fast and slow voice ) ( the same flat voice ) ( your mouth closed )",
+      "answerKeyText": "a loud, soft, fast and slow voice",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    },
+    {
+      "id": "eng.u08.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Which animal name has four syllables? ( zebra ) ( alligator ) ( cat )",
+      "answerKeyText": "alligator",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "answerKeyPages": [
+        54
+      ]
+    }
+  ]
+}
