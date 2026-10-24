@@ -85,14 +85,25 @@ async function launch(profile, url, act) {
         return null;
       }
     };
+    // Up to a minute: on a slow CI runner Chrome has taken over 20 s.
     const json = async (path) => {
-      for (let i = 0; ; i++) {
-        try {
-          return await (await fetch(`http://127.0.0.1:${port()}${path}`)).json();
-        } catch (error) {
-          if (i === 100) throw new Error(`Chrome did not start (${error.cause?.code ?? error})`);
-          await sleep(200);
+      const deadline = Date.now() + 60000;
+      for (;;) {
+        const at = port();
+        let error;
+        if (at) {
+          try {
+            return await (await fetch(`http://127.0.0.1:${at}${path}`, { signal: AbortSignal.timeout(5000) })).json();
+          } catch (e) {
+            error = e;
+          }
         }
+        if (Date.now() > deadline) {
+          throw new Error(at
+            ? `Chrome did not answer ${path} on port ${at} within 60 s (${error.cause?.code ?? error.cause?.message ?? error.message})`
+            : 'Chrome did not start: no DevToolsActivePort in the profile within 60 s');
+        }
+        await sleep(200);
       }
     };
     const version = await json('/json/version');
