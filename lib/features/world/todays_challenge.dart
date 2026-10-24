@@ -93,7 +93,10 @@ class ChallengeScreen extends ConsumerWidget {
                             .title,
                 ),
                 onPressed: () {
-                  final original = library.lessons[task.lessonId]!;
+                  // As in LessonRoute, the child's name fills `{name}`.
+                  final original = library.lessons[task.lessonId]!.forChild(
+                    data.profile?.name,
+                  );
                   final owner = data.activeChildId;
                   if (task.gardenScene != null) {
                     final scene = aliveScenes(original)

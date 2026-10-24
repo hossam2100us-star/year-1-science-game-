@@ -110,12 +110,20 @@ def source(lesson, objective=None, key=''):
             'answerKeyText': key, 'sourceSha256': SOURCE_SHA256}
 
 
+def card_option(index, card):
+    """A story part or big-idea card: its text, or (text, picture)."""
+    text, picture = card if isinstance(card, tuple) else (card, None)
+    option = {'id': f'card_{index + 1}', 'label': text, 'art': 'eng_card'}
+    if picture:
+        option['picture'] = picture
+    return option
+
+
 def explore_step(lesson, index, part):
     step = {
         'id': f"{lesson['id']}.step.{index:03d}", 'kind': 'explore',
         'title': part['title'], 'prompt': part['prompt'],
-        'options': [{'id': f'card_{i + 1}', 'label': card, 'art': 'eng_card'}
-                    for i, card in enumerate(part['cards'])],
+        'options': [card_option(i, card) for i, card in enumerate(part['cards'])],
         'targets': [], 'answer': None, 'assessed': False, 'objective': '',
         'hint': 'Tap each card to listen.',
         'explanation': part['explanation'],

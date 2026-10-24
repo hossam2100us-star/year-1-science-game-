@@ -29,13 +29,33 @@ const englishWords = [
 const _wordColumns = 8;
 const _wordRows = 8;
 
+/// Story scenes (teacher review 8): one picture per part of each story and
+/// for the sentence cards, four to a row in equal 16:9 cells, in this
+/// order.
+const englishSceneAsset = 'english-scenes-v1.webp';
+const englishScenes = [
+  'aqsa-monster', 'aqsa-falls', 'aqsa-cloud', 'mum-washing', //
+  'school-arrive', 'football', 'family-dinner', 'classroom', //
+  'tiddalik-drinks', 'tiddalik-jokes', 'tiddalik-laughs', 'wombat', //
+  'lion-mouse', 'tiger-trap', 'two-kings', 'swings', //
+  'gogo-walk', 'red-tackies-window', 'red-tackies-proud', 'market', //
+  'shark-park', 'mr-gumpy', 'rubys-worry', 'katie-morag', //
+];
+const _sceneColumns = 4;
+const _sceneRows = 6;
+
+/// Scenes are wider than they are tall.
+const englishSceneAspect = 16 / 9;
+
 /// Words the Maths pictures already show (a sock, a book, a school bag).
 bool _inMathsArt(String word) =>
     mathsThings.contains(word) || mathsObjectCells.containsKey(word);
 
 /// Whether [word] has a picture.
 bool hasEnglishPicture(String word) =>
-    englishWords.contains(word) || _inMathsArt(word);
+    englishWords.contains(word) ||
+    englishScenes.contains(word) ||
+    _inMathsArt(word);
 
 /// The picture of one word; nothing for a word without one.
 class EnglishPicture extends StatelessWidget {
@@ -46,6 +66,27 @@ class EnglishPicture extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scene = englishScenes.indexOf(word);
+    if (scene >= 0) {
+      return ExcludeSemantics(
+        child: SizedBox(
+          height: height,
+          width: width ?? height * englishSceneAspect,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: IllustratedArt(
+              asset: englishSceneAsset,
+              crop: Rect.fromLTWH(
+                (scene % _sceneColumns) / _sceneColumns,
+                (scene ~/ _sceneColumns) / _sceneRows,
+                1 / _sceneColumns,
+                1 / _sceneRows,
+              ),
+            ),
+          ),
+        ),
+      );
+    }
     final cell = englishWords.indexOf(word);
     if (cell < 0) {
       return _inMathsArt(word)

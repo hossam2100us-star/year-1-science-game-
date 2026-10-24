@@ -25,18 +25,21 @@
       "options": [
         {
           "id": "card_1",
-          "label": "Beginning. Aqsa finds a purple, furry monster called Blipblop. He is wearing her Mum's yellow coat, a red hat and black socks.",
-          "art": "eng_card"
+          "label": "Beginning. Aqsa finds a furry purple monster called Blipblop. He wears her Mum's yellow coat and a red hat.",
+          "art": "eng_card",
+          "picture": "aqsa-monster"
         },
         {
           "id": "card_2",
-          "label": "Middle. Aqsa slips into the washing machine and falls into Blipblopia, a land of ice-cream mountains and a lemonade river. She chases a little plopper cropper. Then the big mother plopper cropper chases her!",
-          "art": "eng_card"
+          "label": "Middle. Aqsa falls through the washing machine into a land of ice-cream mountains. A big plopper cropper chases her!",
+          "art": "eng_card",
+          "picture": "aqsa-falls"
         },
         {
           "id": "card_3",
-          "label": "End. A soft green cloud saves her. She falls asleep on it, and wakes up in her own bed. Was it a dream?",
-          "art": "eng_card"
+          "label": "End. A soft green cloud saves her. She wakes up in her own bed. Was it a dream?",
+          "art": "eng_card",
+          "picture": "aqsa-cloud"
         }
       ],
       "targets": [],
@@ -66,8 +69,7 @@
       "englishVisual": {
         "type": "story",
         "title": "Aqsa's Adventures",
-        "text": "A story with a beginning, a middle and an end.",
-        "picture": "monster"
+        "text": "A story with a beginning, a middle and an end."
       }
     },
     {
@@ -316,22 +318,26 @@
         {
           "id": "choice_1",
           "label": "A boy plays football in the park.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "football"
         },
         {
           "id": "choice_2",
           "label": "A purple monster lives in the washing machine.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "monster"
         },
         {
           "id": "choice_3",
           "label": "There are mountains made of ice cream.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "aqsa-falls"
         },
         {
           "id": "choice_4",
           "label": "Mum puts the clothes in the washing machine.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "mum-washing"
         }
       ],
       "targets": [
@@ -506,17 +512,20 @@
         {
           "id": "choice_1",
           "label": "Aqsa wakes up in her own bed.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "aqsa-cloud"
         },
         {
           "id": "choice_2",
           "label": "Aqsa falls into the washing machine.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "washing machine"
         },
         {
           "id": "choice_3",
           "label": "The mother plopper cropper chases Aqsa.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "aqsa-falls"
         }
       ],
       "targets": [

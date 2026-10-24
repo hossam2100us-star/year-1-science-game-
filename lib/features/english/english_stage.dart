@@ -82,23 +82,7 @@ class EnglishStage extends StatelessWidget {
           ),
         ),
         child: _explore
-            ? Row(
-                children: [
-                  Icon(
-                    heard
-                        ? Icons.check_circle_rounded
-                        : Icons.volume_up_rounded,
-                    size: 30,
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Text(
-                      item.label,
-                      style: const TextStyle(fontSize: 21),
-                    ),
-                  ),
-                ],
-              )
+            ? _storyPart(item, heard, picture, width)
             : Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -127,6 +111,57 @@ class EnglishStage extends StatelessWidget {
     );
   }
 
+  /// One part of a story: its picture beside the text (teacher review 8),
+  /// or above it on a narrow screen.
+  Widget _storyPart(
+    PictureItem item,
+    bool heard,
+    String? picture,
+    double width,
+  ) {
+    final icon = Icon(
+      heard ? Icons.check_circle_rounded : Icons.volume_up_rounded,
+      size: 30,
+    );
+    final text = Text(item.label, style: const TextStyle(fontSize: 21));
+    // Four stories still fit a tablet without scrolling.
+    final height = step.options.length > 3 ? 84.0 : 100.0;
+    if (picture == null) {
+      return Row(
+        children: [
+          icon,
+          const SizedBox(width: 12),
+          Expanded(child: text),
+        ],
+      );
+    }
+    if (width < 560) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(child: EnglishPicture(picture, height: 110)),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              icon,
+              const SizedBox(width: 12),
+              Expanded(child: text),
+            ],
+          ),
+        ],
+      );
+    }
+    return Row(
+      children: [
+        icon,
+        const SizedBox(width: 12),
+        EnglishPicture(picture, height: height),
+        const SizedBox(width: 16),
+        Expanded(child: text),
+      ],
+    );
+  }
+
   /// The answer cards in rows, or one under another when [stacked].
   Widget _cards(BuildContext context, double maxWidth, {bool stacked = false}) {
     final large = MediaQuery.textScalerOf(context).scale(1) >= 1.5;
@@ -135,9 +170,12 @@ class EnglishStage extends StatelessWidget {
       (n, o) => math.max(n, o.label.length),
     );
     // Story parts and long sentences take a whole row; single words share
-    // one.
-    final columns = stacked || _explore || longest > 40
+    // one. Sentences with pictures go two to a row on a tablet, so they fit
+    // without scrolling.
+    final columns = stacked || _explore
         ? 1
+        : longest > 40
+        ? (_anyPicture && maxWidth >= (large ? 900 : 650) ? 2 : 1)
         : math.min(
             step.options.length,
             large
@@ -204,10 +242,10 @@ class EnglishStage extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // A story step shows its own picture instead of the setting,
+            // A story step shows its own pictures instead of the setting,
             // and a chart needs the room on a short screen, so everything
             // fits a tablet without scrolling.
-            if (!(_explore && _visual != null) &&
+            if (!(_explore && (_visual != null || _anyPicture)) &&
                 !(_chart && DiscoveryWorld.usableHeight(context) < 760)) ...[
               ClipRRect(
                 borderRadius: BorderRadius.circular(18),

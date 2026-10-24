@@ -440,3 +440,27 @@ The owner installed 0.6.2 on a real tablet, a HUAWEI MatePad T (AGRK-L09, Androi
   - symbols in `symbols/0.6.3+11`.
 
 Seen on the same tablet, not changed here: its screen is 800 points high with larger text, so the first English story step needs a short scroll.
+
+## Teacher review 8 (English), 2026-10-24
+
+Fixes for `docs/TEACHER_REVIEW_2026_10_24.md`, all in one change (owner's choice):
+- **Stories:** shorter parts, each with its own painted scene: Aqsa, the recount (unit 2), Tiddalik, Songololo and the two "more stories" screens. 24 scenes made in Canva Dream Lab (Education account, saved by the owner), built by `tools/images/english-scenes.cjs` into `english-scenes-v1.webp` (1792×1512, 759 KB).
+- **Sentence cards:** pictures on the Real/Fantasy, verb, story-setting, beginning/middle/end and reduce/reuse/recycle cards. On a tablet they go two to a row, so nothing scrolls. A story screen with pictures leaves out the setting banner. With four stories the pictures are a little smaller.
+- **Content:**
+  - "whispered" → "trembled" in the feelings sort;
+  - the chart and the recount use the playing child's name (`Lesson.forChild`, "Sam" when there is none; English only, because the Science garden uses `{name}` for the thing explored). Today's Challenge fills it in too;
+  - the home activity no longer names Seif;
+  - every graded question in a lesson has its own hint;
+  - the five two-choice quiz questions and one unit question have a third choice.
+- **Unchanged:** step IDs, answers, objectives, scoring and saved journeys. The validator now checks unique hints and that `{name}` never appears in answers or parent text.
+
+**Checks:**
+- 579 tests pass (1 skipped) with the goldens; analyze and format are clean.
+- New English tests:
+  - the name is filled in (Nour, or Sam), with IDs and answers unchanged, and no "Seif" anywhere;
+  - the garden text is left alone;
+  - every story part has a scene;
+  - "trembled";
+  - tapping a sentence card reads it aloud before it goes in a basket.
+- English and playable validators pass; the English build is byte-for-byte repeatable.
+- Every English step at 1280×800 and at 390×844 with 150% text: no overflow. The review images were checked by eye: stories and sorting screens fit a tablet without scrolling.

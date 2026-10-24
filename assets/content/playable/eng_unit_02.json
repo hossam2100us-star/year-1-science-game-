@@ -20,23 +20,26 @@
     {
       "id": "eng_unit_02.step.001",
       "kind": "explore",
-      "title": "Seif's day",
+      "title": "{name}'s day",
       "prompt": "Tap each part of the recount to listen.",
       "options": [
         {
           "id": "card_1",
           "label": "First, I went to school.",
-          "art": "eng_card"
+          "art": "eng_card",
+          "picture": "school-arrive"
         },
         {
           "id": "card_2",
           "label": "Then, I played football with my friends.",
-          "art": "eng_card"
+          "art": "eng_card",
+          "picture": "football"
         },
         {
           "id": "card_3",
           "label": "At last, I came home and ate my dinner.",
-          "art": "eng_card"
+          "art": "eng_card",
+          "picture": "family-dinner"
         }
       ],
       "targets": [],
@@ -66,8 +69,7 @@
       "englishVisual": {
         "type": "story",
         "title": "My day",
-        "text": "A true recount, told in order.",
-        "picture": "school bag"
+        "text": "A true recount, told in order."
       }
     },
     {
@@ -1052,8 +1054,8 @@
     },
     {
       "objective": "eng.u02.main.04",
-      "text": "Walk across the room and say: I walk. Seif walks. I am walking. Stop: I walked! Then your child does it with jump, hop and clap.",
-      "textAr": "امشي في الأوضة وقول: I walk. Seif walks. I am walking. وقّف: I walked! وبعدين طفلك يعملها مع jump و hop و clap.",
+      "text": "Walk across the room and say: I walk. Mum walks. I am walking. Stop: I walked! Then your child does it with jump, hop and clap.",
+      "textAr": "امشي في الأوضة وقول: I walk. Mum walks. I am walking. وقّف: I walked! وبعدين طفلك يعملها مع jump و hop و clap.",
       "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
       "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
       "pages": [

@@ -112,6 +112,31 @@ class Lesson {
       List<Map<String, dynamic>>.from(json['homeActivities']);
   Set<String> get objectives =>
       steps.expand((s) => s.assessedObjectives).toSet();
+
+  /// The name used in place of `{name}` when a child has none.
+  static const defaultChildName = 'Sam';
+
+  /// This lesson with `{name}` in its text replaced by [childName] ("Books
+  /// Nour read this week"; teacher review 8). IDs and answers never contain
+  /// it, so saved journeys are unaffected. Only English uses it for the
+  /// child: the Science garden fills `{name}` with the thing being explored.
+  Lesson forChild(String? childName) {
+    if (subject != 'english') return this;
+    final name = (childName ?? '').trim().isEmpty
+        ? defaultChildName
+        : childName!.trim();
+    Object? replace(Object? value) => switch (value) {
+      final String text => text.replaceAll('{name}', name),
+      final Map<String, dynamic> map => {
+        for (final e in map.entries) e.key: replace(e.value),
+      },
+      final List<dynamic> list => [for (final v in list) replace(v)],
+      _ => value,
+    };
+    return jsonEncode(json).contains('{name}')
+        ? Lesson(replace(json)! as Map<String, dynamic>)
+        : this;
+  }
 }
 
 class LessonLibrary {

@@ -26,18 +26,21 @@
       "options": [
         {
           "id": "card_1",
-          "label": "Beginning. Shepherd goes shopping in the town with his old granny, Gogo. His old tackies, his trainers, have holes in them.",
-          "art": "eng_card"
+          "label": "Beginning. Shepherd goes shopping with his old granny, Gogo. His old tackies (trainers) have holes.",
+          "art": "eng_card",
+          "picture": "gogo-walk"
         },
         {
           "id": "card_2",
-          "label": "Middle. Gogo walks slowly with her stick. In a shop window, Shepherd sees shiny new red tackies.",
-          "art": "eng_card"
+          "label": "Middle. In a shop window, Shepherd sees shiny new red tackies.",
+          "art": "eng_card",
+          "picture": "red-tackies-window"
         },
         {
           "id": "card_3",
           "label": "End. Gogo buys the red tackies for him. Shepherd feels so proud!",
-          "art": "eng_card"
+          "art": "eng_card",
+          "picture": "red-tackies-proud"
         }
       ],
       "targets": [],
@@ -68,8 +71,7 @@
       "englishVisual": {
         "type": "story",
         "title": "Not So Fast, Songololo",
-        "text": "A story set at the shops, from South Africa.",
-        "picture": "shoe"
+        "text": "A story set at the shops, from South Africa."
       }
     },
     {
@@ -80,23 +82,27 @@
       "options": [
         {
           "id": "card_1",
-          "label": "Shark in the Park. Timothy looks through his new telescope and shouts: a shark! But at last the shark fin is only a cat's ear.",
-          "art": "eng_card"
+          "label": "Shark in the Park. Timothy looks through his telescope and shouts: a shark! But the fin is only a cat's ear.",
+          "art": "eng_card",
+          "picture": "shark-park"
         },
         {
           "id": "card_2",
-          "label": "Mr Gumpy's Outing. Children and animals go on Mr Gumpy's boat. They kick and flap and squabble, and the boat tips over! Then they all go home for tea.",
-          "art": "eng_card"
+          "label": "Mr Gumpy's Outing. Children and animals squabble on Mr Gumpy's boat, and it tips over!",
+          "art": "eng_card",
+          "picture": "mr-gumpy"
         },
         {
           "id": "card_3",
-          "label": "Ruby's Worry. Ruby's small Worry grows bigger every day. When she talks about it with a friend, it shrinks until it is gone.",
-          "art": "eng_card"
+          "label": "Ruby's Worry. Ruby's Worry grows bigger every day. When she talks about it, it shrinks away.",
+          "art": "eng_card",
+          "picture": "rubys-worry"
         },
         {
           "id": "card_4",
           "label": "Katie Morag and the Tiresome Ted. Katie Morag is cross about her new baby sister, so she throws her teddy into the sea.",
-          "art": "eng_card"
+          "art": "eng_card",
+          "picture": "katie-morag"
         }
       ],
       "targets": [],
@@ -123,15 +129,7 @@
       "section": "Explore",
       "playScene": "english",
       "theme": "eng_unit_07",
-      "minTouches": 4,
-      "englishVisual": {
-        "type": "picture",
-        "items": [
-          "telescope",
-          "boat",
-          "teddy"
-        ]
-      }
+      "minTouches": 4
     },
     {
       "id": "eng_unit_07.step.003",
@@ -190,17 +188,20 @@
         {
           "id": "choice_1",
           "label": "The children sit at desks and the teacher reads to them.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "classroom"
         },
         {
           "id": "choice_2",
           "label": "Gogo buys bananas and looks at shoes in a window.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "market"
         },
         {
           "id": "choice_3",
           "label": "Timothy looks at the swings and the slide.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "swings"
         }
       ],
       "targets": [
@@ -463,7 +464,7 @@
         },
         {
           "id": "choice_6",
-          "label": "whispered",
+          "label": "trembled",
           "art": "eng_word"
         }
       ],
@@ -498,8 +499,8 @@
       "assessed": true,
       "objective": "eng.u07.main.05",
       "hint": "Act each word out. What face do you make?",
-      "explanation": "Grinned and laughed are happy, sobbed and cried are sad, shook and whispered are scared.",
-      "shortExplanation": "Grinned and laughed are happy, sobbed and cried are sad, shook and whispered are scared.",
+      "explanation": "Grinned and laughed are happy, sobbed and cried are sad, shook and trembled are scared.",
+      "shortExplanation": "Grinned and laughed are happy, sobbed and cried are sad, shook and trembled are scared.",
       "source": {
         "pages": [
           31,

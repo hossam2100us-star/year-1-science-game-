@@ -17,17 +17,22 @@
     {
       "id": "eng_quiz_01.step.001",
       "kind": "tap-choice",
-      "title": "Real or fantasy?",
-      "prompt": "A monster lives inside the washing machine. Is it real or fantasy?",
+      "title": "What kind of sentence?",
+      "prompt": "A monster lives inside the washing machine. Which is right?",
       "options": [
         {
           "id": "choice_1",
-          "label": "Real",
+          "label": "It could really happen.",
           "art": "eng_word"
         },
         {
           "id": "choice_2",
-          "label": "Fantasy",
+          "label": "It is fantasy.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "It is a recount.",
           "art": "eng_word"
         }
       ],

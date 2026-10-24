@@ -70,6 +70,7 @@ the owner.
 | `assets/images/english-islands-v1.webp` | Four islands in a 2 × 2 picture: stories (book, castle, monster), tales (frog, lion, cottage), familiar places (town, park, school, jungle), charts (bar-chart hills, lighthouse) | 2048×1157, 472 KB |
 | `assets/images/english-backdrops-v1.webp` | Four settings in a 2 × 2 picture: reading corner, kitchen, rainy garden, jungle | 2048×1157, 442 KB |
 | `assets/images/english-words-v1.webp` | 62 word pictures, eight to a row in 256-pixel cells, in the order of `englishWords` | 2048×2048, 760 KB |
+| `assets/images/english-scenes-v1.webp` | 24 story scenes (teacher review 8), four to a row in 448×252 cells, in the order of `englishScenes` | 1792×1512, 759 KB |
 
 The word pictures were made six at a time (eleven sheets, "children's
 storybook illustration… plain flat solid magenta background, no text"), the
@@ -78,6 +79,19 @@ builds all three files; the magenta cut-out it shares with the Maths
 everyday-objects atlas is now `tools/images/magenta-cut.cjs`. The subject
 card fills its 2:1 frame from the 16:9 islands picture (a little sea is
 cut at the top and bottom); the map shows each island whole.
+
+The story scenes were made four at a time (six pictures, "four separate
+children's storybook illustrations… in a 2 by 2 grid… with a thin white
+gap… no text"). `tools/images/english-scenes.cjs` finds the white gaps,
+cuts each picture into its four scenes and builds the atlas. A story part
+shows its scene beside the text (above it on a phone); some sentence cards
+show one too, and as with the word pictures, pictures never mark exactly
+the right cards.
+
+Some text uses `{name}` ("Books {name} read this week", "{name}'s day").
+`Lesson.forChild` puts in the playing child's name when an English lesson
+opens (or "Sam" when there is none); IDs, answers and parent activities
+never contain it, and the validator checks that.
 
 ## Files
 
@@ -93,7 +107,7 @@ cut at the top and bottom); the map shows each island whole.
 | `lib/features/world/subject_hub.dart`, `world_map.dart`, `lib/features/biology/sticker_album.dart`, `lib/parent/` | The English card and islands, stickers, guides |
 | `schemas/lesson.schema.json`, `scripts/validate_playable.py` | `letter-entry` and `word`; the English safety page |
 | `test/english_test.dart` | Subject, catalogue, Arabic, pictures, spelling, story, sorting, every step on a tablet and on a phone with big text, SQLite |
-| `tools/images/english-atlas.cjs`, `magenta-cut.cjs`, `assets/images/english-*.webp` | The art |
+| `tools/images/english-atlas.cjs`, `english-scenes.cjs`, `magenta-cut.cjs`, `assets/images/english-*.webp` | The art |
 
 To change the content, edit `scripts/english_content/` and run
 `python scripts/build_english_content.py`, then
