@@ -406,3 +406,37 @@ The accepted sprintf-js entry (GHSA-hp3w-g68c-fv3c) was removed from
   - `downloads/science-adventure.apk` with its `.sha256`, and `downloads/version.json` (10, 0.6.2), uploaded last;
   - 0.6.1 moved to `previous/0.6.1+9`;
   - symbols in `symbols/0.6.2+10`.
+
+## Speech on a Huawei tablet, and trial release 0.6.3 (versionCode 11), 2026-10-24
+
+The owner installed 0.6.2 on a real tablet, a HUAWEI MatePad T (AGRK-L09, Android 10, no Google services), and heard no sound. Checked over USB:
+- The only speech engine is Huawei's (`com.huawei.hiai`). A separate test app (removed afterwards) showed that it offers offline English voices (`en`, `en-US` and an unusual `en-Qaag`) and speaks them.
+- The app's voice settings showed "no English voice ready", although the voices were listed: one failed call had turned speech off for the rest of the session.
+- **Cause, reproduced:** Android stops the speech engine in the background. The app's next call then fails (`not bound to TTS engine`; choosing the voice throws a `PlatformException`), and the app marked speech as unavailable until it was closed.
+
+**Fix (`lib/core/narration.dart`):**
+- When speaking fails, the app binds the default engine again (`setEngine`) and tries once more. A failure never turns speech off for the session.
+- With no voice at start-up, it looks again at most every 20 seconds.
+- A voice the engine cannot find by name falls back to its language.
+- Plain English locales (`en`, `en-GB`, `en-US`) are chosen before unusual ones such as `en-Qaag`.
+
+**Checks:**
+- New tests in `test/narration_test.dart`:
+  - a stopped engine is reconnected and the sentence still plays;
+  - the automatic voice is a plain English one;
+  - the language fallback.
+- 570 tests and the 5 goldens pass; analyze and format are clean.
+- On the tablet, with the release key installed over the child's data:
+  - with the engine force-stopped in the middle of the English story, 0.6.2 stayed silent;
+  - the fixed build bound the engine again within 0.1 s and spoke (three speech audio tracks).
+  - The owner heard the speech.
+- APK 0.6.3 (11):
+  - 52.8 MB, SHA-256 `e259768d…4068149a`;
+  - upload key `a8:03:33:…:74:12:79`, same permissions;
+  - installed on the tablet in place and speaks.
+- Staged in `C:\Users\hossa\ScienceAdventure-NAS`:
+  - the APK, `.sha256` and `version.json` (11, 0.6.3, uploaded last);
+  - 0.6.2 moved to `previous/0.6.2+10`;
+  - symbols in `symbols/0.6.3+11`.
+
+Seen on the same tablet, not changed here: its screen is 800 points high with larger text, so the first English story step needs a short scroll.
