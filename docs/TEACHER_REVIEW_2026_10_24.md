@@ -36,7 +36,8 @@ Follows [TEACHER_REVIEW_2026_10_18.md](TEACHER_REVIEW_2026_10_18.md).
 
 ### 1. Medium — many English questions are text only
 
-Only about a third of assessed English questions have a picture (`englishVisual`), and in
+Fewer than half of assessed English questions have a question picture (`englishVisual`: 73 of 165;
+some others show pictures on their cards), and in
 `eng_unit_04` only 2 of 13. Sorting sentences into Real/Fantasy (`eng_unit_01.step.006`) and
 "Is there a verb?" (`eng_unit_04.step.005`) are long sentences only. A Year 1 child who does not
 yet read fluently depends fully on speech here.
