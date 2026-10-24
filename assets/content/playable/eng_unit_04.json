@@ -26,18 +26,21 @@
       "options": [
         {
           "id": "card_1",
-          "label": "Beginning. Long ago, in Australia, Tiddalik the frog was so thirsty that he drank all the water in the land.",
-          "art": "eng_card"
+          "label": "Beginning. Long ago, Tiddalik the frog was so thirsty that he drank all the water in the land.",
+          "art": "eng_card",
+          "picture": "tiddalik-drinks"
         },
         {
           "id": "card_2",
-          "label": "Middle. The animals tried to make him laugh. Kookaburra told jokes, Koala stood on his head, and Kangaroo boxed his own shadow. Thump, thump! That woke up Platypus.",
-          "art": "eng_card"
+          "label": "Middle. The animals tried to make him laugh. Kangaroo boxed his own shadow. Thump, thump!",
+          "art": "eng_card",
+          "picture": "tiddalik-jokes"
         },
         {
           "id": "card_3",
-          "label": "End. Platypus was so cross that he looked very silly. Tiddalik laughed, and all the water gushed out. The lesson: share.",
-          "art": "eng_card"
+          "label": "End. Platypus woke up so cross that he looked silly. Tiddalik laughed, and all the water gushed out.",
+          "art": "eng_card",
+          "picture": "tiddalik-laughs"
         }
       ],
       "targets": [],
@@ -68,8 +71,7 @@
       "englishVisual": {
         "type": "story",
         "title": "Tiddalik the Thirsty Frog",
-        "text": "An old story from Australia.",
-        "picture": "frog"
+        "text": "An old story from Australia. The lesson: share."
       }
     },
     {
@@ -80,18 +82,21 @@
       "options": [
         {
           "id": "card_1",
-          "label": "The Lion and the Mouse. A lion lets a little mouse go. Later the mouse nibbles through the hunters' ropes and sets the lion free. Small can be strong too.",
-          "art": "eng_card"
+          "label": "The Lion and the Mouse. A little mouse nibbles through the hunters' ropes and sets the lion free. Small can be strong too.",
+          "art": "eng_card",
+          "picture": "lion-mouse"
         },
         {
           "id": "card_2",
-          "label": "The Ungrateful Tiger, from Korea. A kind man helps Tiger out of a trap, but Tiger wants to eat him! Clever Rabbit tricks Tiger back into the trap. Be thankful to people who help you.",
-          "art": "eng_card"
+          "label": "The Ungrateful Tiger. A kind man helps Tiger out of a trap, but Tiger wants to eat him! Clever Rabbit tricks Tiger back in.",
+          "art": "eng_card",
+          "picture": "tiger-trap"
         },
         {
           "id": "card_3",
-          "label": "The King of the Forest, from China. Tiger King Bole saves Lion from the waterfall, and they live in peace. Be kind, even to someone who was unkind.",
-          "art": "eng_card"
+          "label": "The King of the Forest. Tiger King saves Lion from the waterfall, and they live in peace. Be kind.",
+          "art": "eng_card",
+          "picture": "two-kings"
         }
       ],
       "targets": [],
@@ -118,15 +123,7 @@
       "section": "Explore",
       "playScene": "english",
       "theme": "eng_unit_04",
-      "minTouches": 3,
-      "englishVisual": {
-        "type": "picture",
-        "items": [
-          "lion",
-          "mouse",
-          "tiger"
-        ]
-      }
+      "minTouches": 3
     },
     {
       "id": "eng_unit_04.step.003",
@@ -241,22 +238,26 @@
         {
           "id": "choice_1",
           "label": "Tiddalik drank the water.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "tiddalik-drinks"
         },
         {
           "id": "choice_2",
           "label": "The water everywhere.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "tiddalik-laughs"
         },
         {
           "id": "choice_3",
           "label": "Kangaroo boxed his shadow.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "tiddalik-jokes"
         },
         {
           "id": "choice_4",
           "label": "Wombat about the water.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "wombat"
         }
       ],
       "targets": [

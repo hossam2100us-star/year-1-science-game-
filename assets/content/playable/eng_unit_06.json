@@ -352,6 +352,11 @@
           "id": "choice_2",
           "label": "rained",
           "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "rains",
+          "art": "eng_word"
         }
       ],
       "targets": [],
@@ -401,6 +406,11 @@
         {
           "id": "choice_2",
           "label": "snowed",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "snows",
           "art": "eng_word"
         }
       ],

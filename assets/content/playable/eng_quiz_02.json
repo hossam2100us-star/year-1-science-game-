@@ -182,6 +182,11 @@
           "id": "choice_2",
           "label": "No",
           "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "It has two verbs.",
+          "art": "eng_word"
         }
       ],
       "targets": [],
@@ -436,6 +441,11 @@
           "id": "choice_2",
           "label": "snowed",
           "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "snows",
+          "art": "eng_word"
         }
       ],
       "targets": [],
@@ -482,6 +492,11 @@
         {
           "id": "choice_2",
           "label": "They start the same.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "They mean the same.",
           "art": "eng_word"
         }
       ],

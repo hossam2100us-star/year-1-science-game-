@@ -56,6 +56,7 @@ def main():
             assert path.read_bytes() == expected.encode('utf-8'), f'{path} differs from the build'
 
     words = set(dart_list('lib/features/english/english_art.dart', 'englishWords'))
+    words |= set(dart_list('lib/features/english/english_art.dart', 'englishScenes'))
     maths = set(dart_list('lib/features/maths/maths_art.dart', 'mathsThings'))
     maths |= set(re.findall(r"'([a-z ]+)': \d+", (ROOT / 'lib/features/maths/maths_art.dart')
                             .read_text(encoding='utf-8')))
@@ -84,7 +85,15 @@ def main():
         assert lesson['subject'] == 'english' and lesson['sourceSha256'] == build.SOURCE_SHA256
         assert ARABIC.search(lesson['parentNote']['ar'])
         positions = Counter()
+        # Every graded question has its own hint (teacher review 8).
+        hints = [s['hint'].strip().lower() for s in lesson['steps'] if s['assessed']]
+        assert len(hints) == len(set(hints)), (lesson_id, 'two questions share a hint')
+        # The child's name is filled in when the lesson opens; parent text
+        # never uses it.
+        for activity in lesson['goalActivities'] + lesson['homeActivities']:
+            assert '{name}' not in activity['text'], (lesson_id, 'name in parent text')
         for step in lesson['steps']:
+            assert '{name}' not in json.dumps(step.get('answer')), (step['id'], 'name in answer')
             steps_total += 1
             assert step['playScene'] == 'english' and step['theme'] == lesson_id
             assert step['kind'] in KINDS, step['id']

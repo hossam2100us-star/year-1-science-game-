@@ -59,7 +59,7 @@
       "minTouches": 3,
       "englishVisual": {
         "type": "chart",
-        "title": "Books Seif read this week",
+        "title": "Books {name} read this week",
         "style": "pictogram",
         "unit": "one book",
         "rows": [
@@ -86,7 +86,7 @@
       "id": "eng_charts.step.002",
       "kind": "tap-choice",
       "title": "The most books",
-      "prompt": "On which day did Seif read the most books?",
+      "prompt": "On which day did {name} read the most books?",
       "options": [
         {
           "id": "choice_1",
@@ -131,7 +131,7 @@
       "theme": "eng_charts",
       "englishVisual": {
         "type": "chart",
-        "title": "Books Seif read this week",
+        "title": "Books {name} read this week",
         "style": "pictogram",
         "unit": "one book",
         "rows": [
@@ -158,7 +158,7 @@
       "id": "eng_charts.step.003",
       "kind": "number-entry",
       "title": "Wednesday",
-      "prompt": "How many books did Seif read on Wednesday?",
+      "prompt": "How many books did {name} read on Wednesday?",
       "options": [],
       "targets": [],
       "answer": {
@@ -168,8 +168,8 @@
       "assessed": true,
       "objective": "eng.charts.02",
       "hint": "Touch and count each book in the Wed row.",
-      "explanation": "The Wed row has one book, so he read 1 book.",
-      "shortExplanation": "The Wed row has one book, so he read 1 book.",
+      "explanation": "The Wed row has one book, so {name} read 1 book.",
+      "shortExplanation": "The Wed row has one book, so {name} read 1 book.",
       "source": {
         "pages": [
           46
@@ -187,7 +187,7 @@
       "theme": "eng_charts",
       "englishVisual": {
         "type": "chart",
-        "title": "Books Seif read this week",
+        "title": "Books {name} read this week",
         "style": "pictogram",
         "unit": "one book",
         "rows": [
@@ -214,7 +214,7 @@
       "id": "eng_charts.step.004",
       "kind": "number-entry",
       "title": "Altogether",
-      "prompt": "How many books did Seif read altogether?",
+      "prompt": "How many books did {name} read altogether?",
       "options": [],
       "targets": [],
       "answer": {
@@ -243,7 +243,7 @@
       "theme": "eng_charts",
       "englishVisual": {
         "type": "chart",
-        "title": "Books Seif read this week",
+        "title": "Books {name} read this week",
         "style": "pictogram",
         "unit": "one book",
         "rows": [
@@ -270,7 +270,7 @@
       "id": "eng_charts.step.005",
       "kind": "number-entry",
       "title": "How many more?",
-      "prompt": "How many more books did Seif read on Tuesday than on Monday?",
+      "prompt": "How many more books did {name} read on Tuesday than on Monday?",
       "options": [],
       "targets": [],
       "answer": {
@@ -299,7 +299,7 @@
       "theme": "eng_charts",
       "englishVisual": {
         "type": "chart",
-        "title": "Books Seif read this week",
+        "title": "Books {name} read this week",
         "style": "pictogram",
         "unit": "one book",
         "rows": [

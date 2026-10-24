@@ -32,6 +32,13 @@ import 'support/review_images.dart';
 
 /// Year 1 English (owner request, 23 October 2026), built from the family's
 /// companion "English Made Easy": 9 units, 3 term quizzes and chart skills.
+/// Remembers what the lesson read aloud.
+class _Voice extends helpers.SilentNarration {
+  final spoken = <String>[];
+  @override
+  Future<void> speak(String text) async => spoken.add(text);
+}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   late LessonLibrary english;
@@ -129,6 +136,73 @@ void main() {
     });
   });
 
+  group('teacher review 8', () {
+    test('the chart uses the playing child\'s name, or Sam', () {
+      final charts = english.lessons['eng_charts']!;
+      final nour = charts.forChild('Nour');
+      final step = nour.steps.firstWhere((s) => s.title == 'The most books');
+      expect(step.prompt, 'On which day did Nour read the most books?');
+      expect(
+        (step.json['englishVisual'] as Map)['title'],
+        'Books Nour read this week',
+      );
+      expect(
+        charts.forChild('').steps[1].prompt,
+        'On which day did Sam read the most books?',
+      );
+      // Only the text changes: IDs and answers are the same.
+      expect(nour.steps.map((s) => s.id), charts.steps.map((s) => s.id));
+      expect(step.answer, charts.steps[1].answer);
+      for (final lesson in english.lessons.values) {
+        expect(
+          jsonEncode(lesson.forChild('Nour').json),
+          isNot(contains('{name}')),
+          reason: lesson.id,
+        );
+        expect(jsonEncode(lesson.json), isNot(contains('Seif')));
+      }
+      // The Science garden's "Is the {name} alive?" names the thing, not
+      // the child.
+      final garden = Lesson({
+        'id': 'unit_01',
+        'steps': <dynamic>[],
+        'ui': {'question': 'Is the {name} alive?'},
+      });
+      expect(garden.forChild('Nour'), same(garden));
+    });
+
+    test('every part of a story has its own picture', () {
+      for (final id in [
+        'eng_unit_01',
+        'eng_unit_02',
+        'eng_unit_04',
+        'eng_unit_07',
+      ]) {
+        final story = english.lessons[id]!.steps.first;
+        expect(story.kind, 'explore');
+        for (final part in story.json['options'] as List) {
+          expect(
+            (part as Map)['picture'],
+            isNotNull,
+            reason: '$id ${part['label']}',
+          );
+          expect(englishScenes, contains(part['picture']));
+        }
+      }
+    });
+
+    test('"whispered" is no longer sorted as scared', () {
+      final feelings = english.lessons['eng_unit_07']!.steps.firstWhere(
+        (s) => s.title == 'Feeling verbs',
+      );
+      expect(feelings.options.map((o) => o.label), contains('trembled'));
+      expect(
+        feelings.options.map((o) => o.label),
+        isNot(contains('whispered')),
+      );
+    });
+  });
+
   group('written words', () {
     test('a word matches only its exact spelling', () {
       const answer = {'type': 'word', 'value': 'ee'};
@@ -163,6 +237,7 @@ void main() {
 
   group('playing', () {
     final screen = GlobalKey();
+    var voice = _Voice();
 
     Future<MemoryProgressStore> open(
       WidgetTester t,
@@ -186,18 +261,20 @@ void main() {
         () => Flame.images.loadAll([
           englishBackdropAsset,
           englishWordAsset,
+          englishSceneAsset,
           mathsObjectAsset,
           mathsThingAsset,
         ]),
       );
       await t.pumpWidget(const SizedBox());
+      voice = _Voice();
       await t.pumpWidget(
         ProviderScope(
           overrides: [
             storeProvider.overrideWithValue(store),
             catalogProvider.overrideWithValue(science),
             lessonLibraryProvider.overrideWith((ref) async => english),
-            narrationProvider.overrideWith((ref) => helpers.SilentNarration()),
+            narrationProvider.overrideWith((ref) => voice),
           ],
           child: MaterialApp(
             theme: adventureTheme(store.data.profile),
@@ -210,7 +287,7 @@ void main() {
             ),
             home: RepaintBoundary(
               key: screen,
-              child: LessonPlayer(lesson: lesson),
+              child: LessonPlayer(lesson: lesson.forChild(null)),
             ),
           ),
         ),
@@ -293,6 +370,9 @@ void main() {
           t,
           find.byKey(ValueKey('english-option-$option')),
         );
+        // The child hears the sentence before choosing its basket
+        // (teacher review 8).
+        expect(voice.spoken.last, step.label(option));
         await helpers.tapVisible(
           t,
           find.byKey(ValueKey('english-target-$target')),
@@ -307,7 +387,7 @@ void main() {
       t,
     ) async {
       for (final lesson in english.lessons.values) {
-        for (final (index, step) in lesson.steps.indexed) {
+        for (final (index, step) in lesson.forChild(null).steps.indexed) {
           for (final (size, scale) in const [
             (Size(1280, 800), 1.0),
             (Size(390, 844), 1.5),

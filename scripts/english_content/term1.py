@@ -12,11 +12,11 @@ UNIT_01 = dict(
           'اقروا قصة قبل النوم مع بعض. وقّفوا في آخر كل جزء واسألوا: ده أولها ولا نصّها ولا آخرها؟ ينفع تحصل بجد؟'),
     explore=[
         explore("Story time: Aqsa's Adventures", 'Tap each part of the story to listen.', [
-            'Beginning. Aqsa finds a purple, furry monster called Blipblop. He is wearing her Mum\'s yellow coat, a red hat and black socks.',
-            'Middle. Aqsa slips into the washing machine and falls into Blipblopia, a land of ice-cream mountains and a lemonade river. She chases a little plopper cropper. Then the big mother plopper cropper chases her!',
-            'End. A soft green cloud saves her. She falls asleep on it, and wakes up in her own bed. Was it a dream?',
+            ("Beginning. Aqsa finds a furry purple monster called Blipblop. He wears her Mum's yellow coat and a red hat.", 'aqsa-monster'),
+            ('Middle. Aqsa falls through the washing machine into a land of ice-cream mountains. A big plopper cropper chases her!', 'aqsa-falls'),
+            ('End. A soft green cloud saves her. She wakes up in her own bed. Was it a dream?', 'aqsa-cloud'),
         ], 'A fantasy story could not really happen. It has a beginning, middle and end.',
-            visual=story("Aqsa's Adventures", 'A story with a beginning, a middle and an end.', 'monster')),
+            visual=story("Aqsa's Adventures", 'A story with a beginning, a middle and an end.')),
         explore('Sentences', 'Tap each card to listen.', [
             'A sentence starts with a capital letter, like the engine at the front of a train.',
             'A sentence ends with a full stop, the last carriage that says stop.',
@@ -43,7 +43,12 @@ UNIT_01 = dict(
               ('A purple monster lives in the washing machine.', 'Fantasy'),
               ('There are mountains made of ice cream.', 'Fantasy'),
               ('Mum puts the clothes in the washing machine.', 'Real'),
-          ], ['Real', 'Fantasy'], 'Ask: could this happen in our home or our street?', 'A boy and Mum can really do these things. Monsters and ice-cream mountains are fantasy.'),
+          ], ['Real', 'Fantasy'], 'Ask: could this happen in our home or our street?', 'A boy and Mum can really do these things. Monsters and ice-cream mountains are fantasy.', pictures={
+              'A boy plays football in the park.': 'football',
+              'A purple monster lives in the washing machine.': 'monster',
+              'There are mountains made of ice cream.': 'aqsa-falls',
+              'Mum puts the clothes in the washing machine.': 'mum-washing',
+          }),
           'Play spoon and fork: you say a sentence. If it could really happen your child lifts the spoon; if it could never happen, the fork.',
           'العبوا لعبة المعلقة والشوكة: تقول جملة، لو ممكن تحصل بجد طفلك يرفع المعلقة، ولو مستحيل تحصل يرفع الشوكة.'),
         Q(4, 'Write this sentence again with a capital letter and a full stop. the cat sat on the mat',
@@ -62,7 +67,11 @@ UNIT_01 = dict(
               ('Aqsa wakes up in her own bed.', 'End'),
               ('Aqsa falls into the washing machine.', 'Beginning'),
               ('The mother plopper cropper chases Aqsa.', 'Middle'),
-          ], ['Beginning', 'Middle', 'End'], 'What happens first, and how does the story finish?', 'Aqsa falls in at the beginning, is chased in the middle, wakes at the end.'),
+          ], ['Beginning', 'Middle', 'End'], 'What happens first, and how does the story finish?', 'Aqsa falls in at the beginning, is chased in the middle, wakes at the end.', pictures={
+              'Aqsa wakes up in her own bed.': 'aqsa-cloud',
+              'Aqsa falls into the washing machine.': 'washing machine',
+              'The mother plopper cropper chases Aqsa.': 'aqsa-falls',
+          }),
           'Retell a story your child knows, pointing to your head for the beginning, your tummy for the middle and your feet for the end.',
           'احكوا قصة طفلك عارفها، وشاوروا على الراس للبداية، والبطن للنص، والرجلين للنهاية.'),
         Q(7, 'Make each word mean "more than one". Write it in the right box. cat box dish dog bus bird (add s / add es)',
@@ -115,12 +124,12 @@ UNIT_02 = dict(
     home=('Every evening at dinner, your child tells their day on three fingers: First…, Then…, At last…. Repeat their past verbs back with a smile.',
           'كل يوم على العشا، طفلك يحكي يومه على تلات صوابع: First… و Then… و At last…. وانت كرر الأفعال الماضية وراه وانت مبتسم.'),
     explore=[
-        explore("Seif's day", 'Tap each part of the recount to listen.', [
-            'First, I went to school.',
-            'Then, I played football with my friends.',
-            'At last, I came home and ate my dinner.',
+        explore("{name}'s day", 'Tap each part of the recount to listen.', [
+            ('First, I went to school.', 'school-arrive'),
+            ('Then, I played football with my friends.', 'football'),
+            ('At last, I came home and ate my dinner.', 'family-dinner'),
         ], 'A recount tells what really happened, in order, with time words like First and Then.',
-            visual=story('My day', 'A true recount, told in order.', 'school bag')),
+            visual=story('My day', 'A true recount, told in order.')),
         explore('Time machine words', 'Tap each card to listen.', [
             'A recount is true, and it has already happened.',
             'The little ending ed sends a word into the past: walk, walked. Play, played.',
@@ -152,8 +161,8 @@ UNIT_02 = dict(
           'plays, playing, played • jumps, jumping, jumped',
           [spell('Add ed', 'Yesterday I play… football. Write the ending.', 'ed', 'edsing', 'It already happened. Which ending sends a word into the past?', 'Yesterday I played football. The ending ed means it already happened.', before='play', visual=sentence('Yesterday I play__ football.')),
            spell('Add ing', 'I am jump… right now. Write the ending.', 'ing', 'ingeds', 'It is happening now, after I am.', 'I am jumping. The ending ing means it is happening now.', before='jump', visual=sentence('I am jump___ right now.'))],
-          'Walk across the room and say: I walk. Seif walks. I am walking. Stop: I walked! Then your child does it with jump, hop and clap.',
-          'امشي في الأوضة وقول: I walk. Seif walks. I am walking. وقّف: I walked! وبعدين طفلك يعملها مع jump و hop و clap.'),
+          'Walk across the room and say: I walk. Mum walks. I am walking. Stop: I walked! Then your child does it with jump, hop and clap.',
+          'امشي في الأوضة وقول: I walk. Mum walks. I am walking. وقّف: I walked! وبعدين طفلك يعملها مع jump و hop و clap.'),
         Q(5, 'Is it a noun or a verb? Write each word in the right box. dog run school jump apple swim',
           'Nouns: dog, school, apple • Verbs: run, jump, swim',
           sort('Noun or verb?', 'Is each word a noun or a verb?', [
@@ -318,7 +327,7 @@ QUIZ_01 = dict(
           'ارجعوا للأسئلة اللي كانت صعبة على طفلك، والعبوا لعبة البيت بتاعة الوحدة دي تاني، وجرّبوا تاني بعد أسبوع.'),
     questions=[
         Q(1, 'Is this real or fantasy? "A monster lives inside the washing machine."', 'Fantasy',
-          choice('Real or fantasy?', 'A monster lives inside the washing machine. Is it real or fantasy?', ['Real', 'Fantasy'], 'Fantasy', 'Could this happen in our home?', 'A monster in the washing machine could not really happen, so it is fantasy.', visual=picture('monster', 'washing machine')),
+          choice('What kind of sentence?', 'A monster lives inside the washing machine. Which is right?', ['It could really happen.', 'It is fantasy.', 'It is a recount.'], 'It is fantasy.', 'Could this happen in our home?', 'A monster in the washing machine could not really happen, so it is fantasy.', visual=picture('monster', 'washing machine')),
           'Make up silly sentences together and decide each time: real or fantasy?',
           'ألّفوا جمل تضحّك مع بعض، وكل مرة قرروا: حقيقي ولا خيال؟'),
         Q(2, 'What goes at the end of every sentence?', 'A full stop',

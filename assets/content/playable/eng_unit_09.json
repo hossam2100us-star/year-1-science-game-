@@ -373,17 +373,20 @@
         {
           "id": "choice_1",
           "label": "Filling your water bottle again and again.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "bottle"
         },
         {
           "id": "choice_2",
           "label": "Putting cans in the recycling bin.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "recycling bin"
         },
         {
           "id": "choice_3",
           "label": "Buying fewer plastic bags.",
-          "art": "eng_word"
+          "art": "eng_word",
+          "picture": "bag"
         }
       ],
       "targets": [
@@ -810,7 +813,7 @@
       },
       "assessed": true,
       "objective": "eng.u09.choice.04",
-      "hint": "Turn the book over.",
+      "hint": "Is it inside the book, or on the outside at the back?",
       "explanation": "The blurb is on the back cover.",
       "shortExplanation": "The blurb is on the back cover.",
       "source": {

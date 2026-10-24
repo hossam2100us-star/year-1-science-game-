@@ -40,7 +40,11 @@ class LessonRoute extends ConsumerWidget {
         data: (library) => UnitImageScope(
           child: id == 'unit_01'
               ? AliveAdventures(lesson: library.lessons[id]!)
-              : LessonPlayer(lesson: library.lessons[id]!),
+              : LessonPlayer(
+                  lesson: library.lessons[id]!.forChild(
+                    ref.watch(appProvider.select((d) => d.profile?.name)),
+                  ),
+                ),
         ),
         loading: () =>
             const Scaffold(body: Center(child: CircularProgressIndicator())),

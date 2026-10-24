@@ -42,24 +42,33 @@ some others show pictures on their cards), and in
 "Is there a verb?" (`eng_unit_04.step.005`) are long sentences only. A Year 1 child who does not
 yet read fluently depends fully on speech here.
 
-- [ ] Add a picture to sentence cards where one helps (monster in the washing machine, boy with a football).
-- [ ] Make sure every sentence card can be heard by tapping it before choosing a basket.
+- [x] Add a picture to sentence cards where one helps (monster in the washing machine, boy with a football).
+      Done: pictures on the sentence cards of `eng_unit_01` (two questions), `eng_unit_04.step.005`,
+      `eng_unit_07` (story settings) and `eng_unit_09` (reduce, reuse, recycle), two to a row on a tablet.
+- [x] Make sure every sentence card can be heard by tapping it before choosing a basket.
+      Already so (tapping a card reads it and only selects it); now covered by a test.
 
 ### 2. Medium — stories are long text blocks
 
 Story explore screens (`eng_unit_01.step.001`, `eng_unit_04.step.001`) show three long
 paragraphs with one small picture.
 
-- [ ] One picture per story part (beginning, middle, end), with shorter text.
+- [x] One picture per story part (beginning, middle, end), with shorter text.
+      Done for Aqsa, the recount (unit 2), Tiddalik, Songololo and the two "more stories" screens:
+      24 painted scenes, the picture beside each part on a tablet and above it on a phone.
 
 ### 3. Low — content points
 
-- [ ] `eng_unit_07.step.008`: "whispered" sorted as **scared** is debatable (people whisper when
+- [x] `eng_unit_07.step.008`: "whispered" sorted as **scared** is debatable (people whisper when
       a baby sleeps). Use "trembled" or "shook", or accept more than one group.
-- [ ] `eng_unit_09`: two assessed questions share one hint (12 hints for 13 questions).
-- [ ] Content uses the name "Seif" ("Books Seif read this week"). The product is for any child;
+      Now "trembled" (owner's choice).
+- [x] `eng_unit_09`: two assessed questions share one hint (12 hints for 13 questions).
+      The validator now requires a different hint for every graded question.
+- [x] Content uses the name "Seif" ("Books Seif read this week"). The product is for any child;
       use a neutral name or the child's own name.
-- [ ] English quizzes still have 5 two-option questions (quiz 1: 1, quiz 2: 3, quiz 3: 1), mostly true/false style.
+      Now the playing child's name ("Sam" when there is none); the recount is "{name}'s day".
+- [x] English quizzes still have 5 two-option questions (quiz 1: 1, quiz 2: 3, quiz 3: 1), mostly true/false style.
+      Each now has a third choice.
 
 ## Child trial
 

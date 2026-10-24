@@ -120,6 +120,7 @@ def page(highlight):
 
 
 def explore(title, prompt, cards, explanation, *, visual=None):
+    """[cards] are the parts, each its text or (text, picture name)."""
     return dict(kind='explore', title=title, prompt=prompt,
                 cards=cards, explanation=explanation, visual=visual)
 
