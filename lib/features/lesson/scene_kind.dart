@@ -27,6 +27,9 @@ enum SceneKind {
   /// Number, shape and measurement activities using the shared lesson engine.
   maths,
 
+  /// Word and sentence cards, letter tiles and stories (English).
+  english,
+
   /// The original Flame discovery scene, used when no other scene applies.
   discovery;
 
@@ -45,6 +48,7 @@ enum SceneKind {
       'plant-lab' => plantLab,
       'plant-mission' => plantMission,
       'maths' => maths,
+      'english' => english,
       _ => discovery,
     };
   }

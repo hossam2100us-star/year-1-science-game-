@@ -57,6 +57,11 @@ for file in sorted((ROOT/'assets/content/playable').glob('*.json')):
     assert set(value)==set(options) and set(value.values())<=set(targets)
    elif answer['type']=='number':assert isinstance(value,int) and not options
    elif answer['type']=='sentence':assert set(value)=={'a','op','b','c'} and not options
+   elif answer['type']=='word':
+    # English letter tiles: every letter of the answer has a tile of its own.
+    tiles=list(step['letters']['tiles'])
+    assert isinstance(value,str) and value and not options,(file,step['id'])
+    for letter in value:tiles.remove(letter)
   else: assert not step['assessed']
   if step['kind']=='predict-then-reveal':
    assert not step['assessed'] and step['frames']
@@ -88,7 +93,9 @@ for file in sorted((ROOT/'assets/content/playable').glob('*.json')):
   goal_step=next(s for s in book['steps'] if activity['objective'] in [s['objective']]+s.get('extraObjectives',[]))
   allowed_pages={p for source_record in [goal_step['source']]+goal_step.get('relatedSources',[]) for p in source_record['pages']}
   assert activity['pages'] and set(activity['pages'])<=allowed_pages
-  assert activity['safetyPages']==[2]
+  # The safety note is on page 2 of the Science and Maths companions and
+  # on page 3 of the English one.
+  assert activity['safetyPages']==([3] if book.get('subject')=='english' else [2])
  if book['quiz']:
   assert len(book['steps'])==10
   assert len({s['objective'] for s in book['steps'] if s['assessed']})==10

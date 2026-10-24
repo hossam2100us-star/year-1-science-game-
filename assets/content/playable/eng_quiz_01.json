@@ -1,0 +1,667 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_quiz_01",
+  "subject": "english",
+  "title": "Big Challenge: Term 1",
+  "quiz": true,
+  "sourcePages": [
+    16
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_quiz_01.step.001",
+      "kind": "tap-choice",
+      "title": "Real or fantasy?",
+      "prompt": "A monster lives inside the washing machine. Is it real or fantasy?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Real",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Fantasy",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q1.01",
+      "hint": "Could this happen in our home?",
+      "explanation": "A monster in the washing machine could not really happen, so it is fantasy.",
+      "shortExplanation": "A monster in the washing machine could not really happen, so it is fantasy.",
+      "source": {
+        "pages": [
+          16
+        ],
+        "questionId": "eng.q1.01",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "Fantasy",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_01",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "monster",
+          "washing machine"
+        ]
+      }
+    },
+    {
+      "id": "eng_quiz_01.step.002",
+      "kind": "tap-choice",
+      "title": "The end of a sentence",
+      "prompt": "What goes at the end of every sentence?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a capital letter",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "a full stop",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "the word and",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q1.02",
+      "hint": "It is the last carriage of the sentence train.",
+      "explanation": "Every sentence ends with a full stop.",
+      "shortExplanation": "Every sentence ends with a full stop.",
+      "source": {
+        "pages": [
+          16
+        ],
+        "questionId": "eng.q1.02",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "A full stop",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_01",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "The dog runs."
+      }
+    },
+    {
+      "id": "eng_quiz_01.step.003",
+      "kind": "letter-entry",
+      "title": "More than one box",
+      "prompt": "Write the word for more than one box.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "es"
+      },
+      "assessed": true,
+      "objective": "eng.q1.03",
+      "hint": "Clap two box-es. Box ends with x.",
+      "explanation": "Box ends with x, so more than one is boxes.",
+      "shortExplanation": "Box ends with x, so more than one is boxes.",
+      "source": {
+        "pages": [
+          16
+        ],
+        "questionId": "eng.q1.03",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "boxes",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_01",
+      "letters": {
+        "before": "box",
+        "after": "",
+        "tiles": [
+          "e",
+          "s",
+          "x"
+        ],
+        "say": "boxes"
+      },
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "box",
+          "box"
+        ]
+      }
+    },
+    {
+      "id": "eng_quiz_01.step.004",
+      "kind": "tap-choice",
+      "title": "Which part?",
+      "prompt": "Aqsa wakes up in her own bed. Which part of the story is it?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "the beginning",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "the middle",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "the end",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.q1.04",
+      "hint": "Is it how the story starts or how it finishes?",
+      "explanation": "Waking up in bed finishes the story, so it is the end.",
+      "shortExplanation": "Waking up in bed finishes the story, so it is the end.",
+      "source": {
+        "pages": [
+          16
+        ],
+        "questionId": "eng.q1.04",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "The end",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_01"
+    },
+    {
+      "id": "eng_quiz_01.step.005",
+      "kind": "tap-choice",
+      "title": "Write it correctly",
+      "prompt": "Which one is written correctly?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "i visited Dubai.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "I visited dubai.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "I visited Dubai.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.q1.05",
+      "hint": "The word I and the name of a place both need capitals.",
+      "explanation": "I and Dubai both need capital letters: the word I and a place.",
+      "shortExplanation": "I and Dubai both need capital letters: the word I and a place.",
+      "source": {
+        "pages": [
+          16
+        ],
+        "questionId": "eng.q1.05",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "I visited Dubai.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_01"
+    },
+    {
+      "id": "eng_quiz_01.step.006",
+      "kind": "letter-entry",
+      "title": "It already happened",
+      "prompt": "We play in the park. Make it yesterday: write the ending.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "ed"
+      },
+      "assessed": true,
+      "objective": "eng.q1.06",
+      "hint": "Yesterday? Then add the time machine ending.",
+      "explanation": "We played in the park. Played tells us it already happened.",
+      "shortExplanation": "We played in the park. Played tells us it already happened.",
+      "source": {
+        "pages": [
+          16
+        ],
+        "questionId": "eng.q1.06",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "played",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_01",
+      "letters": {
+        "before": "play",
+        "after": "",
+        "tiles": [
+          "d",
+          "e",
+          "g",
+          "i",
+          "n",
+          "s"
+        ],
+        "say": "played"
+      },
+      "englishVisual": {
+        "type": "sentence",
+        "text": "We play__ in the park."
+      }
+    },
+    {
+      "id": "eng_quiz_01.step.007",
+      "kind": "tap-choice",
+      "title": "Start a recount",
+      "prompt": "Which word could start a recount?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Apple",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "First",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Jump",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q1.07",
+      "hint": "A recount tells what happened in order.",
+      "explanation": "First is a time word. It can start a recount.",
+      "shortExplanation": "First is a time word. It can start a recount.",
+      "source": {
+        "pages": [
+          16
+        ],
+        "questionId": "eng.q1.07",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "Any of: First, Yesterday, Last week, On Monday, Then",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_01"
+    },
+    {
+      "id": "eng_quiz_01.step.008",
+      "kind": "tap-choice",
+      "title": "Rhymes with ten",
+      "prompt": "Which word rhymes with ten?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "tin",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "hen",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "tea",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q1.08",
+      "hint": "Ten ends with en.",
+      "explanation": "Ten and hen both end with en, so they rhyme.",
+      "shortExplanation": "Ten and hen both end with en, so they rhyme.",
+      "source": {
+        "pages": [
+          16
+        ],
+        "questionId": "eng.q1.08",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "Any rhyme: hen, pen, men, when (a made-up rhyme like \"zen\" is fine too)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_01"
+    },
+    {
+      "id": "eng_quiz_01.step.009",
+      "kind": "letter-entry",
+      "title": "Number name: 7",
+      "prompt": "Write the number name for 7.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "seven"
+      },
+      "assessed": true,
+      "objective": "eng.q1.09",
+      "hint": "Say it slowly: s-e-v-e-n.",
+      "explanation": "Seven is s, e, v, e, n.",
+      "shortExplanation": "Seven is s, e, v, e, n.",
+      "source": {
+        "pages": [
+          16
+        ],
+        "questionId": "eng.q1.09",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "seven",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_01",
+      "letters": {
+        "before": "",
+        "after": "",
+        "tiles": [
+          "a",
+          "e",
+          "e",
+          "i",
+          "n",
+          "s",
+          "v"
+        ],
+        "say": "seven"
+      },
+      "englishVisual": {
+        "type": "number",
+        "value": 7
+      }
+    },
+    {
+      "id": "eng_quiz_01.step.010",
+      "kind": "tap-choice",
+      "title": "Find the noun",
+      "prompt": "Which word is a noun?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "run",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "school",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "jump",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.q1.10",
+      "hint": "A noun is a person, a place or a thing.",
+      "explanation": "School is a place, so it is a noun. Run and jump are verbs.",
+      "shortExplanation": "School is a place, so it is a noun. Run and jump are verbs.",
+      "source": {
+        "pages": [
+          16
+        ],
+        "questionId": "eng.q1.10",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "school",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Challenge",
+      "playScene": "english",
+      "theme": "eng_quiz_01"
+    }
+  ],
+  "stickers": [],
+  "goalActivities": [
+    {
+      "objective": "eng.q1.01",
+      "text": "Make up silly sentences together and decide each time: real or fantasy?",
+      "textAr": "ألّفوا جمل تضحّك مع بعض، وكل مرة قرروا: حقيقي ولا خيال؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        16
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q1.02",
+      "text": "Your child writes a sentence and you check together: capital at the start, full stop at the end.",
+      "textAr": "طفلك يكتب جملة وتراجعوها مع بعض: حرف كبير في الأول ونقطة في الآخر.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        16
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q1.03",
+      "text": "Line up boxes, cups or spoons and say how many: two boxes, three cups. Listen for the extra es.",
+      "textAr": "رصّوا علب أو كبايات أو معالق وقولوا العدد: two boxes و three cups. واسمعوا الـ es الزيادة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        16
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q1.04",
+      "text": "Tell a three-part story about your day: what happened at the beginning, in the middle and at the end.",
+      "textAr": "احكوا يومكم في قصة من تلات أجزاء: إيه اللي حصل في الأول وفي النص وفي الآخر.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        16
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q1.05",
+      "text": "Look at a map or a globe together. Your child writes the name of a city with a capital letter.",
+      "textAr": "بصّوا على خريطة أو كورة أرضية مع بعض، وطفلك يكتب اسم مدينة بحرف كبير.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        16
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q1.06",
+      "text": "Look at photos from a family day out. Your child tells you what you did, using ed words: we walked, we played.",
+      "textAr": "بصّوا على صور من يوم خرجتوا فيه، وطفلك يحكي عملتوا إيه بكلمات فيها ed: we walked و we played.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        16
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q1.07",
+      "text": "Start a recount of the weekend together with a time word: On Friday… Yesterday… First…",
+      "textAr": "ابدأوا تحكوا الويك إند مع بعض بكلمة وقت: On Friday… و Yesterday… و First…",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        16
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q1.08",
+      "text": "Play rhyme tennis with ten: hen, pen, men, when… Who can find the most?",
+      "textAr": "العبوا تنس القوافي بكلمة ten: hen و pen و men و when… مين يلاقي أكتر؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        16
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q1.09",
+      "text": "Write the number names one to ten on cards. Your child puts them in order and reads them.",
+      "textAr": "اكتبوا أسامي الأرقام من one لـ ten على كروت، وطفلك يرتبها ويقراها.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        16
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.q1.10",
+      "text": "Name five places you go to: school, the shop, the park… Every place is a noun.",
+      "textAr": "قولوا أسامي خمس أماكن بتروحوها: school و the shop و the park… كل مكان فيهم noun.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        16
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Look again at any question your child found hard and play that unit's home game once more, then try again in a week.",
+      "textAr": "ارجعوا للأسئلة اللي كانت صعبة على طفلك، والعبوا لعبة البيت بتاعة الوحدة دي تاني، وجرّبوا تاني بعد أسبوع.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        16
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "practiceUnitId": "eng_unit_01"
+}

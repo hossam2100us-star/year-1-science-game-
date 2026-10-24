@@ -1,0 +1,1242 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_06",
+  "subject": "english",
+  "title": "Simple Rhyming Poems",
+  "quiz": false,
+  "sourcePages": [
+    26,
+    27,
+    28,
+    29
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_unit_06.step.001",
+      "kind": "explore",
+      "title": "Sounds in a poem",
+      "prompt": "Tap each pair to listen. Do they start the same, or finish the same?",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "Drip, drop. They start the same.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Splish, splash. They start the same, and sound like water!",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "Puddles, huddles. They rhyme.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Poems play with sounds: some words start the same and some words rhyme.",
+      "shortExplanation": "Poems play with sounds: some words start the same and some words rhyme.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_06",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "rain",
+          "puddle"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_06.step.002",
+      "kind": "explore",
+      "title": "When did it happen?",
+      "prompt": "Tap each card to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "It is raining. That is happening now.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "It rained. That happened yesterday.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "It rains a lot in winter. That happens often.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "The same verb with ing, ed or s tells us when: raining, rained, rains.",
+      "shortExplanation": "The same verb with ing, ed or s tells us when: raining, rained, rains.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_06",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Yesterday it rained."
+      }
+    },
+    {
+      "id": "eng_unit_06.step.003",
+      "kind": "match-lines",
+      "title": "Hot-day rhymes",
+      "prompt": "Match each word to the word that rhymes with it.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "hot",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "cool",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "sun",
+          "art": "eng_word",
+          "picture": "sun"
+        },
+        {
+          "id": "choice_4",
+          "label": "bees",
+          "art": "eng_word",
+          "picture": "bee"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "fun",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "spot",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "trees",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_4",
+          "label": "pool",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_2",
+          "choice_2": "target_4",
+          "choice_3": "target_1",
+          "choice_4": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u06.main.01",
+      "hint": "Say both words aloud and listen to the end.",
+      "explanation": "Hot and spot, cool and pool, sun and fun, bees and trees rhyme.",
+      "shortExplanation": "Hot and spot, cool and pool, sun and fun, bees and trees rhyme.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.main.01",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "hot – spot • cool – pool • sun – fun • bees – trees",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_06"
+    },
+    {
+      "id": "eng_unit_06.step.004",
+      "kind": "drag-to-basket",
+      "title": "Rhyme or same start?",
+      "prompt": "Do the words rhyme, or start the same?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "drip, drop",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "puddles, huddles",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "splish, splash",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "play, stay",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "They rhyme",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "They start the same",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_2",
+          "choice_2": "target_1",
+          "choice_3": "target_2",
+          "choice_4": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u06.main.02",
+      "hint": "Listen to the start, then to the end.",
+      "explanation": "Drip, drop and splish, splash start the same. Puddles, huddles and play, stay rhyme.",
+      "shortExplanation": "Drip, drop and splish, splash start the same. Puddles, huddles and play, stay rhyme.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.main.02",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "Rhyme: puddles – huddles, play – stay • Start the same: drip – drop, splish – splash",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_06"
+    },
+    {
+      "id": "eng_unit_06.step.005",
+      "kind": "tap-choice",
+      "title": "ing verbs",
+      "prompt": "We are going to the park. Mum is bringing a picnic. Tap the two ing verbs.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "going",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "park",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "bringing",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "picnic",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_1",
+          "choice_3"
+        ]
+      },
+      "assessed": true,
+      "objective": "eng.u06.main.03",
+      "hint": "Look for the doing words that end with ing.",
+      "explanation": "Going and bringing are verbs that end with ing.",
+      "shortExplanation": "Going and bringing are verbs that end with ing.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.main.03",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "a going • b bringing",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_06"
+    },
+    {
+      "id": "eng_unit_06.step.006",
+      "kind": "tap-choice",
+      "title": "Yesterday",
+      "prompt": "Yesterday, it…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "raining",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "rained",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u06.main.04",
+      "hint": "Yesterday means it already happened.",
+      "explanation": "Yesterday it rained. Ed tells us it already happened.",
+      "shortExplanation": "Yesterday it rained. Ed tells us it already happened.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.main.04",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "a rained • b snowing • c Stop",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_06",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Yesterday, it ___."
+      }
+    },
+    {
+      "id": "eng_unit_06.step.007",
+      "kind": "tap-choice",
+      "title": "Tomorrow",
+      "prompt": "Tomorrow, it will be…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "snowing",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "snowed",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u06.main.04",
+      "hint": "An ing verb needs a helper like will be.",
+      "explanation": "Tomorrow it will be snowing. Will be is the helper for an ing verb.",
+      "shortExplanation": "Tomorrow it will be snowing. Will be is the helper for an ing verb.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.main.04",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "a rained • b snowing • c Stop",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_06",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Tomorrow, it will be ___."
+      }
+    },
+    {
+      "id": "eng_unit_06.step.008",
+      "kind": "tap-choice",
+      "title": "Finish the poem",
+      "prompt": "It is hot in the sun, I'm having some…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "rain",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "fun",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "hot",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u06.main.05",
+      "hint": "Which word rhymes with sun?",
+      "explanation": "Fun rhymes with sun, so it finishes the line.",
+      "shortExplanation": "Fun rhymes with sun, so it finishes the line.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.main.05",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "fun • cool",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_06",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "It is hot in the sun, I'm having some ___."
+      }
+    },
+    {
+      "id": "eng_unit_06.step.009",
+      "kind": "tap-choice",
+      "title": "Finish the poem",
+      "prompt": "I'll go in the pool, to keep myself…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "cool",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "warm",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "wet",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u06.main.05",
+      "hint": "Which word rhymes with pool?",
+      "explanation": "Cool rhymes with pool, so it finishes the line.",
+      "shortExplanation": "Cool rhymes with pool, so it finishes the line.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.main.05",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "fun • cool",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_06",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "I'll go in the pool, to keep myself ___."
+      }
+    },
+    {
+      "id": "eng_unit_06.step.010",
+      "kind": "tap-choice",
+      "title": "Storm words",
+      "prompt": "The thunder is…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "sleeping",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "crashing",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "smiling",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u06.main.06",
+      "hint": "What noise does thunder make?",
+      "explanation": "Thunder is crashing. Crashing is a noisy ing verb.",
+      "shortExplanation": "Thunder is crashing. Crashing is a noisy ing verb.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.main.06",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "Any ing verb that suits thunder: booming, crashing, banging, rumbling",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_06",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "The thunder is ___."
+      }
+    },
+    {
+      "id": "eng_unit_06.step.011",
+      "kind": "tap-choice",
+      "title": "How does Sara feel?",
+      "prompt": "Sara hid under the blanket and held her teddy tight. How does she feel?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "happy",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "scared",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "sleepy",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u06.main.07",
+      "hint": "Why would you hide under a blanket?",
+      "explanation": "Sara hid and held her teddy tight, so she was scared.",
+      "shortExplanation": "Sara hid and held her teddy tight, so she was scared.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.main.07",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "Scared / frightened — she hid and held her teddy tight.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_06",
+      "englishVisual": {
+        "type": "story",
+        "title": "Storm",
+        "text": "The thunder crashed. Sara hid under the blanket and held her teddy tight."
+      }
+    },
+    {
+      "id": "eng_unit_06.step.012",
+      "kind": "tap-choice",
+      "title": "My rain poem",
+      "prompt": "Rain, rain, rain, it is raining… Which word rhymes?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "today",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "again",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "now",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u06.main.08",
+      "hint": "Which word rhymes with rain?",
+      "explanation": "Again rhymes with rain, so the two lines end with a rhyme.",
+      "shortExplanation": "Again rhymes with rain, so the two lines end with a rhyme.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.main.08",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "Two lines about rain or sun. Extra praise if the last words rhyme.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_06",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Rain, rain, rain, it is raining ___."
+      }
+    },
+    {
+      "id": "eng_unit_06.step.013",
+      "kind": "tap-choice",
+      "title": "Which pair rhymes?",
+      "prompt": "Which pair rhymes?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "drip, drop",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "cool, pool",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "sun, rain",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u06.choice.01",
+      "hint": "Listen to the ends of the words.",
+      "explanation": "Cool and pool end with the same sound, so they rhyme.",
+      "shortExplanation": "Cool and pool end with the same sound, so they rhyme.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.choice.01",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "cool – pool",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_06"
+    },
+    {
+      "id": "eng_unit_06.step.014",
+      "kind": "tap-choice",
+      "title": "Splish, splash",
+      "prompt": "Splish, splash are two words that…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "mean the same",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "start the same",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "are names",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u06.choice.02",
+      "hint": "Listen to the very start of each word.",
+      "explanation": "Splish and splash both start with spl, so they start the same.",
+      "shortExplanation": "Splish and splash both start with spl, so they start the same.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.choice.02",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "start the same",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_06"
+    },
+    {
+      "id": "eng_unit_06.step.015",
+      "kind": "tap-choice",
+      "title": "A good listener",
+      "prompt": "A good listener…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "talks at the same time",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "looks at the person talking",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "looks away",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u06.choice.03",
+      "hint": "How do you show someone you are listening?",
+      "explanation": "A good listener looks at the person talking and does not interrupt.",
+      "shortExplanation": "A good listener looks at the person talking and does not interrupt.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.choice.03",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "looks at the person talking",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_06"
+    },
+    {
+      "id": "eng_unit_06.step.016",
+      "kind": "tap-choice",
+      "title": "In the puddles",
+      "prompt": "Yesterday, we … in the puddles.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "jumping",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "jump",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "jumped",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u06.choice.04",
+      "hint": "Yesterday? Then it already happened.",
+      "explanation": "Yesterday we jumped. Ed tells us it already happened.",
+      "shortExplanation": "Yesterday we jumped. Ed tells us it already happened.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.choice.04",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "jumped",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_06",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Yesterday, we ___ in the puddles."
+      }
+    },
+    {
+      "id": "eng_unit_06.step.017",
+      "kind": "tap-choice",
+      "title": "The ing verb",
+      "prompt": "Mum is bringing a picnic. Which is the ing verb?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Mum",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "picnic",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "bringing",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u06.choice.05",
+      "hint": "Which word ends with ing?",
+      "explanation": "Bringing is the doing word, and it ends with ing.",
+      "shortExplanation": "Bringing is the doing word, and it ends with ing.",
+      "source": {
+        "pages": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "questionId": "eng.u06.choice.05",
+        "answerKeyPages": [
+          53
+        ],
+        "answerKeyText": "bringing",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_06",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Mum is bringing a picnic."
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "eng_unit_06.sticker",
+      "word": "poem",
+      "art": "eng_word",
+      "picture": {
+        "type": "picture",
+        "items": [
+          "rain"
+        ]
+      },
+      "meaning": "Words that play with sounds: rhymes, repeated words, same starts.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        26,
+        27,
+        28,
+        29
+      ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "eng.u06.main.01",
+      "text": "On a hot day, make up rhymes together: hot, spot, pot; cool, pool, school.",
+      "textAr": "في يوم حر ألّفوا قوافي مع بعض: hot و spot و pot، و cool و pool و school.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u06.main.02",
+      "text": "Say pairs of words and your child touches their head if they start the same, or their feet if they rhyme.",
+      "textAr": "قول كلمتين وطفلك يلمس راسه لو بيبدأوا زي بعض، أو رجليه لو على نفس القافية.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u06.main.03",
+      "text": "While you get ready to go out, say what you are doing with ing verbs: I am putting on my shoes. We are going!",
+      "textAr": "وانتو بتجهزوا تخرجوا، قولوا بتعملوا إيه بأفعال فيها ing: I am putting on my shoes. We are going!",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u06.main.04",
+      "text": "Look at the weather each morning. Your child says what it did yesterday and what it is doing now: It rained. It is raining.",
+      "textAr": "بصّوا على الجو كل يوم الصبح، وطفلك يقول عمل إيه امبارح وبيعمل إيه دلوقتي: It rained. It is raining.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u06.main.05",
+      "text": "Say the first line of a poem and stop before the last word. Your child finds a rhyming word to finish it.",
+      "textAr": "قول أول سطر من قصيدة ووقّف قبل آخر كلمة، وطفلك يلاقي كلمة على نفس القافية تكمّلها.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u06.main.06",
+      "text": "Make storm noises with pans and spoons. Your child finds an ing word for each: banging, booming, crashing.",
+      "textAr": "اعملوا أصوات عاصفة بالحلل والمعالق، وطفلك يلاقي كلمة ing لكل صوت: banging و booming و crashing.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u06.main.07",
+      "text": "When you read a story, stop and ask: how does this character feel? How do you know?",
+      "textAr": "وانتو بتقروا قصة، وقّفوا واسألوا: الشخصية دي حاسّة بإيه؟ وعرفت منين؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u06.main.08",
+      "text": "Look out of the window together and finish four lines: It's…, I can see…, I can hear…, I feel…. Find two words that rhyme.",
+      "textAr": "بصّوا من الشباك مع بعض وكمّلوا أربع سطور: It's… و I can see… و I can hear… و I feel…. ولاقوا كلمتين على نفس القافية.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u06.choice.01",
+      "text": "Play rhyme snap: say two words, and your child shouts snap when they rhyme.",
+      "textAr": "العبوا snap للقوافي: قول كلمتين، وطفلك يقول snap لما يكونوا على نفس القافية.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u06.choice.02",
+      "text": "Pour water into a bowl and say splish, splash. Find more water words that start the same: drip, drop.",
+      "textAr": "صبّوا مية في طبق وقولوا splish, splash. ولاقوا كلمات مية تانية بتبدأ زي بعض: drip و drop.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u06.choice.03",
+      "text": "Take turns telling each other about your favourite food. The listener looks at the speaker, waits, then asks one question.",
+      "textAr": "اتبادلوا تحكوا لبعض عن أكلتكم المفضلة. اللي بيسمع يبص للي بيتكلم، ويستنى، وبعدين يسأل سؤال واحد.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u06.choice.04",
+      "text": "Next time it rains, jump in a puddle together. At home your child tells you: we jumped in the puddles!",
+      "textAr": "المرة الجاية لما تمطر، نطّوا في بركة مية مع بعض. وفي البيت طفلك يحكيلك: we jumped in the puddles!",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u06.choice.05",
+      "text": "Pack a little picnic together and say what you are doing: I am bringing cups. You are bringing bread.",
+      "textAr": "جهّزوا نزهة صغيرة مع بعض وقولوا بتعملوا إيه: I am bringing cups. You are bringing bread.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Make a kitchen sound poem: tap a pan, let the tap drip, pour water. Your child finds a word for each sound, and the list becomes a poem.",
+      "textAr": "اعملوا قصيدة أصوات المطبخ: اخبطوا على حلّة، سيبوا الحنفية تنقّط، صبّوا مية. وطفلك يلاقي كلمة لكل صوت، والليستة دي تبقى قصيدة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ]
+}

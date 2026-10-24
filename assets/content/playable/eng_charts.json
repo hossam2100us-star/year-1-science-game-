@@ -1,0 +1,719 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_charts",
+  "subject": "english",
+  "title": "Chart Skills",
+  "quiz": false,
+  "sourcePages": [
+    46
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_charts.step.001",
+      "kind": "explore",
+      "title": "Reading a chart",
+      "prompt": "Tap each card to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "First, read the title. It tells us what the chart is about.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Next, read the labels.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "Then, count. In this pictogram, each little book stands for one book.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Read the title first, then the labels, then count.",
+      "shortExplanation": "Read the title first, then the labels, then count.",
+      "source": {
+        "pages": [
+          46
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_charts",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "chart",
+        "title": "Books Seif read this week",
+        "style": "pictogram",
+        "unit": "one book",
+        "rows": [
+          {
+            "label": "Mon",
+            "value": 2
+          },
+          {
+            "label": "Tue",
+            "value": 4
+          },
+          {
+            "label": "Wed",
+            "value": 1
+          },
+          {
+            "label": "Thu",
+            "value": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "eng_charts.step.002",
+      "kind": "tap-choice",
+      "title": "The most books",
+      "prompt": "On which day did Seif read the most books?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Monday",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Tuesday",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Thursday",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.charts.01",
+      "hint": "Find the longest row of books.",
+      "explanation": "Tuesday has the longest row: 4 books, the most.",
+      "shortExplanation": "Tuesday has the longest row: 4 books, the most.",
+      "source": {
+        "pages": [
+          46
+        ],
+        "questionId": "eng.charts.01",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "Tuesday",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_charts",
+      "englishVisual": {
+        "type": "chart",
+        "title": "Books Seif read this week",
+        "style": "pictogram",
+        "unit": "one book",
+        "rows": [
+          {
+            "label": "Mon",
+            "value": 2
+          },
+          {
+            "label": "Tue",
+            "value": 4
+          },
+          {
+            "label": "Wed",
+            "value": 1
+          },
+          {
+            "label": "Thu",
+            "value": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "eng_charts.step.003",
+      "kind": "number-entry",
+      "title": "Wednesday",
+      "prompt": "How many books did Seif read on Wednesday?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 1
+      },
+      "assessed": true,
+      "objective": "eng.charts.02",
+      "hint": "Touch and count each book in the Wed row.",
+      "explanation": "The Wed row has one book, so he read 1 book.",
+      "shortExplanation": "The Wed row has one book, so he read 1 book.",
+      "source": {
+        "pages": [
+          46
+        ],
+        "questionId": "eng.charts.02",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "1",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_charts",
+      "englishVisual": {
+        "type": "chart",
+        "title": "Books Seif read this week",
+        "style": "pictogram",
+        "unit": "one book",
+        "rows": [
+          {
+            "label": "Mon",
+            "value": 2
+          },
+          {
+            "label": "Tue",
+            "value": 4
+          },
+          {
+            "label": "Wed",
+            "value": 1
+          },
+          {
+            "label": "Thu",
+            "value": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "eng_charts.step.004",
+      "kind": "number-entry",
+      "title": "Altogether",
+      "prompt": "How many books did Seif read altogether?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 10
+      },
+      "assessed": true,
+      "objective": "eng.charts.03",
+      "hint": "Count every book in every row: 2, 4, 1 and 3.",
+      "explanation": "Two and four and one and three make ten books altogether.",
+      "shortExplanation": "Two and four and one and three make ten books altogether.",
+      "source": {
+        "pages": [
+          46
+        ],
+        "questionId": "eng.charts.03",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "10 (2 + 4 + 1 + 3)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_charts",
+      "englishVisual": {
+        "type": "chart",
+        "title": "Books Seif read this week",
+        "style": "pictogram",
+        "unit": "one book",
+        "rows": [
+          {
+            "label": "Mon",
+            "value": 2
+          },
+          {
+            "label": "Tue",
+            "value": 4
+          },
+          {
+            "label": "Wed",
+            "value": 1
+          },
+          {
+            "label": "Thu",
+            "value": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "eng_charts.step.005",
+      "kind": "number-entry",
+      "title": "How many more?",
+      "prompt": "How many more books did Seif read on Tuesday than on Monday?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 2
+      },
+      "assessed": true,
+      "objective": "eng.charts.04",
+      "hint": "Tuesday has 4 and Monday has 2. How many extra?",
+      "explanation": "Tuesday has 4 and Monday has 2. Four is two more than two.",
+      "shortExplanation": "Tuesday has 4 and Monday has 2. Four is two more than two.",
+      "source": {
+        "pages": [
+          46
+        ],
+        "questionId": "eng.charts.04",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "2 (4 − 2)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_charts",
+      "englishVisual": {
+        "type": "chart",
+        "title": "Books Seif read this week",
+        "style": "pictogram",
+        "unit": "one book",
+        "rows": [
+          {
+            "label": "Mon",
+            "value": 2
+          },
+          {
+            "label": "Tue",
+            "value": 4
+          },
+          {
+            "label": "Wed",
+            "value": 1
+          },
+          {
+            "label": "Thu",
+            "value": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "eng_charts.step.006",
+      "kind": "tap-choice",
+      "title": "The tallest bar",
+      "prompt": "Which rhyme family has the most words?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "-at",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "-ee",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "-og",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.charts.05",
+      "hint": "Find the tallest bar.",
+      "explanation": "The -at bar is the tallest: 5 words, the most.",
+      "shortExplanation": "The -at bar is the tallest: 5 words, the most.",
+      "source": {
+        "pages": [
+          46
+        ],
+        "questionId": "eng.charts.05",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "-at (5 words)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_charts",
+      "englishVisual": {
+        "type": "chart",
+        "title": "Rhyming words we found",
+        "style": "bar",
+        "rows": [
+          {
+            "label": "-at",
+            "value": 5
+          },
+          {
+            "label": "-en",
+            "value": 3
+          },
+          {
+            "label": "-ee",
+            "value": 4
+          },
+          {
+            "label": "-og",
+            "value": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "eng_charts.step.007",
+      "kind": "number-entry",
+      "title": "The -ee bar",
+      "prompt": "How many -ee words did we find?",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "number",
+        "value": 4
+      },
+      "assessed": true,
+      "objective": "eng.charts.06",
+      "hint": "Run a finger from the top of the -ee bar to the numbers.",
+      "explanation": "The -ee bar reaches 4, so we found 4 words.",
+      "shortExplanation": "The -ee bar reaches 4, so we found 4 words.",
+      "source": {
+        "pages": [
+          46
+        ],
+        "questionId": "eng.charts.06",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "4",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_charts",
+      "englishVisual": {
+        "type": "chart",
+        "title": "Rhyming words we found",
+        "style": "bar",
+        "rows": [
+          {
+            "label": "-at",
+            "value": 5
+          },
+          {
+            "label": "-en",
+            "value": 3
+          },
+          {
+            "label": "-ee",
+            "value": 4
+          },
+          {
+            "label": "-og",
+            "value": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "eng_charts.step.008",
+      "kind": "tap-choice",
+      "title": "The shortest bar",
+      "prompt": "Which rhyme family has the fewest words?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "-en",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "-og",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "-at",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.charts.07",
+      "hint": "Find the shortest bar.",
+      "explanation": "The -og bar is the shortest: 2 words, the fewest.",
+      "shortExplanation": "The -og bar is the shortest: 2 words, the fewest.",
+      "source": {
+        "pages": [
+          46
+        ],
+        "questionId": "eng.charts.07",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "-og (2 words)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_charts",
+      "englishVisual": {
+        "type": "chart",
+        "title": "Rhyming words we found",
+        "style": "bar",
+        "rows": [
+          {
+            "label": "-at",
+            "value": 5
+          },
+          {
+            "label": "-en",
+            "value": 3
+          },
+          {
+            "label": "-ee",
+            "value": 4
+          },
+          {
+            "label": "-og",
+            "value": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "eng_charts.step.009",
+      "kind": "letter-entry",
+      "title": "An -at word",
+      "prompt": "Write a word from the -at family: c…",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "at"
+      },
+      "assessed": true,
+      "objective": "eng.charts.08",
+      "hint": "It is a pet that says miaow.",
+      "explanation": "Cat ends with at, so it belongs to the -at family.",
+      "shortExplanation": "Cat ends with at, so it belongs to the -at family.",
+      "source": {
+        "pages": [
+          46
+        ],
+        "questionId": "eng.charts.08",
+        "answerKeyPages": [
+          55
+        ],
+        "answerKeyText": "Any -at word: cat, hat, mat, bat, sat, rat",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_charts",
+      "letters": {
+        "before": "c",
+        "after": "",
+        "tiles": [
+          "a",
+          "e",
+          "o",
+          "t"
+        ],
+        "say": "cat"
+      },
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "cat"
+        ]
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "eng_charts.sticker",
+      "word": "chart",
+      "art": "eng_word",
+      "picture": {
+        "type": "picture",
+        "items": [
+          "book"
+        ]
+      },
+      "meaning": "A quick way to show information with pictures or bars.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        46
+      ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "eng.charts.01",
+      "text": "Make a pictogram of the fruit in your kitchen. Ask: which fruit is there most of?",
+      "textAr": "اعملوا رسم بالصور للفاكهة اللي في المطبخ، واسألوا: أنهي فاكهة عندنا منها أكتر؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        46
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.charts.02",
+      "text": "Point to one row of a pictogram and your child touches and counts each picture.",
+      "textAr": "شاور على صف في الرسم بالصور، وطفلك يلمس ويعدّ كل صورة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        46
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.charts.03",
+      "text": "Add up a whole pictogram together, one row at a time, with beans or buttons to help.",
+      "textAr": "اجمعوا الرسم بالصور كله مع بعض، صف صف، واستعملوا فول أو زراير يساعدوكم.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        46
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.charts.04",
+      "text": "Line up two rows of spoons, 4 and 2. Your child finds how many more are in the longer row.",
+      "textAr": "رصّوا صفين معالق، أربعة واتنين، وطفلك يلاقي الصف الطويل فيه كام زيادة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        46
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.charts.05",
+      "text": "Play rhyme families: write -at on paper and find as many words as you can: cat, hat, mat, bat.",
+      "textAr": "العبوا عيلة القوافي: اكتبوا -at على ورقة ولاقوا أكتر كلمات تقدروا عليها: cat و hat و mat و bat.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        46
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.charts.06",
+      "text": "Draw a bar chart of your family's favourite colours together, then read one bar with your finger.",
+      "textAr": "ارسموا رسم بالأعمدة للألوان المفضلة عند العيلة مع بعض، وبعدين اقروا عمود بصباعكم.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        46
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.charts.07",
+      "text": "Look at a chart together and ask two questions: which is the most? Which is the fewest?",
+      "textAr": "بصّوا على رسم بياني مع بعض واسألوا سؤالين: أنهي الأكتر؟ وأنهي الأقل؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        46
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.charts.08",
+      "text": "Write -at on a card and change the first letter with your child: cat, hat, mat, bat, rat.",
+      "textAr": "اكتبوا -at على كارت وغيّروا أول حرف مع طفلك: cat و hat و mat و bat و rat.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        46
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Keep a reading log together for a week and turn it into a pictogram: one little book drawn for each book read.",
+      "textAr": "اعملوا سجل قراية مع بعض لمدة أسبوع، وحوّلوه لرسم بالصور: كتاب صغير مرسوم لكل كتاب اتقرا.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        46
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ]
+}

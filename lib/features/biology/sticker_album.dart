@@ -5,6 +5,7 @@ import '../../content/curriculum.dart';
 import '../../core/providers.dart';
 import '../../core/widgets.dart';
 import '../../games/science_art.dart';
+import '../english/english_visual.dart';
 import '../maths/maths_visual.dart';
 
 class StickerAlbum extends ConsumerWidget {
@@ -30,9 +31,8 @@ class StickerAlbum extends ConsumerWidget {
             ),
             const SizedBox(height: 16),
             StoryPanel(
-              text: subjectKindOf(subject) == 'science'
-                  ? 'My science words! Finish a unit to earn its stickers. Tap an earned sticker to listen.'
-                  : 'My maths words! Finish a unit to earn its stickers. Tap an earned sticker to listen.',
+              text:
+                  'My ${subjectKindOf(subject)} words! Finish a unit to earn its stickers. Tap an earned sticker to listen.',
             ),
             const SizedBox(height: 16),
             ref
@@ -96,6 +96,14 @@ class StickerAlbum extends ConsumerWidget {
                                   if (earned.contains(entry.key))
                                     if (subjectKindOf(subject) == 'science')
                                       SciencePicture(art: entry.key)
+                                    else if (subjectKindOf(subject) ==
+                                        'english')
+                                      EnglishVisual(
+                                        data: {
+                                          ...?entry.value['picture'] as Map?,
+                                          'height': 64,
+                                        }.cast<String, dynamic>(),
+                                      )
                                     // Each Maths word has its own picture
                                     // (teacher review 5: all showed one icon).
                                     else if (entry.value['picture']

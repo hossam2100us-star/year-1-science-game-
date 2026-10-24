@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_03",
+  "subject": "english",
+  "kind": "unit",
+  "term": 1,
+  "title": "Traditional Rhymes",
+  "ar": "الأغاني والأناشيد القديمة",
+  "sourcePages": [
+    12,
+    13,
+    14,
+    15
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.u03.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Write the number names. 3 5 8 10",
+      "answerKeyText": "three, five, eight, ten",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "eng.u03.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Say the words. Cross out the one that does not rhyme. a three tree them sea b six sticks socks mix c nine fine night sign",
+      "answerKeyText": "a them • b socks • c night",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "eng.u03.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Draw a line to join the words that rhyme. cat sun bee hen / tree ten hat one",
+      "answerKeyText": "cat – hat • sun – one • bee – tree • hen – ten",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "eng.u03.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Write the missing letters of the alphabet. a b __ d e __ g h __ j k __ m n o __ q r s __ u v w x __ z",
+      "answerKeyText": "c, f, i, l, p, t, y",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "eng.u03.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Finish each word with sh, tr, st or gr. _ip (a boat) _ee (it has leaves) _ar (it shines at night) _een (the colour of grass)",
+      "answerKeyText": "ship • tree • star • green",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "eng.u03.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Underline the noun and circle the verb in each sentence. a The kite flies. b The dog runs. c The bird sings.",
+      "answerKeyText": "Nouns: kite, dog, bird • Verbs: flies, runs, sings",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "eng.u03.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Write the sentence again with capital letters and a full stop. yesterday ali and i flew a kite",
+      "answerKeyText": "Yesterday Ali and I flew a kite.",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "eng.u03.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Finish this lullaby with describing words. Choose from: silver twinkling bright sleepy. The ___ moon. The ___ stars. The ___ child.",
+      "answerKeyText": "Any of the words, one in each space — for example: The silver moon. The twinkling stars. The sleepy child.",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "eng.u03.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "Which word rhymes with cat? ( cup ) ( hat ) ( car )",
+      "answerKeyText": "hat",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "eng.u03.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Rhyming words have the same ( sound at the end ) ( first letter ) ( number of letters )",
+      "answerKeyText": "sound at the end",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "eng.u03.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "How many letters are in the English alphabet? ( 10 ) ( 20 ) ( 26 )",
+      "answerKeyText": "26",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "eng.u03.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "In \"The kite zooms up in the sky\", the verb is ( zooms ) ( kite ) ( sky )",
+      "answerKeyText": "zooms",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "eng.u03.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "Which number name is spelled correctly? ( eigt ) ( eight ) ( aight )",
+      "answerKeyText": "eight",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "answerKeyPages": [
+        51,
+        52
+      ]
+    }
+  ]
+}

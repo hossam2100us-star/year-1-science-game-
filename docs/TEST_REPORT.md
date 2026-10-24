@@ -370,3 +370,16 @@ The accepted sprintf-js entry (GHSA-hp3w-g68c-fv3c) was removed from
 - Server: `npm audit` finds 0 vulnerabilities. Type check and lint are clean, the build passes, and 37 unit and 78 end-to-end tests pass on a real PostgreSQL 17.
 - Content: with pypdf 6.21.2, `validate_maths_content.py --check-idempotence` (the repeat build is byte-for-byte identical) and `validate_playable.py` pass.
 - The app itself has no changed packages. pypdf is used only by the content scripts on the PC.
+
+## English, the third Year 1 subject (ADR-0022), 2026-10-24
+
+- Content (docs/ENGLISH_INTEGRATION.md): all 155 questions of the English Made Easy companion as 186 steps, 165 graded.
+  - `validate_english_content.py --check-idempotence` passes: coverage, answers, letter tiles, titles and pictures that do not give the answer away, Arabic home activities, catalogue order, and a byte-for-byte repeat build. It now runs in CI.
+  - `validate_playable.py` passes for all subjects (703 steps).
+- `flutter analyze --fatal-infos` and `dart format` are clean.
+- 567 tests and the 5 goldens pass. New:
+  - `test/english_test.dart` (12 tests): the subject and its progress key `y1.english`, the catalogue, Arabic and pictures for every goal, exact spelling, a spelling question played wrong then right, a story that goes on only after every part is heard, sorting into Real and Fantasy, all 186 steps at 1280x800 and at 390x844 with 1.5x text, and English progress reopening from SQLite next to Maths;
+  - `test/lesson/scene_kind_test.dart`: every English step uses the English scene.
+- Golden: the tablet subjects screen now shows three cards in one row (intended).
+- Review images of every English step (`--dart-define=REVIEW_IMAGES=true`) were checked by eye before and after the art.
+- The server needs no change: it already accepts `y1.english`.

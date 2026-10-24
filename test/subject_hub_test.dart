@@ -90,7 +90,12 @@ void main() {
       );
       final before = store.data.toJson();
       final pictureKey = GlobalKey();
-      await t.runAsync(() => Flame.images.load('maths-islands-v2.webp'));
+      await t.runAsync(
+        () => Flame.images.loadAll([
+          'maths-islands-v2.webp',
+          'english-islands-v1.webp',
+        ]),
+      );
       await helpers.mount(
         t,
         RepaintBoundary(

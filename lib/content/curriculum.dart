@@ -8,15 +8,20 @@ const currentCurriculum = 'y1.science';
 /// Maths uses the same progress tables with a separate curriculum namespace.
 const mathsCurriculum = 'y1.maths';
 
+/// English (24 October 2026) is the first subject added after school years:
+/// its progress is kept under its own ID, like every later curriculum.
+const englishCurriculum = 'y1.english';
+
 /// A curriculum ID is `<school year>.<subject kind>`, e.g. `y2.maths`
 /// (ADR-0021). The kind decides how lessons look; the ID decides where the
 /// progress is kept.
-final curriculumPattern = RegExp(r'^y[0-9]{1,2}\.(science|maths)$');
+final curriculumPattern = RegExp(r'^y[0-9]{1,2}\.(science|maths|english)$');
 
 /// A school year ID, e.g. `y1`.
 final schoolYearPattern = RegExp(r'^y[0-9]{1,2}$');
 
-/// The subject kind of a curriculum or progress key (`science`, `maths`).
+/// The subject kind of a curriculum or progress key (`science`, `maths`,
+/// `english`).
 String subjectKindOf(String curriculumOrKey) =>
     curriculumOrKey.substring(curriculumOrKey.indexOf('.') + 1);
 

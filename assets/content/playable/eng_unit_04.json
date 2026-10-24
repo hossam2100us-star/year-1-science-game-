@@ -1,0 +1,1229 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_04",
+  "subject": "english",
+  "title": "Traditional Tales",
+  "quiz": false,
+  "sourcePages": [
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_unit_04.step.001",
+      "kind": "explore",
+      "title": "Story time: Tiddalik the Thirsty Frog",
+      "prompt": "Tap each part of the story to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "Beginning. Long ago, in Australia, Tiddalik the frog was so thirsty that he drank all the water in the land.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Middle. The animals tried to make him laugh. Kookaburra told jokes, Koala stood on his head, and Kangaroo boxed his own shadow. Thump, thump! That woke up Platypus.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "End. Platypus was so cross that he looked very silly. Tiddalik laughed, and all the water gushed out. The lesson: share.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "A traditional tale is a very old story told again and again. Many teach a lesson.",
+      "shortExplanation": "A traditional tale is a very old story told again and again. Many teach a lesson.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_04",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "story",
+        "title": "Tiddalik the Thirsty Frog",
+        "text": "An old story from Australia.",
+        "picture": "frog"
+      }
+    },
+    {
+      "id": "eng_unit_04.step.002",
+      "kind": "explore",
+      "title": "More old tales",
+      "prompt": "Tap each tale to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "The Lion and the Mouse. A lion lets a little mouse go. Later the mouse nibbles through the hunters' ropes and sets the lion free. Small can be strong too.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "The Ungrateful Tiger, from Korea. A kind man helps Tiger out of a trap, but Tiger wants to eat him! Clever Rabbit tricks Tiger back into the trap. Be thankful to people who help you.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "The King of the Forest, from China. Tiger King Bole saves Lion from the waterfall, and they live in peace. Be kind, even to someone who was unkind.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Many traditional tales have animal characters and a lesson hiding inside.",
+      "shortExplanation": "Many traditional tales have animal characters and a lesson hiding inside.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_04",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "lion",
+          "mouse",
+          "tiger"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_04.step.003",
+      "kind": "explore",
+      "title": "Every sentence needs a verb",
+      "prompt": "Tap each card to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "Many old tales start with Once upon a time, or Long ago.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Every sentence needs a doing word, a verb. The frog drank the water.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "And joins two ideas: Tiger is hungry and cross.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Every sentence needs a verb, and and joins two ideas together.",
+      "shortExplanation": "Every sentence needs a verb, and and joins two ideas together.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_04",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "sentence",
+        "text": "The frog drank the water."
+      }
+    },
+    {
+      "id": "eng_unit_04.step.004",
+      "kind": "tap-choice",
+      "title": "Join with and",
+      "prompt": "Tiger is hungry. Tiger is cross. Which one joins them with and?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Tiger is hungry. and cross.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Tiger is hungry and cross.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Tiger and hungry is cross.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u04.main.01",
+      "hint": "And goes between the two things Tiger is.",
+      "explanation": "Tiger is hungry and cross. And joins the two ideas.",
+      "shortExplanation": "Tiger is hungry and cross. And joins the two ideas.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.main.01",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "Tiger is hungry and cross.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_04"
+    },
+    {
+      "id": "eng_unit_04.step.005",
+      "kind": "drag-to-basket",
+      "title": "Is there a verb?",
+      "prompt": "Does each sentence have a verb?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Tiddalik drank the water.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "The water everywhere.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Kangaroo boxed his shadow.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "Wombat about the water.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "Has a verb",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "No verb",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2",
+          "choice_3": "target_1",
+          "choice_4": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u04.main.02",
+      "hint": "Ask: what did it do? If nothing is done, the verb is missing.",
+      "explanation": "Drank and boxed are verbs. The other two sentences have no doing word.",
+      "shortExplanation": "Drank and boxed are verbs. The other two sentences have no doing word.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.main.02",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "a ✓ • b ✗ (no verb) • c ✓ • d ✗ (no verb)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_04"
+    },
+    {
+      "id": "eng_unit_04.step.006",
+      "kind": "match-lines",
+      "title": "Who did what?",
+      "prompt": "Match each animal to what it did.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Tiddalik",
+          "art": "eng_word",
+          "picture": "frog"
+        },
+        {
+          "id": "choice_2",
+          "label": "Kookaburra",
+          "art": "eng_word",
+          "picture": "kookaburra"
+        },
+        {
+          "id": "choice_3",
+          "label": "Kangaroo",
+          "art": "eng_word",
+          "picture": "kangaroo"
+        },
+        {
+          "id": "choice_4",
+          "label": "Platypus",
+          "art": "eng_word",
+          "picture": "platypus"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "told jokes",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "boxed his shadow",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "got cross and looked silly",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_4",
+          "label": "drank all the water",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_4",
+          "choice_2": "target_1",
+          "choice_3": "target_2",
+          "choice_4": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u04.main.03",
+      "hint": "Remember the story: who was thirsty, and who woke up cross?",
+      "explanation": "Tiddalik drank the water, Kookaburra told jokes, Kangaroo boxed and Platypus got cross.",
+      "shortExplanation": "Tiddalik drank the water, Kookaburra told jokes, Kangaroo boxed and Platypus got cross.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.main.03",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "Tiddalik – drank all the water • Kookaburra – told jokes • Kangaroo – boxed his shadow • Platypus – got cross and looked silly",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_04"
+    },
+    {
+      "id": "eng_unit_04.step.007",
+      "kind": "tap-choice",
+      "title": "How did he feel?",
+      "prompt": "How did the man feel when Tiger grabbed him?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "happy",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "scared",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "sleepy",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u04.main.04",
+      "hint": "Tiger wanted to eat him! Show me that face.",
+      "explanation": "Tiger wanted to eat him, so the man felt scared.",
+      "shortExplanation": "Tiger wanted to eat him, so the man felt scared.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.main.04",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "Scared / frightened (\"surprised\" or \"sad\" show good thinking too)",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_04",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "tiger"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_04.step.008",
+      "kind": "tap-choice",
+      "title": "Who tricked Tiger?",
+      "prompt": "Who tricked Tiger back into the trap?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Rabbit",
+          "art": "eng_word",
+          "picture": "rabbit"
+        },
+        {
+          "id": "choice_2",
+          "label": "Mouse",
+          "art": "eng_word",
+          "picture": "mouse"
+        },
+        {
+          "id": "choice_3",
+          "label": "Frog",
+          "art": "eng_word",
+          "picture": "frog"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u04.main.05",
+      "hint": "It was a clever animal in The Ungrateful Tiger.",
+      "explanation": "Clever Rabbit asked Tiger to show him, and Tiger jumped back into the trap.",
+      "shortExplanation": "Clever Rabbit asked Tiger to show him, and Tiger jumped back into the trap.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.main.05",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "Rabbit",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_04"
+    },
+    {
+      "id": "eng_unit_04.step.009",
+      "kind": "tap-choice",
+      "title": "A story opener",
+      "prompt": "…, there was a thirsty frog. Which story opener fits?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "You will need",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Once upon a time",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "The end",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u04.main.06",
+      "hint": "How do old stories often start?",
+      "explanation": "Once upon a time is a story opener. It starts a story.",
+      "shortExplanation": "Once upon a time is a story opener. It starts a story.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.main.06",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "Any opener: Once upon a time, Long ago, Long, long ago, One day",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_04"
+    },
+    {
+      "id": "eng_unit_04.step.010",
+      "kind": "tap-choice",
+      "title": "Super verbs",
+      "prompt": "The lion roared. The water gushed. The cat pounced. Tap the three verbs.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "lion",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "roared",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "water",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "gushed",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_5",
+          "label": "cat",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_6",
+          "label": "pounced",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_2",
+          "choice_4",
+          "choice_6"
+        ]
+      },
+      "assessed": true,
+      "objective": "eng.u04.main.07",
+      "hint": "Look for the words ending in ed.",
+      "explanation": "Roared, gushed and pounced are the verbs. They all end in ed.",
+      "shortExplanation": "Roared, gushed and pounced are the verbs. They all end in ed.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.main.07",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "a roared • b gushed • c pounced",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_04"
+    },
+    {
+      "id": "eng_unit_04.step.011",
+      "kind": "tap-choice",
+      "title": "Tiddalik's lesson",
+      "prompt": "What lesson does Tiddalik the Thirsty Frog teach us?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Drink all the water.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Share with others.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Never laugh.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u04.main.08",
+      "hint": "What went wrong when Tiddalik kept all the water?",
+      "explanation": "Tiddalik kept all the water for himself. The story teaches us to share.",
+      "shortExplanation": "Tiddalik kept all the water for himself. The story teaches us to share.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.main.08",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "A good answer says we should share and not keep everything for ourselves.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_04"
+    },
+    {
+      "id": "eng_unit_04.step.012",
+      "kind": "tap-choice",
+      "title": "What is a traditional tale?",
+      "prompt": "Traditional tales are…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "true news reports",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "very old stories told again and again",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "lists of instructions",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u04.choice.01",
+      "hint": "Grandmas and grandpas told them long ago.",
+      "explanation": "Traditional tales are very old stories that people told again and again.",
+      "shortExplanation": "Traditional tales are very old stories that people told again and again.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.choice.01",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "very old stories told again and again",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_04"
+    },
+    {
+      "id": "eng_unit_04.step.013",
+      "kind": "tap-choice",
+      "title": "Once upon a time",
+      "prompt": "Once upon a time is a…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "story opener",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "verb",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "rhyme",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u04.choice.02",
+      "hint": "Where in a story do you hear it?",
+      "explanation": "Once upon a time is a story opener. It starts a story.",
+      "shortExplanation": "Once upon a time is a story opener. It starts a story.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.choice.02",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "story opener",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_04"
+    },
+    {
+      "id": "eng_unit_04.step.014",
+      "kind": "tap-choice",
+      "title": "Why did Tiddalik laugh?",
+      "prompt": "Tiddalik laughed when he saw…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "a big fish",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "the sun",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Platypus looking silly",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u04.choice.03",
+      "hint": "Who woke up cross?",
+      "explanation": "Platypus was so cross that he looked silly, and Tiddalik laughed.",
+      "shortExplanation": "Platypus was so cross that he looked silly, and Tiddalik laughed.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.choice.03",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "Platypus looking silly",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_04"
+    },
+    {
+      "id": "eng_unit_04.step.015",
+      "kind": "tap-choice",
+      "title": "Who saved the lion?",
+      "prompt": "In the lion story, the lion was saved by…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "the hunters",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "the tiger",
+          "art": "eng_word",
+          "picture": "tiger"
+        },
+        {
+          "id": "choice_3",
+          "label": "the little mouse",
+          "art": "eng_word",
+          "picture": "mouse"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u04.choice.04",
+      "hint": "Who nibbled through the ropes?",
+      "explanation": "The little mouse nibbled through the ropes. Small can be strong too.",
+      "shortExplanation": "The little mouse nibbled through the ropes. Small can be strong too.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.choice.04",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "the little mouse",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_04"
+    },
+    {
+      "id": "eng_unit_04.step.016",
+      "kind": "tap-choice",
+      "title": "A sentence with a verb",
+      "prompt": "Which one is a sentence with a verb?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "The frog in the pond.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "A big green frog.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "The frog jumped.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u04.choice.05",
+      "hint": "Which one tells us what the frog did?",
+      "explanation": "Jumped is a doing word, so The frog jumped is a sentence.",
+      "shortExplanation": "Jumped is a doing word, so The frog jumped is a sentence.",
+      "source": {
+        "pages": [
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "questionId": "eng.u04.choice.05",
+        "answerKeyPages": [
+          52
+        ],
+        "answerKeyText": "The frog jumped.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "library",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_04",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "frog"
+        ]
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "eng_unit_04.sticker",
+      "word": "traditional tale",
+      "art": "eng_word",
+      "picture": {
+        "type": "picture",
+        "items": [
+          "frog"
+        ]
+      },
+      "meaning": "A very old story told again and again.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "eng.u04.main.01",
+      "text": "Play the and game: you say a short sentence, like \"The lion is big\", and your child makes it longer with and.",
+      "textAr": "العبوا لعبة and: تقول جملة قصيرة زي \"The lion is big\"، وطفلك يطوّلها بـ and.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u04.main.02",
+      "text": "Say half a sentence with no verb, like \"The cat… the milk.\" Your child adds the doing word: The cat drank the milk.",
+      "textAr": "قول نص جملة من غير فعل زي \"The cat… the milk.\"، وطفلك يكمّل بالفعل: The cat drank the milk.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u04.main.03",
+      "text": "Act out Tiddalik together: one of you is the frog, the other plays each animal trying to make him laugh.",
+      "textAr": "مثّلوا قصة Tiddalik مع بعض: واحد يبقى الضفدعة، والتاني يمثّل كل حيوان بيحاول يضحّكه.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u04.main.04",
+      "text": "Stand at a mirror and make faces for happy, sad, cross and scared. Ask: how did the man feel when Tiger grabbed him? Show me.",
+      "textAr": "قفوا قدام المراية واعملوا وشوش: مبسوط، زعلان، متضايق، خايف. واسأل: الراجل حس بإيه لما النمر مسكه؟ ورّيني.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u04.main.05",
+      "text": "Ask: was it right to trick Tiger? Is it ever right to trick someone? Let your child explain their idea.",
+      "textAr": "اسأل: كان صح إنهم يضحكوا على النمر؟ ينفع نضحك على حد؟ وسيب طفلك يشرح رأيه.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u04.main.06",
+      "text": "Take turns starting a story with a different opener: Once upon a time… Long ago… One day…",
+      "textAr": "اتبادلوا تبدأوا قصة بجملة بداية مختلفة: Once upon a time… و Long ago… و One day…",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u04.main.07",
+      "text": "Act out super verbs together: roared, pounced, danced, slurped. Your child says each one after doing it.",
+      "textAr": "مثّلوا أفعال قوية مع بعض: roared و pounced و danced و slurped. وطفلك يقول كل فعل بعد ما يعمله.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u04.main.08",
+      "text": "At snack time, share a fruit fairly together. Ask: what would Tiddalik do? What should he do?",
+      "textAr": "وقت السناك قسّموا فاكهة بالعدل مع بعض، واسأل: Tiddalik كان هيعمل إيه؟ وكان المفروض يعمل إيه؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u04.choice.01",
+      "text": "Ask a grandparent to tell an old story they heard as a child. Your child retells it to you later.",
+      "textAr": "خلّوا جدو أو تيتة يحكي قصة قديمة سمعها وهو صغير، وطفلك يحكيها لك بعدين.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u04.choice.02",
+      "text": "Look at the first words of a few storybooks together. How many start with Once upon a time?",
+      "textAr": "بصّوا على أول كلام في كذا كتاب قصص مع بعض. كام واحد بيبدأ بـ Once upon a time؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u04.choice.03",
+      "text": "Make the silliest cross face you can, like Platypus. Who laughs first?",
+      "textAr": "اعملوا أكتر وش متضايق يضحّك زي Platypus. مين يضحك الأول؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u04.choice.04",
+      "text": "Talk about a time your child helped someone bigger. Small can be strong too!",
+      "textAr": "اتكلموا عن مرة طفلك ساعد حد أكبر منه. الصغير ممكن يبقى قوي برضه!",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u04.choice.05",
+      "text": "Your child jumps like a frog, then says a sentence with a verb: The frog jumped. The frog swam.",
+      "textAr": "طفلك ينط زي الضفدعة، وبعدين يقول جملة فيها فعل: The frog jumped. The frog swam.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Retell Tiddalik with a kitchen sponge at the sink: it drinks and drinks, then a joke makes it laugh and squeeze the water out. Your child says what each animal did.",
+      "textAr": "احكوا قصة Tiddalik بإسفنجة مطبخ عند الحوض: بتشرب وتشرب، وبعدين نكتة تضحّكها فتعصر المية. وطفلك يقول كل حيوان عمل إيه.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ]
+}

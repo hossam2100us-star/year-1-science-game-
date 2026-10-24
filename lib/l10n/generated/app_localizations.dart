@@ -290,6 +290,12 @@ abstract class AppLocalizations {
   /// **'Try opening the Maths guide again'**
   String get parentAreaMathsGuideRetry;
 
+  /// No description provided for @parentAreaGuideRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try opening this guide again'**
+  String get parentAreaGuideRetry;
+
   /// No description provided for @parentAreaTimeOnTheChildScreens.
   ///
   /// In en, this message translates to:

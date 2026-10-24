@@ -1,0 +1,1247 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_08",
+  "subject": "english",
+  "title": "Animal Poems",
+  "quiz": false,
+  "sourcePages": [
+    36,
+    37,
+    38,
+    39
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_unit_08.step.001",
+      "kind": "explore",
+      "title": "Clap the beats",
+      "prompt": "Tap each animal and clap along.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "Cat. One clap.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Mon-key. Two claps.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "El-e-phant. Three claps.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_4",
+          "label": "Al-li-ga-tor. Four claps.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Each beat in a word is a syllable. Cat has one, tiger has two.",
+      "shortExplanation": "Each beat in a word is a syllable. Cat has one, tiger has two.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_08",
+      "minTouches": 4,
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "cat",
+          "monkey",
+          "elephant",
+          "alligator"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_08.step.002",
+      "kind": "explore",
+      "title": "Describing words",
+      "prompt": "Tap each card to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "A stripy zebra.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "A big hippo.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "A hairy spider.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Adjectives are describing words: they tell us what something is like.",
+      "shortExplanation": "Adjectives are describing words: they tell us what something is like.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_08",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "zebra",
+          "hippo",
+          "spider"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_08.step.003",
+      "kind": "drag-to-basket",
+      "title": "How many claps?",
+      "prompt": "How many syllables in each animal name?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "cat",
+          "art": "eng_word",
+          "picture": "cat"
+        },
+        {
+          "id": "choice_2",
+          "label": "monkey",
+          "art": "eng_word",
+          "picture": "monkey"
+        },
+        {
+          "id": "choice_3",
+          "label": "elephant",
+          "art": "eng_word",
+          "picture": "elephant"
+        },
+        {
+          "id": "choice_4",
+          "label": "alligator",
+          "art": "eng_word",
+          "picture": "alligator"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "1 clap",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "2 claps",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "3 claps",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_4",
+          "label": "4 claps",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2",
+          "choice_3": "target_3",
+          "choice_4": "target_4"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u08.main.01",
+      "hint": "Put your hand under your chin. Each time it drops is one syllable.",
+      "explanation": "Cat has 1 syllable, mon-key 2, el-e-phant 3 and al-li-ga-tor 4.",
+      "shortExplanation": "Cat has 1 syllable, mon-key 2, el-e-phant 3 and al-li-ga-tor 4.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.main.01",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "cat 1 • monkey 2 • elephant 3 • alligator 4",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_08"
+    },
+    {
+      "id": "eng_unit_08.step.004",
+      "kind": "match-lines",
+      "title": "Animal rhymes",
+      "prompt": "Match each animal to the animal that rhymes with it.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "goat",
+          "art": "eng_word",
+          "picture": "goat"
+        },
+        {
+          "id": "choice_2",
+          "label": "moose",
+          "art": "eng_word",
+          "picture": "moose"
+        },
+        {
+          "id": "choice_3",
+          "label": "seal",
+          "art": "eng_word",
+          "picture": "seal"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "eel",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "stoat",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "goose",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_2",
+          "choice_2": "target_3",
+          "choice_3": "target_1"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u08.main.02",
+      "hint": "Say both names aloud. Do they end the same?",
+      "explanation": "Goat and stoat, moose and goose, seal and eel rhyme.",
+      "shortExplanation": "Goat and stoat, moose and goose, seal and eel rhyme.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.main.02",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "goat – stoat • moose – goose • seal – eel",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_08"
+    },
+    {
+      "id": "eng_unit_08.step.005",
+      "kind": "tap-choice",
+      "title": "Find the adjectives",
+      "prompt": "The big hippo. A stripy zebra. A hairy spider. Tap the three describing words.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "big",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "hippo",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "stripy",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "zebra",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_5",
+          "label": "hairy",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_6",
+          "label": "spider",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "set",
+        "value": [
+          "choice_1",
+          "choice_3",
+          "choice_5"
+        ]
+      },
+      "assessed": true,
+      "objective": "eng.u08.main.03",
+      "hint": "Is it the animal, or what the animal is like?",
+      "explanation": "Big, stripy and hairy describe the animals. They are adjectives.",
+      "shortExplanation": "Big, stripy and hairy describe the animals. They are adjectives.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.main.03",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "a big • b stripy • c hairy",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_08",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "hippo",
+          "zebra",
+          "spider"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_08.step.006",
+      "kind": "match-lines",
+      "title": "What does it do?",
+      "prompt": "Match each animal to a verb that fits.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "monkey",
+          "art": "eng_word",
+          "picture": "monkey"
+        },
+        {
+          "id": "choice_2",
+          "label": "snake",
+          "art": "eng_word",
+          "picture": "snake"
+        },
+        {
+          "id": "choice_3",
+          "label": "frog",
+          "art": "eng_word",
+          "picture": "frog"
+        },
+        {
+          "id": "choice_4",
+          "label": "lion",
+          "art": "eng_word",
+          "picture": "lion"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "hops",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "roars",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "swings",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_4",
+          "label": "slides",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_3",
+          "choice_2": "target_4",
+          "choice_3": "target_1",
+          "choice_4": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u08.main.04",
+      "hint": "Act out each animal. What do you do?",
+      "explanation": "Monkeys swing, snakes slide, frogs hop and lions roar.",
+      "shortExplanation": "Monkeys swing, snakes slide, frogs hop and lions roar.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.main.04",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "monkey – swings • snake – slides • frog – hops • lion – roars",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_08"
+    },
+    {
+      "id": "eng_unit_08.step.007",
+      "kind": "drag-to-basket",
+      "title": "Quiet or noisy?",
+      "prompt": "Is each verb quiet or noisy?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "whispering",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "roaring",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "rustling",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "crashing",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "quiet",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "noisy",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2",
+          "choice_3": "target_1",
+          "choice_4": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u08.main.05",
+      "hint": "Say each word in the voice it describes.",
+      "explanation": "Whispering and rustling are quiet. Roaring and crashing are noisy.",
+      "shortExplanation": "Whispering and rustling are quiet. Roaring and crashing are noisy.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.main.05",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "whispering Q • roaring N • rustling Q • crashing N",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_08"
+    },
+    {
+      "id": "eng_unit_08.step.008",
+      "kind": "match-lines",
+      "title": "Letters that work together",
+      "prompt": "Which letters start each word?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "…ider",
+          "art": "eng_word",
+          "picture": "spider"
+        },
+        {
+          "id": "choice_2",
+          "label": "…op, a drop of rain",
+          "art": "eng_word",
+          "picture": "rain"
+        },
+        {
+          "id": "choice_3",
+          "label": "…awl",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "sp",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "dr",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "cr",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2",
+          "choice_3": "target_3"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u08.main.06",
+      "hint": "Say the whole word: spider, drop, crawl.",
+      "explanation": "Spider starts with sp, drop with dr and crawl with cr.",
+      "shortExplanation": "Spider starts with sp, drop with dr and crawl with cr.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.main.06",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "spider • drop • crawl",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_08"
+    },
+    {
+      "id": "eng_unit_08.step.009",
+      "kind": "tap-choice",
+      "title": "Describe the crocodile",
+      "prompt": "Which word could describe a crocodile?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "swims",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "golden",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "river",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u08.main.07",
+      "hint": "Which word tells us what the crocodile is like?",
+      "explanation": "Golden is a describing word: a golden crocodile.",
+      "shortExplanation": "Golden is a describing word: a golden crocodile.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.main.07",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "Any describing word, e.g. a golden / green / hungry crocodile, a big / proud / hairy lion",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_08",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "crocodile"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_08.step.010",
+      "kind": "tap-choice",
+      "title": "My list poem",
+      "prompt": "Monkeys swing. Snakes slide. Which line fits next in the list poem?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "The frog.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Frogs hop.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "Hop frogs the.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u08.main.08",
+      "hint": "Each line is an animal and what it does.",
+      "explanation": "Frogs hop has an animal and a verb, like the other lines.",
+      "shortExplanation": "Frogs hop has an animal and a verb, like the other lines.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.main.08",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "Three lines, each an animal and a verb (e.g. Monkeys swing. Snakes slide. Frogs hop.). Adjectives are a bonus.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_08",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "Monkeys swing. Snakes slide."
+      }
+    },
+    {
+      "id": "eng_unit_08.step.011",
+      "kind": "tap-choice",
+      "title": "Clap tiger",
+      "prompt": "How many syllables are in tiger?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "1",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "2",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "5",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u08.choice.01",
+      "hint": "Clap it: ti-ger.",
+      "explanation": "Ti-ger has two claps, so it has 2 syllables.",
+      "shortExplanation": "Ti-ger has two claps, so it has 2 syllables.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.choice.01",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "2",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_08",
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "tiger"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_08.step.012",
+      "kind": "tap-choice",
+      "title": "What is an adjective?",
+      "prompt": "An adjective…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "is a doing word",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "describes a thing",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "is a full stop",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u08.choice.02",
+      "hint": "Stripy, big and hairy are adjectives.",
+      "explanation": "An adjective describes a thing, like a stripy zebra.",
+      "shortExplanation": "An adjective describes a thing, like a stripy zebra.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.choice.02",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "describes a thing",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_08"
+    },
+    {
+      "id": "eng_unit_08.step.013",
+      "kind": "tap-choice",
+      "title": "Rhymes with goose",
+      "prompt": "Which word rhymes with goose?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "goat",
+          "art": "eng_word",
+          "picture": "goat"
+        },
+        {
+          "id": "choice_2",
+          "label": "moose",
+          "art": "eng_word",
+          "picture": "moose"
+        },
+        {
+          "id": "choice_3",
+          "label": "mouse",
+          "art": "eng_word",
+          "picture": "mouse"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u08.choice.03",
+      "hint": "Goose ends with oose.",
+      "explanation": "Goose and moose both end with oose, so they rhyme.",
+      "shortExplanation": "Goose and moose both end with oose, so they rhyme.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.choice.03",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "moose",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_08"
+    },
+    {
+      "id": "eng_unit_08.step.014",
+      "kind": "tap-choice",
+      "title": "Reading a poem aloud",
+      "prompt": "To make a poem interesting to listen to, read it with…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "the same flat voice",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "your mouth closed",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "a loud, soft, fast and slow voice",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u08.choice.04",
+      "hint": "How does a roaring lion sound? And a creeping spider?",
+      "explanation": "A poem is more fun with a loud, soft, fast and slow voice.",
+      "shortExplanation": "A poem is more fun with a loud, soft, fast and slow voice.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.choice.04",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "a loud, soft, fast and slow voice",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_08"
+    },
+    {
+      "id": "eng_unit_08.step.015",
+      "kind": "tap-choice",
+      "title": "Four claps",
+      "prompt": "Which animal name has four syllables?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "zebra",
+          "art": "eng_word",
+          "picture": "zebra"
+        },
+        {
+          "id": "choice_2",
+          "label": "cat",
+          "art": "eng_word",
+          "picture": "cat"
+        },
+        {
+          "id": "choice_3",
+          "label": "alligator",
+          "art": "eng_word",
+          "picture": "alligator"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u08.choice.05",
+      "hint": "Clap each one: al-li-ga-tor.",
+      "explanation": "Al-li-ga-tor has four claps, so it has 4 syllables.",
+      "shortExplanation": "Al-li-ga-tor has four claps, so it has 4 syllables.",
+      "source": {
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "questionId": "eng.u08.choice.05",
+        "answerKeyPages": [
+          54
+        ],
+        "answerKeyText": "alligator",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "jungle",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_08"
+    }
+  ],
+  "stickers": [
+    {
+      "id": "eng_unit_08.sticker",
+      "word": "syllable",
+      "art": "eng_word",
+      "picture": {
+        "type": "picture",
+        "items": [
+          "tiger"
+        ]
+      },
+      "meaning": "A beat in a word. Ti-ger has two.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        36,
+        37,
+        38,
+        39
+      ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "eng.u08.main.01",
+      "text": "Try the chin trick: put the back of your child's hand under their chin and say a word slowly. Every time the chin drops is one syllable.",
+      "textAr": "جرّبوا حركة الدقن: حط ضهر إيد طفلك تحت دقنه وقول كلمة ببطء. كل ما الدقن تنزل يبقى مقطع واحد.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u08.main.02",
+      "text": "Make up silly animal rhymes together: a goat in a coat, a cat on a mat, a moose on the loose.",
+      "textAr": "ألّفوا قوافي حيوانات تضحّك مع بعض: a goat in a coat و a cat on a mat و a moose on the loose.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u08.main.03",
+      "text": "Play \"I spy\" with describing words: I spy something soft… something shiny… something round.",
+      "textAr": "العبوا \"أنا شايف\" بكلمات وصف: شايف حاجة طرية… حاجة بتلمع… حاجة مدوّرة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u08.main.04",
+      "text": "Make a fridge list poem: write animals and verbs on paper strips, match them, and stick them up: Monkeys swing. Snakes slide.",
+      "textAr": "اعملوا قصيدة ليستة على التلاجة: اكتبوا حيوانات وأفعال على شرايط ورق، وصّلوهم ببعض، والزقوهم: Monkeys swing. Snakes slide.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u08.main.05",
+      "text": "Say Incy Wincy Spider together with a voice dial: loud, soft, fast, slow. Which voice fits the climbing spider?",
+      "textAr": "قولوا أغنية Incy Wincy Spider مع بعض بصوت مختلف كل شوية: عالي، واطي، سريع، بطيء. أنهي صوت يليق بالعنكبوت وهو بيطلع؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u08.main.06",
+      "text": "Write sp, dr and cr on cards. Your child finds a word for each one: spoon, drum, crab.",
+      "textAr": "اكتبوا sp و dr و cr على كروت، وطفلك يلاقي كلمة لكل واحدة: spoon و drum و crab.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u08.main.07",
+      "text": "Pick a soft toy animal and find three describing words for it together: soft, brown, cuddly.",
+      "textAr": "اختاروا لعبة حيوان طرية ولاقوا تلات كلمات وصف ليها مع بعض: soft و brown و cuddly.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u08.main.08",
+      "text": "Write a three-line animal list poem together. Each line has an animal and what it does. Add a describing word for a bonus.",
+      "textAr": "اكتبوا قصيدة ليستة من تلات سطور مع بعض. كل سطر فيه حيوان وبيعمل إيه، وزوّدوا كلمة وصف كبونص.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u08.choice.01",
+      "text": "Clap the names of everyone in the family. Whose name has the most claps?",
+      "textAr": "صقفوا أسامي كل العيلة. اسم مين فيه أكتر صقفات؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u08.choice.02",
+      "text": "Describe your child with three adjectives, then let them describe you: kind, funny, tall.",
+      "textAr": "اوصف طفلك بتلات صفات، وبعدين خلّيه يوصفك: kind و funny و tall.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u08.choice.03",
+      "text": "Look at animal pictures together and find two that rhyme: goat and stoat, moose and goose.",
+      "textAr": "بصّوا على صور حيوانات مع بعض ولاقوا اتنين على نفس القافية: goat و stoat، و moose و goose.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u08.choice.04",
+      "text": "Read a short poem together twice: once in a flat voice, once with loud, soft, fast and slow parts. Which is more fun?",
+      "textAr": "اقروا قصيدة قصيرة مع بعض مرتين: مرة بصوت واحد، ومرة بأجزاء عالية وواطية وسريعة وبطيئة. أنهي أحلى؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u08.choice.05",
+      "text": "Find long animal names together: caterpillar, armadillo, tarantula. Clap each one.",
+      "textAr": "دوّروا على أسامي حيوانات طويلة مع بعض: caterpillar و armadillo و tarantula. وصقفوا كل واحد.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Put out things from the kitchen: a cup, a teapot, a banana. Guess how many claps each word has, then clap to check. Can you find one with four?",
+      "textAr": "حطّوا حاجات من المطبخ: كباية، براد شاي، موزة. خمّنوا كل كلمة فيها كام صقفة، وبعدين صقفوا عشان تتأكدوا. تلاقوا كلمة فيها أربعة؟",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ]
+}

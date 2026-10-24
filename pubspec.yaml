@@ -37,6 +37,7 @@ flutter:
   assets:
     - assets/content/catalog.json
     - assets/content/maths_catalog.json
+    - assets/content/english_catalog.json
     # The school years and their subjects (ADR-0021).
     - assets/content/years.json
     # Arabic for the parent report's activities (teacher review 4, T4-5e).
@@ -58,6 +59,9 @@ flutter:
     - assets/images/maths-backdrops-v2.webp
     - assets/images/maths-birds-v1.webp
     - assets/images/maths-things-v1.webp
+    - assets/images/english-islands-v1.webp
+    - assets/images/english-backdrops-v1.webp
+    - assets/images/english-words-v1.webp
     - assets/images/light-plants-v1.webp
     - assets/images/light-room-v1.webp
     - assets/images/materials-atlas-v2.webp

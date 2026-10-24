@@ -5,6 +5,7 @@ import '../../content/lesson.dart';
 import '../../core/answer_summary.dart';
 import '../../games/discovery_game.dart';
 import '../biology/ourselves_stage.dart';
+import '../english/english_stage.dart';
 import '../plants/bean_experiment.dart';
 import '../plants/light_experiment.dart';
 import '../plants/plant_lab_stage.dart';
@@ -86,10 +87,28 @@ abstract class SceneRenderer {
     SceneKind.plantLab: _PlantLabRenderer(),
     SceneKind.plantMission: _PlantMissionRenderer(),
     SceneKind.maths: _MathsRenderer(),
+    SceneKind.english: _EnglishRenderer(),
     SceneKind.discovery: _DiscoveryRenderer(),
   };
 
   static SceneRenderer of(SceneKind kind) => registry[kind]!;
+}
+
+class _EnglishRenderer extends SceneRenderer {
+  const _EnglishRenderer();
+  @override
+  Widget build(BuildContext context, LessonSceneHost host) => EnglishStage(
+    step: host.step,
+    selected: host.selected,
+    placements: host.placements,
+    touched: host.touched,
+    reviewItems: host.reviewItems,
+    locked: host.answerLocked || host.freeDone || host.busy,
+    onItem: host.item,
+    onPlace: host.place,
+    onWrite: host.write,
+    onSay: host.say,
+  );
 }
 
 class _MathsRenderer extends SceneRenderer {

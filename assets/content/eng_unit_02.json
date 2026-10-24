@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_02",
+  "subject": "english",
+  "kind": "unit",
+  "term": 1,
+  "title": "Recounts",
+  "ar": "حكي اللي حصل",
+  "sourcePages": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.u02.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Write this sentence again with the correct capital letters. i went to cairo with sara.",
+      "answerKeyText": "I went to Cairo with Sara. (I, Cairo and Sara all need capitals.)",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u02.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Use First, Then and At last to finish the recount. , I brushed my teeth. , I got into bed. , I fell asleep.",
+      "answerKeyText": "First … Then … At last",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u02.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Circle the verb that shows it has already happened. a We go / went to school. b I walk / walked home. c Sara helps / helped me.",
+      "answerKeyText": "a went • b walked • c helped",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u02.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Add the endings. walk walks walking walked; play; jump (add s, add ing, add ed)",
+      "answerKeyText": "plays, playing, played • jumps, jumping, jumped",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u02.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Is it a noun or a verb? Write each word in the right box. dog run school jump apple swim",
+      "answerKeyText": "Nouns: dog, school, apple • Verbs: run, jump, swim",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u02.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Join the two sentences with and. I like juice. I like milk.",
+      "answerKeyText": "I like juice and milk. (\"I like juice and I like milk.\" is also right.)",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u02.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "True or false? Write T or F. a A recount tells about something that has already happened. b A recount uses time words like First and Then. c A recount is about a monster who lives in the washing machine.",
+      "answerKeyText": "a T • b T • c F — that is a fantasy story, not a recount.",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u02.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Write two sentences about something you did yesterday. Start with Yesterday, I…",
+      "answerKeyText": "Two true sentences about yesterday, with past verbs (went, played, ate) and capital letters and full stops.",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u02.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "A recount tells about something that ( will happen tomorrow ) ( has already happened ) ( could never happen )",
+      "answerKeyText": "has already happened",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u02.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Which word always has a capital letter? ( the ) ( and ) ( I )",
+      "answerKeyText": "I",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u02.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "Yesterday I ___ over the rope. ( jumped ) ( jumping ) ( jumps )",
+      "answerKeyText": "jumped",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u02.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "A noun is ( a doing word ) ( a person, place or thing ) ( a full stop )",
+      "answerKeyText": "a person, place or thing",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    },
+    {
+      "id": "eng.u02.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "The word \"Then\" is a ( name ) ( place ) ( time word )",
+      "answerKeyText": "time word",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "answerKeyPages": [
+        51
+      ]
+    }
+  ]
+}

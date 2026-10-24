@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_07",
+  "subject": "english",
+  "kind": "unit",
+  "term": 3,
+  "title": "Stories with Familiar Settings",
+  "ar": "قصص في أماكن نعرفها",
+  "sourcePages": [
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.u07.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Where is the story set? Write home, school, park or shops. a The children sit at desks and the teacher reads to them. b Gogo buys bananas and looks at shoes in a window. c Timothy looks at the swings and the slide.",
+      "answerKeyText": "a school • b shops • c park",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "eng.u07.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Who bought Shepherd his new red tackies?",
+      "answerKeyText": "Gogo (his granny)",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "eng.u07.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "What did Timothy really see through his telescope?",
+      "answerKeyText": "A cat (its ear looked like a shark fin)",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "eng.u07.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "What made Ruby's Worry shrink?",
+      "answerKeyText": "She talked about it / told someone about her Worry.",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "eng.u07.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Write each verb in the right box. grinned sobbed shook laughed cried whispered (happy / sad / scared)",
+      "answerKeyText": "happy: grinned, laughed • sad: sobbed, cried • scared: shook, whispered",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "eng.u07.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Write this sentence again with capital letters and a full stop. uncle arjun jumped in the boat",
+      "answerKeyText": "Uncle Arjun jumped in the boat.",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "eng.u07.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Add s or es. three dish__ two mug__ four bush__ five bottle__",
+      "answerKeyText": "dishes • mugs • bushes • bottles",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "eng.u07.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Plan a story set in the park. Write one line for each part. Beginning: Middle: End:",
+      "answerKeyText": "Three lines that follow on: something happens at the start, a problem or adventure in the middle, and a finish at the end — all in a park.",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "eng.u07.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "The setting of a story is ( the name of the story ) ( where the story happens ) ( the last page )",
+      "answerKeyText": "where the story happens",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "eng.u07.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "Shepherd's old tackies had ( holes ) ( lights ) ( wheels )",
+      "answerKeyText": "holes",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "eng.u07.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "In Mr Gumpy's Outing, the boat ( sailed far away ) ( got stuck in the mud ) ( tipped over )",
+      "answerKeyText": "tipped over",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "eng.u07.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Katie Morag threw her teddy into the ( sea ) ( bin ) ( garden )",
+      "answerKeyText": "sea",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "eng.u07.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "\"He sobbed\" tells us he felt ( happy ) ( sad ) ( sleepy )",
+      "answerKeyText": "sad",
+      "sourcePages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "answerKeyPages": [
+        53,
+        54
+      ]
+    }
+  ]
+}

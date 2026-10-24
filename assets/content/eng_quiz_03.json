@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_quiz_03",
+  "subject": "english",
+  "kind": "quiz",
+  "term": 3,
+  "title": "Big Challenge: Term 3",
+  "ar": "تحدي الفصل الدراسي 3",
+  "sourcePages": [
+    45
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.q3.01",
+      "category": "quiz",
+      "number": 1,
+      "sourceText": "What is the setting of a story?",
+      "answerKeyText": "Where the story happens",
+      "sourcePages": [
+        45
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.q3.02",
+      "category": "quiz",
+      "number": 2,
+      "sourceText": "Ruby's Worry got smaller when she ___ about it.",
+      "answerKeyText": "talked",
+      "sourcePages": [
+        45
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.q3.03",
+      "category": "quiz",
+      "number": 3,
+      "sourceText": "\"Katie Morag stomped and grumbled.\" How did she feel?",
+      "answerKeyText": "Cross / angry",
+      "sourcePages": [
+        45
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.q3.04",
+      "category": "quiz",
+      "number": 4,
+      "sourceText": "Add s or es: two box__",
+      "answerKeyText": "boxes",
+      "sourcePages": [
+        45
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.q3.05",
+      "category": "quiz",
+      "number": 5,
+      "sourceText": "How many syllables in elephant?",
+      "answerKeyText": "3",
+      "sourcePages": [
+        45
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.q3.06",
+      "category": "quiz",
+      "number": 6,
+      "sourceText": "Circle the adjective: The golden crocodile swims.",
+      "answerKeyText": "golden",
+      "sourcePages": [
+        45
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.q3.07",
+      "category": "quiz",
+      "number": 7,
+      "sourceText": "Write an animal that rhymes with goat.",
+      "answerKeyText": "stoat (or boat, coat if he says any rhyming word — give the mark)",
+      "sourcePages": [
+        45
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.q3.08",
+      "category": "quiz",
+      "number": 8,
+      "sourceText": "What is the name of the words on the back cover that tell you what a book is about?",
+      "answerKeyText": "The blurb",
+      "sourcePages": [
+        45
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.q3.09",
+      "category": "quiz",
+      "number": 9,
+      "sourceText": "Refilling your water bottle is: reduce / reuse / recycle",
+      "answerKeyText": "reuse",
+      "sourcePages": [
+        45
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.q3.10",
+      "category": "quiz",
+      "number": 10,
+      "sourceText": "Is a label usually one or two words, or a long sentence?",
+      "answerKeyText": "One or two words",
+      "sourcePages": [
+        45
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    }
+  ]
+}

@@ -233,6 +233,11 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
     if (_plantLab) {
       return '$_displayPrompt ${step.json['playInstruction'] ?? ''}';
     }
+    // An English story is read part by part as the child taps each card,
+    // not all at once when the step opens.
+    if (_kind == SceneKind.english && step.kind == 'explore') {
+      return step.prompt;
+    }
     final names = step.options.map((v) => v.label).join('. ');
     final places = step.kind == 'label-diagram'
         ? List.generate(step.targets.length, (i) => 'Place ${i + 1}').join('. ')
@@ -397,7 +402,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   bool get _canCheck =>
       !_busy &&
       _answerKey != _checked &&
-      (step.isNumber
+      (step.isNumber || step.isWord
           ? (_placements['answer'] ?? '').isNotEmpty
           : step.isSentence
           ? [
@@ -1069,7 +1074,7 @@ class _LessonPlayerState extends ConsumerState<LessonPlayer>
   }
 
   bool get _compactMathsControls =>
-      widget.lesson.subject == 'maths' &&
+      widget.lesson.subject != 'science' &&
       MediaQuery.sizeOf(context).width < 600 &&
       MediaQuery.textScalerOf(context).scale(1) >= 1.5;
 

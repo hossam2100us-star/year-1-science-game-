@@ -40,14 +40,15 @@
 ```json
 {"years": [{"id": "y1", "title": "Year 1", "ar": "سنة أولى",
   "subjects": [{"curriculum": "y1.science", "catalog": "assets/content/catalog.json"},
-               {"curriculum": "y1.maths", "catalog": "assets/content/maths_catalog.json"}]}]}
+               {"curriculum": "y1.maths", "catalog": "assets/content/maths_catalog.json"},
+               {"curriculum": "y1.english", "catalog": "assets/content/english_catalog.json"}]}]}
 ```
 
-- اسم المنهج (curriculum) بيتكتب `<السنة>.<المادة>`، والمادة `science` أو `maths`. نوع المادة بيحدد شكل الدروس، والاسم كله بيحدد مكان حفظ التقدم.
+- اسم المنهج (curriculum) بيتكتب `<السنة>.<المادة>`، والمادة `science` أو `maths` أو `english`. نوع المادة بيحدد شكل الدروس، والاسم كله بيحدد مكان حفظ التقدم.
 - **إضافة سنة جديدة:**
   1. فولدر ليها، زي `assets/content/y2/`، وفيه ملف جزر لكل مادة، وفي كل ملف `"subject"` و`"curriculum": "y2.science"`.
   2. ملفات الدروس، وكل درس فيه `"curriculum"` بتاعه. أسماء الدروس (id) لازم تكون مختلفة عن كل السنين، فبنحط قبلها رقم السنة: `y2_unit_01`.
   3. السنة تتضاف في `years.json`، والفولدر يتضاف لـ `assets:` في `pubspec.yaml`.
 - لما يبقى فيه أكتر من سنة: ولي الأمر يختار سنة الطفل من الإعدادات، والطفل يقدر يرجع للسنين اللي فاتت من «السنين اللي فاتت».
-- تقدّم السنة الأولى محفوظ زي ما هو (`science` و`maths`)، وكل سنة بعدها بتتحفظ باسم منهجها (`y2.science`).
+- تقدّم السنة الأولى محفوظ زي ما هو (`science` و`maths`)، والإنجليزي وكل سنة بعدها بيتحفظوا باسم منهجهم (`y1.english`، `y2.science`).
 - قبل أول APK فيه سنة تانية، لازم السيرفر يتحدث الأول (التحديث فيه خانة السنة).

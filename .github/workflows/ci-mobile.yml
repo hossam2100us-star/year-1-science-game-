@@ -113,6 +113,10 @@ jobs:
       # build script reproduces the committed lessons byte for byte.
       - name: Validate the Maths content and its reproducible build
         run: python scripts/validate_maths_content.py --check-idempotence
+      # English: the companion's 155 questions, letter tiles, pictures,
+      # Arabic parent text and a byte-for-byte repeat build.
+      - name: Validate the English content and its reproducible build
+        run: python scripts/validate_english_content.py --check-idempotence
 
   android-build:
     if: github.event_name != 'pull_request'

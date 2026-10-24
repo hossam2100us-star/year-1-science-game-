@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_charts",
+  "subject": "english",
+  "kind": "charts",
+  "term": 4,
+  "title": "Chart Skills",
+  "ar": "مهارات قراءة الرسوم",
+  "sourcePages": [
+    46
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.charts.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "On which day did Seif read the most books?",
+      "answerKeyText": "Tuesday",
+      "sourcePages": [
+        46
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.charts.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "How many books did he read on Wednesday?",
+      "answerKeyText": "1",
+      "sourcePages": [
+        46
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.charts.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "How many books did he read altogether?",
+      "answerKeyText": "10 (2 + 4 + 1 + 3)",
+      "sourcePages": [
+        46
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.charts.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "How many more books on Tuesday than on Monday?",
+      "answerKeyText": "2 (4 − 2)",
+      "sourcePages": [
+        46
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.charts.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Which rhyme family has the most words?",
+      "answerKeyText": "-at (5 words)",
+      "sourcePages": [
+        46
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.charts.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "How many -ee words did we find?",
+      "answerKeyText": "4",
+      "sourcePages": [
+        46
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.charts.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Which rhyme family has the fewest words?",
+      "answerKeyText": "-og (2 words)",
+      "sourcePages": [
+        46
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    },
+    {
+      "id": "eng.charts.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Write one word from the -at family.",
+      "answerKeyText": "Any -at word: cat, hat, mat, bat, sat, rat",
+      "sourcePages": [
+        46
+      ],
+      "answerKeyPages": [
+        55
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_03",
+  "subject": "english",
+  "title": "Traditional Rhymes",
+  "quiz": false,
+  "sourcePages": [
+    12,
+    13,
+    14,
+    15
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "parentNote": {
+    "en": "Every question is answered in the app. Each goal has a short home activity: say the words aloud together, and let your child guess first.",
+    "ar": "كل الأسئلة الطفل بيحلها جوه البرنامج، ولكل هدف نشاط قصير في البيت. قولوا الكلمات بصوت عالي مع بعض، وسيبوا طفلك يتوقع الأول."
+  },
+  "steps": [
+    {
+      "id": "eng_unit_03.step.001",
+      "kind": "explore",
+      "title": "Rhyme time",
+      "prompt": "Tap each pair to listen. Do they finish the same?",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "One, sun.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Three, tree.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "Eight, gate.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Rhyming words end with the same sound: one and sun, three and tree.",
+      "shortExplanation": "Rhyming words end with the same sound: one and sun, three and tree.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_03",
+      "minTouches": 3,
+      "englishVisual": {
+        "type": "picture",
+        "items": [
+          "sun",
+          "tree",
+          "gate"
+        ]
+      }
+    },
+    {
+      "id": "eng_unit_03.step.002",
+      "kind": "explore",
+      "title": "Listen with your ears",
+      "prompt": "Tap each card to listen.",
+      "options": [
+        {
+          "id": "card_1",
+          "label": "Rhymes are for the ears, not the eyes. One and sun rhyme, even though they look different.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_2",
+          "label": "Cat and cup start the same, but they do not finish the same. They do not rhyme.",
+          "art": "eng_card"
+        },
+        {
+          "id": "card_3",
+          "label": "We can clap the beat of a rhyme, like a drum.",
+          "art": "eng_card"
+        }
+      ],
+      "targets": [],
+      "answer": null,
+      "assessed": false,
+      "objective": "",
+      "hint": "Tap each card to listen.",
+      "explanation": "Rhymes are for the ears: say the words aloud and listen to the end.",
+      "shortExplanation": "Rhymes are for the ears: say the words aloud and listen to the end.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": null,
+        "answerKeyPages": [],
+        "answerKeyText": "",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Explore",
+      "playScene": "english",
+      "theme": "eng_unit_03",
+      "minTouches": 3
+    },
+    {
+      "id": "eng_unit_03.step.003",
+      "kind": "letter-entry",
+      "title": "Number name: 3",
+      "prompt": "Write the number name for 3.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "three"
+      },
+      "assessed": true,
+      "objective": "eng.u03.main.01",
+      "hint": "Say it slowly: th-r-ee. It rhymes with tree.",
+      "explanation": "Three is t, h, r, e, e. It rhymes with tree.",
+      "shortExplanation": "Three is t, h, r, e, e. It rhymes with tree.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.main.01",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "three, five, eight, ten",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_03",
+      "letters": {
+        "before": "",
+        "after": "",
+        "tiles": [
+          "a",
+          "e",
+          "e",
+          "h",
+          "o",
+          "r",
+          "t"
+        ],
+        "say": "three"
+      },
+      "englishVisual": {
+        "type": "number",
+        "value": 3
+      }
+    },
+    {
+      "id": "eng_unit_03.step.004",
+      "kind": "letter-entry",
+      "title": "Number name: 8",
+      "prompt": "Write the number name for 8.",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "eight"
+      },
+      "assessed": true,
+      "objective": "eng.u03.main.01",
+      "hint": "Eight is a tricky word. It starts with e-i-g.",
+      "explanation": "Eight is e, i, g, h, t. It rhymes with gate but looks different.",
+      "shortExplanation": "Eight is e, i, g, h, t. It rhymes with gate but looks different.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.main.01",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "three, five, eight, ten",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_03",
+      "letters": {
+        "before": "",
+        "after": "",
+        "tiles": [
+          "a",
+          "e",
+          "g",
+          "h",
+          "i",
+          "o",
+          "t"
+        ],
+        "say": "eight"
+      },
+      "englishVisual": {
+        "type": "number",
+        "value": 8
+      }
+    },
+    {
+      "id": "eng_unit_03.step.005",
+      "kind": "tap-choice",
+      "title": "Which does not rhyme?",
+      "prompt": "Three, tree, them, sea. Which one does not rhyme?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "three",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "tree",
+          "art": "eng_word",
+          "picture": "tree"
+        },
+        {
+          "id": "choice_3",
+          "label": "them",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "sea",
+          "art": "eng_word",
+          "picture": "sea"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u03.main.02",
+      "hint": "Say each word and listen to the end: ee, ee…",
+      "explanation": "Three, tree and sea end with ee. Them does not rhyme.",
+      "shortExplanation": "Three, tree and sea end with ee. Them does not rhyme.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.main.02",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "a them • b socks • c night",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_03"
+    },
+    {
+      "id": "eng_unit_03.step.006",
+      "kind": "tap-choice",
+      "title": "Which does not rhyme?",
+      "prompt": "Six, sticks, socks, mix. Which one does not rhyme?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "six",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "sticks",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "socks",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "mix",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u03.main.02",
+      "hint": "Listen for the ix sound at the end.",
+      "explanation": "Six, sticks and mix end with ix. Socks ends with ocks.",
+      "shortExplanation": "Six, sticks and mix end with ix. Socks ends with ocks.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.main.02",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "a them • b socks • c night",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_03"
+    },
+    {
+      "id": "eng_unit_03.step.007",
+      "kind": "tap-choice",
+      "title": "Which does not rhyme?",
+      "prompt": "Nine, fine, night, sign. Which one does not rhyme?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "nine",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "fine",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "night",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_4",
+          "label": "sign",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u03.main.02",
+      "hint": "Listen for the ine sound at the end.",
+      "explanation": "Nine, fine and sign end with ine. Night ends with t.",
+      "shortExplanation": "Nine, fine and sign end with ine. Night ends with t.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.main.02",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "a them • b socks • c night",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_03"
+    },
+    {
+      "id": "eng_unit_03.step.008",
+      "kind": "match-lines",
+      "title": "Rhyming pairs",
+      "prompt": "Match each word to the word that rhymes with it.",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "cat",
+          "art": "eng_word",
+          "picture": "cat"
+        },
+        {
+          "id": "choice_2",
+          "label": "sun",
+          "art": "eng_word",
+          "picture": "sun"
+        },
+        {
+          "id": "choice_3",
+          "label": "bee",
+          "art": "eng_word",
+          "picture": "bee"
+        },
+        {
+          "id": "choice_4",
+          "label": "hen",
+          "art": "eng_word",
+          "picture": "hen"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "tree",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "ten",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "hat",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_4",
+          "label": "one",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_3",
+          "choice_2": "target_4",
+          "choice_3": "target_1",
+          "choice_4": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u03.main.03",
+      "hint": "Say both words aloud. Do your ears hear the same ending?",
+      "explanation": "Cat and hat, sun and one, bee and tree, hen and ten end the same.",
+      "shortExplanation": "Cat and hat, sun and one, bee and tree, hen and ten end the same.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.main.03",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "cat – hat • sun – one • bee – tree • hen – ten",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_03"
+    },
+    {
+      "id": "eng_unit_03.step.009",
+      "kind": "letter-entry",
+      "title": "The alphabet",
+      "prompt": "Which letter is missing? a, b, …, d, e",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "c"
+      },
+      "assessed": true,
+      "objective": "eng.u03.main.04",
+      "hint": "Sing the alphabet song up to d.",
+      "explanation": "The alphabet goes a, b, c, d, e. The missing letter is c.",
+      "shortExplanation": "The alphabet goes a, b, c, d, e. The missing letter is c.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.main.04",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "c, f, i, l, p, t, y",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_03",
+      "letters": {
+        "before": "",
+        "after": "",
+        "tiles": [
+          "c",
+          "d",
+          "g",
+          "o"
+        ],
+        "say": "c"
+      },
+      "englishVisual": {
+        "type": "alphabet",
+        "letters": "ab_de"
+      }
+    },
+    {
+      "id": "eng_unit_03.step.010",
+      "kind": "letter-entry",
+      "title": "The alphabet",
+      "prompt": "Which letter is missing? o, …, q, r, s",
+      "options": [],
+      "targets": [],
+      "answer": {
+        "type": "word",
+        "value": "p"
+      },
+      "assessed": true,
+      "objective": "eng.u03.main.04",
+      "hint": "Sing the alphabet from n: n, o…",
+      "explanation": "The alphabet goes o, p, q, r, s. The missing letter is p.",
+      "shortExplanation": "The alphabet goes o, p, q, r, s. The missing letter is p.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.main.04",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "c, f, i, l, p, t, y",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_03",
+      "letters": {
+        "before": "",
+        "after": "",
+        "tiles": [
+          "b",
+          "d",
+          "p",
+          "q"
+        ],
+        "say": "p"
+      },
+      "englishVisual": {
+        "type": "alphabet",
+        "letters": "o_qrs"
+      }
+    },
+    {
+      "id": "eng_unit_03.step.011",
+      "kind": "match-lines",
+      "title": "Letters that work together",
+      "prompt": "Which letters start each word?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "…ip, a boat",
+          "art": "eng_word",
+          "picture": "ship"
+        },
+        {
+          "id": "choice_2",
+          "label": "…ee, it has leaves",
+          "art": "eng_word",
+          "picture": "tree"
+        },
+        {
+          "id": "choice_3",
+          "label": "…ar, it shines at night",
+          "art": "eng_word",
+          "picture": "star"
+        },
+        {
+          "id": "choice_4",
+          "label": "…een, the colour of grass",
+          "art": "eng_word",
+          "picture": "grass"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "sh",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "tr",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_3",
+          "label": "st",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_4",
+          "label": "gr",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2",
+          "choice_3": "target_3",
+          "choice_4": "target_4"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u03.main.05",
+      "hint": "Look at the picture and say the whole word: ship, tree, star, green.",
+      "explanation": "Ship starts with sh, tree with tr, star with st and green with gr.",
+      "shortExplanation": "Ship starts with sh, tree with tr, star with st and green with gr.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.main.05",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "ship • tree • star • green",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_03"
+    },
+    {
+      "id": "eng_unit_03.step.012",
+      "kind": "drag-to-basket",
+      "title": "Noun or verb?",
+      "prompt": "The kite flies. The dog runs. The bird sings. Is each word a noun or a verb?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "kite",
+          "art": "eng_word",
+          "picture": "kite"
+        },
+        {
+          "id": "choice_2",
+          "label": "flies",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "dog",
+          "art": "eng_word",
+          "picture": "dog"
+        },
+        {
+          "id": "choice_4",
+          "label": "runs",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_5",
+          "label": "bird",
+          "art": "eng_word",
+          "picture": "bird"
+        },
+        {
+          "id": "choice_6",
+          "label": "sings",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [
+        {
+          "id": "target_1",
+          "label": "Noun",
+          "art": "eng_word"
+        },
+        {
+          "id": "target_2",
+          "label": "Verb",
+          "art": "eng_word"
+        }
+      ],
+      "answer": {
+        "type": "mapping",
+        "value": {
+          "choice_1": "target_1",
+          "choice_2": "target_2",
+          "choice_3": "target_1",
+          "choice_4": "target_2",
+          "choice_5": "target_1",
+          "choice_6": "target_2"
+        }
+      },
+      "assessed": true,
+      "objective": "eng.u03.main.06",
+      "hint": "What is it? A noun. What does it do? A verb.",
+      "explanation": "Kite, dog and bird are nouns. Flies, runs and sings are verbs.",
+      "shortExplanation": "Kite, dog and bird are nouns. Flies, runs and sings are verbs.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.main.06",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "Nouns: kite, dog, bird • Verbs: flies, runs, sings",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_03"
+    },
+    {
+      "id": "eng_unit_03.step.013",
+      "kind": "tap-choice",
+      "title": "Capital letters and a full stop",
+      "prompt": "Which sentence is written the right way?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "Yesterday ali and I flew a kite.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "Yesterday Ali and I flew a kite.",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "yesterday Ali and i flew a kite.",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u03.main.07",
+      "hint": "Check the first word, the name Ali, the word I and the end.",
+      "explanation": "Yesterday, Ali and I start with capitals, and it ends with a full stop.",
+      "shortExplanation": "Yesterday, Ali and I start with capitals, and it ends with a full stop.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.main.07",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "Yesterday Ali and I flew a kite.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_03"
+    },
+    {
+      "id": "eng_unit_03.step.014",
+      "kind": "tap-choice",
+      "title": "A describing word",
+      "prompt": "The silver moon. Which word tells us what the moon is like?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "The",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "silver",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "moon",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u03.main.08",
+      "hint": "Which word describes the moon?",
+      "explanation": "Silver is a describing word. It tells us what the moon is like.",
+      "shortExplanation": "Silver is a describing word. It tells us what the moon is like.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.main.08",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "Any of the words, one in each space — for example: The silver moon. The twinkling stars. The sleepy child.",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Discover",
+      "playScene": "english",
+      "theme": "eng_unit_03",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "The silver moon."
+      }
+    },
+    {
+      "id": "eng_unit_03.step.015",
+      "kind": "tap-choice",
+      "title": "Rhymes with cat",
+      "prompt": "Which word rhymes with cat?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "cup",
+          "art": "eng_word",
+          "picture": "cup"
+        },
+        {
+          "id": "choice_2",
+          "label": "hat",
+          "art": "eng_word",
+          "picture": "hat"
+        },
+        {
+          "id": "choice_3",
+          "label": "car",
+          "art": "eng_word",
+          "picture": "car"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u03.choice.01",
+      "hint": "Cat ends with at. Which one ends the same?",
+      "explanation": "Cat and hat both end with at, so they rhyme.",
+      "shortExplanation": "Cat and hat both end with at, so they rhyme.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.choice.01",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "hat",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_03"
+    },
+    {
+      "id": "eng_unit_03.step.016",
+      "kind": "tap-choice",
+      "title": "What makes a rhyme?",
+      "prompt": "Rhyming words have the same…",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "sound at the end",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "first letter",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "number of letters",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u03.choice.02",
+      "hint": "Think of cat and hat. Where are they the same?",
+      "explanation": "Rhyming words have the same sound at the end, like cat and hat.",
+      "shortExplanation": "Rhyming words have the same sound at the end, like cat and hat.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.choice.02",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "sound at the end",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_03"
+    },
+    {
+      "id": "eng_unit_03.step.017",
+      "kind": "tap-choice",
+      "title": "The alphabet",
+      "prompt": "How many letters are in the English alphabet?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "10",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "20",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "26",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_3"
+      },
+      "assessed": true,
+      "objective": "eng.u03.choice.03",
+      "hint": "Sing the alphabet song and count on your fingers.",
+      "explanation": "The English alphabet has 26 letters, from a to z. Arabic has 28.",
+      "shortExplanation": "The English alphabet has 26 letters, from a to z. Arabic has 28.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.choice.03",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "26",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_03"
+    },
+    {
+      "id": "eng_unit_03.step.018",
+      "kind": "tap-choice",
+      "title": "Find the verb",
+      "prompt": "The kite zooms up in the sky. Which word is the verb?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "zooms",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "kite",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "sky",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_1"
+      },
+      "assessed": true,
+      "objective": "eng.u03.choice.04",
+      "hint": "What does the kite do?",
+      "explanation": "Zooms is the doing word. Kite and sky are nouns.",
+      "shortExplanation": "Zooms is the doing word. Kite and sky are nouns.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.choice.04",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "zooms",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_03",
+      "englishVisual": {
+        "type": "sentence",
+        "text": "The kite zooms up in the sky."
+      }
+    },
+    {
+      "id": "eng_unit_03.step.019",
+      "kind": "tap-choice",
+      "title": "Spell 8",
+      "prompt": "Which number name is spelled correctly?",
+      "options": [
+        {
+          "id": "choice_1",
+          "label": "eigt",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_2",
+          "label": "eight",
+          "art": "eng_word"
+        },
+        {
+          "id": "choice_3",
+          "label": "aight",
+          "art": "eng_word"
+        }
+      ],
+      "targets": [],
+      "answer": {
+        "type": "single",
+        "value": "choice_2"
+      },
+      "assessed": true,
+      "objective": "eng.u03.choice.05",
+      "hint": "Eight is a tricky word: e-i-g-h-t.",
+      "explanation": "Eight is spelled e, i, g, h, t.",
+      "shortExplanation": "Eight is spelled e, i, g, h, t.",
+      "source": {
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "questionId": "eng.u03.choice.05",
+        "answerKeyPages": [
+          51,
+          52
+        ],
+        "answerKeyText": "eight",
+        "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1"
+      },
+      "scene": "garden",
+      "section": "Practice",
+      "playScene": "english",
+      "theme": "eng_unit_03",
+      "englishVisual": {
+        "type": "number",
+        "value": 8
+      }
+    }
+  ],
+  "stickers": [
+    {
+      "id": "eng_unit_03.sticker",
+      "word": "rhyme",
+      "art": "eng_word",
+      "picture": {
+        "type": "picture",
+        "items": [
+          "hat"
+        ]
+      },
+      "meaning": "Words that end with the same sound: cat, hat.",
+      "meaningSource": "adapted_from_big_idea",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "goalActivities": [
+    {
+      "objective": "eng.u03.main.01",
+      "text": "Hide the number names one to ten under cups with that many beans. Your child reads each word and counts the beans to check.",
+      "textAr": "خبّوا أسامي الأرقام من one لـ ten تحت كبايات، وتحت كل كباية عدد فول زي الرقم. طفلك يقرا الكلمة ويعدّ الفول عشان يتأكد.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u03.main.02",
+      "text": "Say three rhyming words and one that does not. Your child claps for the odd one out. Then swap.",
+      "textAr": "قول تلات كلمات على نفس القافية وواحدة لأ، وطفلك يصقف للكلمة اللي مش زيهم. وبعدين بدّلوا.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u03.main.03",
+      "text": "Draw four pictures, like a cat, the sun, a bee and a hen. Your child says a word that rhymes with each one.",
+      "textAr": "ارسموا أربع صور زي قطة وشمس ونحلة وفرخة، وطفلك يقول كلمة على نفس القافية لكل واحدة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u03.main.04",
+      "text": "Pour a thin layer of salt on a tray. Say a letter; your child writes it with a finger, starting at the top. Shake to erase.",
+      "textAr": "حطوا طبقة رفيعة ملح على صينية. قول حرف، وطفلك يكتبه بصباعه ويبدأ من فوق. هزّوا الصينية عشان تتمسح.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u03.main.05",
+      "text": "Go on a hunt for sh, tr, st and gr words at home: shoe, tray, stairs, grapes. Say each one slowly.",
+      "textAr": "دوّروا في البيت على كلمات فيها sh و tr و st و gr: shoe و tray و stairs و grapes. قولوا كل كلمة ببطء.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u03.main.06",
+      "text": "Say a short sentence like \"The cat sleeps.\" Your child points to the thing (noun) and acts out the doing word (verb).",
+      "textAr": "قول جملة قصيرة زي \"The cat sleeps.\"، وطفلك يشاور على الحاجة (noun) ويمثّل الفعل (verb).",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u03.main.07",
+      "text": "Write a sentence with your child's name and the word I in it, all in small letters. Your child fixes the capitals.",
+      "textAr": "اكتب جملة فيها اسم طفلك وكلمة I، كلها بحروف صغيرة، وطفلك يصلّح الحروف الكبيرة.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u03.main.08",
+      "text": "At bedtime, look out of the window and describe what you see: the silver moon, the twinkling stars, the sleepy cat.",
+      "textAr": "وقت النوم بصّوا من الشباك واوصفوا اللي شايفينه: the silver moon و the twinkling stars و the sleepy cat.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u03.choice.01",
+      "text": "Find things at home that rhyme with cat: a hat, a mat, a bat. Say each pair aloud.",
+      "textAr": "دوّروا على حاجات في البيت على قافية cat: hat و mat و bat. وقولوا كل اتنين بصوت عالي.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u03.choice.02",
+      "text": "Say two words and ask: do they start the same or finish the same? Cat and cup start the same; cat and hat rhyme.",
+      "textAr": "قول كلمتين واسأل: بيبدأوا زي بعض ولا بيخلصوا زي بعض؟ cat و cup بيبدأوا زي بعض، و cat و hat على نفس القافية.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u03.choice.03",
+      "text": "Sing the alphabet song together while you point to the letters on a poster or in a book.",
+      "textAr": "غنّوا أغنية الحروف مع بعض وانتو بتشاوروا على الحروف في بوستر أو كتاب.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u03.choice.04",
+      "text": "Fly a paper kite or a plastic bag on a string. Your child says what it does: it zooms, it flies, it falls.",
+      "textAr": "طيّروا طيارة ورق أو كيس بلاستيك في خيط، وطفلك يقول بيعمل إيه: it zooms و it flies و it falls.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    },
+    {
+      "objective": "eng.u03.choice.05",
+      "text": "Practise tricky number words with Look, Say, Cover, Write, Check: look at eight, say it, cover it, write it, then check.",
+      "textAr": "اتمرنوا على كلمات الأرقام الصعبة بطريقة Look, Say, Cover, Write, Check: بص على eight، قولها، غطّيها، اكتبها، واتأكد.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ],
+  "homeActivities": [
+    {
+      "text": "Play rhyme tennis in the car: you say a word, your child hits back a word that rhymes. Made-up words count too.",
+      "textAr": "العبوا تنس القوافي في العربية: تقول كلمة، وطفلك يرد بكلمة على نفس القافية. والكلمات المتألفة كمان تنفع.",
+      "safety": "An adult supervises. An adult does any cutting: cut plastic has sharp edges, so cover them with tape.",
+      "safetyAr": "لازم شخص كبير يكون موجود. الكبير هو اللي يقص: البلاستيك المقصوص حروفه حادة، فغطّوها بشريط لاصق.",
+      "pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "safetyPages": [
+        3
+      ],
+      "adapted": true
+    }
+  ]
+}

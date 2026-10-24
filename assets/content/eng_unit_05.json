@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_unit_05",
+  "subject": "english",
+  "kind": "unit",
+  "term": 2,
+  "title": "Instructions",
+  "ar": "التعليمات",
+  "sourcePages": [
+    22,
+    23,
+    24,
+    25
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.u05.main.01",
+      "category": "main",
+      "number": 1,
+      "sourceText": "Circle the bossy verb in each instruction. a Pick up your toothbrush. b Put toothpaste on it. c Spit out the toothpaste.",
+      "answerKeyText": "a Pick (up) • b Put • c Spit (out)",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "eng.u05.main.02",
+      "category": "main",
+      "number": 2,
+      "sourceText": "Write a or an. apple party egg sweet orange present",
+      "answerKeyText": "an apple • a party • an egg • a sweet • an orange • a present",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "eng.u05.main.03",
+      "category": "main",
+      "number": 3,
+      "sourceText": "Number the steps 1 to 4 in the right order. Drink it! Get a cup. Add a straw. Pour the juice.",
+      "answerKeyText": "Get a cup 1 • Pour the juice 2 • Add a straw 3 • Drink it! 4",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "eng.u05.main.04",
+      "category": "main",
+      "number": 4,
+      "sourceText": "Write a ly word to say how. Choose from: carefully quietly. a ___ carry the glass of water. b ___ close the door. The baby is asleep.",
+      "answerKeyText": "a Carefully • b Quietly",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "eng.u05.main.05",
+      "category": "main",
+      "number": 5,
+      "sourceText": "Which ones are instructions? Tick them. a Wash your hands. b The cat is black. c Shut the door. d I like cake.",
+      "answerKeyText": "Instructions: a and c",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "eng.u05.main.06",
+      "category": "main",
+      "number": 6,
+      "sourceText": "Add the time words First, Next, Then, Finally to cross the road safely. find a safe place to cross. stand near the kerb. look both ways. cross when nothing is coming.",
+      "answerKeyText": "First • Next • Then • Finally",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "eng.u05.main.07",
+      "category": "main",
+      "number": 7,
+      "sourceText": "Write a bossy verb to start each instruction. ___ the ball. ___ up your coat. ___ the door.",
+      "answerKeyText": "For example: Kick / Throw the ball • Hang up your coat • Shut / Open the door",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "eng.u05.main.08",
+      "category": "main",
+      "number": 8,
+      "sourceText": "Write three numbered instructions for washing your hands.",
+      "answerKeyText": "Three numbered steps in order, each starting with a bossy verb — e.g. 1 Wet your hands. 2 Rub on soap. 3 Rinse and dry your hands.",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "eng.u05.choice.01",
+      "category": "choice",
+      "number": 1,
+      "sourceText": "In \"Mix the eggs\", the word Mix is a ( noun ) ( bossy verb ) ( time word )",
+      "answerKeyText": "bossy verb",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "eng.u05.choice.02",
+      "category": "choice",
+      "number": 2,
+      "sourceText": "We write an before ( egg ) ( cake ) ( tin )",
+      "answerKeyText": "egg",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "eng.u05.choice.03",
+      "category": "choice",
+      "number": 3,
+      "sourceText": "The list of things you need is called ( Dear Diary ) ( The End ) ( You will need )",
+      "answerKeyText": "You will need",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "eng.u05.choice.04",
+      "category": "choice",
+      "number": 4,
+      "sourceText": "Instructions must be in the ( right order ) ( wrong order ) ( any order )",
+      "answerKeyText": "right order",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "eng.u05.choice.05",
+      "category": "choice",
+      "number": 5,
+      "sourceText": "The word slowly tells us ( where to do it ) ( how to do it ) ( who does it )",
+      "answerKeyText": "how to do it",
+      "sourcePages": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "answerKeyPages": [
+        52,
+        53
+      ]
+    }
+  ]
+}

@@ -100,6 +100,55 @@ class ResultsByYear extends ConsumerWidget {
   }
 }
 
+/// How to use each subject of the child's year after Science (whose guide
+/// the parent area shows first): Maths, English.
+class SubjectGuides extends ConsumerWidget {
+  const SubjectGuides({super.key, required this.arabic});
+  final bool arabic;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l = parentStrings(arabic);
+    final profile = ref.watch(appProvider).profile;
+    final year = ref
+        .watch(schoolYearsProvider)
+        .forChild(profile?.schoolYear ?? 'y1');
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        for (final subject in year.subjects)
+          if (subject.curriculum != currentCurriculum)
+            ref
+                .watch(subjectCatalogProvider(subject))
+                .when(
+                  loading: () =>
+                      const Center(child: CircularProgressIndicator()),
+                  error: (error, stack) => OutlinedButton(
+                    onPressed: () =>
+                        ref.invalidate(subjectCatalogProvider(subject)),
+                    child: Text(
+                      subject.curriculum == mathsCurriculum
+                          ? l.parentAreaMathsGuideRetry
+                          : l.parentAreaGuideRetry,
+                    ),
+                  ),
+                  data: (catalogue) => ParentSection(
+                    key: ValueKey('guide-${subject.curriculum}'),
+                    title: arabic ? catalogue.arabic : catalogue.title,
+                    children: [
+                      for (final rule in catalogue.parentRules)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 14),
+                          child: Text(rule[arabic ? 'ar' : 'en'] as String),
+                        ),
+                    ],
+                  ),
+                ),
+      ],
+    );
+  }
+}
+
 class _SubjectResults extends ConsumerWidget {
   const _SubjectResults({required this.subject, required this.arabic});
   final YearSubject subject;

@@ -1,9 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:science_adventure/content/catalog.dart';
+import 'package:science_adventure/content/curriculum.dart';
+import 'package:science_adventure/content/school_years.dart';
 import 'package:science_adventure/content/lesson.dart';
 import 'package:science_adventure/core/design.dart';
 import 'package:science_adventure/core/models.dart';
@@ -23,12 +27,17 @@ import 'maths_workshop_test.dart' as workshops;
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-  late Catalog maths;
+  late Catalog maths, english;
   late LessonLibrary library;
 
   setUpAll(() async {
     helpers.testCatalog = await Catalog.load();
     maths = await Catalog.loadMaths();
+    english = Catalog.fromJson(
+      jsonDecode(
+        await rootBundle.loadString('assets/content/english_catalog.json'),
+      ) as Map<String, dynamic>,
+    );
     library = await LessonLibrary.loadAll();
     for (final font in ['Nunito', 'Fredoka', 'Cairo']) {
       await (FontLoader(
@@ -49,6 +58,7 @@ void main() {
     await t.runAsync(
       () => Flame.images.loadAll([
         'maths-islands-v2.webp',
+        'english-islands-v1.webp',
         'maths-objects-v2.webp',
         'maths-backdrops-v2.webp',
         'maths-things-v1.webp',
@@ -61,6 +71,16 @@ void main() {
           catalogProvider.overrideWithValue(helpers.testCatalog),
           narrationProvider.overrideWith((ref) => helpers.SilentNarration()),
           mathsCatalogProvider.overrideWith((ref) async => maths),
+          // The English card reads its catalogue like Maths; a file read
+          // inside the test's fake clock does not finish after the first
+          // test, so the loaded catalogue is given.
+          subjectCatalogProvider.overrideWith(
+            (ref, subject) async => switch (subject.curriculum) {
+              mathsCurriculum => maths,
+              englishCurriculum => english,
+              _ => helpers.testCatalog,
+            },
+          ),
           lessonLibraryProvider.overrideWith((ref) async => library),
         ],
         child: MaterialApp(

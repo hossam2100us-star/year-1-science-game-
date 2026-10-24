@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": 1,
+  "id": "eng_quiz_02",
+  "subject": "english",
+  "kind": "quiz",
+  "term": 2,
+  "title": "Big Challenge: Term 2",
+  "ar": "تحدي الفصل الدراسي 2",
+  "sourcePages": [
+    30
+  ],
+  "sourceSha256": "dd379dbfa0337f8012b463d4f8e5327429d7c78371f8824908fd13cbf9c92fd1",
+  "status": "adapted_for_the_app",
+  "sourceQuestions": [
+    {
+      "id": "eng.q2.01",
+      "category": "quiz",
+      "number": 1,
+      "sourceText": "Write a story opener.",
+      "answerKeyText": "Any story opener, e.g. Once upon a time",
+      "sourcePages": [
+        30
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.q2.02",
+      "category": "quiz",
+      "number": 2,
+      "sourceText": "Who drank all the water in the land?",
+      "answerKeyText": "Tiddalik (the frog)",
+      "sourcePages": [
+        30
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.q2.03",
+      "category": "quiz",
+      "number": 3,
+      "sourceText": "Join with and: The lion is big. The lion is proud.",
+      "answerKeyText": "The lion is big and proud.",
+      "sourcePages": [
+        30
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.q2.04",
+      "category": "quiz",
+      "number": 4,
+      "sourceText": "Does this sentence have a verb? \"The water everywhere.\" Yes / No",
+      "answerKeyText": "No",
+      "sourcePages": [
+        30
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.q2.05",
+      "category": "quiz",
+      "number": 5,
+      "sourceText": "Circle the bossy verb: Wash your hands before lunch.",
+      "answerKeyText": "Wash",
+      "sourcePages": [
+        30
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.q2.06",
+      "category": "quiz",
+      "number": 6,
+      "sourceText": "Write a or an: ___ egg ___ cake (both must be right for the mark)",
+      "answerKeyText": "an egg, a cake",
+      "sourcePages": [
+        30
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.q2.07",
+      "category": "quiz",
+      "number": 7,
+      "sourceText": "Write a time word that can start the last step of instructions.",
+      "answerKeyText": "Finally (or \"At last\")",
+      "sourcePages": [
+        30
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.q2.08",
+      "category": "quiz",
+      "number": 8,
+      "sourceText": "Write a word that rhymes with pool.",
+      "answerKeyText": "cool, school, fool, tool",
+      "sourcePages": [
+        30
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.q2.09",
+      "category": "quiz",
+      "number": 9,
+      "sourceText": "Circle the correct verb: Yesterday, it snowing / snowed.",
+      "answerKeyText": "snowed",
+      "sourcePages": [
+        30
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    },
+    {
+      "id": "eng.q2.10",
+      "category": "quiz",
+      "number": 10,
+      "sourceText": "Do drip and drop rhyme, or start the same?",
+      "answerKeyText": "They start the same",
+      "sourcePages": [
+        30
+      ],
+      "answerKeyPages": [
+        53
+      ]
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import '../../parent/parent_gate.dart';
 import '../../parent/parent_area.dart';
 import '../lesson/lesson_player.dart';
 import '../biology/sticker_album.dart';
+import '../english/english_art.dart';
 import '../maths/maths_art.dart';
 import 'island_art.dart';
 import 'todays_challenge.dart';
@@ -152,15 +153,11 @@ class _WorldMapState extends ConsumerState<WorldMap> {
                                                 islandRegions[i].width /
                                                 islandRegions[i].height
                                           : 1.5,
-                                      child: catalog.subject == 'science'
-                                          ? IslandIllustration(
-                                              key: ValueKey('island-art-$i'),
-                                              index: i,
-                                            )
-                                          : MathsIslandArt(
-                                              key: ValueKey('island-art-$i'),
-                                              index: i,
-                                            ),
+                                      child: islandArt(
+                                        catalog.subject,
+                                        i,
+                                        key: ValueKey('island-art-$i'),
+                                      ),
                                     ),
                                     Padding(
                                       key: ValueKey('island-caption-$i'),
@@ -232,6 +229,13 @@ class _WorldMapState extends ConsumerState<WorldMap> {
     );
   }
 }
+
+/// The painting of one island of [subject].
+Widget islandArt(String subject, int index, {Key? key}) => switch (subject) {
+  'science' => IslandIllustration(key: key, index: index),
+  'english' => EnglishIslandArt(key: key, index: index),
+  _ => MathsIslandArt(key: key, index: index),
+};
 
 class _IslandLabel extends StatelessWidget {
   const _IslandLabel({
@@ -373,9 +377,7 @@ class IslandScreen extends ConsumerWidget {
                 builder: (context, box) => SizedBox(
                   height: (box.maxWidth * .34).clamp(210, 380),
                   width: double.infinity,
-                  child: catalog.subject == 'science'
-                      ? IslandIllustration(index: index)
-                      : MathsIslandArt(index: index),
+                  child: islandArt(catalog.subject, index),
                 ),
               ),
               if (locked)

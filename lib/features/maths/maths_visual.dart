@@ -199,6 +199,8 @@ class _Chart extends StatelessWidget {
     final unit = '${data['unit'] ?? ''}'.toLowerCase();
     if (unit.contains('star')) return 'star';
     if (unit.contains('bird')) return 'bird';
+    // English Chart Skills: books read this week.
+    if (unit.contains('book')) return 'book';
     if (unit.contains('person') || unit.contains('people')) return 'person';
     return 'counter';
   }
