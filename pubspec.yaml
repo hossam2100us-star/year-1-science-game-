@@ -1,7 +1,7 @@
 name: science_adventure
-description: My School Adventures, offline Year 1 science and maths for children and their parents.
+description: My School Adventures, offline Year 1 science, maths and English for children and their parents.
 publish_to: none
-version: 0.6.1+9
+version: 0.6.2+10
 environment:
   sdk: '>=3.13.4 <4.0.0'
   flutter: '>=3.47.5'
