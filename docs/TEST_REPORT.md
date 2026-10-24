@@ -383,3 +383,26 @@ The accepted sprintf-js entry (GHSA-hp3w-g68c-fv3c) was removed from
 - Golden: the tablet subjects screen now shows three cards in one row (intended).
 - Review images of every English step (`--dart-define=REVIEW_IMAGES=true`) were checked by eye before and after the art.
 - The server needs no change: it already accepts `y1.english`.
+
+## Trial release 0.6.2 (versionCode 10), 2026-10-24
+
+- Built from `chore/release-0.6.2` (main `c9f71c9` with the version set to 0.6.2+10). Includes:
+  - school years, stage 1 (PR #16, ADR-0021; database schema 3);
+  - the Maths class-book questions (PR #17);
+  - the dependency security updates (PR #18);
+  - English, the third Year 1 subject (PR #20, ADR-0022).
+- Same command as 0.6.1 (ARM only, obfuscated, `API_BASE_URL=https://school.hmsfamily.synology.me`).
+- The APK:
+  - 52.8 MB (55,374,107 bytes), SHA-256 `c9e3a22a…ecc98cc43`;
+  - upload key `a8:03:33:…:74:12:79`, version 0.6.2 (10);
+  - permissions: `INTERNET` and Android's internal receiver permission only, as in 0.6.1;
+  - native libraries as in 0.6.1 (one small `x86_64` plugin library, as before);
+  - the English catalogue, all 13 English lessons and the three English pictures are inside.
+- **Upgrade 0.6.1 → 0.6.2 in place** on the emulator, both built for x86_64 from their commits with the same key:
+  1. In 0.6.1 (built from `02e0868`): a new child, Nour; Maths unit 1, step 1 with three apples counted; the app closed.
+  2. After `adb install -r`: no update banner (0.6.2 is newer than the server's 0.6.1). "Continue without the Internet" shows Nour; the subjects screen shows "Year 1 • سنة أولى" and three cards; Maths unit 1 reopens at step 1 with the same three apples counted.
+  3. English: the map shows the four painted islands; unit 1's story is read part by part and goes on after all three; the spelling question accepts "tree" (e, e) with its explanation.
+- Staged in `C:\Users\hossa\ScienceAdventure-NAS`:
+  - `downloads/science-adventure.apk` with its `.sha256`, and `downloads/version.json` (10, 0.6.2), uploaded last;
+  - 0.6.1 moved to `previous/0.6.1+9`;
+  - symbols in `symbols/0.6.2+10`.
