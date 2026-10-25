@@ -464,3 +464,25 @@ Fixes for `docs/TEACHER_REVIEW_2026_10_24.md`, all in one change (owner's choice
   - tapping a sentence card reads it aloud before it goes in a basket.
 - English and playable validators pass; the English build is byte-for-byte repeatable.
 - Every English step at 1280×800 and at 390×844 with 150% text: no overflow. The review images were checked by eye: stories and sorting screens fit a tablet without scrolling.
+
+## Trial release 0.6.4 (versionCode 12), 2026-10-25
+
+- Built from `chore/release-0.6.4`: main `8ae7f63` with the version set to 0.6.4+12. It brings teacher review 8 for English (PR #23): story scenes, sentence cards with pictures, and the child's name.
+- Same command as 0.6.2: ARM only, obfuscated, `API_BASE_URL=https://school.hmsfamily.synology.me`.
+- The APK:
+  - 53.6 MB (56,167,747 bytes), SHA-256 `cf5976fc…5c70e1eb`;
+  - upload key `a8:03:33:…:74:12:79`, version 0.6.4 (12);
+  - permissions: `INTERNET` and Android's internal receiver permission only, as before;
+  - `english-scenes-v1.webp` is inside.
+- **Upgrade 0.6.2 → 0.6.4 in place** on the emulator, with an x86_64 build of this commit and the same key:
+  1. In 0.6.2, Nour's English unit 1 was saved at step 7 of 16, with the Real/Fantasy cards already sorted.
+  2. After `adb install -r`:
+     - no update banner (the server offers 0.6.3);
+     - "Continue without the Internet" shows Nour, and English unit 1 reopens at step 7 of 16;
+     - the Real/Fantasy step keeps Nour's answers and now shows the card pictures;
+     - the story shows a scene beside each part, still ticked as heard.
+- On the emulator, 800 points high with the system bars, the third story part needs a short scroll. This is much less than before; it is the same note as on the Huawei tablet.
+- Staged in `C:\Users\hossa\ScienceAdventure-NAS`:
+  - `downloads/science-adventure.apk` and its `.sha256` (checked), then `downloads/version.json` (12, 0.6.4) last;
+  - 0.6.3 moved to `previous/0.6.3+11`;
+  - symbols in `symbols/0.6.4+12`.
